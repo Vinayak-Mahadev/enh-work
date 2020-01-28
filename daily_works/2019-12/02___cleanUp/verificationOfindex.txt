@@ -1,0 +1,18 @@
+select * from kpi.tr_temp_trans_sum_validation limit 10;
+
+select file_id_n from interface.tr_interface_file_summary where interface_id_n = 1001 and uploaded_on_dt < current_date - 100
+select count(1) from interface.serial_expiry where file_id in ('14520');
+select count(1) from interface.serial_expiry;
+
+select * interface.tr_interface_file_summary limit 10;
+
+
+select * from interface.tr_interface_summary where trans_id_n = 226836;
+delete from interface.tr_interface_summary where trans_id_n = 226836;
+
+
+
+
+
+
+insert into interface.tr_interface_summary() values  ();

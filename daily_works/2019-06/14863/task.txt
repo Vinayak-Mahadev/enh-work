@@ -1,0 +1,27 @@
+Interface ID	Name
+1128	Summary_CS_SP_Act
+1127	Detail_CS_Reload_of_e_voucher
+1126	Sum_CS_Reload_of_e_voucher
+1125	CS_Reload_Physical_Report
+1124	Summary_CS_Reload_Physical_Report
+1113	Detail_Package_Activation_B
+1112	Detail_Package_Activation_A
+1109	Hotspot_Performance
+1106	SOM_Summary_Organization_Wise
+1094	SOM_Summary_Territory
+
+
+
+
+
+
+* BUG ID 14863
+
+ INDOSAT - Offline File Summary - 20190531
+
+scheduler - time increased..
+for this interface ids
+1128,1127,1126,1125,1124,1113,1112,1109,1106,1094
+
+SCHEDULAR_FOR_PROCESS_FILE_?  =  0 0 4 * * ? *
+SCHEDULAR_FOR_PULLDATA_FROM_POSTGERS_? =  0 30 2 * * ? *

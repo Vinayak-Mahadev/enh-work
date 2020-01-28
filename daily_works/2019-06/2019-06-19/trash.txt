@@ -1,0 +1,81 @@
+SELECT * from interface.ms_cleanup_master order by 1;
+SELECT * from interface.ms_interface where interface_id_n = 1138  order by 1 ;
+SELECT * from interface.ms_interface_attr where interface_id_n = 1137 order by 1 ;
+
+Failure 
+Success
+
+DELETE FROM INTERFACE.MS_INTERFACE_ATTR WHERE ATTRIBUTE_ID_N = 1137010;
+
+INSERT INTO INTERFACE.MS_INTERFACE_ATTR (ATTRIBUTE_ID_N, INTERFACE_ID_N, NAME_V, VALUE_V, LAST_UPDATED_TIME_DT) VALUES (1136009, 1136, 'Static Response Conf', '{"enabled":false,"res_type":"Success"}', now());
+INSERT INTO INTERFACE.MS_INTERFACE_ATTR (ATTRIBUTE_ID_N, INTERFACE_ID_N, NAME_V, VALUE_V, LAST_UPDATED_TIME_DT) VALUES (1137010, 1137, 'Static Response Conf', '{"enabled":false,"res_type":"Success"}', now());
+
+UPDATE INTERFACE.MS_INTERFACE_ATTR SET NAME_V = 'Static Response Conf',VALUE_V = '{"enabled":true,"res_type":"Success"}' WHERE ATTRIBUTE_ID_N = 1136009;
+UPDATE INTERFACE.MS_INTERFACE_ATTR SET NAME_V = 'Static Response Conf',VALUE_V = '{"enabled":true,"res_type":"Success"}' WHERE ATTRIBUTE_ID_N = 1137010;
+
+
+
+
+select file_id_n from interface.tr_interface_file_summary where interface_id_n = 1001 and uploaded_on_dt < current_date - ?
+
+UPDATE interface.ms_cleanup_master SET status_v    = 'Active' where cleanup_id_n = 1002;
+UPDATE interface.ms_cleanup_master SET retension_n = 220      where cleanup_id_n = 1002;
+
+SELECT * from interface.sp_alloc_dump where file_id::numeric in (select file_id_n from interface.tr_interface_file_summary where interface_id_n = 1003 and uploaded_on_dt < current_date - 220);
+
+SELECT * from interface.interface_data_cleanup();
+
+
+
+
+
+
+1001	sp_stock_dump
+1003	sp_alloc_dump
+1005	stock_dump_voucher
+1007	alloc_dump_voucher
+1009	product_details
+1011	serial_expiry
+
+1013	lacci_data
+tr_temp_upload_aggr_failure		
+
+tr_interface_file_summary		459			1101
+tr_interface_summary			515			1102
+tr_interface_summary			515			1103
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+SELECT *  FROM interface.ms_cleanup_master order by 1;
+SELECT *  FROM interface.ms_interface order by 1 ;
+SELECT *  FROM interface.ms_interface_attr where interface_id_n = 1092  order by 1 ;
+SELECT * FROM interface.tr_interface_file_summary  WHERE interface_id_n = 1092 order by 1 desc limit 10;
+
+SELECT * from kpi.tr_temp_upload_aggr_failure where file_id_n = 16140
+
+
+SELECT file_id_n  FROM interface.tr_interface_file_summary  WHERE interface_id_n = 1001 and uploaded_on_dt < current_date - ?
+
+--   UPDATE interface.ms_cleanup_master SET status_v    = 'Active'  WHERE cleanup_id_n = 1102;
+--   UPDATE interface.ms_cleanup_master SET retension_n = 459       WHERE cleanup_id_n = 1101;
+
+SELECT *  FROM interface.tr_interface_file_summary  WHERE  file_id_n::numeric in (SELECT file_id_n  FROM interface.tr_interface_file_summary  WHERE interface_id_n in (1001,1003,1005,1007,1009,1011,1013,1015,1017,1024,1025,1027,1029,1049,1051,1053,1061,1062,1064,1065,1066,1067,1068,1069,1070,1071,1072,1075,1076,1077,1078,1079,1080,1081,1082,1090,1092) and uploaded_on_dt < current_date - 459);
+
+
+SELECT *  FROM interface.interface_data_cleanup();
+
+DELETE  FROM  interface.tr_interface_summary  WHERE trans_id_n = 16718;
+
+SELECT *  FROM interface.tr_interface_summary   WHERE interface_id_n = 1018 and ref_data4_n = 1 and ref_data1_v != 'TOUTLET24103' and  trans_id_n = 16718;
+
+UPDATE interface.tr_interface_summary SET orgnl_request_data_b = null  WHERE trans_id_n = 16718;
+
+SELECT *  FROM pg_catalog.pg_largeobject  WHERE loid = 614916;
+
+select * from pg_largeobject_metadata where oid = 614916 limit 1 
+
+
+
+
+

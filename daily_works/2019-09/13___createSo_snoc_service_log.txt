@@ -1,0 +1,401 @@
+13.09.2019 10:29:12  INFO (InterfaceResponseServicesImpl.java:72) - InterfaceId :: 1141, Request  :: <soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:mob="http://mobii.com/">
+<soapenv:Header/>
+<soapenv:Body>
+<mob:MT_SOCreation_Request>
+<Item>
+<Mobii_PO_Number>634487</Mobii_PO_Number>
+<Order_Type>ssfet</Order_Type>
+<Distribution_Channel>10</Distribution_Channel>
+<Division>30</Division>
+<Sold_to_Party/>
+<Ship_to_Party>AK5443</Ship_to_Party>
+<Mobii_PO_Date>11.10.2019</Mobii_PO_Date>
+<Request_Delivery_Date>11.10.2019</Request_Delivery_Date>
+<SO_Item>
+<Material_Code>P64453</Material_Code>
+<Quantity>100</Quantity>
+</SO_Item>
+<SO_Item>
+<Material_Code>P453</Material_Code>
+<Quantity>200</Quantity>
+</SO_Item>
+</Item>
+</mob:MT_SOCreation_Request>
+</soapenv:Body>
+</soapenv:Envelope>
+
+13.09.2019 10:29:12  INFO (InterfaceResponseServicesImpl.java:78) - resConf :: {"soap-envelope":"SOAP:Envelope","soap-response":"nm:MT_SOCreation_Response","soap-body":"SOAP:Body","soap-fault":"SOAP:Fault","success_value":1}
+13.09.2019 10:29:12  INFO (InterfaceResponseServicesImpl.java:84) - staticResConf :: {"enabled":true,"replace-elements":{"po_no":"Mobii_PO_Number"},"res_type":"Success","url":"http://interface.enhancesys.com:80/interfaceResponseServices/webservices/InterfaceResponseServicesImpl?wsdl"}
+13.09.2019 10:29:12  INFO (InterfaceResponseServicesImpl.java:93) - Response Type : Error
+13.09.2019 10:29:12  INFO (InterfaceResponseServicesImpl.java:111) - staticResponse :: <?xml version = "1.0" encoding = "UTF-8"?> <SOAP:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/"><SOAP:Body><SOAP:Fault><faultcode>soapenv:Server</faultcode><faultstring>Application Error. Please see FaultInfo</faultstring><detail><ns2:FaultInfo xmlns:ns3="http://com/enhancesys/entities/schema/integration" xmlns:ns2="http://com/enhancesys/integration/services/interfaces/IntegrationManagement"><causedBy>java.lang.NullPointerException</causedBy><message>Error in initialising entity manager</message></ns2:FaultInfo></detail></SOAP:Fault></SOAP:Body></SOAP:Envelope>
+
+
+
+
+
+
+
+
+
+
+13.09.2019 10:29:22  INFO (InterfaceResponseServicesImpl.java:72) - InterfaceId :: 1141, Request  :: <soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:mob="http://mobii.com/">
+<soapenv:Header/>
+<soapenv:Body>
+<mob:MT_SOCreation_Request>
+<Item>
+<Mobii_PO_Number>634487</Mobii_PO_Number>
+<Order_Type>ssfet</Order_Type>
+<Distribution_Channel>10</Distribution_Channel>
+<Division>30</Division>
+<Sold_to_Party/>
+<Ship_to_Party>AK5443</Ship_to_Party>
+<Mobii_PO_Date>11.10.2019</Mobii_PO_Date>
+<Request_Delivery_Date>11.10.2019</Request_Delivery_Date>
+<SO_Item>
+<Material_Code>P64453</Material_Code>
+<Quantity>100</Quantity>
+</SO_Item>
+<SO_Item>
+<Material_Code>P453</Material_Code>
+<Quantity>200</Quantity>
+</SO_Item>
+</Item>
+</mob:MT_SOCreation_Request>
+</soapenv:Body>
+</soapenv:Envelope>
+
+13.09.2019 10:29:22  INFO (InterfaceResponseServicesImpl.java:78) - resConf :: {"soap-envelope":"SOAP:Envelope","soap-response":"nm:MT_SOCreation_Response","soap-body":"SOAP:Body","soap-fault":"SOAP:Fault","success_value":1}
+13.09.2019 10:29:22  INFO (InterfaceResponseServicesImpl.java:84) - staticResConf :: {"enabled":true,"replace-elements":{"po_no":"Mobii_PO_Number"},"res_type":"Success","url":"http://interface.enhancesys.com:80/interfaceResponseServices/webservices/InterfaceResponseServicesImpl?wsdl"}
+13.09.2019 10:29:22  INFO (InterfaceResponseServicesImpl.java:93) - Response Type : Success
+13.09.2019 10:29:22  INFO (InterfaceResponseServicesImpl.java:111) - staticResponse :: <?xml version = "1.0" encoding = "UTF-8"?> <SOAP:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:mob="http://mobii.com/"><soapenv:Header/><SOAP:Body><nm:MT_SOCreation_Response><Item><SAP_SO_Number>09131029</SAP_SO_Number><Mobii_PO_Number>634487</Mobii_PO_Number><SO_Date>13.09.2019</SO_Date><Status>1</Status><SO_Amount>20000.00</SO_Amount></Item></nm:MT_SOCreation_Response></SOAP:Body></SOAP:Envelope>
+
+
+
+
+
+
+
+
+
+
+13.09.2019 10:29:48  INFO (InterfaceResponseServicesImpl.java:72) - InterfaceId :: 1141, Request  :: <soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:mob="http://mobii.com/">
+<soapenv:Header/>
+<soapenv:Body>
+<mob:MT_SOCreation_Request>
+<Item>
+<Mobii_PO_Number>634487</Mobii_PO_Number>
+<Order_Type>ssfet</Order_Type>
+<Distribution_Channel>10</Distribution_Channel>
+<Division>30</Division>
+<Sold_to_Party/>
+<Ship_to_Party>AK5443</Ship_to_Party>
+<Mobii_PO_Date>11.10.2019</Mobii_PO_Date>
+<Request_Delivery_Date>11.10.2019</Request_Delivery_Date>
+<SO_Item>
+<Material_Code>P64453</Material_Code>
+<Quantity>100</Quantity>
+</SO_Item>
+<SO_Item>
+<Material_Code>P453</Material_Code>
+<Quantity>200</Quantity>
+</SO_Item>
+</Item>
+</mob:MT_SOCreation_Request>
+</soapenv:Body>
+</soapenv:Envelope>
+
+13.09.2019 10:29:48  INFO (InterfaceResponseServicesImpl.java:78) - resConf :: {"soap-envelope":"SOAP:Envelope","soap-response":"nm:MT_SOCreation_Response","soap-body":"SOAP:Body","soap-fault":"SOAP:Fault","success_value":1}
+13.09.2019 10:29:48  INFO (InterfaceResponseServicesImpl.java:84) - staticResConf :: {"enabled":true,"replace-elements":{"po_no":"Mobii_PO_Number"},"res_type":"Success","url":"http://interface.enhancesys.com:80/interfaceResponseServices/webservices/InterfaceResponseServicesImpl?wsdl"}
+13.09.2019 10:29:48  INFO (InterfaceResponseServicesImpl.java:93) - Response Type : Success
+13.09.2019 10:29:48  INFO (InterfaceResponseServicesImpl.java:111) - staticResponse :: <?xml version = "1.0" encoding = "UTF-8"?> <SOAP:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:mob="http://mobii.com/"><soapenv:Header/><SOAP:Body><nm:MT_SOCreation_Response><Item><SAP_SO_Number>09131029</SAP_SO_Number><Mobii_PO_Number>634487</Mobii_PO_Number><SO_Date>13.09.2019</SO_Date><Status>1</Status><SO_Amount>20000.00</SO_Amount></Item></nm:MT_SOCreation_Response></SOAP:Body></SOAP:Envelope>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+13.09.2019 10:29:55  INFO (InterfaceResponseServicesImpl.java:72) - InterfaceId :: 1141, Request  :: <soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:mob="http://mobii.com/">
+<soapenv:Header/>
+<soapenv:Body>
+<mob:MT_SOCreation_Request>
+<Item>
+<Mobii_PO_Number>634487</Mobii_PO_Number>
+<Order_Type>ssfet</Order_Type>
+<Distribution_Channel>10</Distribution_Channel>
+<Division>30</Division>
+<Sold_to_Party/>
+<Ship_to_Party>AK5443</Ship_to_Party>
+<Mobii_PO_Date>11.10.2019</Mobii_PO_Date>
+<Request_Delivery_Date>11.10.2019</Request_Delivery_Date>
+<SO_Item>
+<Material_Code>P64453</Material_Code>
+<Quantity>100</Quantity>
+</SO_Item>
+<SO_Item>
+<Material_Code>P453</Material_Code>
+<Quantity>200</Quantity>
+</SO_Item>
+</Item>
+</mob:MT_SOCreation_Request>
+</soapenv:Body>
+</soapenv:Envelope>
+
+13.09.2019 10:29:55  INFO (InterfaceResponseServicesImpl.java:78) - resConf :: {"soap-envelope":"SOAP:Envelope","soap-response":"nm:MT_SOCreation_Response","soap-body":"SOAP:Body","soap-fault":"SOAP:Fault","success_value":1}
+13.09.2019 10:29:55  INFO (InterfaceResponseServicesImpl.java:84) - staticResConf :: {"enabled":true,"replace-elements":{"po_no":"Mobii_PO_Number"},"res_type":"Success","url":"http://interface.enhancesys.com:80/interfaceResponseServices/webservices/InterfaceResponseServicesImpl?wsdl"}
+13.09.2019 10:29:55  INFO (InterfaceResponseServicesImpl.java:93) - Response Type : Error
+13.09.2019 10:29:55  INFO (InterfaceResponseServicesImpl.java:111) - staticResponse :: <?xml version = "1.0" encoding = "UTF-8"?> <SOAP:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/"><SOAP:Body><SOAP:Fault><faultcode>soapenv:Server</faultcode><faultstring>Application Error. Please see FaultInfo</faultstring><detail><ns2:FaultInfo xmlns:ns3="http://com/enhancesys/entities/schema/integration" xmlns:ns2="http://com/enhancesys/integration/services/interfaces/IntegrationManagement"><causedBy>java.lang.NullPointerException</causedBy><message>Error in initialising entity manager</message></ns2:FaultInfo></detail></SOAP:Fault></SOAP:Body></SOAP:Envelope>
+
+
+
+
+
+
+
+
+
+
+
+
+
+13.09.2019 10:30:02  INFO (InterfaceResponseServicesImpl.java:72) - InterfaceId :: 1141, Request  :: <soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:mob="http://mobii.com/">
+<soapenv:Header/>
+<soapenv:Body>
+<mob:MT_SOCreation_Request>
+<Item>
+<Mobii_PO_Number>634487</Mobii_PO_Number>
+<Order_Type>ssfet</Order_Type>
+<Distribution_Channel>10</Distribution_Channel>
+<Division>30</Division>
+<Sold_to_Party/>
+<Ship_to_Party>AK5443</Ship_to_Party>
+<Mobii_PO_Date>11.10.2019</Mobii_PO_Date>
+<Request_Delivery_Date>11.10.2019</Request_Delivery_Date>
+<SO_Item>
+<Material_Code>P64453</Material_Code>
+<Quantity>100</Quantity>
+</SO_Item>
+<SO_Item>
+<Material_Code>P453</Material_Code>
+<Quantity>200</Quantity>
+</SO_Item>
+</Item>
+</mob:MT_SOCreation_Request>
+</soapenv:Body>
+</soapenv:Envelope>
+
+13.09.2019 10:30:02  INFO (InterfaceResponseServicesImpl.java:78) - resConf :: {"soap-envelope":"SOAP:Envelope","soap-response":"nm:MT_SOCreation_Response","soap-body":"SOAP:Body","soap-fault":"SOAP:Fault","success_value":1}
+13.09.2019 10:30:02  INFO (InterfaceResponseServicesImpl.java:84) - staticResConf :: {"enabled":true,"replace-elements":{"po_no":"Mobii_PO_Number"},"res_type":"Success","url":"http://interface.enhancesys.com:80/interfaceResponseServices/webservices/InterfaceResponseServicesImpl?wsdl"}
+13.09.2019 10:30:02  INFO (InterfaceResponseServicesImpl.java:93) - Response Type : Failure
+13.09.2019 10:30:02  INFO (InterfaceResponseServicesImpl.java:111) - staticResponse :: <?xml version = "1.0" encoding = "UTF-8"?> <SOAP:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:mob="http://mobii.com/"><soapenv:Header/><SOAP:Body><nm:MT_SOCreation_Response><Item><Mobii_PO_Number>634487</Mobii_PO_Number><SO_Date>13.09.2019</SO_Date><Status>0</Status><Rejection_Note>Request failed..</Rejection_Note></Item></nm:MT_SOCreation_Response></SOAP:Body></SOAP:Envelope>
+
+
+
+
+
+
+
+
+
+
+
+
+13.09.2019 10:30:20  INFO (InterfaceResponseServicesImpl.java:72) - InterfaceId :: 1141, Request  :: <soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:mob="http://mobii.com/">
+<soapenv:Header/>
+<soapenv:Body>
+<mob:MT_SOCreation_Request>
+<Item>
+<Mobii_PO_Number>634487</Mobii_PO_Number>
+<Order_Type>ssfet</Order_Type>
+<Distribution_Channel>10</Distribution_Channel>
+<Division>30</Division>
+<Sold_to_Party/>
+<Ship_to_Party>AK5443</Ship_to_Party>
+<Mobii_PO_Date>11.10.2019</Mobii_PO_Date>
+<Request_Delivery_Date>11.10.2019</Request_Delivery_Date>
+<SO_Item>
+<Material_Code>P64453</Material_Code>
+<Quantity>100</Quantity>
+</SO_Item>
+</Item>
+</mob:MT_SOCreation_Request>
+</soapenv:Body>
+</soapenv:Envelope>
+
+13.09.2019 10:30:20  INFO (InterfaceResponseServicesImpl.java:78) - resConf :: {"soap-envelope":"SOAP:Envelope","soap-response":"nm:MT_SOCreation_Response","soap-body":"SOAP:Body","soap-fault":"SOAP:Fault","success_value":1}
+13.09.2019 10:30:20  INFO (InterfaceResponseServicesImpl.java:84) - staticResConf :: {"enabled":true,"replace-elements":{"po_no":"Mobii_PO_Number"},"res_type":"Success","url":"http://interface.enhancesys.com:80/interfaceResponseServices/webservices/InterfaceResponseServicesImpl?wsdl"}
+13.09.2019 10:30:20  INFO (InterfaceResponseServicesImpl.java:93) - Response Type : Error
+13.09.2019 10:30:20  INFO (InterfaceResponseServicesImpl.java:111) - staticResponse :: <?xml version = "1.0" encoding = "UTF-8"?> <SOAP:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/"><SOAP:Body><SOAP:Fault><faultcode>soapenv:Server</faultcode><faultstring>Application Error. Please see FaultInfo</faultstring><detail><ns2:FaultInfo xmlns:ns3="http://com/enhancesys/entities/schema/integration" xmlns:ns2="http://com/enhancesys/integration/services/interfaces/IntegrationManagement"><causedBy>java.lang.NullPointerException</causedBy><message>Error in initialising entity manager</message></ns2:FaultInfo></detail></SOAP:Fault></SOAP:Body></SOAP:Envelope>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+13.09.2019 10:30:30  INFO (InterfaceResponseServicesImpl.java:72) - InterfaceId :: 1141, Request  :: <soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:mob="http://mobii.com/">
+<soapenv:Header/>
+<soapenv:Body>
+<mob:MT_SOCreation_Request>
+<Item>
+<Mobii_PO_Number>634487</Mobii_PO_Number>
+<Order_Type>ssfet</Order_Type>
+<Distribution_Channel>10</Distribution_Channel>
+<Division>30</Division>
+<Sold_to_Party/>
+<Ship_to_Party>AK5443</Ship_to_Party>
+<Mobii_PO_Date>11.10.2019</Mobii_PO_Date>
+<Request_Delivery_Date>11.10.2019</Request_Delivery_Date>
+<SO_Item>
+<Material_Code>P64453</Material_Code>
+<Quantity>100</Quantity>
+</SO_Item>
+</Item>
+</mob:MT_SOCreation_Request>
+</soapenv:Body>
+</soapenv:Envelope>
+
+13.09.2019 10:30:30  INFO (InterfaceResponseServicesImpl.java:78) - resConf :: {"soap-envelope":"SOAP:Envelope","soap-response":"nm:MT_SOCreation_Response","soap-body":"SOAP:Body","soap-fault":"SOAP:Fault","success_value":1}
+13.09.2019 10:30:30  INFO (InterfaceResponseServicesImpl.java:84) - staticResConf :: {"enabled":true,"replace-elements":{"po_no":"Mobii_PO_Number"},"res_type":"Success","url":"http://interface.enhancesys.com:80/interfaceResponseServices/webservices/InterfaceResponseServicesImpl?wsdl"}
+13.09.2019 10:30:30  INFO (InterfaceResponseServicesImpl.java:93) - Response Type : Error
+13.09.2019 10:30:30  INFO (InterfaceResponseServicesImpl.java:111) - staticResponse :: <?xml version = "1.0" encoding = "UTF-8"?> <SOAP:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/"><SOAP:Body><SOAP:Fault><faultcode>soapenv:Server</faultcode><faultstring>Application Error. Please see FaultInfo</faultstring><detail><ns2:FaultInfo xmlns:ns3="http://com/enhancesys/entities/schema/integration" xmlns:ns2="http://com/enhancesys/integration/services/interfaces/IntegrationManagement"><causedBy>java.lang.NullPointerException</causedBy><message>Error in initialising entity manager</message></ns2:FaultInfo></detail></SOAP:Fault></SOAP:Body></SOAP:Envelope>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+13.09.2019 10:30:36  INFO (InterfaceResponseServicesImpl.java:72) - InterfaceId :: 1141, Request  :: <soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:mob="http://mobii.com/">
+<soapenv:Header/>
+<soapenv:Body>
+<mob:MT_SOCreation_Request>
+<Item>
+<Mobii_PO_Number>634487</Mobii_PO_Number>
+<Order_Type>ssfet</Order_Type>
+<Distribution_Channel>10</Distribution_Channel>
+<Division>30</Division>
+<Sold_to_Party/>
+<Ship_to_Party>AK5443</Ship_to_Party>
+<Mobii_PO_Date>11.10.2019</Mobii_PO_Date>
+<Request_Delivery_Date>11.10.2019</Request_Delivery_Date>
+<SO_Item>
+<Material_Code>P64453</Material_Code>
+<Quantity>100</Quantity>
+</SO_Item>
+</Item>
+</mob:MT_SOCreation_Request>
+</soapenv:Body>
+</soapenv:Envelope>
+
+13.09.2019 10:30:36  INFO (InterfaceResponseServicesImpl.java:78) - resConf :: {"soap-envelope":"SOAP:Envelope","soap-response":"nm:MT_SOCreation_Response","soap-body":"SOAP:Body","soap-fault":"SOAP:Fault","success_value":1}
+13.09.2019 10:30:36  INFO (InterfaceResponseServicesImpl.java:84) - staticResConf :: {"enabled":true,"replace-elements":{"po_no":"Mobii_PO_Number"},"res_type":"Success","url":"http://interface.enhancesys.com:80/interfaceResponseServices/webservices/InterfaceResponseServicesImpl?wsdl"}
+13.09.2019 10:30:36  INFO (InterfaceResponseServicesImpl.java:93) - Response Type : Success
+13.09.2019 10:30:36  INFO (InterfaceResponseServicesImpl.java:111) - staticResponse :: <?xml version = "1.0" encoding = "UTF-8"?> <SOAP:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:mob="http://mobii.com/"><soapenv:Header/><SOAP:Body><nm:MT_SOCreation_Response><Item><SAP_SO_Number>09131030</SAP_SO_Number><Mobii_PO_Number>634487</Mobii_PO_Number><SO_Date>13.09.2019</SO_Date><Status>1</Status><SO_Amount>20000.00</SO_Amount></Item></nm:MT_SOCreation_Response></SOAP:Body></SOAP:Envelope>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+13.09.2019 10:30:47  INFO (InterfaceResponseServicesImpl.java:72) - InterfaceId :: 1141, Request  :: <soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:mob="http://mobii.com/">
+<soapenv:Header/>
+<soapenv:Body>
+<mob:MT_SOCreation_Request>
+<Item>
+<Mobii_PO_Number>634487</Mobii_PO_Number>
+<Order_Type>ssfet</Order_Type>
+<Distribution_Channel>10</Distribution_Channel>
+<Division>30</Division>
+<Sold_to_Party/>
+<Ship_to_Party>AK5443</Ship_to_Party>
+<Mobii_PO_Date>11.10.2019</Mobii_PO_Date>
+<Request_Delivery_Date>11.10.2019</Request_Delivery_Date>
+<SO_Item>
+<Material_Code>P64453</Material_Code>
+<Quantity>100</Quantity>
+</SO_Item>
+</Item>
+</mob:MT_SOCreation_Request>
+</soapenv:Body>
+</soapenv:Envelope>
+
+13.09.2019 10:30:47  INFO (InterfaceResponseServicesImpl.java:78) - resConf :: {"soap-envelope":"SOAP:Envelope","soap-response":"nm:MT_SOCreation_Response","soap-body":"SOAP:Body","soap-fault":"SOAP:Fault","success_value":1}
+13.09.2019 10:30:47  INFO (InterfaceResponseServicesImpl.java:84) - staticResConf :: {"enabled":true,"replace-elements":{"po_no":"Mobii_PO_Number"},"res_type":"Success","url":"http://interface.enhancesys.com:80/interfaceResponseServices/webservices/InterfaceResponseServicesImpl?wsdl"}
+13.09.2019 10:30:47  INFO (InterfaceResponseServicesImpl.java:93) - Response Type : Success
+13.09.2019 10:30:47  INFO (InterfaceResponseServicesImpl.java:111) - staticResponse :: <?xml version = "1.0" encoding = "UTF-8"?> <SOAP:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:mob="http://mobii.com/"><soapenv:Header/><SOAP:Body><nm:MT_SOCreation_Response><Item><SAP_SO_Number>09131030</SAP_SO_Number><Mobii_PO_Number>634487</Mobii_PO_Number><SO_Date>13.09.2019</SO_Date><Status>1</Status><SO_Amount>20000.00</SO_Amount></Item></nm:MT_SOCreation_Response></SOAP:Body></SOAP:Envelope>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+13.09.2019 10:30:55  INFO (InterfaceResponseServicesImpl.java:72) - InterfaceId :: 1141, Request  :: <soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:mob="http://mobii.com/">
+<soapenv:Header/>
+<soapenv:Body>
+<mob:MT_SOCreation_Request>
+<Item>
+<Mobii_PO_Number>634487</Mobii_PO_Number>
+<Order_Type>ssfet</Order_Type>
+<Distribution_Channel>10</Distribution_Channel>
+<Division>30</Division>
+<Sold_to_Party/>
+<Ship_to_Party>AK5443</Ship_to_Party>
+<Mobii_PO_Date>11.10.2019</Mobii_PO_Date>
+<Request_Delivery_Date>11.10.2019</Request_Delivery_Date>
+<SO_Item>
+<Material_Code>P64453</Material_Code>
+<Quantity>100</Quantity>
+</SO_Item>
+</Item>
+</mob:MT_SOCreation_Request>
+</soapenv:Body>
+</soapenv:Envelope>
+
+13.09.2019 10:30:55  INFO (InterfaceResponseServicesImpl.java:78) - resConf :: {"soap-envelope":"SOAP:Envelope","soap-response":"nm:MT_SOCreation_Response","soap-body":"SOAP:Body","soap-fault":"SOAP:Fault","success_value":1}
+13.09.2019 10:30:55  INFO (InterfaceResponseServicesImpl.java:84) - staticResConf :: {"enabled":true,"replace-elements":{"po_no":"Mobii_PO_Number"},"res_type":"Success","url":"http://interface.enhancesys.com:80/interfaceResponseServices/webservices/InterfaceResponseServicesImpl?wsdl"}
+13.09.2019 10:30:55  INFO (InterfaceResponseServicesImpl.java:93) - Response Type : Failure
+13.09.2019 10:30:55  INFO (InterfaceResponseServicesImpl.java:111) - staticResponse :: <?xml version = "1.0" encoding = "UTF-8"?> <SOAP:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:mob="http://mobii.com/"><soapenv:Header/><SOAP:Body><nm:MT_SOCreation_Response><Item><Mobii_PO_Number>634487</Mobii_PO_Number><SO_Date>13.09.2019</SO_Date><Status>0</Status><Rejection_Note>Request failed..</Rejection_Note></Item></nm:MT_SOCreation_Response></SOAP:Body></SOAP:Envelope>

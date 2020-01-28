@@ -1,0 +1,13 @@
+{
+    "req_id": "1909201050239880677",
+    "res_msg": "Request Processed Successfully..!",
+    "res_code": 100,
+    "payload": {
+        "org_id": 294730,
+        "node_id": 304215,
+        "user_id": 277727,
+        "operator_id": "68531468",
+        "uname": "HARISH-VINAY",
+        "ref_code": "968216551"
+    }
+}

@@ -1,0 +1,155 @@
+
+
+
+
+Find       == >>>>>                       Query Object : 
+
+
+
+
+
+
+
+
+2019-12-12 15:59:10.124, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.util.TokuUser [LineNumber]:  33  Initiating TokuMx-Java Adapter.....
+2019-12-12 15:59:10.133, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.util.TokuUser [LineNumber]:  42  TokuMx-Java Adapter Initiated Successfully For Replica-Set user....!
+2019-12-12 15:59:10.298, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  8744  Entry pullDataToFile.. Started at --> Thu Dec 12 15:59:10 IST 2019
+2019-12-12 15:59:10.299, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  8747  pullDataToFile service received interface id-->[1073]
+2019-12-12 15:59:10.300, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  8783  Started pullDataToFile.. 1073  Started at --> Thu Dec 12 15:59:10 IST 2019
+2019-12-12 15:59:11.053, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  8854  [dataConverter] class com.sun.proxy.$Proxy208
+2019-12-12 15:59:11.063, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.merger.GenericDataProcessor [LineNumber]:  70  GenericDataProcessor initiated at Thu Dec 12 15:59:11 IST 2019, interfaceId : 1073
+2019-12-12 15:59:11.094, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  9450  Entry readFilePropertyBeans.. Started at --> Thu Dec 12 15:59:11 IST 2019
+2019-12-12 15:59:11.097, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  9464  readFilePropertyBeans service received interface id-->1073
+2019-12-12 15:59:11.542, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  10266  Exit readFilePropertyBeans service at -->Thu Dec 12 15:59:11 IST 2019 --- and took 449 milliseconds
+2019-12-12 15:59:11.562, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.springCamel.dataEngine.DataInitProcessor [LineNumber]:  68  Entry initiateProcess.. Initiated at : 1576146551561
+2019-12-12 15:59:14.759, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.springCamel.dataEngine.DataInitProcessor [LineNumber]:  81  Spring App Context : org.springframework.context.support.FileSystemXmlApplicationContext@70a0ab54: startup date [Thu Dec 12 15:59:11 IST 2019]; root of context hierarchy
+2019-12-12 15:59:14.761, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.springCamel.dataEngine.DataInitProcessor [LineNumber]:  84  Camel Context : SpringCamelContext(interfaceCamelContext) with spring id org.springframework.context.support.FileSystemXmlApplicationContext@70a0ab54
+2019-12-12 15:59:14.790, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.springCamel.dataEngine.DataInitProcessor [LineNumber]:  97  End Point : direct://generic_data_processor
+2019-12-12 15:59:14.887, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.springCamel.dataEngine.processor.DataPreProcessor [LineNumber]:  81  Entry process..
+2019-12-12 15:59:14.889, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.springCamel.dataEngine.processor.DataPreProcessor [LineNumber]:  89  paramMap : {interfaceId=1073, dataBean=com.enhancesys.integration.services.interfaces.FileDataBean@5fd91b19, processName=Visit_Organization_Detail, appContext=org.springframework.context.support.FileSystemXmlApplicationContext@70a0ab54: startup date [Thu Dec 12 15:59:11 IST 2019]; root of context hierarchy}
+2019-12-12 15:59:14.919, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.springCamel.dataEngine.processor.DataPreProcessor [LineNumber]:  111  Exit process..
+2019-12-12 15:59:15.282, FINE, [Thread]: 248 [ClassName]: com.enhancesys.integration.services.springCamel.dataEngine.AbstractDataProcessor [LineNumber]:  147  Entry initiateProcess..1073 Initiated at : 1576146555282
+2019-12-12 15:59:15.283, FINE, [Thread]: 248 [ClassName]: com.enhancesys.integration.services.springCamel.dataEngine.AbstractDataProcessor [LineNumber]:  173  com.enhancesys.integration.services.springCamel.dataEngine.FileDataWriter : Thread ID : 249
+2019-12-12 15:59:15.285, FINE, [Thread]: 249 [ClassName]: com.enhancesys.integration.services.springCamel.dataEngine.FileDataWriter [LineNumber]:  103  File Data Writer 1073 thread com.enhancesys.integration.services.springCamel.dataEngine.FileDataWriter_1576146555283 initiated at 1576146555285
+2019-12-12 15:59:15.336, FINE, [Thread]: 245 [ClassName]: com.enhancesys.integration.services.springCamel.dataEngine.AbstractDataProcessor [LineNumber]:  147  Entry initiateProcess..1073 Initiated at : 1576146555335
+2019-12-12 15:59:15.337, FINE, [Thread]: 245 [ClassName]: com.enhancesys.integration.services.springCamel.dataEngine.AbstractDataProcessor [LineNumber]:  173  com.enhancesys.integration.services.springCamel.dataEngine.BasicDataProcessor : Thread ID : 250
+2019-12-12 15:59:15.340, FINE, [Thread]: 250 [ClassName]: com.enhancesys.integration.services.springCamel.dataEngine.BasicDataProcessor [LineNumber]:  83  Entry processRequest.. 1073  inititate at : 1576146555340
+2019-12-12 15:59:15.340, FINE, [Thread]: 250 [ClassName]: com.enhancesys.integration.services.springCamel.dataEngine.BasicDataProcessor [LineNumber]:  114  Initiating Processor : com.enhancesys.integration.services.springCamel.dataEngine.BasicDataCursor
+2019-12-12 15:59:15.341, FINE, [Thread]: 250 [ClassName]: com.enhancesys.integration.services.springCamel.dataEngine.BasicDataCursor [LineNumber]:  74  Basic Data processor 1073  thread com.enhancesys.integration.services.springCamel.dataEngine.BasicDataProcessor_1576146555336 initiated at 1576146555340
+2019-12-12 15:59:15.395, FINE, [Thread]: 246 [ClassName]: com.enhancesys.integration.services.springCamel.dataEngine.AbstractDataProcessor [LineNumber]:  147  Entry initiateProcess..1073 Initiated at : 1576146555394
+2019-12-12 15:59:15.396, FINE, [Thread]: 246 [ClassName]: com.enhancesys.integration.services.springCamel.dataEngine.AbstractDataProcessor [LineNumber]:  173  com.enhancesys.integration.services.springCamel.dataEngine.LookupDataProcessor : Thread ID : 251
+2019-12-12 15:59:15.398, FINE, [Thread]: 251 [ClassName]: com.enhancesys.integration.services.springCamel.dataEngine.LookupDataProcessor [LineNumber]:  91  Entry processRequest.. 1073 thread com.enhancesys.integration.services.springCamel.dataEngine.LookupDataProcessor_1576146555395 initiated at : 1576146555398
+2019-12-12 15:59:15.411, FINE, [Thread]: 250 [ClassName]: com.enhancesys.integration.services.springCamel.dataEngine.utiil.DataUtil [LineNumber]:  300  Query Object : { "schedule_dt_num" : 20190430 , "act_status" : { "$nin" : [ 171 , 352]}}
+2019-12-12 15:59:16.477, INFO, [Thread]: 250 [ClassName]: com.enhancesys.integration.services.springCamel.dataEngine.utiil.DataUtil [LineNumber]:  561  Sent empty RequestData to the next level
+2019-12-12 15:59:16.478, FINE, [Thread]: 250 [ClassName]: com.enhancesys.integration.services.springCamel.dataEngine.BasicDataCursor [LineNumber]:  142  Basic Data processor 1073 thread com.enhancesys.integration.services.springCamel.dataEngine.BasicDataProcessor_1576146555336 completed at 1138
+2019-12-12 15:59:16.480, FINE, [Thread]: 250 [ClassName]: com.enhancesys.integration.services.springCamel.dataEngine.BasicDataProcessor [LineNumber]:  132  Exit processRequest.. 1073 completed at : 1140
+2019-12-12 15:59:16.482, FINE, [Thread]: 245 [ClassName]: com.enhancesys.integration.services.springCamel.dataEngine.AbstractDataProcessor [LineNumber]:  196  Exit initiateProcess.. 1073 Completed at : 1146
+2019-12-12 15:59:17.400, FINE, [Thread]: 251 [ClassName]: com.enhancesys.integration.services.springCamel.dataEngine.LookupDataProcessor [LineNumber]:  239  Received Empty Request Data..
+2019-12-12 15:59:17.400, FINE, [Thread]: 251 [ClassName]: com.enhancesys.integration.services.springCamel.dataEngine.LookupDataProcessor [LineNumber]:  425  FailureFlag : false
+2019-12-12 15:59:17.400, FINE, [Thread]: 251 [ClassName]: com.enhancesys.integration.services.springCamel.dataEngine.ConditionProcessor [LineNumber]:  89  Entry processRequest..1073
+2019-12-12 15:59:17.402, FINE, [Thread]: 251 [ClassName]: com.enhancesys.integration.services.springCamel.dataEngine.ConditionProcessor [LineNumber]:  123  Cleanup for File Writer..[]
+2019-12-12 15:59:17.402, INFO, [Thread]: 251 [ClassName]: com.enhancesys.integration.services.springCamel.dataEngine.utiil.DataUtil [LineNumber]:  561  Sent empty RequestData to the next level
+2019-12-12 15:59:17.402, FINE, [Thread]: 251 [ClassName]: com.enhancesys.integration.services.springCamel.dataEngine.ConditionProcessor [LineNumber]:  403  Exit processRequest .. 1073 : 2
+2019-12-12 15:59:17.402, FINE, [Thread]: 251 [ClassName]: com.enhancesys.integration.services.springCamel.dataEngine.LookupDataProcessor [LineNumber]:  461  Sent Empty Request Data for Lookup next level..
+2019-12-12 15:59:17.402, FINE, [Thread]: 251 [ClassName]: com.enhancesys.integration.services.springCamel.dataEngine.LookupDataProcessor [LineNumber]:  489  Exit processRequest.. 1073 thread com.enhancesys.integration.services.springCamel.dataEngine.LookupDataProcessor_1576146555395 exited at : 2004
+2019-12-12 15:59:17.403, FINE, [Thread]: 246 [ClassName]: com.enhancesys.integration.services.springCamel.dataEngine.AbstractDataProcessor [LineNumber]:  196  Exit initiateProcess.. 1073 Completed at : 2008
+2019-12-12 15:59:18.336, FINE, [Thread]: 249 [ClassName]: com.enhancesys.integration.services.springCamel.dataEngine.FileDataWriter [LineNumber]:  210  Payload not exists..{}
+2019-12-12 15:59:19.387, FINE, [Thread]: 249 [ClassName]: com.enhancesys.integration.services.util.InterfaceServiceUtil [LineNumber]:  1224  1 Rows Updated in Interface File Summary..
+2019-12-12 15:59:19.571, FINE, [Thread]: 249 [ClassName]: com.enhancesys.integration.services.util.InterfaceServiceUtil [LineNumber]:  1320  1 Rows Updated in Interface File Summary Details..
+2019-12-12 15:59:19.616, FINE, [Thread]: 249 [ClassName]: com.enhancesys.integration.services.util.InterfaceServiceUtil [LineNumber]:  1453  Entry createControlFile.. Started at --> Thu Dec 12 15:59:19 IST 2019
+2019-12-12 15:59:19.616, FINE, [Thread]: 249 [ClassName]: com.enhancesys.integration.services.util.InterfaceServiceUtil [LineNumber]:  1472  createControlFile service received filePath        -->/home/appuser/interfaces/S-NOC/interfaces/master_file/daily_dumps/visit_organization_detail/Visit_Organization_Detail_20191212.csvtotalCount-->0fileName-->Visit_Organization_Detail_20191212fileFormat-->csvcurrentFileId-->18796contolFileFormat-->ctlcontolFilePath-->/home/appuser/interfaces/S-NOC/interfaces/master_file/daily_dumps/visit_organization_detail/
+2019-12-12 15:59:19.686, FINE, [Thread]: 249 [ClassName]: com.enhancesys.integration.services.util.InterfaceServiceUtil [LineNumber]:  1402  1 Rows Updated in Interface File Summary Details..
+2019-12-12 15:59:19.716, FINE, [Thread]: 249 [ClassName]: com.enhancesys.integration.services.util.InterfaceServiceUtil [LineNumber]:  1544  Exit control file creation service at -->Thu Dec 12 15:59:19 IST 2019 --- and took 101 milliseconds
+2019-12-12 15:59:19.716, FINE, [Thread]: 249 [ClassName]: com.enhancesys.integration.services.springCamel.dataEngine.FileDataWriter [LineNumber]:  458  File Data Writer 1073 thread com.enhancesys.integration.services.springCamel.dataEngine.FileDataWriter_1576146555283 completed at 4431
+2019-12-12 15:59:19.717, FINE, [Thread]: 248 [ClassName]: com.enhancesys.integration.services.springCamel.dataEngine.AbstractDataProcessor [LineNumber]:  196  Exit initiateProcess.. 1073 Completed at : 4435
+2019-12-12 15:59:19.842, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.springCamel.dataEngine.DataInitProcessor [LineNumber]:  120  Exit initiateProcess.. Completed at : 8280
+2019-12-12 15:59:19.843, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.merger.GenericDataProcessor [LineNumber]:  104  GenericDataProcessor completed at Thu Dec 12 15:59:19 IST 2019, interfaceId : 1073 and took 8775 milli seconds
+2019-12-12 15:59:19.844, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  8894  Completed pullDataToFile.. 1073  Service at --> Thu Dec 12 15:59:19 IST 2019 --- and took 9544 milliseconds
+2019-12-12 15:59:19.845, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  8958  Exit pullData service at -->Thu Dec 12 15:59:19 IST 2019 --- and took 9548 milliseconds
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+2019-12-12 16:00:56.384, FINE, [Thread]: 257 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  8744  Entry pullDataToFile.. Started at --> Thu Dec 12 16:00:56 IST 2019
+2019-12-12 16:00:56.384, FINE, [Thread]: 257 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  8747  pullDataToFile service received interface id-->[1073]
+2019-12-12 16:00:56.385, FINE, [Thread]: 257 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  8783  Started pullDataToFile.. 1073  Started at --> Thu Dec 12 16:00:56 IST 2019
+2019-12-12 16:00:56.398, FINE, [Thread]: 257 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  8854  [dataConverter] class com.sun.proxy.$Proxy208
+2019-12-12 16:00:56.400, FINE, [Thread]: 257 [ClassName]: com.enhancesys.integration.services.merger.GenericDataProcessor [LineNumber]:  70  GenericDataProcessor initiated at Thu Dec 12 16:00:56 IST 2019, interfaceId : 1073
+2019-12-12 16:00:56.401, FINE, [Thread]: 257 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  9450  Entry readFilePropertyBeans.. Started at --> Thu Dec 12 16:00:56 IST 2019
+2019-12-12 16:00:56.403, FINE, [Thread]: 257 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  9464  readFilePropertyBeans service received interface id-->1073
+2019-12-12 16:00:56.457, FINE, [Thread]: 257 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  10266  Exit readFilePropertyBeans service at -->Thu Dec 12 16:00:56 IST 2019 --- and took 54 milliseconds
+2019-12-12 16:00:56.458, FINE, [Thread]: 257 [ClassName]: com.enhancesys.integration.services.springCamel.dataEngine.DataInitProcessor [LineNumber]:  68  Entry initiateProcess.. Initiated at : 1576146656457
+2019-12-12 16:00:58.430, FINE, [Thread]: 257 [ClassName]: com.enhancesys.integration.services.springCamel.dataEngine.DataInitProcessor [LineNumber]:  81  Spring App Context : org.springframework.context.support.FileSystemXmlApplicationContext@2f9b1486: startup date [Thu Dec 12 16:00:56 IST 2019]; root of context hierarchy
+2019-12-12 16:00:58.432, FINE, [Thread]: 257 [ClassName]: com.enhancesys.integration.services.springCamel.dataEngine.DataInitProcessor [LineNumber]:  84  Camel Context : SpringCamelContext(interfaceCamelContext) with spring id org.springframework.context.support.FileSystemXmlApplicationContext@2f9b1486
+2019-12-12 16:00:58.434, FINE, [Thread]: 257 [ClassName]: com.enhancesys.integration.services.springCamel.dataEngine.DataInitProcessor [LineNumber]:  97  End Point : direct://generic_data_processor
+2019-12-12 16:00:58.439, FINE, [Thread]: 257 [ClassName]: com.enhancesys.integration.services.springCamel.dataEngine.processor.DataPreProcessor [LineNumber]:  81  Entry process..
+2019-12-12 16:00:58.440, FINE, [Thread]: 257 [ClassName]: com.enhancesys.integration.services.springCamel.dataEngine.processor.DataPreProcessor [LineNumber]:  89  paramMap : {interfaceId=1073, dataBean=com.enhancesys.integration.services.interfaces.FileDataBean@e564aa9, processName=Visit_Organization_Detail, appContext=org.springframework.context.support.FileSystemXmlApplicationContext@2f9b1486: startup date [Thu Dec 12 16:00:56 IST 2019]; root of context hierarchy}
+2019-12-12 16:00:58.461, FINE, [Thread]: 257 [ClassName]: com.enhancesys.integration.services.springCamel.dataEngine.processor.DataPreProcessor [LineNumber]:  111  Exit process..
+2019-12-12 16:00:58.585, FINE, [Thread]: 259 [ClassName]: com.enhancesys.integration.services.springCamel.dataEngine.AbstractDataProcessor [LineNumber]:  147  Entry initiateProcess..1073 Initiated at : 1576146658585
+2019-12-12 16:00:58.586, FINE, [Thread]: 259 [ClassName]: com.enhancesys.integration.services.springCamel.dataEngine.AbstractDataProcessor [LineNumber]:  173  com.enhancesys.integration.services.springCamel.dataEngine.BasicDataProcessor : Thread ID : 263
+2019-12-12 16:00:58.587, FINE, [Thread]: 263 [ClassName]: com.enhancesys.integration.services.springCamel.dataEngine.BasicDataProcessor [LineNumber]:  83  Entry processRequest.. 1073  inititate at : 1576146658587
+2019-12-12 16:00:58.587, FINE, [Thread]: 263 [ClassName]: com.enhancesys.integration.services.springCamel.dataEngine.BasicDataProcessor [LineNumber]:  114  Initiating Processor : com.enhancesys.integration.services.springCamel.dataEngine.BasicDataCursor
+2019-12-12 16:00:58.587, FINE, [Thread]: 263 [ClassName]: com.enhancesys.integration.services.springCamel.dataEngine.BasicDataCursor [LineNumber]:  74  Basic Data processor 1073  thread com.enhancesys.integration.services.springCamel.dataEngine.BasicDataProcessor_1576146658585 initiated at 1576146658587
+2019-12-12 16:00:58.591, FINE, [Thread]: 263 [ClassName]: com.enhancesys.integration.services.springCamel.dataEngine.utiil.DataUtil [LineNumber]:  300  Query Object : { "act_status" : { "$nin" : [ 171 , 352]} , "schedule_dt_num" : 20190430}
+2019-12-12 16:00:58.599, FINE, [Thread]: 260 [ClassName]: com.enhancesys.integration.services.springCamel.dataEngine.AbstractDataProcessor [LineNumber]:  147  Entry initiateProcess..1073 Initiated at : 1576146658599
+2019-12-12 16:00:58.600, FINE, [Thread]: 260 [ClassName]: com.enhancesys.integration.services.springCamel.dataEngine.AbstractDataProcessor [LineNumber]:  173  com.enhancesys.integration.services.springCamel.dataEngine.LookupDataProcessor : Thread ID : 264
+2019-12-12 16:00:58.601, FINE, [Thread]: 264 [ClassName]: com.enhancesys.integration.services.springCamel.dataEngine.LookupDataProcessor [LineNumber]:  91  Entry processRequest.. 1073 thread com.enhancesys.integration.services.springCamel.dataEngine.LookupDataProcessor_1576146658600 initiated at : 1576146658601
+2019-12-12 16:00:58.606, FINE, [Thread]: 262 [ClassName]: com.enhancesys.integration.services.springCamel.dataEngine.AbstractDataProcessor [LineNumber]:  147  Entry initiateProcess..1073 Initiated at : 1576146658606
+2019-12-12 16:00:58.606, FINE, [Thread]: 262 [ClassName]: com.enhancesys.integration.services.springCamel.dataEngine.AbstractDataProcessor [LineNumber]:  173  com.enhancesys.integration.services.springCamel.dataEngine.FileDataWriter : Thread ID : 265
+2019-12-12 16:00:58.607, FINE, [Thread]: 265 [ClassName]: com.enhancesys.integration.services.springCamel.dataEngine.FileDataWriter [LineNumber]:  103  File Data Writer 1073 thread com.enhancesys.integration.services.springCamel.dataEngine.FileDataWriter_1576146658606 initiated at 1576146658607
+2019-12-12 16:01:00.563, INFO, [Thread]: 263 [ClassName]: com.enhancesys.integration.services.springCamel.dataEngine.utiil.DataUtil [LineNumber]:  561  Sent empty RequestData to the next level
+2019-12-12 16:01:00.563, FINE, [Thread]: 263 [ClassName]: com.enhancesys.integration.services.springCamel.dataEngine.BasicDataCursor [LineNumber]:  142  Basic Data processor 1073 thread com.enhancesys.integration.services.springCamel.dataEngine.BasicDataProcessor_1576146658585 completed at 1976
+2019-12-12 16:01:00.563, FINE, [Thread]: 263 [ClassName]: com.enhancesys.integration.services.springCamel.dataEngine.BasicDataProcessor [LineNumber]:  132  Exit processRequest.. 1073 completed at : 1976
+2019-12-12 16:01:00.564, FINE, [Thread]: 259 [ClassName]: com.enhancesys.integration.services.springCamel.dataEngine.AbstractDataProcessor [LineNumber]:  196  Exit initiateProcess.. 1073 Completed at : 1979
+2019-12-12 16:01:00.602, FINE, [Thread]: 264 [ClassName]: com.enhancesys.integration.services.springCamel.dataEngine.LookupDataProcessor [LineNumber]:  239  Received Empty Request Data..
+2019-12-12 16:01:00.602, FINE, [Thread]: 264 [ClassName]: com.enhancesys.integration.services.springCamel.dataEngine.LookupDataProcessor [LineNumber]:  425  FailureFlag : false
+2019-12-12 16:01:00.602, FINE, [Thread]: 264 [ClassName]: com.enhancesys.integration.services.springCamel.dataEngine.ConditionProcessor [LineNumber]:  89  Entry processRequest..1073
+2019-12-12 16:01:00.603, FINE, [Thread]: 264 [ClassName]: com.enhancesys.integration.services.springCamel.dataEngine.ConditionProcessor [LineNumber]:  123  Cleanup for File Writer..[]
+2019-12-12 16:01:00.603, INFO, [Thread]: 264 [ClassName]: com.enhancesys.integration.services.springCamel.dataEngine.utiil.DataUtil [LineNumber]:  561  Sent empty RequestData to the next level
+2019-12-12 16:01:00.603, FINE, [Thread]: 264 [ClassName]: com.enhancesys.integration.services.springCamel.dataEngine.ConditionProcessor [LineNumber]:  403  Exit processRequest .. 1073 : 1
+2019-12-12 16:01:00.603, FINE, [Thread]: 264 [ClassName]: com.enhancesys.integration.services.springCamel.dataEngine.LookupDataProcessor [LineNumber]:  461  Sent Empty Request Data for Lookup next level..
+2019-12-12 16:01:00.603, FINE, [Thread]: 264 [ClassName]: com.enhancesys.integration.services.springCamel.dataEngine.LookupDataProcessor [LineNumber]:  489  Exit processRequest.. 1073 thread com.enhancesys.integration.services.springCamel.dataEngine.LookupDataProcessor_1576146658600 exited at : 2002
+2019-12-12 16:01:00.604, FINE, [Thread]: 260 [ClassName]: com.enhancesys.integration.services.springCamel.dataEngine.AbstractDataProcessor [LineNumber]:  196  Exit initiateProcess.. 1073 Completed at : 2005
+2019-12-12 16:01:00.611, FINE, [Thread]: 265 [ClassName]: com.enhancesys.integration.services.springCamel.dataEngine.FileDataWriter [LineNumber]:  210  Payload not exists..{}
+2019-12-12 16:01:00.642, FINE, [Thread]: 265 [ClassName]: com.enhancesys.integration.services.util.InterfaceServiceUtil [LineNumber]:  1224  1 Rows Updated in Interface File Summary..
+2019-12-12 16:01:00.678, FINE, [Thread]: 265 [ClassName]: com.enhancesys.integration.services.util.InterfaceServiceUtil [LineNumber]:  1320  1 Rows Updated in Interface File Summary Details..
+2019-12-12 16:01:00.695, FINE, [Thread]: 265 [ClassName]: com.enhancesys.integration.services.util.InterfaceServiceUtil [LineNumber]:  1453  Entry createControlFile.. Started at --> Thu Dec 12 16:01:00 IST 2019
+2019-12-12 16:01:00.696, FINE, [Thread]: 265 [ClassName]: com.enhancesys.integration.services.util.InterfaceServiceUtil [LineNumber]:  1472  createControlFile service received filePath        -->/home/appuser/interfaces/S-NOC/interfaces/master_file/daily_dumps/visit_organization_detail/Visit_Organization_Detail_20191212.csvtotalCount-->0fileName-->Visit_Organization_Detail_20191212fileFormat-->csvcurrentFileId-->18797contolFileFormat-->ctlcontolFilePath-->/home/appuser/interfaces/S-NOC/interfaces/master_file/daily_dumps/visit_organization_detail/
+2019-12-12 16:01:00.729, FINE, [Thread]: 265 [ClassName]: com.enhancesys.integration.services.util.InterfaceServiceUtil [LineNumber]:  1402  1 Rows Updated in Interface File Summary Details..
+2019-12-12 16:01:00.756, FINE, [Thread]: 265 [ClassName]: com.enhancesys.integration.services.util.InterfaceServiceUtil [LineNumber]:  1544  Exit control file creation service at -->Thu Dec 12 16:01:00 IST 2019 --- and took 60 milliseconds
+2019-12-12 16:01:00.757, FINE, [Thread]: 265 [ClassName]: com.enhancesys.integration.services.springCamel.dataEngine.FileDataWriter [LineNumber]:  458  File Data Writer 1073 thread com.enhancesys.integration.services.springCamel.dataEngine.FileDataWriter_1576146658606 completed at 2150
+2019-12-12 16:01:00.760, FINE, [Thread]: 262 [ClassName]: com.enhancesys.integration.services.springCamel.dataEngine.AbstractDataProcessor [LineNumber]:  196  Exit initiateProcess.. 1073 Completed at : 2153
+2019-12-12 16:01:00.830, FINE, [Thread]: 257 [ClassName]: com.enhancesys.integration.services.springCamel.dataEngine.DataInitProcessor [LineNumber]:  120  Exit initiateProcess.. Completed at : 4372
+2019-12-12 16:01:00.831, FINE, [Thread]: 257 [ClassName]: com.enhancesys.integration.services.merger.GenericDataProcessor [LineNumber]:  104  GenericDataProcessor completed at Thu Dec 12 16:01:00 IST 2019, interfaceId : 1073 and took 4430 milli seconds
+2019-12-12 16:01:00.833, FINE, [Thread]: 257 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  8894  Completed pullDataToFile.. 1073  Service at --> Thu Dec 12 16:01:00 IST 2019 --- and took 4448 milliseconds
+2019-12-12 16:01:00.834, FINE, [Thread]: 257 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  8958  Exit pullData service at -->Thu Dec 12 16:01:00 IST 2019 --- and took 4450 milliseconds

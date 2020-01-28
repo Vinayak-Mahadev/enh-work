@@ -1,0 +1,222 @@
+{
+  "envelope": {
+    "payload": {
+      "organization": {
+        "node_info": {
+          "position": [
+            "1012"
+          ],
+          "roles": [
+            "10"
+          ],
+          "props": [
+            "240",
+            "237",
+            "239"
+          ]
+        },
+        "pants_size": "",
+        "bank_name": "",
+        "owner_name": "Jaggu",
+        "shoe_size": "",
+        "bank_acc_no": "",
+        "utype": 731,
+        "paypro_msisdn_no": "",
+        "father_name": "",
+        "contacts": [
+          {
+            "no": "no@no.com",
+            "type": "email_id"
+          },
+          {
+            "no": "621456198739",
+            "type": "mobile_no"
+          },
+          {
+            "no": "",
+            "type": "telephone_no"
+          },
+          {
+            "no": "9001",
+            "type": "preferred_commn_lang"
+          },
+          {
+            "no": "9001",
+            "type": "preferred_lang"
+          }
+        ],
+        "religion": "",
+        "first_name": "Jaggu",
+        "formal_education": "",
+        "gender": "",
+        "upwd": "sHgcsSsV5DGqPCn03W1VA/G2gc17nIt5256+nG4B1b8=",
+        "marital_status": "",
+        "role_efct_date": "21-Sep-2019",
+        "wrk_end_date": "31-Dec-2099",
+        "org_type": 7,
+        "in_formal_education": "",
+        "status": 174,
+        "user_type": "1351",
+        "mother_mad_name": "Jaggus",
+        "middle_name": "",
+        "uname": "Jaggua",
+        "addnl_field_5": "",
+        "hobby": "",
+        "notifi_lang": "9001",
+        "npwp_num": "",
+        "birth_place": "",
+        "operator_type": "61116",
+        "saldomobo_msisdn_no": "62682659151111",
+        "parent_org_type": 5,
+        "extnl_sync": true,
+        "logged_in": "N",
+        "opr_classification": "",
+        "citizen_of": "",
+        "company": {
+          "desc": "Jaggu123",
+          "tin_no": "",
+          "sub_org_type": 66,
+          "gstin_no": "",
+          "org_email_id": "",
+          "visibility_type": 1,
+          "ref_code": "918516111",
+          "sale_territory": {
+            "nasional": "5501",
+            "area": "",
+            "regional": "57682",
+            "sales_area": "",
+            "cluster": "",
+            "micro_cluster": ""
+          },
+          "addnl_params": {
+            "org_long": "",
+            "prd_id": null,
+            "org_painting": "",
+            "org_group": "58649",
+            "rule_prof_id": "1951",
+            "org_category": "2060",
+            "charge_prof_key": "1301",
+            "org_classification": "1703",
+            "dompetku_no": "62934948516911",
+            "org_stg_info": "",
+            "org_addnl_dropdown_2": "",
+            "org_addnl_dropdown_1": "",
+            "prd_efct_date": "21-Sep-2019",
+            "undefined": "",
+            "org_addnl_field_3": "",
+            "org_addnl_field_2": "",
+            "org_addnl_field_1": "",
+            "dealer_code": [],
+            "marketing_program": "2255",
+            "org_addnl_field_5": "",
+            "org_addnl_field_4": "",
+            "org_pareto_manual": "1",
+            "invoice_note": "",
+            "org_width": "",
+            "org_loc_type": "1902",
+            "org_pareto_bvwise": "1",
+            "npwp_num": "",
+            "org_addnl_dropdown_5": "",
+            "charge_prof_id": "1801",
+            "charge_dist_model": "2002",
+            "telephone_no": "",
+            "org_addnl_dropdown_3": "",
+            "org_addnl_dropdown_4": "",
+            "parent_short_code": "SAT10",
+            "partner_type": "1453",
+            "user_saldomobo_msisdn_no": "",
+            "chnl_ctgr": "1753"
+          },
+          "sub_org_type_des": "Outlet",
+          "end_dt": "2099-12-31T00:00:00.000Z",
+          "addresses": [
+            {
+              "adrs_type": "745",
+              "subDistrict": "",
+              "postal_code": "586129",
+              "state": "54288",
+              "adrs_1": "#96",
+              "adrs_2": "Kolur",
+              "longitude": "",
+              "latitude": "",
+              "zone": "54306",
+              "city": "54311",
+              "country": "401"
+            }
+          ],
+          "start_dt": "2019-09-20T00:00:00.000Z",
+          "reg_mob": ""
+        },
+        "addnl_field_4": "",
+        "last_name": "",
+        "addnl_field_3": "",
+        "addnl_field_2": "",
+        "parent_org_id": 20,
+        "locked": "N",
+        "addnl_field_1": "",
+        "addresses": [
+          {
+            "adrs_type": "742",
+            "subDistrict": "",
+            "postal_code": "",
+            "adrs_1": "Jaggu",
+            "state": "54288",
+            "adrs_2": "",
+            "longitude": "",
+            "latitude": "",
+            "zone": "54306",
+            "country": "401",
+            "city": "54311"
+          }
+        ],
+        "last_login_dt": "",
+        "addnl_dropdown_4": "",
+        "addnl_dropdown_5": "",
+        "addnl_dropdown_2": "",
+        "addnl_dropdown_3": "",
+        "copy_adrs_type": "",
+        "role_id": [
+          "2103"
+        ],
+        "addnl_dropdown_1": "",
+        "operator_id": "66935466",
+        "atmpt_cnt": 0,
+        "auth_type": [
+          "1151"
+        ],
+        "owner_alt_id_type": "1553",
+        "owner_alt_id_no": "626354732323",
+        "org_owner": "1",
+        "org_type_desc": "Distribution",
+        "blocked": "N",
+        "frst_login": "Y",
+        "operator_name": "Jaggu",
+        "wrk_start_date": "21-Sep-2019",
+        "size_cloth": "",
+        "notify_chnl": "1201",
+        "org_id": 20,
+        "present_parent_org_id": 20,
+        "dob": "",
+        "last_edu": ""
+      }
+    },
+    "header": {
+      "uid": 30001,
+      "pwd": "KpR8Vp8SMRWPncdaBwMLwnsWh2E1JfoPnTE1rozmc3s=",
+      "tz": "20190920120747",
+      "chnl": "Web",
+      "orgid": 20,
+      "uname": "INDOSAT",
+      "locale": "en",
+      "rqst": "Create",
+      "src": "i",
+      "utype": 1,
+      "nodeid": 20
+    }
+  }
+}
+
+
+
+
+

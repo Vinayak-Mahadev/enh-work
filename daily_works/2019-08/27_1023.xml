@@ -1,0 +1,222 @@
+
+
+----------------------------------------------------------------------
+Converted ...
+----------------------------------------------------------------------
+
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:api="http://cps.huawei.com/synccpsinterface/api_requestmgr" xmlns:com="http://cps.huawei.com/synccpsinterface/common" xmlns:req="http://cps.huawei.com/synccpsinterface/request">
+	<soapenv:Header/>
+	<soapenv:Body>
+		<api:Request>
+			<req:Header>
+				<req:Version>1.0</req:Version>
+				<req:CommandID>UpdateOrgOperatorKYC</req:CommandID>
+				<req:OriginatorConversationID>229112</req:OriginatorConversationID>
+				<req:Caller>
+					<req:CallerType>2</req:CallerType>
+					<req:ThirdPartyID>POS_Broker</req:ThirdPartyID>
+					<req:Password>gMMqGGrKxsE=</req:Password>
+					<req:ResultURL>http://10.63.146.235:8082/mockResultBinding</req:ResultURL>
+				</req:Caller>
+				<req:KeyOwner>1</req:KeyOwner>
+				<req:Timestamp>20190821164754</req:Timestamp>
+			</req:Header>
+			<req:Body>
+				<req:Identity>
+					<req:Initiator>
+						<req:IdentifierType>14</req:IdentifierType>
+						<req:Identifier>wyz1</req:Identifier>
+						<req:SecurityCredential>k+JtvqNV3eg=</req:SecurityCredential>
+					</req:Initiator>
+					<req:ReceiverParty>
+						<req:IdentifierType>11</req:IdentifierType>
+						<req:Identifier>aristooutlet5</req:Identifier>
+						<req:ShortCode>aristooutfr</req:ShortCode>
+					</req:ReceiverParty>
+				</req:Identity>
+				<req:UpdateOrgOperatorKYCRequest>
+					<req:SimpleKYCUpdateData>
+						<req:AddField>
+							<com:KYCName>[KYC][Personal Details][First Name]</com:KYCName>
+							<com:KYCValue>testorg102</com:KYCValue>
+						</req:AddField>
+						<req:AddField>
+							<com:KYCName>[KYC][Personal Details][Last Name]</com:KYCName>
+							<com:KYCValue>l_name</com:KYCValue>
+						</req:AddField>
+						<req:AddField>
+							<com:KYCName>[KYC][ID][Alternative ID Type]</com:KYCName>
+							<com:KYCValue>Child Identity Card</com:KYCValue>
+						</req:AddField>
+						<req:AddField>
+							<com:KYCName>[KYC][ID][Alternative ID Number]</com:KYCName>
+							<com:KYCValue>625647645675765</com:KYCValue>
+						</req:AddField>
+						<req:AddField>
+							<com:KYCName>[KYC][Contact Details][Preferred Notification Channel]</com:KYCName>
+							<com:KYCValue>1001</com:KYCValue>
+						</req:AddField>
+						<req:AddField>
+							<com:KYCName>[KYC][Contact Details][Notification Receiving MSISDN]</com:KYCName>
+							<com:KYCValue>6265476587587</com:KYCValue>
+						</req:AddField>
+						<req:AddField>
+							<com:KYCName>[KYC][Contact Details][Notification Receiving E-mail]</com:KYCName>
+							<com:KYCValue>testorg102@gmail.com</com:KYCValue>
+						</req:AddField>
+						<req:AddField>
+							<com:KYCName>[KYC][Personal Details][Operator Name]</com:KYCName>
+							<com:KYCValue>testorg102 l_name</com:KYCValue>
+						</req:AddField>
+						<req:AddField>
+							<com:KYCName>[KYC][Contact Information][Contact Number]</com:KYCName>
+							<com:KYCValue>6265476587587</com:KYCValue>
+						</req:AddField>
+						<req:AddField>
+							<com:KYCName>[KYC][Personal Details][mother's maiden name]</com:KYCName>
+							<com:KYCValue>testorg102</com:KYCValue>
+						</req:AddField>
+						<req:AddField>
+							<com:KYCName>[KYC][Permanent Address][Propinsi/Province]</com:KYCName>
+							<com:KYCValue>51</com:KYCValue>
+						</req:AddField>
+						<req:AddField>
+							<com:KYCName>[KYC][Permanent Address][Kota/City/District]</com:KYCName>
+							<com:KYCValue>5103</com:KYCValue>
+						</req:AddField>
+						<req:AddField>
+							<com:KYCName>[KYC][Permanent Address][Kecamatan/Districts]</com:KYCName>
+							<com:KYCValue>5103050</com:KYCValue>
+						</req:AddField>
+						<req:AddField>
+							<com:KYCName>[KYC][Permanent Address][Street Address]</com:KYCName>
+							<com:KYCValue>testorg102</com:KYCValue>
+						</req:AddField>
+						<req:AddField>
+							<com:KYCName>[KYC][Personal Details][Working Start Date]</com:KYCName>
+							<com:KYCValue>20190821000000</com:KYCValue>
+						</req:AddField>
+						<req:AddField>
+							<com:KYCName>[KYC][Personal Details][Working End Date]</com:KYCName>
+							<com:KYCValue>20991231235959</com:KYCValue>
+						</req:AddField>
+						<req:AddField>
+							<com:KYCName>[KYC][Contact Details][Preferred Notification Language]</com:KYCName>
+							<com:KYCValue>in_ID</com:KYCValue>
+						</req:AddField>
+						<req:AddField>
+							<com:KYCName>[KYC][Owner Permanent Address][City/District]</com:KYCName>
+							<com:KYCValue>5103</com:KYCValue>
+						</req:AddField>
+						<req:AddField>
+							<com:KYCName>[KYC][Owner Permanent Address][Districts]</com:KYCName>
+							<com:KYCValue>5103050</com:KYCValue>
+						</req:AddField>
+						<req:AddField>
+							<com:KYCName>[KYC][Owner Permanent Address][Province]</com:KYCName>
+							<com:KYCValue>51</com:KYCValue>
+						</req:AddField>
+						<req:AddField>
+							<com:KYCName>[KYC][Personal Details][Operator Type]</com:KYCName>
+							<com:KYCValue>Outlet Owner</com:KYCValue>
+						</req:AddField>
+						<req:AddField>
+							<com:KYCName>[KYC][Personal Details][Organization Owner]</com:KYCName>
+							<com:KYCValue>0</com:KYCValue>
+						</req:AddField>
+					</req:SimpleKYCUpdateData>
+				</req:UpdateOrgOperatorKYCRequest>
+			</req:Body>
+		</api:Request>
+	</soapenv:Body>
+</soapenv:Envelope>
+ 
+----------------------------------------------------------------------
+Result template...
+----------------------------------------------------------------------
+
+
+<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
+   <soap:Body>
+      <ns2:getStaticResponseResponse xmlns:ns2="http://com/enhancesys/integration/response/services/interfaces/InterfaceResponseServices">
+         <getStaticResponse><![CDATA[
+		 
+		 
+				<RESULT HERE>
+		 
+		 ]]></getStaticResponse>
+      </ns2:getStaticResponseResponse>
+   </soap:Body>
+</soap:Envelope>
+
+----------------------------------------------------------------------
+Error ...
+----------------------------------------------------------------------
+
+
+ <?xml version = "1.0" encoding = "UTF-8"?>
+<soap-envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
+	<soap-body>
+		<soap-fault>
+			<faultcode>soapenv:Server</faultcode>
+			<faultstring>Application Error. Please see FaultInfo</faultstring>
+			<detail>
+				<ns2:FaultInfo xmlns:ns3="http://com/enhancesys/entities/schema/integration" xmlns:ns2="http://com/enhancesys/integration/services/interfaces/IntegrationManagement">
+					<causedBy>java.lang.NullPointerException</causedBy>
+					<message>Error in initialising entity manager</message>
+				</ns2:FaultInfo>
+			</detail>
+		</soap-fault>
+	</soap-body>
+</soap-envelope>
+
+
+----------------------------------------------------------------------
+Success ...
+----------------------------------------------------------------------
+	
+ <?xml version = "1.0" encoding = "UTF-8"?>
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/">
+	<soapenv:Body>
+		<api:Result xmlns:api="http://cps.huawei.com/synccpsinterface/api_requestmgr" xmlns:res="http://cps.huawei.com/synccpsinterface/result">
+			<res:Header>
+				<res:Version>1.0</res:Version>
+				<res:OriginatorConversationID>229112</res:OriginatorConversationID>
+				<res:ConversationID>229112</res:ConversationID>
+			</res:Header>
+			<res:Body>
+				<res:ResultType>0</res:ResultType>
+				<res:ResultCode>0</res:ResultCode>
+				<res:ResultDesc>Process service request successfully.</res:ResultDesc>
+				<res:UpdateOrgOperatorKYCResult>
+					<res:BOCompletedTime>20190827162222</res:BOCompletedTime>
+				</res:UpdateOrgOperatorKYCResult>
+			</res:Body>
+		</api:Result>
+	</soapenv:Body>
+</soapenv:Envelope>
+
+
+----------------------------------------------------------------------
+Failure ...
+----------------------------------------------------------------------
+<?xml version = "1.0" encoding = "UTF-8"?>
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/">
+	<soapenv:Body>
+		<api:Result xmlns:api="http://cps.huawei.com/synccpsinterface/api_requestmgr" xmlns:res="http://cps.huawei.com/synccpsinterface/result">
+			<res:Header>
+				<res:Version>1.0</res:Version>
+				<res:OriginatorConversationID>229112</res:OriginatorConversationID>
+				<res:ConversationID>229112</res:ConversationID>
+			</res:Header>
+			<res:Body>
+				<res:ResultType>0</res:ResultType>
+				<res:ResultCode>2001</res:ResultCode>
+				<res:ResultDesc>Initiator authentication error.</res:ResultDesc>
+				<res:UpdateOrgOperatorKYCResult>
+					<res:BOCompletedTime>20190827162208</res:BOCompletedTime>
+				</res:UpdateOrgOperatorKYCResult>
+			</res:Body>
+		</api:Result>
+	</soapenv:Body>
+</soapenv:Envelope>

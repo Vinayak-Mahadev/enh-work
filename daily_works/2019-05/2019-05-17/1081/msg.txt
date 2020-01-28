@@ -1,0 +1,27 @@
+Actor mapping not found for Organization code : SAT1000
+
+104400 ---- 20880 failed
+update  kpi.tr_temp_upload_aggr_failure set actor_key_v = 'SAT10' where file_id_n = 16511
+
+20880
+Source mapping not found for Organization code : SAT10000
+
+update  kpi.tr_temp_upload_aggr_failure set source_key_v = 'SAT10' where file_id_n = 16511
+
+
+
+
+SELECT * from interface.ms_interface_attr where interface_id_n = 1081
+SELECT * from interface.tr_interface_file_summary  where interface_id_n = 1081 order by 1 desc limit 5
+
+SELECT * from kpi.tr_daily_reload_sellinout_aggr where day_id_n = 20190516 order by 1 desc limit 10
+
+SELECT * from kpi.tr_monthly_reload_sellinout_aggr  where month_id_n = 201905 order by 1 desc limit 10
+
+select * from kpi.tr_temp_upload_aggr_failure where file_id_n = 16511
+
+
+
+
+
+

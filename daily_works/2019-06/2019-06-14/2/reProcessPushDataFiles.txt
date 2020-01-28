@@ -1,0 +1,71 @@
+2019-06-14 13:59:46.653, FINE, [Thread]: 216 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  13972  Entry reProcessPushDataFiles.. interfaceId : 1024 requiredDate :: Tue May 22 00:00:00 IST 2018
+2019-06-14 13:59:46.672, FINE, [Thread]: 216 [ClassName]: com.enhancesys.integration.services.processor.OutletTransactionsDataDump [LineNumber]:  102  Entry Outlet transactions Data  at >> 1560500986672
+2019-06-14 13:59:46.678, FINE, [Thread]: 216 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  9321  Entry readFilePropertyBeans.. Started at --> Fri Jun 14 13:59:46 IST 2019
+2019-06-14 13:59:46.678, FINE, [Thread]: 216 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  9335  readFilePropertyBeans service received interface id-->1024
+2019-06-14 13:59:46.734, FINE, [Thread]: 216 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  10105  Exit readFilePropertyBeans service at -->Fri Jun 14 13:59:46 IST 2019 --- and took 56 milliseconds
+2019-06-14 13:59:46.753, FINE, [Thread]: 216 [ClassName]: com.enhancesys.integration.services.processor.OutletTransactionsDataDump [LineNumber]:  211  [Outlet Transactions Data process ] started...
+2019-06-14 13:59:46.784, FINE, [Thread]: 216 [ClassName]: com.enhancesys.integration.services.processor.OutletTransactionsDataDump [LineNumber]:  271  Main File name >> /home/appuser/interfaces/S-NOC/interfaces/master_file/transaction_details//Transaction_01_20180522_002.csv
+2019-06-14 13:59:46.791, FINE, [Thread]: 216 [ClassName]: com.enhancesys.integration.services.processor.OutletTransactionsDataDump [LineNumber]:  279  sub file name >> /home/appuser/interfaces/S-NOC/interfaces/master_file/transaction_details//Transaction_02_20180522_002.csv
+2019-06-14 13:59:46.792, FINE, [Thread]: 216 [ClassName]: com.enhancesys.integration.services.processor.OutletTransactionsDataDump [LineNumber]:  296  ordersList : [76, 300, 301, 303]
+2019-06-14 13:59:46.792, FINE, [Thread]: 216 [ClassName]: com.enhancesys.integration.services.processor.OutletTransactionsDataDump [LineNumber]:  299  [Outlet Transactions Data process ] orderType ::: 76
+2019-06-14 13:59:46.793, FINE, [Thread]: 216 [ClassName]: com.enhancesys.integration.services.util.Utility [LineNumber]:  37  getStartOfTheDay:: Parsing Object : Mon May 21 00:00:00 IST 2018
+2019-06-14 13:59:46.794, FINE, [Thread]: 216 [ClassName]: com.enhancesys.integration.services.util.Utility [LineNumber]:  57  getStartOfTheDay:: Returning Object : Mon May 21 00:00:00 IST 2018
+2019-06-14 13:59:46.795, FINE, [Thread]: 216 [ClassName]: com.enhancesys.integration.services.util.Utility [LineNumber]:  63  getEndOfTheDay:: Parsing Object : Mon May 21 00:00:00 IST 2018
+2019-06-14 13:59:46.796, FINE, [Thread]: 216 [ClassName]: com.enhancesys.integration.services.util.Utility [LineNumber]:  83  getEndOfTheDay:: Returning Object : Mon May 21 23:59:59 IST 2018
+2019-06-14 13:59:46.797, FINE, [Thread]: 216 [ClassName]: com.enhancesys.integration.services.converter.LookupMapping [LineNumber]:  284  getLookupEntity entry ... entityType: 303 entityId: 76 applicationId:301
+2019-06-14 13:59:46.802, FINE, [Thread]: 216 [ClassName]: com.enhancesys.integration.services.processor.OutletTransactionsDataDump [LineNumber]:  361  InputDBObject : { "data.ord_type" : 76 , "status" : { "$in" : [ 173]} , "updtd_dt" : { "$gte" : { "$date" : "2018-05-20T18:30:00.000Z"} , "$lte" : { "$date" : "2018-05-21T18:29:59.999Z"}}}
+2019-06-14 13:59:46.806, FINE, [Thread]: 216 [ClassName]: com.enhancesys.integration.services.processor.OutletTransactionsDataDump [LineNumber]:  369  Cursor Size : 0
+2019-06-14 13:59:46.809, FINE, [Thread]: 216 [ClassName]: com.enhancesys.integration.services.processor.OutletTransactionsDataDump [LineNumber]:  299  [Outlet Transactions Data process ] orderType ::: 300
+2019-06-14 13:59:46.811, FINE, [Thread]: 216 [ClassName]: com.enhancesys.integration.services.util.Utility [LineNumber]:  37  getStartOfTheDay:: Parsing Object : Mon May 21 00:00:00 IST 2018
+2019-06-14 13:59:46.812, FINE, [Thread]: 216 [ClassName]: com.enhancesys.integration.services.util.Utility [LineNumber]:  57  getStartOfTheDay:: Returning Object : Mon May 21 00:00:00 IST 2018
+2019-06-14 13:59:46.813, FINE, [Thread]: 216 [ClassName]: com.enhancesys.integration.services.util.Utility [LineNumber]:  63  getEndOfTheDay:: Parsing Object : Mon May 21 00:00:00 IST 2018
+2019-06-14 13:59:46.814, FINE, [Thread]: 216 [ClassName]: com.enhancesys.integration.services.util.Utility [LineNumber]:  83  getEndOfTheDay:: Returning Object : Mon May 21 23:59:59 IST 2018
+2019-06-14 13:59:46.816, FINE, [Thread]: 216 [ClassName]: com.enhancesys.integration.services.converter.LookupMapping [LineNumber]:  284  getLookupEntity entry ... entityType: 303 entityId: 300 applicationId:301
+2019-06-14 13:59:46.822, FINE, [Thread]: 216 [ClassName]: com.enhancesys.integration.services.processor.OutletTransactionsDataDump [LineNumber]:  361  InputDBObject :{
+	"data.ord_type": 300,
+	"status": {
+		"$in": [
+			173
+		]
+	},
+	"updtd_dt": {
+		"$gte": {
+			"$date": "2018-05-20T18:30:00.000Z"
+		},
+		"$lte": {
+			"$date": "2018-05-21T18:29:59.999Z"
+		}
+	}
+} 
+2019-06-14 13:59:46.824, FINE, [Thread]: 216 [ClassName]: com.enhancesys.integration.services.processor.OutletTransactionsDataDump [LineNumber]:  369  Cursor Size : 0
+2019-06-14 13:59:46.826, FINE, [Thread]: 216 [ClassName]: com.enhancesys.integration.services.processor.OutletTransactionsDataDump [LineNumber]:  299  [Outlet Transactions Data process ] orderType ::: 301
+2019-06-14 13:59:46.827, FINE, [Thread]: 216 [ClassName]: com.enhancesys.integration.services.util.Utility [LineNumber]:  37  getStartOfTheDay:: Parsing Object : Mon May 21 00:00:00 IST 2018
+2019-06-14 13:59:46.829, FINE, [Thread]: 216 [ClassName]: com.enhancesys.integration.services.util.Utility [LineNumber]:  57  getStartOfTheDay:: Returning Object : Mon May 21 00:00:00 IST 2018
+2019-06-14 13:59:46.830, FINE, [Thread]: 216 [ClassName]: com.enhancesys.integration.services.util.Utility [LineNumber]:  63  getEndOfTheDay:: Parsing Object : Mon May 21 00:00:00 IST 2018
+2019-06-14 13:59:46.831, FINE, [Thread]: 216 [ClassName]: com.enhancesys.integration.services.util.Utility [LineNumber]:  83  getEndOfTheDay:: Returning Object : Mon May 21 23:59:59 IST 2018
+2019-06-14 13:59:46.832, FINE, [Thread]: 216 [ClassName]: com.enhancesys.integration.services.converter.LookupMapping [LineNumber]:  284  getLookupEntity entry ... entityType: 303 entityId: 301 applicationId:301
+2019-06-14 13:59:46.838, FINE, [Thread]: 216 [ClassName]: com.enhancesys.integration.services.processor.OutletTransactionsDataDump [LineNumber]:  361  InputDBObject : { "data.ord_type" : 301 , "status" : { "$in" : [ 173]} , "updtd_dt" : { "$gte" : { "$date" : "2018-05-20T18:30:00.000Z"} , "$lte" : { "$date" : "2018-05-21T18:29:59.999Z"}}}
+2019-06-14 13:59:46.841, FINE, [Thread]: 216 [ClassName]: com.enhancesys.integration.services.processor.OutletTransactionsDataDump [LineNumber]:  369  Cursor Size : 0
+2019-06-14 13:59:46.843, FINE, [Thread]: 216 [ClassName]: com.enhancesys.integration.services.processor.OutletTransactionsDataDump [LineNumber]:  299  [Outlet Transactions Data process ] orderType ::: 303
+2019-06-14 13:59:46.845, FINE, [Thread]: 216 [ClassName]: com.enhancesys.integration.services.util.Utility [LineNumber]:  37  getStartOfTheDay:: Parsing Object : Mon May 21 00:00:00 IST 2018
+2019-06-14 13:59:46.846, FINE, [Thread]: 216 [ClassName]: com.enhancesys.integration.services.util.Utility [LineNumber]:  57  getStartOfTheDay:: Returning Object : Mon May 21 00:00:00 IST 2018
+2019-06-14 13:59:46.847, FINE, [Thread]: 216 [ClassName]: com.enhancesys.integration.services.util.Utility [LineNumber]:  63  getEndOfTheDay:: Parsing Object : Mon May 21 00:00:00 IST 2018
+2019-06-14 13:59:46.848, FINE, [Thread]: 216 [ClassName]: com.enhancesys.integration.services.util.Utility [LineNumber]:  83  getEndOfTheDay:: Returning Object : Mon May 21 23:59:59 IST 2018
+2019-06-14 13:59:46.850, FINE, [Thread]: 216 [ClassName]: com.enhancesys.integration.services.converter.LookupMapping [LineNumber]:  284  getLookupEntity entry ... entityType: 303 entityId: 303 applicationId:301
+2019-06-14 13:59:46.855, FINE, [Thread]: 216 [ClassName]: com.enhancesys.integration.services.processor.OutletTransactionsDataDump [LineNumber]:  361  InputDBObject : { "data.ord_type" : 303 , "status" : { "$in" : [ 173]} , "updtd_dt" : { "$gte" : { "$date" : "2018-05-20T18:30:00.000Z"} , "$lte" : { "$date" : "2018-05-21T18:29:59.999Z"}}}
+2019-06-14 13:59:46.858, FINE, [Thread]: 216 [ClassName]: com.enhancesys.integration.services.processor.OutletTransactionsDataDump [LineNumber]:  369  Cursor Size : 0
+2019-06-14 13:59:46.868, FINE, [Thread]: 216 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  8009  Entry createInterfaceFileSummary.. Started at --> Fri Jun 14 13:59:46 IST 2019
+2019-06-14 13:59:46.869, FINE, [Thread]: 216 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  8022  createInterfaceFileSummary service received interfaceFileSummary for file id-->null
+2019-06-14 13:59:46.890, FINE, [Thread]: 216 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  8097  Exit createInterfaceFileSummary service at -->Fri Jun 14 13:59:46 IST 2019 --- and took 23 milliseconds
+2019-06-14 13:59:46.962, FINE, [Thread]: 216 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  7456  Entry createControlFile.. Started at --> Fri Jun 14 13:59:46 IST 2019
+2019-06-14 13:59:46.963, FINE, [Thread]: 216 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  7471  createControlFile service received filePath        -->/home/appuser/interfaces/S-NOC/interfaces/master_file/transaction_details/Transaction_01_20180522_002.csvtotalCount-->1fileName-->Transaction_01_20180522_002fileFormat-->csvcurrentFileId-->17655contolFileFormat-->ctlcontolFilePath-->/home/appuser/interfaces/S-NOC/interfaces/master_file/transaction_details/
+2019-06-14 13:59:46.973, FINE, [Thread]: 216 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  7926  updateInterfaceFileSummaryDetails service received interfaceFileSummaryDetails object for file details id-->17655
+2019-06-14 13:59:46.995, FINE, [Thread]: 216 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  7535  Exit control file creation service at -->Fri Jun 14 13:59:46 IST 2019 --- and took 33 milliseconds
+2019-06-14 13:59:47.002, FINE, [Thread]: 216 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  8009  Entry createInterfaceFileSummary.. Started at --> Fri Jun 14 13:59:47 IST 2019
+2019-06-14 13:59:47.003, FINE, [Thread]: 216 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  8022  createInterfaceFileSummary service received interfaceFileSummary for file id-->null
+2019-06-14 13:59:47.025, FINE, [Thread]: 216 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  8097  Exit createInterfaceFileSummary service at -->Fri Jun 14 13:59:47 IST 2019 --- and took 23 milliseconds
+2019-06-14 13:59:47.084, FINE, [Thread]: 216 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  7456  Entry createControlFile.. Started at --> Fri Jun 14 13:59:47 IST 2019
+2019-06-14 13:59:47.085, FINE, [Thread]: 216 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  7471  createControlFile service received filePath        -->/home/appuser/interfaces/S-NOC/interfaces/master_file/transaction_details/Transaction_02_20180522_002.csvtotalCount-->1fileName-->Transaction_02_20180522_002fileFormat-->csvcurrentFileId-->17656contolFileFormat-->ctlcontolFilePath-->/home/appuser/interfaces/S-NOC/interfaces/master_file/transaction_details/
+2019-06-14 13:59:47.094, FINE, [Thread]: 216 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  7926  updateInterfaceFileSummaryDetails service received interfaceFileSummaryDetails object for file details id-->17656
+2019-06-14 13:59:47.116, FINE, [Thread]: 216 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  7535  Exit control file creation service at -->Fri Jun 14 13:59:47 IST 2019 --- and took 32 milliseconds
+2019-06-14 13:59:47.117, FINE, [Thread]: 216 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  14035  Entry reProcessPushDataFiles.. completed at : 464

@@ -1,0 +1,54 @@
+indosat to org
+
+daily_dump_indosat2org_20190211_r3
+
+SELECT  * from interface.tr_interface_file_summary  where interface_id_n = 1065 order by 1 desc
+
+
+16452
+SELECT  * from kpi.tr_temp_upload_aggr_failure  where file_id_n = 16452   order by file_id_n  desc limit 10
+
+SAT10     BADSAW6716
+
+
+
+"Actor mapping not found for Organization ID : SAT"
+update kpi.tr_temp_upload_aggr_failure  set actor_key_v='SAT10' where file_id_n = 16452
+
+"Source mapping not found for SP Operator ID : BAD"
+update kpi.tr_temp_upload_aggr_failure  set source_key_v='BADSAW6716' where file_id_n = 16452
+
+
+last_updated_time_dt
+
+SELECT * from kpi.tr_daily_indosat_transfer_aggr where  day_id_n=20190210 order by day_id_n desc limit 5
+
+"2019-05-10 10:50:32.680828+05:30"
+------------------------------------------------------------------------------------------------------------
+
+
+org to org
+
+"daily_dump_org2org_20170707_00r2.csv"
+
+SELECT  * from interface.tr_interface_file_summary  where interface_id_n = 1064 order by 1 desc
+
+
+16452
+SELECT  * from kpi.tr_temp_upload_aggr_failure  where file_id_n = 16454   order by file_id_n  desc limit 10
+
+SAT10     SAT
+
+
+
+"Actor mapping not found for Organization ID : SAT"
+update kpi.tr_temp_upload_aggr_failure  set actor_key_v='SAT10' where file_id_n = 16454
+
+"Source mapping not found for SP Operator ID : SAT"
+update kpi.tr_temp_upload_aggr_failure  set source_key_v='SAT10' where file_id_n = 16454
+
+
+last_updated_time_dt "2019-05-10 11:31:31.43717+05:30"
+
+
+

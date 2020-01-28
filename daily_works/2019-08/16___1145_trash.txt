@@ -1,0 +1,9 @@
+Region Name|HOR Name|HOR Mobile Number|Sub Area Name|HOS Name|HOS Mobile Number|Sales Area Name|SAM Name|SAM Mobile Number|Cluster Name|MPC Name|MPC Short Code|MPC Mobile Number|Micro Cluster Name|CSM Name|CSM Mobile Number|Supervisor Code|Supervisor Mobile Number|CSO Code|CSO Mobile Number|Outlet Code|Outlet Name|Outlet Mobile Number|Outlet_category|Channel|Outlet_business_type|Outlet_Class|beat_name|Beat ID|MOBO Dealer|LATITUDE|LONGITUDE
+
+
+
+
+{"region name":"region_name","hor name":"hor_name","hor mobile number":"hor_mobile_number","sub area name":"sub_area_name","hos name":"hos_name","hos mobile number":"hos_mobile_number","sales area name":"sales_area_name","sam name":"sam_name","sam mobile number":"sam_mobile_number","cluster name":"cluster_name","mpc name":"mpc_name","mpc short code":"mpc_short_code","mpc mobile number":"mpc_mobile_number","micro cluster name":"micro_cluster_name","csm name":"csm_name","csm mobile number":"csm_mobile_number","supervisor code":"supervisor_code","supervisor mobile number":"supervisor_mobile_number","cso code":"cso_code","cso mobile number":"cso_mobile_number","outlet code":"outlet_code","outlet name":"outlet_name","outlet mobile number":"outlet_mobile_number","outlet_category":"outlet_category","channel":"channel","outlet_business_type":"outlet_business_type","outlet_class":"outlet_class","beat_name":"beat_name","beat id":"beat_id","mobo dealer":"mobo_dealer","latitude":"latitude","longitude":"longitude"}
+
+
+

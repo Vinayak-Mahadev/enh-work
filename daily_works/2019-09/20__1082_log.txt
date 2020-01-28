@@ -1,0 +1,151 @@
+Sep 20, 2019 5:11:12 PM com.enhancesys.common.logger
+FINE: [Thread]: 217 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  2695  Entry processReceivedFiles :: interfaceId :1082
+Sep 20, 2019 5:11:12 PM com.enhancesys.common.logger
+FINE: [Thread]: 217 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  7664  Entry getInterfaceFileSummaryByInterfaceIdAndStatus.. Started at --> Fri Sep 20 17:11:12 IST 2019
+Sep 20, 2019 5:11:12 PM com.enhancesys.common.logger
+FINE: [Thread]: 217 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  7673  getInterfaceFileSummaryByInterfaceIdAndStatus service received interface id-->1082statusId-->1321
+Sep 20, 2019 5:11:12 PM com.enhancesys.common.logger
+FINE: [Thread]: 217 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  7723  Exit getInterfaceFileSummaryByInterfaceIdAndStatus service at -->Fri Sep 20 17:11:12 IST 2019 --- and took 33 milliseconds
+Sep 20, 2019 5:11:12 PM com.enhancesys.common.logger
+FINE: [Thread]: 217 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  10226  Entry getEncodedKey.. Started at --> Fri Sep 20 17:11:12 IST 2019
+Sep 20, 2019 5:11:12 PM com.enhancesys.common.logger
+FINE: [Thread]: 217 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  10233  getEncodedKey service received file-->/home/appuser/interfaces/S-NOC/interfaces/master_file/org_balance/daily_dump_org_balance_20190920_11.csv
+Sep 20, 2019 5:11:12 PM com.enhancesys.common.logger
+FINE: [Thread]: 217 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  10270  Exit getEncodedKey service at -->Fri Sep 20 17:11:12 IST 2019 --- and took 4 milliseconds
+Sep 20, 2019 5:11:12 PM com.enhancesys.common.logger
+FINE: [Thread]: 217 [ClassName]: com.enhancesys.integration.services.merger.GenericFileProcessor [LineNumber]:  36  GenericFileProcessor initiated at Fri Sep 20 17:11:12 IST 2019, interfaceId : 1082 file Id : 10387
+Sep 20, 2019 5:11:12 PM com.enhancesys.common.logger
+FINE: [Thread]: 217 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  9368  Entry readFilePropertyBeans.. Started at --> Fri Sep 20 17:11:12 IST 2019
+Sep 20, 2019 5:11:12 PM com.enhancesys.common.logger
+FINE: [Thread]: 217 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  9382  readFilePropertyBeans service received interface id-->1082
+Sep 20, 2019 5:11:12 PM com.enhancesys.common.logger
+FINE: [Thread]: 217 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  10176  Exit readFilePropertyBeans service at -->Fri Sep 20 17:11:12 IST 2019 --- and took 16 milliseconds
+Sep 20, 2019 5:11:12 PM com.enhancesys.common.logger
+FINE: [Thread]: 217 [ClassName]: com.enhancesys.integration.services.springCamel.FileProcessor [LineNumber]:  65  Entry initiateProcess..
+Sep 20, 2019 5:11:14 PM com.enhancesys.common.logger
+FINE: [Thread]: 217 [ClassName]: com.enhancesys.integration.services.springCamel.FileProcessor [LineNumber]:  77  Spring App Context : org.springframework.context.support.FileSystemXmlApplicationContext@7934b149: startup date [Fri Sep 20 17:11:12 IST 2019]; root of context hierarchy
+Sep 20, 2019 5:11:14 PM com.enhancesys.common.logger
+FINE: [Thread]: 217 [ClassName]: com.enhancesys.integration.services.springCamel.FileProcessor [LineNumber]:  80  Camel Context : SpringCamelContext(interfaceCamelContext) with spring id org.springframework.context.support.FileSystemXmlApplicationContext@7934b149
+Sep 20, 2019 5:11:14 PM com.enhancesys.common.logger
+FINE: [Thread]: 217 [ClassName]: com.enhancesys.integration.services.springCamel.FileProcessor [LineNumber]:  107  End Point : direct://generic_file_processor
+Sep 20, 2019 5:11:14 PM com.enhancesys.common.logger
+FINE: [Thread]: 217 [ClassName]: com.enhancesys.integration.services.springCamel.processor.FilePreProcessor [LineNumber]:  68  Entry process..
+Sep 20, 2019 5:11:14 PM com.enhancesys.common.logger
+FINE: [Thread]: 217 [ClassName]: com.enhancesys.integration.services.springCamel.processor.FilePreProcessor [LineNumber]:  76  paramMap : {fileId=10387, fileDataBean=com.enhancesys.integration.services.interfaces.FileDataBean@14613b40, interfaceId=1082}
+Sep 20, 2019 5:11:14 PM com.enhancesys.common.logger
+FINE: [Thread]: 217 [ClassName]: com.enhancesys.integration.services.springCamel.processor.FilePreProcessor [LineNumber]:  94  Exit process..
+Sep 20, 2019 5:11:14 PM com.enhancesys.common.logger
+FINE: [Thread]: 220 [ClassName]: com.enhancesys.integration.services.springCamel.AbstractFileProcessor [LineNumber]:  149  Entry initiateProcess..1082
+Sep 20, 2019 5:11:14 PM com.enhancesys.common.logger
+FINE: [Thread]: 222 [ClassName]: com.enhancesys.integration.services.springCamel.KPIAggregator [LineNumber]:  78  KPIAggregator  thread com.enhancesys.integration.services.springCamel.KPIAggregator_1568979674230initiated at Fri Sep 20 17:11:14 IST 2019, interfaceId : 1082 file Id : 10387
+Sep 20, 2019 5:11:14 PM com.enhancesys.common.logger
+FINE: [Thread]: 222 [ClassName]: com.enhancesys.integration.services.springCamel.KPIAggregator [LineNumber]:  89  Output Queue is null..
+Sep 20, 2019 5:11:14 PM com.enhancesys.common.logger
+FINE: [Thread]: 219 [ClassName]: com.enhancesys.integration.services.springCamel.AbstractFileProcessor [LineNumber]:  149  Entry initiateProcess..1082
+Sep 20, 2019 5:11:14 PM com.enhancesys.common.logger
+FINE: [Thread]: 223 [ClassName]: com.enhancesys.integration.services.springCamel.InterfaceFileReader [LineNumber]:  79  Interface File Reading com.enhancesys.integration.services.springCamel.InterfaceFileReader_1568979674274 initiated at Fri Sep 20 17:11:14 IST 2019, interfaceId : 1082 file Id : 10387
+Sep 20, 2019 5:11:14 PM com.enhancesys.common.logger
+FINE: [Thread]: 223 [ClassName]: com.enhancesys.integration.services.springCamel.InterfaceFileReader [LineNumber]:  246  fieldLookupConf :: { "process_enabled" : true , "fields" : { "actor_field" : "Organization ID" , "metric_field" : "Account Type" , "source_field" : "Organization ID" , "instance_field" : ""} , "error_codes" : { "actor_field" : "60101" , "metric_field" : "60201" , "source_field" : "60301" , "instance_field" : "60401"} , "table_name" : "tr_temp_upload_metrics_orgbal_aggr" , "lookup_query" : "select * from kpi.update_aggregate_lookup_orgbal_master(?, ?);" , "notexist_lookup" : "metrics" , "no_of_params" : { "metrics" : 1} , "daily_table" : "tr_daily_org_balance_aggr" , "monthly_table" : "tr_monthly_org_balance_aggr" , "no_of_join_query_params" : 1 , "no_of_daily_join_queries" : 1 , "no_of_monthly_join_queries" : 1}
+Sep 20, 2019 5:11:14 PM com.enhancesys.common.logger
+FINE: [Thread]: 223 [ClassName]: com.enhancesys.integration.services.springCamel.InterfaceFileReader [LineNumber]:  364  actorConfig : {1=[{"actor_index":2,"actor_type_n":10,"actor_key_v":"Organization ID"}]}
+Sep 20, 2019 5:11:14 PM com.enhancesys.common.logger
+FINE: [Thread]: 223 [ClassName]: com.enhancesys.integration.services.springCamel.InterfaceFileReader [LineNumber]:  419  metricConfig :: {1=[{"data_flag_n":0,"metric_index":6,"metric_key_v":"Account Type","metrics_type_n":34,"selection_v":"Default"}]}
+Sep 20, 2019 5:11:14 PM com.enhancesys.common.logger
+FINE: [Thread]: 223 [ClassName]: com.enhancesys.integration.services.springCamel.InterfaceFileReader [LineNumber]:  453  dimensionConfig :: {1=[{"correction_v":"Replace","dimension_v":"Balance Amount","sequence_n":1}]}
+Sep 20, 2019 5:11:14 PM com.enhancesys.common.logger
+FINE: [Thread]: 223 [ClassName]: com.enhancesys.integration.services.springCamel.InterfaceFileReader [LineNumber]:  503  crossSellFlagAttr :: null
+Sep 20, 2019 5:11:14 PM com.enhancesys.common.logger
+FINE: [Thread]: 223 [ClassName]: com.enhancesys.integration.services.springCamel.InterfaceFileReader [LineNumber]:  504  crossSellingFlag :: false
+Sep 20, 2019 5:11:14 PM com.enhancesys.common.logger
+FINE: [Thread]: 223 [ClassName]: com.enhancesys.integration.services.springCamel.InterfaceFileReader [LineNumber]:  505  crossSellingObj :: null
+Sep 20, 2019 5:11:14 PM com.enhancesys.common.logger
+FINE: [Thread]: 223 [ClassName]: com.enhancesys.integration.services.springCamel.InterfaceFileReader [LineNumber]:  532  Moving Actual File to Backup Directory...
+Sep 20, 2019 5:11:14 PM com.enhancesys.common.logger
+FINE: [Thread]: 223 [ClassName]: com.enhancesys.integration.services.util.Utility [LineNumber]:  274  Entry backupFile..
+Sep 20, 2019 5:11:14 PM com.enhancesys.common.logger
+FINE: [Thread]: 223 [ClassName]: com.enhancesys.integration.services.util.Utility [LineNumber]:  318  Exit backupFile..
+Sep 20, 2019 5:11:14 PM com.enhancesys.common.logger
+FINE: [Thread]: 223 [ClassName]: com.enhancesys.integration.services.springCamel.InterfaceFileReader [LineNumber]:  540  Moving Ctl file to backup dir...
+Sep 20, 2019 5:11:14 PM com.enhancesys.common.logger
+FINE: [Thread]: 223 [ClassName]: com.enhancesys.integration.services.util.Utility [LineNumber]:  274  Entry backupFile..
+Sep 20, 2019 5:11:14 PM com.enhancesys.common.logger
+FINE: [Thread]: 223 [ClassName]: com.enhancesys.integration.services.util.Utility [LineNumber]:  318  Exit backupFile..
+Sep 20, 2019 5:11:14 PM com.enhancesys.common.logger
+FINE: [Thread]: 223 [ClassName]: com.enhancesys.integration.services.springCamel.InterfaceFileReader [LineNumber]:  561  File Reading and Data Insertion started. . .
+Sep 20, 2019 5:11:14 PM com.enhancesys.common.logger
+FINE: [Thread]: 223 [ClassName]: com.enhancesys.integration.services.springCamel.InterfaceFileReader [LineNumber]:  1441  successRecords [2019-09-19 21:25:07|Outlet|outlwt101|Test|SAT10|SAT10|Stock Account_Normal|101|1000, 2019-09-19 21:25:07|Outlet|aristootsn|Test|SAT10|SAT10|Stock Account_Normal|102|1000, 2019-09-19 21:25:07|Outlet|190710001|Test|SAT10|SAT10|Stock Account_Normal|103|1000, 2019-09-19 21:25:07|Outlet|OUTLINT1011|Test|SAT10|SAT10|Stock Account_Normal|104|1000, 2019-09-19 21:25:07|Outlet|17046615|Test|SAT10|SAT10|Stock Account_Normal|105|1000]
+Sep 20, 2019 5:11:14 PM com.enhancesys.common.logger
+FINE: [Thread]: 223 [ClassName]: com.enhancesys.integration.services.springCamel.InterfaceFileReader [LineNumber]:  1960  recCount : 5
+Sep 20, 2019 5:11:14 PM com.enhancesys.common.logger
+FINE: [Thread]: 223 [ClassName]: com.enhancesys.integration.services.springCamel.InterfaceFileReader [LineNumber]:  2006  Data Inserted and File Reading Completed in 25 ms
+Sep 20, 2019 5:11:14 PM com.enhancesys.common.logger
+FINE: [Thread]: 223 [ClassName]: com.enhancesys.integration.services.springCamel.InterfaceFileReader [LineNumber]:  2049  Validating metrics..
+Sep 20, 2019 5:11:14 PM com.enhancesys.common.logger
+FINE: [Thread]: 223 [ClassName]: com.enhancesys.integration.services.springCamel.InterfaceFileReader [LineNumber]:  2093  Starting Join Query
+Sep 20, 2019 5:11:14 PM com.enhancesys.common.logger
+INFO: [Thread]: 223 [ClassName]: com.enhancesys.integration.services.springCamel.InterfaceFileReader [LineNumber]:  2112  Time taken to execute 1082_DAILY_JOIN_QUERY_1 :: 0 Seconds
+Sep 20, 2019 5:11:14 PM com.enhancesys.common.logger
+FINE: [Thread]: 223 [ClassName]: com.enhancesys.integration.services.springCamel.InterfaceFileReader [LineNumber]:  2197  Daily DataCount : 8
+Sep 20, 2019 5:11:14 PM com.enhancesys.common.logger
+FINE: [Thread]: 223 [ClassName]: com.enhancesys.integration.services.springCamel.InterfaceFileReader [LineNumber]:  2203  Remaining records..8
+Sep 20, 2019 5:11:14 PM com.enhancesys.common.logger
+FINE: [Thread]: 223 [ClassName]: com.enhancesys.integration.services.springCamel.InterfaceFileReader [LineNumber]:  2225  Sent FileDataBean to the next level with batch number :: 1
+Sep 20, 2019 5:11:14 PM com.enhancesys.common.logger
+FINE: [Thread]: 223 [ClassName]: com.enhancesys.integration.services.springCamel.InterfaceFileReader [LineNumber]:  2244  Daily Aggregation completed..
+Sep 20, 2019 5:11:14 PM com.enhancesys.common.logger
+FINE: [Thread]: 223 [ClassName]: com.enhancesys.integration.services.springCamel.InterfaceFileReader [LineNumber]:  2401  Monthly Aggregation completed..
+Sep 20, 2019 5:11:14 PM com.enhancesys.common.logger
+INFO: [Thread]: 223 [ClassName]: com.enhancesys.integration.services.springCamel.InterfaceFileReader [LineNumber]:  3107  Sent empty FileDataBean to the next level
+Sep 20, 2019 5:11:14 PM com.enhancesys.common.logger
+FINE: [Thread]: 223 [ClassName]: com.enhancesys.integration.services.util.InterfaceServiceUtil [LineNumber]:  859  1 Rows Updated in Interface File Summary..
+Sep 20, 2019 5:11:14 PM com.enhancesys.common.logger
+FINE: [Thread]: 223 [ClassName]: com.enhancesys.integration.services.springCamel.InterfaceFileReader [LineNumber]:  2911  Deleted row count from temp table :: 5
+Sep 20, 2019 5:11:14 PM com.enhancesys.common.logger
+FINE: [Thread]: 223 [ClassName]: com.enhancesys.integration.services.springCamel.InterfaceFileReader [LineNumber]:  2912  File Reading completed in :305
+Sep 20, 2019 5:11:15 PM com.enhancesys.common.logger
+INFO: [Thread]: 223 [ClassName]: com.enhancesys.integration.services.springCamel.InterfaceFileReader [LineNumber]:  3107  Sent empty FileDataBean to the next level
+Sep 20, 2019 5:11:15 PM com.enhancesys.common.logger
+FINE: [Thread]: 223 [ClassName]: com.enhancesys.integration.services.springCamel.InterfaceFileReader [LineNumber]:  3082  Interface File Reading com.enhancesys.integration.services.springCamel.InterfaceFileReader_1568979674274 completed at Fri Sep 20 17:11:15 IST 2019, interfaceId : 1082 file Id : 10387 and took 990 milli seconds
+Sep 20, 2019 5:11:15 PM com.enhancesys.common.logger
+FINE: [Thread]: 219 [ClassName]: com.enhancesys.integration.services.springCamel.AbstractFileProcessor [LineNumber]:  190  Exit initiateProcess..1082
+Sep 20, 2019 5:11:15 PM com.enhancesys.common.logger
+SEVERE: [Thread]: 222 : Batch entry 1 UPDATE kpi.tr_daily_org_balance_aggr SET dimension_1_n = '10300', dimension_2_n = NULL, dimension_3_n = NULL, dimension_4_n = NULL, dimension_5_n = NULL, dimension_6_n = NULL, dimension_7_n = NULL, dimension_8_n = NULL, dimension_9_n = NULL, dimension_10_n = NULL, no_of_events_n = '1', last_updated_time_dt = ( select now() ) WHERE day_id_n = '20190919' and event_type_n = '115' and actor_type_n = '1' and actor_id_n = '22389' and metrics_type_n = '34' and metrics_id_n = '10782' and source_type_n = '1' and source_id_n = '22390' and data_flag_n = '0' and instance_type_n = '0' and instance_id_n = '0' was aborted.  Call getNextException to see the cause. : java.sql.BatchUpdateException: Batch entry 1 UPDATE kpi.tr_daily_org_balance_aggr SET dimension_1_n = '10300', dimension_2_n = NULL, dimension_3_n = NULL, dimension_4_n = NULL, dimension_5_n = NULL, dimension_6_n = NULL, dimension_7_n = NULL, dimension_8_n = NULL, dimension_9_n = NULL, dimension_10_n = NULL, no_of_events_n = '1', last_updated_time_dt = ( select now() ) WHERE day_id_n = '20190919' and event_type_n = '115' and actor_type_n = '1' and actor_id_n = '22389' and metrics_type_n = '34' and metrics_id_n = '10782' and source_type_n = '1' and source_id_n = '22390' and data_flag_n = '0' and instance_type_n = '0' and instance_id_n = '0' was aborted.  Call getNextException to see the cause.
+        at org.postgresql.jdbc2.AbstractJdbc2Statement$BatchResultHandler.handleError(AbstractJdbc2Statement.java:2621)
+        at org.postgresql.core.v3.QueryExecutorImpl$1.handleError(QueryExecutorImpl.java:459)
+        at org.postgresql.core.v3.QueryExecutorImpl.processResults(QueryExecutorImpl.java:1837)
+        at org.postgresql.core.v3.QueryExecutorImpl.execute(QueryExecutorImpl.java:407)
+        at org.postgresql.jdbc2.AbstractJdbc2Statement.executeBatch(AbstractJdbc2Statement.java:2754)
+        at com.enhancesys.integration.services.springCamel.KPIAggregator.processRequest(KPIAggregator.java:410)
+        at com.enhancesys.integration.services.springCamel.KPIAggregator.run(KPIAggregator.java:727)
+        at java.lang.Thread.run(Thread.java:748)
+
+Sep 20, 2019 5:11:15 PM com.enhancesys.common.logger
+FINE: [Thread]: 222 [ClassName]: com.enhancesys.integration.services.springCamel.KPIAggregator [LineNumber]:  123  Exception occured..
+Sep 20, 2019 5:11:15 PM com.enhancesys.common.logger
+INFO: [Thread]: 222 [ClassName]: com.enhancesys.integration.services.springCamel.KPIAggregator [LineNumber]:  719  KPI Aggregation 1082 completed in 1116 ms
+Sep 20, 2019 5:11:15 PM com.enhancesys.common.logger
+FINE: [Thread]: 220 [ClassName]: com.enhancesys.integration.services.springCamel.AbstractFileProcessor [LineNumber]:  190  Exit initiateProcess..1082
+Sep 20, 2019 5:11:15 PM com.enhancesys.common.logger
+FINE: [Thread]: 217 [ClassName]: com.enhancesys.integration.services.springCamel.FileProcessor [LineNumber]:  130  Exit initiateProcess..
+Sep 20, 2019 5:11:15 PM com.enhancesys.common.logger
+FINE: [Thread]: 217 [ClassName]: com.enhancesys.integration.services.merger.GenericFileProcessor [LineNumber]:  75  GenericFileProcessor completed at Fri Sep 20 17:11:15 IST 2019, interfaceId : 1082 file Id : 10387 and took 2798 milli seconds
+Sep 20, 2019 5:11:15 PM com.enhancesys.common.logger
+FINE: [Thread]: 217 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  3068  Inside ... interfaceFileSummaryDetails.getFileName() :: daily_dump_org_balance_20190920_11.csv
+Sep 20, 2019 5:11:15 PM com.enhancesys.common.logger
+FINE: [Thread]: 217 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  3069  localServerjsonObject :: {"CtlBkpDir":"\/home\/appuser\/interfaces\/S-NOC\/interfaces\/backup\/master_file\/org_balance\/","Dir":"\/home\/appuser\/interfaces\/S-NOC\/interfaces\/master_file\/org_balance\/","BkpDir":"\/home\/appuser\/interfaces\/S-NOC\/interfaces\/backup\/master_file\/org_balance\/","RejectedDir":"\/home\/appuser\/interfaces\/S-NOC\/interfaces\/rejected_file\/org_balance\/","RejectedBkpDir":"\/home\/appuser\/interfaces\/S-NOC\/interfaces\/backup\/rejected_file\/org_balance\/","CtlDir":"\/home\/appuser\/interfaces\/S-NOC\/interfaces\/master_file\/org_balance\/","RejectedCtlDir":"\/home\/appuser\/interfaces\/S-NOC\/interfaces\/rejected_file\/org_balance\/","FilterCtlBkpDir":"\/home\/appuser\/interfaces\/S-NOC\/interfaces\/backup\/filter_file\/org_balance\/","RejectedCtlBkpDir":"\/home\/appuser\/interfaces\/S-NOC\/interfaces\/backup\/rejected_file\/org_balance\/","FilterBkpDir":"\/home\/appuser\/interfaces\/S-NOC\/interfaces\/backup\/filter_file\/org_balance\/"}
+Sep 20, 2019 5:11:15 PM com.enhancesys.common.logger
+FINE: [Thread]: 217 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  10709  Entry compressGzipFile.. Started at --> Fri Sep 20 17:11:15 IST 2019
+Sep 20, 2019 5:11:15 PM com.enhancesys.common.logger
+FINE: [Thread]: 217 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  10719  compressGzipFile service received gzipFile Name-->/home/appuser/interfaces/S-NOC/interfaces/backup/master_file/org_balance/daily_dump_org_balance_20190920_11.csv.gzfile Name -->/home/appuser/interfaces/S-NOC/interfaces/backup/master_file/org_balance/daily_dump_org_balance_20190920_11.csv
+Sep 20, 2019 5:11:15 PM com.enhancesys.common.logger
+FINE: [Thread]: 217 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  10758  Exit compressGzipFile service at -->Fri Sep 20 17:11:15 IST 2019 --- and took 4 milliseconds
+Sep 20, 2019 5:11:15 PM com.enhancesys.common.logger
+FINE: [Thread]: 217 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  10709  Entry compressGzipFile.. Started at --> Fri Sep 20 17:11:15 IST 2019
+Sep 20, 2019 5:11:15 PM com.enhancesys.common.logger
+FINE: [Thread]: 217 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  10719  compressGzipFile service received gzipFile Name-->/home/appuser/interfaces/S-NOC/interfaces/backup/master_file/org_balance/daily_dump_org_balance_20190920_11.ctl.gzfile Name -->/home/appuser/interfaces/S-NOC/interfaces/backup/master_file/org_balance/daily_dump_org_balance_20190920_11.ctl
+Sep 20, 2019 5:11:15 PM com.enhancesys.common.logger
+FINE: [Thread]: 217 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  10758  Exit compressGzipFile service at -->Fri Sep 20 17:11:15 IST 2019 --- and took 1 milliseconds
+Sep 20, 2019 5:11:15 PM com.enhancesys.common.logger
+FINE: [Thread]: 217 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  3124  InterfaceId : 1082 : FileId : 10387 processReceivedFiles method is completed at Fri Sep 20 17:11:15 IST 2019
+Sep 20, 2019 5:11:15 PM com.enhancesys.common.logger
+FINE: [Thread]: 217 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  3202  Exit processReceivedFiles 1082 service at -->Fri Sep 20 17:11:15 IST 2019 --- and took 2925 milliseconds

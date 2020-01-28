@@ -1,0 +1,72 @@
+-- ----------------  activation_feed 1013
+
+-- header
+-- before
+--     MSISDN|ACTIVATION_DATE|LAC|CI
+-- after
+--     MSISDN|ACTIVATION_DATE|LAC|CI|ICCID|CUST_TYPE|ACTIVATOR_ID|ACT_STATUS
+
+-- reje header
+-- before
+--     MSISDN|ACTIVATION_DATE|LAC|CI|ERRORCODE|ERRORMESSSAGE
+-- after
+--     MSISDN|ACTIVATION_DATE|LAC|CI|ICCID|CUST_TYPE|ACTIVATOR_ID|ACT_STATUS|ERRORCODE|ERRORMESSSAGE
+
+
+
+
+-- Field Validation Conf
+-- before
+--     MSISDN;M;R;[0-9]+#ACTIVATION_DATE;M;RD;[0-9]{4}-[0-9]{2}-[0-9]{2} [0-9]{2}:[0-9]{2}:[0-9]{2};yyyy-MM-dd HH:mm:ss#LAC;N#CI;N
+-- after
+--     MSISDN;M;R;[0-9]+#ACTIVATION_DATE;M;RD;[0-9]{4}-[0-9]{2}-[0-9]{2} [0-9]{2}:[0-9]{2}:[0-9]{2};yyyy-MM-dd HH:mm:ss#LAC;N#CI;N#ICCID;N#CUST_TYPE;N#ACTIVATOR_ID;N#ACT_STATUS;N
+
+
+
+-- file header
+UPDATE INTERFACE.MS_INTERFACE_ATTR SET VALUE_V  = 'MSISDN|ACTIVATION_DATE|LAC|CI|ICCID|CUST_TYPE|ACTIVATOR_ID|ACT_STATUS'  WHERE ATTRIBUTE_ID_N = 1013029;
+
+-- Field Validation Conf
+UPDATE INTERFACE.MS_INTERFACE_ATTR SET VALUE_V  = 'MSISDN;M;R;[0-9]+#ACTIVATION_DATE;M;RD;[0-9]{4}-[0-9]{2}-[0-9]{2} [0-9]{2}:[0-9]{2}:[0-9]{2};yyyy-MM-dd HH:mm:ss#LAC;N#CI;N#ICCID;N#CUST_TYPE;N#ACTIVATOR_ID;N#ACT_STATUS;N' WHERE ATTRIBUTE_ID_N = 1013030;
+
+-- Rejection File Headers
+UPDATE INTERFACE.MS_INTERFACE_ATTR SET VALUE_V  = 'MSISDN|ACTIVATION_DATE|LAC|CI|ICCID|CUST_TYPE|ACTIVATOR_ID|ACT_STATUS|ERRORCODE|ERRORMESSSAGE'  WHERE ATTRIBUTE_ID_N = 1013025;
+
+
+-- -----------------------------------------------------------------------------------------------------------------------------------------------------
+-- ----------------------------------------------------  deactivation_feed 1015
+
+-- header
+-- before
+--     MSISDN|DEACTIVATION_DATE
+-- after
+--     MSISDN|DEACTIVATION_DATE|ICCID
+
+-- reje header
+-- before
+--     MSISDN|DEACTIVATION_DATE|ERRORCODE|ERRORMESSAGE
+-- after
+--     MSISDN|DEACTIVATION_DATE|ICCID|ERRORCODE|ERRORMESSAGE
+
+
+
+
+-- Field Validation Conf
+-- before
+--     MSISDN;M;R;[0-9]+#DEACTIVATION_DATE;M;RD;[0-9]{4}-[0-9]{2}-[0-9]{2} [0-9]{2}:[0-9]{2}:[0-9]{2};yyyy-MM-dd HH:mm:ss
+-- after
+--     MSISDN;M;R;[0-9]+#DEACTIVATION_DATE;M;RD;[0-9]{4}-[0-9]{2}-[0-9]{2} [0-9]{2}:[0-9]{2}:[0-9]{2};yyyy-MM-dd HH:mm:ss#ICCID;N
+
+
+
+-- file header
+UPDATE INTERFACE.MS_INTERFACE_ATTR SET VALUE_V  = 'MSISDN|DEACTIVATION_DATE|ICCID'  WHERE ATTRIBUTE_ID_N = 1015029;
+
+-- Field Validation Conf
+UPDATE INTERFACE.MS_INTERFACE_ATTR SET VALUE_V  = 'MSISDN;M;R;[0-9]+#DEACTIVATION_DATE;M;RD;[0-9]{4}-[0-9]{2}-[0-9]{2} [0-9]{2}:[0-9]{2}:[0-9]{2};yyyy-MM-dd HH:mm:ss#ICCID;N' WHERE ATTRIBUTE_ID_N = 1015030;
+
+-- Rejection File Headers
+UPDATE INTERFACE.MS_INTERFACE_ATTR SET VALUE_V  = 'MSISDN|DEACTIVATION_DATE|ICCID|ERRORCODE|ERRORMESSAGE'  WHERE ATTRIBUTE_ID_N = 1015025;
+
+
+

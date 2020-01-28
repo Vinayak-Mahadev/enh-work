@@ -1,0 +1,23 @@
+
+SELECT * from interface.ms_interface  order by 1 ;
+
+SELECT * from interface.ms_interface where interface_id_n = 1027 order by 1 ;
+
+SELECT * from interface.ms_interface_attr where interface_id_n = 1027 order by 1 ;
+
+SELECT *  FROM interface.ms_interface_attr where interface_id_n = 1092  order by 1 ;
+
+SELECT * FROM interface.tr_interface_file_summary  WHERE interface_id_n = 1092 order by 1 desc limit 10;
+
+SELECT  * from interface.tr_interface_file_summary where interface_id_n = 1027 order by 1 desc limit 10;
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,28 @@
+
+Date|Region|HOR Name|Area|HOS Name|Sales Area|SAM Name|CSM Name|CSO Name|Outlet Ref Id|Outlet name|Contact number|Mobo number|Starter pack Count|Voucher Count|MOBO Sellin Value (Using MOBII)|ACT 1 MSISDN Count|GA-FR MSISDN Count|RGU-GA MSISDN Count|MOBO Sellout value|VC Redeem value
+
+
+
+{
+	"date": "date",
+	"region": "region",
+	"hor name": "horname",
+	"area": "area",
+	"hos name": "hosarea",
+	"sales area": "salesarea",
+	"sam name": "samname",
+	"csm name": "csmname",
+	"cso name": "csoname",
+	"outlet ref id": "outletrefid",
+	"outlet name": "outletname",
+	"contact number": "contactnumber",
+	"mobo number": "mobonumber",
+	"starter pack count": "starterpackcount",
+	"voucher count": "vouchercount",
+	"mobo sellin value (using mobii)": "mobosellinvalue",
+	"act 1 msisdn count": "act1msisdncount",
+	"ga-fr msisdn count": "ga-frmsisdncount",
+	"rgu-ga msisdn count": "rgu-gamsisdncount",
+	"mobo sellout value": "moboselloutvalue",
+	"vc redeem value": "vcredeemvalue"
+}

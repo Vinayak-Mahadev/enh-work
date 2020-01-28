@@ -1,0 +1,32 @@
+-- SELECT * from interface.ms_interface  order by 1 ;
+
+-- {"enabled":true,"res_type":"Success"}
+-- {"enabled":true,"res_type":""}
+
+-- SELECT * from interface.ms_interface_attr where interface_id_n = 1140  order by 1 ;
+
+-- SELECT * from interface.ms_interface_attr where interface_id_n = 1140  order by 1 ;
+
+-- delete from interface.ms_interface_attr where attribute_id_n in (1137011,1136011);
+
+SELECT * from interface.ms_interface_attr where interface_id_n in (1137,1136)  order by 1 ;
+
+-- INSERT INTO INTERFACE.MS_INTERFACE_ATTR(ATTRIBUTE_ID_N, INTERFACE_ID_N, NAME_V, VALUE_V, LAST_UPDATED_TIME_DT) VALUES (1140011, 1140, 'Response Conf', '{"success_value":1}', NOW());
+-- INSERT INTO INTERFACE.MS_INTERFACE_ATTR(ATTRIBUTE_ID_N, INTERFACE_ID_N, NAME_V, VALUE_V, LAST_UPDATED_TIME_DT) VALUES (1136011, 1136, 'Response Conf', '{"soap-envelope":"soapenv:Envelope","soap-body":"soapenv:Body","soap-fault":"soap:fault"}', NOW());
+
+-- update interface.ms_interface_attr set value_v = '{"enabled":true,"res_type":"Success"}' where attribute_id_n = 1140010;
+-- update interface.ms_interface_attr set value_v = '{"enabled":true,"res_type":"Failure"}' where attribute_id_n = 1140010;
+-- update interface.ms_interface_attr set value_v = '{"enabled":false,"res_type":""}' where attribute_id_n = 1140010;
+
+-- update interface.ms_interface_attr set value_v = '{"enabled":true,"res_type":"Success"}' where attribute_id_n = 1137010;
+-- update interface.ms_interface_attr set value_v = '{"enabled":true,"res_type":"Failure"}' where attribute_id_n = 1137010;
+-- update interface.ms_interface_attr set value_v = '{"enabled":false,"res_type":""}' where attribute_id_n = 1137010;
+
+-- update interface.ms_interface_attr set value_v = '{"enabled":true,"res_type":"Success"}' where attribute_id_n = 1136009;
+-- update interface.ms_interface_attr set value_v = '{"enabled":true,"res_type":"Failure"}' where attribute_id_n = 1136009;
+-- update interface.ms_interface_attr set value_v = '{"enabled":false,"res_type":""}' where attribute_id_n = 1136009;
+
+
+-- update interface.ms_interface_attr set value_v = '{"enabled":true,"res_type":"Success"}' where attribute_id_n = 1141010;
+-- update interface.ms_interface_attr set value_v = '{"enabled":true,"res_type":"Failure"}' where attribute_id_n = 1141010;
+-- update interface.ms_interface_attr set value_v = '{"enabled":false,"res_type":""}' where attribute_id_n = 1141010;

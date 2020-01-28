@@ -1,0 +1,438 @@
+{
+	"payload": {
+		"organization": {
+			"desc": "Int0919001",
+			"tin_no": "",
+			"sub_org_type": 66,
+			"gstin_no": "",
+			"org_email_id": "",
+			"visibility_type": 1,
+			"ref_code": "968216551",
+			"sale_territory": {
+				"nasional": "5501",
+				"area": "",
+				"regional": "57682",
+				"sales_area": "",
+				"cluster": "",
+				"micro_cluster": ""
+			},
+			"addnl_params": {
+				"org_long": "",
+				"org_painting": "",
+				"org_group": "58649",
+				"rule_prof_id": "1951",
+				"org_category": "2060",
+				"charge_prof_key": "1301",
+				"org_classification": "1703",
+				"dompetku_no": "62134968216551",
+				"org_stg_info": "",
+				"org_addnl_dropdown_2": "",
+				"org_addnl_dropdown_1": "",
+				"undefined": "",
+				"org_addnl_field_3": "",
+				"org_addnl_field_2": "",
+				"org_addnl_field_1": "",
+				"dealer_code": [],
+				"marketing_program": "2255",
+				"org_addnl_field_5": "",
+				"org_addnl_field_4": "",
+				"org_pareto_manual": "1",
+				"invoice_note": "",
+				"org_width": "",
+				"org_loc_type": "1902",
+				"org_pareto_bvwise": "1",
+				"npwp_num": "",
+				"org_addnl_dropdown_5": "",
+				"charge_prof_id": "1801",
+				"charge_dist_model": "2002",
+				"telephone_no": "",
+				"org_addnl_dropdown_3": "",
+				"org_addnl_dropdown_4": "",
+				"parent_short_code": "SAT10",
+				"partner_type": "1453",
+				"user_saldomobo_msisdn_no": "",
+				"chnl_ctgr": "1753",
+				"prd_dtls": [
+					{
+						"prd_id": 58321,
+						"prd_exp_date": {
+							"$date": "2099-12-30T18:30:00.000Z"
+						},
+						"prd_efct_date": {
+							"$date": "2019-09-20T05:20:24.011Z"
+						}
+					},
+					{
+						"prd_id": 58357,
+						"prd_exp_date": {
+							"$date": "2099-12-30T18:30:00.000Z"
+						},
+						"prd_efct_date": {
+							"$date": "2019-09-20T05:20:24.011Z"
+						}
+					}
+				],
+				"org_type": 7
+			},
+			"sub_org_type_des": "Outlet",
+			"reg_mob": "",
+			"extnl_sync": true,
+			"territory_id": 57682,
+			"sale_territory_desc": "Central and West Java->NASIONAL",
+			"org_type": 7,
+			"org_type_desc": "Distribution",
+			"reason_cmnt": null,
+			"reason": null,
+			"addresses": [
+				{
+					"adrs_type": "745",
+					"subDistrict": "",
+					"postal_code": "586129",
+					"state": "54288",
+					"adrs_1": "#96",
+					"adrs_2": "Kolur",
+					"longitude": "",
+					"latitude": "",
+					"zone": "54306",
+					"city": "54311",
+					"country": "401"
+				}
+			],
+			"parent_org_type": 5,
+			"parent_org_id": 20,
+			"present_parent_org_id": 20,
+			"status": 174,
+			"activated_dt": {
+				"$date": "2019-09-20T05:20:24.052Z"
+			},
+			"src_chnl": "Web",
+			"crtd_by": 30001,
+			"crtd_dt": {
+				"$date": "2019-09-20T05:20:24.052Z"
+			},
+			"updtd_by": null,
+			"updtd_dt": null,
+			"_id": 294730,
+			"org_id": 294730
+		},
+		"user": {
+			"pants_size": "",
+			"bank_name": "",
+			"owner_name": "Mahadev",
+			"shoe_size": "",
+			"bank_acc_no": "",
+			"utype": 731,
+			"paypro_msisdn_no": "",
+			"father_name": "",
+			"contacts": [
+				{
+					"no": "no@no.com",
+					"type": "email_id"
+				},
+				{
+					"no": "623456189723",
+					"type": "mobile_no"
+				},
+				{
+					"no": "",
+					"type": "telephone_no"
+				},
+				{
+					"no": "9001",
+					"type": "preferred_commn_lang"
+				},
+				{
+					"no": "9001",
+					"type": "preferred_lang"
+				}
+			],
+			"religion": "",
+			"first_name": "Mahadev",
+			"formal_education": "",
+			"gender": "",
+			"upwd": "y9pcOoMc5sCURjSXvhK4x2Z3wngyFjBhn+s9zZiXUj4=",
+			"marital_status": "",
+			"wrk_end_date": "31-Dec-2099",
+			"org_type": 7,
+			"in_formal_education": "",
+			"status": 174,
+			"user_type": "1351",
+			"mother_mad_name": "Mahadevs",
+			"middle_name": "",
+			"uname": "HARISH-VINAY",
+			"addnl_field_5": "",
+			"hobby": "",
+			"notifi_lang": "9001",
+			"npwp_num": "",
+			"birth_place": "",
+			"operator_type": "68557",
+			"saldomobo_msisdn_no": "62682639161511",
+			"parent_org_type": 5,
+			"logged_in": "N",
+			"opr_classification": "",
+			"citizen_of": "",
+			"addnl_field_4": "",
+			"last_name": "",
+			"addnl_field_3": "",
+			"addnl_field_2": "",
+			"parent_org_id": 20,
+			"locked": "N",
+			"addnl_field_1": "",
+			"last_login_dt": "",
+			"addnl_dropdown_4": "",
+			"addnl_dropdown_5": "",
+			"addnl_dropdown_2": "",
+			"addnl_dropdown_3": "",
+			"copy_adrs_type": "",
+			"role_id": [
+				"2103"
+			],
+			"addnl_dropdown_1": "",
+			"operator_id": "68531468",
+			"atmpt_cnt": 0,
+			"auth_type": [
+				"1151"
+			],
+			"owner_alt_id_type": "1553",
+			"owner_alt_id_no": "636752172123",
+			"org_owner": "1",
+			"org_type_desc": "Distribution",
+			"blocked": "N",
+			"frst_login": "Y",
+			"operator_name": "Mahadev",
+			"wrk_start_date": "20-Sep-2019",
+			"size_cloth": "",
+			"notify_chnl": "1201",
+			"org_id": 294730,
+			"present_parent_org_id": 20,
+			"last_edu": "",
+			"role_id_dtls": [
+				{
+					"role_id": 2103,
+					"role_exp_date": {
+						"$date": "2099-12-30T18:30:00.000Z"
+					},
+					"role_efct_date": {
+						"$date": "2019-09-20T05:20:24.011Z"
+					}
+				}
+			],
+			"dob": null,
+			"addresses": [
+				{
+					"adrs_type": "742",
+					"subDistrict": "",
+					"postal_code": "",
+					"adrs_1": "Mahadev",
+					"state": "54288",
+					"adrs_2": "",
+					"longitude": "",
+					"latitude": "",
+					"zone": "54306",
+					"country": "401",
+					"city": "54311"
+				}
+			],
+			"_id": 277727,
+			"user_id": 277727,
+			"accept": 1,
+			"salt": "HARISH-VINAY",
+			"crtd_by": 30001,
+			"crtd_dt": {
+				"$date": "2019-09-20T05:20:24.126Z"
+			},
+			"updtd_by": null,
+			"updtd_dt": null,
+			"password": "Pwd@123456"
+		},
+		"node": {
+			"sale_territory_desc": "Central and West Java->NASIONAL",
+			"territory_id": [
+				57682
+			],
+			"org_id": 294730,
+			"org_type": 7,
+			"target": 0,
+			"roles": [
+				10
+			],
+			"children": [],
+			"trans_list": [
+				{
+					"trans_type": 4,
+					"trans_values": [
+						1012
+					]
+				},
+				{
+					"trans_type": 1,
+					"trans_values": [
+						7
+					]
+				},
+				{
+					"trans_type": 2,
+					"trans_values": [
+						401
+					]
+				},
+				{
+					"trans_type": 3,
+					"trans_values": [
+						54288
+					]
+				},
+				{
+					"trans_type": 5,
+					"trans_values": [
+						54306
+					]
+				},
+				{
+					"trans_type": 6,
+					"trans_values": [
+						54311
+					]
+				},
+				{
+					"trans_type": 84,
+					"trans_values": [
+						5501
+					]
+				},
+				{
+					"trans_type": 85,
+					"trans_values": [
+						57682
+					]
+				}
+			],
+			"parent_id": 0,
+			"props": [
+				240,
+				237,
+				239
+			],
+			"crtd_by": 30001,
+			"crtd_dt": {
+				"$date": "2019-09-20T05:20:24.085Z"
+			},
+			"updtd_by": null,
+			"updtd_dt": null,
+			"_id": 304215,
+			"node_id": 304215,
+			"status": 174,
+			"name": "Dealer Owner_Central and West Java_304215"
+		},
+		"accounts": [
+			{
+				"_id": 6370544,
+				"location": {
+					"adrs_type": "744",
+					"subDistrict": "",
+					"postal_code": "586129",
+					"state": "54288",
+					"adrs_1": "#96",
+					"adrs_2": "Kolur",
+					"longitude": "",
+					"latitude": "",
+					"zone": "54306",
+					"city": "54311",
+					"country": "401"
+				},
+				"ac_name": "Int0919001_Dealer Owner_6370544",
+				"ent_tp": 7,
+				"ent_no": 304215,
+				"ent_org": 294730,
+				"sys": "",
+				"value": 0,
+				"ac_code": 304215,
+				"status": 174,
+				"crtd_by": 30001,
+				"crtd_dt": {
+					"$date": "2019-09-20T05:20:24.094Z"
+				},
+				"updtd_by": null,
+				"updtd_dt": null,
+				"start_dt": {
+					"$date": "2019-09-19T18:30:00.000Z"
+				},
+				"end_dt": {
+					"$date": "2099-12-31T18:29:59.999Z"
+				},
+				"acc_no": 6370544,
+				"acc_type": "i"
+			}
+		],
+		"user_trans": {
+			"_id": 535095,
+			"node_id": 304215,
+			"org_id": 294730,
+			"org_desc": "Int0919001",
+			"user_id": 277727,
+			"start_dt": {
+				"$date": "2019-09-19T18:30:00.000Z"
+			},
+			"end_dt": {
+				"$date": "2099-12-31T18:29:59.999Z"
+			},
+			"is_current": 1,
+			"postn_tp": 1,
+			"status": 174,
+			"position_desc": [
+				"Dealer Owner"
+			],
+			"position_id": [
+				1012
+			],
+			"organization type_desc": [
+				"Distribution"
+			],
+			"organization type_id": [
+				7
+			],
+			"country_desc": [
+				"Nasional"
+			],
+			"country_id": [
+				401
+			],
+			"province_desc": [
+				"BALI"
+			],
+			"province_id": [
+				54288
+			],
+			"city_desc": [
+				"BADUNG"
+			],
+			"city_id": [
+				54306
+			],
+			"district_desc": [
+				"ABIANSEMAL"
+			],
+			"district_id": [
+				54311
+			],
+			"nasional_desc": [
+				"NASIONAL"
+			],
+			"nasional_id": [
+				5501
+			],
+			"regional_desc": [
+				"Central and West Java"
+			],
+			"regional_id": [
+				57682
+			],
+			"crtd_by": 30001,
+			"crtd_dt": {
+				"$date": "2019-09-20T05:20:24.650Z"
+			},
+			"updtd_by": null,
+			"updtd_dt": null
+		}
+	}
+}

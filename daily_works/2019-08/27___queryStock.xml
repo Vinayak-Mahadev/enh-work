@@ -1,0 +1,157 @@
+query 1140
+
+
+---------------------------------------------------------------------------------------------------------------------------------------------------
+REQUEST
+---------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+
+
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:int="http://com/enhancesys/integration/services/interfaces/IntegrationManagement">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <int:invokePrimarySalesInterface>
+         <!--Optional:-->
+         <moduleId>224</moduleId>
+         <!--Optional:-->
+         <jsonRequestData>
+         <![CDATA[
+{
+	"payload": {
+		"order": {
+			"org_id": "323532",
+			"products": [
+				{
+					"matrl_code": "P64453",
+					"plant": "001"
+				},
+				{
+					"matrl_code": "P453",
+					"plant": "001"
+				}
+			]
+		}
+	}
+}
+		]]>
+         
+         </jsonRequestData>
+      </int:invokePrimarySalesInterface>
+   </soapenv:Body>
+</soapenv:Envelope>
+
+
+
+
+
+----------------------------------------------------------------------
+Converted ...
+----------------------------------------------------------------------
+ 
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:mob="http://mobii.com/">
+	<soapenv:Header/>
+	<soapenv:Body>
+		<mob:MT_QueryStock_Request>
+			<Item>
+				<MaterialCode>P64453</MaterialCode>
+				<Plant>001</Plant>
+			</Item>
+			<Item>
+				<MaterialCode>P453</MaterialCode>
+				<Plant>001</Plant>
+			</Item>
+		</mob:MT_QueryStock_Request>
+	</soapenv:Body>
+</soapenv:Envelope>
+
+----------------------------------------------------------------------
+Result template...
+----------------------------------------------------------------------
+
+
+<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
+   <soap:Body>
+      <ns2:getStaticResponseResponse xmlns:ns2="http://com/enhancesys/integration/response/services/interfaces/InterfaceResponseServices">
+         <getStaticResponse><![CDATA[
+		 
+		 
+				<RESULT HERE>
+		 
+		 ]]></getStaticResponse>
+      </ns2:getStaticResponseResponse>
+   </soap:Body>
+</soap:Envelope>
+
+----------------------------------------------------------------------
+Error ...
+----------------------------------------------------------------------
+
+<?xml version = "1.0" encoding = "UTF-8"?>
+<SOAP:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
+	<SOAP:Body>
+		<SOAP:Fault>
+			<faultcode>soapenv:Server</faultcode>
+			<faultstring>Application Error. Please see FaultInfo</faultstring>
+			<detail>
+				<ns2:FaultInfo xmlns:ns3="http://com/enhancesys/entities/schema/integration" xmlns:ns2="http://com/enhancesys/integration/services/interfaces/IntegrationManagement">
+					<causedBy>java.lang.NullPointerException</causedBy>
+					<message>Error in initialising entity manager</message>
+				</ns2:FaultInfo>
+			</detail>
+		</SOAP:Fault>
+	</SOAP:Body>
+</SOAP:Envelope>
+
+----------------------------------------------------------------------
+Success ...
+----------------------------------------------------------------------
+	
+<?xml version = "1.0" encoding = "UTF-8"?>
+<SOAP:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:mob="http://mobii.com/">
+	<soapenv:Header/>
+	<SOAP:Body>
+		<nm:MT_QueryStock_Response>
+			<Item>
+				<MaterialCode>P64453</MaterialCode>
+				<Plant>001</Plant>
+				<Stock>   1000.00</Stock>
+				<Remarks>OK</Remarks>
+			</Item>
+			<Item>
+				<MaterialCode>P453</MaterialCode>
+				<Plant>001</Plant>
+				<Stock>   1000.00</Stock>
+				<Remarks>OK</Remarks>
+			</Item>
+		</nm:MT_QueryStock_Response>
+	</SOAP:Body>
+</SOAP:Envelope>
+
+
+----------------------------------------------------------------------
+Failure ...
+----------------------------------------------------------------------
+
+<?xml version = "1.0" encoding = "UTF-8"?>
+<SOAP:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:mob="http://mobii.com/">
+	<soapenv:Header/>
+	<SOAP:Body>
+		<nm:MT_QueryStock_Response>
+			<Item>
+				<MaterialCode>P64453</MaterialCode>
+				<Plant>001</Plant>
+				<Stock>0.00</Stock>
+				<Remarks>Request Failed..</Remarks>
+			</Item>
+			<Item>
+				<MaterialCode>P453</MaterialCode>
+				<Plant>001</Plant>
+				<Stock>0.00</Stock>
+				<Remarks>Request Failed..</Remarks>
+			</Item>
+		</nm:MT_QueryStock_Response>
+	</SOAP:Body>
+</SOAP:Envelope>
+
+

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/">
+	<soapenv:Body>
+		<api:Result xmlns:api="http://cps.huawei.com/synccpsinterface/api_requestmgr" xmlns:res="http://cps.huawei.com/synccpsinterface/result">
+			<res:Header>
+				<res:Version>1.0</res:Version>
+				<res:OriginatorConversationID>227156</res:OriginatorConversationID>
+				<res:ConversationID>SM-227156</res:ConversationID>
+			</res:Header>
+			<res:Body>
+				<res:ResultType>0</res:ResultType>
+				<res:ResultCode>0</res:ResultCode>
+				<res:ResultDesc>Process service request successfully.</res:ResultDesc>
+				<res:TransactionResult>
+					<res:TransactionID>227156</res:TransactionID>
+				</res:TransactionResult>
+			</res:Body>
+		</api:Result>
+	</soapenv:Body>
+</soapenv:Envelope>
+{
+	"res:ResultCode": 0,
+	"res:ResultType": 0,
+	"res:TransactionResult": {
+		"res:TransactionID": 227156
+	},
+	"res:ResultDesc": "Process service request successfully."
+}
+
+{
+	"ext_ref_id": "SM-227156",
+	"status": "SUCCESS",
+	"trans_dt": "2019-06-19T14:49:49.733",
+	"transaction_id": 227156
+}

@@ -1,0 +1,239 @@
+
+REPROCESS TEST for , 
+
+1. PACKAGE ACTIVATION A# - 1068
+2. PACKAGE ACTIVATION B# - 1069
+3. SALE REVENUE ORGANIZATION - 1067
+4. SALE REVENUE LACCI - 1066
+5. SUBSCRIBER GENERATED EVENT (SGE) - 1071
+
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------
+
+1. PACKAGE ACTIVATION A# - 1068
+
+Date|LAC ID|CI ID|Org Id|System source|Packet data code|Packet data name|Qty|Amount
+2019-05-14 05:11:10|NA|NA|65440098|kkkkk|10|VOUCHER PPR SMS RP. 5.Test1|120|100
+2019-05-14 05:11:10|NA|NAA|65440098|kkkkk|10|wkjwjkw|120|50
+
+
+
+process file service call :  1068
+	file id - 16471
+processReceivedFiles service call :  1068
+failed msg - actor_map_v not found as 'NA~NAA'
+updated 'NA~NA'
+reProcessFileBasedOrders 1068-16471
+
+SELECT * from kpi.tr_daily_package_act_seller_aggr where day_id_n = 20190514 order by 1 desc limit 10
+20190514|8|10002|104|13|9450019|12000|10000|<NULL>|<NULL>|<NULL>|<NULL>|<NULL>|<NULL>|<NULL>|<NULL>|1|1|185434|0|31|15677|External|2019-05-14 11:55:26.305335+05:30
+20190514|8|10002|104|13|9450094|12000|5000|<NULL>|<NULL>|<NULL>|<NULL>|<NULL>|<NULL>|<NULL>|<NULL>|1|1|185434|0|31|15677|External|2019-05-14 11:58:13.139364+05:30
+
+
+SELECT * from kpi.tr_monthly_package_act_seller_aggr  order by 1 desc limit 10
+201905|8|10002|104|13|9450094|36000|6000|<NULL>|<NULL>|<NULL>|<NULL>|<NULL>|<NULL>|<NULL>|<NULL>|3|1|185434|0|31|15677|External|2019-05-14 11:58:13.139364+05:30
+
+
+
+
+SELECT * from kpi.tr_daily_package_act_seller_aggr where day_id_n = 20190514 order by 1 desc limit 10
+
+SELECT  * from interface.ms_interface_attr  where interface_id_n in (1068);
+
+SELECT  * from interface.tr_interface_file_summary where interface_id_n = 1068 order by 1 desc limit 1
+
+SELECT * from kpi.tr_daily_package_act_seller_aggr where day_id_n = 20190514 order by 1 desc limit 10
+
+select * from kpi.tr_temp_upload_aggr_failure where file_id_n = 16471
+
+update  kpi.tr_temp_upload_aggr_failure set actor_key_v = 'NA~NA' where file_id_n = 16471
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+2. PACKAGE ACTIVATION B# - 1069
+
+Date|LAC ID|CI ID|Org Id|System source|Packet data code|Packet data name|Qty|Amount
+2019-05-13 12:11:10|NA|NA|SAT10|10|10|Test Pckt1|20|20
+2019-05-13 12:11:10|NA|NA|SAT100|10|10|test pckt2|50|20
+2019-05-13 12:11:10|NA|100|SAT10|10|10|Test Pckt1|50|20
+
+process file service call :  1069
+	file id - 16472
+processReceivedFiles service call :  1062
+failed msg - actor_map_v not found as 'NA~NAA'
+failed msg - source_map_v not found as 'SAT10000'
+updated 'NA~NA', 'SAT10'
+reProcessFileBasedOrders 1069-16472
+
+SELECT * from kpi.tr_daily_package_act_buyer_aggr where day_id_n = 20190514 order by 1 desc limit 10
+20190514|8|10002|105|13|9450026|7000|4000|<NULL>|<NULL>|<NULL>|<NULL>|<NULL>|<NULL>|<NULL>|<NULL>|2|1|181638|0|31|115670|External|2019-05-14 12:23:18.808055+05:30
+20190514|8|10002|105|13|9450027|5000|2000|<NULL>|<NULL>|<NULL>|<NULL>|<NULL>|<NULL>|<NULL>|<NULL>|1|1|181638|0|31|115670|External|2019-05-14 12:24:47.776033+05:30
+
+
+SELECT * from kpi.tr_monthly_package_act_buyer_aggr  order by 1 desc limit 10
+201905|8|10002|105|13|9450026|9000|6000|<NULL>|<NULL>|<NULL>|<NULL>|<NULL>|<NULL>|<NULL>|<NULL>|3|1|181638|0|31|115670|External|2019-05-14 12:23:18.808055+05:30
+201905|8|10002|105|13|9450027|5000|2000|<NULL>|<NULL>|<NULL>|<NULL>|<NULL>|<NULL>|<NULL>|<NULL>|1|1|181638|0|31|115670|External|2019-05-14 12:24:47.776033+05:30
+
+
+
+
+SELECT  * from interface.ms_interface_attr  where interface_id_n in (1069);
+
+SELECT  * from interface.tr_interface_file_summary where interface_id_n = 1069 order by 1 desc limit 1
+
+SELECT * from kpi.tr_daily_package_act_buyer_aggr where day_id_n = 20190514 order by 1 desc limit 10
+
+SELECT * from kpi.tr_monthly_package_act_buyer_aggr where month_id_n = 201905 order by 1 desc limit 10
+
+
+select *  from kpi.tr_temp_upload_aggr_failure  where file_id_n = 16472	
+
+update  kpi.tr_temp_upload_aggr_failure set actor_key_v = 'NA~NA' where file_id_n = 16472
+
+update  kpi.tr_temp_upload_aggr_failure set source_key_v = 'SAT10' where file_id_n = 16472
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------
+
+3. SALE REVENUE ORGANIZATION - 1067
+
+Date|Organization Shortcode|Transaction Type|Transaction Hit|Transaction Amount
+2019-05-10 12:11:10|SAT1000000000|Transaction Type Revenue1|120|8
+2019-05-10 12:11:10|SAT10|Transaction Type Revenue2|140|9
+
+
+process file service call :  1067
+	file id - 16473
+processReceivedFiles service call :  1067
+1 . failed msg - Actor mapping not found for Organization Shortcode : SAT1000000000
+	updated 'SAT10'
+2.  failed msg - Source mapping not found for Organization Shortcode : SAT1000000000
+reProcessFileBasedOrders 1067-16473
+
+SELECT * from kpi.tr_daily_sale_revenue_org_aggr where day_id_n = 20190514 order by 1 desc limit 10
+20190514|1|181638|101|33|9450013|14000|900|<NULL>|<NULL>|<NULL>|<NULL>|<NULL>|<NULL>|<NULL>|<NULL>|1|1|181638|0|0|0|External|2019-05-14 12:38:23.603534+05:30
+20190514|1|181638|101|33|9450014|12000|800|<NULL>|<NULL>|<NULL>|<NULL>|<NULL>|<NULL>|<NULL>|<NULL>|1|1|181638|0|0|0|External|2019-05-14 12:43:50.509775+05:30
+
+SELECT * from kpi.tr_monthly_sale_revenue_org_aggr where month_id_n = 201905 order by 1 desc limit 10
+201905|1|181638|101|33|115693|14000|900|<NULL>|<NULL>|<NULL>|<NULL>|<NULL>|<NULL>|<NULL>|<NULL>|1|1|181638|0|0|0|External|2019-05-13 14:11:26.269803+05:30
+201905|1|181638|101|33|9450013|28000|1800|<NULL>|<NULL>|<NULL>|<NULL>|<NULL>|<NULL>|<NULL>|<NULL>|2|1|181638|0|0|0|External|2019-05-14 12:38:23.603534+05:30
+201905|1|181638|101|33|9450014|12000|800|<NULL>|<NULL>|<NULL>|<NULL>|<NULL>|<NULL>|<NULL>|<NULL>|1|1|181638|0|0|0|External|2019-05-14 12:43:50.509775+05:30
+201905|1|181638|101|33|9450016|14000|900|<NULL>|<NULL>|<NULL>|<NULL>|<NULL>|<NULL>|<NULL>|<NULL>|1|1|181638|0|0|0|External|2019-05-13 14:11:26.269803+05:30
+201905|1|181638|101|33|9450017|12000|800|<NULL>|<NULL>|<NULL>|<NULL>|<NULL>|<NULL>|<NULL>|<NULL>|1|1|181638|0|0|0|External|2019-05-13 14:11:26.269803+05:30
+
+
+SELECT  * from interface.ms_interface_attr  where interface_id_n in (1067);
+
+
+SELECT  * from interface.tr_interface_file_summary where interface_id_n = 1067 order by 1 desc limit 1
+
+
+
+select *  from kpi.tr_temp_upload_aggr_failure  where file_id_n = 16473	
+
+update  kpi.tr_temp_upload_aggr_failure set actor_key_v = 'SAT10' where file_id_n = 16473
+
+update  kpi.tr_temp_upload_aggr_failure set source_key_v = 'SAT10' where file_id_n = 16473
+
+
+
+---------------------------------------------------------------------------------------------------------------------------------
+4. SALE REVENUE LACCI - 1066
+
+Date|LAC ID|CI ID|Revenue
+2019-05-14 12:11:10|1001|NA|110
+2019-05-14 12:11:10|1002|NA|120
+2019-03-06 12:11:10|NA|1001|130
+2019-03-06 12:11:10|NA|NA|140
+
+
+
+
+process file service call :  1066
+	file id - 16474
+processReceivedFiles service call :  1066
+
+  1. failed msg : 
+	1. Actor mapping not found for CI ID : NA~1001
+	2. Actor mapping not found for CI ID : 1002~NA
+	3. Actor mapping not found for CI ID : 1001~NA
+  1. updated : 
+	update  kpi.tr_temp_upload_aggr_failure set actor_key_v = 'NA~NA' where file_id_n = 16474
+
+1.reProcessFileBasedOrders 1066-16474
+
+  2. failed msg : 
+	1. Source mapping not found for CI ID : NA~1001
+	2. Source mapping not found for CI ID : 1002~NA
+	3. Source mapping not found for CI ID : 1001~NA
+
+  2. updated : 
+	update  kpi.tr_temp_upload_aggr_failure set source_key_v = 'NA~NA' where file_id_n = 16474
+
+2.reProcessFileBasedOrders 1066-16474
+
+SELECT  * from kpi.tr_daily_sale_revenue_lacci_aggr where day_id_n = 20190514 order by 1 desc limit 10 
+20190514|8|10002|102|21|105|23000|<NULL>|<NULL>|<NULL>|<NULL>|<NULL>|<NULL>|<NULL>|<NULL>|<NULL>|2|8|10002|0|0|0|External|2019-05-14 14:05:30.323428+05:30
+
+SELECT  * from kpi.tr_monthly_sale_revenue_lacci_aggr where month_id_n = 201905 order by 1 desc limit 10
+201905|8|10002|102|21|105|49000|<NULL>|<NULL>|<NULL>|<NULL>|<NULL>|<NULL>|<NULL>|<NULL>|<NULL>|4|8|10002|0|0|0|External|2019-05-14 14:05:30.323428+05:30
+
+
+SELECT  * from interface.ms_interface_attr  where interface_id_n in (1066);
+
+SELECT  * from interface.tr_interface_file_summary where interface_id_n = 1066 order by 1 desc limit 1
+ 
+SELECT  * from kpi.tr_daily_sale_revenue_lacci_aggr where day_id_n = 20190514 order by 1 desc limit 10 
+
+SELECT  * from kpi.tr_monthly_sale_revenue_lacci_aggr where month_id_n = 201905 order by 1 desc limit 10
+
+select *  from kpi.tr_temp_upload_aggr_failure  where file_id_n = 16474	
+
+update  kpi.tr_temp_upload_aggr_failure set actor_key_v = 'NA~NA' where file_id_n = 16474
+
+update  kpi.tr_temp_upload_aggr_failure set source_key_v = 'NA~NA' where file_id_n = 16474
+----------------------------------------------------------------------------------------------------------------------------------------------------------
+5. SUBSCRIBER GENERATED EVENT (SGE) - 1071
+
+Date|ORG_CODE|NO_OF_SGE
+2019-05-14 12:11:10|SAT10000|5
+2019-05-14 12:11:10|MYOUTLET|6
+2019-05-14 12:11:10|SAT10|5
+
+process file service call :  1071
+	file id - 16474
+processReceivedFiles service call :  1071
+
+1. failed msg : 
+		1. Actor mapping not found for ORG_CODE : SAT10000
+	
+  1. updated : 
+		update  kpi.tr_temp_upload_aggr_failure set actor_key_v = 'SAT10' where file_id_n = 16475
+
+1.reProcessFileBasedOrders 1066-16474
+
+  2. failed msg : 
+		1. Source mapping not found for ORG_CODE : SAT10000
+
+  2. updated : 
+		update  kpi.tr_temp_upload_aggr_failure set source_key_v = 'SAT10' where file_id_n = 16475
+
+2.reProcessFileBasedOrders 1066-16475
+
+SELECT  * from kpi.tr_daily_subscriber_event_aggr where day_id_n = 20190514 order by 1 desc limit 10 
+20190514|1|181638|103|21|106|1000|<NULL>|<NULL>|<NULL>|<NULL>|<NULL>|<NULL>|<NULL>|<NULL>|<NULL>|2|1|181638|0|0|0|External|2019-05-14 14:17:31.873102+05:30
+20190514|1|210116|103|21|106|600|<NULL>|<NULL>|<NULL>|<NULL>|<NULL>|<NULL>|<NULL>|<NULL>|<NULL>|1|1|210116|0|0|0|External|2019-05-14 14:12:55.149443+05:30
+
+SELECT  * from kpi.tr_monthly_subscriber_event_aggr where month_id_n = 201905 order by 1 desc limit 10
+201905|1|181638|103|21|106|3200|<NULL>|<NULL>|<NULL>|<NULL>|<NULL>|<NULL>|<NULL>|<NULL>|<NULL>|6|1|181638|0|0|0|External|2019-05-14 14:17:31.873102+05:30
+201905|1|210116|103|21|106|1200|<NULL>|<NULL>|<NULL>|<NULL>|<NULL>|<NULL>|<NULL>|<NULL>|<NULL>|2|1|210116|0|0|0|External|2019-05-14 14:12:55.149443+05:30
+
+
+SELECT  * from interface.ms_interface_attr  where interface_id_n in (1071);
+
+SELECT  * from interface.tr_interface_file_summary where interface_id_n = 1071 order by 1 desc limit 1
+
+select *  from kpi.tr_temp_upload_aggr_failure  where file_id_n = 16475	
+
+update  kpi.tr_temp_upload_aggr_failure set actor_key_v = 'SAT10' where file_id_n = 16475
+
+update  kpi.tr_temp_upload_aggr_failure set source_key_v = 'SAT10' where file_id_n = 16475
+--------------------------------------------------------------------------------------------------------------------------------------------------------------

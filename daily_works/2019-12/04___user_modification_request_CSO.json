@@ -1,0 +1,906 @@
+2019-12-04 15:42:40.938, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.util.TokuUser [LineNumber]:  33  Initiating TokuMx-Java Adapter.....
+2019-12-04 15:42:40.948, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.util.TokuUser [LineNumber]:  42  TokuMx-Java Adapter Initiated Successfully For Replica-Set user....!
+2019-12-04 15:42:41.030, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  11728  Entry publishToInterface : ModuleId :: 115 RefId :: ?
+2019-12-04 15:42:41.597, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  13566  Entry convertRequest..1023
+2019-12-04 15:42:42.106, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  13674  Ref Data Path Value : 277777
+2019-12-04 15:42:42.121, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  119  JsonXmlDataConverter : Entry processRequest.. interfaceId : 1023 : requestData :
+
+
+{
+	"payload": {
+		"user": {
+			"pants_size": "",
+			"bank_name": "",
+			"owner_name": "lcan",
+			"shoe_size": "",
+			"bank_acc_no": "",
+			"utype": 730,
+			"paypro_msisdn_no": "",
+			"father_name": "",
+			"contacts": [
+				{
+					"no": "no@no.com",
+					"type": "email_id"
+				},
+				{
+					"no": "622532535333",
+					"type": "mobile_no"
+				},
+				{
+					"no": "",
+					"type": "telephone_no"
+				},
+				{
+					"no": "9001",
+					"type": "preferred_commn_lang"
+				},
+				{
+					"no": "9001",
+					"type": "preferred_lang"
+				}
+			],
+			"religion": "",
+			"first_name": "lcan",
+			"formal_education": "",
+			"gender": "",
+			"marital_status": "",
+			"wrk_end_date": "31-Dec-2099",
+			"in_formal_education": "",
+			"user_type": "1351",
+			"addnl_field_5": "",
+			"uname": "LCAN7",
+			"middle_name": "",
+			"mother_mad_name": "suju",
+			"hobby": "",
+			"notifi_lang": "9001",
+			"npwp_num": "",
+			"birth_place": "",
+			"operator_type": "58558",
+			"saldomobo_msisdn_no": "6225325365365",
+			"extnl_sync": true,
+			"opr_classification": "",
+			"citizen_of": "",
+			"addnl_field_4": "",
+			"last_name": "",
+			"addnl_field_3": "",
+			"addnl_field_2": "",
+			"addnl_field_1": "",
+			"addresses": [
+				{
+					"adrs_type": "741",
+					"subDistrict": "",
+					"postal_code": "",
+					"state": "54288",
+					"adrs_1": "kolar",
+					"adrs_2": "",
+					"longitude": "",
+					"latitude": "",
+					"zone": "54306",
+					"city": "54311",
+					"country": "401"
+				}
+			],
+			"addnl_dropdown_4": "",
+			"addnl_dropdown_5": "",
+			"addnl_dropdown_2": "",
+			"addnl_dropdown_3": "",
+			"copy_adrs_type": "0",
+			"role_id": [
+				"58577"
+			],
+			"addnl_dropdown_1": "",
+			"operator_id": "lcan7",
+			"auth_type": [
+				"1151"
+			],
+			"owner_alt_id_type": "1554",
+			"owner_alt_id_no": "62273874833",
+			"org_owner": "1",
+			"operator_name": "lcan",
+			"wrk_start_date": "10-Oct-2019",
+			"size_cloth": "",
+			"notify_chnl": "1201",
+			"dob": "",
+			"last_edu": "",
+			"role_id_dtls": [
+				{
+					"role_id": 58577,
+					"role_exp_date": {
+						"$date": "2099-12-31T16:59:59.000Z"
+					},
+					"role_efct_date": {
+						"$date": "2019-10-10T08:26:15.832Z"
+					}
+				}
+			],
+			"isStatusUpdate": false,
+			"user_id": 277777
+		}
+	}
+}
+
+
+2019-12-04 15:42:42.123, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  15178  Entry getKycSyncAttributesByInterfaceId..
+2019-12-04 15:42:42.545, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  15226  Exit getKycSyncAttributesByInterfaceId..
+2019-12-04 15:42:42.553, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  165  Payload : {"user":{"pants_size":"","bank_name":"","owner_name":"lcan","shoe_size":"","bank_acc_no":"","utype":730,"paypro_msisdn_no":"","father_name":"","contacts":[{"no":"no@no.com","type":"email_id"},{"no":"622532535333","type":"mobile_no"},{"no":"","type":"telephone_no"},{"no":"9001","type":"preferred_commn_lang"},{"no":"9001","type":"preferred_lang"}],"religion":"","first_name":"lcan","formal_education":"","gender":"","marital_status":"","wrk_end_date":"31-Dec-2099","in_formal_education":"","user_type":"1351","mother_mad_name":"suju","middle_name":"","uname":"LCAN7","addnl_field_5":"","hobby":"","notifi_lang":"9001","npwp_num":"","birth_place":"","operator_type":"58558","saldomobo_msisdn_no":"6225325365365","extnl_sync":true,"opr_classification":"","citizen_of":"","addnl_field_4":"","last_name":"","addnl_field_3":"","isStatusUpdate":false,"addnl_field_2":"","addnl_field_1":"","addresses":[{"adrs_type":"741","subDistrict":"","postal_code":"","adrs_1":"kolar","state":"54288","adrs_2":"","longitude":"","latitude":"","zone":"54306","country":"401","city":"54311"}],"addnl_dropdown_4":"","addnl_dropdown_5":"","addnl_dropdown_2":"","addnl_dropdown_3":"","copy_adrs_type":"0","role_id":["58577"],"addnl_dropdown_1":"","operator_id":"lcan7","auth_type":["1151"],"owner_alt_id_type":"1554","owner_alt_id_no":"62273874833","role_id_dtls":[{"role_id":58577,"role_exp_date":{"$date":"2099-12-31T16:59:59.000Z"},"role_efct_date":{"$date":"2019-10-10T08:26:15.832Z"}}],"org_owner":"1","user_id":277777,"operator_name":"lcan","wrk_start_date":"10-Oct-2019","size_cloth":"","notify_chnl":"1201","dob":"","last_edu":""}}
+2019-12-04 15:42:42.573, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  194  templateFileName :userModification-template.xml
+2019-12-04 15:42:42.612, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  294  JsonXmlDataConverter : Entry generateXml..
+2019-12-04 15:42:42.612, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  436  soapenv:Header : element.getChildNodes().getLength() : 0
+2019-12-04 15:42:42.613, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  590  soapenv:Header value : null
+2019-12-04 15:42:42.613, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  611  soapenv:Header :  : null
+2019-12-04 15:42:42.614, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  436  soapenv:Body : element.getChildNodes().getLength() : 3
+2019-12-04 15:42:42.614, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  294  JsonXmlDataConverter : Entry generateXml..
+2019-12-04 15:42:42.615, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  436  api:Request : element.getChildNodes().getLength() : 5
+2019-12-04 15:42:42.615, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  294  JsonXmlDataConverter : Entry generateXml..
+2019-12-04 15:42:42.616, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  436  req:Header : element.getChildNodes().getLength() : 13
+2019-12-04 15:42:42.616, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  294  JsonXmlDataConverter : Entry generateXml..
+2019-12-04 15:42:42.617, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  436  req:Version : element.getChildNodes().getLength() : 0
+2019-12-04 15:42:42.618, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  590  req:Version value : 1.0
+2019-12-04 15:42:42.618, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  611  req:Version :  : 1.0
+2019-12-04 15:42:42.619, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  436  req:CommandID : element.getChildNodes().getLength() : 0
+2019-12-04 15:42:42.619, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  590  req:CommandID value : UpdateOrgOperatorKYC
+2019-12-04 15:42:42.620, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  611  req:CommandID :  : UpdateOrgOperatorKYC
+2019-12-04 15:42:42.620, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  436  req:OriginatorConversationID : element.getChildNodes().getLength() : 0
+2019-12-04 15:42:42.621, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  590  req:OriginatorConversationID value : TRANS_ID_IN_CONVERTER_TEMPLATE
+2019-12-04 15:42:42.621, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  611  req:OriginatorConversationID :  : TRANS_ID_IN_CONVERTER_TEMPLATE
+2019-12-04 15:42:42.622, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  436  req:Caller : element.getChildNodes().getLength() : 9
+2019-12-04 15:42:42.622, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  294  JsonXmlDataConverter : Entry generateXml..
+2019-12-04 15:42:42.623, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  436  req:CallerType : element.getChildNodes().getLength() : 0
+2019-12-04 15:42:42.629, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.converter.LookupMapping [LineNumber]:  284  getLookupEntity entry ... entityType: 307 entityId: 1 applicationId:301
+2019-12-04 15:42:42.642, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  590  req:CallerType value : 2
+2019-12-04 15:42:42.643, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  611  req:CallerType :  : 2
+2019-12-04 15:42:42.644, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  436  req:ThirdPartyID : element.getChildNodes().getLength() : 0
+2019-12-04 15:42:42.647, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.converter.LookupMapping [LineNumber]:  284  getLookupEntity entry ... entityType: 307 entityId: 2 applicationId:301
+2019-12-04 15:42:42.656, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  590  req:ThirdPartyID value : POS_Broker
+2019-12-04 15:42:42.657, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  611  req:ThirdPartyID :  : POS_Broker
+2019-12-04 15:42:42.658, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  436  req:Password : element.getChildNodes().getLength() : 0
+2019-12-04 15:42:42.660, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.converter.LookupMapping [LineNumber]:  284  getLookupEntity entry ... entityType: 307 entityId: 3 applicationId:301
+2019-12-04 15:42:42.673, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  590  req:Password value : gMMqGGrKxsE=
+2019-12-04 15:42:42.674, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  611  req:Password :  : gMMqGGrKxsE=
+2019-12-04 15:42:42.675, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  436  req:ResultURL : element.getChildNodes().getLength() : 0
+2019-12-04 15:42:42.677, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.converter.LookupMapping [LineNumber]:  284  getLookupEntity entry ... entityType: 307 entityId: 4 applicationId:301
+2019-12-04 15:42:42.688, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  590  req:ResultURL value : http://10.63.146.235:8082/mockResultBinding
+2019-12-04 15:42:42.689, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  611  req:ResultURL :  : http://10.63.146.235:8082/mockResultBinding
+2019-12-04 15:42:42.690, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  651  JsonXmlDataConverter : Exit generateXml..
+2019-12-04 15:42:42.692, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  436  req:KeyOwner : element.getChildNodes().getLength() : 0
+2019-12-04 15:42:42.694, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  590  req:KeyOwner value : 1
+2019-12-04 15:42:42.695, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  611  req:KeyOwner :  : 1
+2019-12-04 15:42:42.696, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  436  req:Timestamp : element.getChildNodes().getLength() : 0
+2019-12-04 15:42:42.698, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  590  req:Timestamp value : 20191204154242
+2019-12-04 15:42:42.699, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  611  req:Timestamp :  : 20191204154242
+2019-12-04 15:42:42.701, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  651  JsonXmlDataConverter : Exit generateXml..
+2019-12-04 15:42:42.702, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  436  req:Body : element.getChildNodes().getLength() : 5
+2019-12-04 15:42:42.703, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  294  JsonXmlDataConverter : Entry generateXml..
+2019-12-04 15:42:42.704, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  436  req:Identity : element.getChildNodes().getLength() : 5
+2019-12-04 15:42:42.705, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  294  JsonXmlDataConverter : Entry generateXml..
+2019-12-04 15:42:42.706, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  436  req:Initiator : element.getChildNodes().getLength() : 9
+2019-12-04 15:42:42.708, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  294  JsonXmlDataConverter : Entry generateXml..
+2019-12-04 15:42:42.709, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  436  req:IdentifierType : element.getChildNodes().getLength() : 0
+2019-12-04 15:42:42.711, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.converter.LookupMapping [LineNumber]:  284  getLookupEntity entry ... entityType: 307 entityId: 5 applicationId:301
+2019-12-04 15:42:42.723, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  590  req:IdentifierType value : 14
+2019-12-04 15:42:42.724, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  611  req:IdentifierType :  : 14
+2019-12-04 15:42:42.725, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  436  req:Identifier : element.getChildNodes().getLength() : 0
+2019-12-04 15:42:42.727, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.converter.LookupMapping [LineNumber]:  284  getLookupEntity entry ... entityType: 307 entityId: 6 applicationId:301
+2019-12-04 15:42:42.738, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  590  req:Identifier value : wyz1
+2019-12-04 15:42:42.739, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  611  req:Identifier :  : wyz1
+2019-12-04 15:42:42.741, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  436  req:SecurityCredential : element.getChildNodes().getLength() : 0
+2019-12-04 15:42:42.742, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.converter.LookupMapping [LineNumber]:  284  getLookupEntity entry ... entityType: 307 entityId: 7 applicationId:301
+2019-12-04 15:42:42.753, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  590  req:SecurityCredential value : k+JtvqNV3eg=
+2019-12-04 15:42:42.755, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  611  req:SecurityCredential :  : k+JtvqNV3eg=
+2019-12-04 15:42:42.756, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  651  JsonXmlDataConverter : Exit generateXml..
+2019-12-04 15:42:42.757, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  436  req:ReceiverParty : element.getChildNodes().getLength() : 7
+2019-12-04 15:42:42.758, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  294  JsonXmlDataConverter : Entry generateXml..
+2019-12-04 15:42:42.759, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  348  element.getAttribute(SOURCE) : user.operator_type
+2019-12-04 15:42:42.762, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  350  Result : 58558
+2019-12-04 15:42:42.763, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  436  req:IdentifierType : element.getChildNodes().getLength() : 0
+2019-12-04 15:42:42.766, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.converter.LookupMapping [LineNumber]:  284  getLookupEntity entry ... entityType: 307 entityId: 58558 applicationId:301
+2019-12-04 15:42:42.776, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  590  req:IdentifierType value : 12
+2019-12-04 15:42:42.778, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  611  req:IdentifierType : user.operator_type : 12
+2019-12-04 15:42:42.779, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  348  element.getAttribute(SOURCE) : user.user_id
+2019-12-04 15:42:42.781, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  350  Result : 277777
+2019-12-04 15:42:42.782, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  436  req:Identifier : element.getChildNodes().getLength() : 0
+2019-12-04 15:42:42.787, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  1141  outputObj : { "_id" : 277777 , "accept" : 1 , "addnl_dropdown_1" : "" , "addnl_dropdown_2" : "" , "addnl_dropdown_3" : "" , "addnl_dropdown_4" : "" , "addnl_dropdown_5" : "" , "addnl_field_1" : "" , "addnl_field_2" : "" , "addnl_field_3" : "" , "addnl_field_4" : "" , "addnl_field_5" : "" , "addresses" : [ { "adrs_type" : "741" , "subDistrict" : "" , "postal_code" : "" , "state" : "54288" , "adrs_1" : "kolar" , "adrs_2" : "" , "longitude" : "" , "latitude" : "" , "zone" : "54306" , "city" : "54311" , "country" : "401"}] , "atmpt_cnt" : 0 , "auth_type" : [ "1151"] , "bank_acc_no" : "" , "bank_name" : "" , "birth_place" : "" , "blocked" : "N" , "citizen_of" : "" , "contacts" : [ { "no" : "no@no.com" , "type" : "email_id"} , { "no" : "622532535333" , "type" : "mobile_no"} , { "no" : "" , "type" : "telephone_no"} , { "no" : "9001" , "type" : "preferred_commn_lang"} , { "no" : "9001" , "type" : "preferred_lang"}] , "copy_adrs_type" : "0" , "crtd_by" : 30001 , "crtd_dt" : { "$date" : "2019-10-10T08:26:15.838Z"} , "dob" : "" , "extnl_sync" : true , "father_name" : "" , "first_name" : "lcan" , "formal_education" : "" , "frst_login" : "N" , "gender" : "" , "hobby" : "" , "in_formal_education" : "" , "isStatusUpdate" : false , "last_edu" : "" , "last_login_dt" : { "$date" : "2019-10-30T11:32:21.334Z"} , "last_name" : "" , "locked" : "N" , "logged_in" : "Y" , "marital_status" : "" , "middle_name" : "" , "mother_mad_name" : "suju" , "notifi_lang" : "9001" , "notify_chnl" : "1201" , "npwp_num" : "" , "operator_id" : "lcan7" , "operator_name" : "lcan" , "operator_type" : "58558" , "opr_classification" : "" , "org_id" : 294767 , "org_owner" : "1" , "org_type" : 7 , "owner_alt_id_no" : "62273874833" , "owner_alt_id_type" : "1554" , "owner_name" : "lcan" , "pants_size" : "" , "paypro_msisdn_no" : "" , "religion" : "" , "res_msg" : "Successfully completed " , "role_id" : [ "58577"] , "role_id_dtls" : [ { "role_id" : 58577 , "role_exp_date" : { "$date" : "2099-12-31T16:59:59.000Z"} , "role_efct_date" : { "$date" : "2019-10-10T08:26:15.832Z"}}] , "saldomobo_msisdn_no" : "6225325365365" , "sale_territory" : { "nasional" : "5501" , "area" : "57689" , "regional" : "57682" , "sales_area" : "57739" , "cluster" : "60011" , "micro_cluster" : ""} , "salt" : "LCAN7" , "shoe_size" : "" , "size_cloth" : "" , "status" : 174 , "sync_status" : 167 , "uname" : "LCAN7" , "updtd_by" : 0 , "updtd_dt" : { "$date" : "2019-10-30T11:32:21.334Z"} , "upwd" : "BZFGFGIVEzG+PT55IR4l9CLX03HN+eSwBhOEscGxYzs=" , "user_id" : 277777 , "user_type" : "1351" , "utype" : 731 , "wrk_end_date" : "31-Dec-2099" , "wrk_start_date" : "10-Oct-2019"}
+2019-12-04 15:42:42.788, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  590  req:Identifier value : lcan7
+2019-12-04 15:42:42.788, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  611  req:Identifier : user.user_id : lcan7
+2019-12-04 15:42:42.789, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  348  element.getAttribute(SOURCE) : user.user_id
+2019-12-04 15:42:42.790, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  350  Result : 277777
+2019-12-04 15:42:42.791, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  436  req:ShortCode : element.getChildNodes().getLength() : 0
+2019-12-04 15:42:42.794, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  1141  outputObj : { "_id" : 277777 , "accept" : 1 , "addnl_dropdown_1" : "" , "addnl_dropdown_2" : "" , "addnl_dropdown_3" : "" , "addnl_dropdown_4" : "" , "addnl_dropdown_5" : "" , "addnl_field_1" : "" , "addnl_field_2" : "" , "addnl_field_3" : "" , "addnl_field_4" : "" , "addnl_field_5" : "" , "addresses" : [ { "adrs_type" : "741" , "subDistrict" : "" , "postal_code" : "" , "state" : "54288" , "adrs_1" : "kolar" , "adrs_2" : "" , "longitude" : "" , "latitude" : "" , "zone" : "54306" , "city" : "54311" , "country" : "401"}] , "atmpt_cnt" : 0 , "auth_type" : [ "1151"] , "bank_acc_no" : "" , "bank_name" : "" , "birth_place" : "" , "blocked" : "N" , "citizen_of" : "" , "contacts" : [ { "no" : "no@no.com" , "type" : "email_id"} , { "no" : "622532535333" , "type" : "mobile_no"} , { "no" : "" , "type" : "telephone_no"} , { "no" : "9001" , "type" : "preferred_commn_lang"} , { "no" : "9001" , "type" : "preferred_lang"}] , "copy_adrs_type" : "0" , "crtd_by" : 30001 , "crtd_dt" : { "$date" : "2019-10-10T08:26:15.838Z"} , "dob" : "" , "extnl_sync" : true , "father_name" : "" , "first_name" : "lcan" , "formal_education" : "" , "frst_login" : "N" , "gender" : "" , "hobby" : "" , "in_formal_education" : "" , "isStatusUpdate" : false , "last_edu" : "" , "last_login_dt" : { "$date" : "2019-10-30T11:32:21.334Z"} , "last_name" : "" , "locked" : "N" , "logged_in" : "Y" , "marital_status" : "" , "middle_name" : "" , "mother_mad_name" : "suju" , "notifi_lang" : "9001" , "notify_chnl" : "1201" , "npwp_num" : "" , "operator_id" : "lcan7" , "operator_name" : "lcan" , "operator_type" : "58558" , "opr_classification" : "" , "org_id" : 294767 , "org_owner" : "1" , "org_type" : 7 , "owner_alt_id_no" : "62273874833" , "owner_alt_id_type" : "1554" , "owner_name" : "lcan" , "pants_size" : "" , "paypro_msisdn_no" : "" , "religion" : "" , "res_msg" : "Successfully completed " , "role_id" : [ "58577"] , "role_id_dtls" : [ { "role_id" : 58577 , "role_exp_date" : { "$date" : "2099-12-31T16:59:59.000Z"} , "role_efct_date" : { "$date" : "2019-10-10T08:26:15.832Z"}}] , "saldomobo_msisdn_no" : "6225325365365" , "sale_territory" : { "nasional" : "5501" , "area" : "57689" , "regional" : "57682" , "sales_area" : "57739" , "cluster" : "60011" , "micro_cluster" : ""} , "salt" : "LCAN7" , "shoe_size" : "" , "size_cloth" : "" , "status" : 174 , "sync_status" : 167 , "uname" : "LCAN7" , "updtd_by" : 0 , "updtd_dt" : { "$date" : "2019-10-30T11:32:21.334Z"} , "upwd" : "BZFGFGIVEzG+PT55IR4l9CLX03HN+eSwBhOEscGxYzs=" , "user_id" : 277777 , "user_type" : "1351" , "utype" : 731 , "wrk_end_date" : "31-Dec-2099" , "wrk_start_date" : "10-Oct-2019"}
+2019-12-04 15:42:42.799, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  1141  outputObj : { "_id" : 294767 , "activated_dt" : { "$date" : "2019-10-10T05:51:29.128Z"} , "addnl_params" : { "org_long" : "" , "org_painting" : "" , "org_group" : "" , "rule_prof_id" : "1951" , "org_category" : "2060" , "charge_prof_key" : "1301" , "org_classification" : "1703" , "dompetku_no" : "625232535353" , "org_stg_info" : "" , "org_addnl_dropdown_2" : "" , "org_addnl_dropdown_1" : "" , "undefined" : "" , "org_addnl_field_3" : "" , "org_addnl_field_2" : "" , "org_addnl_field_1" : "" , "dealer_code" : [ ] , "marketing_program" : "2255" , "org_addnl_field_5" : "" , "org_addnl_field_4" : "" , "org_pareto_manual" : "1" , "invoice_note" : "" , "org_width" : "" , "org_loc_type" : "1904" , "org_pareto_bvwise" : "1" , "npwp_num" : "" , "org_addnl_dropdown_5" : "" , "charge_prof_id" : "1801" , "charge_dist_model" : "2002" , "telephone_no" : "" , "org_addnl_dropdown_3" : "" , "org_addnl_dropdown_4" : "" , "parent_short_code" : "SAT10" , "partner_type" : "1453" , "chnl_ctgr" : "1752" , "prd_dtls" : [ { "prd_id" : 58319 , "prd_exp_date" : { "$date" : "2099-12-30T18:30:00.000Z"} , "prd_efct_date" : { "$date" : "2019-10-10T08:48:10.712Z"}} , { "prd_id" : 58357 , "prd_exp_date" : { "$date" : "2099-12-30T18:30:00.000Z"} , "prd_efct_date" : { "$date" : "2019-10-10T08:48:10.712Z"}} , { "prd_id" : 58319 , "prd_exp_date" : { "$date" : "2019-05-30T18:29:59.000Z"} , "prd_efct_date" : { "$date" : "2019-10-10T08:48:10.712Z"}} , { "prd_id" : 58346 , "prd_exp_date" : { "$date" : "2019-05-24T18:29:59.000Z"} , "prd_efct_date" : { "$date" : "2019-10-10T08:48:10.712Z"}}]} , "addresses" : [ { "adrs_type" : "745" , "subDistrict" : "" , "postal_code" : "" , "adrs_1" : "kolar" , "state" : "54288" , "adrs_2" : "" , "longitude" : "" , "latitude" : "" , "zone" : "54306" , "country" : "401" , "city" : "54311"}] , "comments" : "" , "crtd_by" : 30001 , "crtd_dt" : { "$date" : "2019-10-10T05:27:36.344Z"} , "desc" : "anudealer" , "end_dt" : "2099-12-31T00:00:00.000Z" , "extnl_sync" : true , "gstin_no" : "" , "org_email_id" : "" , "org_id" : 294767 , "org_type" : 7 , "org_type_desc" : "Distribution" , "parent_org_id" : 20 , "parent_org_type" : 5 , "present_parent_org_id" : 20 , "reason" :  null  , "reason_cmnt" :  null  , "ref_code" : "1234" , "reg_mob" : "" , "res_msg" : "Successfully completed " , "sale_territory" : { "nasional" : "5501" , "area" : "" , "regional" : "57682" , "sales_area" : "" , "cluster" : "" , "micro_cluster" : ""} , "sale_territory_desc" : "Central and West Java->NASIONAL" , "src_chnl" : "Web" , "start_dt" : "2019-10-10T00:00:00.000Z" , "status" : 174 , "sub_org_type" : 59 , "sub_org_type_des" : "Dealer" , "sync_status" : 173 , "territory_id" : 57682 , "tin_no" : "" , "updtd_by" : 30001 , "updtd_dt" : { "$date" : "2019-11-20T12:43:09.478Z"} , "visibility_type" : 1}
+2019-12-04 15:42:42.799, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  590  req:ShortCode value : 1234
+2019-12-04 15:42:42.800, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  611  req:ShortCode : user.user_id : 1234
+2019-12-04 15:42:42.800, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  651  JsonXmlDataConverter : Exit generateXml..
+2019-12-04 15:42:42.800, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  651  JsonXmlDataConverter : Exit generateXml..
+2019-12-04 15:42:42.801, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  436  req:UpdateOrgOperatorKYCRequest : element.getChildNodes().getLength() : 3
+2019-12-04 15:42:42.802, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  294  JsonXmlDataConverter : Entry generateXml..
+2019-12-04 15:42:42.803, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  436  req:SimpleKYCUpdateData : element.getChildNodes().getLength() : 119
+2019-12-04 15:42:42.803, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  294  JsonXmlDataConverter : Entry generateXml..
+2019-12-04 15:42:42.804, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  436  req:AddField : element.getChildNodes().getLength() : 5
+2019-12-04 15:42:42.804, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  294  JsonXmlDataConverter : Entry generateXml..
+2019-12-04 15:42:42.805, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  436  com:KYCName : element.getChildNodes().getLength() : 0
+2019-12-04 15:42:42.805, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  590  com:KYCName value : [KYC][Personal Details][First Name]
+2019-12-04 15:42:42.805, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  611  com:KYCName :  : [KYC][Personal Details][First Name]
+2019-12-04 15:42:42.806, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  348  element.getAttribute(SOURCE) : user.first_name
+2019-12-04 15:42:42.807, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  350  Result : lcan
+2019-12-04 15:42:42.807, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  436  com:KYCValue : element.getChildNodes().getLength() : 0
+2019-12-04 15:42:42.808, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  590  com:KYCValue value : lcan
+2019-12-04 15:42:42.808, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  611  com:KYCValue : user.first_name : lcan
+2019-12-04 15:42:42.808, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  651  JsonXmlDataConverter : Exit generateXml..
+2019-12-04 15:42:42.809, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  436  req:AddField : element.getChildNodes().getLength() : 5
+2019-12-04 15:42:42.809, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  294  JsonXmlDataConverter : Entry generateXml..
+2019-12-04 15:42:42.810, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  436  com:KYCName : element.getChildNodes().getLength() : 0
+2019-12-04 15:42:42.810, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  590  com:KYCName value : [KYC][Personal Details][Middle Name]
+2019-12-04 15:42:42.811, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  611  com:KYCName :  : [KYC][Personal Details][Middle Name]
+2019-12-04 15:42:42.811, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  348  element.getAttribute(SOURCE) : user.middle_name
+2019-12-04 15:42:42.812, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  350  Result :
+2019-12-04 15:42:42.812, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  436  com:KYCValue : element.getChildNodes().getLength() : 0
+2019-12-04 15:42:42.813, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  590  com:KYCValue value :
+2019-12-04 15:42:42.813, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  651  JsonXmlDataConverter : Exit generateXml..
+2019-12-04 15:42:42.814, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  436  req:AddField : element.getChildNodes().getLength() : 5
+2019-12-04 15:42:42.814, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  294  JsonXmlDataConverter : Entry generateXml..
+2019-12-04 15:42:42.815, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  436  com:KYCName : element.getChildNodes().getLength() : 0
+2019-12-04 15:42:42.815, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  590  com:KYCName value : [KYC][Personal Details][Last Name]
+2019-12-04 15:42:42.816, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  611  com:KYCName :  : [KYC][Personal Details][Last Name]
+2019-12-04 15:42:42.816, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  348  element.getAttribute(SOURCE) : user.last_name
+2019-12-04 15:42:42.817, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  350  Result :
+2019-12-04 15:42:42.818, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  436  com:KYCValue : element.getChildNodes().getLength() : 0
+2019-12-04 15:42:42.818, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  590  com:KYCValue value :
+2019-12-04 15:42:42.818, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  651  JsonXmlDataConverter : Exit generateXml..
+2019-12-04 15:42:42.819, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  436  req:AddField : element.getChildNodes().getLength() : 5
+2019-12-04 15:42:42.819, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  294  JsonXmlDataConverter : Entry generateXml..
+2019-12-04 15:42:42.820, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  436  com:KYCName : element.getChildNodes().getLength() : 0
+2019-12-04 15:42:42.820, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  590  com:KYCName value : [KYC][Personal Details][Birth Date]
+2019-12-04 15:42:42.821, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  611  com:KYCName :  : [KYC][Personal Details][Birth Date]
+2019-12-04 15:42:42.821, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  348  element.getAttribute(SOURCE) : user.dob.$date
+2019-12-04 15:42:42.822, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  350  Result :
+2019-12-04 15:42:42.822, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  436  com:KYCValue : element.getChildNodes().getLength() : 0
+2019-12-04 15:42:42.823, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  590  com:KYCValue value :
+2019-12-04 15:42:42.823, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  651  JsonXmlDataConverter : Exit generateXml..
+2019-12-04 15:42:42.824, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  436  req:AddField : element.getChildNodes().getLength() : 5
+2019-12-04 15:42:42.824, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  294  JsonXmlDataConverter : Entry generateXml..
+2019-12-04 15:42:42.825, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  436  com:KYCName : element.getChildNodes().getLength() : 0
+2019-12-04 15:42:42.825, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  590  com:KYCName value : [KYC][ID][Alternative ID Type]
+2019-12-04 15:42:42.825, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  611  com:KYCName :  : [KYC][ID][Alternative ID Type]
+2019-12-04 15:42:42.826, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  348  element.getAttribute(SOURCE) : user.owner_alt_id_type
+2019-12-04 15:42:42.827, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  350  Result : 1554
+2019-12-04 15:42:42.827, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  436  com:KYCValue : element.getChildNodes().getLength() : 0
+2019-12-04 15:42:42.830, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  1141  outputObj : { "_id" : "1554" , "crtd_by" : 10001 , "crtd_dt" : { "$date" : "2018-02-05T00:00:00.000Z"} , "crtd_userid" : 10001 , "description" : "Other" , "isParentLinked" : true , "org_id" : 1 , "parentTransitionTypeId" : "" , "parentTransitionValueId" : "" , "ref_code" : "Other" , "s_id" : 1554 , "status" : 174 , "transitionTypeId" : "74"}
+2019-12-04 15:42:42.830, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  590  com:KYCValue value : Other
+2019-12-04 15:42:42.830, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  611  com:KYCValue : user.owner_alt_id_type : Other
+2019-12-04 15:42:42.831, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  651  JsonXmlDataConverter : Exit generateXml..
+2019-12-04 15:42:42.831, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  436  req:AddField : element.getChildNodes().getLength() : 5
+2019-12-04 15:42:42.832, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  294  JsonXmlDataConverter : Entry generateXml..
+2019-12-04 15:42:42.833, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  436  com:KYCName : element.getChildNodes().getLength() : 0
+2019-12-04 15:42:42.833, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  590  com:KYCName value : [KYC][ID][Alternative ID Number]
+2019-12-04 15:42:42.834, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  611  com:KYCName :  : [KYC][ID][Alternative ID Number]
+2019-12-04 15:42:42.834, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  348  element.getAttribute(SOURCE) : user.owner_alt_id_no
+2019-12-04 15:42:42.835, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  350  Result : 62273874833
+2019-12-04 15:42:42.836, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  436  com:KYCValue : element.getChildNodes().getLength() : 0
+2019-12-04 15:42:42.836, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  590  com:KYCValue value : 62273874833
+2019-12-04 15:42:42.836, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  611  com:KYCValue : user.owner_alt_id_no : 62273874833
+2019-12-04 15:42:42.837, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  651  JsonXmlDataConverter : Exit generateXml..
+2019-12-04 15:42:42.837, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  436  req:AddField : element.getChildNodes().getLength() : 5
+2019-12-04 15:42:42.838, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  294  JsonXmlDataConverter : Entry generateXml..
+2019-12-04 15:42:42.838, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  436  com:KYCName : element.getChildNodes().getLength() : 0
+2019-12-04 15:42:42.839, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  590  com:KYCName value : [KYC][Contact Details][Preferred Notification Channel]
+2019-12-04 15:42:42.839, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  611  com:KYCName :  : [KYC][Contact Details][Preferred Notification Channel]
+2019-12-04 15:42:42.840, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  348  element.getAttribute(SOURCE) : user.notify_chnl
+2019-12-04 15:42:42.840, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  350  Result : 1201
+2019-12-04 15:42:42.841, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  436  com:KYCValue : element.getChildNodes().getLength() : 0
+2019-12-04 15:42:42.844, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  1141  outputObj : { "_id" : "1201" , "crtd_by" : 10001 , "crtd_dt" : { "$date" : "2018-02-05T00:00:00.000Z"} , "crtd_userid" : 10001 , "description" : "SMS" , "isParentLinked" : true , "org_id" : 1 , "parentTransitionTypeId" : "" , "parentTransitionValueId" : "" , "ref_code" : "1001" , "s_id" : 1201 , "status" : 174 , "transitionTypeId" : "68"}
+2019-12-04 15:42:42.845, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  590  com:KYCValue value : 1001
+2019-12-04 15:42:42.845, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  611  com:KYCValue : user.notify_chnl : 1001
+2019-12-04 15:42:42.845, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  651  JsonXmlDataConverter : Exit generateXml..
+2019-12-04 15:42:42.846, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  436  req:AddField : element.getChildNodes().getLength() : 5
+2019-12-04 15:42:42.846, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  294  JsonXmlDataConverter : Entry generateXml..
+2019-12-04 15:42:42.847, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  436  com:KYCName : element.getChildNodes().getLength() : 0
+2019-12-04 15:42:42.847, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  590  com:KYCName value : [KYC][Contact Details][Notification Receiving MSISDN]
+2019-12-04 15:42:42.848, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  611  com:KYCName :  : [KYC][Contact Details][Notification Receiving MSISDN]
+2019-12-04 15:42:42.848, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  348  element.getAttribute(SOURCE) : user.contacts
+2019-12-04 15:42:42.849, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  350  Result : [{"no":"no@no.com","type":"email_id"},{"no":"622532535333","type":"mobile_no"},{"no":"","type":"telephone_no"},{"no":"9001","type":"preferred_commn_lang"},{"no":"9001","type":"preferred_lang"}]
+2019-12-04 15:42:42.849, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  436  com:KYCValue : element.getChildNodes().getLength() : 0
+2019-12-04 15:42:42.850, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  590  com:KYCValue value : 622532535333
+2019-12-04 15:42:42.851, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  611  com:KYCValue : user.contacts : 622532535333
+2019-12-04 15:42:42.854, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  651  JsonXmlDataConverter : Exit generateXml..
+2019-12-04 15:42:42.854, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  436  req:AddField : element.getChildNodes().getLength() : 5
+2019-12-04 15:42:42.855, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  294  JsonXmlDataConverter : Entry generateXml..
+2019-12-04 15:42:42.855, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  436  com:KYCName : element.getChildNodes().getLength() : 0
+2019-12-04 15:42:42.856, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  590  com:KYCName value : [KYC][Contact Details][Notification Receiving E-mail]
+2019-12-04 15:42:42.856, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  611  com:KYCName :  : [KYC][Contact Details][Notification Receiving E-mail]
+2019-12-04 15:42:42.856, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  348  element.getAttribute(SOURCE) : user.contacts
+2019-12-04 15:42:42.858, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  350  Result : [{"no":"no@no.com","type":"email_id"},{"no":"622532535333","type":"mobile_no"},{"no":"","type":"telephone_no"},{"no":"9001","type":"preferred_commn_lang"},{"no":"9001","type":"preferred_lang"}]
+2019-12-04 15:42:42.859, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  436  com:KYCValue : element.getChildNodes().getLength() : 0
+2019-12-04 15:42:42.860, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  590  com:KYCValue value : no@no.com
+2019-12-04 15:42:42.861, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  611  com:KYCValue : user.contacts : no@no.com
+2019-12-04 15:42:42.861, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  651  JsonXmlDataConverter : Exit generateXml..
+2019-12-04 15:42:42.862, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  436  req:AddField : element.getChildNodes().getLength() : 5
+2019-12-04 15:42:42.862, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  294  JsonXmlDataConverter : Entry generateXml..
+2019-12-04 15:42:42.863, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  436  com:KYCName : element.getChildNodes().getLength() : 0
+2019-12-04 15:42:42.863, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  590  com:KYCName value : [KYC][Personal Details][Operator Name]
+2019-12-04 15:42:42.863, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  611  com:KYCName :  : [KYC][Personal Details][Operator Name]
+2019-12-04 15:42:42.864, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  348  element.getAttribute(SOURCE) : user.operator_name
+2019-12-04 15:42:42.866, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  350  Result : lcan
+2019-12-04 15:42:42.866, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  436  com:KYCValue : element.getChildNodes().getLength() : 0
+2019-12-04 15:42:42.867, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  590  com:KYCValue value : lcan
+2019-12-04 15:42:42.867, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  611  com:KYCValue : user.operator_name : lcan
+2019-12-04 15:42:42.867, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  651  JsonXmlDataConverter : Exit generateXml..
+2019-12-04 15:42:42.868, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  436  req:AddField : element.getChildNodes().getLength() : 5
+2019-12-04 15:42:42.868, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  294  JsonXmlDataConverter : Entry generateXml..
+2019-12-04 15:42:42.869, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  436  com:KYCName : element.getChildNodes().getLength() : 0
+2019-12-04 15:42:42.869, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  590  com:KYCName value : [KYC][Contact Information][Contact Number]
+2019-12-04 15:42:42.869, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  611  com:KYCName :  : [KYC][Contact Information][Contact Number]
+2019-12-04 15:42:42.870, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  348  element.getAttribute(SOURCE) : user.contacts
+2019-12-04 15:42:42.872, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  350  Result : [{"no":"no@no.com","type":"email_id"},{"no":"622532535333","type":"mobile_no"},{"no":"","type":"telephone_no"},{"no":"9001","type":"preferred_commn_lang"},{"no":"9001","type":"preferred_lang"}]
+2019-12-04 15:42:42.872, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  436  com:KYCValue : element.getChildNodes().getLength() : 0
+2019-12-04 15:42:42.873, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  590  com:KYCValue value : 622532535333
+2019-12-04 15:42:42.873, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  611  com:KYCValue : user.contacts : 622532535333
+2019-12-04 15:42:42.873, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  651  JsonXmlDataConverter : Exit generateXml..
+2019-12-04 15:42:42.874, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  436  req:AddField : element.getChildNodes().getLength() : 5
+2019-12-04 15:42:42.874, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  294  JsonXmlDataConverter : Entry generateXml..
+2019-12-04 15:42:42.875, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  436  com:KYCName : element.getChildNodes().getLength() : 0
+2019-12-04 15:42:42.875, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  590  com:KYCName value : [KYC][Personal Details][NPWP Number]
+2019-12-04 15:42:42.876, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  611  com:KYCName :  : [KYC][Personal Details][NPWP Number]
+2019-12-04 15:42:42.876, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  348  element.getAttribute(SOURCE) : user.npwp_num
+2019-12-04 15:42:42.878, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  350  Result :
+2019-12-04 15:42:42.878, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  436  com:KYCValue : element.getChildNodes().getLength() : 0
+2019-12-04 15:42:42.878, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  590  com:KYCValue value :
+2019-12-04 15:42:42.879, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  651  JsonXmlDataConverter : Exit generateXml..
+2019-12-04 15:42:42.879, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  436  req:AddField : element.getChildNodes().getLength() : 5
+2019-12-04 15:42:42.880, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  294  JsonXmlDataConverter : Entry generateXml..
+2019-12-04 15:42:42.880, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  436  com:KYCName : element.getChildNodes().getLength() : 0
+2019-12-04 15:42:42.880, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  590  com:KYCName value : [KYC][Personal Details][mother's maiden name]
+2019-12-04 15:42:42.881, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  611  com:KYCName :  : [KYC][Personal Details][mother's maiden name]
+2019-12-04 15:42:42.881, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  348  element.getAttribute(SOURCE) : user.mother_mad_name
+2019-12-04 15:42:42.883, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  350  Result : suju
+2019-12-04 15:42:42.883, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  436  com:KYCValue : element.getChildNodes().getLength() : 0
+2019-12-04 15:42:42.884, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  590  com:KYCValue value : suju
+2019-12-04 15:42:42.884, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  611  com:KYCValue : user.mother_mad_name : suju
+2019-12-04 15:42:42.884, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  651  JsonXmlDataConverter : Exit generateXml..
+2019-12-04 15:42:42.885, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  436  req:AddField : element.getChildNodes().getLength() : 5
+2019-12-04 15:42:42.885, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  294  JsonXmlDataConverter : Entry generateXml..
+2019-12-04 15:42:42.886, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  436  com:KYCName : element.getChildNodes().getLength() : 0
+2019-12-04 15:42:42.886, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  590  com:KYCName value : [KYC][Personal Details][Birth Place]
+2019-12-04 15:42:42.886, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  611  com:KYCName :  : [KYC][Personal Details][Birth Place]
+2019-12-04 15:42:42.887, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  348  element.getAttribute(SOURCE) : user.birth_place
+2019-12-04 15:42:42.888, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  350  Result :
+2019-12-04 15:42:42.889, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  436  com:KYCValue : element.getChildNodes().getLength() : 0
+2019-12-04 15:42:42.889, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  590  com:KYCValue value :
+2019-12-04 15:42:42.890, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  651  JsonXmlDataConverter : Exit generateXml..
+2019-12-04 15:42:42.890, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  436  req:AddField : element.getChildNodes().getLength() : 5
+2019-12-04 15:42:42.890, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  294  JsonXmlDataConverter : Entry generateXml..
+2019-12-04 15:42:42.891, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  436  com:KYCName : element.getChildNodes().getLength() : 0
+2019-12-04 15:42:42.891, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  590  com:KYCName value : [KYC][Permanent Address][Propinsi/Province]
+2019-12-04 15:42:42.892, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  611  com:KYCName :  : [KYC][Permanent Address][Propinsi/Province]
+2019-12-04 15:42:42.892, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  348  element.getAttribute(SOURCE) : user.addresses
+2019-12-04 15:42:42.894, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  350  Result : [{"adrs_type":"741","subDistrict":"","postal_code":"","adrs_1":"kolar","state":"54288","adrs_2":"","longitude":"","latitude":"","zone":"54306","country":"401","city":"54311"}]
+2019-12-04 15:42:42.895, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  436  com:KYCValue : element.getChildNodes().getLength() : 0
+2019-12-04 15:42:42.897, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  1141  outputObj : { "_id" : "54288" , "parentTransitionValueId" : "401" , "isParentLinked" : true , "parentTransitionTypeId" : "2" , "s_id" : 54288 , "transitionTypeId" : "3" , "description" : "BALI" , "ref_code" : "51" , "status" : 174 , "org_id" : 1 , "org_type" : 154 , "node_id" : 1 , "crtd_by" : 10001 , "crtd_userid" : 10001 , "updtd_by" : 10001 , "last_updt_userid" : 10001 , "crtd_dt" : { "$date" : "2018-02-03T06:40:28.038Z"} , "updtd_dt" : { "$date" : "2018-02-03T06:40:28.038Z"} , "last_updt_dt" : { "$date" : "2018-02-03T06:40:28.038Z"}}
+2019-12-04 15:42:42.898, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  590  com:KYCValue value : 51
+2019-12-04 15:42:42.898, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  611  com:KYCValue : user.addresses : 51
+2019-12-04 15:42:42.898, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  651  JsonXmlDataConverter : Exit generateXml..
+2019-12-04 15:42:42.899, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  436  req:AddField : element.getChildNodes().getLength() : 7
+2019-12-04 15:42:42.899, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  294  JsonXmlDataConverter : Entry generateXml..
+2019-12-04 15:42:42.900, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  436  com:KYCName : element.getChildNodes().getLength() : 0
+2019-12-04 15:42:42.900, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  590  com:KYCName value : [KYC][Permanent Address][Kota/City/District]
+2019-12-04 15:42:42.900, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  611  com:KYCName :  : [KYC][Permanent Address][Kota/City/District]
+2019-12-04 15:42:42.901, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  348  element.getAttribute(SOURCE) : user.addresses
+2019-12-04 15:42:42.903, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  350  Result : [{"adrs_type":"741","subDistrict":"","postal_code":"","adrs_1":"kolar","state":"54288","adrs_2":"","longitude":"","latitude":"","zone":"54306","country":"401","city":"54311"}]
+2019-12-04 15:42:42.903, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  436  com:KYCValue : element.getChildNodes().getLength() : 0
+2019-12-04 15:42:42.911, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  1141  outputObj : { "_id" : "54306" , "parentTransitionValueId" : "54288" , "isParentLinked" : true , "parentTransitionTypeId" : "3" , "s_id" : 54306 , "transitionTypeId" : "5" , "description" : "BADUNG" , "ref_code" : "5103" , "status" : 174 , "org_id" : 1 , "org_type" : 154 , "node_id" : 1 , "crtd_by" : 10001 , "crtd_userid" : 10001 , "updtd_by" : 10001 , "last_updt_userid" : 10001 , "crtd_dt" : { "$date" : "2018-02-03T06:40:28.166Z"} , "updtd_dt" : { "$date" : "2018-02-03T06:40:28.166Z"} , "last_updt_dt" : { "$date" : "2018-02-03T06:40:28.166Z"}}
+2019-12-04 15:42:42.912, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  590  com:KYCValue value : 5103
+2019-12-04 15:42:42.913, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  611  com:KYCValue : user.addresses : 5103
+2019-12-04 15:42:42.914, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  651  JsonXmlDataConverter : Exit generateXml..
+2019-12-04 15:42:42.915, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  436  req:AddField : element.getChildNodes().getLength() : 7
+2019-12-04 15:42:42.916, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  294  JsonXmlDataConverter : Entry generateXml..
+2019-12-04 15:42:42.917, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  436  com:KYCName : element.getChildNodes().getLength() : 0
+2019-12-04 15:42:42.918, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  590  com:KYCName value : [KYC][Permanent Address][Kecamatan/Districts]
+2019-12-04 15:42:42.919, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  611  com:KYCName :  : [KYC][Permanent Address][Kecamatan/Districts]
+2019-12-04 15:42:42.920, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  348  element.getAttribute(SOURCE) : user.addresses
+2019-12-04 15:42:42.922, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  350  Result : [{"adrs_type":"741","subDistrict":"","postal_code":"","adrs_1":"kolar","state":"54288","adrs_2":"","longitude":"","latitude":"","zone":"54306","country":"401","city":"54311"}]
+2019-12-04 15:42:42.923, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  436  com:KYCValue : element.getChildNodes().getLength() : 0
+2019-12-04 15:42:42.927, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  1141  outputObj : { "_id" : "54311" , "parentTransitionValueId" : "54306" , "isParentLinked" : true , "parentTransitionTypeId" : "5" , "s_id" : 54311 , "transitionTypeId" : "6" , "description" : "ABIANSEMAL" , "ref_code" : "5103050" , "status" : 174 , "org_id" : 1 , "org_type" : 154 , "node_id" : 1 , "crtd_by" : 10001 , "crtd_userid" : 10001 , "updtd_by" : 10001 , "last_updt_userid" : 10001 , "crtd_dt" : { "$date" : "2018-02-03T06:40:28.201Z"} , "updtd_dt" : { "$date" : "2018-02-03T06:40:28.201Z"} , "last_updt_dt" : { "$date" : "2018-02-03T06:40:28.201Z"}}
+2019-12-04 15:42:42.928, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  590  com:KYCValue value : 5103050
+2019-12-04 15:42:42.929, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  611  com:KYCValue : user.addresses : 5103050
+2019-12-04 15:42:42.930, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  651  JsonXmlDataConverter : Exit generateXml..
+2019-12-04 15:42:42.931, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  436  req:AddField : element.getChildNodes().getLength() : 5
+2019-12-04 15:42:42.932, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  294  JsonXmlDataConverter : Entry generateXml..
+2019-12-04 15:42:42.934, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  436  com:KYCName : element.getChildNodes().getLength() : 0
+2019-12-04 15:42:42.934, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  590  com:KYCName value : [KYC][Permanent Address][Sub District]
+2019-12-04 15:42:42.935, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  611  com:KYCName :  : [KYC][Permanent Address][Sub District]
+2019-12-04 15:42:42.936, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  348  element.getAttribute(SOURCE) : user.addresses
+2019-12-04 15:42:42.939, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  350  Result : [{"adrs_type":"741","subDistrict":"","postal_code":"","adrs_1":"kolar","state":"54288","adrs_2":"","longitude":"","latitude":"","zone":"54306","country":"401","city":"54311"}]
+2019-12-04 15:42:42.940, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  436  com:KYCValue : element.getChildNodes().getLength() : 0
+2019-12-04 15:42:42.941, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  590  com:KYCValue value : null
+2019-12-04 15:42:42.942, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  651  JsonXmlDataConverter : Exit generateXml..
+2019-12-04 15:42:42.942, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  436  req:AddField : element.getChildNodes().getLength() : 5
+2019-12-04 15:42:42.943, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  294  JsonXmlDataConverter : Entry generateXml..
+2019-12-04 15:42:42.944, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  436  com:KYCName : element.getChildNodes().getLength() : 0
+2019-12-04 15:42:42.945, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  590  com:KYCName value : [KYC][Permanent Address][Street Address]
+2019-12-04 15:42:42.946, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  611  com:KYCName :  : [KYC][Permanent Address][Street Address]
+2019-12-04 15:42:42.947, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  348  element.getAttribute(SOURCE) : user.addresses
+2019-12-04 15:42:42.950, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  350  Result : [{"adrs_type":"741","subDistrict":"","postal_code":"","adrs_1":"kolar","state":"54288","adrs_2":"","longitude":"","latitude":"","zone":"54306","country":"401","city":"54311"}]
+2019-12-04 15:42:42.951, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  436  com:KYCValue : element.getChildNodes().getLength() : 0
+2019-12-04 15:42:42.952, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  590  com:KYCValue value : kolar
+2019-12-04 15:42:42.953, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  611  com:KYCValue : user.addresses : kolar
+2019-12-04 15:42:42.953, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  651  JsonXmlDataConverter : Exit generateXml..
+2019-12-04 15:42:42.954, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  436  req:AddField : element.getChildNodes().getLength() : 5
+2019-12-04 15:42:42.955, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  294  JsonXmlDataConverter : Entry generateXml..
+2019-12-04 15:42:42.956, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  436  com:KYCName : element.getChildNodes().getLength() : 0
+2019-12-04 15:42:42.957, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  590  com:KYCName value : [KYC][Permanent Address][Additional Address]
+2019-12-04 15:42:42.958, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  611  com:KYCName :  : [KYC][Permanent Address][Additional Address]
+2019-12-04 15:42:42.959, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  348  element.getAttribute(SOURCE) : user.addresses
+2019-12-04 15:42:42.962, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  350  Result : [{"adrs_type":"741","subDistrict":"","postal_code":"","adrs_1":"kolar","state":"54288","adrs_2":"","longitude":"","latitude":"","zone":"54306","country":"401","city":"54311"}]
+2019-12-04 15:42:42.963, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  436  com:KYCValue : element.getChildNodes().getLength() : 0
+2019-12-04 15:42:42.963, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  590  com:KYCValue value : null
+2019-12-04 15:42:42.964, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  651  JsonXmlDataConverter : Exit generateXml..
+2019-12-04 15:42:42.966, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  436  req:AddField : element.getChildNodes().getLength() : 5
+2019-12-04 15:42:42.966, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  294  JsonXmlDataConverter : Entry generateXml..
+2019-12-04 15:42:42.967, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  436  com:KYCName : element.getChildNodes().getLength() : 0
+2019-12-04 15:42:42.968, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  590  com:KYCName value : [KYC][Bank Account][Bank Name]
+2019-12-04 15:42:42.969, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  611  com:KYCName :  : [KYC][Bank Account][Bank Name]
+2019-12-04 15:42:42.970, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  348  element.getAttribute(SOURCE) : user.bank_name
+2019-12-04 15:42:42.972, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  350  Result :
+2019-12-04 15:42:42.973, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  436  com:KYCValue : element.getChildNodes().getLength() : 0
+2019-12-04 15:42:42.974, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  590  com:KYCValue value :
+2019-12-04 15:42:42.975, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  651  JsonXmlDataConverter : Exit generateXml..
+2019-12-04 15:42:42.976, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  436  req:AddField : element.getChildNodes().getLength() : 5
+2019-12-04 15:42:42.977, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  294  JsonXmlDataConverter : Entry generateXml..
+2019-12-04 15:42:42.978, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  436  com:KYCName : element.getChildNodes().getLength() : 0
+2019-12-04 15:42:42.979, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  590  com:KYCName value : [KYC][Personal Details][Gender]
+2019-12-04 15:42:42.980, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  611  com:KYCName :  : [KYC][Personal Details][Gender]
+2019-12-04 15:42:42.981, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  348  element.getAttribute(SOURCE) : user.gender
+2019-12-04 15:42:42.984, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  350  Result :
+2019-12-04 15:42:42.984, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  436  com:KYCValue : element.getChildNodes().getLength() : 0
+2019-12-04 15:42:42.986, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  590  com:KYCValue value :
+2019-12-04 15:42:42.986, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  651  JsonXmlDataConverter : Exit generateXml..
+2019-12-04 15:42:42.987, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  436  req:AddField : element.getChildNodes().getLength() : 5
+2019-12-04 15:42:42.988, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  294  JsonXmlDataConverter : Entry generateXml..
+2019-12-04 15:42:42.989, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  436  com:KYCName : element.getChildNodes().getLength() : 0
+2019-12-04 15:42:42.990, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  590  com:KYCName value : [KYC][Personal Details][Religion]
+2019-12-04 15:42:42.991, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  611  com:KYCName :  : [KYC][Personal Details][Religion]
+2019-12-04 15:42:42.992, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  348  element.getAttribute(SOURCE) : user.religion
+2019-12-04 15:42:42.995, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  350  Result :
+2019-12-04 15:42:42.996, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  436  com:KYCValue : element.getChildNodes().getLength() : 0
+2019-12-04 15:42:42.997, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  590  com:KYCValue value :
+2019-12-04 15:42:42.998, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  651  JsonXmlDataConverter : Exit generateXml..
+2019-12-04 15:42:42.999, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  436  req:AddField : element.getChildNodes().getLength() : 5
+2019-12-04 15:42:42.999, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  294  JsonXmlDataConverter : Entry generateXml..
+2019-12-04 15:42:43.001, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  436  com:KYCName : element.getChildNodes().getLength() : 0
+2019-12-04 15:42:43.002, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  590  com:KYCName value : [KYC][Personal Details][Marital Status]
+2019-12-04 15:42:43.003, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  611  com:KYCName :  : [KYC][Personal Details][Marital Status]
+2019-12-04 15:42:43.004, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  348  element.getAttribute(SOURCE) : user.marital_status
+2019-12-04 15:42:43.006, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  350  Result :
+2019-12-04 15:42:43.007, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  436  com:KYCValue : element.getChildNodes().getLength() : 0
+2019-12-04 15:42:43.008, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  590  com:KYCValue value :
+2019-12-04 15:42:43.009, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  651  JsonXmlDataConverter : Exit generateXml..
+2019-12-04 15:42:43.010, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  436  req:AddField : element.getChildNodes().getLength() : 5
+2019-12-04 15:42:43.011, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  294  JsonXmlDataConverter : Entry generateXml..
+2019-12-04 15:42:43.012, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  436  com:KYCName : element.getChildNodes().getLength() : 0
+2019-12-04 15:42:43.013, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  590  com:KYCName value : [KYC][Personal Details][Citizen Of]
+2019-12-04 15:42:43.014, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  611  com:KYCName :  : [KYC][Personal Details][Citizen Of]
+2019-12-04 15:42:43.015, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  348  element.getAttribute(SOURCE) : user.citizen_of
+2019-12-04 15:42:43.017, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  350  Result :
+2019-12-04 15:42:43.018, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  436  com:KYCValue : element.getChildNodes().getLength() : 0
+2019-12-04 15:42:43.019, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  590  com:KYCValue value :
+2019-12-04 15:42:43.020, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  651  JsonXmlDataConverter : Exit generateXml..
+2019-12-04 15:42:43.021, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  436  req:AddField : element.getChildNodes().getLength() : 5
+2019-12-04 15:42:43.022, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  294  JsonXmlDataConverter : Entry generateXml..
+2019-12-04 15:42:43.023, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  436  com:KYCName : element.getChildNodes().getLength() : 0
+2019-12-04 15:42:43.024, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  590  com:KYCName value : [KYC][Personal Details][Last Education]
+2019-12-04 15:42:43.025, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  611  com:KYCName :  : [KYC][Personal Details][Last Education]
+2019-12-04 15:42:43.026, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  348  element.getAttribute(SOURCE) : user.last_edu
+2019-12-04 15:42:43.028, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  350  Result :
+2019-12-04 15:42:43.029, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  436  com:KYCValue : element.getChildNodes().getLength() : 0
+2019-12-04 15:42:43.030, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  590  com:KYCValue value :
+2019-12-04 15:42:43.030, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  651  JsonXmlDataConverter : Exit generateXml..
+2019-12-04 15:42:43.032, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  436  req:AddField : element.getChildNodes().getLength() : 5
+2019-12-04 15:42:43.032, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  294  JsonXmlDataConverter : Entry generateXml..
+2019-12-04 15:42:43.034, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  436  com:KYCName : element.getChildNodes().getLength() : 0
+2019-12-04 15:42:43.035, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  590  com:KYCName value : [KYC][Personal Details][Hobby]
+2019-12-04 15:42:43.036, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  611  com:KYCName :  : [KYC][Personal Details][Hobby]
+2019-12-04 15:42:43.037, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  348  element.getAttribute(SOURCE) : user.hobby
+2019-12-04 15:42:43.038, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  350  Result :
+2019-12-04 15:42:43.039, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  436  com:KYCValue : element.getChildNodes().getLength() : 0
+2019-12-04 15:42:43.040, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  590  com:KYCValue value :
+2019-12-04 15:42:43.041, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  651  JsonXmlDataConverter : Exit generateXml..
+2019-12-04 15:42:43.042, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  436  req:AddField : element.getChildNodes().getLength() : 5
+2019-12-04 15:42:43.043, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  294  JsonXmlDataConverter : Entry generateXml..
+2019-12-04 15:42:43.044, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  436  com:KYCName : element.getChildNodes().getLength() : 0
+2019-12-04 15:42:43.045, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  590  com:KYCName value : [KYC][Personal Details][Size Clothing]
+2019-12-04 15:42:43.046, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  611  com:KYCName :  : [KYC][Personal Details][Size Clothing]
+2019-12-04 15:42:43.048, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  348  element.getAttribute(SOURCE) : user.size_cloth
+2019-12-04 15:42:43.050, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  350  Result :
+2019-12-04 15:42:43.051, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  436  com:KYCValue : element.getChildNodes().getLength() : 0
+2019-12-04 15:42:43.051, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  590  com:KYCValue value :
+2019-12-04 15:42:43.052, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  651  JsonXmlDataConverter : Exit generateXml..
+2019-12-04 15:42:43.052, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  436  req:AddField : element.getChildNodes().getLength() : 5
+2019-12-04 15:42:43.052, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  294  JsonXmlDataConverter : Entry generateXml..
+2019-12-04 15:42:43.053, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  436  com:KYCName : element.getChildNodes().getLength() : 0
+2019-12-04 15:42:43.053, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  590  com:KYCName value : [KYC][Personal Details][Pants Size]
+2019-12-04 15:42:43.054, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  611  com:KYCName :  : [KYC][Personal Details][Pants Size]
+2019-12-04 15:42:43.055, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  348  element.getAttribute(SOURCE) : user.pants_size
+2019-12-04 15:42:43.055, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  350  Result :
+2019-12-04 15:42:43.056, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  436  com:KYCValue : element.getChildNodes().getLength() : 0
+2019-12-04 15:42:43.056, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  590  com:KYCValue value :
+2019-12-04 15:42:43.057, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  651  JsonXmlDataConverter : Exit generateXml..
+2019-12-04 15:42:43.057, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  436  req:AddField : element.getChildNodes().getLength() : 5
+2019-12-04 15:42:43.057, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  294  JsonXmlDataConverter : Entry generateXml..
+2019-12-04 15:42:43.058, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  436  com:KYCName : element.getChildNodes().getLength() : 0
+2019-12-04 15:42:43.058, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  590  com:KYCName value : [KYC][Personal Details][Shoe Size]
+2019-12-04 15:42:43.059, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  611  com:KYCName :  : [KYC][Personal Details][Shoe Size]
+2019-12-04 15:42:43.059, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  348  element.getAttribute(SOURCE) : user.shoe_size
+2019-12-04 15:42:43.060, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  350  Result :
+2019-12-04 15:42:43.061, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  436  com:KYCValue : element.getChildNodes().getLength() : 0
+2019-12-04 15:42:43.061, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  590  com:KYCValue value :
+2019-12-04 15:42:43.061, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  651  JsonXmlDataConverter : Exit generateXml..
+2019-12-04 15:42:43.062, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  436  req:AddField : element.getChildNodes().getLength() : 5
+2019-12-04 15:42:43.062, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  294  JsonXmlDataConverter : Entry generateXml..
+2019-12-04 15:42:43.063, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  436  com:KYCName : element.getChildNodes().getLength() : 0
+2019-12-04 15:42:43.063, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  590  com:KYCName value : [KYC][Personal Details][Formal Education]
+2019-12-04 15:42:43.064, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  611  com:KYCName :  : [KYC][Personal Details][Formal Education]
+2019-12-04 15:42:43.064, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  348  element.getAttribute(SOURCE) : user.formal_education
+2019-12-04 15:42:43.065, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  350  Result :
+2019-12-04 15:42:43.066, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  436  com:KYCValue : element.getChildNodes().getLength() : 0
+2019-12-04 15:42:43.066, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  590  com:KYCValue value :
+2019-12-04 15:42:43.066, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  651  JsonXmlDataConverter : Exit generateXml..
+2019-12-04 15:42:43.067, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  436  req:AddField : element.getChildNodes().getLength() : 5
+2019-12-04 15:42:43.067, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  294  JsonXmlDataConverter : Entry generateXml..
+2019-12-04 15:42:43.068, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  436  com:KYCName : element.getChildNodes().getLength() : 0
+2019-12-04 15:42:43.068, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  590  com:KYCName value : [KYC][Personal Details][InFormal Education]
+2019-12-04 15:42:43.069, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  611  com:KYCName :  : [KYC][Personal Details][InFormal Education]
+2019-12-04 15:42:43.069, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  348  element.getAttribute(SOURCE) : user.in_formal_education
+2019-12-04 15:42:43.070, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  350  Result :
+2019-12-04 15:42:43.070, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  436  com:KYCValue : element.getChildNodes().getLength() : 0
+2019-12-04 15:42:43.070, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  590  com:KYCValue value :
+2019-12-04 15:42:43.071, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  651  JsonXmlDataConverter : Exit generateXml..
+2019-12-04 15:42:43.071, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  436  req:AddField : element.getChildNodes().getLength() : 5
+2019-12-04 15:42:43.072, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  294  JsonXmlDataConverter : Entry generateXml..
+2019-12-04 15:42:43.072, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  436  com:KYCName : element.getChildNodes().getLength() : 0
+2019-12-04 15:42:43.073, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  590  com:KYCName value : [KYC][Personal Details][Working Start Date]
+2019-12-04 15:42:43.073, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  611  com:KYCName :  : [KYC][Personal Details][Working Start Date]
+2019-12-04 15:42:43.074, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  348  element.getAttribute(SOURCE) : user.wrk_start_date
+2019-12-04 15:42:43.074, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  350  Result : 10-Oct-2019
+2019-12-04 15:42:43.075, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  436  com:KYCValue : element.getChildNodes().getLength() : 0
+2019-12-04 15:42:43.076, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  590  com:KYCValue value : 20191010000000
+2019-12-04 15:42:43.076, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  611  com:KYCValue : user.wrk_start_date : 20191010000000
+2019-12-04 15:42:43.077, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  651  JsonXmlDataConverter : Exit generateXml..
+2019-12-04 15:42:43.077, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  436  req:AddField : element.getChildNodes().getLength() : 5
+2019-12-04 15:42:43.078, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  294  JsonXmlDataConverter : Entry generateXml..
+2019-12-04 15:42:43.080, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  436  com:KYCName : element.getChildNodes().getLength() : 0
+2019-12-04 15:42:43.080, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  590  com:KYCName value : [KYC][Personal Details][Working End Date]
+2019-12-04 15:42:43.081, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  611  com:KYCName :  : [KYC][Personal Details][Working End Date]
+2019-12-04 15:42:43.081, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  348  element.getAttribute(SOURCE) : user.wrk_end_date
+2019-12-04 15:42:43.082, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  350  Result : 31-Dec-2099
+2019-12-04 15:42:43.082, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  436  com:KYCValue : element.getChildNodes().getLength() : 0
+2019-12-04 15:42:43.083, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  590  com:KYCValue value : 20991231235959
+2019-12-04 15:42:43.084, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  611  com:KYCValue : user.wrk_end_date : 20991231235959
+2019-12-04 15:42:43.084, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  651  JsonXmlDataConverter : Exit generateXml..
+2019-12-04 15:42:43.084, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  436  req:AddField : element.getChildNodes().getLength() : 5
+2019-12-04 15:42:43.085, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  294  JsonXmlDataConverter : Entry generateXml..
+2019-12-04 15:42:43.085, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  436  com:KYCName : element.getChildNodes().getLength() : 0
+2019-12-04 15:42:43.086, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  590  com:KYCName value : [KYC][Bank Account][Organization Bank Account Number]
+2019-12-04 15:42:43.086, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  611  com:KYCName :  : [KYC][Bank Account][Organization Bank Account Number]
+2019-12-04 15:42:43.086, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  348  element.getAttribute(SOURCE) : user.bank_acc_no
+2019-12-04 15:42:43.087, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  350  Result :
+2019-12-04 15:42:43.088, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  436  com:KYCValue : element.getChildNodes().getLength() : 0
+2019-12-04 15:42:43.088, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  590  com:KYCValue value :
+2019-12-04 15:42:43.088, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  651  JsonXmlDataConverter : Exit generateXml..
+2019-12-04 15:42:43.089, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  436  req:AddField : element.getChildNodes().getLength() : 5
+2019-12-04 15:42:43.089, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  294  JsonXmlDataConverter : Entry generateXml..
+2019-12-04 15:42:43.089, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  436  com:KYCName : element.getChildNodes().getLength() : 0
+2019-12-04 15:42:43.090, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  590  com:KYCName value : [KYC][Contact Details][Preferred Notification Language]
+2019-12-04 15:42:43.090, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  611  com:KYCName :  : [KYC][Contact Details][Preferred Notification Language]
+2019-12-04 15:42:43.091, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  348  element.getAttribute(SOURCE) : user.notifi_lang
+2019-12-04 15:42:43.091, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  350  Result : 9001
+2019-12-04 15:42:43.092, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  436  com:KYCValue : element.getChildNodes().getLength() : 0
+2019-12-04 15:42:43.094, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  1141  outputObj : { "_id" : "9001" , "crtd_by" : 10001 , "crtd_dt" : { "$date" : "2018-02-03T03:21:01.714Z"} , "crtd_userid" : 10001 , "description" : "English" , "last_updt_dt" : { "$date" : "2018-02-03T03:21:01.714Z"} , "last_updt_userid" : 10001 , "node_id" : 1 , "org_id" : 1 , "org_type" : 154 , "parentTransitionValueId" : "" , "ref_code" : "en" , "s_id" : 9001 , "status" : 174 , "transitionTypeId" : "380" , "updtd_by" : 10001 , "updtd_dt" : { "$date" : "2018-02-03T03:21:01.714Z"}}
+2019-12-04 15:42:43.095, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  590  com:KYCValue value : en
+2019-12-04 15:42:43.095, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  611  com:KYCValue : user.notifi_lang : en
+2019-12-04 15:42:43.096, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  651  JsonXmlDataConverter : Exit generateXml..
+2019-12-04 15:42:43.096, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  436  req:AddField : element.getChildNodes().getLength() : 5
+2019-12-04 15:42:43.097, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  294  JsonXmlDataConverter : Entry generateXml..
+2019-12-04 15:42:43.097, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  436  com:KYCName : element.getChildNodes().getLength() : 0
+2019-12-04 15:42:43.098, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  590  com:KYCName value : [KYC][Owner Permanent Address][City/District]
+2019-12-04 15:42:43.098, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  611  com:KYCName :  : [KYC][Owner Permanent Address][City/District]
+2019-12-04 15:42:43.098, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  348  element.getAttribute(SOURCE) : user.addresses
+2019-12-04 15:42:43.099, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  350  Result : [{"adrs_type":"741","subDistrict":"","postal_code":"","adrs_1":"kolar","state":"54288","adrs_2":"","longitude":"","latitude":"","zone":"54306","country":"401","city":"54311"}]
+2019-12-04 15:42:43.100, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  436  com:KYCValue : element.getChildNodes().getLength() : 0
+2019-12-04 15:42:43.102, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  1141  outputObj : { "_id" : "54306" , "parentTransitionValueId" : "54288" , "isParentLinked" : true , "parentTransitionTypeId" : "3" , "s_id" : 54306 , "transitionTypeId" : "5" , "description" : "BADUNG" , "ref_code" : "5103" , "status" : 174 , "org_id" : 1 , "org_type" : 154 , "node_id" : 1 , "crtd_by" : 10001 , "crtd_userid" : 10001 , "updtd_by" : 10001 , "last_updt_userid" : 10001 , "crtd_dt" : { "$date" : "2018-02-03T06:40:28.166Z"} , "updtd_dt" : { "$date" : "2018-02-03T06:40:28.166Z"} , "last_updt_dt" : { "$date" : "2018-02-03T06:40:28.166Z"}}
+2019-12-04 15:42:43.102, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  590  com:KYCValue value : 5103
+2019-12-04 15:42:43.103, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  611  com:KYCValue : user.addresses : 5103
+2019-12-04 15:42:43.103, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  651  JsonXmlDataConverter : Exit generateXml..
+2019-12-04 15:42:43.104, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  436  req:AddField : element.getChildNodes().getLength() : 5
+2019-12-04 15:42:43.104, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  294  JsonXmlDataConverter : Entry generateXml..
+2019-12-04 15:42:43.105, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  436  com:KYCName : element.getChildNodes().getLength() : 0
+2019-12-04 15:42:43.105, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  590  com:KYCName value : [KYC][Owner Permanent Address][Districts]
+2019-12-04 15:42:43.105, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  611  com:KYCName :  : [KYC][Owner Permanent Address][Districts]
+2019-12-04 15:42:43.106, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  348  element.getAttribute(SOURCE) : user.addresses
+2019-12-04 15:42:43.107, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  350  Result : [{"adrs_type":"741","subDistrict":"","postal_code":"","adrs_1":"kolar","state":"54288","adrs_2":"","longitude":"","latitude":"","zone":"54306","country":"401","city":"54311"}]
+2019-12-04 15:42:43.107, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  436  com:KYCValue : element.getChildNodes().getLength() : 0
+2019-12-04 15:42:43.110, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  1141  outputObj : { "_id" : "54311" , "parentTransitionValueId" : "54306" , "isParentLinked" : true , "parentTransitionTypeId" : "5" , "s_id" : 54311 , "transitionTypeId" : "6" , "description" : "ABIANSEMAL" , "ref_code" : "5103050" , "status" : 174 , "org_id" : 1 , "org_type" : 154 , "node_id" : 1 , "crtd_by" : 10001 , "crtd_userid" : 10001 , "updtd_by" : 10001 , "last_updt_userid" : 10001 , "crtd_dt" : { "$date" : "2018-02-03T06:40:28.201Z"} , "updtd_dt" : { "$date" : "2018-02-03T06:40:28.201Z"} , "last_updt_dt" : { "$date" : "2018-02-03T06:40:28.201Z"}}
+2019-12-04 15:42:43.110, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  590  com:KYCValue value : 5103050
+2019-12-04 15:42:43.111, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  611  com:KYCValue : user.addresses : 5103050
+2019-12-04 15:42:43.111, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  651  JsonXmlDataConverter : Exit generateXml..
+2019-12-04 15:42:43.113, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  436  req:AddField : element.getChildNodes().getLength() : 5
+2019-12-04 15:42:43.113, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  294  JsonXmlDataConverter : Entry generateXml..
+2019-12-04 15:42:43.115, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  436  com:KYCName : element.getChildNodes().getLength() : 0
+2019-12-04 15:42:43.115, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  590  com:KYCName value : [KYC][Owner Permanent Address][Province]
+2019-12-04 15:42:43.116, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  611  com:KYCName :  : [KYC][Owner Permanent Address][Province]
+2019-12-04 15:42:43.117, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  348  element.getAttribute(SOURCE) : user.addresses
+2019-12-04 15:42:43.118, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  350  Result : [{"adrs_type":"741","subDistrict":"","postal_code":"","adrs_1":"kolar","state":"54288","adrs_2":"","longitude":"","latitude":"","zone":"54306","country":"401","city":"54311"}]
+2019-12-04 15:42:43.119, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  436  com:KYCValue : element.getChildNodes().getLength() : 0
+2019-12-04 15:42:43.122, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  1141  outputObj : { "_id" : "54288" , "parentTransitionValueId" : "401" , "isParentLinked" : true , "parentTransitionTypeId" : "2" , "s_id" : 54288 , "transitionTypeId" : "3" , "description" : "BALI" , "ref_code" : "51" , "status" : 174 , "org_id" : 1 , "org_type" : 154 , "node_id" : 1 , "crtd_by" : 10001 , "crtd_userid" : 10001 , "updtd_by" : 10001 , "last_updt_userid" : 10001 , "crtd_dt" : { "$date" : "2018-02-03T06:40:28.038Z"} , "updtd_dt" : { "$date" : "2018-02-03T06:40:28.038Z"} , "last_updt_dt" : { "$date" : "2018-02-03T06:40:28.038Z"}}
+2019-12-04 15:42:43.123, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  590  com:KYCValue value : 51
+2019-12-04 15:42:43.124, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  611  com:KYCValue : user.addresses : 51
+2019-12-04 15:42:43.124, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  651  JsonXmlDataConverter : Exit generateXml..
+2019-12-04 15:42:43.125, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  436  req:AddField : element.getChildNodes().getLength() : 5
+2019-12-04 15:42:43.126, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  294  JsonXmlDataConverter : Entry generateXml..
+2019-12-04 15:42:43.127, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  436  com:KYCName : element.getChildNodes().getLength() : 0
+2019-12-04 15:42:43.128, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  590  com:KYCName value : [KYC][Personal Details][Contact Number]
+2019-12-04 15:42:43.128, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  611  com:KYCName :  : [KYC][Personal Details][Contact Number]
+2019-12-04 15:42:43.129, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  348  element.getAttribute(SOURCE) : user.contacts
+2019-12-04 15:42:43.130, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  350  Result : [{"no":"no@no.com","type":"email_id"},{"no":"622532535333","type":"mobile_no"},{"no":"","type":"telephone_no"},{"no":"9001","type":"preferred_commn_lang"},{"no":"9001","type":"preferred_lang"}]
+2019-12-04 15:42:43.131, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  436  com:KYCValue : element.getChildNodes().getLength() : 0
+2019-12-04 15:42:43.132, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  590  com:KYCValue value :
+2019-12-04 15:42:43.133, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  651  JsonXmlDataConverter : Exit generateXml..
+2019-12-04 15:42:43.134, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  436  req:AddField : element.getChildNodes().getLength() : 5
+2019-12-04 15:42:43.134, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  294  JsonXmlDataConverter : Entry generateXml..
+2019-12-04 15:42:43.135, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  436  com:KYCName : element.getChildNodes().getLength() : 0
+2019-12-04 15:42:43.136, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  590  com:KYCName value : [KYC][Personal Details][Operator Type]
+2019-12-04 15:42:43.137, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  611  com:KYCName :  : [KYC][Personal Details][Operator Type]
+2019-12-04 15:42:43.138, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  348  element.getAttribute(SOURCE) : user.operator_type
+2019-12-04 15:42:43.139, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  350  Result : 58558
+2019-12-04 15:42:43.140, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  436  com:KYCValue : element.getChildNodes().getLength() : 0
+2019-12-04 15:42:43.143, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  1141  outputObj : { "_id" : "58558" , "beat_org_type" : [ "71" , "66"] , "crtd_by" : 10001 , "crtd_dt" : { "$date" : "2018-02-03T06:45:03.819Z"} , "crtd_userid" : 10001 , "description" : "Canvasser" , "isParentLinked" : false , "last_updt_dt" : { "$date" : "2019-07-03T05:49:46.229Z"} , "last_updt_userid" : 277330 , "node_id" : 1 , "org_id" : 1 , "org_type" : 154 , "parentTransitionTypeId" : "" , "parentTransitionValueId" : "" , "parent_opr_types" : [ "58554"] , "ref_code" : "Canvasser" , "s_id" : 58558 , "status" : 174 , "sub_org_type" : [ "59" , "52" , "51" , "61" , "62"] , "transitionTypeId" : "82" , "updtd_by" : 277330 , "updtd_dt" : { "$date" : "2019-07-03T05:49:46.245Z"}}
+2019-12-04 15:42:43.144, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  590  com:KYCValue value : Canvasser
+2019-12-04 15:42:43.144, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  611  com:KYCValue : user.operator_type : Canvasser
+2019-12-04 15:42:43.145, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  651  JsonXmlDataConverter : Exit generateXml..
+2019-12-04 15:42:43.146, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  436  req:AddField : element.getChildNodes().getLength() : 5
+2019-12-04 15:42:43.147, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  294  JsonXmlDataConverter : Entry generateXml..
+2019-12-04 15:42:43.148, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  436  com:KYCName : element.getChildNodes().getLength() : 0
+2019-12-04 15:42:43.149, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  590  com:KYCName value : [KYC][Personal Details][Organization Owner]
+2019-12-04 15:42:43.150, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  611  com:KYCName :  : [KYC][Personal Details][Organization Owner]
+2019-12-04 15:42:43.151, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  348  element.getAttribute(SOURCE) : user.org_owner
+2019-12-04 15:42:43.152, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  350  Result : 1
+2019-12-04 15:42:43.153, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  436  com:KYCValue : element.getChildNodes().getLength() : 0
+2019-12-04 15:42:43.154, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.converter.LookupMapping [LineNumber]:  284  getLookupEntity entry ... entityType: 304 entityId: 1 applicationId:301
+2019-12-04 15:42:43.162, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  590  com:KYCValue value : 0
+2019-12-04 15:42:43.163, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  611  com:KYCValue : user.org_owner : 0
+2019-12-04 15:42:43.164, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  651  JsonXmlDataConverter : Exit generateXml..
+2019-12-04 15:42:43.165, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  436  req:AddField : element.getChildNodes().getLength() : 5
+2019-12-04 15:42:43.166, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  294  JsonXmlDataConverter : Entry generateXml..
+2019-12-04 15:42:43.167, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  436  com:KYCName : element.getChildNodes().getLength() : 0
+2019-12-04 15:42:43.167, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  590  com:KYCName value : [KYC][Personal Details][Additional Field 1]
+2019-12-04 15:42:43.168, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  611  com:KYCName :  : [KYC][Personal Details][Additional Field 1]
+2019-12-04 15:42:43.169, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  348  element.getAttribute(SOURCE) : user.addnl_field_1
+2019-12-04 15:42:43.170, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  350  Result :
+2019-12-04 15:42:43.171, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  436  com:KYCValue : element.getChildNodes().getLength() : 0
+2019-12-04 15:42:43.172, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  590  com:KYCValue value :
+2019-12-04 15:42:43.173, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  651  JsonXmlDataConverter : Exit generateXml..
+2019-12-04 15:42:43.174, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  436  req:AddField : element.getChildNodes().getLength() : 5
+2019-12-04 15:42:43.175, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  294  JsonXmlDataConverter : Entry generateXml..
+2019-12-04 15:42:43.175, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  436  com:KYCName : element.getChildNodes().getLength() : 0
+2019-12-04 15:42:43.176, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  590  com:KYCName value : [KYC][Personal Details][Additional Field 2]
+2019-12-04 15:42:43.177, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  611  com:KYCName :  : [KYC][Personal Details][Additional Field 2]
+2019-12-04 15:42:43.178, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  348  element.getAttribute(SOURCE) : user.addnl_field_2
+2019-12-04 15:42:43.179, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  350  Result :
+2019-12-04 15:42:43.180, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  436  com:KYCValue : element.getChildNodes().getLength() : 0
+2019-12-04 15:42:43.181, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  590  com:KYCValue value :
+2019-12-04 15:42:43.182, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  651  JsonXmlDataConverter : Exit generateXml..
+2019-12-04 15:42:43.183, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  436  req:AddField : element.getChildNodes().getLength() : 5
+2019-12-04 15:42:43.184, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  294  JsonXmlDataConverter : Entry generateXml..
+2019-12-04 15:42:43.184, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  436  com:KYCName : element.getChildNodes().getLength() : 0
+2019-12-04 15:42:43.185, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  590  com:KYCName value : [KYC][Personal Details][Additional Field 3]
+2019-12-04 15:42:43.186, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  611  com:KYCName :  : [KYC][Personal Details][Additional Field 3]
+2019-12-04 15:42:43.187, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  348  element.getAttribute(SOURCE) : user.addnl_field_3
+2019-12-04 15:42:43.188, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  350  Result :
+2019-12-04 15:42:43.189, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  436  com:KYCValue : element.getChildNodes().getLength() : 0
+2019-12-04 15:42:43.190, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  590  com:KYCValue value :
+2019-12-04 15:42:43.191, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  651  JsonXmlDataConverter : Exit generateXml..
+2019-12-04 15:42:43.191, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  436  req:AddField : element.getChildNodes().getLength() : 5
+2019-12-04 15:42:43.192, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  294  JsonXmlDataConverter : Entry generateXml..
+2019-12-04 15:42:43.193, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  436  com:KYCName : element.getChildNodes().getLength() : 0
+2019-12-04 15:42:43.194, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  590  com:KYCName value : [KYC][Personal Details][Additional Field 4]
+2019-12-04 15:42:43.195, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  611  com:KYCName :  : [KYC][Personal Details][Additional Field 4]
+2019-12-04 15:42:43.196, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  348  element.getAttribute(SOURCE) : user.addnl_field_4
+2019-12-04 15:42:43.197, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  350  Result :
+2019-12-04 15:42:43.198, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  436  com:KYCValue : element.getChildNodes().getLength() : 0
+2019-12-04 15:42:43.199, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  590  com:KYCValue value :
+2019-12-04 15:42:43.199, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  651  JsonXmlDataConverter : Exit generateXml..
+2019-12-04 15:42:43.200, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  436  req:AddField : element.getChildNodes().getLength() : 5
+2019-12-04 15:42:43.201, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  294  JsonXmlDataConverter : Entry generateXml..
+2019-12-04 15:42:43.202, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  436  com:KYCName : element.getChildNodes().getLength() : 0
+2019-12-04 15:42:43.203, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  590  com:KYCName value : [KYC][Personal Details][Additional Field 5]
+2019-12-04 15:42:43.204, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  611  com:KYCName :  : [KYC][Personal Details][Additional Field 5]
+2019-12-04 15:42:43.205, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  348  element.getAttribute(SOURCE) : user.addnl_field_5
+2019-12-04 15:42:43.206, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  350  Result :
+2019-12-04 15:42:43.207, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  436  com:KYCValue : element.getChildNodes().getLength() : 0
+2019-12-04 15:42:43.208, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  590  com:KYCValue value :
+2019-12-04 15:42:43.208, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  651  JsonXmlDataConverter : Exit generateXml..
+2019-12-04 15:42:43.209, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  436  req:AddField : element.getChildNodes().getLength() : 5
+2019-12-04 15:42:43.210, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  294  JsonXmlDataConverter : Entry generateXml..
+2019-12-04 15:42:43.211, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  436  com:KYCName : element.getChildNodes().getLength() : 0
+2019-12-04 15:42:43.212, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  590  com:KYCName value : [KYC][Personal Details][Additional Select 1]
+2019-12-04 15:42:43.213, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  611  com:KYCName :  : [KYC][Personal Details][Additional Select 1]
+2019-12-04 15:42:43.214, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  348  element.getAttribute(SOURCE) : user.addnl_dropdown_1
+2019-12-04 15:42:43.215, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  350  Result :
+2019-12-04 15:42:43.216, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  436  com:KYCValue : element.getChildNodes().getLength() : 0
+2019-12-04 15:42:43.217, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  590  com:KYCValue value :
+2019-12-04 15:42:43.218, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  651  JsonXmlDataConverter : Exit generateXml..
+2019-12-04 15:42:43.219, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  436  req:AddField : element.getChildNodes().getLength() : 5
+2019-12-04 15:42:43.220, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  294  JsonXmlDataConverter : Entry generateXml..
+2019-12-04 15:42:43.220, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  436  com:KYCName : element.getChildNodes().getLength() : 0
+2019-12-04 15:42:43.221, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  590  com:KYCName value : [KYC][Personal Details][Additional Select 2]
+2019-12-04 15:42:43.222, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  611  com:KYCName :  : [KYC][Personal Details][Additional Select 2]
+2019-12-04 15:42:43.223, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  348  element.getAttribute(SOURCE) : user.addnl_dropdown_2
+2019-12-04 15:42:43.224, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  350  Result :
+2019-12-04 15:42:43.225, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  436  com:KYCValue : element.getChildNodes().getLength() : 0
+2019-12-04 15:42:43.226, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  590  com:KYCValue value :
+2019-12-04 15:42:43.227, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  651  JsonXmlDataConverter : Exit generateXml..
+2019-12-04 15:42:43.228, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  436  req:AddField : element.getChildNodes().getLength() : 5
+2019-12-04 15:42:43.229, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  294  JsonXmlDataConverter : Entry generateXml..
+2019-12-04 15:42:43.230, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  436  com:KYCName : element.getChildNodes().getLength() : 0
+2019-12-04 15:42:43.230, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  590  com:KYCName value : [KYC][Personal Details][Additional Select 3]
+2019-12-04 15:42:43.231, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  611  com:KYCName :  : [KYC][Personal Details][Additional Select 3]
+2019-12-04 15:42:43.232, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  348  element.getAttribute(SOURCE) : user.addnl_dropdown_3
+2019-12-04 15:42:43.233, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  350  Result :
+2019-12-04 15:42:43.234, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  436  com:KYCValue : element.getChildNodes().getLength() : 0
+2019-12-04 15:42:43.235, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  590  com:KYCValue value :
+2019-12-04 15:42:43.236, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  651  JsonXmlDataConverter : Exit generateXml..
+2019-12-04 15:42:43.237, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  436  req:AddField : element.getChildNodes().getLength() : 5
+2019-12-04 15:42:43.237, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  294  JsonXmlDataConverter : Entry generateXml..
+2019-12-04 15:42:43.238, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  436  com:KYCName : element.getChildNodes().getLength() : 0
+2019-12-04 15:42:43.239, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  590  com:KYCName value : [KYC][Personal Details][Additional Select 4]
+2019-12-04 15:42:43.240, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  611  com:KYCName :  : [KYC][Personal Details][Additional Select 4]
+2019-12-04 15:42:43.241, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  348  element.getAttribute(SOURCE) : user.addnl_dropdown_4
+2019-12-04 15:42:43.242, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  350  Result :
+2019-12-04 15:42:43.243, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  436  com:KYCValue : element.getChildNodes().getLength() : 0
+2019-12-04 15:42:43.244, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  590  com:KYCValue value :
+2019-12-04 15:42:43.245, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  651  JsonXmlDataConverter : Exit generateXml..
+2019-12-04 15:42:43.245, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  436  req:AddField : element.getChildNodes().getLength() : 5
+2019-12-04 15:42:43.246, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  294  JsonXmlDataConverter : Entry generateXml..
+2019-12-04 15:42:43.247, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  436  com:KYCName : element.getChildNodes().getLength() : 0
+2019-12-04 15:42:43.248, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  590  com:KYCName value : [KYC][Personal Details][Additional Select 5]
+2019-12-04 15:42:43.249, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  611  com:KYCName :  : [KYC][Personal Details][Additional Select 5]
+2019-12-04 15:42:43.249, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  348  element.getAttribute(SOURCE) : user.addnl_dropdown_5
+2019-12-04 15:42:43.250, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  350  Result :
+2019-12-04 15:42:43.251, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  436  com:KYCValue : element.getChildNodes().getLength() : 0
+2019-12-04 15:42:43.252, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  590  com:KYCValue value :
+2019-12-04 15:42:43.253, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  651  JsonXmlDataConverter : Exit generateXml..
+2019-12-04 15:42:43.254, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  651  JsonXmlDataConverter : Exit generateXml..
+2019-12-04 15:42:43.254, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  651  JsonXmlDataConverter : Exit generateXml..
+2019-12-04 15:42:43.255, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  651  JsonXmlDataConverter : Exit generateXml..
+2019-12-04 15:42:43.256, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  651  JsonXmlDataConverter : Exit generateXml..
+2019-12-04 15:42:43.256, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  651  JsonXmlDataConverter : Exit generateXml..
+2019-12-04 15:42:43.257, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  651  JsonXmlDataConverter : Exit generateXml..
+2019-12-04 15:42:43.452, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  228  End ::  1575454363451 -- 
+
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:api="http://cps.huawei.com/synccpsinterface/api_requestmgr" xmlns:com="http://cps.huawei.com/synccpsinterface/common" xmlns:req="http://cps.huawei.com/synccpsinterface/request">
+<soapenv:Header/>
+<soapenv:Body>
+	<api:Request>
+		<req:Header>
+			<req:Version>1.0</req:Version>
+			<req:CommandID>UpdateOrgOperatorKYC</req:CommandID>
+			<req:OriginatorConversationID>TRANS_ID_IN_CONVERTER_TEMPLATE</req:OriginatorConversationID>
+			<req:Caller>
+				<req:CallerType>2</req:CallerType>
+				<req:ThirdPartyID>POS_Broker</req:ThirdPartyID>
+				<req:Password>gMMqGGrKxsE=</req:Password>
+				<req:ResultURL>http://10.63.146.235:8082/mockResultBinding</req:ResultURL>
+			</req:Caller>
+			<req:KeyOwner>1</req:KeyOwner>
+			<req:Timestamp>20191204154242</req:Timestamp>
+		</req:Header>
+		<req:Body>
+			<req:Identity>
+				<req:Initiator>
+					<req:IdentifierType>14</req:IdentifierType>
+					<req:Identifier>wyz1</req:Identifier>
+					<req:SecurityCredential>k+JtvqNV3eg=</req:SecurityCredential>
+				</req:Initiator>
+				<req:ReceiverParty>
+					<req:IdentifierType>12</req:IdentifierType>
+					<req:Identifier>lcan7</req:Identifier>
+					<req:ShortCode>1234</req:ShortCode>
+				</req:ReceiverParty>
+			</req:Identity>
+			<req:UpdateOrgOperatorKYCRequest>
+				<req:SimpleKYCUpdateData>
+					<req:AddField>
+						<com:KYCName>[KYC][Personal Details][First Name]</com:KYCName>
+						<com:KYCValue>lcan</com:KYCValue>
+					</req:AddField>
+					<req:AddField>
+						<com:KYCName>[KYC][ID][Alternative ID Type]</com:KYCName>
+						<com:KYCValue>Other</com:KYCValue>
+					</req:AddField>
+					<req:AddField>
+						<com:KYCName>[KYC][ID][Alternative ID Number]</com:KYCName>
+						<com:KYCValue>62273874833</com:KYCValue>
+					</req:AddField>
+					<req:AddField>
+						<com:KYCName>[KYC][Contact Details][Preferred Notification Channel]</com:KYCName>
+						<com:KYCValue>1001</com:KYCValue>
+					</req:AddField>
+					<req:AddField>
+						<com:KYCName>[KYC][Contact Details][Notification Receiving MSISDN]</com:KYCName>
+						<com:KYCValue>622532535333</com:KYCValue>
+					</req:AddField>
+					<req:AddField>
+						<com:KYCName>[KYC][Contact Details][Notification Receiving E-mail]</com:KYCName>
+						<com:KYCValue>no@no.com</com:KYCValue>
+					</req:AddField>
+					<req:AddField>
+						<com:KYCName>[KYC][Personal Details][Operator Name]</com:KYCName>
+						<com:KYCValue>lcan</com:KYCValue>
+					</req:AddField>
+					<req:AddField>
+						<com:KYCName>[KYC][Contact Information][Contact Number]</com:KYCName>
+						<com:KYCValue>622532535333</com:KYCValue>
+					</req:AddField>
+					<req:AddField>
+						<com:KYCName>[KYC][Personal Details][mother's maiden name]</com:KYCName>
+						<com:KYCValue>suju</com:KYCValue>
+					</req:AddField>
+					<req:AddField>
+						<com:KYCName>[KYC][Permanent Address][Propinsi/Province]</com:KYCName>
+						<com:KYCValue>51</com:KYCValue>
+					</req:AddField>
+					<req:AddField>
+						<com:KYCName>[KYC][Permanent Address][Kota/City/District]</com:KYCName>
+						<com:KYCValue>5103</com:KYCValue>
+					</req:AddField>
+					<req:AddField>
+						<com:KYCName>[KYC][Permanent Address][Kecamatan/Districts]</com:KYCName>
+						<com:KYCValue>5103050</com:KYCValue>
+					</req:AddField>
+					<req:AddField>
+						<com:KYCName>[KYC][Permanent Address][Street Address]</com:KYCName>
+						<com:KYCValue>kolar</com:KYCValue>
+					</req:AddField>
+					<req:AddField>
+						<com:KYCName>[KYC][Personal Details][Working Start Date]</com:KYCName>
+						<com:KYCValue>20191010000000</com:KYCValue>
+					</req:AddField>
+					<req:AddField>
+						<com:KYCName>[KYC][Personal Details][Working End Date]</com:KYCName>
+						<com:KYCValue>20991231235959</com:KYCValue>
+					</req:AddField>
+					<req:AddField>
+						<com:KYCName>[KYC][Contact Details][Preferred Notification Language]</com:KYCName>
+						<com:KYCValue>en</com:KYCValue>
+					</req:AddField>
+					<req:AddField>
+						<com:KYCName>[KYC][Owner Permanent Address][City/District]</com:KYCName>
+						<com:KYCValue>5103</com:KYCValue>
+					</req:AddField>
+					<req:AddField>
+						<com:KYCName>[KYC][Owner Permanent Address][Districts]</com:KYCName>
+						<com:KYCValue>5103050</com:KYCValue>
+					</req:AddField>
+					<req:AddField>
+						<com:KYCName>[KYC][Owner Permanent Address][Province]</com:KYCName>
+						<com:KYCValue>51</com:KYCValue>
+					</req:AddField>
+					<req:AddField>
+						<com:KYCName>[KYC][Personal Details][Operator Type]</com:KYCName>
+						<com:KYCValue>Canvasser</com:KYCValue>
+					</req:AddField>
+					<req:AddField>
+						<com:KYCName>[KYC][Personal Details][Organization Owner]</com:KYCName>
+						<com:KYCValue>0</com:KYCValue>
+					</req:AddField>
+				</req:SimpleKYCUpdateData>
+			</req:UpdateOrgOperatorKYCRequest>
+		</req:Body>
+	</api:Request>
+</soapenv:Body>
+</soapenv:Envelope>
+
+2019-12-04 15:42:43.453, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  271  JsonXmlDataConverter : Exit processRequest..processingTime : 1331
+2019-12-04 15:42:43.453, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  13752  IsException : false
+2019-12-04 15:42:43.493, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  13779  Inside convertRequestData..239814
+2019-12-04 15:42:43.497, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  13817  refData1 : null : refData5 : lcan7 : TransID : 239814
+2019-12-04 15:42:43.645, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  13885  Exit convertRequest..1023
+2019-12-04 15:42:43.645, FINE, [Thread]: 239 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  11812  Exit publishToInterface : ModuleId :: 115 RefId :: ?

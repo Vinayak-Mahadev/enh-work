@@ -1,0 +1,13 @@
+{
+    "req_id": "1909191244576010581",
+    "res_msg": "Request Processed Successfully..!",
+    "res_code": 100,
+    "payload": {
+        "org_id": 294729,
+        "node_id": 304214,
+        "user_id": 277726,
+        "operator_id": "123456",
+        "uname": "INTU1909001",
+        "ref_code": "Int0919001"
+    }
+}

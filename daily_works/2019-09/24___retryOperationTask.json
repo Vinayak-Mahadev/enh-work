@@ -1,0 +1,790 @@
+2019-09-24 15:01:25.344, FINE, [Thread]: 236 [ClassName]: com.enhancesys.integration.services.util.TokuUser [LineNumber]:  33  Initiating TokuMx-Java Adapter.....
+2019-09-24 15:01:25.350, FINE, [Thread]: 236 [ClassName]: com.enhancesys.integration.services.util.TokuUser [LineNumber]:  42  TokuMx-Java Adapter Initiated Successfully For Replica-Set user....!
+2019-09-24 15:01:25.416, FINE, [Thread]: 236 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  2026  Entry processResponseAvailableRecords.. Started at --> 1018 : Tue Sep 24 15:01:25 IST 2019
+2019-09-24 15:01:25.417, FINE, [Thread]: 236 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  2044  processResponseAvailableRecords service received status id-->1303
+2019-09-24 15:01:26.172, FINE, [Thread]: 236 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  2080  interfaceSummaryList size : 1
+2019-09-24 15:01:26.173, FINE, [Thread]: 236 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  14556  Entry getSummaryTransIdsByRefData3..refData3 : 229683 : interfaceId : null
+2019-09-24 15:01:26.178, FINE, [Thread]: 236 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  14642  Exit getSummaryTransIdsByRefData3..
+2019-09-24 15:01:26.178, FINE, [Thread]: 236 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  2105  Invoking processCallback : 229683
+2019-09-24 15:01:26.182, FINE, [Thread]: 236 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  2237  Inside the processCallback Method with transactionId ::: 229683
+2019-09-24 15:01:26.197, FINE, [Thread]: 236 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  14556  Entry getSummaryTransIdsByRefData3..refData3 : 229683 : interfaceId : null
+2019-09-24 15:01:26.201, FINE, [Thread]: 236 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  14642  Exit getSummaryTransIdsByRefData3..
+2019-09-24 15:01:26.247, FINE, [Thread]: 236 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  2259  callbackRetryLimit : 5
+2019-09-24 15:01:26.249, FINE, [Thread]: 236 [ClassName]: com.enhancesys.integration.services.processor.IntegrationCallbackProcessor [LineNumber]:  66  Entry processRequest.. refData1:229683
+2019-09-24 15:01:26.254, FINE, [Thread]: 236 [ClassName]: com.enhancesys.integration.services.processor.IntegrationCallbackProcessor [LineNumber]:  107  Summary trans ID : 229683
+2019-09-24 15:01:26.262, FINE, [Thread]: 236 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  14443  Entry getSummaryResponseDataByRefData3 : 229683
+2019-09-24 15:01:26.268, FINE, [Thread]: 236 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  14536  Exit getSummaryResponseDataByRefData3 : 229683
+2019-09-24 15:01:26.284, FINE, [Thread]: 236 [ClassName]: com.enhancesys.integration.publisher.SMCallbackPublisher [LineNumber]:  159  url-->http://192.168.2.144:8080/organization-services/org/interfaceCallBack
+2019-09-24 15:01:26.285, FINE, [Thread]: 236 [ClassName]: com.enhancesys.integration.publisher.SMCallbackPublisher [LineNumber]:  160  requestData-->{"envelope":{"payload":{"organization":{"trans_id":"229683","ext_error_code":2,"res_code":101,"res_msg":"<?xml version = \"1.0\" encoding = \"UTF-8\"?> <soap-envelope xmlns:soap=\"http:\/\/schemas.xmlsoap.org\/soap\/envelope\/\"><soap-body><soap-fault><faultcode>soapenv:Server<\/faultcode><faultstring>Application Error. Please see FaultInfo<\/faultstring><detail><ns2:FaultInfo xmlns:ns3=\"http:\/\/com\/enhancesys\/entities\/schema\/integration\" xmlns:ns2=\"http:\/\/com\/enhancesys\/integration\/services\/interfaces\/IntegrationManagement\"><causedBy>java.lang.NullPointerException<\/causedBy><message>Error in initialising entity manager<\/message><\/ns2:FaultInfo><\/detail><\/soap-fault><\/soap-body><\/soap-envelope>"}},"header":{"uid":10001,"pwd":"password","tz":"20141029180647","chnl":"Interface","uname":"username","rqst":"Create Order","locale":"en","src":"SALDOMOBO","utype":1}}}
+2019-09-24 15:01:26.285, FINE, [Thread]: 236 [ClassName]: com.enhancesys.integration.publisher.SMCallbackPublisher [LineNumber]:  161  user-->admin
+2019-09-24 15:01:26.285, FINE, [Thread]: 236 [ClassName]: com.enhancesys.integration.publisher.SMCallbackPublisher [LineNumber]:  340  Entry sendRestRequest..
+2019-09-24 15:01:26.537, FINE, [Thread]: 236 [ClassName]: com.enhancesys.integration.publisher.SMCallbackPublisher [LineNumber]:  352  [response] POST http://192.168.2.144:8080/organization-services/org/interfaceCallBack returned a response status of 200 OK
+2019-09-24 15:01:26.538, FINE, [Thread]: 236 [ClassName]: com.enhancesys.integration.publisher.SMCallbackPublisher [LineNumber]:  378  Exit sendRestRequest..
+2019-09-24 15:01:26.539, FINE, [Thread]: 236 [ClassName]: com.enhancesys.integration.publisher.SMCallbackPublisher [LineNumber]:  165  response--->{"req_id": "1909240404174380102","res_msg": "Given Transaction ID not exists or Invalid","res_code": -101}
+2019-09-24 15:01:26.539, FINE, [Thread]: 236 [ClassName]: com.enhancesys.integration.publisher.SMCallbackPublisher [LineNumber]:  213  Exit processRequest..
+2019-09-24 15:01:26.540, FINE, [Thread]: 236 [ClassName]: com.enhancesys.integration.services.processor.IntegrationCallbackProcessor [LineNumber]:  118  ResponseBean : Error
+2019-09-24 15:01:26.540, FINE, [Thread]: 236 [ClassName]: com.enhancesys.integration.services.processor.IntegrationCallbackProcessor [LineNumber]:  157  Exit processRequest..
+2019-09-24 15:01:26.541, FINE, [Thread]: 236 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  2264  response   ::: com.enhancesys.integration.services.interfaces.ResponseBean@389e503f
+2019-09-24 15:01:26.541, FINE, [Thread]: 236 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  2265  response instanceof ResponseBean  ::: true
+2019-09-24 15:01:26.541, FINE, [Thread]: 236 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  2276  retryCount : 0
+2019-09-24 15:01:26.557, FINE, [Thread]: 236 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  2283  resultObject : null
+2019-09-24 15:01:26.557, SEVERE, [Thread]: 236 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  2318  Call Back : invocation failed for Process :: java:global/EnhancesysManagement/IntegrationServices/IntegrationCallbackProcessor!com.enhancesys.integration.services.interfaces.callback.CallbackProcessor
+2019-09-24 15:01:26.557, FINE, [Thread]: 236 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  2319  responseBean.getStatusId : 1305
+2019-09-24 15:01:26.560, FINE, [Thread]: 236 [ClassName]: com.enhancesys.integration.services.util.IntegrationUtilManagementImpl [LineNumber]:  146  Failed Transaction id --->229683
+2019-09-24 15:01:26.560, FINE, [Thread]: 236 [ClassName]: com.enhancesys.integration.services.util.IntegrationUtilManagementImpl [LineNumber]:  147  responseBean.getRetryCount() : 1
+2019-09-24 15:01:26.563, FINE, [Thread]: 236 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  1051  TransactionId ::: 229683interface id::::1018
+2019-09-24 15:01:26.581, FINE, [Thread]: 236 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  1123  interfaceSummary.getRetryCount() : 1
+2019-09-24 15:01:26.665, FINE, [Thread]: 236 [ClassName]: com.enhancesys.integration.services.util.IntegrationUtilManagementImpl [LineNumber]:  192  Exit updateInterfaceFailerStatus service at -->Tue Sep 24 15:01:26 IST 2019 --- and took 106 milliseconds
+2019-09-24 15:01:26.666, FINE, [Thread]: 236 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  2322  Callback Retry Limit : 5 : Sum Retry Count : 1
+2019-09-24 15:01:26.666, FINE, [Thread]: 236 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  2325  Inside retry block
+2019-09-24 15:01:36.668, FINE, [Thread]: 236 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  2237  Inside the processCallback Method with transactionId ::: 229683
+2019-09-24 15:01:36.687, FINE, [Thread]: 236 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  14556  Entry getSummaryTransIdsByRefData3..refData3 : 229683 : interfaceId : null
+2019-09-24 15:01:36.697, FINE, [Thread]: 236 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  14642  Exit getSummaryTransIdsByRefData3..
+2019-09-24 15:01:36.706, FINE, [Thread]: 236 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  2259  callbackRetryLimit : 5
+2019-09-24 15:01:36.707, FINE, [Thread]: 236 [ClassName]: com.enhancesys.integration.services.processor.IntegrationCallbackProcessor [LineNumber]:  66  Entry processRequest.. refData1:229683
+2019-09-24 15:01:36.712, FINE, [Thread]: 236 [ClassName]: com.enhancesys.integration.services.processor.IntegrationCallbackProcessor [LineNumber]:  107  Summary trans ID : 229683
+2019-09-24 15:01:36.722, FINE, [Thread]: 236 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  14443  Entry getSummaryResponseDataByRefData3 : 229683
+2019-09-24 15:01:36.733, FINE, [Thread]: 236 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  14536  Exit getSummaryResponseDataByRefData3 : 229683
+2019-09-24 15:01:36.754, FINE, [Thread]: 236 [ClassName]: com.enhancesys.integration.publisher.SMCallbackPublisher [LineNumber]:  159  url-->http://192.168.2.144:8080/organization-services/org/interfaceCallBack
+2019-09-24 15:01:36.755, FINE, [Thread]: 236 [ClassName]: com.enhancesys.integration.publisher.SMCallbackPublisher [LineNumber]:  160  requestData-->{"envelope":{"payload":{"organization":{"trans_id":"229683","ext_error_code":2,"res_code":101,"res_msg":"<?xml version = \"1.0\" encoding = \"UTF-8\"?> <soap-envelope xmlns:soap=\"http:\/\/schemas.xmlsoap.org\/soap\/envelope\/\"><soap-body><soap-fault><faultcode>soapenv:Server<\/faultcode><faultstring>Application Error. Please see FaultInfo<\/faultstring><detail><ns2:FaultInfo xmlns:ns3=\"http:\/\/com\/enhancesys\/entities\/schema\/integration\" xmlns:ns2=\"http:\/\/com\/enhancesys\/integration\/services\/interfaces\/IntegrationManagement\"><causedBy>java.lang.NullPointerException<\/causedBy><message>Error in initialising entity manager<\/message><\/ns2:FaultInfo><\/detail><\/soap-fault><\/soap-body><\/soap-envelope>"}},"header":{"uid":10001,"pwd":"password","tz":"20141029180647","chnl":"Interface","uname":"username","rqst":"Create Order","locale":"en","src":"SALDOMOBO","utype":1}}}
+2019-09-24 15:01:36.755, FINE, [Thread]: 236 [ClassName]: com.enhancesys.integration.publisher.SMCallbackPublisher [LineNumber]:  161  user-->admin
+2019-09-24 15:01:36.756, FINE, [Thread]: 236 [ClassName]: com.enhancesys.integration.publisher.SMCallbackPublisher [LineNumber]:  340  Entry sendRestRequest..
+2019-09-24 15:01:36.972, FINE, [Thread]: 236 [ClassName]: com.enhancesys.integration.publisher.SMCallbackPublisher [LineNumber]:  352  [response] POST http://192.168.2.144:8080/organization-services/org/interfaceCallBack returned a response status of 200 OK
+2019-09-24 15:01:36.974, FINE, [Thread]: 236 [ClassName]: com.enhancesys.integration.publisher.SMCallbackPublisher [LineNumber]:  378  Exit sendRestRequest..
+2019-09-24 15:01:36.975, FINE, [Thread]: 236 [ClassName]: com.enhancesys.integration.publisher.SMCallbackPublisher [LineNumber]:  165  response--->{"req_id": "1909240404278790103","res_msg": "Given Transaction ID not exists or Invalid","res_code": -101}
+2019-09-24 15:01:36.976, FINE, [Thread]: 236 [ClassName]: com.enhancesys.integration.publisher.SMCallbackPublisher [LineNumber]:  213  Exit processRequest..
+2019-09-24 15:01:36.977, FINE, [Thread]: 236 [ClassName]: com.enhancesys.integration.services.processor.IntegrationCallbackProcessor [LineNumber]:  118  ResponseBean : Error
+2019-09-24 15:01:36.978, FINE, [Thread]: 236 [ClassName]: com.enhancesys.integration.services.processor.IntegrationCallbackProcessor [LineNumber]:  157  Exit processRequest..
+2019-09-24 15:01:36.979, FINE, [Thread]: 236 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  2264  response   ::: com.enhancesys.integration.services.interfaces.ResponseBean@4a5836ba
+2019-09-24 15:01:36.980, FINE, [Thread]: 236 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  2265  response instanceof ResponseBean  ::: true
+2019-09-24 15:01:36.980, FINE, [Thread]: 236 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  2276  retryCount : 1
+2019-09-24 15:01:36.994, FINE, [Thread]: 236 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  2283  resultObject : null
+2019-09-24 15:01:36.994, SEVERE, [Thread]: 236 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  2318  Call Back : invocation failed for Process :: java:global/EnhancesysManagement/IntegrationServices/IntegrationCallbackProcessor!com.enhancesys.integration.services.interfaces.callback.CallbackProcessor
+2019-09-24 15:01:36.995, FINE, [Thread]: 236 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  2319  responseBean.getStatusId : 1305
+2019-09-24 15:01:36.996, FINE, [Thread]: 236 [ClassName]: com.enhancesys.integration.services.util.IntegrationUtilManagementImpl [LineNumber]:  146  Failed Transaction id --->229683
+2019-09-24 15:01:36.997, FINE, [Thread]: 236 [ClassName]: com.enhancesys.integration.services.util.IntegrationUtilManagementImpl [LineNumber]:  147  responseBean.getRetryCount() : 2
+2019-09-24 15:01:36.999, FINE, [Thread]: 236 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  1051  TransactionId ::: 229683interface id::::1018
+2019-09-24 15:01:37.026, FINE, [Thread]: 236 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  1123  interfaceSummary.getRetryCount() : 2
+2019-09-24 15:01:37.101, FINE, [Thread]: 236 [ClassName]: com.enhancesys.integration.services.util.IntegrationUtilManagementImpl [LineNumber]:  192  Exit updateInterfaceFailerStatus service at -->Tue Sep 24 15:01:37 IST 2019 --- and took 105 milliseconds
+2019-09-24 15:01:37.102, FINE, [Thread]: 236 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  2322  Callback Retry Limit : 5 : Sum Retry Count : 2
+2019-09-24 15:01:37.102, FINE, [Thread]: 236 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  2325  Inside retry block
+2019-09-24 15:01:47.104, FINE, [Thread]: 236 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  2237  Inside the processCallback Method with transactionId ::: 229683
+2019-09-24 15:01:47.123, FINE, [Thread]: 236 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  14556  Entry getSummaryTransIdsByRefData3..refData3 : 229683 : interfaceId : null
+2019-09-24 15:01:47.134, FINE, [Thread]: 236 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  14642  Exit getSummaryTransIdsByRefData3..
+2019-09-24 15:01:47.141, FINE, [Thread]: 236 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  2259  callbackRetryLimit : 5
+2019-09-24 15:01:47.143, FINE, [Thread]: 236 [ClassName]: com.enhancesys.integration.services.processor.IntegrationCallbackProcessor [LineNumber]:  66  Entry processRequest.. refData1:229683
+2019-09-24 15:01:47.150, FINE, [Thread]: 236 [ClassName]: com.enhancesys.integration.services.processor.IntegrationCallbackProcessor [LineNumber]:  107  Summary trans ID : 229683
+2019-09-24 15:01:47.159, FINE, [Thread]: 236 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  14443  Entry getSummaryResponseDataByRefData3 : 229683
+2019-09-24 15:01:47.171, FINE, [Thread]: 236 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  14536  Exit getSummaryResponseDataByRefData3 : 229683
+2019-09-24 15:01:47.190, FINE, [Thread]: 236 [ClassName]: com.enhancesys.integration.publisher.SMCallbackPublisher [LineNumber]:  159  url-->http://192.168.2.144:8080/organization-services/org/interfaceCallBack
+2019-09-24 15:01:47.191, FINE, [Thread]: 236 [ClassName]: com.enhancesys.integration.publisher.SMCallbackPublisher [LineNumber]:  160  requestData-->{"envelope":{"payload":{"organization":{"trans_id":"229683","ext_error_code":2,"res_code":101,"res_msg":"<?xml version = \"1.0\" encoding = \"UTF-8\"?> <soap-envelope xmlns:soap=\"http:\/\/schemas.xmlsoap.org\/soap\/envelope\/\"><soap-body><soap-fault><faultcode>soapenv:Server<\/faultcode><faultstring>Application Error. Please see FaultInfo<\/faultstring><detail><ns2:FaultInfo xmlns:ns3=\"http:\/\/com\/enhancesys\/entities\/schema\/integration\" xmlns:ns2=\"http:\/\/com\/enhancesys\/integration\/services\/interfaces\/IntegrationManagement\"><causedBy>java.lang.NullPointerException<\/causedBy><message>Error in initialising entity manager<\/message><\/ns2:FaultInfo><\/detail><\/soap-fault><\/soap-body><\/soap-envelope>"}},"header":{"uid":10001,"pwd":"password","tz":"20141029180647","chnl":"Interface","uname":"username","rqst":"Create Order","locale":"en","src":"SALDOMOBO","utype":1}}}
+2019-09-24 15:01:47.192, FINE, [Thread]: 236 [ClassName]: com.enhancesys.integration.publisher.SMCallbackPublisher [LineNumber]:  161  user-->admin
+2019-09-24 15:01:47.193, FINE, [Thread]: 236 [ClassName]: com.enhancesys.integration.publisher.SMCallbackPublisher [LineNumber]:  340  Entry sendRestRequest..
+2019-09-24 15:01:47.405, FINE, [Thread]: 236 [ClassName]: com.enhancesys.integration.publisher.SMCallbackPublisher [LineNumber]:  352  [response] POST http://192.168.2.144:8080/organization-services/org/interfaceCallBack returned a response status of 200 OK
+2019-09-24 15:01:47.407, FINE, [Thread]: 236 [ClassName]: com.enhancesys.integration.publisher.SMCallbackPublisher [LineNumber]:  378  Exit sendRestRequest..
+2019-09-24 15:01:47.408, FINE, [Thread]: 236 [ClassName]: com.enhancesys.integration.publisher.SMCallbackPublisher [LineNumber]:  165  response--->{"req_id": "1909240404383100104","res_msg": "Given Transaction ID not exists or Invalid","res_code": -101}
+2019-09-24 15:01:47.409, FINE, [Thread]: 236 [ClassName]: com.enhancesys.integration.publisher.SMCallbackPublisher [LineNumber]:  213  Exit processRequest..
+2019-09-24 15:01:47.410, FINE, [Thread]: 236 [ClassName]: com.enhancesys.integration.services.processor.IntegrationCallbackProcessor [LineNumber]:  118  ResponseBean : Error
+2019-09-24 15:01:47.411, FINE, [Thread]: 236 [ClassName]: com.enhancesys.integration.services.processor.IntegrationCallbackProcessor [LineNumber]:  157  Exit processRequest..
+2019-09-24 15:01:47.412, FINE, [Thread]: 236 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  2264  response   ::: com.enhancesys.integration.services.interfaces.ResponseBean@5f367172
+2019-09-24 15:01:47.413, FINE, [Thread]: 236 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  2265  response instanceof ResponseBean  ::: true
+2019-09-24 15:01:47.414, FINE, [Thread]: 236 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  2276  retryCount : 2
+2019-09-24 15:01:47.425, FINE, [Thread]: 236 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  2283  resultObject : null
+2019-09-24 15:01:47.426, SEVERE, [Thread]: 236 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  2318  Call Back : invocation failed for Process :: java:global/EnhancesysManagement/IntegrationServices/IntegrationCallbackProcessor!com.enhancesys.integration.services.interfaces.callback.CallbackProcessor
+2019-09-24 15:01:47.426, FINE, [Thread]: 236 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  2319  responseBean.getStatusId : 1305
+2019-09-24 15:01:47.428, FINE, [Thread]: 236 [ClassName]: com.enhancesys.integration.services.util.IntegrationUtilManagementImpl [LineNumber]:  146  Failed Transaction id --->229683
+2019-09-24 15:01:47.429, FINE, [Thread]: 236 [ClassName]: com.enhancesys.integration.services.util.IntegrationUtilManagementImpl [LineNumber]:  147  responseBean.getRetryCount() : 3
+2019-09-24 15:01:47.431, FINE, [Thread]: 236 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  1051  TransactionId ::: 229683interface id::::1018
+2019-09-24 15:01:47.467, FINE, [Thread]: 236 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  1123  interfaceSummary.getRetryCount() : 3
+2019-09-24 15:01:47.590, FINE, [Thread]: 236 [ClassName]: com.enhancesys.integration.services.util.IntegrationUtilManagementImpl [LineNumber]:  192  Exit updateInterfaceFailerStatus service at -->Tue Sep 24 15:01:47 IST 2019 --- and took 162 milliseconds
+2019-09-24 15:01:47.591, FINE, [Thread]: 236 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  2322  Callback Retry Limit : 5 : Sum Retry Count : 3
+2019-09-24 15:01:47.591, FINE, [Thread]: 236 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  2325  Inside retry block
+2019-09-24 15:01:57.593, FINE, [Thread]: 236 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  2237  Inside the processCallback Method with transactionId ::: 229683
+2019-09-24 15:01:57.614, FINE, [Thread]: 236 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  14556  Entry getSummaryTransIdsByRefData3..refData3 : 229683 : interfaceId : null
+2019-09-24 15:01:57.625, FINE, [Thread]: 236 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  14642  Exit getSummaryTransIdsByRefData3..
+2019-09-24 15:01:57.634, FINE, [Thread]: 236 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  2259  callbackRetryLimit : 5
+2019-09-24 15:01:57.636, FINE, [Thread]: 236 [ClassName]: com.enhancesys.integration.services.processor.IntegrationCallbackProcessor [LineNumber]:  66  Entry processRequest.. refData1:229683
+2019-09-24 15:01:57.643, FINE, [Thread]: 236 [ClassName]: com.enhancesys.integration.services.processor.IntegrationCallbackProcessor [LineNumber]:  107  Summary trans ID : 229683
+2019-09-24 15:01:57.652, FINE, [Thread]: 236 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  14443  Entry getSummaryResponseDataByRefData3 : 229683
+2019-09-24 15:01:57.663, FINE, [Thread]: 236 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  14536  Exit getSummaryResponseDataByRefData3 : 229683
+2019-09-24 15:01:57.681, FINE, [Thread]: 236 [ClassName]: com.enhancesys.integration.publisher.SMCallbackPublisher [LineNumber]:  159  url-->http://192.168.2.144:8080/organization-services/org/interfaceCallBack
+2019-09-24 15:01:57.683, FINE, [Thread]: 236 [ClassName]: com.enhancesys.integration.publisher.SMCallbackPublisher [LineNumber]:  160  requestData-->{"envelope":{"payload":{"organization":{"trans_id":"229683","ext_error_code":2,"res_code":101,"res_msg":"<?xml version = \"1.0\" encoding = \"UTF-8\"?> <soap-envelope xmlns:soap=\"http:\/\/schemas.xmlsoap.org\/soap\/envelope\/\"><soap-body><soap-fault><faultcode>soapenv:Server<\/faultcode><faultstring>Application Error. Please see FaultInfo<\/faultstring><detail><ns2:FaultInfo xmlns:ns3=\"http:\/\/com\/enhancesys\/entities\/schema\/integration\" xmlns:ns2=\"http:\/\/com\/enhancesys\/integration\/services\/interfaces\/IntegrationManagement\"><causedBy>java.lang.NullPointerException<\/causedBy><message>Error in initialising entity manager<\/message><\/ns2:FaultInfo><\/detail><\/soap-fault><\/soap-body><\/soap-envelope>"}},"header":{"uid":10001,"pwd":"password","tz":"20141029180647","chnl":"Interface","uname":"username","rqst":"Create Order","locale":"en","src":"SALDOMOBO","utype":1}}}
+2019-09-24 15:01:57.685, FINE, [Thread]: 236 [ClassName]: com.enhancesys.integration.publisher.SMCallbackPublisher [LineNumber]:  161  user-->admin
+2019-09-24 15:01:57.687, FINE, [Thread]: 236 [ClassName]: com.enhancesys.integration.publisher.SMCallbackPublisher [LineNumber]:  340  Entry sendRestRequest..
+2019-09-24 15:01:57.929, FINE, [Thread]: 236 [ClassName]: com.enhancesys.integration.publisher.SMCallbackPublisher [LineNumber]:  352  [response] POST http://192.168.2.144:8080/organization-services/org/interfaceCallBack returned a response status of 200 OK
+2019-09-24 15:01:57.931, FINE, [Thread]: 236 [ClassName]: com.enhancesys.integration.publisher.SMCallbackPublisher [LineNumber]:  378  Exit sendRestRequest..
+2019-09-24 15:01:57.933, FINE, [Thread]: 236 [ClassName]: com.enhancesys.integration.publisher.SMCallbackPublisher [LineNumber]:  165  response--->{"req_id": "1909240404488300105","res_msg": "Given Transaction ID not exists or Invalid","res_code": -101}
+2019-09-24 15:01:57.934, FINE, [Thread]: 236 [ClassName]: com.enhancesys.integration.publisher.SMCallbackPublisher [LineNumber]:  213  Exit processRequest..
+2019-09-24 15:01:57.936, FINE, [Thread]: 236 [ClassName]: com.enhancesys.integration.services.processor.IntegrationCallbackProcessor [LineNumber]:  118  ResponseBean : Error
+2019-09-24 15:01:57.938, FINE, [Thread]: 236 [ClassName]: com.enhancesys.integration.services.processor.IntegrationCallbackProcessor [LineNumber]:  157  Exit processRequest..
+2019-09-24 15:01:57.940, FINE, [Thread]: 236 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  2264  response   ::: com.enhancesys.integration.services.interfaces.ResponseBean@389765b0
+2019-09-24 15:01:57.941, FINE, [Thread]: 236 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  2265  response instanceof ResponseBean  ::: true
+2019-09-24 15:01:57.943, FINE, [Thread]: 236 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  2276  retryCount : 3
+2019-09-24 15:01:57.955, FINE, [Thread]: 236 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  2283  resultObject : null
+2019-09-24 15:01:57.956, SEVERE, [Thread]: 236 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  2318  Call Back : invocation failed for Process :: java:global/EnhancesysManagement/IntegrationServices/IntegrationCallbackProcessor!com.enhancesys.integration.services.interfaces.callback.CallbackProcessor
+2019-09-24 15:01:57.958, FINE, [Thread]: 236 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  2319  responseBean.getStatusId : 1305
+2019-09-24 15:01:57.960, FINE, [Thread]: 236 [ClassName]: com.enhancesys.integration.services.util.IntegrationUtilManagementImpl [LineNumber]:  146  Failed Transaction id --->229683
+2019-09-24 15:01:57.962, FINE, [Thread]: 236 [ClassName]: com.enhancesys.integration.services.util.IntegrationUtilManagementImpl [LineNumber]:  147  responseBean.getRetryCount() : 4
+2019-09-24 15:01:57.965, FINE, [Thread]: 236 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  1051  TransactionId ::: 229683interface id::::1018
+2019-09-24 15:01:57.989, FINE, [Thread]: 236 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  1123  interfaceSummary.getRetryCount() : 4
+2019-09-24 15:01:58.059, FINE, [Thread]: 236 [ClassName]: com.enhancesys.integration.services.util.IntegrationUtilManagementImpl [LineNumber]:  192  Exit updateInterfaceFailerStatus service at -->Tue Sep 24 15:01:58 IST 2019 --- and took 98 milliseconds
+2019-09-24 15:01:58.060, FINE, [Thread]: 236 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  2322  Callback Retry Limit : 5 : Sum Retry Count : 4
+2019-09-24 15:01:58.062, FINE, [Thread]: 236 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  2325  Inside retry block
+2019-09-24 15:02:08.065, FINE, [Thread]: 236 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  2237  Inside the processCallback Method with transactionId ::: 229683
+2019-09-24 15:02:08.084, FINE, [Thread]: 236 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  14556  Entry getSummaryTransIdsByRefData3..refData3 : 229683 : interfaceId : null
+2019-09-24 15:02:08.098, FINE, [Thread]: 236 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  14642  Exit getSummaryTransIdsByRefData3..
+2019-09-24 15:02:08.107, FINE, [Thread]: 236 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  2259  callbackRetryLimit : 5
+2019-09-24 15:02:08.110, FINE, [Thread]: 236 [ClassName]: com.enhancesys.integration.services.processor.IntegrationCallbackProcessor [LineNumber]:  66  Entry processRequest.. refData1:229683
+2019-09-24 15:02:08.116, FINE, [Thread]: 236 [ClassName]: com.enhancesys.integration.services.processor.IntegrationCallbackProcessor [LineNumber]:  107  Summary trans ID : 229683
+2019-09-24 15:02:08.125, FINE, [Thread]: 236 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  14443  Entry getSummaryResponseDataByRefData3 : 229683
+2019-09-24 15:02:08.137, FINE, [Thread]: 236 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  14536  Exit getSummaryResponseDataByRefData3 : 229683
+2019-09-24 15:02:08.156, FINE, [Thread]: 236 [ClassName]: com.enhancesys.integration.publisher.SMCallbackPublisher [LineNumber]:  159  url-->http://192.168.2.144:8080/organization-services/org/interfaceCallBack
+2019-09-24 15:02:08.158, FINE, [Thread]: 236 [ClassName]: com.enhancesys.integration.publisher.SMCallbackPublisher [LineNumber]:  160  requestData-->{"envelope":{"payload":{"organization":{"trans_id":"229683","ext_error_code":2,"res_code":101,"res_msg":"<?xml version = \"1.0\" encoding = \"UTF-8\"?> <soap-envelope xmlns:soap=\"http:\/\/schemas.xmlsoap.org\/soap\/envelope\/\"><soap-body><soap-fault><faultcode>soapenv:Server<\/faultcode><faultstring>Application Error. Please see FaultInfo<\/faultstring><detail><ns2:FaultInfo xmlns:ns3=\"http:\/\/com\/enhancesys\/entities\/schema\/integration\" xmlns:ns2=\"http:\/\/com\/enhancesys\/integration\/services\/interfaces\/IntegrationManagement\"><causedBy>java.lang.NullPointerException<\/causedBy><message>Error in initialising entity manager<\/message><\/ns2:FaultInfo><\/detail><\/soap-fault><\/soap-body><\/soap-envelope>"}},"header":{"uid":10001,"pwd":"password","tz":"20141029180647","chnl":"Interface","uname":"username","rqst":"Create Order","locale":"en","src":"SALDOMOBO","utype":1}}}
+2019-09-24 15:02:08.160, FINE, [Thread]: 236 [ClassName]: com.enhancesys.integration.publisher.SMCallbackPublisher [LineNumber]:  161  user-->admin
+2019-09-24 15:02:08.162, FINE, [Thread]: 236 [ClassName]: com.enhancesys.integration.publisher.SMCallbackPublisher [LineNumber]:  340  Entry sendRestRequest..
+2019-09-24 15:02:08.373, FINE, [Thread]: 236 [ClassName]: com.enhancesys.integration.publisher.SMCallbackPublisher [LineNumber]:  352  [response] POST http://192.168.2.144:8080/organization-services/org/interfaceCallBack returned a response status of 200 OK
+2019-09-24 15:02:08.375, FINE, [Thread]: 236 [ClassName]: com.enhancesys.integration.publisher.SMCallbackPublisher [LineNumber]:  378  Exit sendRestRequest..
+2019-09-24 15:02:08.376, FINE, [Thread]: 236 [ClassName]: com.enhancesys.integration.publisher.SMCallbackPublisher [LineNumber]:  165  response--->{"req_id": "1909240404592780115","res_msg": "Given Transaction ID not exists or Invalid","res_code": -101}
+2019-09-24 15:02:08.378, FINE, [Thread]: 236 [ClassName]: com.enhancesys.integration.publisher.SMCallbackPublisher [LineNumber]:  213  Exit processRequest..
+2019-09-24 15:02:08.379, FINE, [Thread]: 236 [ClassName]: com.enhancesys.integration.services.processor.IntegrationCallbackProcessor [LineNumber]:  118  ResponseBean : Error
+2019-09-24 15:02:08.380, FINE, [Thread]: 236 [ClassName]: com.enhancesys.integration.services.processor.IntegrationCallbackProcessor [LineNumber]:  157  Exit processRequest..
+2019-09-24 15:02:08.381, FINE, [Thread]: 236 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  2264  response   ::: com.enhancesys.integration.services.interfaces.ResponseBean@3f7c571a
+2019-09-24 15:02:08.382, FINE, [Thread]: 236 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  2265  response instanceof ResponseBean  ::: true
+2019-09-24 15:02:08.383, FINE, [Thread]: 236 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  2276  retryCount : 4
+2019-09-24 15:02:08.394, FINE, [Thread]: 236 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  2283  resultObject : null
+2019-09-24 15:02:08.395, SEVERE, [Thread]: 236 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  2318  Call Back : invocation failed for Process :: java:global/EnhancesysManagement/IntegrationServices/IntegrationCallbackProcessor!com.enhancesys.integration.services.interfaces.callback.CallbackProcessor
+2019-09-24 15:02:08.396, FINE, [Thread]: 236 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  2319  responseBean.getStatusId : 1305
+2019-09-24 15:02:08.398, FINE, [Thread]: 236 [ClassName]: com.enhancesys.integration.services.util.IntegrationUtilManagementImpl [LineNumber]:  146  Failed Transaction id --->229683
+2019-09-24 15:02:08.399, FINE, [Thread]: 236 [ClassName]: com.enhancesys.integration.services.util.IntegrationUtilManagementImpl [LineNumber]:  147  responseBean.getRetryCount() : 5
+2019-09-24 15:02:08.401, FINE, [Thread]: 236 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  1051  TransactionId ::: 229683interface id::::1018
+2019-09-24 15:02:08.429, FINE, [Thread]: 236 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  1123  interfaceSummary.getRetryCount() : 5
+2019-09-24 15:02:08.502, FINE, [Thread]: 236 [ClassName]: com.enhancesys.integration.services.util.IntegrationUtilManagementImpl [LineNumber]:  192  Exit updateInterfaceFailerStatus service at -->Tue Sep 24 15:02:08 IST 2019 --- and took 105 milliseconds
+2019-09-24 15:02:08.503, FINE, [Thread]: 236 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  2322  Callback Retry Limit : 5 : Sum Retry Count : 5
+2019-09-24 15:02:08.504, FINE, [Thread]: 236 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  2331  Going to update childs.. : []
+2019-09-24 15:02:08.544, SEVERE, [Thread]: 236 : Exception : Transaction was rolled back, presumably because setRollbackOnly was called during a synchronization : javax.ejb.EJBTransactionRolledbackException: Transaction was rolled back, presumably because setRollbackOnly was called during a synchronization
+        at org.apache.openejb.core.ivm.BaseEjbProxyHandler.convertException(BaseEjbProxyHandler.java:381)
+        at org.apache.openejb.core.ivm.BaseEjbProxyHandler.invoke(BaseEjbProxyHandler.java:312)
+        at com.sun.proxy.$Proxy204.processCallback(Unknown Source)
+        at com.enhancesys.integration.services.IntegrationManagementImpl.processCallback(IntegrationManagementImpl.java:2327)
+        at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+        at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+        at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+        at java.lang.reflect.Method.invoke(Method.java:606)
+        at org.apache.openejb.core.interceptor.ReflectionInvocationContext$Invocation.invoke(ReflectionInvocationContext.java:192)
+        at org.apache.openejb.core.interceptor.ReflectionInvocationContext.proceed(ReflectionInvocationContext.java:173)
+        at org.apache.openejb.monitoring.StatsInterceptor.record(StatsInterceptor.java:181)
+        at org.apache.openejb.monitoring.StatsInterceptor.invoke(StatsInterceptor.java:100)
+        at sun.reflect.GeneratedMethodAccessor129.invoke(Unknown Source)
+        at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+        at java.lang.reflect.Method.invoke(Method.java:606)
+        at org.apache.openejb.core.interceptor.ReflectionInvocationContext$Invocation.invoke(ReflectionInvocationContext.java:192)
+        at org.apache.openejb.core.interceptor.ReflectionInvocationContext.proceed(ReflectionInvocationContext.java:173)
+        at org.apache.openejb.core.interceptor.InterceptorStack.invoke(InterceptorStack.java:85)
+        at org.apache.openejb.core.stateless.StatelessContainer._invoke(StatelessContainer.java:227)
+        at org.apache.openejb.core.stateless.StatelessContainer.invoke(StatelessContainer.java:194)
+        at org.apache.openejb.core.ivm.EjbObjectProxyHandler.synchronizedBusinessMethod(EjbObjectProxyHandler.java:308)
+        at org.apache.openejb.core.ivm.EjbObjectProxyHandler.businessMethod(EjbObjectProxyHandler.java:303)
+        at org.apache.openejb.core.ivm.EjbObjectProxyHandler._invoke(EjbObjectProxyHandler.java:92)
+        at org.apache.openejb.core.ivm.BaseEjbProxyHandler.invoke(BaseEjbProxyHandler.java:308)
+        at com.sun.proxy.$Proxy204.processCallback(Unknown Source)
+        at com.enhancesys.integration.services.IntegrationManagementImpl.processCallback(IntegrationManagementImpl.java:2327)
+        at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+        at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+        at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+        at java.lang.reflect.Method.invoke(Method.java:606)
+        at org.apache.openejb.core.interceptor.ReflectionInvocationContext$Invocation.invoke(ReflectionInvocationContext.java:192)
+        at org.apache.openejb.core.interceptor.ReflectionInvocationContext.proceed(ReflectionInvocationContext.java:173)
+        at org.apache.openejb.monitoring.StatsInterceptor.record(StatsInterceptor.java:181)
+        at org.apache.openejb.monitoring.StatsInterceptor.invoke(StatsInterceptor.java:100)
+        at sun.reflect.GeneratedMethodAccessor129.invoke(Unknown Source)
+        at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+        at java.lang.reflect.Method.invoke(Method.java:606)
+        at org.apache.openejb.core.interceptor.ReflectionInvocationContext$Invocation.invoke(ReflectionInvocationContext.java:192)
+        at org.apache.openejb.core.interceptor.ReflectionInvocationContext.proceed(ReflectionInvocationContext.java:173)
+        at org.apache.openejb.core.interceptor.InterceptorStack.invoke(InterceptorStack.java:85)
+        at org.apache.openejb.core.stateless.StatelessContainer._invoke(StatelessContainer.java:227)
+        at org.apache.openejb.core.stateless.StatelessContainer.invoke(StatelessContainer.java:194)
+        at org.apache.openejb.core.ivm.EjbObjectProxyHandler.synchronizedBusinessMethod(EjbObjectProxyHandler.java:308)
+        at org.apache.openejb.core.ivm.EjbObjectProxyHandler.businessMethod(EjbObjectProxyHandler.java:303)
+        at org.apache.openejb.core.ivm.EjbObjectProxyHandler._invoke(EjbObjectProxyHandler.java:92)
+        at org.apache.openejb.core.ivm.BaseEjbProxyHandler.invoke(BaseEjbProxyHandler.java:308)
+        at com.sun.proxy.$Proxy204.processCallback(Unknown Source)
+        at com.enhancesys.integration.services.IntegrationManagementImpl.processCallback(IntegrationManagementImpl.java:2327)
+        at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+        at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+        at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+        at java.lang.reflect.Method.invoke(Method.java:606)
+        at org.apache.openejb.core.interceptor.ReflectionInvocationContext$Invocation.invoke(ReflectionInvocationContext.java:192)
+        at org.apache.openejb.core.interceptor.ReflectionInvocationContext.proceed(ReflectionInvocationContext.java:173)
+        at org.apache.openejb.monitoring.StatsInterceptor.record(StatsInterceptor.java:181)
+        at org.apache.openejb.monitoring.StatsInterceptor.invoke(StatsInterceptor.java:100)
+        at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+        at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+        at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+        at java.lang.reflect.Method.invoke(Method.java:606)
+        at org.apache.openejb.core.interceptor.ReflectionInvocationContext$Invocation.invoke(ReflectionInvocationContext.java:192)
+        at org.apache.openejb.core.interceptor.ReflectionInvocationContext.proceed(ReflectionInvocationContext.java:173)
+        at org.apache.openejb.core.interceptor.InterceptorStack.invoke(InterceptorStack.java:85)
+        at org.apache.openejb.core.stateless.StatelessContainer._invoke(StatelessContainer.java:227)
+        at org.apache.openejb.core.stateless.StatelessContainer.invoke(StatelessContainer.java:194)
+        at org.apache.openejb.core.ivm.EjbObjectProxyHandler.synchronizedBusinessMethod(EjbObjectProxyHandler.java:308)
+        at org.apache.openejb.core.ivm.EjbObjectProxyHandler.businessMethod(EjbObjectProxyHandler.java:303)
+        at org.apache.openejb.core.ivm.EjbObjectProxyHandler._invoke(EjbObjectProxyHandler.java:92)
+        at org.apache.openejb.core.ivm.BaseEjbProxyHandler.invoke(BaseEjbProxyHandler.java:308)
+        at com.sun.proxy.$Proxy204.processCallback(Unknown Source)
+        at com.enhancesys.integration.services.IntegrationManagementImpl.processCallback(IntegrationManagementImpl.java:2327)
+        at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+        at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+        at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+        at java.lang.reflect.Method.invoke(Method.java:606)
+        at org.apache.openejb.core.interceptor.ReflectionInvocationContext$Invocation.invoke(ReflectionInvocationContext.java:192)
+        at org.apache.openejb.core.interceptor.ReflectionInvocationContext.proceed(ReflectionInvocationContext.java:173)
+        at org.apache.openejb.monitoring.StatsInterceptor.record(StatsInterceptor.java:181)
+        at org.apache.openejb.monitoring.StatsInterceptor.invoke(StatsInterceptor.java:100)
+        at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+        at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+        at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+        at java.lang.reflect.Method.invoke(Method.java:606)
+        at org.apache.openejb.core.interceptor.ReflectionInvocationContext$Invocation.invoke(ReflectionInvocationContext.java:192)
+        at org.apache.openejb.core.interceptor.ReflectionInvocationContext.proceed(ReflectionInvocationContext.java:173)
+        at org.apache.openejb.core.interceptor.InterceptorStack.invoke(InterceptorStack.java:85)
+        at org.apache.openejb.core.stateless.StatelessContainer._invoke(StatelessContainer.java:227)
+        at org.apache.openejb.core.stateless.StatelessContainer.invoke(StatelessContainer.java:194)
+        at org.apache.openejb.core.ivm.EjbObjectProxyHandler.synchronizedBusinessMethod(EjbObjectProxyHandler.java:308)
+        at org.apache.openejb.core.ivm.EjbObjectProxyHandler.businessMethod(EjbObjectProxyHandler.java:303)
+        at org.apache.openejb.core.ivm.EjbObjectProxyHandler._invoke(EjbObjectProxyHandler.java:92)
+        at org.apache.openejb.core.ivm.BaseEjbProxyHandler.invoke(BaseEjbProxyHandler.java:308)
+        at com.sun.proxy.$Proxy204.processCallback(Unknown Source)
+        at com.enhancesys.integration.services.IntegrationManagementImpl.processResponseAvailableRecords(IntegrationManagementImpl.java:2106)
+        at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+        at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+        at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+        at java.lang.reflect.Method.invoke(Method.java:606)
+        at org.apache.openejb.core.interceptor.ReflectionInvocationContext$Invocation.invoke(ReflectionInvocationContext.java:192)
+        at org.apache.openejb.core.interceptor.ReflectionInvocationContext.proceed(ReflectionInvocationContext.java:173)
+        at org.apache.openejb.monitoring.StatsInterceptor.record(StatsInterceptor.java:181)
+        at org.apache.openejb.monitoring.StatsInterceptor.invoke(StatsInterceptor.java:100)
+        at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+        at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+        at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+        at java.lang.reflect.Method.invoke(Method.java:606)
+        at org.apache.openejb.core.interceptor.ReflectionInvocationContext$Invocation.invoke(ReflectionInvocationContext.java:192)
+        at org.apache.openejb.core.interceptor.ReflectionInvocationContext.proceed(ReflectionInvocationContext.java:173)
+        at org.apache.openejb.server.cxf.ejb.EjbMethodInvoker.performInvocation(EjbMethodInvoker.java:86)
+        at org.apache.openejb.server.cxf.ejb.EjbMethodInvoker.directEjbInvoke(EjbMethodInvoker.java:199)
+        at org.apache.openejb.server.cxf.ejb.EjbInterceptor.intercept(EjbInterceptor.java:90)
+        at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+        at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+        at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+        at java.lang.reflect.Method.invoke(Method.java:606)
+        at org.apache.openejb.core.interceptor.ReflectionInvocationContext$Invocation.invoke(ReflectionInvocationContext.java:192)
+        at org.apache.openejb.core.interceptor.ReflectionInvocationContext.proceed(ReflectionInvocationContext.java:173)
+        at org.apache.openejb.core.interceptor.InterceptorStack.invoke(InterceptorStack.java:97)
+        at org.apache.openejb.core.stateless.StatelessContainer.invokeWebService(StatelessContainer.java:301)
+        at org.apache.openejb.core.stateless.StatelessContainer._invoke(StatelessContainer.java:222)
+        at org.apache.openejb.core.stateless.StatelessContainer.invoke(StatelessContainer.java:194)
+        at org.apache.openejb.server.cxf.ejb.EjbMethodInvoker.preEjbInvoke(EjbMethodInvoker.java:120)
+        at org.apache.openejb.server.cxf.ejb.EjbMethodInvoker.invoke(EjbMethodInvoker.java:73)
+        at org.apache.cxf.service.invoker.AbstractInvoker.invoke(AbstractInvoker.java:75)
+        at org.apache.cxf.interceptor.ServiceInvokerInterceptor$1.run(ServiceInvokerInterceptor.java:57)
+        at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:471)
+        at java.util.concurrent.FutureTask.run(FutureTask.java:262)
+        at org.apache.cxf.workqueue.SynchronousExecutor.execute(SynchronousExecutor.java:37)
+        at org.apache.cxf.interceptor.ServiceInvokerInterceptor.handleMessage(ServiceInvokerInterceptor.java:106)
+        at org.apache.cxf.phase.PhaseInterceptorChain.doIntercept(PhaseInterceptorChain.java:263)
+        at org.apache.cxf.transport.ChainInitiationObserver.onMessage(ChainInitiationObserver.java:121)
+        at org.apache.cxf.transport.http.AbstractHTTPDestination.invoke(AbstractHTTPDestination.java:240)
+        at org.apache.openejb.server.cxf.CxfWsContainer.onMessage(CxfWsContainer.java:86)
+        at org.apache.openejb.server.webservices.WsServlet.service(WsServlet.java:98)
+        at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:303)
+        at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:208)
+        at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:220)
+        at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:122)
+        at org.apache.tomee.catalina.OpenEJBValve.invoke(OpenEJBValve.java:44)
+        at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:610)
+        at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:171)
+        at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:103)
+        at org.apache.catalina.valves.AccessLogValve.invoke(AccessLogValve.java:950)
+        at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:116)
+        at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:408)
+        at org.apache.coyote.http11.AbstractHttp11Processor.process(AbstractHttp11Processor.java:1070)
+        at org.apache.coyote.AbstractProtocol$AbstractConnectionHandler.process(AbstractProtocol.java:611)
+        at org.apache.tomcat.util.net.JIoEndpoint$SocketProcessor.run(JIoEndpoint.java:316)
+        at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1145)
+        at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:615)
+        at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+        at java.lang.Thread.run(Thread.java:745)
+Caused by: javax.transaction.RollbackException: Unable to commit: transaction marked for rollback
+        at org.apache.geronimo.transaction.manager.TransactionImpl.commit(TransactionImpl.java:272)
+        at org.apache.geronimo.transaction.manager.TransactionManagerImpl.commit(TransactionManagerImpl.java:252)
+        at org.apache.openejb.core.transaction.JtaTransactionPolicy.completeTransaction(JtaTransactionPolicy.java:331)
+        at org.apache.openejb.core.transaction.TxRequiresNew.commit(TxRequiresNew.java:73)
+        at org.apache.openejb.core.transaction.EjbTransactionUtil.afterInvoke(EjbTransactionUtil.java:77)
+        at org.apache.openejb.core.stateless.StatelessContainer._invoke(StatelessContainer.java:246)
+        at org.apache.openejb.core.stateless.StatelessContainer.invoke(StatelessContainer.java:194)
+        at org.apache.openejb.core.ivm.EjbObjectProxyHandler.synchronizedBusinessMethod(EjbObjectProxyHandler.java:308)
+        at org.apache.openejb.core.ivm.EjbObjectProxyHandler.businessMethod(EjbObjectProxyHandler.java:303)
+        at org.apache.openejb.core.ivm.EjbObjectProxyHandler._invoke(EjbObjectProxyHandler.java:92)
+        at org.apache.openejb.core.ivm.BaseEjbProxyHandler.invoke(BaseEjbProxyHandler.java:308)
+        ... 150 more
+Caused by: org.apache.geronimo.transaction.manager.SetRollbackOnlyException: setRollbackOnly() called.  See stacktrace for origin
+        at org.apache.geronimo.transaction.manager.TransactionImpl.setRollbackOnly(TransactionImpl.java:126)
+        at org.apache.geronimo.transaction.manager.TransactionManagerImpl.setRollbackOnly(TransactionManagerImpl.java:243)
+        at org.hibernate.engine.transaction.internal.jta.CMTTransaction.markRollbackOnly(CMTTransaction.java:131)
+        at org.hibernate.engine.transaction.internal.TransactionCoordinatorImpl.setRollbackOnly(TransactionCoordinatorImpl.java:298)
+        at org.hibernate.engine.transaction.synchronization.internal.SynchronizationCallbackCoordinatorImpl.setRollbackOnly(SynchronizationCallbackCoordinatorImpl.java:118)
+        at org.hibernate.engine.transaction.synchronization.internal.SynchronizationCallbackCoordinatorImpl.beforeCompletion(SynchronizationCallbackCoordinatorImpl.java:108)
+        at org.hibernate.engine.transaction.synchronization.internal.RegisteredSynchronization.beforeCompletion(RegisteredSynchronization.java:53)
+        at org.apache.geronimo.transaction.manager.TransactionImpl.beforeCompletion(TransactionImpl.java:527)
+        at org.apache.geronimo.transaction.manager.TransactionImpl.beforeCompletion(TransactionImpl.java:511)
+        at org.apache.geronimo.transaction.manager.TransactionImpl.beforePrepare(TransactionImpl.java:413)
+        at org.apache.geronimo.transaction.manager.TransactionImpl.commit(TransactionImpl.java:262)
+        ... 160 more
+
+2019-09-24 15:02:08.547, SEVERE, [Thread]: 236 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  2383  Call Back :: invocation failed for Process :: java:global/EnhancesysManagement/IntegrationServices/IntegrationCallbackProcessor!com.enhancesys.integration.services.interfaces.callback.CallbackProcessor
+2019-09-24 15:02:08.548, FINE, [Thread]: 236 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  2384  responseBean.getStatusId : 1305
+2019-09-24 15:02:08.550, FINE, [Thread]: 236 [ClassName]: com.enhancesys.integration.services.util.IntegrationUtilManagementImpl [LineNumber]:  146  Failed Transaction id --->229683
+2019-09-24 15:02:08.551, FINE, [Thread]: 236 [ClassName]: com.enhancesys.integration.services.util.IntegrationUtilManagementImpl [LineNumber]:  147  responseBean.getRetryCount() : null
+2019-09-24 15:02:08.553, FINE, [Thread]: 236 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  1051  TransactionId ::: 229683interface id::::1018
+2019-09-24 15:02:08.571, FINE, [Thread]: 236 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  1123  interfaceSummary.getRetryCount() : 4
+2019-09-24 15:02:08.638, FINE, [Thread]: 236 [ClassName]: com.enhancesys.integration.services.util.IntegrationUtilManagementImpl [LineNumber]:  192  Exit updateInterfaceFailerStatus service at -->Tue Sep 24 15:02:08 IST 2019 --- and took 87 milliseconds
+2019-09-24 15:02:08.640, FINE, [Thread]: 236 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  2387  TransIDs catch : []
+2019-09-24 15:02:08.673, SEVERE, [Thread]: 236 : Exception : Transaction was rolled back, presumably because setRollbackOnly was called during a synchronization : javax.ejb.EJBTransactionRolledbackException: Transaction was rolled back, presumably because setRollbackOnly was called during a synchronization
+        at org.apache.openejb.core.ivm.BaseEjbProxyHandler.convertException(BaseEjbProxyHandler.java:381)
+        at org.apache.openejb.core.ivm.BaseEjbProxyHandler.invoke(BaseEjbProxyHandler.java:312)
+        at com.sun.proxy.$Proxy204.processCallback(Unknown Source)
+        at com.enhancesys.integration.services.IntegrationManagementImpl.processCallback(IntegrationManagementImpl.java:2327)
+        at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+        at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+        at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+        at java.lang.reflect.Method.invoke(Method.java:606)
+        at org.apache.openejb.core.interceptor.ReflectionInvocationContext$Invocation.invoke(ReflectionInvocationContext.java:192)
+        at org.apache.openejb.core.interceptor.ReflectionInvocationContext.proceed(ReflectionInvocationContext.java:173)
+        at org.apache.openejb.monitoring.StatsInterceptor.record(StatsInterceptor.java:181)
+        at org.apache.openejb.monitoring.StatsInterceptor.invoke(StatsInterceptor.java:100)
+        at sun.reflect.GeneratedMethodAccessor129.invoke(Unknown Source)
+        at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+        at java.lang.reflect.Method.invoke(Method.java:606)
+        at org.apache.openejb.core.interceptor.ReflectionInvocationContext$Invocation.invoke(ReflectionInvocationContext.java:192)
+        at org.apache.openejb.core.interceptor.ReflectionInvocationContext.proceed(ReflectionInvocationContext.java:173)
+        at org.apache.openejb.core.interceptor.InterceptorStack.invoke(InterceptorStack.java:85)
+        at org.apache.openejb.core.stateless.StatelessContainer._invoke(StatelessContainer.java:227)
+        at org.apache.openejb.core.stateless.StatelessContainer.invoke(StatelessContainer.java:194)
+        at org.apache.openejb.core.ivm.EjbObjectProxyHandler.synchronizedBusinessMethod(EjbObjectProxyHandler.java:308)
+        at org.apache.openejb.core.ivm.EjbObjectProxyHandler.businessMethod(EjbObjectProxyHandler.java:303)
+        at org.apache.openejb.core.ivm.EjbObjectProxyHandler._invoke(EjbObjectProxyHandler.java:92)
+        at org.apache.openejb.core.ivm.BaseEjbProxyHandler.invoke(BaseEjbProxyHandler.java:308)
+        at com.sun.proxy.$Proxy204.processCallback(Unknown Source)
+        at com.enhancesys.integration.services.IntegrationManagementImpl.processCallback(IntegrationManagementImpl.java:2327)
+        at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+        at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+        at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+        at java.lang.reflect.Method.invoke(Method.java:606)
+        at org.apache.openejb.core.interceptor.ReflectionInvocationContext$Invocation.invoke(ReflectionInvocationContext.java:192)
+        at org.apache.openejb.core.interceptor.ReflectionInvocationContext.proceed(ReflectionInvocationContext.java:173)
+        at org.apache.openejb.monitoring.StatsInterceptor.record(StatsInterceptor.java:181)
+        at org.apache.openejb.monitoring.StatsInterceptor.invoke(StatsInterceptor.java:100)
+        at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+        at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+        at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+        at java.lang.reflect.Method.invoke(Method.java:606)
+        at org.apache.openejb.core.interceptor.ReflectionInvocationContext$Invocation.invoke(ReflectionInvocationContext.java:192)
+        at org.apache.openejb.core.interceptor.ReflectionInvocationContext.proceed(ReflectionInvocationContext.java:173)
+        at org.apache.openejb.core.interceptor.InterceptorStack.invoke(InterceptorStack.java:85)
+        at org.apache.openejb.core.stateless.StatelessContainer._invoke(StatelessContainer.java:227)
+        at org.apache.openejb.core.stateless.StatelessContainer.invoke(StatelessContainer.java:194)
+        at org.apache.openejb.core.ivm.EjbObjectProxyHandler.synchronizedBusinessMethod(EjbObjectProxyHandler.java:308)
+        at org.apache.openejb.core.ivm.EjbObjectProxyHandler.businessMethod(EjbObjectProxyHandler.java:303)
+        at org.apache.openejb.core.ivm.EjbObjectProxyHandler._invoke(EjbObjectProxyHandler.java:92)
+        at org.apache.openejb.core.ivm.BaseEjbProxyHandler.invoke(BaseEjbProxyHandler.java:308)
+        at com.sun.proxy.$Proxy204.processCallback(Unknown Source)
+        at com.enhancesys.integration.services.IntegrationManagementImpl.processCallback(IntegrationManagementImpl.java:2327)
+        at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+        at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+        at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+        at java.lang.reflect.Method.invoke(Method.java:606)
+        at org.apache.openejb.core.interceptor.ReflectionInvocationContext$Invocation.invoke(ReflectionInvocationContext.java:192)
+        at org.apache.openejb.core.interceptor.ReflectionInvocationContext.proceed(ReflectionInvocationContext.java:173)
+        at org.apache.openejb.monitoring.StatsInterceptor.record(StatsInterceptor.java:181)
+        at org.apache.openejb.monitoring.StatsInterceptor.invoke(StatsInterceptor.java:100)
+        at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+        at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+        at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+        at java.lang.reflect.Method.invoke(Method.java:606)
+        at org.apache.openejb.core.interceptor.ReflectionInvocationContext$Invocation.invoke(ReflectionInvocationContext.java:192)
+        at org.apache.openejb.core.interceptor.ReflectionInvocationContext.proceed(ReflectionInvocationContext.java:173)
+        at org.apache.openejb.core.interceptor.InterceptorStack.invoke(InterceptorStack.java:85)
+        at org.apache.openejb.core.stateless.StatelessContainer._invoke(StatelessContainer.java:227)
+        at org.apache.openejb.core.stateless.StatelessContainer.invoke(StatelessContainer.java:194)
+        at org.apache.openejb.core.ivm.EjbObjectProxyHandler.synchronizedBusinessMethod(EjbObjectProxyHandler.java:308)
+        at org.apache.openejb.core.ivm.EjbObjectProxyHandler.businessMethod(EjbObjectProxyHandler.java:303)
+        at org.apache.openejb.core.ivm.EjbObjectProxyHandler._invoke(EjbObjectProxyHandler.java:92)
+        at org.apache.openejb.core.ivm.BaseEjbProxyHandler.invoke(BaseEjbProxyHandler.java:308)
+        at com.sun.proxy.$Proxy204.processCallback(Unknown Source)
+        at com.enhancesys.integration.services.IntegrationManagementImpl.processResponseAvailableRecords(IntegrationManagementImpl.java:2106)
+        at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+        at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+        at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+        at java.lang.reflect.Method.invoke(Method.java:606)
+        at org.apache.openejb.core.interceptor.ReflectionInvocationContext$Invocation.invoke(ReflectionInvocationContext.java:192)
+        at org.apache.openejb.core.interceptor.ReflectionInvocationContext.proceed(ReflectionInvocationContext.java:173)
+        at org.apache.openejb.monitoring.StatsInterceptor.record(StatsInterceptor.java:181)
+        at org.apache.openejb.monitoring.StatsInterceptor.invoke(StatsInterceptor.java:100)
+        at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+        at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+        at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+        at java.lang.reflect.Method.invoke(Method.java:606)
+        at org.apache.openejb.core.interceptor.ReflectionInvocationContext$Invocation.invoke(ReflectionInvocationContext.java:192)
+        at org.apache.openejb.core.interceptor.ReflectionInvocationContext.proceed(ReflectionInvocationContext.java:173)
+        at org.apache.openejb.server.cxf.ejb.EjbMethodInvoker.performInvocation(EjbMethodInvoker.java:86)
+        at org.apache.openejb.server.cxf.ejb.EjbMethodInvoker.directEjbInvoke(EjbMethodInvoker.java:199)
+        at org.apache.openejb.server.cxf.ejb.EjbInterceptor.intercept(EjbInterceptor.java:90)
+        at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+        at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+        at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+        at java.lang.reflect.Method.invoke(Method.java:606)
+        at org.apache.openejb.core.interceptor.ReflectionInvocationContext$Invocation.invoke(ReflectionInvocationContext.java:192)
+        at org.apache.openejb.core.interceptor.ReflectionInvocationContext.proceed(ReflectionInvocationContext.java:173)
+        at org.apache.openejb.core.interceptor.InterceptorStack.invoke(InterceptorStack.java:97)
+        at org.apache.openejb.core.stateless.StatelessContainer.invokeWebService(StatelessContainer.java:301)
+        at org.apache.openejb.core.stateless.StatelessContainer._invoke(StatelessContainer.java:222)
+        at org.apache.openejb.core.stateless.StatelessContainer.invoke(StatelessContainer.java:194)
+        at org.apache.openejb.server.cxf.ejb.EjbMethodInvoker.preEjbInvoke(EjbMethodInvoker.java:120)
+        at org.apache.openejb.server.cxf.ejb.EjbMethodInvoker.invoke(EjbMethodInvoker.java:73)
+        at org.apache.cxf.service.invoker.AbstractInvoker.invoke(AbstractInvoker.java:75)
+        at org.apache.cxf.interceptor.ServiceInvokerInterceptor$1.run(ServiceInvokerInterceptor.java:57)
+        at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:471)
+        at java.util.concurrent.FutureTask.run(FutureTask.java:262)
+        at org.apache.cxf.workqueue.SynchronousExecutor.execute(SynchronousExecutor.java:37)
+        at org.apache.cxf.interceptor.ServiceInvokerInterceptor.handleMessage(ServiceInvokerInterceptor.java:106)
+        at org.apache.cxf.phase.PhaseInterceptorChain.doIntercept(PhaseInterceptorChain.java:263)
+        at org.apache.cxf.transport.ChainInitiationObserver.onMessage(ChainInitiationObserver.java:121)
+        at org.apache.cxf.transport.http.AbstractHTTPDestination.invoke(AbstractHTTPDestination.java:240)
+        at org.apache.openejb.server.cxf.CxfWsContainer.onMessage(CxfWsContainer.java:86)
+        at org.apache.openejb.server.webservices.WsServlet.service(WsServlet.java:98)
+        at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:303)
+        at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:208)
+        at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:220)
+        at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:122)
+        at org.apache.tomee.catalina.OpenEJBValve.invoke(OpenEJBValve.java:44)
+        at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:610)
+        at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:171)
+        at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:103)
+        at org.apache.catalina.valves.AccessLogValve.invoke(AccessLogValve.java:950)
+        at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:116)
+        at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:408)
+        at org.apache.coyote.http11.AbstractHttp11Processor.process(AbstractHttp11Processor.java:1070)
+        at org.apache.coyote.AbstractProtocol$AbstractConnectionHandler.process(AbstractProtocol.java:611)
+        at org.apache.tomcat.util.net.JIoEndpoint$SocketProcessor.run(JIoEndpoint.java:316)
+        at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1145)
+        at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:615)
+        at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+        at java.lang.Thread.run(Thread.java:745)
+Caused by: javax.transaction.RollbackException: Unable to commit: transaction marked for rollback
+        at org.apache.geronimo.transaction.manager.TransactionImpl.commit(TransactionImpl.java:272)
+        at org.apache.geronimo.transaction.manager.TransactionManagerImpl.commit(TransactionManagerImpl.java:252)
+        at org.apache.openejb.core.transaction.JtaTransactionPolicy.completeTransaction(JtaTransactionPolicy.java:331)
+        at org.apache.openejb.core.transaction.TxRequiresNew.commit(TxRequiresNew.java:73)
+        at org.apache.openejb.core.transaction.EjbTransactionUtil.afterInvoke(EjbTransactionUtil.java:77)
+        at org.apache.openejb.core.stateless.StatelessContainer._invoke(StatelessContainer.java:246)
+        at org.apache.openejb.core.stateless.StatelessContainer.invoke(StatelessContainer.java:194)
+        at org.apache.openejb.core.ivm.EjbObjectProxyHandler.synchronizedBusinessMethod(EjbObjectProxyHandler.java:308)
+        at org.apache.openejb.core.ivm.EjbObjectProxyHandler.businessMethod(EjbObjectProxyHandler.java:303)
+        at org.apache.openejb.core.ivm.EjbObjectProxyHandler._invoke(EjbObjectProxyHandler.java:92)
+        at org.apache.openejb.core.ivm.BaseEjbProxyHandler.invoke(BaseEjbProxyHandler.java:308)
+        ... 128 more
+Caused by: org.apache.geronimo.transaction.manager.SetRollbackOnlyException: setRollbackOnly() called.  See stacktrace for origin
+        at org.apache.geronimo.transaction.manager.TransactionImpl.setRollbackOnly(TransactionImpl.java:126)
+        at org.apache.geronimo.transaction.manager.TransactionManagerImpl.setRollbackOnly(TransactionManagerImpl.java:243)
+        at org.hibernate.engine.transaction.internal.jta.CMTTransaction.markRollbackOnly(CMTTransaction.java:131)
+        at org.hibernate.engine.transaction.internal.TransactionCoordinatorImpl.setRollbackOnly(TransactionCoordinatorImpl.java:298)
+        at org.hibernate.engine.transaction.synchronization.internal.SynchronizationCallbackCoordinatorImpl.setRollbackOnly(SynchronizationCallbackCoordinatorImpl.java:118)
+        at org.hibernate.engine.transaction.synchronization.internal.SynchronizationCallbackCoordinatorImpl.beforeCompletion(SynchronizationCallbackCoordinatorImpl.java:108)
+        at org.hibernate.engine.transaction.synchronization.internal.RegisteredSynchronization.beforeCompletion(RegisteredSynchronization.java:53)
+        at org.apache.geronimo.transaction.manager.TransactionImpl.beforeCompletion(TransactionImpl.java:527)
+        at org.apache.geronimo.transaction.manager.TransactionImpl.beforeCompletion(TransactionImpl.java:511)
+        at org.apache.geronimo.transaction.manager.TransactionImpl.beforePrepare(TransactionImpl.java:413)
+        at org.apache.geronimo.transaction.manager.TransactionImpl.commit(TransactionImpl.java:262)
+        ... 138 more
+
+2019-09-24 15:02:08.679, SEVERE, [Thread]: 236 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  2383  Call Back :: invocation failed for Process :: java:global/EnhancesysManagement/IntegrationServices/IntegrationCallbackProcessor!com.enhancesys.integration.services.interfaces.callback.CallbackProcessor
+2019-09-24 15:02:08.680, FINE, [Thread]: 236 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  2384  responseBean.getStatusId : 1305
+2019-09-24 15:02:08.682, FINE, [Thread]: 236 [ClassName]: com.enhancesys.integration.services.util.IntegrationUtilManagementImpl [LineNumber]:  146  Failed Transaction id --->229683
+2019-09-24 15:02:08.683, FINE, [Thread]: 236 [ClassName]: com.enhancesys.integration.services.util.IntegrationUtilManagementImpl [LineNumber]:  147  responseBean.getRetryCount() : null
+2019-09-24 15:02:08.686, FINE, [Thread]: 236 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  1051  TransactionId ::: 229683interface id::::1018
+2019-09-24 15:02:08.702, FINE, [Thread]: 236 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  1123  interfaceSummary.getRetryCount() : 3
+2019-09-24 15:02:08.773, FINE, [Thread]: 236 [ClassName]: com.enhancesys.integration.services.util.IntegrationUtilManagementImpl [LineNumber]:  192  Exit updateInterfaceFailerStatus service at -->Tue Sep 24 15:02:08 IST 2019 --- and took 92 milliseconds
+2019-09-24 15:02:08.775, FINE, [Thread]: 236 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  2387  TransIDs catch : []
+2019-09-24 15:02:08.803, SEVERE, [Thread]: 236 : Exception : Transaction was rolled back, presumably because setRollbackOnly was called during a synchronization : javax.ejb.EJBTransactionRolledbackException: Transaction was rolled back, presumably because setRollbackOnly was called during a synchronization
+        at org.apache.openejb.core.ivm.BaseEjbProxyHandler.convertException(BaseEjbProxyHandler.java:381)
+        at org.apache.openejb.core.ivm.BaseEjbProxyHandler.invoke(BaseEjbProxyHandler.java:312)
+        at com.sun.proxy.$Proxy204.processCallback(Unknown Source)
+        at com.enhancesys.integration.services.IntegrationManagementImpl.processCallback(IntegrationManagementImpl.java:2327)
+        at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+        at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+        at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+        at java.lang.reflect.Method.invoke(Method.java:606)
+        at org.apache.openejb.core.interceptor.ReflectionInvocationContext$Invocation.invoke(ReflectionInvocationContext.java:192)
+        at org.apache.openejb.core.interceptor.ReflectionInvocationContext.proceed(ReflectionInvocationContext.java:173)
+        at org.apache.openejb.monitoring.StatsInterceptor.record(StatsInterceptor.java:181)
+        at org.apache.openejb.monitoring.StatsInterceptor.invoke(StatsInterceptor.java:100)
+        at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+        at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+        at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+        at java.lang.reflect.Method.invoke(Method.java:606)
+        at org.apache.openejb.core.interceptor.ReflectionInvocationContext$Invocation.invoke(ReflectionInvocationContext.java:192)
+        at org.apache.openejb.core.interceptor.ReflectionInvocationContext.proceed(ReflectionInvocationContext.java:173)
+        at org.apache.openejb.core.interceptor.InterceptorStack.invoke(InterceptorStack.java:85)
+        at org.apache.openejb.core.stateless.StatelessContainer._invoke(StatelessContainer.java:227)
+        at org.apache.openejb.core.stateless.StatelessContainer.invoke(StatelessContainer.java:194)
+        at org.apache.openejb.core.ivm.EjbObjectProxyHandler.synchronizedBusinessMethod(EjbObjectProxyHandler.java:308)
+        at org.apache.openejb.core.ivm.EjbObjectProxyHandler.businessMethod(EjbObjectProxyHandler.java:303)
+        at org.apache.openejb.core.ivm.EjbObjectProxyHandler._invoke(EjbObjectProxyHandler.java:92)
+        at org.apache.openejb.core.ivm.BaseEjbProxyHandler.invoke(BaseEjbProxyHandler.java:308)
+        at com.sun.proxy.$Proxy204.processCallback(Unknown Source)
+        at com.enhancesys.integration.services.IntegrationManagementImpl.processCallback(IntegrationManagementImpl.java:2327)
+        at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+        at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+        at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+        at java.lang.reflect.Method.invoke(Method.java:606)
+        at org.apache.openejb.core.interceptor.ReflectionInvocationContext$Invocation.invoke(ReflectionInvocationContext.java:192)
+        at org.apache.openejb.core.interceptor.ReflectionInvocationContext.proceed(ReflectionInvocationContext.java:173)
+        at org.apache.openejb.monitoring.StatsInterceptor.record(StatsInterceptor.java:181)
+        at org.apache.openejb.monitoring.StatsInterceptor.invoke(StatsInterceptor.java:100)
+        at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+        at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+        at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+        at java.lang.reflect.Method.invoke(Method.java:606)
+        at org.apache.openejb.core.interceptor.ReflectionInvocationContext$Invocation.invoke(ReflectionInvocationContext.java:192)
+        at org.apache.openejb.core.interceptor.ReflectionInvocationContext.proceed(ReflectionInvocationContext.java:173)
+        at org.apache.openejb.core.interceptor.InterceptorStack.invoke(InterceptorStack.java:85)
+        at org.apache.openejb.core.stateless.StatelessContainer._invoke(StatelessContainer.java:227)
+        at org.apache.openejb.core.stateless.StatelessContainer.invoke(StatelessContainer.java:194)
+        at org.apache.openejb.core.ivm.EjbObjectProxyHandler.synchronizedBusinessMethod(EjbObjectProxyHandler.java:308)
+        at org.apache.openejb.core.ivm.EjbObjectProxyHandler.businessMethod(EjbObjectProxyHandler.java:303)
+        at org.apache.openejb.core.ivm.EjbObjectProxyHandler._invoke(EjbObjectProxyHandler.java:92)
+        at org.apache.openejb.core.ivm.BaseEjbProxyHandler.invoke(BaseEjbProxyHandler.java:308)
+        at com.sun.proxy.$Proxy204.processCallback(Unknown Source)
+        at com.enhancesys.integration.services.IntegrationManagementImpl.processResponseAvailableRecords(IntegrationManagementImpl.java:2106)
+        at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+        at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+        at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+        at java.lang.reflect.Method.invoke(Method.java:606)
+        at org.apache.openejb.core.interceptor.ReflectionInvocationContext$Invocation.invoke(ReflectionInvocationContext.java:192)
+        at org.apache.openejb.core.interceptor.ReflectionInvocationContext.proceed(ReflectionInvocationContext.java:173)
+        at org.apache.openejb.monitoring.StatsInterceptor.record(StatsInterceptor.java:181)
+        at org.apache.openejb.monitoring.StatsInterceptor.invoke(StatsInterceptor.java:100)
+        at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+        at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+        at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+        at java.lang.reflect.Method.invoke(Method.java:606)
+        at org.apache.openejb.core.interceptor.ReflectionInvocationContext$Invocation.invoke(ReflectionInvocationContext.java:192)
+        at org.apache.openejb.core.interceptor.ReflectionInvocationContext.proceed(ReflectionInvocationContext.java:173)
+        at org.apache.openejb.server.cxf.ejb.EjbMethodInvoker.performInvocation(EjbMethodInvoker.java:86)
+        at org.apache.openejb.server.cxf.ejb.EjbMethodInvoker.directEjbInvoke(EjbMethodInvoker.java:199)
+        at org.apache.openejb.server.cxf.ejb.EjbInterceptor.intercept(EjbInterceptor.java:90)
+        at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+        at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+        at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+        at java.lang.reflect.Method.invoke(Method.java:606)
+        at org.apache.openejb.core.interceptor.ReflectionInvocationContext$Invocation.invoke(ReflectionInvocationContext.java:192)
+        at org.apache.openejb.core.interceptor.ReflectionInvocationContext.proceed(ReflectionInvocationContext.java:173)
+        at org.apache.openejb.core.interceptor.InterceptorStack.invoke(InterceptorStack.java:97)
+        at org.apache.openejb.core.stateless.StatelessContainer.invokeWebService(StatelessContainer.java:301)
+        at org.apache.openejb.core.stateless.StatelessContainer._invoke(StatelessContainer.java:222)
+        at org.apache.openejb.core.stateless.StatelessContainer.invoke(StatelessContainer.java:194)
+        at org.apache.openejb.server.cxf.ejb.EjbMethodInvoker.preEjbInvoke(EjbMethodInvoker.java:120)
+        at org.apache.openejb.server.cxf.ejb.EjbMethodInvoker.invoke(EjbMethodInvoker.java:73)
+        at org.apache.cxf.service.invoker.AbstractInvoker.invoke(AbstractInvoker.java:75)
+        at org.apache.cxf.interceptor.ServiceInvokerInterceptor$1.run(ServiceInvokerInterceptor.java:57)
+        at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:471)
+        at java.util.concurrent.FutureTask.run(FutureTask.java:262)
+        at org.apache.cxf.workqueue.SynchronousExecutor.execute(SynchronousExecutor.java:37)
+        at org.apache.cxf.interceptor.ServiceInvokerInterceptor.handleMessage(ServiceInvokerInterceptor.java:106)
+        at org.apache.cxf.phase.PhaseInterceptorChain.doIntercept(PhaseInterceptorChain.java:263)
+        at org.apache.cxf.transport.ChainInitiationObserver.onMessage(ChainInitiationObserver.java:121)
+        at org.apache.cxf.transport.http.AbstractHTTPDestination.invoke(AbstractHTTPDestination.java:240)
+        at org.apache.openejb.server.cxf.CxfWsContainer.onMessage(CxfWsContainer.java:86)
+        at org.apache.openejb.server.webservices.WsServlet.service(WsServlet.java:98)
+        at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:303)
+        at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:208)
+        at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:220)
+        at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:122)
+        at org.apache.tomee.catalina.OpenEJBValve.invoke(OpenEJBValve.java:44)
+        at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:610)
+        at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:171)
+        at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:103)
+        at org.apache.catalina.valves.AccessLogValve.invoke(AccessLogValve.java:950)
+        at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:116)
+        at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:408)
+        at org.apache.coyote.http11.AbstractHttp11Processor.process(AbstractHttp11Processor.java:1070)
+        at org.apache.coyote.AbstractProtocol$AbstractConnectionHandler.process(AbstractProtocol.java:611)
+        at org.apache.tomcat.util.net.JIoEndpoint$SocketProcessor.run(JIoEndpoint.java:316)
+        at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1145)
+        at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:615)
+        at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+        at java.lang.Thread.run(Thread.java:745)
+Caused by: javax.transaction.RollbackException: Unable to commit: transaction marked for rollback
+        at org.apache.geronimo.transaction.manager.TransactionImpl.commit(TransactionImpl.java:272)
+        at org.apache.geronimo.transaction.manager.TransactionManagerImpl.commit(TransactionManagerImpl.java:252)
+        at org.apache.openejb.core.transaction.JtaTransactionPolicy.completeTransaction(JtaTransactionPolicy.java:331)
+        at org.apache.openejb.core.transaction.TxRequiresNew.commit(TxRequiresNew.java:73)
+        at org.apache.openejb.core.transaction.EjbTransactionUtil.afterInvoke(EjbTransactionUtil.java:77)
+        at org.apache.openejb.core.stateless.StatelessContainer._invoke(StatelessContainer.java:246)
+        at org.apache.openejb.core.stateless.StatelessContainer.invoke(StatelessContainer.java:194)
+        at org.apache.openejb.core.ivm.EjbObjectProxyHandler.synchronizedBusinessMethod(EjbObjectProxyHandler.java:308)
+        at org.apache.openejb.core.ivm.EjbObjectProxyHandler.businessMethod(EjbObjectProxyHandler.java:303)
+        at org.apache.openejb.core.ivm.EjbObjectProxyHandler._invoke(EjbObjectProxyHandler.java:92)
+        at org.apache.openejb.core.ivm.BaseEjbProxyHandler.invoke(BaseEjbProxyHandler.java:308)
+        ... 106 more
+Caused by: org.apache.geronimo.transaction.manager.SetRollbackOnlyException: setRollbackOnly() called.  See stacktrace for origin
+        at org.apache.geronimo.transaction.manager.TransactionImpl.setRollbackOnly(TransactionImpl.java:126)
+        at org.apache.geronimo.transaction.manager.TransactionManagerImpl.setRollbackOnly(TransactionManagerImpl.java:243)
+        at org.hibernate.engine.transaction.internal.jta.CMTTransaction.markRollbackOnly(CMTTransaction.java:131)
+        at org.hibernate.engine.transaction.internal.TransactionCoordinatorImpl.setRollbackOnly(TransactionCoordinatorImpl.java:298)
+        at org.hibernate.engine.transaction.synchronization.internal.SynchronizationCallbackCoordinatorImpl.setRollbackOnly(SynchronizationCallbackCoordinatorImpl.java:118)
+        at org.hibernate.engine.transaction.synchronization.internal.SynchronizationCallbackCoordinatorImpl.beforeCompletion(SynchronizationCallbackCoordinatorImpl.java:108)
+        at org.hibernate.engine.transaction.synchronization.internal.RegisteredSynchronization.beforeCompletion(RegisteredSynchronization.java:53)
+        at org.apache.geronimo.transaction.manager.TransactionImpl.beforeCompletion(TransactionImpl.java:527)
+        at org.apache.geronimo.transaction.manager.TransactionImpl.beforeCompletion(TransactionImpl.java:511)
+        at org.apache.geronimo.transaction.manager.TransactionImpl.beforePrepare(TransactionImpl.java:413)
+        at org.apache.geronimo.transaction.manager.TransactionImpl.commit(TransactionImpl.java:262)
+        ... 116 more
+
+2019-09-24 15:02:08.806, SEVERE, [Thread]: 236 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  2383  Call Back :: invocation failed for Process :: java:global/EnhancesysManagement/IntegrationServices/IntegrationCallbackProcessor!com.enhancesys.integration.services.interfaces.callback.CallbackProcessor
+2019-09-24 15:02:08.806, FINE, [Thread]: 236 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  2384  responseBean.getStatusId : 1305
+2019-09-24 15:02:08.808, FINE, [Thread]: 236 [ClassName]: com.enhancesys.integration.services.util.IntegrationUtilManagementImpl [LineNumber]:  146  Failed Transaction id --->229683
+2019-09-24 15:02:08.809, FINE, [Thread]: 236 [ClassName]: com.enhancesys.integration.services.util.IntegrationUtilManagementImpl [LineNumber]:  147  responseBean.getRetryCount() : null
+2019-09-24 15:02:08.810, FINE, [Thread]: 236 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  1051  TransactionId ::: 229683interface id::::1018
+2019-09-24 15:02:08.827, FINE, [Thread]: 236 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  1123  interfaceSummary.getRetryCount() : 2
+2019-09-24 15:02:08.886, FINE, [Thread]: 236 [ClassName]: com.enhancesys.integration.services.util.IntegrationUtilManagementImpl [LineNumber]:  192  Exit updateInterfaceFailerStatus service at -->Tue Sep 24 15:02:08 IST 2019 --- and took 78 milliseconds
+2019-09-24 15:02:08.887, FINE, [Thread]: 236 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  2387  TransIDs catch : []
+2019-09-24 15:02:08.912, SEVERE, [Thread]: 236 : Exception : Transaction was rolled back, presumably because setRollbackOnly was called during a synchronization : javax.ejb.EJBTransactionRolledbackException: Transaction was rolled back, presumably because setRollbackOnly was called during a synchronization
+        at org.apache.openejb.core.ivm.BaseEjbProxyHandler.convertException(BaseEjbProxyHandler.java:381)
+        at org.apache.openejb.core.ivm.BaseEjbProxyHandler.invoke(BaseEjbProxyHandler.java:312)
+        at com.sun.proxy.$Proxy204.processCallback(Unknown Source)
+        at com.enhancesys.integration.services.IntegrationManagementImpl.processCallback(IntegrationManagementImpl.java:2327)
+        at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+        at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+        at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+        at java.lang.reflect.Method.invoke(Method.java:606)
+        at org.apache.openejb.core.interceptor.ReflectionInvocationContext$Invocation.invoke(ReflectionInvocationContext.java:192)
+        at org.apache.openejb.core.interceptor.ReflectionInvocationContext.proceed(ReflectionInvocationContext.java:173)
+        at org.apache.openejb.monitoring.StatsInterceptor.record(StatsInterceptor.java:181)
+        at org.apache.openejb.monitoring.StatsInterceptor.invoke(StatsInterceptor.java:100)
+        at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+        at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+        at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+        at java.lang.reflect.Method.invoke(Method.java:606)
+        at org.apache.openejb.core.interceptor.ReflectionInvocationContext$Invocation.invoke(ReflectionInvocationContext.java:192)
+        at org.apache.openejb.core.interceptor.ReflectionInvocationContext.proceed(ReflectionInvocationContext.java:173)
+        at org.apache.openejb.core.interceptor.InterceptorStack.invoke(InterceptorStack.java:85)
+        at org.apache.openejb.core.stateless.StatelessContainer._invoke(StatelessContainer.java:227)
+        at org.apache.openejb.core.stateless.StatelessContainer.invoke(StatelessContainer.java:194)
+        at org.apache.openejb.core.ivm.EjbObjectProxyHandler.synchronizedBusinessMethod(EjbObjectProxyHandler.java:308)
+        at org.apache.openejb.core.ivm.EjbObjectProxyHandler.businessMethod(EjbObjectProxyHandler.java:303)
+        at org.apache.openejb.core.ivm.EjbObjectProxyHandler._invoke(EjbObjectProxyHandler.java:92)
+        at org.apache.openejb.core.ivm.BaseEjbProxyHandler.invoke(BaseEjbProxyHandler.java:308)
+        at com.sun.proxy.$Proxy204.processCallback(Unknown Source)
+        at com.enhancesys.integration.services.IntegrationManagementImpl.processResponseAvailableRecords(IntegrationManagementImpl.java:2106)
+        at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+        at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+        at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+        at java.lang.reflect.Method.invoke(Method.java:606)
+        at org.apache.openejb.core.interceptor.ReflectionInvocationContext$Invocation.invoke(ReflectionInvocationContext.java:192)
+        at org.apache.openejb.core.interceptor.ReflectionInvocationContext.proceed(ReflectionInvocationContext.java:173)
+        at org.apache.openejb.monitoring.StatsInterceptor.record(StatsInterceptor.java:181)
+        at org.apache.openejb.monitoring.StatsInterceptor.invoke(StatsInterceptor.java:100)
+        at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+        at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+        at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+        at java.lang.reflect.Method.invoke(Method.java:606)
+        at org.apache.openejb.core.interceptor.ReflectionInvocationContext$Invocation.invoke(ReflectionInvocationContext.java:192)
+        at org.apache.openejb.core.interceptor.ReflectionInvocationContext.proceed(ReflectionInvocationContext.java:173)
+        at org.apache.openejb.server.cxf.ejb.EjbMethodInvoker.performInvocation(EjbMethodInvoker.java:86)
+        at org.apache.openejb.server.cxf.ejb.EjbMethodInvoker.directEjbInvoke(EjbMethodInvoker.java:199)
+        at org.apache.openejb.server.cxf.ejb.EjbInterceptor.intercept(EjbInterceptor.java:90)
+        at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+        at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+        at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+        at java.lang.reflect.Method.invoke(Method.java:606)
+        at org.apache.openejb.core.interceptor.ReflectionInvocationContext$Invocation.invoke(ReflectionInvocationContext.java:192)
+        at org.apache.openejb.core.interceptor.ReflectionInvocationContext.proceed(ReflectionInvocationContext.java:173)
+        at org.apache.openejb.core.interceptor.InterceptorStack.invoke(InterceptorStack.java:97)
+        at org.apache.openejb.core.stateless.StatelessContainer.invokeWebService(StatelessContainer.java:301)
+        at org.apache.openejb.core.stateless.StatelessContainer._invoke(StatelessContainer.java:222)
+        at org.apache.openejb.core.stateless.StatelessContainer.invoke(StatelessContainer.java:194)
+        at org.apache.openejb.server.cxf.ejb.EjbMethodInvoker.preEjbInvoke(EjbMethodInvoker.java:120)
+        at org.apache.openejb.server.cxf.ejb.EjbMethodInvoker.invoke(EjbMethodInvoker.java:73)
+        at org.apache.cxf.service.invoker.AbstractInvoker.invoke(AbstractInvoker.java:75)
+        at org.apache.cxf.interceptor.ServiceInvokerInterceptor$1.run(ServiceInvokerInterceptor.java:57)
+        at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:471)
+        at java.util.concurrent.FutureTask.run(FutureTask.java:262)
+        at org.apache.cxf.workqueue.SynchronousExecutor.execute(SynchronousExecutor.java:37)
+        at org.apache.cxf.interceptor.ServiceInvokerInterceptor.handleMessage(ServiceInvokerInterceptor.java:106)
+        at org.apache.cxf.phase.PhaseInterceptorChain.doIntercept(PhaseInterceptorChain.java:263)
+        at org.apache.cxf.transport.ChainInitiationObserver.onMessage(ChainInitiationObserver.java:121)
+        at org.apache.cxf.transport.http.AbstractHTTPDestination.invoke(AbstractHTTPDestination.java:240)
+        at org.apache.openejb.server.cxf.CxfWsContainer.onMessage(CxfWsContainer.java:86)
+        at org.apache.openejb.server.webservices.WsServlet.service(WsServlet.java:98)
+        at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:303)
+        at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:208)
+        at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:220)
+        at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:122)
+        at org.apache.tomee.catalina.OpenEJBValve.invoke(OpenEJBValve.java:44)
+        at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:610)
+        at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:171)
+        at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:103)
+        at org.apache.catalina.valves.AccessLogValve.invoke(AccessLogValve.java:950)
+        at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:116)
+        at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:408)
+        at org.apache.coyote.http11.AbstractHttp11Processor.process(AbstractHttp11Processor.java:1070)
+        at org.apache.coyote.AbstractProtocol$AbstractConnectionHandler.process(AbstractProtocol.java:611)
+        at org.apache.tomcat.util.net.JIoEndpoint$SocketProcessor.run(JIoEndpoint.java:316)
+        at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1145)
+        at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:615)
+        at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+        at java.lang.Thread.run(Thread.java:745)
+Caused by: javax.transaction.RollbackException: Unable to commit: transaction marked for rollback
+        at org.apache.geronimo.transaction.manager.TransactionImpl.commit(TransactionImpl.java:272)
+        at org.apache.geronimo.transaction.manager.TransactionManagerImpl.commit(TransactionManagerImpl.java:252)
+        at org.apache.openejb.core.transaction.JtaTransactionPolicy.completeTransaction(JtaTransactionPolicy.java:331)
+        at org.apache.openejb.core.transaction.TxRequiresNew.commit(TxRequiresNew.java:73)
+        at org.apache.openejb.core.transaction.EjbTransactionUtil.afterInvoke(EjbTransactionUtil.java:77)
+        at org.apache.openejb.core.stateless.StatelessContainer._invoke(StatelessContainer.java:246)
+        at org.apache.openejb.core.stateless.StatelessContainer.invoke(StatelessContainer.java:194)
+        at org.apache.openejb.core.ivm.EjbObjectProxyHandler.synchronizedBusinessMethod(EjbObjectProxyHandler.java:308)
+        at org.apache.openejb.core.ivm.EjbObjectProxyHandler.businessMethod(EjbObjectProxyHandler.java:303)
+        at org.apache.openejb.core.ivm.EjbObjectProxyHandler._invoke(EjbObjectProxyHandler.java:92)
+        at org.apache.openejb.core.ivm.BaseEjbProxyHandler.invoke(BaseEjbProxyHandler.java:308)
+        ... 83 more
+Caused by: org.apache.geronimo.transaction.manager.SetRollbackOnlyException: setRollbackOnly() called.  See stacktrace for origin
+        at org.apache.geronimo.transaction.manager.TransactionImpl.setRollbackOnly(TransactionImpl.java:126)
+        at org.apache.geronimo.transaction.manager.TransactionManagerImpl.setRollbackOnly(TransactionManagerImpl.java:243)
+        at org.hibernate.engine.transaction.internal.jta.CMTTransaction.markRollbackOnly(CMTTransaction.java:131)
+        at org.hibernate.engine.transaction.internal.TransactionCoordinatorImpl.setRollbackOnly(TransactionCoordinatorImpl.java:298)
+        at org.hibernate.engine.transaction.synchronization.internal.SynchronizationCallbackCoordinatorImpl.setRollbackOnly(SynchronizationCallbackCoordinatorImpl.java:118)
+        at org.hibernate.engine.transaction.synchronization.internal.SynchronizationCallbackCoordinatorImpl.beforeCompletion(SynchronizationCallbackCoordinatorImpl.java:108)
+        at org.hibernate.engine.transaction.synchronization.internal.RegisteredSynchronization.beforeCompletion(RegisteredSynchronization.java:53)
+        at org.apache.geronimo.transaction.manager.TransactionImpl.beforeCompletion(TransactionImpl.java:527)
+        at org.apache.geronimo.transaction.manager.TransactionImpl.beforeCompletion(TransactionImpl.java:511)
+        at org.apache.geronimo.transaction.manager.TransactionImpl.beforePrepare(TransactionImpl.java:413)
+        at org.apache.geronimo.transaction.manager.TransactionImpl.commit(TransactionImpl.java:262)
+        ... 93 more
+
+2019-09-24 15:02:08.915, SEVERE, [Thread]: 236 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  2383  Call Back :: invocation failed for Process :: java:global/EnhancesysManagement/IntegrationServices/IntegrationCallbackProcessor!com.enhancesys.integration.services.interfaces.callback.CallbackProcessor
+2019-09-24 15:02:08.915, FINE, [Thread]: 236 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  2384  responseBean.getStatusId : 1305
+2019-09-24 15:02:08.917, FINE, [Thread]: 236 [ClassName]: com.enhancesys.integration.services.util.IntegrationUtilManagementImpl [LineNumber]:  146  Failed Transaction id --->229683
+2019-09-24 15:02:08.917, FINE, [Thread]: 236 [ClassName]: com.enhancesys.integration.services.util.IntegrationUtilManagementImpl [LineNumber]:  147  responseBean.getRetryCount() : null
+2019-09-24 15:02:08.919, FINE, [Thread]: 236 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  1051  TransactionId ::: 229683interface id::::1018
+2019-09-24 15:02:08.934, FINE, [Thread]: 236 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  1123  interfaceSummary.getRetryCount() : 1
+2019-09-24 15:02:08.991, FINE, [Thread]: 236 [ClassName]: com.enhancesys.integration.services.util.IntegrationUtilManagementImpl [LineNumber]:  192  Exit updateInterfaceFailerStatus service at -->Tue Sep 24 15:02:08 IST 2019 --- and took 74 milliseconds
+2019-09-24 15:02:08.992, FINE, [Thread]: 236 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  2387  TransIDs catch : []
+2019-09-24 15:02:09.018, SEVERE, [Thread]: 236 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  2127  Call Back invocation failed for Process :: 229683
+2019-09-24 15:02:09.019, FINE, [Thread]: 236 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  2128  responseBean.getStatusId : 1305
+2019-09-24 15:02:09.020, FINE, [Thread]: 236 [ClassName]: com.enhancesys.integration.services.util.IntegrationUtilManagementImpl [LineNumber]:  146  Failed Transaction id --->229683
+2019-09-24 15:02:09.021, FINE, [Thread]: 236 [ClassName]: com.enhancesys.integration.services.util.IntegrationUtilManagementImpl [LineNumber]:  147  responseBean.getRetryCount() : null
+2019-09-24 15:02:09.025, FINE, [Thread]: 236 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  1051  TransactionId ::: 229683interface id::::1018
+2019-09-24 15:02:09.039, FINE, [Thread]: 236 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  1123  interfaceSummary.getRetryCount() : 0
+2019-09-24 15:02:09.096, FINE, [Thread]: 236 [ClassName]: com.enhancesys.integration.services.util.IntegrationUtilManagementImpl [LineNumber]:  192  Exit updateInterfaceFailerStatus service at -->Tue Sep 24 15:02:09 IST 2019 --- and took 76 milliseconds
+2019-09-24 15:02:09.097, FINE, [Thread]: 236 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  2197  Exit processResponseAvailableRecords 1018 service at -->Tue Sep 24 15:02:09 IST 2019 --- and took 43680 milliseconds

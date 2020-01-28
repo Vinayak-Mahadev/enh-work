@@ -1,0 +1,62 @@
+Time Taken: 1   [daily_dump_trans_dtls_20190523_003]                              FILE_ID = 16529
+
+processReceivedFiles			----> 2867287	=>	47.78 min
+
+file reading and data inserting ----> 1264546	=>	21.07 min						23/05/2019
+
+Query executing                 ----> 1602741	=>	26.71 min
+
+
+
+---------------------------------------------------------------------------------------------------------
+
+Time Taken: 2   [daily_dump_trans_dtls_20190523_004]                              FILE_ID = 16528
+
+processReceivedFiles			----> 2995693   =>	49.92 min
+
+file reading and data inserting ----> 1251548	=>	20.85 min						23/05/2019
+
+Query executing                 ----> 1744145   =>	20.06 min
+
+--------------------------------------------------------------------------------------------------------
+
+Time Taken: 3   [daily_dump_trans_dtls_20190523_005]                              FILE_ID = 16530
+
+processReceivedFiles			----> 3274398	=>	54.57 min		  EAR FILE CHANGED
+
+file reading and data inserting ----> 1330896	=>	22.18 min						23/05/2019
+
+Query executing                 ----> 1943502	=>	32.39 min
+
+
+
+---------------------------------------------------------------------------------------------------------
+Time Taken: 3   [daily_dump_trans_dtls_20190523_006]                              FILE_ID = 16531
+
+processReceivedFiles			----> 3274398	=>	54.57 min		  
+
+file reading and data inserting ----> 1272984	=>	21.11 min						23/05/2019
+
+Query executing                 ----> 1943502	=>	32.39 min
+
+
+
+---------------------------------------------------------------------------------------------------------
+Time Taken: 4   [daily_dump_trans_dtls_20190523_007]                              FILE_ID = 16532
+
+processReceivedFiles			----> 3213055	=>	53.55 min		  
+
+file reading and data inserting ----> 1245721	=>	20.76 min						23/05/2019
+
+Query executing                 ----> 1967334	=>	32.78 min
+
+
+
+---------------------------------------------------------------------------------------------------------
+Recent putty log...
+--------------------
+
+
+
+
+

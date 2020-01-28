@@ -1,0 +1,90 @@
+
+
+1137|Query Balance
+221|Query Balance
+
+----------------------------------------------------------------------
+REQUEST
+----------------------------------------------------------------------
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:int="http://com/enhancesys/integration/services/interfaces/IntegrationManagement">
+	<soapenv:Header/>
+	<soapenv:Body>
+		<int:syncBalanceInterface>
+			<moduleId>221</moduleId>
+			<jsonRequestData>
+				<![CDATA[
+	{
+		"payload": {
+			"query_details": [
+				"001",
+				"002",
+				"003",
+				"004"
+			],
+			"acc_type": "abc123",
+			"operator_id": "OP01",
+			"org_ref_code": "0091",
+			"user_id": "123",
+			"uname": "CAN01",
+			"trans_dt": "2019-06-13T00:00:00.000",
+			"pin": "1121",
+			"currency": ""
+		}
+	}
+]]>
+			</jsonRequestData>
+		</int:syncBalanceInterface>
+	</soapenv:Body>
+</soapenv:Envelope>
+
+----------------------------------------------------------------------
+REQUEST - from template
+----------------------------------------------------------------------
+
+<req:TargetOrgList isMultiple="false" source="query_details" operation="merge" delimiter=","  required ="false"/> 
+<req:AccountType isMultiple="false" source="acc_type" required ="false"/>
+
+------------------------------------------------------------------
+***********      query_details,   acc_type,   operator_id,  org_ref_code    **************
+------------------------------------------------------------------
+
+----------------------------------------------------------------------
+RESPONSE
+----------------------------------------------------------------------
+<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
+	<soap:Body>
+		<ns2:syncBalanceInterfaceResponse xmlns:ns2="http://com/enhancesys/integration/services/interfaces/IntegrationManagement" xmlns:ns3="http://com/enhancesys/entities/schema/integration">
+			 <syncBalanceInterface>
+{
+	"ext_ref_id": "AG_20130129T102103",
+	"balance": [
+		{
+			"outlet_ref_code": "800000000101002000",
+			"bal": "1000.0",
+			"currency": "USD"
+		},
+		{
+			"outlet_ref_code": "800000000101002000",
+			"bal": "1000.0",
+			"currency": "USD"
+		}
+	],
+	"status": "SUCCESS",
+	"trans_dt": "2019-06-13T10:59:53.836",
+	"transaction_id": 226966
+}
+</syncBalanceInterface>
+		</ns2:syncBalanceInterfaceResponse>
+	</soap:Body>
+</soap:Envelope>
+
+
+----------------------------------------------------------------------
+REQUEST - EXCEPTATION FIELDS
+----------------------------------------------------------------------
+
+{
+	"balance": "res:AvailableBalance",
+	"currency": "res:Currency",
+	"account_no": "res:AccountNo"
+}

@@ -1,0 +1,241 @@
+dex":5,"metric_key_v":"B#MSISDN","metrics_type_n":13,"selection_v":"Default"}]}
+May 17, 2019 1:15:38 PM com.enhancesys.common.logger
+FINE: [Thread]: 417 [ClassName]: com.enhancesys.integration.services.springCamel.InterfaceFileReader [LineNumber]:  424  dimensionConfig :: {1=[{"correction_v":"Update","dimension_v":"Reload value","sequence_n":1}]}
+May 17, 2019 1:15:38 PM com.enhancesys.common.logger
+FINE: [Thread]: 417 [ClassName]: com.enhancesys.integration.services.springCamel.InterfaceFileReader [LineNumber]:  474  crossSellFlagAttr :: null
+May 17, 2019 1:15:38 PM com.enhancesys.common.logger
+FINE: [Thread]: 417 [ClassName]: com.enhancesys.integration.services.springCamel.InterfaceFileReader [LineNumber]:  475  crossSellingFlag :: false
+May 17, 2019 1:15:38 PM com.enhancesys.common.logger
+FINE: [Thread]: 417 [ClassName]: com.enhancesys.integration.services.springCamel.InterfaceFileReader [LineNumber]:  476  crossSellingObj :: null
+May 17, 2019 1:15:38 PM com.enhancesys.common.logger
+FINE: [Thread]: 417 [ClassName]: com.enhancesys.integration.services.springCamel.InterfaceFileReader [LineNumber]:  503  Moving Actual File to Backup Directory...
+May 17, 2019 1:15:38 PM com.enhancesys.common.logger
+FINE: [Thread]: 417 [ClassName]: com.enhancesys.integration.services.util.Utility [LineNumber]:  274  Entry backupFile..
+May 17, 2019 1:15:39 PM com.enhancesys.common.logger
+FINE: [Thread]: 417 [ClassName]: com.enhancesys.integration.services.util.Utility [LineNumber]:  318  Exit backupFile..
+May 17, 2019 1:15:39 PM com.enhancesys.common.logger
+FINE: [Thread]: 417 [ClassName]: com.enhancesys.integration.services.springCamel.InterfaceFileReader [LineNumber]:  511  Moving Ctl file to backup dir...
+May 17, 2019 1:15:39 PM com.enhancesys.common.logger
+FINE: [Thread]: 417 [ClassName]: com.enhancesys.integration.services.util.Utility [LineNumber]:  274  Entry backupFile..
+May 17, 2019 1:15:39 PM com.enhancesys.common.logger
+FINE: [Thread]: 417 [ClassName]: com.enhancesys.integration.services.util.Utility [LineNumber]:  318  Exit backupFile..
+May 17, 2019 1:15:39 PM com.enhancesys.common.logger
+FINE: [Thread]: 417 [ClassName]: com.enhancesys.integration.services.springCamel.InterfaceFileReader [LineNumber]:  525  File Reading and Data Insertion started. . .
+May 17, 2019 1:16:15 PM com.enhancesys.common.logger
+FINE: [Thread]: 417 [ClassName]: com.enhancesys.integration.services.springCamel.InterfaceFileReader [LineNumber]:  1819  Data Inserted and File Reading Completed in 36210 ms
+May 17, 2019 1:16:15 PM com.enhancesys.common.logger
+FINE: [Thread]: 417 [ClassName]: com.enhancesys.integration.services.springCamel.InterfaceFileReader [LineNumber]:  1826  Validating actors..
+May 17, 2019 1:16:15 PM com.enhancesys.common.logger
+FINE: [Thread]: 417 [ClassName]: com.enhancesys.integration.services.springCamel.InterfaceFileReader [LineNumber]:  1905  Starting Join Query
+May 17, 2019 1:16:36 PM com.enhancesys.common.logger
+INFO: [Thread]: 417 [ClassName]: com.enhancesys.integration.services.springCamel.InterfaceFileReader [LineNumber]:  1924  Time taken to execute 1080_DAILY_JOIN_QUERY_1 :: 20 Seconds
+May 17, 2019 1:16:36 PM com.enhancesys.common.logger
+FINE: [Thread]: 417 [ClassName]: com.enhancesys.integration.services.springCamel.InterfaceFileReader [LineNumber]:  2009  Daily DataCount : 222
+May 17, 2019 1:16:36 PM com.enhancesys.common.logger
+FINE: [Thread]: 417 [ClassName]: com.enhancesys.integration.services.springCamel.InterfaceFileReader [LineNumber]:  2015  Remaining records..222
+May 17, 2019 1:16:36 PM com.enhancesys.common.logger
+FINE: [Thread]: 417 [ClassName]: com.enhancesys.integration.services.springCamel.InterfaceFileReader [LineNumber]:  2037  Sent FileDataBean to the next level with batch number :: 1
+May 17, 2019 1:16:36 PM com.enhancesys.common.logger
+FINE: [Thread]: 417 [ClassName]: com.enhancesys.integration.services.springCamel.InterfaceFileReader [LineNumber]:  2056  Daily Aggregation completed..
+May 17, 2019 1:16:36 PM com.enhancesys.common.logger
+FINE: [Thread]: 416 [ClassName]: com.enhancesys.integration.services.springCamel.KPIAggregator [LineNumber]:  411  222 Rows Updated in daily table..
+May 17, 2019 1:16:36 PM com.enhancesys.common.logger
+INFO: [Thread]: 416 [ClassName]: com.enhancesys.integration.services.springCamel.KPIAggregator [LineNumber]:  422  Daily Table - Total Insert time :: 0 ms
+May 17, 2019 1:16:36 PM com.enhancesys.common.logger
+INFO: [Thread]: 416 [ClassName]: com.enhancesys.integration.services.springCamel.KPIAggregator [LineNumber]:  423  Daily Table - Total update time :: 102 ms
+May 17, 2019 1:16:48 PM com.enhancesys.common.logger
+INFO: [Thread]: 417 [ClassName]: com.enhancesys.integration.services.springCamel.InterfaceFileReader [LineNumber]:  2074  Time taken to execute 1080_MONTHLY_JOIN_QUERY_1  :: 12 Seconds
+May 17, 2019 1:16:48 PM com.enhancesys.common.logger
+FINE: [Thread]: 417 [ClassName]: com.enhancesys.integration.services.springCamel.InterfaceFileReader [LineNumber]:  2159  Monthly DataCount : 222
+May 17, 2019 1:16:48 PM com.enhancesys.common.logger
+FINE: [Thread]: 417 [ClassName]: com.enhancesys.integration.services.springCamel.InterfaceFileReader [LineNumber]:  2171  Remaining records..222
+May 17, 2019 1:16:48 PM com.enhancesys.common.logger
+FINE: [Thread]: 417 [ClassName]: com.enhancesys.integration.services.springCamel.InterfaceFileReader [LineNumber]:  2193  Sent FileDataBean to the next level with batch number :: 1
+May 17, 2019 1:16:48 PM com.enhancesys.common.logger
+FINE: [Thread]: 417 [ClassName]: com.enhancesys.integration.services.springCamel.InterfaceFileReader [LineNumber]:  2213  Monthly Aggregation completed..
+May 17, 2019 1:16:49 PM com.enhancesys.common.logger
+FINE: [Thread]: 416 [ClassName]: com.enhancesys.integration.services.springCamel.KPIAggregator [LineNumber]:  608  222 Rows Updated in monthly table..
+May 17, 2019 1:16:49 PM com.enhancesys.common.logger
+INFO: [Thread]: 416 [ClassName]: com.enhancesys.integration.services.springCamel.KPIAggregator [LineNumber]:  619  Monthly Table - Total Insert time :: 0 ms
+May 17, 2019 1:16:49 PM com.enhancesys.common.logger
+INFO: [Thread]: 416 [ClassName]: com.enhancesys.integration.services.springCamel.KPIAggregator [LineNumber]:  620  Monthly Table - Total update time :: 95 ms
+May 17, 2019 1:16:51 PM com.enhancesys.common.logger
+INFO: [Thread]: 417 [ClassName]: com.enhancesys.integration.services.springCamel.InterfaceFileReader [LineNumber]:  2905  Sent empty FileDataBean to the next level
+May 17, 2019 1:16:51 PM com.enhancesys.common.logger
+FINE: [Thread]: 417 [ClassName]: com.enhancesys.integration.services.util.InterfaceServiceUtil [LineNumber]:  844  1 Rows Updated in Interface File Summary..
+May 17, 2019 1:16:52 PM com.enhancesys.common.logger
+INFO: [Thread]: 416 [ClassName]: com.enhancesys.integration.services.springCamel.KPIAggregator [LineNumber]:  719  KPI Aggregation 1080 completed in 73484 ms
+May 17, 2019 1:16:52 PM com.enhancesys.common.logger
+FINE: [Thread]: 414 [ClassName]: com.enhancesys.integration.services.springCamel.AbstractFileProcessor [LineNumber]:  190  Exit initiateProcess..1080
+May 17, 2019 1:17:04 PM com.enhancesys.common.logger
+FINE: [Thread]: 417 [ClassName]: com.enhancesys.integration.services.springCamel.InterfaceFileReader [LineNumber]:  2722  Deleted row count from temp table :: 108432
+May 17, 2019 1:17:04 PM com.enhancesys.common.logger
+FINE: [Thread]: 417 [ClassName]: com.enhancesys.integration.services.springCamel.InterfaceFileReader [LineNumber]:  2723  File Reading completed in :86167
+May 17, 2019 1:17:04 PM com.enhancesys.common.logger
+FINE: [Thread]: 417 [ClassName]: com.enhancesys.integration.services.springCamel.InterfaceFileReader [LineNumber]:  2880  Interface File Reading com.enhancesys.integration.services.springCamel.InterfaceFileReader_1558079138560 completed at Fri May 17 13:17:04 IST 2019, interfaceId : 1080 file Id : 16517 and took 86176 milli seconds
+May 17, 2019 1:17:04 PM com.enhancesys.common.logger
+FINE: [Thread]: 413 [ClassName]: com.enhancesys.integration.services.springCamel.AbstractFileProcessor [LineNumber]:  190  Exit initiateProcess..1080
+May 17, 2019 1:17:04 PM com.enhancesys.common.logger
+FINE: [Thread]: 230 [ClassName]: com.enhancesys.integration.services.springCamel.FileProcessor [LineNumber]:  130  Exit initiateProcess..
+May 17, 2019 1:17:04 PM com.enhancesys.common.logger
+FINE: [Thread]: 230 [ClassName]: com.enhancesys.integration.services.merger.GenericFileProcessor [LineNumber]:  75  GenericFileProcessor completed at Fri May 17 13:17:04 IST 2019, interfaceId : 1080 file Id : 16517 and took 87256 milli seconds
+May 17, 2019 1:17:04 PM com.enhancesys.common.logger
+FINE: [Thread]: 230 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  3029  Inside ... interfaceFileSummaryDetails.getFileName() :: reload_ab_20190517_0t1.csv
+May 17, 2019 1:17:04 PM com.enhancesys.common.logger
+FINE: [Thread]: 230 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  3030  localServerjsonObject :: {"CtlBkpDir":"\/home\/appuser\/interfaces\/S-NOC\/interfaces\/backup\/master_file\/reload_ab\/","Dir":"\/home\/appuser\/interfaces\/S-NOC\/interfaces\/master_file\/reload_ab\/","BkpDir":"\/home\/appuser\/interfaces\/S-NOC\/interfaces\/backup\/master_file\/reload_ab\/","RejectedDir":"\/home\/appuser\/interfaces\/S-NOC\/interfaces\/rejected_file\/reload_ab\/","RejectedBkpDir":"\/home\/appuser\/interfaces\/S-NOC\/interfaces\/backup\/rejected_file\/reload_ab\/","CtlDir":"\/home\/appuser\/interfaces\/S-NOC\/interfaces\/master_file\/reload_ab\/","RejectedCtlDir":"\/home\/appuser\/interfaces\/S-NOC\/interfaces\/rejected_file\/reload_ab\/","RejectedCtlBkpDir":"\/home\/appuser\/interfaces\/S-NOC\/interfaces\/backup\/rejected_file\/reload_ab\/"}
+May 17, 2019 1:17:04 PM com.enhancesys.common.logger
+FINE: [Thread]: 230 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  10608  Entry compressGzipFile.. Started at --> Fri May 17 13:17:04 IST 2019
+May 17, 2019 1:17:04 PM com.enhancesys.common.logger
+FINE: [Thread]: 230 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  10618  compressGzipFile service received gzipFile Name-->/home/appuser/interfaces/S-NOC/interfaces/backup/master_file/reload_ab/reload_ab_20190517_0t1.csv.gzfile Name -->/home/appuser/interfaces/S-NOC/interfaces/backup/master_file/reload_ab/reload_ab_20190517_0t1.csv
+May 17, 2019 1:17:05 PM com.enhancesys.common.logger
+FINE: [Thread]: 230 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  10657  Exit compressGzipFile service at -->Fri May 17 13:17:05 IST 2019 --- and took 517 milliseconds
+May 17, 2019 1:17:05 PM com.enhancesys.common.logger
+FINE: [Thread]: 230 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  10608  Entry compressGzipFile.. Started at --> Fri May 17 13:17:05 IST 2019
+May 17, 2019 1:17:05 PM com.enhancesys.common.logger
+FINE: [Thread]: 230 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  10618  compressGzipFile service received gzipFile Name-->/home/appuser/interfaces/S-NOC/interfaces/backup/master_file/reload_ab/reload_ab_20190517_0t1.ctl.gzfile Name -->/home/appuser/interfaces/S-NOC/interfaces/backup/master_file/reload_ab/reload_ab_20190517_0t1.ctl
+May 17, 2019 1:17:05 PM com.enhancesys.common.logger
+FINE: [Thread]: 230 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  10657  Exit compressGzipFile service at -->Fri May 17 13:17:05 IST 2019 --- and took 2 milliseconds
+May 17, 2019 1:17:05 PM com.enhancesys.common.logger
+FINE: [Thread]: 230 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  3057  InterfaceId : 1080 : FileId : 16517 processReceivedFiles method is completed at Fri May 17 13:17:05 IST 2019
+May 17, 2019 1:17:05 PM com.enhancesys.common.logger
+FINE: [Thread]: 230 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  3134  Exit processReceivedFiles 1080 service at -->Fri May 17 13:17:05 IST 2019 --- and took 88133 milliseconds
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+May 17, 2019 1:19:09 PM com.enhancesys.common.logger
+FINE: [Thread]: 228 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  3149  Entry reProcessFileBasedOrders :: interfaceId :1080 fileId :: 16517
+May 17, 2019 1:19:09 PM com.enhancesys.common.logger
+FINE: [Thread]: 228 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  3186  Difference in Days :: 0
+May 17, 2019 1:19:09 PM com.enhancesys.common.logger
+FINE: [Thread]: 228 [ClassName]: com.enhancesys.integration.services.merger.ReprocessKPIAggregation [LineNumber]:  97  Reprocess KPI Aggregation initiated : Fri May 17 13:19:09 IST 2019, Interface Id : 1080 File Id : 16517
+May 17, 2019 1:19:09 PM com.enhancesys.common.logger
+FINE: [Thread]: 228 [ClassName]: com.enhancesys.integration.services.merger.ReprocessKPIAggregation [LineNumber]:  325  Data population from failure table to temp table starting ..
+May 17, 2019 1:19:10 PM com.enhancesys.common.logger
+FINE: [Thread]: 228 [ClassName]: com.enhancesys.integration.services.merger.ReprocessKPIAggregation [LineNumber]:  437  1000 rows inserted..
+May 17, 2019 1:19:10 PM com.enhancesys.common.logger
+FINE: [Thread]: 228 [ClassName]: com.enhancesys.integration.services.merger.ReprocessKPIAggregation [LineNumber]:  437  1000 rows inserted..
+May 17, 2019 1:19:10 PM com.enhancesys.common.logger
+FINE: [Thread]: 228 [ClassName]: com.enhancesys.integration.services.merger.ReprocessKPIAggregation [LineNumber]:  437  1000 rows inserted..
+May 17, 2019 1:19:11 PM com.enhancesys.common.logger
+FINE: [Thread]: 228 [ClassName]: com.enhancesys.integration.services.merger.ReprocessKPIAggregation [LineNumber]:  437  1000 rows inserted..
+May 17, 2019 1:19:11 PM com.enhancesys.common.logger
+FINE: [Thread]: 228 [ClassName]: com.enhancesys.integration.services.merger.ReprocessKPIAggregation [LineNumber]:  437  1000 rows inserted..
+May 17, 2019 1:19:11 PM com.enhancesys.common.logger
+FINE: [Thread]: 228 [ClassName]: com.enhancesys.integration.services.merger.ReprocessKPIAggregation [LineNumber]:  437  1000 rows inserted..
+May 17, 2019 1:19:12 PM com.enhancesys.common.logger
+FINE: [Thread]: 228 [ClassName]: com.enhancesys.integration.services.merger.ReprocessKPIAggregation [LineNumber]:  437  1000 rows inserted..
+May 17, 2019 1:19:12 PM com.enhancesys.common.logger
+FINE: [Thread]: 228 [ClassName]: com.enhancesys.integration.services.merger.ReprocessKPIAggregation [LineNumber]:  437  1000 rows inserted..
+May 17, 2019 1:19:12 PM com.enhancesys.common.logger
+FINE: [Thread]: 228 [ClassName]: com.enhancesys.integration.services.merger.ReprocessKPIAggregation [LineNumber]:  437  1000 rows inserted..
+May 17, 2019 1:19:13 PM com.enhancesys.common.logger
+FINE: [Thread]: 228 [ClassName]: com.enhancesys.integration.services.merger.ReprocessKPIAggregation [LineNumber]:  437  1000 rows inserted..
+May 17, 2019 1:19:13 PM com.enhancesys.common.logger
+FINE: [Thread]: 228 [ClassName]: com.enhancesys.integration.services.merger.ReprocessKPIAggregation [LineNumber]:  445  800 rows inserted..
+May 17, 2019 1:19:13 PM com.enhancesys.common.logger
+FINE: [Thread]: 228 [ClassName]: com.enhancesys.integration.services.merger.ReprocessKPIAggregation [LineNumber]:  455  Data Insertion completed..
+May 17, 2019 1:19:13 PM com.enhancesys.common.logger
+FINE: [Thread]: 228 [ClassName]: com.enhancesys.integration.services.merger.ReprocessKPIAggregation [LineNumber]:  462  Validating actors..
+May 17, 2019 1:19:13 PM com.enhancesys.common.logger
+FINE: [Thread]: 228 [ClassName]: com.enhancesys.integration.services.merger.ReprocessKPIAggregation [LineNumber]:  538  Starting Join Query
+May 17, 2019 1:19:15 PM com.enhancesys.common.logger
+INFO: [Thread]: 228 [ClassName]: com.enhancesys.integration.services.merger.ReprocessKPIAggregation [LineNumber]:  559  Time taken to execute 1080_DAILY_JOIN_QUERY_1  :: 1 Seconds
+May 17, 2019 1:19:15 PM com.enhancesys.common.logger
+INFO: [Thread]: 228 [ClassName]: com.enhancesys.integration.services.merger.ReprocessKPIAggregation [LineNumber]:  824  Daily Table - Total Insert time :: 6 ms
+May 17, 2019 1:19:15 PM com.enhancesys.common.logger
+INFO: [Thread]: 228 [ClassName]: com.enhancesys.integration.services.merger.ReprocessKPIAggregation [LineNumber]:  825  Daily Table - Total update time :: 0 ms
+May 17, 2019 1:19:17 PM com.enhancesys.common.logger
+INFO: [Thread]: 228 [ClassName]: com.enhancesys.integration.services.merger.ReprocessKPIAggregation [LineNumber]:  849  Time taken to execute 1080_MONTHLY_JOIN_QUERY_1 :: 1 Seconds
+May 17, 2019 1:19:17 PM com.enhancesys.common.logger
+INFO: [Thread]: 228 [ClassName]: com.enhancesys.integration.services.merger.ReprocessKPIAggregation [LineNumber]:  1047  Monthly Table - Total Insert time :: 0 Seconds
+May 17, 2019 1:19:17 PM com.enhancesys.common.logger
+INFO: [Thread]: 228 [ClassName]: com.enhancesys.integration.services.merger.ReprocessKPIAggregation [LineNumber]:  1048  Monthly Table - Total update time :: 0 Seconds
+May 17, 2019 1:19:17 PM com.enhancesys.common.logger
+FINE: [Thread]: 228 [ClassName]: com.enhancesys.integration.services.merger.ReprocessKPIAggregation [LineNumber]:  1510  Total Count :: 10800
+May 17, 2019 1:19:17 PM com.enhancesys.common.logger
+FINE: [Thread]: 228 [ClassName]: com.enhancesys.integration.services.merger.ReprocessKPIAggregation [LineNumber]:  1511  Success Count :: 10368
+May 17, 2019 1:19:17 PM com.enhancesys.common.logger
+FINE: [Thread]: 228 [ClassName]: com.enhancesys.integration.services.merger.ReprocessKPIAggregation [LineNumber]:  1512  Failure Count :: 432
+May 17, 2019 1:19:17 PM com.enhancesys.common.logger
+FINE: [Thread]: 228 [ClassName]: com.enhancesys.integration.services.merger.ReprocessKPIAggregation [LineNumber]:  1528  Deleted rows count from tr_temp_upload_aggr_failure :: 10800
+May 17, 2019 1:19:17 PM com.enhancesys.common.logger
+FINE: [Thread]: 228 [ClassName]: com.enhancesys.integration.services.util.InterfaceServiceUtil [LineNumber]:  844  1 Rows Updated in Interface File Summary..
+May 17, 2019 1:19:18 PM com.enhancesys.common.logger
+FINE: [Thread]: 228 [ClassName]: com.enhancesys.integration.services.merger.ReprocessKPIAggregation [LineNumber]:  1710  Deleted row count from temp table :: 10800
+May 17, 2019 1:19:18 PM com.enhancesys.common.logger
+FINE: [Thread]: 228 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  3426  Exit reProcessFileBasedOrders service at -->Fri May 17 13:19:18 IST 2019 --- and took 9053 milliseconds
+
+
+
+
+
+
+May 17, 2019 1:23:05 PM com.enhancesys.common.logger
+FINE: [Thread]: 219 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  3149  Entry reProcessFileBasedOrders :: interfaceId :1080 fileId :: 16517
+May 17, 2019 1:23:05 PM com.enhancesys.common.logger
+FINE: [Thread]: 219 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  3186  Difference in Days :: 0
+May 17, 2019 1:23:05 PM com.enhancesys.common.logger
+FINE: [Thread]: 219 [ClassName]: com.enhancesys.integration.services.merger.ReprocessKPIAggregation [LineNumber]:  97  Reprocess KPI Aggregation initiated : Fri May 17 13:23:05 IST 2019, Interface Id : 1080 File Id : 16517
+May 17, 2019 1:23:05 PM com.enhancesys.common.logger
+FINE: [Thread]: 219 [ClassName]: com.enhancesys.integration.services.merger.ReprocessKPIAggregation [LineNumber]:  325  Data population from failure table to temp table starting ..
+May 17, 2019 1:23:05 PM com.enhancesys.common.logger
+FINE: [Thread]: 219 [ClassName]: com.enhancesys.integration.services.merger.ReprocessKPIAggregation [LineNumber]:  445  432 rows inserted..
+May 17, 2019 1:23:05 PM com.enhancesys.common.logger
+FINE: [Thread]: 219 [ClassName]: com.enhancesys.integration.services.merger.ReprocessKPIAggregation [LineNumber]:  455  Data Insertion completed..
+May 17, 2019 1:23:05 PM com.enhancesys.common.logger
+FINE: [Thread]: 219 [ClassName]: com.enhancesys.integration.services.merger.ReprocessKPIAggregation [LineNumber]:  462  Validating actors..
+May 17, 2019 1:23:05 PM com.enhancesys.common.logger
+FINE: [Thread]: 219 [ClassName]: com.enhancesys.integration.services.merger.ReprocessKPIAggregation [LineNumber]:  538  Starting Join Query
+May 17, 2019 1:23:05 PM com.enhancesys.common.logger
+INFO: [Thread]: 219 [ClassName]: com.enhancesys.integration.services.merger.ReprocessKPIAggregation [LineNumber]:  559  Time taken to execute 1080_DAILY_JOIN_QUERY_1  :: 0 Seconds
+May 17, 2019 1:23:05 PM com.enhancesys.common.logger
+INFO: [Thread]: 219 [ClassName]: com.enhancesys.integration.services.merger.ReprocessKPIAggregation [LineNumber]:  824  Daily Table - Total Insert time :: 2 ms
+May 17, 2019 1:23:05 PM com.enhancesys.common.logger
+INFO: [Thread]: 219 [ClassName]: com.enhancesys.integration.services.merger.ReprocessKPIAggregation [LineNumber]:  825  Daily Table - Total update time :: 0 ms
+May 17, 2019 1:23:05 PM com.enhancesys.common.logger
+INFO: [Thread]: 219 [ClassName]: com.enhancesys.integration.services.merger.ReprocessKPIAggregation [LineNumber]:  849  Time taken to execute 1080_MONTHLY_JOIN_QUERY_1 :: 0 Seconds
+May 17, 2019 1:23:05 PM com.enhancesys.common.logger
+INFO: [Thread]: 219 [ClassName]: com.enhancesys.integration.services.merger.ReprocessKPIAggregation [LineNumber]:  1047  Monthly Table - Total Insert time :: 0 Seconds
+May 17, 2019 1:23:05 PM com.enhancesys.common.logger
+INFO: [Thread]: 219 [ClassName]: com.enhancesys.integration.services.merger.ReprocessKPIAggregation [LineNumber]:  1048  Monthly Table - Total update time :: 0 Seconds
+May 17, 2019 1:23:05 PM com.enhancesys.common.logger
+FINE: [Thread]: 219 [ClassName]: com.enhancesys.integration.services.merger.ReprocessKPIAggregation [LineNumber]:  1510  Total Count :: 432
+May 17, 2019 1:23:05 PM com.enhancesys.common.logger
+FINE: [Thread]: 219 [ClassName]: com.enhancesys.integration.services.merger.ReprocessKPIAggregation [LineNumber]:  1511  Success Count :: 432
+May 17, 2019 1:23:05 PM com.enhancesys.common.logger
+FINE: [Thread]: 219 [ClassName]: com.enhancesys.integration.services.merger.ReprocessKPIAggregation [LineNumber]:  1512  Failure Count :: 0
+May 17, 2019 1:23:05 PM com.enhancesys.common.logger
+FINE: [Thread]: 219 [ClassName]: com.enhancesys.integration.services.util.InterfaceServiceUtil [LineNumber]:  844  1 Rows Updated in Interface File Summary..
+May 17, 2019 1:23:05 PM com.enhancesys.common.logger
+FINE: [Thread]: 219 [ClassName]: com.enhancesys.integration.services.merger.ReprocessKPIAggregation [LineNumber]:  1710  Deleted row count from temp table :: 432
+May 17, 2019 1:23:05 PM com.enhancesys.common.logger
+FINE: [Thread]: 219 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  3426  Exit reProcessFileBasedOrders service at -->Fri May 17 13:23:05 IST 2019 --- and took 554 milliseconds
+
+
+
+
+
+
+
+
+
+
+
+

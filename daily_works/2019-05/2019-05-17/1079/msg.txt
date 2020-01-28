@@ -1,0 +1,13 @@
+103600|51800|51800
+
+SELECT * from interface.ms_interface_attr where interface_id_n = 1079
+SELECT * from interface.tr_interface_file_summary  where interface_id_n = 1079 order by 1 desc limit 5
+
+SELECT * from kpi.tr_daily_addon_customer_aggr where day_id_n = 20190516 order by 1 desc limit 10
+
+SELECT * from kpi.tr_monthly_addon_customer_aggr  where month_id_n = 201905 order by 1 desc limit 10
+
+select * from kpi.tr_temp_upload_aggr_failure where file_id_n = 16515
+update  kpi.tr_temp_upload_aggr_failure set actor_key_v = '1001~1373' where file_id_n = 16515
+update  kpi.tr_temp_upload_aggr_failure set source_key_v = 'SAT10' where file_id_n = 16515
+

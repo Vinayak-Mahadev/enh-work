@@ -1,0 +1,89 @@
+----------------------------------------------------------------------
+REQUEST
+----------------------------------------------------------------------
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" 
+		xmlns:int="http://com/enhancesys/integration/services/interfaces/IntegrationManagement">
+	<soapenv:Header/>
+	<soapenv:Body>
+		<int:syncBalanceInterface>
+			<moduleId>220</moduleId>
+			<jsonRequestData>
+			<![CDATA[
+	{
+		"payload": {
+			"currency": "INR",
+			"trans_amt": "122.11",
+			"destn_ref_code": "001",
+			"operator_id": "OP01",
+			"org_ref_code": "0091",
+			"user_id": "123",
+			"uname": "CAN01",
+			"trans_dt": "2019-06-13T00:00:00.000",
+			"pin": "2112",
+			"acc_type": ""
+		}
+	}
+			]]>
+			</jsonRequestData>
+		</int:syncBalanceInterface>
+	</soapenv:Body>
+</soapenv:Envelope>
+
+
+
+----------------------------------------------------------------------
+SOAP - RESPONSE 
+----------------------------------------------------------------------
+<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
+   <soap:Body>
+      <ns2:syncBalanceInterfaceResponse xmlns:ns2="http://com/enhancesys/integration/services/interfaces/IntegrationManagement" xmlns:ns3="http://com/enhancesys/entities/schema/integration">
+         <syncBalanceInterface>{
+	"ext_ref_id": "SM-227295",
+	"status": "SUCCESS",
+	"trans_dt": "2019-06-21T10:19:33.700",
+	"transaction_id": 227295
+}
+		</syncBalanceInterface>
+      </ns2:syncBalanceInterfaceResponse>
+   </soap:Body>
+</soap:Envelope>
+
+
+
+----------------------------------------------------------------------
+LOG - XML 
+----------------------------------------------------------------------
+<?xml version="1.0" encoding="UTF-8"?>
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/">
+	<soapenv:Body>
+		<api:Result xmlns:api="http://cps.huawei.com/synccpsinterface/api_requestmgr" xmlns:res="http://cps.huawei.com/synccpsinterface/result">
+			<res:Header>
+				<res:Version>1.0</res:Version>
+				<res:OriginatorConversationID>227295</res:OriginatorConversationID>
+				<res:ConversationID>SM-227295</res:ConversationID>
+			</res:Header>
+			<res:Body>
+				<res:ResultType>0</res:ResultType>
+				<res:ResultCode>0</res:ResultCode>
+				<res:ResultDesc>Process service request successfully.</res:ResultDesc>
+				<res:TransactionResult>
+					<res:TransactionID>227295</res:TransactionID>
+				</res:TransactionResult>
+			</res:Body>
+		</api:Result>
+	</soapenv:Body>
+</soapenv:Envelope>
+
+
+
+----------------------------------------------------------------------
+LOG - JSON 
+----------------------------------------------------------------------
+{
+	"res:ResultCode": 0,
+	"res:ResultType": 0,
+	"res:TransactionResult": {
+		"res:TransactionID": 227295
+	},
+	"res:ResultDesc": "Process service request successfully."
+}

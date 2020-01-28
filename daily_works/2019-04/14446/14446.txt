@@ -1,0 +1,165 @@
+Bug 14446 - Populate number format date (yyyyMMdd) in mongo collection as part of Add-On AB feed process..
+
+
+snd-integration\database\pg\refdata\refData-indoSat.sql
+
+INTERFACE_ID 	  = 1079
+INTERFACE_ATTR_ID = 1079038
+
+INSERT INTO INTERFACE.MS_INTERFACE_ATTR 
+	(
+	ATTRIBUTE_ID_N, INTERFACE_ID_N, NAME_V, VALUE_V, LAST_UPDATED_TIME_DT
+	) 
+	VALUES 
+	(
+	1079038, 1079, 'Mongo Config', 			'{"replica":"R4","schema":"snoc_report","collection":"addon_ab","batch_size":"100","field_config":			[{"key":"date","data_type":"Date","dataIndex":0,"format":"yyyy-MM-dd HH:mm:ss"},						{"key":"date_num","data_type":"Date_Num","dataIndex":0,"format":"yyyy-MM-dd HH:mm:ss","num_format":"yyyyMMdd"},			{"key":"org_id","dataIndex":1,"data_type":"String"},{"key":"org_code","dataIndex":2,"data_type":"String"},			{"key":"a_msisdn","dataIndex":3,"data_type":"String"},{"key":"operatorid","dataIndex":4,"data_type":"String"},			{"key":"b_msisdn","dataIndex":5,"data_type":"String"},			{"key":"activation_date","dataIndex":6,"data_type":"Date","format":"yyyy-MM-dd HH:mm:ss"},			{"key":"service_id","dataIndex":7,"data_type":"String"},{"key":"package_name","dataIndex":8,"data_type":"String"},		{"key":"activation_amount","dataIndex":9,"data_type":"String"}]}', now()
+	);
+
+
+
+
+{
+
+
+	"replica": "R4",
+	"schema": "snoc_report",
+
+	"collection": "addon_ab",
+
+	"batch_size": "100",
+
+		"field_config": [
+		
+		{
+			
+			"key": "date",
+			
+			"data_type": "Date",
+			
+			"dataIndex": 0,
+			
+			"format": "yyyy-MM-dd HH:mm:ss"
+		
+		},
+
+		
+		{
+			
+			"key": "date_num",
+			
+			"data_type": "Date_Num",
+			
+			"dataIndex": 0,
+			
+			"format": "yyyy-MM-dd HH:mm:ss",
+			
+			"num_format": "yyyyMMdd"
+		
+		},
+
+		
+		{
+			
+			"key": "org_id",
+			
+			"dataIndex": 1,
+			
+			"data_type": "String"
+		
+		},
+		
+
+		{
+	
+			"key": "org_code",
+			
+			"dataIndex": 2,
+			
+			"data_type": "String"
+		
+		},
+	
+	
+		{
+			
+			"key": "a_msisdn",
+			
+			"dataIndex": 3,
+			
+			"data_type": "String"
+		
+		},
+		
+	
+		{
+			
+			"key": "operatorid",
+			
+			"dataIndex": 4,
+			
+			"data_type": "String"
+		
+		},
+		
+		{
+			
+			"key": "b_msisdn",
+			
+			"dataIndex": 5,
+			
+			"data_type": "String"
+		
+		},
+
+		
+		{
+			
+			"key": "activation_date",
+			
+			"dataIndex": 6,
+			
+			"data_type": "Date",
+			
+			"format": "yyyy-MM-dd HH:mm:ss"
+		
+		},
+		
+
+		{
+			
+			"key": "service_id",
+			
+			"dataIndex": 7,
+			
+			"data_type": "String"
+		
+		},
+		
+	
+		{
+			
+			"key": "package_name",
+			
+			"dataIndex": 8,
+			
+			"data_type": "String"
+		
+		},
+		
+
+		{
+			
+			"key": "activation_amount",
+			
+			"dataIndex": 9,
+			
+			"data_type": "String"
+		
+		}
+	
+	]
+
+
+}
+
+

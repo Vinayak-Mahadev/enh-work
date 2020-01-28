@@ -1,0 +1,226 @@
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:int="http://com/enhancesys/integration/services/interfaces/IntegrationManagement">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <int:invokePrimarySalesInterface>
+         <!--Optional:-->
+         <moduleId>225</moduleId>
+         <!--Optional:-->
+         <jsonRequestData>
+         <![CDATA[
+			
+{
+	"payload": {
+		"po_no": "634487",
+		"po_ord_type": "ssfet",
+		"dist_chnl": "10",
+		"division": "30",
+		"ship_to_party": "AK5443",
+		"ord_dt": "2019-10-11",
+		"req_deliv_dt": "2019-10-11",
+		"products": [
+			{
+				"matrl_code": "P64453",
+				"qty": "100"
+			},
+			{
+				"matrl_code": "P453",
+				"qty": "200"
+			}
+		]
+	}
+}
+		]]>
+         
+         </jsonRequestData>
+      </int:invokePrimarySalesInterface>
+   </soapenv:Body>
+</soapenv:Envelope>
+--------------------------------------
+{"enabled":true,"res_type":"Success"}
+--------------------------------------
+<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
+   <soap:Body>
+      <ns2:invokePrimarySalesInterfaceResponse xmlns:ns2="http://com/enhancesys/integration/services/interfaces/IntegrationManagement" xmlns:ns3="http://com/enhancesys/entities/schema/integration">
+         <invokePrimarySalesInterface>
+		 
+		 {
+	"status": "SUCCESS",
+	"item": {
+		"Mobii_PO_Number": "634487",
+		"SO_Amount": "20000.00",
+		"SAP_SO_Number": "07181610",
+		"SO_Date": "18.07.2019"
+	},
+	"trans_dt": "2019-07-18T16:10:44.610",
+	"transaction_id": 227889
+			}
+		 
+		 </invokePrimarySalesInterface>
+      </ns2:invokePrimarySalesInterfaceResponse>
+   </soap:Body>
+</soap:Envelope>
+------------------------
+Response :
+
+ <soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:mob="http://mobii.com/">
+	<soapenv:Header/>
+	<soapenv:Body>
+		<mob:MT_SOCreation_Response>
+			<Item>
+				<SAP_SO_Number>07181610</SAP_SO_Number>
+				<Mobii_PO_Number>634487</Mobii_PO_Number>
+				<SO_Date>18.07.2019</SO_Date>
+				<Status>1</Status>
+				<SO_Amount>20000.00</SO_Amount>
+			</Item>
+		</mob:MT_SOCreation_Response>
+	</soapenv:Body>
+</soapenv:Envelope>
+
+
+
+-----------------------
+ jsonResponseObject :
+
+{
+	"soapenv:Envelope": {
+		"soapenv:Body": {
+			"mob:MT_SOCreation_Response": {
+				"Item": {
+					"Status": "1",
+					"Mobii_PO_Number": "634487",
+					"SO_Amount": "20000.00",
+					"SAP_SO_Number": "07181610",
+					"SO_Date": "18.07.2019"
+				}
+			}
+		}
+	}
+}
+
+
+--------------------------------------
+{"enabled":true,"res_type":"Failure"}
+--------------------------------------
+
+<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
+   <soap:Body>
+      <ns2:invokePrimarySalesInterfaceResponse xmlns:ns2="http://com/enhancesys/integration/services/interfaces/IntegrationManagement" xmlns:ns3="http://com/enhancesys/entities/schema/integration">
+         <invokePrimarySalesInterface>
+		 
+		 
+		 {
+	"err_msg": "Request failed..",
+	"err_code": 101,
+	"status": "FAIL",
+	"item": {
+		"Mobii_PO_Number": "634487",
+		"SO_Date": "18.07.2019"
+	},
+	"trans_dt": "2019-07-18T16:13:13.470",
+	"transaction_id": 227890
+}
+
+		 </invokePrimarySalesInterface>
+      </ns2:invokePrimarySalesInterfaceResponse>
+   </soap:Body>
+</soap:Envelope>
+--------------------------------------------
+ Response :
+
+ <soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:mob="http://mobii.com/">
+	<soapenv:Header/>
+	<soapenv:Body>
+		<mob:MT_SOCreation_Response>
+			<Item>
+				<Mobii_PO_Number>634487</Mobii_PO_Number>
+				<SO_Date>18.07.2019</SO_Date>
+				<Status>0</Status>
+				<Rejection_Note>Request failed..</Rejection_Note>
+			</Item>
+		</mob:MT_SOCreation_Response>
+	</soapenv:Body>
+</soapenv:Envelope>
+
+
+----------------------------------------------
+jsonResponseObject : 
+
+ {
+	"soapenv:Envelope": {
+		"soapenv:Body": {
+			"mob:MT_SOCreation_Response": {
+				"Item": {
+					"Status": "0",
+					"Mobii_PO_Number": "634487",
+					"SO_Date": "18.07.2019",
+					"Rejection_Note": "Request failed.."
+				}
+			}
+		}
+	}
+}
+
+
+--------------------------------------
+{"enabled":true,"res_type":""}
+--------------------------------------
+
+<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
+   <soap:Body>
+      <ns2:invokePrimarySalesInterfaceResponse xmlns:ns2="http://com/enhancesys/integration/services/interfaces/IntegrationManagement" xmlns:ns3="http://com/enhancesys/entities/schema/integration">
+         <invokePrimarySalesInterface>
+		 
+		 {
+	"err_msg": "Application Error. Please see FaultInfo",
+	"err_code": 101,
+	"status": "FAIL",
+	"trans_dt": "2019-07-18T16:15:37.747",
+	"transaction_id": 227891
+}
+
+
+		 </invokePrimarySalesInterface>
+      </ns2:invokePrimarySalesInterfaceResponse>
+   </soap:Body>
+</soap:Envelope>
+
+
+-----------------------------------
+Response : 
+
+<soapenv:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
+	<soapenv:Body>
+		<soapenv:Fault>
+			<faultcode>soapenv:Server</faultcode>
+			<faultstring>Application Error. Please see FaultInfo</faultstring>
+			<detail>
+				<ns2:FaultInfo xmlns:ns3="http://com/enhancesys/entities/schema/integration" xmlns:ns2="http://com/enhancesys/integration/services/interfaces/IntegrationManagement">
+					<causedBy>java.lang.NullPointerException</causedBy>
+					<message>Error in initialising entity manager</message>
+				</ns2:FaultInfo>
+			</detail>
+		</soapenv:Fault>
+	</soapenv:Body>
+</soapenv:Envelope>
+
+
+
+--------------------------------
+ jsonResponseObject :
+{
+	"soapenv:Envelope": {
+		"soapenv:Body": {
+			"soapenv:Fault": {
+				"detail": {
+					"ns2:FaultInfo": {
+						"message": "Error in initialising entity manager",
+						"causedBy": "java.lang.NullPointerException"
+					}
+				},
+				"faultcode": "soapenv:Server",
+				"faultstring": "Application Error. Please see FaultInfo"
+			}
+		}
+	}
+}

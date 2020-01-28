@@ -1,0 +1,959 @@
+logs
+-- 1094
+
+Jun 06, 2019 4:38:30 PM com.enhancesys.common.logger
+FINE: [Thread]: 216 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  8616  Entry pullDataToFile.. Started at --> Thu Jun 06 16:38:30 IST 2019
+Jun 06, 2019 4:38:30 PM com.enhancesys.common.logger
+FINE: [Thread]: 216 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  8619  pullDataToFile service received interface id-->[1094]
+Jun 06, 2019 4:38:30 PM com.enhancesys.common.logger
+FINE: [Thread]: 216 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  8655  Started pullDataToFile.. 1094  Started at --> Thu Jun 06 16:38:30 IST 2019
+Jun 06, 2019 4:38:30 PM com.enhancesys.common.logger
+FINE: [Thread]: 216 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  8726  [dataConverter] class com.sun.proxy.$Proxy208
+Jun 06, 2019 4:38:30 PM com.enhancesys.common.logger
+FINE: [Thread]: 216 [ClassName]: com.enhancesys.integration.services.processor.GenericDailyDump [LineNumber]:  115  [GenericDailyDump] Entry processRequest ...InterfaceId :: 1094 StartTime :: 1559819310161
+Jun 06, 2019 4:38:30 PM com.enhancesys.common.logger
+FINE: [Thread]: 216 [ClassName]: com.enhancesys.integration.services.processor.GenericDailyDump [LineNumber]:  170  Self Notify Interface :: Inserting entry into tr_daily_dump_summary...
+Jun 06, 2019 4:38:30 PM com.enhancesys.common.logger
+FINE: [Thread]: 216 [ClassName]: com.enhancesys.integration.services.processor.GenericDailyDump [LineNumber]:  182  Inserted a record into tr_daily_dump_summary...
+Jun 06, 2019 4:38:30 PM com.enhancesys.common.logger
+FINE: [Thread]: 216 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  9322  Entry readFilePropertyBeans.. Started at --> Thu Jun 06 16:38:30 IST 2019
+Jun 06, 2019 4:38:30 PM com.enhancesys.common.logger
+FINE: [Thread]: 216 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  9336  readFilePropertyBeans service received interface id-->1094
+Jun 06, 2019 4:38:30 PM com.enhancesys.common.logger
+FINE: [Thread]: 216 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  10106  Exit readFilePropertyBeans service at -->Thu Jun 06 16:38:30 IST 2019 --- and took 26 milliseconds
+Jun 06, 2019 4:38:30 PM com.enhancesys.common.logger
+FINE: [Thread]: 216 [ClassName]: com.enhancesys.integration.services.processor.GenericDailyDump [LineNumber]:  252  Interface : 1094 : File : SOM_Summary_Territory_20190606.csv
+Jun 06, 2019 4:38:30 PM com.enhancesys.common.logger
+FINE: [Thread]: 216 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  8010  Entry createInterfaceFileSummary.. Started at --> Thu Jun 06 16:38:30 IST 2019
+Jun 06, 2019 4:38:30 PM com.enhancesys.common.logger
+FINE: [Thread]: 216 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  8023  createInterfaceFileSummary service received interfaceFileSummary for file id-->null
+Jun 06, 2019 4:38:30 PM com.enhancesys.common.logger
+FINE: [Thread]: 216 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  8098  Exit createInterfaceFileSummary service at -->Thu Jun 06 16:38:30 IST 2019 --- and took 28 milliseconds
+Jun 06, 2019 4:38:30 PM com.enhancesys.common.logger
+FINE: [Thread]: 216 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  7457  Entry createControlFile.. Started at --> Thu Jun 06 16:38:30 IST 2019
+Jun 06, 2019 4:38:30 PM com.enhancesys.common.logger
+FINE: [Thread]: 216 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  7472  createControlFile service received filePath -->/home/appuser/interfaces/S-NOC/interfaces/master_file/daily_dumps/som_summary_territory/SOM_Summary_Territory_20190606.csvtotalCount-->0fileName-->SOM_Summary_Territory_20190606fileFormat-->csvcurrentFileId-->10007contolFileFormat-->ctlcontolFilePath-->/home/appuser/interfaces/S-NOC/interfaces/master_file/daily_dumps/som_summary_territory/
+Jun 06, 2019 4:38:30 PM com.enhancesys.common.logger
+FINE: [Thread]: 216 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  7927  updateInterfaceFileSummaryDetails service received interfaceFileSummaryDetails object for file details id-->10007
+Jun 06, 2019 4:38:30 PM com.enhancesys.common.logger
+FINE: [Thread]: 216 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  7536  Exit control file creation service at -->Thu Jun 06 16:38:30 IST 2019 --- and took 41 milliseconds
+Jun 06, 2019 4:38:30 PM com.enhancesys.common.logger
+FINE: [Thread]: 216 [ClassName]: com.enhancesys.integration.services.processor.GenericDailyDump [LineNumber]:  543  1 Rows updated..
+Jun 06, 2019 4:38:30 PM com.enhancesys.common.logger
+FINE: [Thread]: 216 [ClassName]: com.enhancesys.integration.services.processor.GenericDailyDump [LineNumber]:  630  GenericDailyDump : Exit processRequest... InterfaceId ::  1094 and took 233 milliseconds
+Jun 06, 2019 4:38:30 PM com.enhancesys.common.logger
+FINE: [Thread]: 216 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  8766  Completed pullDataToFile.. 1094  Service at --> Thu Jun 06 16:38:30 IST 2019 --- and took 242 milliseconds
+Jun 06, 2019 4:38:30 PM com.enhancesys.common.logger
+FINE: [Thread]: 216 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  8830  Exit pullData service at -->Thu Jun 06 16:38:30 IST 2019 --- and took 246 milliseconds
+
+
+-- 1106
+
+Jun 06, 2019 4:39:57 PM com.enhancesys.common.logger
+FINE: [Thread]: 210 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  8616  Entry pullDataToFile.. Started at --> Thu Jun 06 16:39:57 IST 2019
+Jun 06, 2019 4:39:57 PM com.enhancesys.common.logger
+FINE: [Thread]: 210 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  8619  pullDataToFile service received interface id-->[1106]
+Jun 06, 2019 4:39:57 PM com.enhancesys.common.logger
+FINE: [Thread]: 210 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  8655  Started pullDataToFile.. 1106  Started at --> Thu Jun 06 16:39:57 IST 2019
+Jun 06, 2019 4:39:57 PM com.enhancesys.common.logger
+FINE: [Thread]: 210 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  8726  [dataConverter] class com.sun.proxy.$Proxy208
+Jun 06, 2019 4:39:57 PM com.enhancesys.common.logger
+FINE: [Thread]: 210 [ClassName]: com.enhancesys.integration.services.processor.GenericDailyDump [LineNumber]:  115  [GenericDailyDump] Entry processRequest ...InterfaceId :: 1106 StartTime :: 1559819397760
+Jun 06, 2019 4:39:57 PM com.enhancesys.common.logger
+FINE: [Thread]: 210 [ClassName]: com.enhancesys.integration.services.processor.GenericDailyDump [LineNumber]:  170  Self Notify Interface :: Inserting entry into tr_daily_dump_summary...
+Jun 06, 2019 4:39:57 PM com.enhancesys.common.logger
+FINE: [Thread]: 210 [ClassName]: com.enhancesys.integration.services.processor.GenericDailyDump [LineNumber]:  182  Inserted a record into tr_daily_dump_summary...
+Jun 06, 2019 4:39:57 PM com.enhancesys.common.logger
+FINE: [Thread]: 210 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  9322  Entry readFilePropertyBeans.. Started at --> Thu Jun 06 16:39:57 IST 2019
+Jun 06, 2019 4:39:57 PM com.enhancesys.common.logger
+FINE: [Thread]: 210 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  9336  readFilePropertyBeans service received interface id-->1106
+Jun 06, 2019 4:39:57 PM com.enhancesys.common.logger
+FINE: [Thread]: 210 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  10106  Exit readFilePropertyBeans service at -->Thu Jun 06 16:39:57 IST 2019 --- and took 25 milliseconds
+Jun 06, 2019 4:39:57 PM com.enhancesys.common.logger
+FINE: [Thread]: 210 [ClassName]: com.enhancesys.integration.services.processor.GenericDailyDump [LineNumber]:  252  Interface : 1106 : File : SOM_Summary_Organization_Wise_20190606.csv
+Jun 06, 2019 4:39:57 PM com.enhancesys.common.logger
+FINE: [Thread]: 210 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  8010  Entry createInterfaceFileSummary.. Started at --> Thu Jun 06 16:39:57 IST 2019
+Jun 06, 2019 4:39:57 PM com.enhancesys.common.logger
+FINE: [Thread]: 210 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  8023  createInterfaceFileSummary service received interfaceFileSummary for file id-->null
+Jun 06, 2019 4:39:57 PM com.enhancesys.common.logger
+FINE: [Thread]: 210 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  8098  Exit createInterfaceFileSummary service at -->Thu Jun 06 16:39:57 IST 2019 --- and took 27 milliseconds
+Jun 06, 2019 4:39:57 PM com.enhancesys.common.logger
+FINE: [Thread]: 210 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  7457  Entry createControlFile.. Started at --> Thu Jun 06 16:39:57 IST 2019
+Jun 06, 2019 4:39:57 PM com.enhancesys.common.logger
+FINE: [Thread]: 210 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  7472  createControlFile service received filePath -->/home/appuser/interfaces/S-NOC/interfaces/master_file/daily_dumps/som_summary_org_wise/SOM_Summary_Organization_Wise_20190606.csvtotalCount-->0fileName-->SOM_Summary_Organization_Wise_20190606fileFormat-->csvcurrentFileId-->10008contolFileFormat-->ctlcontolFilePath-->/home/appuser/interfaces/S-NOC/interfaces/master_file/daily_dumps/som_summary_org_wise/
+Jun 06, 2019 4:39:57 PM com.enhancesys.common.logger
+FINE: [Thread]: 210 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  7927  updateInterfaceFileSummaryDetails service received interfaceFileSummaryDetails object for file details id-->10008
+Jun 06, 2019 4:39:57 PM com.enhancesys.common.logger
+FINE: [Thread]: 210 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  7536  Exit control file creation service at -->Thu Jun 06 16:39:57 IST 2019 --- and took 45 milliseconds
+Jun 06, 2019 4:39:58 PM com.enhancesys.common.logger
+FINE: [Thread]: 210 [ClassName]: com.enhancesys.integration.services.processor.GenericDailyDump [LineNumber]:  543  1 Rows updated..
+Jun 06, 2019 4:39:58 PM com.enhancesys.common.logger
+FINE: [Thread]: 210 [ClassName]: com.enhancesys.integration.services.processor.GenericDailyDump [LineNumber]:  630  GenericDailyDump : Exit processRequest... InterfaceId ::  1106 and took 245 milliseconds
+Jun 06, 2019 4:39:58 PM com.enhancesys.common.logger
+FINE: [Thread]: 210 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  8766  Completed pullDataToFile.. 1106  Service at --> Thu Jun 06 16:39:58 IST 2019 --- and took 254 milliseconds
+Jun 06, 2019 4:39:58 PM com.enhancesys.common.logger
+FINE: [Thread]: 210 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  8830  Exit pullData service at -->Thu Jun 06 16:39:58 IST 2019 --- and took 257 milliseconds
+
+
+
+-- 1107
+
+
+Jun 06, 2019 4:40:55 PM com.enhancesys.common.logger
+FINE: [Thread]: 211 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  8616  Entry pullDataToFile.. Started at --> Thu Jun 06 16:40:55 IST 2019
+Jun 06, 2019 4:40:55 PM com.enhancesys.common.logger
+FINE: [Thread]: 211 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  8619  pullDataToFile service received interface id-->[1107]
+Jun 06, 2019 4:40:55 PM com.enhancesys.common.logger
+FINE: [Thread]: 211 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  8655  Started pullDataToFile.. 1107  Started at --> Thu Jun 06 16:40:55 IST 2019
+Jun 06, 2019 4:40:55 PM com.enhancesys.common.logger
+FINE: [Thread]: 211 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  8726  [dataConverter] class com.sun.proxy.$Proxy208
+Jun 06, 2019 4:40:55 PM com.enhancesys.common.logger
+FINE: [Thread]: 211 [ClassName]: com.enhancesys.integration.services.processor.GenericDailyDump [LineNumber]:  115  [GenericDailyDump] Entry processRequest ...InterfaceId :: 1107 StartTime :: 1559819455553
+Jun 06, 2019 4:40:55 PM com.enhancesys.common.logger
+FINE: [Thread]: 211 [ClassName]: com.enhancesys.integration.services.processor.GenericDailyDump [LineNumber]:  170  Self Notify Interface :: Inserting entry into tr_daily_dump_summary...
+Jun 06, 2019 4:40:55 PM com.enhancesys.common.logger
+FINE: [Thread]: 211 [ClassName]: com.enhancesys.integration.services.processor.GenericDailyDump [LineNumber]:  182  Inserted a record into tr_daily_dump_summary...
+Jun 06, 2019 4:40:55 PM com.enhancesys.common.logger
+FINE: [Thread]: 211 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  9322  Entry readFilePropertyBeans.. Started at --> Thu Jun 06 16:40:55 IST 2019
+Jun 06, 2019 4:40:55 PM com.enhancesys.common.logger
+FINE: [Thread]: 211 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  9336  readFilePropertyBeans service received interface id-->1107
+Jun 06, 2019 4:40:55 PM com.enhancesys.common.logger
+FINE: [Thread]: 211 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  10106  Exit readFilePropertyBeans service at -->Thu Jun 06 16:40:55 IST 2019 --- and took 26 milliseconds
+Jun 06, 2019 4:40:55 PM com.enhancesys.common.logger
+FINE: [Thread]: 211 [ClassName]: com.enhancesys.integration.services.processor.GenericDailyDump [LineNumber]:  252  Interface : 1107 : File : POI_Revenue_LACCI_Wise_20190605.csv
+Jun 06, 2019 4:40:55 PM com.enhancesys.common.logger
+FINE: [Thread]: 211 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  8010  Entry createInterfaceFileSummary.. Started at --> Thu Jun 06 16:40:55 IST 2019
+Jun 06, 2019 4:40:55 PM com.enhancesys.common.logger
+FINE: [Thread]: 211 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  8023  createInterfaceFileSummary service received interfaceFileSummary for file id-->null
+Jun 06, 2019 4:40:55 PM com.enhancesys.common.logger
+FINE: [Thread]: 211 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  8098  Exit createInterfaceFileSummary service at -->Thu Jun 06 16:40:55 IST 2019 --- and took 27 milliseconds
+Jun 06, 2019 4:40:55 PM com.enhancesys.common.logger
+FINE: [Thread]: 211 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  7457  Entry createControlFile.. Started at --> Thu Jun 06 16:40:55 IST 2019
+Jun 06, 2019 4:40:55 PM com.enhancesys.common.logger
+FINE: [Thread]: 211 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  7472  createControlFile service received filePath -->/home/appuser/interfaces/S-NOC/interfaces/master_file/daily_dumps/poi_revenue_lacci_wise/POI_Revenue_LACCI_Wise_20190605.csvtotalCount-->0fileName-->POI_Revenue_LACCI_Wise_20190605fileFormat-->csvcurrentFileId-->10009contolFileFormat-->ctlcontolFilePath-->/home/appuser/interfaces/S-NOC/interfaces/master_file/daily_dumps/poi_revenue_lacci_wise/
+Jun 06, 2019 4:40:55 PM com.enhancesys.common.logger
+FINE: [Thread]: 211 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  7927  updateInterfaceFileSummaryDetails service received interfaceFileSummaryDetails object for file details id-->10009
+Jun 06, 2019 4:40:55 PM com.enhancesys.common.logger
+FINE: [Thread]: 211 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  7536  Exit control file creation service at -->Thu Jun 06 16:40:55 IST 2019 --- and took 48 milliseconds
+Jun 06, 2019 4:40:55 PM com.enhancesys.common.logger
+FINE: [Thread]: 211 [ClassName]: com.enhancesys.integration.services.processor.GenericDailyDump [LineNumber]:  252  Interface : 1107 : File : POI_Revenue_LACCI_Wise_20190606.csv
+Jun 06, 2019 4:40:55 PM com.enhancesys.common.logger
+FINE: [Thread]: 211 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  8010  Entry createInterfaceFileSummary.. Started at --> Thu Jun 06 16:40:55 IST 2019
+Jun 06, 2019 4:40:55 PM com.enhancesys.common.logger
+FINE: [Thread]: 211 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  8023  createInterfaceFileSummary service received interfaceFileSummary for file id-->null
+Jun 06, 2019 4:40:55 PM com.enhancesys.common.logger
+FINE: [Thread]: 211 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  8098  Exit createInterfaceFileSummary service at -->Thu Jun 06 16:40:55 IST 2019 --- and took 26 milliseconds
+Jun 06, 2019 4:40:55 PM com.enhancesys.common.logger
+FINE: [Thread]: 211 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  7457  Entry createControlFile.. Started at --> Thu Jun 06 16:40:55 IST 2019
+Jun 06, 2019 4:40:55 PM com.enhancesys.common.logger
+FINE: [Thread]: 211 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  7472  createControlFile service received filePath -->/home/appuser/interfaces/S-NOC/interfaces/master_file/daily_dumps/poi_revenue_lacci_wise/POI_Revenue_LACCI_Wise_20190606.csvtotalCount-->0fileName-->POI_Revenue_LACCI_Wise_20190606fileFormat-->csvcurrentFileId-->10010contolFileFormat-->ctlcontolFilePath-->/home/appuser/interfaces/S-NOC/interfaces/master_file/daily_dumps/poi_revenue_lacci_wise/
+Jun 06, 2019 4:40:55 PM com.enhancesys.common.logger
+FINE: [Thread]: 211 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  7927  updateInterfaceFileSummaryDetails service received interfaceFileSummaryDetails object for file details id-->10010
+Jun 06, 2019 4:40:55 PM com.enhancesys.common.logger
+FINE: [Thread]: 211 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  7536  Exit control file creation service at -->Thu Jun 06 16:40:55 IST 2019 --- and took 42 milliseconds
+Jun 06, 2019 4:40:55 PM com.enhancesys.common.logger
+FINE: [Thread]: 211 [ClassName]: com.enhancesys.integration.services.processor.GenericDailyDump [LineNumber]:  543  2 Rows updated..
+Jun 06, 2019 4:40:55 PM com.enhancesys.common.logger
+FINE: [Thread]: 211 [ClassName]: com.enhancesys.integration.services.processor.GenericDailyDump [LineNumber]:  630  GenericDailyDump : Exit processRequest... InterfaceId ::  1107 and took 358 milliseconds
+Jun 06, 2019 4:40:55 PM com.enhancesys.common.logger
+FINE: [Thread]: 211 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  8766  Completed pullDataToFile.. 1107  Service at --> Thu Jun 06 16:40:55 IST 2019 --- and took 366 milliseconds
+Jun 06, 2019 4:40:55 PM com.enhancesys.common.logger
+FINE: [Thread]: 211 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  8830  Exit pullData service at -->Thu Jun 06 16:40:55 IST 2019 --- and took 369 milliseconds
+
+-- 1108
+
+Jun 06, 2019 4:42:06 PM com.enhancesys.common.logger
+FINE: [Thread]: 217 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  8616  Entry pullDataToFile.. Started at --> Thu Jun 06 16:42:06 IST 2019
+Jun 06, 2019 4:42:06 PM com.enhancesys.common.logger
+FINE: [Thread]: 217 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  8619  pullDataToFile service received interface id-->[1108]
+Jun 06, 2019 4:42:06 PM com.enhancesys.common.logger
+FINE: [Thread]: 217 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  8655  Started pullDataToFile.. 1108  Started at --> Thu Jun 06 16:42:06 IST 2019
+Jun 06, 2019 4:42:06 PM com.enhancesys.common.logger
+FINE: [Thread]: 217 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  8726  [dataConverter] class com.sun.proxy.$Proxy208
+Jun 06, 2019 4:42:06 PM com.enhancesys.common.logger
+FINE: [Thread]: 217 [ClassName]: com.enhancesys.integration.services.processor.GenericDailyDump [LineNumber]:  115  [GenericDailyDump] Entry processRequest ...InterfaceId :: 1108 StartTime :: 1559819526108
+Jun 06, 2019 4:42:06 PM com.enhancesys.common.logger
+FINE: [Thread]: 217 [ClassName]: com.enhancesys.integration.services.processor.GenericDailyDump [LineNumber]:  170  Self Notify Interface :: Inserting entry into tr_daily_dump_summary...
+Jun 06, 2019 4:42:06 PM com.enhancesys.common.logger
+FINE: [Thread]: 217 [ClassName]: com.enhancesys.integration.services.processor.GenericDailyDump [LineNumber]:  182  Inserted a record into tr_daily_dump_summary...
+Jun 06, 2019 4:42:06 PM com.enhancesys.common.logger
+FINE: [Thread]: 217 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  9322  Entry readFilePropertyBeans.. Started at --> Thu Jun 06 16:42:06 IST 2019
+Jun 06, 2019 4:42:06 PM com.enhancesys.common.logger
+FINE: [Thread]: 217 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  9336  readFilePropertyBeans service received interface id-->1108
+Jun 06, 2019 4:42:06 PM com.enhancesys.common.logger
+FINE: [Thread]: 217 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  10106  Exit readFilePropertyBeans service at -->Thu Jun 06 16:42:06 IST 2019 --- and took 26 milliseconds
+Jun 06, 2019 4:42:06 PM com.enhancesys.common.logger
+FINE: [Thread]: 217 [ClassName]: com.enhancesys.integration.services.processor.GenericDailyDump [LineNumber]:  252  Interface : 1108 : File : POI_Revenue_Org_Wise_20190606.csv
+Jun 06, 2019 4:42:06 PM com.enhancesys.common.logger
+FINE: [Thread]: 217 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  8010  Entry createInterfaceFileSummary.. Started at --> Thu Jun 06 16:42:06 IST 2019
+Jun 06, 2019 4:42:06 PM com.enhancesys.common.logger
+FINE: [Thread]: 217 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  8023  createInterfaceFileSummary service received interfaceFileSummary for file id-->null
+Jun 06, 2019 4:42:06 PM com.enhancesys.common.logger
+FINE: [Thread]: 217 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  8098  Exit createInterfaceFileSummary service at -->Thu Jun 06 16:42:06 IST 2019 --- and took 26 milliseconds
+Jun 06, 2019 4:42:06 PM com.enhancesys.common.logger
+FINE: [Thread]: 217 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  7457  Entry createControlFile.. Started at --> Thu Jun 06 16:42:06 IST 2019
+Jun 06, 2019 4:42:06 PM com.enhancesys.common.logger
+FINE: [Thread]: 217 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  7472  createControlFile service received filePath -->/home/appuser/interfaces/S-NOC/interfaces/master_file/daily_dumps/poi_revenue_org_wise/POI_Revenue_Org_Wise_20190606.csvtotalCount-->0fileName-->POI_Revenue_Org_Wise_20190606fileFormat-->csvcurrentFileId-->10011contolFileFormat-->ctlcontolFilePath-->/home/appuser/interfaces/S-NOC/interfaces/master_file/daily_dumps/poi_revenue_org_wise/
+Jun 06, 2019 4:42:06 PM com.enhancesys.common.logger
+FINE: [Thread]: 217 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  7927  updateInterfaceFileSummaryDetails service received interfaceFileSummaryDetails object for file details id-->10011
+Jun 06, 2019 4:42:06 PM com.enhancesys.common.logger
+FINE: [Thread]: 217 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  7536  Exit control file creation service at -->Thu Jun 06 16:42:06 IST 2019 --- and took 45 milliseconds
+Jun 06, 2019 4:42:06 PM com.enhancesys.common.logger
+FINE: [Thread]: 217 [ClassName]: com.enhancesys.integration.services.processor.GenericDailyDump [LineNumber]:  543  1 Rows updated..
+Jun 06, 2019 4:42:06 PM com.enhancesys.common.logger
+FINE: [Thread]: 217 [ClassName]: com.enhancesys.integration.services.processor.GenericDailyDump [LineNumber]:  630  GenericDailyDump : Exit processRequest... InterfaceId ::  1108 and took 245 milliseconds
+Jun 06, 2019 4:42:06 PM com.enhancesys.common.logger
+FINE: [Thread]: 217 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  8766  Completed pullDataToFile.. 1108  Service at --> Thu Jun 06 16:42:06 IST 2019 --- and took 252 milliseconds
+Jun 06, 2019 4:42:06 PM com.enhancesys.common.logger
+FINE: [Thread]: 217 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  8830  Exit pullData service at -->Thu Jun 06 16:42:06 IST 2019 --- and took 254 milliseconds
+
+
+-- 1109
+
+
+Jun 06, 2019 4:44:03 PM com.enhancesys.common.logger
+FINE: [Thread]: 216 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  8616  Entry pullDataToFile.. Started at --> Thu Jun 06 16:44:03 IST 2019
+Jun 06, 2019 4:44:03 PM com.enhancesys.common.logger
+FINE: [Thread]: 216 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  8619  pullDataToFile service received interface id-->[1109]
+Jun 06, 2019 4:44:03 PM com.enhancesys.common.logger
+FINE: [Thread]: 216 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  8655  Started pullDataToFile.. 1109  Started at --> Thu Jun 06 16:44:03 IST 2019
+Jun 06, 2019 4:44:03 PM com.enhancesys.common.logger
+FINE: [Thread]: 216 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  8726  [dataConverter] class com.sun.proxy.$Proxy208
+Jun 06, 2019 4:44:03 PM com.enhancesys.common.logger
+FINE: [Thread]: 216 [ClassName]: com.enhancesys.integration.services.processor.GenericDailyDump [LineNumber]:  115  [GenericDailyDump] Entry processRequest ...InterfaceId :: 1109 StartTime :: 1559819643895
+Jun 06, 2019 4:44:03 PM com.enhancesys.common.logger
+FINE: [Thread]: 216 [ClassName]: com.enhancesys.integration.services.processor.GenericDailyDump [LineNumber]:  170  Self Notify Interface :: Inserting entry into tr_daily_dump_summary...
+Jun 06, 2019 4:44:03 PM com.enhancesys.common.logger
+FINE: [Thread]: 216 [ClassName]: com.enhancesys.integration.services.processor.GenericDailyDump [LineNumber]:  182  Inserted a record into tr_daily_dump_summary...
+Jun 06, 2019 4:44:03 PM com.enhancesys.common.logger
+FINE: [Thread]: 216 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  9322  Entry readFilePropertyBeans.. Started at --> Thu Jun 06 16:44:03 IST 2019
+Jun 06, 2019 4:44:03 PM com.enhancesys.common.logger
+FINE: [Thread]: 216 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  9336  readFilePropertyBeans service received interface id-->1109
+Jun 06, 2019 4:44:03 PM com.enhancesys.common.logger
+FINE: [Thread]: 216 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  10106  Exit readFilePropertyBeans service at -->Thu Jun 06 16:44:03 IST 2019 --- and took 26 milliseconds
+Jun 06, 2019 4:44:03 PM com.enhancesys.common.logger
+FINE: [Thread]: 216 [ClassName]: com.enhancesys.integration.services.processor.GenericDailyDump [LineNumber]:  252  Interface : 1109 : File : Hotspot_Performance_20190606.csv
+Jun 06, 2019 4:44:03 PM com.enhancesys.common.logger
+FINE: [Thread]: 216 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  8010  Entry createInterfaceFileSummary.. Started at --> Thu Jun 06 16:44:03 IST 2019
+Jun 06, 2019 4:44:03 PM com.enhancesys.common.logger
+FINE: [Thread]: 216 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  8023  createInterfaceFileSummary service received interfaceFileSummary for file id-->null
+Jun 06, 2019 4:44:04 PM com.enhancesys.common.logger
+FINE: [Thread]: 216 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  8098  Exit createInterfaceFileSummary service at -->Thu Jun 06 16:44:04 IST 2019 --- and took 26 milliseconds
+Jun 06, 2019 4:44:04 PM com.enhancesys.common.logger
+FINE: [Thread]: 216 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  7457  Entry createControlFile.. Started at --> Thu Jun 06 16:44:04 IST 2019
+Jun 06, 2019 4:44:04 PM com.enhancesys.common.logger
+FINE: [Thread]: 216 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  7472  createControlFile service received filePath -->/home/appuser/interfaces/S-NOC/interfaces/master_file/daily_dumps/hotspot_performance/Hotspot_Performance_20190606.csvtotalCount-->0fileName-->Hotspot_Performance_20190606fileFormat-->csvcurrentFileId-->10012contolFileFormat-->ctlcontolFilePath-->/home/appuser/interfaces/S-NOC/interfaces/master_file/daily_dumps/hotspot_performance/
+Jun 06, 2019 4:44:04 PM com.enhancesys.common.logger
+FINE: [Thread]: 216 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  7927  updateInterfaceFileSummaryDetails service received interfaceFileSummaryDetails object for file details id-->10012
+Jun 06, 2019 4:44:04 PM com.enhancesys.common.logger
+FINE: [Thread]: 216 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  7536  Exit control file creation service at -->Thu Jun 06 16:44:04 IST 2019 --- and took 45 milliseconds
+Jun 06, 2019 4:44:04 PM com.enhancesys.common.logger
+FINE: [Thread]: 216 [ClassName]: com.enhancesys.integration.services.processor.GenericDailyDump [LineNumber]:  543  1 Rows updated..
+Jun 06, 2019 4:44:04 PM com.enhancesys.common.logger
+FINE: [Thread]: 216 [ClassName]: com.enhancesys.integration.services.processor.GenericDailyDump [LineNumber]:  630  GenericDailyDump : Exit processRequest... InterfaceId ::  1109 and took 237 milliseconds
+Jun 06, 2019 4:44:04 PM com.enhancesys.common.logger
+FINE: [Thread]: 216 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  8766  Completed pullDataToFile.. 1109  Service at --> Thu Jun 06 16:44:04 IST 2019 --- and took 248 milliseconds
+Jun 06, 2019 4:44:04 PM com.enhancesys.common.logger
+FINE: [Thread]: 216 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  8830  Exit pullData service at -->Thu Jun 06 16:44:04 IST 2019 --- and took 251 milliseconds
+
+
+-- 1110
+
+
+Jun 06, 2019 4:45:32 PM com.enhancesys.common.logger
+FINE: [Thread]: 210 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  8616  Entry pullDataToFile.. Started at --> Thu Jun 06 16:45:32 IST 2019
+Jun 06, 2019 4:45:32 PM com.enhancesys.common.logger
+FINE: [Thread]: 210 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  8619  pullDataToFile service received interface id-->[1110]
+Jun 06, 2019 4:45:32 PM com.enhancesys.common.logger
+FINE: [Thread]: 210 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  8655  Started pullDataToFile.. 1110  Started at --> Thu Jun 06 16:45:32 IST 2019
+Jun 06, 2019 4:45:32 PM com.enhancesys.common.logger
+FINE: [Thread]: 210 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  8726  [dataConverter] class com.sun.proxy.$Proxy208
+Jun 06, 2019 4:45:32 PM com.enhancesys.common.logger
+FINE: [Thread]: 210 [ClassName]: com.enhancesys.integration.services.processor.GenericDailyDump [LineNumber]:  115  [GenericDailyDump] Entry processRequest ...InterfaceId :: 1110 StartTime :: 1559819732247
+Jun 06, 2019 4:45:32 PM com.enhancesys.common.logger
+FINE: [Thread]: 210 [ClassName]: com.enhancesys.integration.services.processor.GenericDailyDump [LineNumber]:  170  Self Notify Interface :: Inserting entry into tr_daily_dump_summary...
+Jun 06, 2019 4:45:32 PM com.enhancesys.common.logger
+FINE: [Thread]: 210 [ClassName]: com.enhancesys.integration.services.processor.GenericDailyDump [LineNumber]:  182  Inserted a record into tr_daily_dump_summary...
+Jun 06, 2019 4:45:32 PM com.enhancesys.common.logger
+FINE: [Thread]: 210 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  9322  Entry readFilePropertyBeans.. Started at --> Thu Jun 06 16:45:32 IST 2019
+Jun 06, 2019 4:45:32 PM com.enhancesys.common.logger
+FINE: [Thread]: 210 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  9336  readFilePropertyBeans service received interface id-->1110
+Jun 06, 2019 4:45:32 PM com.enhancesys.common.logger
+FINE: [Thread]: 210 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  10106  Exit readFilePropertyBeans service at -->Thu Jun 06 16:45:32 IST 2019 --- and took 14 milliseconds
+Jun 06, 2019 4:45:32 PM com.enhancesys.common.logger
+FINE: [Thread]: 210 [ClassName]: com.enhancesys.integration.services.processor.GenericDailyDump [LineNumber]:  252  Interface : 1110 : File : Reload_A_By_LACCI_20190606.csv
+Jun 06, 2019 4:45:32 PM com.enhancesys.common.logger
+FINE: [Thread]: 210 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  8010  Entry createInterfaceFileSummary.. Started at --> Thu Jun 06 16:45:32 IST 2019
+Jun 06, 2019 4:45:32 PM com.enhancesys.common.logger
+FINE: [Thread]: 210 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  8023  createInterfaceFileSummary service received interfaceFileSummary for file id-->null
+Jun 06, 2019 4:45:32 PM com.enhancesys.common.logger
+FINE: [Thread]: 210 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  8098  Exit createInterfaceFileSummary service at -->Thu Jun 06 16:45:32 IST 2019 --- and took 15 milliseconds
+Jun 06, 2019 4:45:32 PM com.enhancesys.common.logger
+FINE: [Thread]: 210 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  7457  Entry createControlFile.. Started at --> Thu Jun 06 16:45:32 IST 2019
+Jun 06, 2019 4:45:32 PM com.enhancesys.common.logger
+FINE: [Thread]: 210 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  7472  createControlFile service received filePath -->/home/appuser/interfaces/S-NOC/interfaces/master_file/daily_dumps/reload_a_by_lacci/Reload_A_By_LACCI_20190606.csvtotalCount-->0fileName-->Reload_A_By_LACCI_20190606fileFormat-->csvcurrentFileId-->10013contolFileFormat-->ctlcontolFilePath-->/home/appuser/interfaces/S-NOC/interfaces/master_file/daily_dumps/reload_a_by_lacci/
+Jun 06, 2019 4:45:32 PM com.enhancesys.common.logger
+FINE: [Thread]: 210 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  7927  updateInterfaceFileSummaryDetails service received interfaceFileSummaryDetails object for file details id-->10013
+Jun 06, 2019 4:45:32 PM com.enhancesys.common.logger
+FINE: [Thread]: 210 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  7536  Exit control file creation service at -->Thu Jun 06 16:45:32 IST 2019 --- and took 30 milliseconds
+Jun 06, 2019 4:45:32 PM com.enhancesys.common.logger
+FINE: [Thread]: 210 [ClassName]: com.enhancesys.integration.services.processor.GenericDailyDump [LineNumber]:  543  1 Rows updated..
+Jun 06, 2019 4:45:32 PM com.enhancesys.common.logger
+FINE: [Thread]: 210 [ClassName]: com.enhancesys.integration.services.processor.GenericDailyDump [LineNumber]:  630  GenericDailyDump : Exit processRequest... InterfaceId ::  1110 and took 160 milliseconds
+Jun 06, 2019 4:45:32 PM com.enhancesys.common.logger
+FINE: [Thread]: 210 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  8766  Completed pullDataToFile.. 1110  Service at --> Thu Jun 06 16:45:32 IST 2019 --- and took 166 milliseconds
+Jun 06, 2019 4:45:32 PM com.enhancesys.common.logger
+FINE: [Thread]: 210 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  8830  Exit pullData service at -->Thu Jun 06 16:45:32 IST 2019 --- and took 167 milliseconds
+
+
+-- 1111
+
+Jun 06, 2019 4:46:26 PM com.enhancesys.common.logger
+FINE: [Thread]: 211 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  8616  Entry pullDataToFile.. Started at --> Thu Jun 06 16:46:26 IST 2019
+Jun 06, 2019 4:46:26 PM com.enhancesys.common.logger
+FINE: [Thread]: 211 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  8619  pullDataToFile service received interface id-->[1111]
+Jun 06, 2019 4:46:26 PM com.enhancesys.common.logger
+FINE: [Thread]: 211 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  8655  Started pullDataToFile.. 1111  Started at --> Thu Jun 06 16:46:26 IST 2019
+Jun 06, 2019 4:46:26 PM com.enhancesys.common.logger
+FINE: [Thread]: 211 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  8726  [dataConverter] class com.sun.proxy.$Proxy208
+Jun 06, 2019 4:46:26 PM com.enhancesys.common.logger
+FINE: [Thread]: 211 [ClassName]: com.enhancesys.integration.services.processor.GenericDailyDump [LineNumber]:  115  [GenericDailyDump] Entry processRequest ...InterfaceId :: 1111 StartTime :: 1559819786512
+Jun 06, 2019 4:46:26 PM com.enhancesys.common.logger
+FINE: [Thread]: 211 [ClassName]: com.enhancesys.integration.services.processor.GenericDailyDump [LineNumber]:  170  Self Notify Interface :: Inserting entry into tr_daily_dump_summary...
+Jun 06, 2019 4:46:26 PM com.enhancesys.common.logger
+FINE: [Thread]: 211 [ClassName]: com.enhancesys.integration.services.processor.GenericDailyDump [LineNumber]:  182  Inserted a record into tr_daily_dump_summary...
+Jun 06, 2019 4:46:26 PM com.enhancesys.common.logger
+FINE: [Thread]: 211 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  9322  Entry readFilePropertyBeans.. Started at --> Thu Jun 06 16:46:26 IST 2019
+Jun 06, 2019 4:46:26 PM com.enhancesys.common.logger
+FINE: [Thread]: 211 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  9336  readFilePropertyBeans service received interface id-->1111
+Jun 06, 2019 4:46:26 PM com.enhancesys.common.logger
+FINE: [Thread]: 211 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  10106  Exit readFilePropertyBeans service at -->Thu Jun 06 16:46:26 IST 2019 --- and took 15 milliseconds
+Jun 06, 2019 4:46:26 PM com.enhancesys.common.logger
+FINE: [Thread]: 211 [ClassName]: com.enhancesys.integration.services.processor.GenericDailyDump [LineNumber]:  252  Interface : 1111 : File : Reload_B_By_LACCI_20190606.csv
+Jun 06, 2019 4:46:26 PM com.enhancesys.common.logger
+FINE: [Thread]: 211 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  8010  Entry createInterfaceFileSummary.. Started at --> Thu Jun 06 16:46:26 IST 2019
+Jun 06, 2019 4:46:26 PM com.enhancesys.common.logger
+FINE: [Thread]: 211 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  8023  createInterfaceFileSummary service received interfaceFileSummary for file id-->null
+Jun 06, 2019 4:46:26 PM com.enhancesys.common.logger
+FINE: [Thread]: 211 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  8098  Exit createInterfaceFileSummary service at -->Thu Jun 06 16:46:26 IST 2019 --- and took 14 milliseconds
+Jun 06, 2019 4:46:26 PM com.enhancesys.common.logger
+FINE: [Thread]: 211 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  7457  Entry createControlFile.. Started at --> Thu Jun 06 16:46:26 IST 2019
+Jun 06, 2019 4:46:26 PM com.enhancesys.common.logger
+FINE: [Thread]: 211 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  7472  createControlFile service received filePath -->/home/appuser/interfaces/S-NOC/interfaces/master_file/daily_dumps/reload_b_by_lacci/Reload_B_By_LACCI_20190606.csvtotalCount-->0fileName-->Reload_B_By_LACCI_20190606fileFormat-->csvcurrentFileId-->10014contolFileFormat-->ctlcontolFilePath-->/home/appuser/interfaces/S-NOC/interfaces/master_file/daily_dumps/reload_b_by_lacci/
+Jun 06, 2019 4:46:26 PM com.enhancesys.common.logger
+FINE: [Thread]: 211 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  7927  updateInterfaceFileSummaryDetails service received interfaceFileSummaryDetails object for file details id-->10014
+Jun 06, 2019 4:46:26 PM com.enhancesys.common.logger
+FINE: [Thread]: 211 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  7536  Exit control file creation service at -->Thu Jun 06 16:46:26 IST 2019 --- and took 31 milliseconds
+Jun 06, 2019 4:46:26 PM com.enhancesys.common.logger
+FINE: [Thread]: 211 [ClassName]: com.enhancesys.integration.services.processor.GenericDailyDump [LineNumber]:  543  1 Rows updated..
+Jun 06, 2019 4:46:26 PM com.enhancesys.common.logger
+FINE: [Thread]: 211 [ClassName]: com.enhancesys.integration.services.processor.GenericDailyDump [LineNumber]:  630  GenericDailyDump : Exit processRequest... InterfaceId ::  1111 and took 148 milliseconds
+Jun 06, 2019 4:46:26 PM com.enhancesys.common.logger
+FINE: [Thread]: 211 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  8766  Completed pullDataToFile.. 1111  Service at --> Thu Jun 06 16:46:26 IST 2019 --- and took 156 milliseconds
+Jun 06, 2019 4:46:26 PM com.enhancesys.common.logger
+FINE: [Thread]: 211 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  8830  Exit pullData service at -->Thu Jun 06 16:46:26 IST 2019 --- and took 159 milliseconds
+
+
+-- 1112
+
+Jun 06, 2019 4:47:23 PM com.enhancesys.common.logger
+FINE: [Thread]: 217 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  8616  Entry pullDataToFile.. Started at --> Thu Jun 06 16:47:23 IST 2019
+Jun 06, 2019 4:47:23 PM com.enhancesys.common.logger
+FINE: [Thread]: 217 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  8619  pullDataToFile service received interface id-->[1112]
+Jun 06, 2019 4:47:23 PM com.enhancesys.common.logger
+FINE: [Thread]: 217 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  8655  Started pullDataToFile.. 1112  Started at --> Thu Jun 06 16:47:23 IST 2019
+Jun 06, 2019 4:47:23 PM com.enhancesys.common.logger
+FINE: [Thread]: 217 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  8726  [dataConverter] class com.sun.proxy.$Proxy208
+Jun 06, 2019 4:47:23 PM com.enhancesys.common.logger
+FINE: [Thread]: 217 [ClassName]: com.enhancesys.integration.services.processor.GenericDailyDump [LineNumber]:  115  [GenericDailyDump] Entry processRequest ...InterfaceId :: 1112 StartTime :: 1559819843643
+Jun 06, 2019 4:47:23 PM com.enhancesys.common.logger
+FINE: [Thread]: 217 [ClassName]: com.enhancesys.integration.services.processor.GenericDailyDump [LineNumber]:  170  Self Notify Interface :: Inserting entry into tr_daily_dump_summary...
+Jun 06, 2019 4:47:23 PM com.enhancesys.common.logger
+FINE: [Thread]: 217 [ClassName]: com.enhancesys.integration.services.processor.GenericDailyDump [LineNumber]:  182  Inserted a record into tr_daily_dump_summary...
+Jun 06, 2019 4:47:23 PM com.enhancesys.common.logger
+FINE: [Thread]: 217 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  9322  Entry readFilePropertyBeans.. Started at --> Thu Jun 06 16:47:23 IST 2019
+Jun 06, 2019 4:47:23 PM com.enhancesys.common.logger
+FINE: [Thread]: 217 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  9336  readFilePropertyBeans service received interface id-->1112
+Jun 06, 2019 4:47:23 PM com.enhancesys.common.logger
+FINE: [Thread]: 217 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  10106  Exit readFilePropertyBeans service at -->Thu Jun 06 16:47:23 IST 2019 --- and took 14 milliseconds
+Jun 06, 2019 4:47:23 PM com.enhancesys.common.logger
+FINE: [Thread]: 217 [ClassName]: com.enhancesys.integration.services.processor.GenericDailyDump [LineNumber]:  252  Interface : 1112 : File : Detail_Package_Activation_A_20190606.csv
+Jun 06, 2019 4:47:23 PM com.enhancesys.common.logger
+FINE: [Thread]: 217 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  8010  Entry createInterfaceFileSummary.. Started at --> Thu Jun 06 16:47:23 IST 2019
+Jun 06, 2019 4:47:23 PM com.enhancesys.common.logger
+FINE: [Thread]: 217 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  8023  createInterfaceFileSummary service received interfaceFileSummary for file id-->null
+Jun 06, 2019 4:47:23 PM com.enhancesys.common.logger
+FINE: [Thread]: 217 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  8098  Exit createInterfaceFileSummary service at -->Thu Jun 06 16:47:23 IST 2019 --- and took 14 milliseconds
+Jun 06, 2019 4:47:23 PM com.enhancesys.common.logger
+FINE: [Thread]: 217 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  7457  Entry createControlFile.. Started at --> Thu Jun 06 16:47:23 IST 2019
+Jun 06, 2019 4:47:23 PM com.enhancesys.common.logger
+FINE: [Thread]: 217 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  7472  createControlFile service received filePath -->/home/appuser/interfaces/S-NOC/interfaces/master_file/daily_dumps/detail_package_act_a/Detail_Package_Activation_A_20190606.csvtotalCount-->0fileName-->Detail_Package_Activation_A_20190606fileFormat-->csvcurrentFileId-->10015contolFileFormat-->ctlcontolFilePath-->/home/appuser/interfaces/S-NOC/interfaces/master_file/daily_dumps/detail_package_act_a/
+Jun 06, 2019 4:47:23 PM com.enhancesys.common.logger
+FINE: [Thread]: 217 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  7927  updateInterfaceFileSummaryDetails service received interfaceFileSummaryDetails object for file details id-->10015
+Jun 06, 2019 4:47:23 PM com.enhancesys.common.logger
+FINE: [Thread]: 217 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  7536  Exit control file creation service at -->Thu Jun 06 16:47:23 IST 2019 --- and took 24 milliseconds
+Jun 06, 2019 4:47:23 PM com.enhancesys.common.logger
+FINE: [Thread]: 217 [ClassName]: com.enhancesys.integration.services.processor.GenericDailyDump [LineNumber]:  543  1 Rows updated..
+Jun 06, 2019 4:47:23 PM com.enhancesys.common.logger
+FINE: [Thread]: 217 [ClassName]: com.enhancesys.integration.services.processor.GenericDailyDump [LineNumber]:  630  GenericDailyDump : Exit processRequest... InterfaceId ::  1112 and took 145 milliseconds
+Jun 06, 2019 4:47:23 PM com.enhancesys.common.logger
+FINE: [Thread]: 217 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  8766  Completed pullDataToFile.. 1112  Service at --> Thu Jun 06 16:47:23 IST 2019 --- and took 151 milliseconds
+Jun 06, 2019 4:47:23 PM com.enhancesys.common.logger
+FINE: [Thread]: 217 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  8830  Exit pullData service at -->Thu Jun 06 16:47:23 IST 2019 --- and took 152 milliseconds
+
+
+-- 1113
+
+
+Jun 06, 2019 4:51:14 PM com.enhancesys.common.logger
+FINE: [Thread]: 1 [ClassName]: com.enhancesys.common.configuration.PropertiesLoader [LineNumber]:  129  Reading Properties file...
+Jun 06, 2019 4:51:14 PM com.enhancesys.common.logger
+FINE: [Thread]: 1 [ClassName]: com.enhancesys.integration.services.util.TemplateLoader [LineNumber]:  71  File /home/appuser/snoc/snocconf/interfaceconf/integration-json-templates/Edit_Product.json is loading to template loader
+Jun 06, 2019 4:51:14 PM com.enhancesys.common.logger
+FINE: [Thread]: 1 [ClassName]: com.enhancesys.integration.services.util.TemplateLoader [LineNumber]:  71  File /home/appuser/snoc/snocconf/interfaceconf/integration-json-templates/Interface_Transactions_validation.json is loading to template loader
+Jun 06, 2019 4:51:14 PM com.enhancesys.common.logger
+FINE: [Thread]: 1 [ClassName]: com.enhancesys.integration.services.util.TemplateLoader [LineNumber]:  71  File /home/appuser/snoc/snocconf/interfaceconf/integration-json-templates/Product_Creation.json is loading to template loader
+Jun 06, 2019 4:51:31 PM com.enhancesys.common.logger
+FINE: [Thread]: 203 [ClassName]: com.enhancesys.integration.services.util.TokuUser [LineNumber]:  33  Initiating TokuMx-Java Adapter.....
+Jun 06, 2019 4:51:31 PM com.enhancesys.common.logger
+FINE: [Thread]: 203 [ClassName]: com.enhancesys.integration.services.util.TokuUser [LineNumber]:  42  TokuMx-Java Adapter Initiated Successfully For Replica-Set user....!
+Jun 06, 2019 4:51:31 PM com.enhancesys.common.logger
+FINE: [Thread]: 203 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  8616  Entry pullDataToFile.. Started at --> Thu Jun 06 16:51:31 IST 2019
+Jun 06, 2019 4:51:31 PM com.enhancesys.common.logger
+FINE: [Thread]: 203 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  8619  pullDataToFile service received interface id-->[1113]
+Jun 06, 2019 4:51:31 PM com.enhancesys.common.logger
+FINE: [Thread]: 203 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  8655  Started pullDataToFile.. 1113  Started at --> Thu Jun 06 16:51:31 IST 2019
+Jun 06, 2019 4:51:31 PM com.enhancesys.common.logger
+FINE: [Thread]: 203 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  8726  [dataConverter] class com.sun.proxy.$Proxy208
+Jun 06, 2019 4:51:31 PM com.enhancesys.common.logger
+FINE: [Thread]: 203 [ClassName]: com.enhancesys.integration.services.processor.GenericDailyDump [LineNumber]:  115  [GenericDailyDump] Entry processRequest ...InterfaceId :: 1113 StartTime :: 1559820091535
+Jun 06, 2019 4:51:31 PM com.enhancesys.common.logger
+FINE: [Thread]: 203 [ClassName]: com.enhancesys.integration.services.util.TokuStandAloneUser [LineNumber]:  32  Initiating TokuMx-Java Adapter.....
+Jun 06, 2019 4:51:31 PM com.enhancesys.common.logger
+FINE: [Thread]: 203 [ClassName]: com.enhancesys.integration.services.util.TokuStandAloneUser [LineNumber]:  38  TokuMx-Java Adapter Initiated Successfully For Replica-Set user....!
+Jun 06, 2019 4:51:31 PM com.enhancesys.common.logger
+FINE: [Thread]: 203 [ClassName]: com.enhancesys.integration.services.processor.GenericDailyDump [LineNumber]:  170  Self Notify Interface :: Inserting entry into tr_daily_dump_summary...
+Jun 06, 2019 4:51:31 PM com.enhancesys.common.logger
+FINE: [Thread]: 203 [ClassName]: com.enhancesys.integration.services.processor.GenericDailyDump [LineNumber]:  182  Inserted a record into tr_daily_dump_summary...
+Jun 06, 2019 4:51:31 PM com.enhancesys.common.logger
+FINE: [Thread]: 203 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  9322  Entry readFilePropertyBeans.. Started at --> Thu Jun 06 16:51:31 IST 2019
+Jun 06, 2019 4:51:31 PM com.enhancesys.common.logger
+FINE: [Thread]: 203 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  9336  readFilePropertyBeans service received interface id-->1113
+Jun 06, 2019 4:51:31 PM com.enhancesys.common.logger
+FINE: [Thread]: 203 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  10106  Exit readFilePropertyBeans service at -->Thu Jun 06 16:51:31 IST 2019 --- and took 182 milliseconds
+Jun 06, 2019 4:51:31 PM com.enhancesys.common.logger
+FINE: [Thread]: 203 [ClassName]: com.enhancesys.integration.services.processor.GenericDailyDump [LineNumber]:  252  Interface : 1113 : File : Detail_Package_Activation_B_20190606.csv
+Jun 06, 2019 4:51:31 PM com.enhancesys.common.logger
+FINE: [Thread]: 203 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  8010  Entry createInterfaceFileSummary.. Started at --> Thu Jun 06 16:51:31 IST 2019
+Jun 06, 2019 4:51:31 PM com.enhancesys.common.logger
+FINE: [Thread]: 203 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  8023  createInterfaceFileSummary service received interfaceFileSummary for file id-->null
+Jun 06, 2019 4:51:31 PM com.enhancesys.common.logger
+FINE: [Thread]: 203 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  8098  Exit createInterfaceFileSummary service at -->Thu Jun 06 16:51:31 IST 2019 --- and took 131 milliseconds
+Jun 06, 2019 4:51:32 PM com.enhancesys.common.logger
+FINE: [Thread]: 203 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  7457  Entry createControlFile.. Started at --> Thu Jun 06 16:51:32 IST 2019
+Jun 06, 2019 4:51:32 PM com.enhancesys.common.logger
+FINE: [Thread]: 203 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  7472  createControlFile service received filePath -->/home/appuser/interfaces/S-NOC/interfaces/master_file/daily_dumps/detail_package_act_b/Detail_Package_Activation_B_20190606.csvtotalCount-->0fileName-->Detail_Package_Activation_B_20190606fileFormat-->csvcurrentFileId-->10016contolFileFormat-->ctlcontolFilePath-->/home/appuser/interfaces/S-NOC/interfaces/master_file/daily_dumps/detail_package_act_b/
+Jun 06, 2019 4:51:32 PM com.enhancesys.common.logger
+FINE: [Thread]: 203 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  7927  updateInterfaceFileSummaryDetails service received interfaceFileSummaryDetails object for file details id-->10016
+Jun 06, 2019 4:51:32 PM com.enhancesys.common.logger
+FINE: [Thread]: 203 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  7536  Exit control file creation service at -->Thu Jun 06 16:51:32 IST 2019 --- and took 52 milliseconds
+Jun 06, 2019 4:51:32 PM com.enhancesys.common.logger
+FINE: [Thread]: 203 [ClassName]: com.enhancesys.integration.services.processor.GenericDailyDump [LineNumber]:  543  1 Rows updated..
+Jun 06, 2019 4:51:32 PM com.enhancesys.common.logger
+FINE: [Thread]: 203 [ClassName]: com.enhancesys.integration.services.processor.GenericDailyDump [LineNumber]:  630  GenericDailyDump : Exit processRequest... InterfaceId ::  1113 and took 556 milliseconds
+Jun 06, 2019 4:51:32 PM com.enhancesys.common.logger
+FINE: [Thread]: 203 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  8766  Completed pullDataToFile.. 1113  Service at --> Thu Jun 06 16:51:32 IST 2019 --- and took 964 milliseconds
+Jun 06, 2019 4:51:32 PM com.enhancesys.common.logger
+FINE: [Thread]: 203 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  8830  Exit pullData service at -->Thu Jun 06 16:51:32 IST 2019 --- and took 968 milliseconds
+
+
+-- 1114
+
+
+Jun 06, 2019 4:52:10 PM com.enhancesys.common.logger
+FINE: [Thread]: 211 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  8616  Entry pullDataToFile.. Started at --> Thu Jun 06 16:52:10 IST 2019
+Jun 06, 2019 4:52:10 PM com.enhancesys.common.logger
+FINE: [Thread]: 211 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  8619  pullDataToFile service received interface id-->[1114]
+Jun 06, 2019 4:52:10 PM com.enhancesys.common.logger
+FINE: [Thread]: 211 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  8655  Started pullDataToFile.. 1114  Started at --> Thu Jun 06 16:52:10 IST 2019
+Jun 06, 2019 4:52:10 PM com.enhancesys.common.logger
+FINE: [Thread]: 211 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  8726  [dataConverter] class com.sun.proxy.$Proxy208
+Jun 06, 2019 4:52:10 PM com.enhancesys.common.logger
+FINE: [Thread]: 211 [ClassName]: com.enhancesys.integration.services.processor.GenericDailyDump [LineNumber]:  115  [GenericDailyDump] Entry processRequest ...InterfaceId :: 1114 StartTime :: 1559820130458
+Jun 06, 2019 4:52:10 PM com.enhancesys.common.logger
+FINE: [Thread]: 211 [ClassName]: com.enhancesys.integration.services.processor.GenericDailyDump [LineNumber]:  170  Self Notify Interface :: Inserting entry into tr_daily_dump_summary...
+Jun 06, 2019 4:52:10 PM com.enhancesys.common.logger
+FINE: [Thread]: 211 [ClassName]: com.enhancesys.integration.services.processor.GenericDailyDump [LineNumber]:  182  Inserted a record into tr_daily_dump_summary...
+Jun 06, 2019 4:52:10 PM com.enhancesys.common.logger
+FINE: [Thread]: 211 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  9322  Entry readFilePropertyBeans.. Started at --> Thu Jun 06 16:52:10 IST 2019
+Jun 06, 2019 4:52:10 PM com.enhancesys.common.logger
+FINE: [Thread]: 211 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  9336  readFilePropertyBeans service received interface id-->1114
+Jun 06, 2019 4:52:10 PM com.enhancesys.common.logger
+FINE: [Thread]: 211 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  10106  Exit readFilePropertyBeans service at -->Thu Jun 06 16:52:10 IST 2019 --- and took 36 milliseconds
+Jun 06, 2019 4:52:10 PM com.enhancesys.common.logger
+FINE: [Thread]: 211 [ClassName]: com.enhancesys.integration.services.processor.GenericDailyDump [LineNumber]:  252  Interface : 1114 : File : Rev_By_MC_20190606.csv
+Jun 06, 2019 4:52:10 PM com.enhancesys.common.logger
+FINE:[Thread]: 211 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  8010  Entry createInterfaceFileSummary.. Started at --> Thu Jun 06 16:52:10 IST 2019
+Jun 06, 2019 4:52:10 PM com.enhancesys.common.logger
+FINE: [Thread]: 211 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  8023  createInterfaceFileSummary service received interfaceFileSummary for file id-->null
+Jun 06, 2019 4:52:10 PM com.enhancesys.common.logger
+FINE: [Thread]: 211 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  8098  Exit createInterfaceFileSummary service at -->Thu Jun 06 16:52:10 IST 2019 --- and took 36 milliseconds
+Jun 06, 2019 4:52:10 PM com.enhancesys.common.logger
+FINE: [Thread]: 211 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  7457  Entry createControlFile.. Started at --> Thu Jun 06 16:52:10 IST 2019
+Jun 06, 2019 4:52:10 PM com.enhancesys.common.logger
+FINE: [Thread]: 211 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  7472  createControlFile service received filePath -->/home/appuser/interfaces/S-NOC/interfaces/master_file/daily_dumps/rev_by_mc/Rev_By_MC_20190606.csvtotalCount-->0fileName-->Rev_By_MC_20190606fileFormat-->csvcurrentFileId-->10017contolFileFormat-->ctlcontolFilePath-->/home/appuser/interfaces/S-NOC/interfaces/master_file/daily_dumps/rev_by_mc/
+Jun 06, 2019 4:52:10 PM com.enhancesys.common.logger
+FINE: [Thread]: 211 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  7927  updateInterfaceFileSummaryDetails service received interfaceFileSummaryDetails object for file details id-->10017
+Jun 06, 2019 4:52:10 PM com.enhancesys.common.logger
+FINE: [Thread]: 211 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  7536  Exit control file creation service at -->Thu Jun 06 16:52:10 IST 2019 --- and took 57 milliseconds
+Jun 06, 2019 4:52:10 PM com.enhancesys.common.logger
+FINE: [Thread]: 211 [ClassName]: com.enhancesys.integration.services.processor.GenericDailyDump [LineNumber]:  543  1 Rows updated..
+Jun 06, 2019 4:52:10 PM com.enhancesys.common.logger
+FINE: [Thread]: 211 [ClassName]: com.enhancesys.integration.services.processor.GenericDailyDump [LineNumber]:  630  GenericDailyDump : Exit processRequest... InterfaceId ::  1114 and took 280 milliseconds
+Jun 06, 2019 4:52:10 PM com.enhancesys.common.logger
+FINE: [Thread]: 211 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  8766  Completed pullDataToFile.. 1114  Service at --> Thu Jun 06 16:52:10 IST 2019 --- and took 291 milliseconds
+Jun 06, 2019 4:52:10 PM com.enhancesys.common.logger
+FINE: [Thread]: 211 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  8830  Exit pullData service at -->Thu Jun 06 16:52:10 IST 2019 --- and took 293 milliseconds
+
+
+-- 1115
+
+Jun 06, 2019 4:53:30 PM com.enhancesys.common.logger
+FINE: [Thread]: 227 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  8616  Entry pullDataToFile.. Started at --> Thu Jun 06 16:53:30 IST 2019
+Jun 06, 2019 4:53:30 PM com.enhancesys.common.logger
+FINE: [Thread]: 227 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  8619  pullDataToFile service received interface id-->[1115]
+Jun 06, 2019 4:53:30 PM com.enhancesys.common.logger
+FINE: [Thread]: 227 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  8655  Started pullDataToFile.. 1115  Started at --> Thu Jun 06 16:53:30 IST 2019
+Jun 06, 2019 4:53:30 PM com.enhancesys.common.logger
+FINE: [Thread]: 227 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  8726  [dataConverter] class com.sun.proxy.$Proxy208
+Jun 06, 2019 4:53:30 PM com.enhancesys.common.logger
+FINE: [Thread]: 227 [ClassName]: com.enhancesys.integration.services.processor.GenericDailyDump [LineNumber]:  115  [GenericDailyDump] Entry processRequest ...InterfaceId :: 1115 StartTime :: 1559820210574
+Jun 06, 2019 4:53:30 PM com.enhancesys.common.logger
+FINE: [Thread]: 227 [ClassName]: com.enhancesys.integration.services.processor.GenericDailyDump [LineNumber]:  170  Self Notify Interface :: Inserting entry into tr_daily_dump_summary...
+Jun 06, 2019 4:53:30 PM com.enhancesys.common.logger
+FINE: [Thread]: 227 [ClassName]: com.enhancesys.integration.services.processor.GenericDailyDump [LineNumber]:  182  Inserted a record into tr_daily_dump_summary...
+Jun 06, 2019 4:53:30 PM com.enhancesys.common.logger
+FINE: [Thread]: 227 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  9322  Entry readFilePropertyBeans.. Started at --> Thu Jun 06 16:53:30 IST 2019
+Jun 06, 2019 4:53:30 PM com.enhancesys.common.logger
+FINE: [Thread]: 227 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  9336  readFilePropertyBeans service received interface id-->1115
+Jun 06, 2019 4:53:30 PM com.enhancesys.common.logger
+FINE: [Thread]: 227 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  10106  Exit readFilePropertyBeans service at -->Thu Jun 06 16:53:30 IST 2019 --- and took 32 milliseconds
+Jun 06, 2019 4:53:30 PM com.enhancesys.common.logger
+FINE: [Thread]: 227 [ClassName]: com.enhancesys.integration.services.processor.GenericDailyDump [LineNumber]:  252  Interface : 1115 : File : Rev_By_LACCI_20190606.csv
+Jun 06, 2019 4:53:30 PM com.enhancesys.common.logger
+FINE: [Thread]: 227 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  8010  Entry createInterfaceFileSummary.. Started at --> Thu Jun 06 16:53:30 IST 2019
+Jun 06, 2019 4:53:30 PM com.enhancesys.common.logger
+FINE: [Thread]: 227 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  8023  createInterfaceFileSummary service received interfaceFileSummary for file id-->null
+Jun 06, 2019 4:53:30 PM com.enhancesys.common.logger
+FINE: [Thread]: 227 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  8098  Exit createInterfaceFileSummary service at -->Thu Jun 06 16:53:30 IST 2019 --- and took 30 milliseconds
+Jun 06, 2019 4:53:30 PM com.enhancesys.common.logger
+FINE: [Thread]: 227 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  7457  Entry createControlFile.. Started at --> Thu Jun 06 16:53:30 IST 2019
+Jun 06, 2019 4:53:30 PM com.enhancesys.common.logger
+FINE: [Thread]: 227 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  7472  createControlFile service received filePath -->/home/appuser/interfaces/S-NOC/interfaces/master_file/daily_dumps/rev_by_lacci/Rev_By_LACCI_20190606.csvtotalCount-->0fileName-->Rev_By_LACCI_20190606fileFormat-->csvcurrentFileId-->10019contolFileFormat-->ctlcontolFilePath-->/home/appuser/interfaces/S-NOC/interfaces/master_file/daily_dumps/rev_by_lacci/
+Jun 06, 2019 4:53:30 PM com.enhancesys.common.logger
+FINE: [Thread]: 227 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  7927  updateInterfaceFileSummaryDetails service received interfaceFileSummaryDetails object for file details id-->10019
+Jun 06, 2019 4:53:30 PM com.enhancesys.common.logger
+FINE: [Thread]: 227 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  7536  Exit control file creation service at -->Thu Jun 06 16:53:30 IST 2019 --- and took 75 milliseconds
+Jun 06, 2019 4:53:30 PM com.enhancesys.common.logger
+FINE: [Thread]: 227 [ClassName]: com.enhancesys.integration.services.processor.GenericDailyDump [LineNumber]:  543  1 Rows updated..
+Jun 06, 2019 4:53:30 PM com.enhancesys.common.logger
+FINE: [Thread]: 227 [ClassName]: com.enhancesys.integration.services.processor.GenericDailyDump [LineNumber]:  630  GenericDailyDump : Exit processRequest... InterfaceId ::  1115 and took 293 milliseconds
+Jun 06, 2019 4:53:30 PM com.enhancesys.common.logger
+FINE: [Thread]: 227 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  8766  Completed pullDataToFile.. 1115  Service at --> Thu Jun 06 16:53:30 IST 2019 --- and took 301 milliseconds
+Jun 06, 2019 4:53:30 PM com.enhancesys.common.logger
+FINE: [Thread]: 227 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  8830  Exit pullData service at -->Thu Jun 06 16:53:30 IST 2019 --- and took 303 milliseconds
+
+
+-- 1116
+
+
+Jun 06, 2019 4:54:04 PM com.enhancesys.common.logger
+FINE: [Thread]: 203 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  8616  Entry pullDataToFile.. Started at --> Thu Jun 06 16:54:04 IST 2019
+Jun 06, 2019 4:54:04 PM com.enhancesys.common.logger
+FINE: [Thread]: 203 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  8619  pullDataToFile service received interface id-->[1116]
+Jun 06, 2019 4:54:04 PM com.enhancesys.common.logger
+FINE: [Thread]: 203 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  8655  Started pullDataToFile.. 1116  Started at --> Thu Jun 06 16:54:04 IST 2019
+Jun 06, 2019 4:54:04 PM com.enhancesys.common.logger
+FINE: [Thread]: 203 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  8726  [dataConverter] class com.sun.proxy.$Proxy208
+Jun 06, 2019 4:54:04 PM com.enhancesys.common.logger
+FINE: [Thread]: 203 [ClassName]: com.enhancesys.integration.services.processor.GenericDailyDump [LineNumber]:  115  [GenericDailyDump] Entry processRequest ...InterfaceId :: 1116 StartTime :: 1559820244973
+Jun 06, 2019 4:54:04 PM com.enhancesys.common.logger
+FINE: [Thread]: 203 [ClassName]: com.enhancesys.integration.services.processor.GenericDailyDump [LineNumber]:  170  Self Notify Interface :: Inserting entry into tr_daily_dump_summary...
+Jun 06, 2019 4:54:04 PM com.enhancesys.common.logger
+FINE: [Thread]: 203 [ClassName]: com.enhancesys.integration.services.processor.GenericDailyDump [LineNumber]:  182  Inserted a record into tr_daily_dump_summary...
+Jun 06, 2019 4:54:05 PM com.enhancesys.common.logger
+FINE: [Thread]: 203 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  9322  Entry readFilePropertyBeans.. Started at --> Thu Jun 06 16:54:05 IST 2019
+Jun 06, 2019 4:54:05 PM com.enhancesys.common.logger
+FINE: [Thread]: 203 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  9336  readFilePropertyBeans service received interface id-->1116
+Jun 06, 2019 4:54:05 PM com.enhancesys.common.logger
+FINE: [Thread]: 203 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  10106  Exit readFilePropertyBeans service at -->Thu Jun 06 16:54:05 IST 2019 --- and took 29 milliseconds
+Jun 06, 2019 4:54:05 PM com.enhancesys.common.logger
+FINE: [Thread]: 203 [ClassName]: com.enhancesys.integration.services.processor.GenericDailyDump [LineNumber]:  252  Interface : 1116 : File : KPI_Detail_20190606.csv
+Jun 06, 2019 4:54:05 PM com.enhancesys.common.logger
+FINE: [Thread]: 203 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  8010  Entry createInterfaceFileSummary.. Started at --> Thu Jun 06 16:54:05 IST 2019
+Jun 06, 2019 4:54:05 PM com.enhancesys.common.logger
+FINE: [Thread]: 203 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  8023  createInterfaceFileSummary service received interfaceFileSummary for file id-->null
+Jun 06, 2019 4:54:05 PM com.enhancesys.common.logger
+FINE: [Thread]: 203 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  8098  Exit createInterfaceFileSummary service at -->Thu Jun 06 16:54:05 IST 2019 --- and took 30 milliseconds
+Jun 06, 2019 4:54:05 PM com.enhancesys.common.logger
+FINE: [Thread]: 203 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  7457  Entry createControlFile.. Started at --> Thu Jun 06 16:54:05 IST 2019
+Jun 06, 2019 4:54:05 PM com.enhancesys.common.logger
+FINE: [Thread]: 203 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  7472  createControlFile service received filePath -->/home/appuser/interfaces/S-NOC/interfaces/master_file/daily_dumps/kpi_detail/KPI_Detail_20190606.csvtotalCount-->0fileName-->KPI_Detail_20190606fileFormat-->csvcurrentFileId-->10020contolFileFormat-->ctlcontolFilePath-->/home/appuser/interfaces/S-NOC/interfaces/master_file/daily_dumps/kpi_detail/
+Jun 06, 2019 4:54:05 PM com.enhancesys.common.logger
+FINE: [Thread]: 203 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  7927  updateInterfaceFileSummaryDetails service received interfaceFileSummaryDetails object for file details id-->10020
+Jun 06, 2019 4:54:05 PM com.enhancesys.common.logger
+FINE: [Thread]: 203 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  7536  Exit control file creation service at -->Thu Jun 06 16:54:05 IST 2019 --- and took 58 milliseconds
+Jun 06, 2019 4:54:05 PM com.enhancesys.common.logger
+FINE: [Thread]: 203 [ClassName]: com.enhancesys.integration.services.processor.GenericDailyDump [LineNumber]:  543  1 Rows updated..
+Jun 06, 2019 4:54:05 PM com.enhancesys.common.logger
+FINE: [Thread]: 203 [ClassName]: com.enhancesys.integration.services.processor.GenericDailyDump [LineNumber]:  630  GenericDailyDump : Exit processRequest... InterfaceId ::  1116 and took 248 milliseconds
+Jun 06, 2019 4:54:05 PM com.enhancesys.common.logger
+FINE: [Thread]: 203 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  8766  Completed pullDataToFile.. 1116  Service at --> Thu Jun 06 16:54:05 IST 2019 --- and took 258 milliseconds
+Jun 06, 2019 4:54:05 PM com.enhancesys.common.logger
+FINE: [Thread]: 203 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  8830  Exit pullData service at -->Thu Jun 06 16:54:05 IST 2019 --- and took 259 milliseconds
+
+
+
+-- 1122
+
+Jun 06, 2019 4:54:42 PM com.enhancesys.common.logger
+FINE: [Thread]: 211 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  8616  Entry pullDataToFile.. Started at --> Thu Jun 06 16:54:42 IST 2019
+Jun 06, 2019 4:54:42 PM com.enhancesys.common.logger
+FINE: [Thread]: 211 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  8619  pullDataToFile service received interface id-->[1122]
+Jun 06, 2019 4:54:42 PM com.enhancesys.common.logger
+FINE: [Thread]: 211 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  8655  Started pullDataToFile.. 1122  Started at --> Thu Jun 06 16:54:42 IST 2019
+Jun 06, 2019 4:54:42 PM com.enhancesys.common.logger
+FINE: [Thread]: 211 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  8726  [dataConverter] class com.sun.proxy.$Proxy208
+Jun 06, 2019 4:54:42 PM com.enhancesys.common.logger
+FINE: [Thread]: 211 [ClassName]: com.enhancesys.integration.services.processor.GenericDailyDump [LineNumber]:  115  [GenericDailyDump] Entry processRequest ...InterfaceId :: 1122 StartTime :: 1559820282660
+Jun 06, 2019 4:54:42 PM com.enhancesys.common.logger
+FINE: [Thread]: 211 [ClassName]: com.enhancesys.integration.services.processor.GenericDailyDump [LineNumber]:  170  Self Notify Interface :: Inserting entry into tr_daily_dump_summary...
+Jun 06, 2019 4:54:42 PM com.enhancesys.common.logger
+FINE: [Thread]: 211 [ClassName]: com.enhancesys.integration.services.processor.GenericDailyDump [LineNumber]:  182  Inserted a record into tr_daily_dump_summary...
+Jun 06, 2019 4:54:42 PM com.enhancesys.common.logger
+FINE: [Thread]: 211 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  9322  Entry readFilePropertyBeans.. Started at --> Thu Jun 06 16:54:42 IST 2019
+Jun 06, 2019 4:54:42 PM com.enhancesys.common.logger
+FINE: [Thread]: 211 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  9336  readFilePropertyBeans service received interface id-->1122
+Jun 06, 2019 4:54:42 PM com.enhancesys.common.logger
+FINE: [Thread]: 211 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  10106  Exit readFilePropertyBeans service at -->Thu Jun 06 16:54:42 IST 2019 --- and took 48 milliseconds
+Jun 06, 2019 4:54:42 PM com.enhancesys.common.logger
+FINE: [Thread]: 211 [ClassName]: com.enhancesys.integration.services.processor.GenericDailyDump [LineNumber]:  252  Interface : 1122 : File : Summary_HVC_Report_20190606.csv
+Jun 06, 2019 4:54:42 PM com.enhancesys.common.logger
+FINE: [Thread]: 211 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  8010  Entry createInterfaceFileSummary.. Started at --> Thu Jun 06 16:54:42 IST 2019
+Jun 06, 2019 4:54:42 PM com.enhancesys.common.logger
+FINE: [Thread]: 211 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  8023  createInterfaceFileSummary service received interfaceFileSummary for file id-->null
+Jun 06, 2019 4:54:42 PM com.enhancesys.common.logger
+FINE: [Thread]: 211 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  8098  Exit createInterfaceFileSummary service at -->Thu Jun 06 16:54:42 IST 2019 --- and took 42 milliseconds
+Jun 06, 2019 4:54:42 PM com.enhancesys.common.logger
+FINE: [Thread]: 211 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  7457  Entry createControlFile.. Started at --> Thu Jun 06 16:54:42 IST 2019
+Jun 06, 2019 4:54:42 PM com.enhancesys.common.logger
+FINE: [Thread]: 211 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  7472  createControlFile service received filePath -->/home/appuser/interfaces/S-NOC/interfaces/master_file/daily_dumps/summary_hvc_report/Summary_HVC_Report_20190606.csvtotalCount-->0fileName-->Summary_HVC_Report_20190606fileFormat-->csvcurrentFileId-->10021contolFileFormat-->ctlcontolFilePath-->/home/appuser/interfaces/S-NOC/interfaces/master_file/daily_dumps/summary_hvc_report/
+Jun 06, 2019 4:54:42 PM com.enhancesys.common.logger
+FINE: [Thread]: 211 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  7927  updateInterfaceFileSummaryDetails service received interfaceFileSummaryDetails object for file details id-->10021
+Jun 06, 2019 4:54:42 PM com.enhancesys.common.logger
+FINE: [Thread]: 211 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  7536  Exit control file creation service at -->Thu Jun 06 16:54:42 IST 2019 --- and took 58 milliseconds
+Jun 06, 2019 4:54:42 PM com.enhancesys.common.logger
+FINE: [Thread]: 211 [ClassName]: com.enhancesys.integration.services.processor.GenericDailyDump [LineNumber]:  543  1 Rows updated..
+Jun 06, 2019 4:54:42 PM com.enhancesys.common.logger
+FINE: [Thread]: 211 [ClassName]: com.enhancesys.integration.services.processor.GenericDailyDump [LineNumber]:  630  GenericDailyDump : Exit processRequest... InterfaceId ::  1122 and took 321 milliseconds
+Jun 06, 2019 4:54:42 PM com.enhancesys.common.logger
+FINE: [Thread]: 211 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  8766  Completed pullDataToFile.. 1122  Service at --> Thu Jun 06 16:54:42 IST 2019 --- and took 334 milliseconds
+Jun 06, 2019 4:54:42 PM com.enhancesys.common.logger
+FINE: [Thread]: 211 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  8830  Exit pullData service at -->Thu Jun 06 16:54:42 IST 2019 --- and took 338 milliseconds
+
+
+-- 1123
+
+Jun 06, 2019 4:55:18 PM com.enhancesys.common.logger
+FINE: [Thread]: 213 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  8616  Entry pullDataToFile.. Started at --> Thu Jun 06 16:55:18 IST 2019
+Jun 06, 2019 4:55:18 PM com.enhancesys.common.logger
+FINE: [Thread]: 213 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  8619  pullDataToFile service received interface id-->[1124]
+Jun 06, 2019 4:55:18 PM com.enhancesys.common.logger
+FINE: [Thread]: 213 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  8655  Started pullDataToFile.. 1124  Started at --> Thu Jun 06 16:55:18 IST 2019
+Jun 06, 2019 4:55:18 PM com.enhancesys.common.logger
+FINE: [Thread]: 213 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  8726  [dataConverter] class com.sun.proxy.$Proxy208
+Jun 06, 2019 4:55:18 PM com.enhancesys.common.logger
+FINE: [Thread]: 213 [ClassName]: com.enhancesys.integration.services.processor.GenericDailyDump [LineNumber]:  115  [GenericDailyDump] Entry processRequest ...InterfaceId :: 1124 StartTime :: 1559820318988
+Jun 06, 2019 4:55:18 PM com.enhancesys.common.logger
+FINE: [Thread]: 213 [ClassName]: com.enhancesys.integration.services.processor.GenericDailyDump [LineNumber]:  170  Self Notify Interface :: Inserting entry into tr_daily_dump_summary...
+Jun 06, 2019 4:55:19 PM com.enhancesys.common.logger
+FINE: [Thread]: 213 [ClassName]: com.enhancesys.integration.services.processor.GenericDailyDump [LineNumber]:  182  Inserted a record into tr_daily_dump_summary...
+Jun 06, 2019 4:55:19 PM com.enhancesys.common.logger
+FINE: [Thread]: 213 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  9322  Entry readFilePropertyBeans.. Started at --> Thu Jun 06 16:55:19 IST 2019
+Jun 06, 2019 4:55:19 PM com.enhancesys.common.logger
+FINE: [Thread]: 213 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  9336  readFilePropertyBeans service received interface id-->1124
+Jun 06, 2019 4:55:19 PM com.enhancesys.common.logger
+FINE: [Thread]: 213 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  10106  Exit readFilePropertyBeans service at -->Thu Jun 06 16:55:19 IST 2019 --- and took 30 milliseconds
+Jun 06, 2019 4:55:19 PM com.enhancesys.common.logger
+FINE: [Thread]: 213 [ClassName]: com.enhancesys.integration.services.processor.GenericDailyDump [LineNumber]:  252  Interface : 1124 : File : Summary_CS_Reload_Physical_Report_20190606.csv
+Jun 06, 2019 4:55:19 PM com.enhancesys.common.logger
+FINE: [Thread]: 213 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  8010  Entry createInterfaceFileSummary.. Started at --> Thu Jun 06 16:55:19 IST 2019
+Jun 06, 2019 4:55:19 PM com.enhancesys.common.logger
+FINE: [Thread]: 213 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  8023  createInterfaceFileSummary service received interfaceFileSummary for file id-->null
+Jun 06, 2019 4:55:19 PM com.enhancesys.common.logger
+FINE: [Thread]: 213 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  8098  Exit createInterfaceFileSummary service at -->Thu Jun 06 16:55:19 IST 2019 --- and took 28 milliseconds
+Jun 06, 2019 4:55:19 PM com.enhancesys.common.logger
+FINE: [Thread]: 213 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  7457  Entry createControlFile.. Started at --> Thu Jun 06 16:55:19 IST 2019
+Jun 06, 2019 4:55:19 PM com.enhancesys.common.logger
+FINE: [Thread]: 213 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  7472  createControlFile service received filePath -->/home/appuser/interfaces/S-NOC/interfaces/master_file/daily_dumps/summary_cs_reload_physical_report/Summary_CS_Reload_Physical_Report_20190606.csvtotalCount-->0fileName-->Summary_CS_Reload_Physical_Report_20190606fileFormat-->csvcurrentFileId-->10022contolFileFormat-->ctlcontolFilePath-->/home/appuser/interfaces/S-NOC/interfaces/master_file/daily_dumps/summary_cs_reload_physical_report/
+Jun 06, 2019 4:55:19 PM com.enhancesys.common.logger
+FINE: [Thread]: 213 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  7927  updateInterfaceFileSummaryDetails service received interfaceFileSummaryDetails object for file details id-->10022
+Jun 06, 2019 4:55:19 PM com.enhancesys.common.logger
+FINE: [Thread]: 213 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  7536  Exit control file creation service at -->Thu Jun 06 16:55:19 IST 2019 --- and took 49 milliseconds
+Jun 06, 2019 4:55:19 PM com.enhancesys.common.logger
+FINE: [Thread]: 213 [ClassName]: com.enhancesys.integration.services.processor.GenericDailyDump [LineNumber]:  543  1 Rows updated..
+Jun 06, 2019 4:55:19 PM com.enhancesys.common.logger
+FINE: [Thread]: 213 [ClassName]: com.enhancesys.integration.services.processor.GenericDailyDump [LineNumber]:  630  GenericDailyDump : Exit processRequest... InterfaceId ::  1124 and took 244 milliseconds
+Jun 06, 2019 4:55:19 PM com.enhancesys.common.logger
+FINE: [Thread]: 213 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  8766  Completed pullDataToFile.. 1124  Service at --> Thu Jun 06 16:55:19 IST 2019 --- and took 254 milliseconds
+Jun 06, 2019 4:55:19 PM com.enhancesys.common.logger
+FINE: [Thread]: 213 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  8830  Exit pullData service at -->Thu Jun 06 16:55:19 IST 2019 --- and took 257 milliseconds
+
+
+-- 1125
+
+Jun 06, 2019 4:56:10 PM com.enhancesys.common.logger
+FINE: [Thread]: 203 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  8616  Entry pullDataToFile.. Started at --> Thu Jun 06 16:56:10 IST 2019
+Jun 06, 2019 4:56:10 PM com.enhancesys.common.logger
+FINE: [Thread]: 203 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  8619  pullDataToFile service received interface id-->[1125]
+Jun 06, 2019 4:56:10 PM com.enhancesys.common.logger
+FINE: [Thread]: 203 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  8655  Started pullDataToFile.. 1125  Started at --> Thu Jun 06 16:56:10 IST 2019
+Jun 06, 2019 4:56:10 PM com.enhancesys.common.logger
+FINE: [Thread]: 203 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  8726  [dataConverter] class com.sun.proxy.$Proxy208
+Jun 06, 2019 4:56:10 PM com.enhancesys.common.logger
+FINE: [Thread]: 203 [ClassName]: com.enhancesys.integration.services.processor.GenericDailyDump [LineNumber]:  115  [GenericDailyDump] Entry processRequest ...InterfaceId :: 1125 StartTime :: 1559820370715
+Jun 06, 2019 4:56:10 PM com.enhancesys.common.logger
+FINE: [Thread]: 203 [ClassName]: com.enhancesys.integration.services.processor.GenericDailyDump [LineNumber]:  170  Self Notify Interface :: Inserting entry into tr_daily_dump_summary...
+Jun 06, 2019 4:56:10 PM com.enhancesys.common.logger
+FINE: [Thread]: 203 [ClassName]: com.enhancesys.integration.services.processor.GenericDailyDump [LineNumber]:  182  Inserted a record into tr_daily_dump_summary...
+Jun 06, 2019 4:56:10 PM com.enhancesys.common.logger
+FINE: [Thread]: 203 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  9322  Entry readFilePropertyBeans.. Started at --> Thu Jun 06 16:56:10 IST 2019
+Jun 06, 2019 4:56:10 PM com.enhancesys.common.logger
+FINE: [Thread]: 203 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  9336  readFilePropertyBeans service received interface id-->1125
+Jun 06, 2019 4:56:10 PM com.enhancesys.common.logger
+FINE: [Thread]: 203 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  10106  Exit readFilePropertyBeans service at -->Thu Jun 06 16:56:10 IST 2019 --- and took 29 milliseconds
+Jun 06, 2019 4:56:10 PM com.enhancesys.common.logger
+FINE: [Thread]: 203 [ClassName]: com.enhancesys.integration.services.processor.GenericDailyDump [LineNumber]:  252  Interface : 1125 : File : CS_Reload_Physical_Report_20190606.csv
+Jun 06, 2019 4:56:10 PM com.enhancesys.common.logger
+FINE: [Thread]: 203 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  8010  Entry createInterfaceFileSummary.. Started at --> Thu Jun 06 16:56:10 IST 2019
+Jun 06, 2019 4:56:10 PM com.enhancesys.common.logger
+FINE: [Thread]: 203 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  8023  createInterfaceFileSummary service received interfaceFileSummary for file id-->null
+Jun 06, 2019 4:56:10 PM com.enhancesys.common.logger
+FINE: [Thread]: 203 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  8098  Exit createInterfaceFileSummary service at -->Thu Jun 06 16:56:10 IST 2019 --- and took 28 milliseconds
+Jun 06, 2019 4:56:10 PM com.enhancesys.common.logger
+FINE: [Thread]: 203 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  7457  Entry createControlFile.. Started at --> Thu Jun 06 16:56:10 IST 2019
+Jun 06, 2019 4:56:10 PM com.enhancesys.common.logger
+FINE: [Thread]: 203 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  7472  createControlFile service received filePath -->/home/appuser/interfaces/S-NOC/interfaces/master_file/daily_dumps/cs_reload_physical_report/CS_Reload_Physical_Report_20190606.csvtotalCount-->0fileName-->CS_Reload_Physical_Report_20190606fileFormat-->csvcurrentFileId-->10024contolFileFormat-->ctlcontolFilePath-->/home/appuser/interfaces/S-NOC/interfaces/master_file/daily_dumps/cs_reload_physical_report/
+Jun 06, 2019 4:56:10 PM com.enhancesys.common.logger
+FINE: [Thread]: 203 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  7927  updateInterfaceFileSummaryDetails service received interfaceFileSummaryDetails object for file details id-->10024
+Jun 06, 2019 4:56:10 PM com.enhancesys.common.logger
+FINE: [Thread]: 203 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  7536  Exit control file creation service at -->Thu Jun 06 16:56:10 IST 2019 --- and took 41 milliseconds
+Jun 06, 2019 4:56:10 PM com.enhancesys.common.logger
+FINE: [Thread]: 203 [ClassName]: com.enhancesys.integration.services.processor.GenericDailyDump [LineNumber]:  543  1 Rows updated..
+Jun 06, 2019 4:56:10 PM com.enhancesys.common.logger
+FINE: [Thread]: 203 [ClassName]: com.enhancesys.integration.services.processor.GenericDailyDump [LineNumber]:  630  GenericDailyDump : Exit processRequest... InterfaceId ::  1125 and took 239 milliseconds
+Jun 06, 2019 4:56:10 PM com.enhancesys.common.logger
+FINE: [Thread]: 203 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  8766  Completed pullDataToFile.. 1125  Service at --> Thu Jun 06 16:56:10 IST 2019 --- and took 250 milliseconds
+Jun 06, 2019 4:56:10 PM com.enhancesys.common.logger
+FINE: [Thread]: 203 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  8830  Exit pullData service at -->Thu Jun 06 16:56:10 IST 2019 --- and took 253 milliseconds
+
+
+-- 1126 
+
+Jun 06, 2019 4:56:44 PM com.enhancesys.common.logger
+FINE: [Thread]: 211 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  8616  Entry pullDataToFile.. Started at --> Thu Jun 06 16:56:44 IST 2019
+Jun 06, 2019 4:56:44 PM com.enhancesys.common.logger
+FINE: [Thread]: 211 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  8619  pullDataToFile service received interface id-->[1126]
+Jun 06, 2019 4:56:44 PM com.enhancesys.common.logger
+FINE: [Thread]: 211 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  8655  Started pullDataToFile.. 1126  Started at --> Thu Jun 06 16:56:44 IST 2019
+Jun 06, 2019 4:56:44 PM com.enhancesys.common.logger
+FINE: [Thread]: 211 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  8726  [dataConverter] class com.sun.proxy.$Proxy208
+Jun 06, 2019 4:56:44 PM com.enhancesys.common.logger
+FINE: [Thread]: 211 [ClassName]: com.enhancesys.integration.services.processor.GenericDailyDump [LineNumber]:  115  [GenericDailyDump] Entry processRequest ...InterfaceId :: 1126 StartTime :: 1559820404968
+Jun 06, 2019 4:56:44 PM com.enhancesys.common.logger
+FINE: [Thread]: 211 [ClassName]: com.enhancesys.integration.services.processor.GenericDailyDump [LineNumber]:  170  Self Notify Interface :: Inserting entry into tr_daily_dump_summary...
+Jun 06, 2019 4:56:45 PM com.enhancesys.common.logger
+FINE: [Thread]: 211 [ClassName]: com.enhancesys.integration.services.processor.GenericDailyDump [LineNumber]:  182  Inserted a record into tr_daily_dump_summary...
+Jun 06, 2019 4:56:45 PM com.enhancesys.common.logger
+FINE: [Thread]: 211 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  9322  Entry readFilePropertyBeans.. Started at --> Thu Jun 06 16:56:45 IST 2019
+Jun 06, 2019 4:56:45 PM com.enhancesys.common.logger
+FINE: [Thread]: 211 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  9336  readFilePropertyBeans service received interface id-->1126
+Jun 06, 2019 4:56:45 PM com.enhancesys.common.logger
+FINE: [Thread]: 211 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  10106  Exit readFilePropertyBeans service at -->Thu Jun 06 16:56:45 IST 2019 --- and took 30 milliseconds
+Jun 06, 2019 4:56:45 PM com.enhancesys.common.logger
+FINE: [Thread]: 211 [ClassName]: com.enhancesys.integration.services.processor.GenericDailyDump [LineNumber]:  252  Interface : 1126 : File : Sum_CS_Reload_of_e_voucher_20190606.csv
+Jun 06, 2019 4:56:45 PM com.enhancesys.common.logger
+FINE: [Thread]: 211 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  8010  Entry createInterfaceFileSummary.. Started at --> Thu Jun 06 16:56:45 IST 2019
+Jun 06, 2019 4:56:45 PM com.enhancesys.common.logger
+FINE: [Thread]: 211 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  8023  createInterfaceFileSummary service received interfaceFileSummary for file id-->null
+Jun 06, 2019 4:56:45 PM com.enhancesys.common.logger
+FINE: [Thread]: 211 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  8098  Exit createInterfaceFileSummary service at -->Thu Jun 06 16:56:45 IST 2019 --- and took 31 milliseconds
+Jun 06, 2019 4:56:45 PM com.enhancesys.common.logger
+FINE: [Thread]: 211 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  7457  Entry createControlFile.. Started at --> Thu Jun 06 16:56:45 IST 2019
+Jun 06, 2019 4:56:45 PM com.enhancesys.common.logger
+FINE: [Thread]: 211 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  7472  createControlFile service received filePath -->/home/appuser/interfaces/S-NOC/interfaces/master_file/daily_dumps/sum_cs_reload_of_e_voucher/Sum_CS_Reload_of_e_voucher_20190606.csvtotalCount-->0fileName-->Sum_CS_Reload_of_e_voucher_20190606fileFormat-->csvcurrentFileId-->10025contolFileFormat-->ctlcontolFilePath-->/home/appuser/interfaces/S-NOC/interfaces/master_file/daily_dumps/sum_cs_reload_of_e_voucher/
+Jun 06, 2019 4:56:45 PM com.enhancesys.common.logger
+FINE: [Thread]: 211 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  7927  updateInterfaceFileSummaryDetails service received interfaceFileSummaryDetails object for file details id-->10025
+Jun 06, 2019 4:56:45 PM com.enhancesys.common.logger
+FINE: [Thread]: 211 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  7536  Exit control file creation service at -->Thu Jun 06 16:56:45 IST 2019 --- and took 49 milliseconds
+Jun 06, 2019 4:56:45 PM com.enhancesys.common.logger
+FINE: [Thread]: 211 [ClassName]: com.enhancesys.integration.services.processor.GenericDailyDump [LineNumber]:  543  1 Rows updated..
+Jun 06, 2019 4:56:45 PM com.enhancesys.common.logger
+FINE: [Thread]: 211 [ClassName]: com.enhancesys.integration.services.processor.GenericDailyDump [LineNumber]:  630  GenericDailyDump : Exit processRequest... InterfaceId ::  1126 and took 293 milliseconds
+Jun 06, 2019 4:56:45 PM com.enhancesys.common.logger
+FINE: [Thread]: 211 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  8766  Completed pullDataToFile.. 1126  Service at --> Thu Jun 06 16:56:45 IST 2019 --- and took 303 milliseconds
+Jun 06, 2019 4:56:45 PM com.enhancesys.common.logger
+FINE: [Thread]: 211 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  8830  Exit pullData service at -->Thu Jun 06 16:56:45 IST 2019 --- and took 307 milliseconds
+
+
+-- 1127
+
+
+Jun 06, 2019 4:57:11 PM com.enhancesys.common.logger
+FINE: [Thread]: 213 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  8616  Entry pullDataToFile.. Started at --> Thu Jun 06 16:57:11 IST 2019
+Jun 06, 2019 4:57:11 PM com.enhancesys.common.logger
+FINE: [Thread]: 213 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  8619  pullDataToFile service received interface id-->[1127]
+Jun 06, 2019 4:57:11 PM com.enhancesys.common.logger
+FINE: [Thread]: 213 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  8655  Started pullDataToFile.. 1127  Started at --> Thu Jun 06 16:57:11 IST 2019
+Jun 06, 2019 4:57:11 PM com.enhancesys.common.logger
+FINE: [Thread]: 213 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  8726  [dataConverter] class com.sun.proxy.$Proxy208
+Jun 06, 2019 4:57:11 PM com.enhancesys.common.logger
+FINE: [Thread]: 213 [ClassName]: com.enhancesys.integration.services.processor.GenericDailyDump [LineNumber]:  115  [GenericDailyDump] Entry processRequest ...InterfaceId :: 1127 StartTime :: 1559820431063
+Jun 06, 2019 4:57:11 PM com.enhancesys.common.logger
+FINE: [Thread]: 213 [ClassName]: com.enhancesys.integration.services.processor.GenericDailyDump [LineNumber]:  170  Self Notify Interface :: Inserting entry into tr_daily_dump_summary...
+Jun 06, 2019 4:57:11 PM com.enhancesys.common.logger
+FINE: [Thread]: 213 [ClassName]: com.enhancesys.integration.services.processor.GenericDailyDump [LineNumber]:  182  Inserted a record into tr_daily_dump_summary...
+Jun 06, 2019 4:57:11 PM com.enhancesys.common.logger
+FINE: [Thread]: 213 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  9322  Entry readFilePropertyBeans.. Started at --> Thu Jun 06 16:57:11 IST 2019
+Jun 06, 2019 4:57:11 PM com.enhancesys.common.logger
+FINE: [Thread]: 213 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  9336  readFilePropertyBeans service received interface id-->1127
+Jun 06, 2019 4:57:11 PM com.enhancesys.common.logger
+FINE: [Thread]: 213 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  10106  Exit readFilePropertyBeans service at -->Thu Jun 06 16:57:11 IST 2019 --- and took 28 milliseconds
+Jun 06, 2019 4:57:11 PM com.enhancesys.common.logger
+FINE: [Thread]: 213 [ClassName]: com.enhancesys.integration.services.processor.GenericDailyDump [LineNumber]:  252  Interface : 1127 : File : Detail_CS_Reload_of_e_voucher_20190606.csv
+Jun 06, 2019 4:57:11 PM com.enhancesys.common.logger
+FINE: [Thread]: 213 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  8010  Entry createInterfaceFileSummary.. Started at --> Thu Jun 06 16:57:11 IST 2019
+Jun 06, 2019 4:57:11 PM com.enhancesys.common.logger
+FINE: [Thread]: 213 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  8023  createInterfaceFileSummary service received interfaceFileSummary for file id-->null
+Jun 06, 2019 4:57:11 PM com.enhancesys.common.logger
+FINE: [Thread]: 213 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  8098  Exit createInterfaceFileSummary service at -->Thu Jun 06 16:57:11 IST 2019 --- and took 26 milliseconds
+Jun 06, 2019 4:57:11 PM com.enhancesys.common.logger
+FINE: [Thread]: 213 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  7457  Entry createControlFile.. Started at --> Thu Jun 06 16:57:11 IST 2019
+Jun 06, 2019 4:57:11 PM com.enhancesys.common.logger
+FINE: [Thread]: 213 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  7472  createControlFile service received filePath -->/home/appuser/interfaces/S-NOC/interfaces/master_file/daily_dumps/detail_cs_reload_of_e_voucher/Detail_CS_Reload_of_e_voucher_20190606.csvtotalCount-->0fileName-->Detail_CS_Reload_of_e_voucher_20190606fileFormat-->csvcurrentFileId-->10026contolFileFormat-->ctlcontolFilePath-->/home/appuser/interfaces/S-NOC/interfaces/master_file/daily_dumps/detail_cs_reload_of_e_voucher/
+Jun 06, 2019 4:57:11 PM com.enhancesys.common.logger
+FINE: [Thread]: 213 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  7927  updateInterfaceFileSummaryDetails service received interfaceFileSummaryDetails object for file details id-->10026
+Jun 06, 2019 4:57:11 PM com.enhancesys.common.logger
+FINE: [Thread]: 213 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  7536  Exit control file creation service at -->Thu Jun 06 16:57:11 IST 2019 --- and took 67 milliseconds
+Jun 06, 2019 4:57:11 PM com.enhancesys.common.logger
+FINE: [Thread]: 213 [ClassName]: com.enhancesys.integration.services.processor.GenericDailyDump [LineNumber]:  543  1 Rows updated..
+Jun 06, 2019 4:57:11 PM com.enhancesys.common.logger
+FINE: [Thread]: 213 [ClassName]: com.enhancesys.integration.services.processor.GenericDailyDump [LineNumber]:  630  GenericDailyDump : Exit processRequest... InterfaceId ::  1127 and took 296 milliseconds
+Jun 06, 2019 4:57:11 PM com.enhancesys.common.logger
+FINE: [Thread]: 213 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  8766  Completed pullDataToFile.. 1127  Service at --> Thu Jun 06 16:57:11 IST 2019 --- and took 306 milliseconds
+Jun 06, 2019 4:57:11 PM com.enhancesys.common.logger
+FINE: [Thread]: 213 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  8830  Exit pullData service at -->Thu Jun 06 16:57:11 IST 2019 --- and took 310 milliseconds
+
+
+
+-- 1128
+
+
+Jun 06, 2019 4:57:36 PM com.enhancesys.common.logger
+FINE: [Thread]: 216 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  8616  Entry pullDataToFile.. Started at --> Thu Jun 06 16:57:36 IST 2019
+Jun 06, 2019 4:57:36 PM com.enhancesys.common.logger
+FINE: [Thread]: 216 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  8619  pullDataToFile service received interface id-->[1128]
+Jun 06, 2019 4:57:36 PM com.enhancesys.common.logger
+FINE: [Thread]: 216 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  8655  Started pullDataToFile.. 1128  Started at --> Thu Jun 06 16:57:36 IST 2019
+Jun 06, 2019 4:57:36 PM com.enhancesys.common.logger
+FINE: [Thread]: 216 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  8726  [dataConverter] class com.sun.proxy.$Proxy208
+Jun 06, 2019 4:57:36 PM com.enhancesys.common.logger
+FINE: [Thread]: 216 [ClassName]: com.enhancesys.integration.services.processor.GenericDailyDump [LineNumber]:  115  [GenericDailyDump] Entry processRequest ...InterfaceId :: 1128 StartTime :: 1559820456348
+Jun 06, 2019 4:57:36 PM com.enhancesys.common.logger
+FINE: [Thread]: 216 [ClassName]: com.enhancesys.integration.services.processor.GenericDailyDump [LineNumber]:  170  Self Notify Interface :: Inserting entry into tr_daily_dump_summary...
+Jun 06, 2019 4:57:36 PM com.enhancesys.common.logger
+FINE: [Thread]: 216 [ClassName]: com.enhancesys.integration.services.processor.GenericDailyDump [LineNumber]:  182  Inserted a record into tr_daily_dump_summary...
+Jun 06, 2019 4:57:36 PM com.enhancesys.common.logger
+FINE: [Thread]: 216 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  9322  Entry readFilePropertyBeans.. Started at --> Thu Jun 06 16:57:36 IST 2019
+Jun 06, 2019 4:57:36 PM com.enhancesys.common.logger
+FINE: [Thread]: 216 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  9336  readFilePropertyBeans service received interface id-->1128
+Jun 06, 2019 4:57:36 PM com.enhancesys.common.logger
+FINE: [Thread]: 216 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  10106  Exit readFilePropertyBeans service at -->Thu Jun 06 16:57:36 IST 2019 --- and took 27 milliseconds
+Jun 06, 2019 4:57:36 PM com.enhancesys.common.logger
+FINE: [Thread]: 216 [ClassName]: com.enhancesys.integration.services.processor.GenericDailyDump [LineNumber]:  252  Interface : 1128 : File : Summary_CS_SP_Act_20190606.csv
+Jun 06, 2019 4:57:36 PM com.enhancesys.common.logger
+FINE: [Thread]: 216 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  8010  Entry createInterfaceFileSummary.. Started at --> Thu Jun 06 16:57:36 IST 2019
+Jun 06, 2019 4:57:36 PM com.enhancesys.common.logger
+FINE: [Thread]: 216 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  8023  createInterfaceFileSummary service received interfaceFileSummary for file id-->null
+Jun 06, 2019 4:57:36 PM com.enhancesys.common.logger
+FINE: [Thread]: 216 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  8098  Exit createInterfaceFileSummary service at -->Thu Jun 06 16:57:36 IST 2019 --- and took 26 milliseconds
+Jun 06, 2019 4:57:36 PM com.enhancesys.common.logger
+FINE: [Thread]: 216 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  7457  Entry createControlFile.. Started at --> Thu Jun 06 16:57:36 IST 2019
+Jun 06, 2019 4:57:36 PM com.enhancesys.common.logger
+FINE: [Thread]: 216 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  7472  createControlFile service received filePath -->/home/appuser/interfaces/S-NOC/interfaces/master_file/daily_dumps/summary_cs_sp_act/Summary_CS_SP_Act_20190606.csvtotalCount-->0fileName-->Summary_CS_SP_Act_20190606fileFormat-->csvcurrentFileId-->10027contolFileFormat-->ctlcontolFilePath-->/home/appuser/interfaces/S-NOC/interfaces/master_file/daily_dumps/summary_cs_sp_act/
+Jun 06, 2019 4:57:36 PM com.enhancesys.common.logger
+FINE: [Thread]: 216 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  7927  updateInterfaceFileSummaryDetails service received interfaceFileSummaryDetails object for file details id-->10027
+Jun 06, 2019 4:57:36 PM com.enhancesys.common.logger
+FINE: [Thread]: 216 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  7536  Exit control file creation service at -->Thu Jun 06 16:57:36 IST 2019 --- and took 42 milliseconds
+Jun 06, 2019 4:57:36 PM com.enhancesys.common.logger
+FINE: [Thread]: 216 [ClassName]: com.enhancesys.integration.services.processor.GenericDailyDump [LineNumber]:  543  1 Rows updated..
+Jun 06, 2019 4:57:36 PM com.enhancesys.common.logger
+FINE: [Thread]: 216 [ClassName]: com.enhancesys.integration.services.processor.GenericDailyDump [LineNumber]:  630  GenericDailyDump : Exit processRequest... InterfaceId ::  1128 and took 230 milliseconds
+Jun 06, 2019 4:57:36 PM com.enhancesys.common.logger
+FINE: [Thread]: 216 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  8766  Completed pullDataToFile.. 1128  Service at --> Thu Jun 06 16:57:36 IST 2019 --- and took 238 milliseconds
+Jun 06, 2019 4:57:36 PM com.enhancesys.common.logger
+FINE: [Thread]: 216 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  8830  Exit pullData service at -->Thu Jun 06 16:57:36 IST 2019 --- and took 242 milliseconds
+
+
+
+-- 1129
+
+Jun 06, 2019 4:57:59 PM com.enhancesys.common.logger
+FINE: [Thread]: 210 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  8616  Entry pullDataToFile.. Started at --> Thu Jun 06 16:57:59 IST 2019
+Jun 06, 2019 4:57:59 PM com.enhancesys.common.logger
+FINE: [Thread]: 210 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  8619  pullDataToFile service received interface id-->[1129]
+Jun 06, 2019 4:57:59 PM com.enhancesys.common.logger
+FINE: [Thread]: 210 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  8655  Started pullDataToFile.. 1129  Started at --> Thu Jun 06 16:57:59 IST 2019
+Jun 06, 2019 4:57:59 PM com.enhancesys.common.logger
+FINE: [Thread]: 210 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  8726  [dataConverter] class com.sun.proxy.$Proxy208
+Jun 06, 2019 4:57:59 PM com.enhancesys.common.logger
+FINE: [Thread]: 210 [ClassName]: com.enhancesys.integration.services.processor.GenericDailyDump [LineNumber]:  115  [GenericDailyDump] Entry processRequest ...InterfaceId :: 1129 StartTime :: 1559820479477
+Jun 06, 2019 4:57:59 PM com.enhancesys.common.logger
+FINE: [Thread]: 210 [ClassName]: com.enhancesys.integration.services.processor.GenericDailyDump [LineNumber]:  170  Self Notify Interface :: Inserting entry into tr_daily_dump_summary...
+Jun 06, 2019 4:57:59 PM com.enhancesys.common.logger
+FINE: [Thread]: 210 [ClassName]: com.enhancesys.integration.services.processor.GenericDailyDump [LineNumber]:  182  Inserted a record into tr_daily_dump_summary...
+Jun 06, 2019 4:57:59 PM com.enhancesys.common.logger
+FINE: [Thread]: 210 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  9322  Entry readFilePropertyBeans.. Started at --> Thu Jun 06 16:57:59 IST 2019
+Jun 06, 2019 4:57:59 PM com.enhancesys.common.logger
+FINE: [Thread]: 210 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  9336  readFilePropertyBeans service received interface id-->1129
+Jun 06, 2019 4:57:59 PM com.enhancesys.common.logger
+FINE: [Thread]: 210 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  10106  Exit readFilePropertyBeans service at -->Thu Jun 06 16:57:59 IST 2019 --- and took 28 milliseconds
+Jun 06, 2019 4:57:59 PM com.enhancesys.common.logger
+FINE: [Thread]: 210 [ClassName]: com.enhancesys.integration.services.processor.GenericDailyDump [LineNumber]:  252  Interface : 1129 : File : Detail_SP_CS_Act_20190606.csv
+Jun 06, 2019 4:57:59 PM com.enhancesys.common.logger
+FINE: [Thread]: 210 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  8010  Entry createInterfaceFileSummary.. Started at --> Thu Jun 06 16:57:59 IST 2019
+Jun 06, 2019 4:57:59 PM com.enhancesys.common.logger
+FINE: [Thread]: 210 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  8023  createInterfaceFileSummary service received interfaceFileSummary for file id-->null
+Jun 06, 2019 4:57:59 PM com.enhancesys.common.logger
+FINE: [Thread]: 210 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  8098  Exit createInterfaceFileSummary service at -->Thu Jun 06 16:57:59 IST 2019 --- and took 27 milliseconds
+Jun 06, 2019 4:57:59 PM com.enhancesys.common.logger
+FINE: [Thread]: 210 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  7457  Entry createControlFile.. Started at --> Thu Jun 06 16:57:59 IST 2019
+Jun 06, 2019 4:57:59 PM com.enhancesys.common.logger
+FINE: [Thread]: 210 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  7472  createControlFile service received filePath -->/home/appuser/interfaces/S-NOC/interfaces/master_file/daily_dumps/detail_sp_cs_act/Detail_SP_CS_Act_20190606.csvtotalCount-->0fileName-->Detail_SP_CS_Act_20190606fileFormat-->csvcurrentFileId-->10028contolFileFormat-->ctlcontolFilePath-->/home/appuser/interfaces/S-NOC/interfaces/master_file/daily_dumps/detail_sp_cs_act/
+Jun 06, 2019 4:57:59 PM com.enhancesys.common.logger
+FINE: [Thread]: 210 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  7927  updateInterfaceFileSummaryDetails service received interfaceFileSummaryDetails object for file details id-->10028
+Jun 06, 2019 4:57:59 PM com.enhancesys.common.logger
+FINE: [Thread]: 210 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  7536  Exit control file creation service at -->Thu Jun 06 16:57:59 IST 2019 --- and took 42 milliseconds
+Jun 06, 2019 4:57:59 PM com.enhancesys.common.logger
+FINE: [Thread]: 210 [ClassName]: com.enhancesys.integration.services.processor.GenericDailyDump [LineNumber]:  543  1 Rows updated..
+Jun 06, 2019 4:57:59 PM com.enhancesys.common.logger
+FINE: [Thread]: 210 [ClassName]: com.enhancesys.integration.services.processor.GenericDailyDump [LineNumber]:  630  GenericDailyDump : Exit processRequest... InterfaceId ::  1129 and took 241 milliseconds
+Jun 06, 2019 4:57:59 PM com.enhancesys.common.logger
+FINE: [Thread]: 210 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  8766  Completed pullDataToFile.. 1129  Service at --> Thu Jun 06 16:57:59 IST 2019 --- and took 250 milliseconds
+Jun 06, 2019 4:57:59 PM com.enhancesys.common.logger
+FINE: [Thread]: 210 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  8830  Exit pullData service at -->Thu Jun 06 16:57:59 IST 2019 --- and took 254 milliseconds
+
+
+
+
+

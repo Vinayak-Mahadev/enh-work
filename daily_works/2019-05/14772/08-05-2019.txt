@@ -1,0 +1,189 @@
+
+--(113) SALDOMOBO ORG To ORG TRANSFER:
+kpi.tr_daily_org_transfer_aggr
+kpi.tr_monthly_org_transfer_aggr
+
+--(114) SALDOMOBO INDOSAT TO ORG TRANSFER:
+kpi.tr_daily_indosat_transfer_aggr
+kpi.tr_monthly_indosat_transfer_aggr
+
+--(115) SALDOMOBO ORGANIZATION BALANCE:
+kpi.tr_daily_org_balance_aggr
+kpi.tr_monthly_org_balance_aggr
+
+
+SELECT  * from interface.ms_interface  where name_v ilike '%org%' order by 1
+
+SELECT  * from interface.ms_interface  where interface_id_n in (1064, 1065, 1082)
+
+
+SELECT  * from interface.ms_interface_attr   where interface_id_n = 1064 order by 1
+
+SELECT  * from interface.ms_interface_attr   where interface_id_n = 1065 order by 1
+
+SELECT  * from interface.ms_interface_attr   where interface_id_n = 1082 order by 1
+
+
+without change
+attribute_id_n interface_id_n name_v|value_v
+
+1064040|1064|Field Lookup Conf|{"fields":{"actor_field":"Credit Party ID","metric_field":"Account Type","source_field":"Organization ID","instance_field":"Transaction Channel"},"error_codes":{"actor_field":"60101","metric_field":"60201","source_field":"60301","instance_field":"60401"},"table_name":"tr_temp_upload_metrics_revenue_aggr","lookup_query":"select * from kpi.update_aggregate_lookup_revenue_master(?, ?);","notexist_lookup":"metrics","no_of_params":{"metrics":2},"daily_table":"tr_daily_upload_metrics_aggr","monthly_table":"tr_monthly_upload_metrics_aggr","no_of_join_query_params":1,"no_of_daily_join_queries":1,"no_of_monthly_join_queries":1}
+1065039|1065|Field Lookup Conf|{"fields":{"actor_field":"Organization ID","metric_field":"Initiator Type","source_field":"SP Operator ID","instance_field":""},"error_codes":{"actor_field":"60101","metric_field":"60201","source_field":"60301","instance_field":"60401"},"table_name":"tr_temp_upload_metrics_revenue_aggr","lookup_query":"select * from kpi.update_aggregate_lookup_revenue_master(?, ?);","notexist_lookup":"metrics","no_of_params":{"metrics":1},"daily_table":"tr_daily_upload_metrics_aggr","monthly_table":"tr_monthly_upload_metrics_aggr","no_of_join_query_params":1,"no_of_daily_join_queries":1,"no_of_monthly_join_queries":1}
+1082039|1082|Field Lookup Conf|{"fields":{"actor_field":"Organization ID","metric_field":"Account Type","source_field":"Organization ID","instance_field":""},"error_codes":{"actor_field":"60101","metric_field":"60201","source_field":"60301","instance_field":"60401"},"table_name":"tr_temp_upload_metrics_orgbal_aggr","lookup_query":"select * from kpi.update_aggregate_lookup_orgbal_master(?, ?);","notexist_lookup":"metrics","no_of_params":{"metrics":1},"daily_table":"tr_daily_upload_metrics_aggr","monthly_table":"tr_monthly_upload_metrics_aggr","no_of_join_query_params":1,"no_of_daily_join_queries":1,"no_of_monthly_join_queries":1}
+
+
+
+
+update query
+
+UPDATE interface.ms_interface_attr SET value_v = '{"fields":{"actor_field":"Credit Party ID","metric_field":"Account Type","source_field":"Organization ID","instance_field":"Transaction Channel"},"error_codes":{"actor_field":"60101","metric_field":"60201","source_field":"60301","instance_field":"60401"},"table_name":"tr_temp_upload_metrics_revenue_aggr","lookup_query":"select * from kpi.update_aggregate_lookup_revenue_master(?, ?);","notexist_lookup":"metrics","no_of_params":{"metrics":2},"daily_table":"tr_daily_org_transfer_aggr","monthly_table":"tr_monthly_org_transfer_aggr","no_of_join_query_params":1,"no_of_daily_join_queries":1,"no_of_monthly_join_queries":1}' WHERE attribute_id_n = 1064040;
+UPDATE interface.ms_interface_attr SET value_v = '{"fields":{"actor_field":"Organization ID","metric_field":"Initiator Type","source_field":"SP Operator ID","instance_field":""},"error_codes":{"actor_field":"60101","metric_field":"60201","source_field":"60301","instance_field":"60401"},"table_name":"tr_temp_upload_metrics_revenue_aggr","lookup_query":"select * from kpi.update_aggregate_lookup_revenue_master(?, ?);","notexist_lookup":"metrics","no_of_params":{"metrics":1},"daily_table":"tr_daily_indosat_transfer_aggr","monthly_table":"tr_monthly_indosat_transfer_aggr","no_of_join_query_params":1,"no_of_daily_join_queries":1,"no_of_monthly_join_queries":1}' WHERE attribute_id_n = 1065039;
+UPDATE interface.ms_interface_attr SET value_v = '{"fields":{"actor_field":"Organization ID","metric_field":"Account Type","source_field":"Organization ID","instance_field":""},"error_codes":{"actor_field":"60101","metric_field":"60201","source_field":"60301","instance_field":"60401"},"table_name":"tr_temp_upload_metrics_orgbal_aggr","lookup_query":"select * from kpi.update_aggregate_lookup_orgbal_master(?, ?);","notexist_lookup":"metrics","no_of_params":{"metrics":1},"daily_table":"tr_daily_org_balance_aggr","monthly_table":"tr_monthly_org_balance_aggr","no_of_join_query_params":1,"no_of_daily_join_queries":1,"no_of_monthly_join_queries":1}' WHERE attribute_id_n = 1082039;
+
+
+
+
+with change
+attribute_id_n interface_id_n name_v|value_v
+
+1064040|1064|Field Lookup Conf|{"fields":{"actor_field":"Credit Party ID","metric_field":"Account Type","source_field":"Organization ID","instance_field":"Transaction Channel"},"error_codes":{"actor_field":"60101","metric_field":"60201","source_field":"60301","instance_field":"60401"},"table_name":"tr_temp_upload_metrics_revenue_aggr","lookup_query":"select * from kpi.update_aggregate_lookup_revenue_master(?, ?);","notexist_lookup":"metrics","no_of_params":{"metrics":2},"daily_table":"tr_daily_org_transfer_aggr","monthly_table":"tr_monthly_org_transfer_aggr","no_of_join_query_params":1,"no_of_daily_join_queries":1,"no_of_monthly_join_queries":1}
+1065039|1065|Field Lookup Conf|{"fields":{"actor_field":"Organization ID","metric_field":"Initiator Type","source_field":"SP Operator ID","instance_field":""},"error_codes":{"actor_field":"60101","metric_field":"60201","source_field":"60301","instance_field":"60401"},"table_name":"tr_temp_upload_metrics_revenue_aggr","lookup_query":"select * from kpi.update_aggregate_lookup_revenue_master(?, ?);","notexist_lookup":"metrics","no_of_params":{"metrics":1},"daily_table":"tr_daily_indosat_transfer_aggr","monthly_table":"tr_monthly_indosat_transfer_aggr","no_of_join_query_params":1,"no_of_daily_join_queries":1,"no_of_monthly_join_queries":1}
+1082039|1082|Field Lookup Conf|{"fields":{"actor_field":"Organization ID","metric_field":"Account Type","source_field":"Organization ID","instance_field":""},"error_codes":{"actor_field":"60101","metric_field":"60201","source_field":"60301","instance_field":"60401"},"table_name":"tr_temp_upload_metrics_orgbal_aggr","lookup_query":"select * from kpi.update_aggregate_lookup_orgbal_master(?, ?);","notexist_lookup":"metrics","no_of_params":{"metrics":1},"daily_table":"tr_daily_org_balance_aggr","monthly_table":"tr_monthly_org_balance_aggr","no_of_join_query_params":1,"no_of_daily_join_queries":1,"no_of_monthly_join_queries":1}
+
+
+
+
+
+
+
+
+
+
+--(113) SALDOMOBO ORG To ORG TRANSFER:			1064 interface_id_n
+SELECT *  from kpi.tr_daily_event_count_aggr;
+SELECT *  from kpi.tr_monthly_org_transfer_aggr
+
+--(114) SALDOMOBO INDOSAT TO ORG TRANSFER:		1065 interface_id_n
+SELECT *  from  kpi.tr_daily_indosat_transfer_aggr
+SELECT *  from kpi.tr_monthly_indosat_transfer_aggr
+
+--(115) SALDOMOBO ORGANIZATION BALANCE:			1082 interface_id_n
+SELECT *  from kpi.tr_daily_org_balance_aggr
+SELECT *  from kpi.tr_monthly_org_balance_aggr
+
+
+SELECT  * from interface.ms_interface  where name_v ilike '%org%' order by 1
+
+SELECT  * from interface.ms_interface  where interface_id_n in (1064, 1065, 1082)
+
+
+SELECT  * from interface.ms_interface_attr   where interface_id_n = 1064 order by 1
+
+"Remote Dir";"/home/appuser/interfaces/SM/master_files/org_to_org_transfer/"
+"Local Dir";"/home/appuser/interfaces/S-NOC/interfaces/master_file/org_to_org_transfer/"
+"File Headers";"DateTime|Transaction ID|Channel|Region|Area|Sales Area|Cluster|Additional Territory|Transaction Channel|Organization Type|Organization ID|Organization Name|Operator ID|Operator Name|Operator Type|MSISDN|User Name|Credit Party ID|Credit Party Name|Approval  (...)"
+"Mongo Config";"{"replica":"R4","schema":"snoc_report","collection":"org_to_org_transfer","batch_size":"100","field_config":[{"key":"date_time","dataIndex":0,"data_type":"Date","format":"yyyy-MM-dd HH:mm:ss"},{"key":"transaction_id","dataIndex":1,"data_type":"String"},{"k (...)"
+
+SELECT * from interface.tr_interface_file_summary where  interface_id_n = 1064
+
+
+
+
+SELECT  * from interface.ms_interface_attr   where interface_id_n = 1065 order by 1
+"Remote File";"daily_dump_indosat2org"
+"Remote Dir";"/home/appuser/interfaces/SM/master_files/indosat_to_org_transfer/"
+"Local Dir";"/home/appuser/interfaces/S-NOC/interfaces/master_file/indosat_to_org_transfer/"
+"File Headers";"Created Date|Completion Date|SO Number|Transaction ID|Transaction Status|Channel|Organization Type|Organization ID|Organization Name|Amount|Pre Balance|Post Balance|Initiator Type|SP Operator ID|SP Operator Name|Approval Operator ID|Approval Operator Name"
+
+SELECT  * from interface.ms_interface_attr   where interface_id_n = 1082 order by 1
+"Remote File";"daily_dump_org_balance"
+"Remote Dir";"/home/appuser/interfaces/SM/master_files/org_balance/"
+"Local Dir";"/home/appuser/interfaces/S-NOC/interfaces/master_file/org_balance/"
+"File Headers";"Date|Organization Type|Organization ID|Organization Name|Parent Organization ID|Parent Organization Name|Account Type|Balance Amount|KOIN Amount"
+
+
+
+
+
+UPDATE interface.ms_interface_attr SET value_v = '{"fields":{"actor_field":"Credit Party ID","metric_field":"Account Type","source_field":"Organization ID","instance_field":"Transaction Channel"},"error_codes":{"actor_field":"60101","metric_field":"60201","source_field":"60301","instance_field":"60401"},"table_name":"tr_temp_upload_metrics_revenue_aggr","lookup_query":"select * from kpi.update_aggregate_lookup_revenue_master(?, ?);","notexist_lookup":"metrics","no_of_params":{"metrics":2},"daily_table":"tr_daily_org_transfer_aggr","monthly_table":"tr_monthly_org_transfer_aggr","no_of_join_query_params":1,"no_of_daily_join_queries":1,"no_of_monthly_join_queries":1}' WHERE attribute_id_n = 1064040;
+UPDATE interface.ms_interface_attr SET value_v = '{"fields":{"actor_field":"Organization ID","metric_field":"Initiator Type","source_field":"SP Operator ID","instance_field":""},"error_codes":{"actor_field":"60101","metric_field":"60201","source_field":"60301","instance_field":"60401"},"table_name":"tr_temp_upload_metrics_revenue_aggr","lookup_query":"select * from kpi.update_aggregate_lookup_revenue_master(?, ?);","notexist_lookup":"metrics","no_of_params":{"metrics":1},"daily_table":"tr_daily_indosat_transfer_aggr","monthly_table":"tr_monthly_indosat_transfer_aggr","no_of_join_query_params":1,"no_of_daily_join_queries":1,"no_of_monthly_join_queries":1}' WHERE attribute_id_n = 1065039;
+UPDATE interface.ms_interface_attr SET value_v = '{"fields":{"actor_field":"Organization ID","metric_field":"Account Type","source_field":"Organization ID","instance_field":""},"error_codes":{"actor_field":"60101","metric_field":"60201","source_field":"60301","instance_field":"60401"},"table_name":"tr_temp_upload_metrics_orgbal_aggr","lookup_query":"select * from kpi.update_aggregate_lookup_orgbal_master(?, ?);","notexist_lookup":"metrics","no_of_params":{"metrics":1},"daily_table":"tr_daily_org_balance_aggr","monthly_table":"tr_monthly_org_balance_aggr","no_of_join_query_params":1,"no_of_daily_join_queries":1,"no_of_monthly_join_queries":1}' WHERE attribute_id_n = 1082039;
+
+
+-------------------------------------------------------------------RESULT-------------------------------------------------
+
+
+
+
+
+
+SELECT  * from interface.ms_interface  where interface_id_n in (1064, 1065, 1082)
+
+
+
+
+SELECT  * from interface.ms_interface_attr   where interface_id_n = 1064 order by 1
+SELECT  * from interface.ms_interface_attr   where interface_id_n = 1065 order by 1
+SELECT  * from interface.ms_interface_attr   where interface_id_n = 1082 order by 1
+
+
+SELECT  * from interface.ms_interface_attr   where  interface_id_n = 1064 order by 1
+SELECT  * from interface.tr_interface_file_summary    where interface_id_n = 1064 order by 1 desc
+
+
+
+1064
+SELECT * from kpi.tr_daily_org_transfer_aggr where  day_id_n=20170702 order by day_id_n desc limit 5
+SELECT * from kpi.tr_monthly_org_transfer_aggr where  month_id_n=201707 order by month_id_n desc limit 5
+
+16435;"daily_dump_org2org_20190508_222.csv"		20170702;1;181638;113;34;115701;2000
+16435;"daily_dump_org2org_20190508_111.csv"		20170702;1;181638;113;34;115701;4000
+
+
+
+
+1065
+SELECT * from kpi.tr_daily_indosat_transfer_aggr where  day_id_n=20170702 order by day_id_n desc limit 5
+SELECT * from kpi.tr_monthly_indosat_transfer_aggr where  month_id_n=201907 order by month_id_n desc limit 5
+
+16434;"daily_dump_indosat2org_20190508_222.csv";    20170702;1;181638;114;35;115707;5000
+16433;"daily_dump_indosat2org_20190508_111.csv";    20170702;1;181638;114;35;115707;10000
+
+
+
+
+
+1082
+SELECT * from kpi.tr_daily_org_balance_aggr where  day_id_n=20170702 order by day_id_n desc limit 5
+SELECT * from kpi.tr_monthly_org_balance_aggr where  month_id_n=201907 order by month_id_n desc limit 5
+    
+
+16432;"daily_dump_org_balance_20190508_222.csv"      20170702;1;181638;115;34;115717;1000  
+16431;"daily_dump_org_balance_20190508_111.csv"	     20170702;1;181638;115;34;115717;1000
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

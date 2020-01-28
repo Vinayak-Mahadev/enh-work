@@ -1,0 +1,448 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:int="http://com/enhancesys/integration/services/interfaces/IntegrationManagement">
+	<soapenv:Header />
+	<soapenv:Body>
+		<int:publishToInterface>
+			<moduleId>110</moduleId>
+			<jsonRequestData>
+				<![CDATA[
+         {
+	"payload": {
+		"organization": {
+			"sub_org_type_des": "Outlet",
+			"desc": "Out190809001",
+			"sub_org_type": 66,
+			"org_email_id": "",
+			"visibility_type": 1,
+			"ref_code": "Out190809001",
+			"addnl_params": {
+				"org_category": "2060",
+				"org_pareto_manual": "0",
+				"marketing_program": "2255",
+				"operator_name": "Out190809001",
+				"owner_name": "Out190809001",
+				"auth_type": [
+					"1152",
+					"1151"
+				],
+				"saldomobo_msisdn_no": "6285452525556",
+				"org_pareto_bvwise": "1234",
+				"role_id": "2103",
+				"notifi_lang": "9002",
+				"mother_mad_name": "Dhvj",
+				"rule_prof_id": "1958",
+				"charge_dist_model": "2001",
+				"charge_prof_id": "58643",
+				"charge_prof_key": "58640",
+				"dompetku_no": "6285452525556",
+				"chnl_ctgr": "1753",
+				"partner_type": "1451",
+				"org_loc_type": "",
+				"org_group": "",
+				"org_classification": "1701",
+				"npwp_num": "",
+				"hobby": "",
+				"size_cloth": "",
+				"pants_size": "",
+				"shoe_size": "",
+				"formal_education": "",
+				"in_formal_education": "",
+				"parent_short_code": "9876654",
+				"org_stg_info": "",
+				"org_long": "",
+				"org_width": "",
+				"org_painting": "",
+				"telephone_no": "",
+				"paypro_msisdn_no": "",
+				"bank_name": "",
+				"bank_acc_no": "",
+				"org_addnl_field_1": "",
+				"org_addnl_field_2": "",
+				"org_addnl_field_3": "",
+				"org_addnl_field_4": "",
+				"org_addnl_field_5": "",
+				"org_addnl_dropdown_1": "",
+				"org_addnl_dropdown_2": "",
+				"org_addnl_dropdown_3": "",
+				"org_addnl_dropdown_4": "",
+				"org_addnl_dropdown_5": "",
+				"prd_dtls": [
+					{
+						"prd_id": 58321,
+						"prd_exp_date": {
+							"$date": "2099-12-30T18:30:00.000Z"
+						},
+						"prd_efct_date": {
+							"$date": "2019-08-09T10:27:58.547Z"
+						}
+					},
+					{
+						"prd_id": 58357,
+						"prd_exp_date": {
+							"$date": "2099-12-30T18:30:00.000Z"
+						},
+						"prd_efct_date": {
+							"$date": "2019-08-09T10:27:58.547Z"
+						}
+					}
+				],
+				"org_type": 6
+			},
+			"reg_mob": "",
+			"sale_territory": {
+				"nasional": "5501",
+				"area": "",
+				"regional": "57682",
+				"sales_area": "",
+				"cluster": "",
+				"micro_cluster": ""
+			},
+			"extnl_sync": true,
+			"territory_id": 57682,
+			"sale_territory_desc": "Central and West Java->NASIONAL",
+			"org_type": 7,
+			"org_type_desc": "",
+			"reason_cmnt": null,
+			"reason": null,
+			"addresses": [
+				{
+					"adrs_type": "745",
+					"adrs_1": "Dil ghugghu",
+					"country": "401",
+					"state": "54288",
+					"zone": "54306",
+					"city": "54311",
+					"latitude": "12.93861240",
+					"longitude": "77.62218600",
+					"loc": {
+						"type": "Point",
+						"coordinates": [
+							77.622186,
+							12.9386124
+						]
+					}
+				}
+			],
+			"parent_org_type": 7,
+			"parent_org_id": 294523,
+			"present_parent_org_id": 294523,
+			"status": 174,
+			"activated_dt": {
+				"$date": "2019-08-09T10:27:58.574Z"
+			},
+			"src_chnl": "Mobile",
+			"crtd_by": 277484,
+			"crtd_dt": {
+				"$date": "2019-08-09T10:27:58.574Z"
+			},
+			"updtd_by": null,
+			"updtd_dt": null,
+			"_id": 294547,
+			"org_id": 294547
+		},
+		"user": {
+			"org_type": 6,
+			"org_type_desc": "",
+			"parent_org_type": 7,
+			"first_name": "Out190809001",
+			"uname": "MOBII39373",
+			"utype": 731,
+			"org_id": 294547,
+			"contacts": [
+				{
+					"no": "no@no.com",
+					"type": "email_id"
+				},
+				{
+					"no": "624522585582",
+					"type": "mobile_no"
+				},
+				{
+					"no": "",
+					"type": "landLineNo"
+				},
+				{
+					"no": "9002",
+					"type": "preferred_commn_lang"
+				},
+				{
+					"no": "9002",
+					"type": "preferred_lang"
+				}
+			],
+			"org_tmpl": 2,
+			"upwd": "9+nC5r2T2U/EYN1kiqZNKb0m3Qd++Rn1H9R4g0NWwR0=",
+			"locked": "N",
+			"blocked": "N",
+			"atmpt_cnt": 0,
+			"frst_login": "Y",
+			"last_login_dt": "",
+			"logged_in": "N",
+			"parent_org_id": 294523,
+			"status": 174,
+			"present_parent_org_id": 294523,
+			"middle_name": "",
+			"wrk_start_date": "09-Aug-2019",
+			"wrk_end_date": "31-Dec-2099",
+			"user_type": "1351",
+			"mother_mad_name": "Dhvj",
+			"notifi_lang": "9002",
+			"saldomobo_msisdn_no": "6285452525556",
+			"operator_name": "Out190809001",
+			"org_owner": "1",
+			"owner_name": "Out190809001",
+			"owner_alt_id_type": "1553",
+			"owner_alt_id_no": "866366",
+			"notify_chnl": "1201",
+			"operator_type": "58563",
+			"role_id": [
+				"2103"
+			],
+			"auth_type": [
+				"1152",
+				"1151"
+			],
+			"paypro_msisdn_no": "6285452525555",
+			"operator_id": "MOBII39373",
+			"role_id_dtls": [
+				{
+					"role_id": 2103,
+					"role_exp_date": {
+						"$date": "2099-12-30T18:30:00.000Z"
+					},
+					"role_efct_date": {
+						"$date": "2019-08-09T10:27:58.548Z"
+					}
+				}
+			],
+			"dob": null,
+			"addresses": [
+				{
+					"adrs_type": "742",
+					"subDistrict": "",
+					"postal_code": "",
+					"adrs_1": "Funky",
+					"state": "54288",
+					"adrs_2": "",
+					"longitude": "77.62218600",
+					"latitude": "12.93861240",
+					"zone": "54306",
+					"country": "401",
+					"city": "54311"
+				}
+			],
+			"_id": 277520,
+			"user_id": 277520,
+			"accept": 1,
+			"salt": "MOBII39373",
+			"crtd_by": 277484,
+			"crtd_dt": {
+				"$date": "2019-08-09T10:27:58.623Z"
+			},
+			"updtd_by": null,
+			"updtd_dt": null,
+			"password": "Pwd@123456"
+		},
+		"node": {
+			"sale_territory_desc": "Central and West Java->NASIONAL",
+			"territory_id": [
+				57682
+			],
+			"org_id": 294547,
+			"org_type": 6,
+			"target": 0,
+			"roles": [
+				35,
+				34
+			],
+			"children": [],
+			"trans_list": [
+				{
+					"trans_type": 4,
+					"trans_values": [
+						1034,
+						1033
+					]
+				},
+				{
+					"trans_type": 1,
+					"trans_values": [
+						6
+					]
+				},
+				{
+					"trans_type": 2,
+					"trans_values": [
+						401
+					]
+				},
+				{
+					"trans_type": 3,
+					"trans_values": [
+						54288
+					]
+				},
+				{
+					"trans_type": 5,
+					"trans_values": [
+						54306
+					]
+				},
+				{
+					"trans_type": 6,
+					"trans_values": [
+						54311
+					]
+				},
+				{
+					"trans_type": 84,
+					"trans_values": [
+						5501
+					]
+				},
+				{
+					"trans_type": 85,
+					"trans_values": [
+						57682
+					]
+				}
+			],
+			"parent_id": 0,
+			"props": [
+				237,
+				240,
+				239
+			],
+			"crtd_by": 277484,
+			"crtd_dt": {
+				"$date": "2019-08-09T10:27:58.599Z"
+			},
+			"updtd_by": null,
+			"updtd_dt": null,
+			"_id": 304012,
+			"node_id": 304012,
+			"status": 174,
+			"name": "OUTLET WITH SIMCARD REGISTER,OUTLET OWNER_Central and West Java_304012"
+		},
+		"accounts": [
+			{
+				"_id": 6139016,
+				"location": {
+					"adrs_type": "744",
+					"adrs_1": "Dil ghugghu",
+					"country": "401",
+					"state": "54288",
+					"zone": "54306",
+					"city": "54311",
+					"latitude": "12.93861240",
+					"longitude": "77.62218600",
+					"loc": {
+						"type": "Point",
+						"coordinates": [
+							77.622186,
+							12.9386124
+						]
+					}
+				},
+				"ac_name": "Voutlet 700_OUTLET WITH SIMCARD REGISTER_6139016",
+				"ent_tp": 6,
+				"ent_no": 304012,
+				"ent_org": 294547,
+				"sys": "",
+				"value": 0,
+				"ac_code": 304012,
+				"status": 174,
+				"crtd_by": 277484,
+				"crtd_dt": {
+					"$date": "2019-08-09T10:27:58.606Z"
+				},
+				"updtd_by": null,
+				"updtd_dt": null,
+				"start_dt": {
+					"$date": "2019-08-08T18:30:00.000Z"
+				},
+				"end_dt": {
+					"$date": "2099-12-31T18:29:59.999Z"
+				},
+				"acc_no": 6139016,
+				"acc_type": "i"
+			}
+		],
+		"user_trans": {
+			"_id": 534730,
+			"node_id": 304012,
+			"org_id": 294547,
+			"org_desc": "Voutlet 700",
+			"user_id": 277520,
+			"start_dt": {
+				"$date": "2019-08-08T18:30:00.000Z"
+			},
+			"end_dt": {
+				"$date": "2099-12-31T18:29:59.999Z"
+			},
+			"is_current": 1,
+			"postn_tp": 1,
+			"status": 174,
+			"position_desc": [
+				"OUTLET OWNER",
+				"OUTLET WITH SIMCARD REGISTER"
+			],
+			"position_id": [
+				1034,
+				1033
+			],
+			"organization type_desc": [
+				"Retailer"
+			],
+			"organization type_id": [
+				6
+			],
+			"country_desc": [
+				"Nasional"
+			],
+			"country_id": [
+				401
+			],
+			"province_desc": [
+				"BALI"
+			],
+			"province_id": [
+				54288
+			],
+			"city_desc": [
+				"BADUNG"
+			],
+			"city_id": [
+				54306
+			],
+			"district_desc": [
+				"ABIANSEMAL"
+			],
+			"district_id": [
+				54311
+			],
+			"nasional_desc": [
+				"NASIONAL"
+			],
+			"nasional_id": [
+				5501
+			],
+			"regional_desc": [
+				"Central and West Java"
+			],
+			"regional_id": [
+				57682
+			],
+			"crtd_by": 277484,
+			"crtd_dt": {
+				"$date": "2019-08-09T10:27:59.142Z"
+			},
+			"updtd_by": null,
+			"updtd_dt": null
+		}
+	}
+}]]>
+			</jsonRequestData>
+		</int:publishToInterface>
+	</soapenv:Body>
+</soapenv:Envelope>

@@ -1,0 +1,49 @@
+
+SELECT  * from interface.ms_interface  where interface_id_n in (1064, 1065, 1082)
+
+SELECT  * from interface.ms_interface_attr   where interface_id_n = 1064 order by 1
+SELECT  * from interface.ms_interface_attr   where interface_id_n = 1065 order by 1
+SELECT  * from interface.ms_interface_attr   where interface_id_n = 1082 order by 1
+
+
+SELECT  * from interface.tr_interface_file_summary  where interface_id_n = 1082 order by 1 desc
+
+16444
+SELECT  * from kpi.tr_temp_upload_aggr_failure  where file_id_n = 16444   order by file_id_n  desc limit 10
+
+update kpi.tr_temp_upload_aggr_failure  set actor_key_v='SAT10' where file_id_n = 16444
+
+"Source mapping not found for Organization ID : SAT"
+
+update kpi.tr_temp_upload_aggr_failure  set source_key_v='SAT10' where file_id_n = 16444
+
+
+
+select * from kpi.mp_event_frequency_mapping where event_type_n = (select event_type_n from kpi.ms_event_type_master where system_event_v = '1082')
+
+select * from kpi.tr_temp_upload_metrics_orgbal_aggr where file_id_n=16443
+
+1064
+SELECT * from kpi.tr_daily_org_transfer_aggr where  day_id_n=20170702 order by day_id_n desc limit 5
+SELECT * from kpi.tr_monthly_org_transfer_aggr where  month_id_n=201707 order by month_id_n desc limit 5
+
+16435;"daily_dump_org2org_20190508_222.csv"		20170702;1;181638;113;34;115701;2000
+16435;"daily_dump_org2org_20190508_111.csv"		20170702;1;181638;113;34;115701;4000
+
+
+1065
+SELECT * from kpi.tr_daily_indosat_transfer_aggr where  day_id_n=20170702 order by day_id_n desc limit 5
+SELECT * from kpi.tr_monthly_indosat_transfer_aggr where  month_id_n=201907 order by month_id_n desc limit 5
+
+16434;"daily_dump_indosat2org_20190508_222.csv";    20170702;1;181638;114;35;115707;5000
+16433;"daily_dump_indosat2org_20190508_111.csv";    20170702;1;181638;114;35;115707;10000
+
+
+1082
+SELECT * from kpi.tr_daily_org_balance_aggr where  day_id_n=20170702 order by day_id_n desc limit 5
+SELECT * from kpi.tr_monthly_org_balance_aggr where  month_id_n=201907 order by month_id_n desc limit 5
+    
+
+16432;"daily_dump_org_balance_20190508_333.csv"      20170702;1;181638;115;34;115717;3000
+16432;"daily_dump_org_balance_20190508_222.csv"      20170702;1;181638;115;34;115717;1000  
+16431;"daily_dump_org_balance_20190508_111.csv"	     20170702;1;181638;115;34;115717;1000

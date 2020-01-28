@@ -1,0 +1,1031 @@
+2019-09-13 10:15:20.876, FINE, [Thread]: 238 [ClassName]: com.enhancesys.integration.services.util.TokuUser [LineNumber]:  33  Initiating TokuMx-Java Adapter.....
+2019-09-13 10:15:20.881, FINE, [Thread]: 238 [ClassName]: com.enhancesys.integration.services.util.TokuUser [LineNumber]:  42  TokuMx-Java Adapter Initiated Successfully For Replica-Set user....!
+2019-09-13 10:15:20.944, FINE, [Thread]: 238 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  11734  Entry invokePrimarySalesInterface..
+2019-09-13 10:15:21.434, FINE, [Thread]: 238 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  12409  Ref ID : 323532
+2019-09-13 10:15:21.438, FINE, [Thread]: 238 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  12430  Ref Data Path Value : 323532
+2019-09-13 10:15:21.439, FINE, [Thread]: 238 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  12433  Ref Data 5 : 323532
+2019-09-13 10:15:21.446, FINE, [Thread]: 238 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  119  JsonXmlDataConverter : Entry processRequest.. interfaceId : 1140 : requestData :
+
+{
+        "payload": {
+                "order": {
+                        "org_id": "323532",
+                        "products": [
+                                {
+                                        "matrl_code": "P64453",
+                                        "plant": "001"
+                                },
+                                {
+                                        "matrl_code": "P4453",
+                                        "plant": "002"
+                                }
+                        ]
+                }
+        }
+}
+
+
+
+2019-09-13 10:15:21.447, FINE, [Thread]: 238 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  14590  Entry getKycSyncAttributesByInterfaceId..
+2019-09-13 10:15:21.663, FINE, [Thread]: 238 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  14638  Exit getKycSyncAttributesByInterfaceId..
+2019-09-13 10:15:21.668, FINE, [Thread]: 238 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  165  Payload : {"order":{"org_id":"323532","products":[{"plant":"001","matrl_code":"P64453"},{"plant":"002","matrl_code":"P4453"}]}}
+2019-09-13 10:15:21.676, FINE, [Thread]: 238 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  194  templateFileName :queryStock-template.xml
+2019-09-13 10:15:21.684, FINE, [Thread]: 238 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  294  JsonXmlDataConverter : Entry generateXml..
+2019-09-13 10:15:21.684, FINE, [Thread]: 238 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  436  soapenv:Header : element.getChildNodes().getLength() : 0
+2019-09-13 10:15:21.685, FINE, [Thread]: 238 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  588  soapenv:Header value : null
+2019-09-13 10:15:21.686, FINE, [Thread]: 238 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  609  soapenv:Header :  : null
+2019-09-13 10:15:21.687, FINE, [Thread]: 238 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  436  soapenv:Body : element.getChildNodes().getLength() : 3
+2019-09-13 10:15:21.687, FINE, [Thread]: 238 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  294  JsonXmlDataConverter : Entry generateXml..
+2019-09-13 10:15:21.688, FINE, [Thread]: 238 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  436  mob:MT_QueryStock_Request : element.getChildNodes().getLength() : 3
+2019-09-13 10:15:21.688, FINE, [Thread]: 238 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  294  JsonXmlDataConverter : Entry generateXml..
+2019-09-13 10:15:21.689, FINE, [Thread]: 238 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  294  JsonXmlDataConverter : Entry generateXml..
+2019-09-13 10:15:21.690, FINE, [Thread]: 238 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  348  element.getAttribute(SOURCE) : matrl_code
+2019-09-13 10:15:21.691, FINE, [Thread]: 238 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  350  Result : P64453
+2019-09-13 10:15:21.691, FINE, [Thread]: 238 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  436  MaterialCode : element.getChildNodes().getLength() : 0
+2019-09-13 10:15:21.692, FINE, [Thread]: 238 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  588  MaterialCode value : P64453
+2019-09-13 10:15:21.692, FINE, [Thread]: 238 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  609  MaterialCode : matrl_code : P64453
+2019-09-13 10:15:21.693, FINE, [Thread]: 238 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  348  element.getAttribute(SOURCE) : plant
+2019-09-13 10:15:21.694, FINE, [Thread]: 238 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  350  Result : 001
+2019-09-13 10:15:21.694, FINE, [Thread]: 238 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  436  Plant : element.getChildNodes().getLength() : 0
+2019-09-13 10:15:21.695, FINE, [Thread]: 238 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  588  Plant value : 001
+2019-09-13 10:15:21.696, FINE, [Thread]: 238 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  609  Plant : plant : 001
+2019-09-13 10:15:21.696, FINE, [Thread]: 238 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  649  JsonXmlDataConverter : Exit generateXml..
+2019-09-13 10:15:21.697, FINE, [Thread]: 238 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  294  JsonXmlDataConverter : Entry generateXml..
+2019-09-13 10:15:21.698, FINE, [Thread]: 238 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  348  element.getAttribute(SOURCE) : matrl_code
+2019-09-13 10:15:21.698, FINE, [Thread]: 238 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  350  Result : P4453
+2019-09-13 10:15:21.699, FINE, [Thread]: 238 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  436  MaterialCode : element.getChildNodes().getLength() : 0
+2019-09-13 10:15:21.699, FINE, [Thread]: 238 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  588  MaterialCode value : P4453
+2019-09-13 10:15:21.700, FINE, [Thread]: 238 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  609  MaterialCode : matrl_code : P4453
+2019-09-13 10:15:21.701, FINE, [Thread]: 238 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  348  element.getAttribute(SOURCE) : plant
+2019-09-13 10:15:21.701, FINE, [Thread]: 238 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  350  Result : 002
+2019-09-13 10:15:21.702, FINE, [Thread]: 238 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  436  Plant : element.getChildNodes().getLength() : 0
+2019-09-13 10:15:21.703, FINE, [Thread]: 238 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  588  Plant value : 002
+2019-09-13 10:15:21.703, FINE, [Thread]: 238 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  609  Plant : plant : 002
+2019-09-13 10:15:21.704, FINE, [Thread]: 238 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  649  JsonXmlDataConverter : Exit generateXml..
+2019-09-13 10:15:21.705, FINE, [Thread]: 238 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  649  JsonXmlDataConverter : Exit generateXml..
+2019-09-13 10:15:21.705, FINE, [Thread]: 238 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  649  JsonXmlDataConverter : Exit generateXml..
+2019-09-13 10:15:21.706, FINE, [Thread]: 238 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  649  JsonXmlDataConverter : Exit generateXml..
+2019-09-13 10:15:21.762, FINE, [Thread]: 238 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  228  End ::  1568349921761 -- <soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:mob="http://mobii.com/">
+<soapenv:Header/>
+<soapenv:Body>
+<mob:MT_QueryStock_Request>
+<Item>
+<MaterialCode>P64453</MaterialCode>
+<Plant>001</Plant>
+</Item>
+<Item>
+<MaterialCode>P4453</MaterialCode>
+<Plant>002</Plant>
+</Item>
+</mob:MT_QueryStock_Request>
+</soapenv:Body>
+</soapenv:Envelope>
+
+2019-09-13 10:15:21.763, FINE, [Thread]: 238 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  271  JsonXmlDataConverter : Exit processRequest..processingTime : 317
+2019-09-13 10:15:21.763, FINE, [Thread]: 238 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  12493  IsException : false
+2019-09-13 10:15:21.765, FINE, [Thread]: 238 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  12557  refData1 : 323532 : refData5 : 323532 : TransID : 229587
+2019-09-13 10:15:21.769, FINE, [Thread]: 238 [ClassName]: com.enhancesys.integration.publisher.WebServicePublisher [LineNumber]:  78  Entry processRequest.. TransactionId :: 229587, InterfaceId :: 1140
+2019-09-13 10:15:21.770, FINE, [Thread]: 238 [ClassName]: com.enhancesys.integration.publisher.WebServicePublisher [LineNumber]:  96  Request --> <soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:mob="http://mobii.com/">
+<soapenv:Header/>
+<soapenv:Body>
+<mob:MT_QueryStock_Request>
+<Item>
+<MaterialCode>P64453</MaterialCode>
+<Plant>001</Plant>
+</Item>
+<Item>
+<MaterialCode>P4453</MaterialCode>
+<Plant>002</Plant>
+</Item>
+</mob:MT_QueryStock_Request>
+</soapenv:Body>
+</soapenv:Envelope>
+
+2019-09-13 10:15:21.777, FINE, [Thread]: 238 [ClassName]: com.enhancesys.integration.publisher.WebServicePublisher [LineNumber]:  148  URL -->
+2019-09-13 10:15:21.778, FINE, [Thread]: 238 [ClassName]: com.enhancesys.integration.publisher.WebServicePublisher [LineNumber]:  156  Static Service URL :: http://interface.enhancesys.com:80/interfaceResponseServices/webservices/InterfaceResponseServicesImpl?wsdl
+2019-09-13 10:15:21.779, FINE, [Thread]: 238 [ClassName]: com.enhancesys.integration.publisher.WebServicePublisher [LineNumber]:  249  Entry sendSoapRequest ...
+2019-09-13 10:15:21.909, FINE, [Thread]: 238 [ClassName]: com.enhancesys.integration.publisher.WebServicePublisher [LineNumber]:  340  Exit sendSoapRequest ...
+2019-09-13 10:15:21.910, FINE, [Thread]: 238 [ClassName]: com.enhancesys.integration.publisher.WebServicePublisher [LineNumber]:  167  Response --> <?xml version = "1.0" encoding = "UTF-8"?> <SOAP:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:mob="http://mobii.com/"><soapenv:Header/><SOAP:Body><nm:MT_QueryStock_Response><Item><MaterialCode>P64453</MaterialCode><Plant>001</Plant><Stock>1000.00</Stock><Remarks>OK</Remarks></Item><Item><MaterialCode>P4453</MaterialCode><Plant>002</Plant><Stock>1000.00</Stock><Remarks>OK</Remarks></Item></nm:MT_QueryStock_Response></SOAP:Body></SOAP:Envelope>
+2019-09-13 10:15:21.911, FINE, [Thread]: 238 [ClassName]: com.enhancesys.integration.publisher.WebServicePublisher [LineNumber]:  227  Exit processRequest..
+2019-09-13 10:15:21.912, FINE, [Thread]: 238 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  11785  responseBean.getStatus() : Success
+2019-09-13 10:15:21.925, FINE, [Thread]: 238 [ClassName]: com.enhancesys.integration.services.converter.LookupMapping [LineNumber]:  1745  Entry convertStringToDocument..
+2019-09-13 10:15:21.927, FINE, [Thread]: 238 [ClassName]: com.enhancesys.integration.services.converter.LookupMapping [LineNumber]:  1774  Exit convertStringToDocument..
+2019-09-13 10:15:21.930, FINE, [Thread]: 238 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  11829  jsonResponseObject : {"SOAP:Envelope":{"SOAP:Body":{"nm:MT_QueryStock_Response":{"Item":[{"Plant":"001","MaterialCode":"P64453","Remarks":"OK","Stock":"1000.00"},{"Plant":"002","MaterialCode":"P4453","Remarks":"OK","Stock":"1000.00"}]}}}}
+2019-09-13 10:15:21.968, FINE, [Thread]: 238 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  11999  Exit invokePrimarySalesInterface..
+2019-09-13 10:15:26.018, FINE, [Thread]: 247 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  11734  Entry invokePrimarySalesInterface..
+2019-09-13 10:15:26.061, FINE, [Thread]: 247 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  12409  Ref ID : 323532
+2019-09-13 10:15:26.066, FINE, [Thread]: 247 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  12430  Ref Data Path Value : 323532
+2019-09-13 10:15:26.066, FINE, [Thread]: 247 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  12433  Ref Data 5 : 323532
+2019-09-13 10:15:26.068, FINE, [Thread]: 247 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  119  JsonXmlDataConverter : Entry processRequest.. interfaceId : 1140 : requestData :
+
+{
+        "payload": {
+                "order": {
+                        "org_id": "323532",
+                        "products": [
+                                {
+                                        "matrl_code": "P64453",
+                                        "plant": "001"
+                                },
+                                {
+                                        "matrl_code": "P4453",
+                                        "plant": "002"
+                                }
+                        ]
+                }
+        }
+}
+
+
+
+2019-09-13 10:15:26.069, FINE, [Thread]: 247 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  14590  Entry getKycSyncAttributesByInterfaceId..
+2019-09-13 10:15:26.072, FINE, [Thread]: 247 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  14638  Exit getKycSyncAttributesByInterfaceId..
+2019-09-13 10:15:26.075, FINE, [Thread]: 247 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  165  Payload : {"order":{"org_id":"323532","products":[{"plant":"001","matrl_code":"P64453"},{"plant":"002","matrl_code":"P4453"}]}}
+2019-09-13 10:15:26.084, FINE, [Thread]: 247 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  194  templateFileName :queryStock-template.xml
+2019-09-13 10:15:26.087, FINE, [Thread]: 247 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  294  JsonXmlDataConverter : Entry generateXml..
+2019-09-13 10:15:26.088, FINE, [Thread]: 247 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  436  soapenv:Header : element.getChildNodes().getLength() : 0
+2019-09-13 10:15:26.089, FINE, [Thread]: 247 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  588  soapenv:Header value : null
+2019-09-13 10:15:26.089, FINE, [Thread]: 247 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  609  soapenv:Header :  : null
+2019-09-13 10:15:26.090, FINE, [Thread]: 247 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  436  soapenv:Body : element.getChildNodes().getLength() : 3
+2019-09-13 10:15:26.090, FINE, [Thread]: 247 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  294  JsonXmlDataConverter : Entry generateXml..
+2019-09-13 10:15:26.091, FINE, [Thread]: 247 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  436  mob:MT_QueryStock_Request : element.getChildNodes().getLength() : 3
+2019-09-13 10:15:26.091, FINE, [Thread]: 247 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  294  JsonXmlDataConverter : Entry generateXml..
+2019-09-13 10:15:26.092, FINE, [Thread]: 247 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  294  JsonXmlDataConverter : Entry generateXml..
+2019-09-13 10:15:26.092, FINE, [Thread]: 247 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  348  element.getAttribute(SOURCE) : matrl_code
+2019-09-13 10:15:26.093, FINE, [Thread]: 247 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  350  Result : P64453
+2019-09-13 10:15:26.093, FINE, [Thread]: 247 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  436  MaterialCode : element.getChildNodes().getLength() : 0
+2019-09-13 10:15:26.094, FINE, [Thread]: 247 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  588  MaterialCode value : P64453
+2019-09-13 10:15:26.094, FINE, [Thread]: 247 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  609  MaterialCode : matrl_code : P64453
+2019-09-13 10:15:26.095, FINE, [Thread]: 247 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  348  element.getAttribute(SOURCE) : plant
+2019-09-13 10:15:26.095, FINE, [Thread]: 247 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  350  Result : 001
+2019-09-13 10:15:26.096, FINE, [Thread]: 247 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  436  Plant : element.getChildNodes().getLength() : 0
+2019-09-13 10:15:26.097, FINE, [Thread]: 247 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  588  Plant value : 001
+2019-09-13 10:15:26.097, FINE, [Thread]: 247 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  609  Plant : plant : 001
+2019-09-13 10:15:26.098, FINE, [Thread]: 247 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  649  JsonXmlDataConverter : Exit generateXml..
+2019-09-13 10:15:26.098, FINE, [Thread]: 247 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  294  JsonXmlDataConverter : Entry generateXml..
+2019-09-13 10:15:26.098, FINE, [Thread]: 247 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  348  element.getAttribute(SOURCE) : matrl_code
+2019-09-13 10:15:26.099, FINE, [Thread]: 247 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  350  Result : P4453
+2019-09-13 10:15:26.099, FINE, [Thread]: 247 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  436  MaterialCode : element.getChildNodes().getLength() : 0
+2019-09-13 10:15:26.100, FINE, [Thread]: 247 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  588  MaterialCode value : P4453
+2019-09-13 10:15:26.100, FINE, [Thread]: 247 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  609  MaterialCode : matrl_code : P4453
+2019-09-13 10:15:26.101, FINE, [Thread]: 247 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  348  element.getAttribute(SOURCE) : plant
+2019-09-13 10:15:26.101, FINE, [Thread]: 247 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  350  Result : 002
+2019-09-13 10:15:26.102, FINE, [Thread]: 247 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  436  Plant : element.getChildNodes().getLength() : 0
+2019-09-13 10:15:26.102, FINE, [Thread]: 247 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  588  Plant value : 002
+2019-09-13 10:15:26.103, FINE, [Thread]: 247 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  609  Plant : plant : 002
+2019-09-13 10:15:26.103, FINE, [Thread]: 247 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  649  JsonXmlDataConverter : Exit generateXml..
+2019-09-13 10:15:26.104, FINE, [Thread]: 247 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  649  JsonXmlDataConverter : Exit generateXml..
+2019-09-13 10:15:26.105, FINE, [Thread]: 247 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  649  JsonXmlDataConverter : Exit generateXml..
+2019-09-13 10:15:26.105, FINE, [Thread]: 247 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  649  JsonXmlDataConverter : Exit generateXml..
+2019-09-13 10:15:26.121, FINE, [Thread]: 247 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  228  End ::  1568349926120 -- <soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:mob="http://mobii.com/">
+<soapenv:Header/>
+<soapenv:Body>
+<mob:MT_QueryStock_Request>
+<Item>
+<MaterialCode>P64453</MaterialCode>
+<Plant>001</Plant>
+</Item>
+<Item>
+<MaterialCode>P4453</MaterialCode>
+<Plant>002</Plant>
+</Item>
+</mob:MT_QueryStock_Request>
+</soapenv:Body>
+</soapenv:Envelope>
+
+2019-09-13 10:15:26.122, FINE, [Thread]: 247 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  271  JsonXmlDataConverter : Exit processRequest..processingTime : 53
+2019-09-13 10:15:26.122, FINE, [Thread]: 247 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  12493  IsException : false
+2019-09-13 10:15:26.123, FINE, [Thread]: 247 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  12557  refData1 : 323532 : refData5 : 323532 : TransID : 229588
+2019-09-13 10:15:26.125, FINE, [Thread]: 247 [ClassName]: com.enhancesys.integration.publisher.WebServicePublisher [LineNumber]:  78  Entry processRequest.. TransactionId :: 229588, InterfaceId :: 1140
+2019-09-13 10:15:26.126, FINE, [Thread]: 247 [ClassName]: com.enhancesys.integration.publisher.WebServicePublisher [LineNumber]:  96  Request --> <soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:mob="http://mobii.com/">
+<soapenv:Header/>
+<soapenv:Body>
+<mob:MT_QueryStock_Request>
+<Item>
+<MaterialCode>P64453</MaterialCode>
+<Plant>001</Plant>
+</Item>
+<Item>
+<MaterialCode>P4453</MaterialCode>
+<Plant>002</Plant>
+</Item>
+</mob:MT_QueryStock_Request>
+</soapenv:Body>
+</soapenv:Envelope>
+
+2019-09-13 10:15:26.137, FINE, [Thread]: 247 [ClassName]: com.enhancesys.integration.publisher.WebServicePublisher [LineNumber]:  148  URL -->
+2019-09-13 10:15:26.138, FINE, [Thread]: 247 [ClassName]: com.enhancesys.integration.publisher.WebServicePublisher [LineNumber]:  156  Static Service URL :: http://interface.enhancesys.com:80/interfaceResponseServices/webservices/InterfaceResponseServicesImpl?wsdl
+2019-09-13 10:15:26.139, FINE, [Thread]: 247 [ClassName]: com.enhancesys.integration.publisher.WebServicePublisher [LineNumber]:  249  Entry sendSoapRequest ...
+2019-09-13 10:15:26.163, FINE, [Thread]: 247 [ClassName]: com.enhancesys.integration.publisher.WebServicePublisher [LineNumber]:  340  Exit sendSoapRequest ...
+2019-09-13 10:15:26.164, FINE, [Thread]: 247 [ClassName]: com.enhancesys.integration.publisher.WebServicePublisher [LineNumber]:  167  Response --> <?xml version = "1.0" encoding = "UTF-8"?> <SOAP:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:mob="http://mobii.com/"><soapenv:Header/><SOAP:Body><nm:MT_QueryStock_Response><Item><MaterialCode>P64453</MaterialCode><Plant>001</Plant><Stock>1000.00</Stock><Remarks>OK</Remarks></Item><Item><MaterialCode>P4453</MaterialCode><Plant>002</Plant><Stock>1000.00</Stock><Remarks>OK</Remarks></Item></nm:MT_QueryStock_Response></SOAP:Body></SOAP:Envelope>
+2019-09-13 10:15:26.164, FINE, [Thread]: 247 [ClassName]: com.enhancesys.integration.publisher.WebServicePublisher [LineNumber]:  227  Exit processRequest..
+2019-09-13 10:15:26.165, FINE, [Thread]: 247 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  11785  responseBean.getStatus() : Success
+2019-09-13 10:15:26.170, FINE, [Thread]: 247 [ClassName]: com.enhancesys.integration.services.converter.LookupMapping [LineNumber]:  1745  Entry convertStringToDocument..
+2019-09-13 10:15:26.172, FINE, [Thread]: 247 [ClassName]: com.enhancesys.integration.services.converter.LookupMapping [LineNumber]:  1774  Exit convertStringToDocument..
+2019-09-13 10:15:26.173, FINE, [Thread]: 247 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  11829  jsonResponseObject : {"SOAP:Envelope":{"SOAP:Body":{"nm:MT_QueryStock_Response":{"Item":[{"Plant":"001","MaterialCode":"P64453","Remarks":"OK","Stock":"1000.00"},{"Plant":"002","MaterialCode":"P4453","Remarks":"OK","Stock":"1000.00"}]}}}}
+2019-09-13 10:15:26.205, FINE, [Thread]: 247 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  11999  Exit invokePrimarySalesInterface..
+2019-09-13 10:15:30.731, FINE, [Thread]: 250 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  11734  Entry invokePrimarySalesInterface..
+2019-09-13 10:15:30.779, FINE, [Thread]: 250 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  12409  Ref ID : 323532
+2019-09-13 10:15:30.787, FINE, [Thread]: 250 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  12430  Ref Data Path Value : 323532
+2019-09-13 10:15:30.788, FINE, [Thread]: 250 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  12433  Ref Data 5 : 323532
+2019-09-13 10:15:30.790, FINE, [Thread]: 250 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  119  JsonXmlDataConverter : Entry processRequest.. interfaceId : 1140 : requestData :
+
+{
+        "payload": {
+                "order": {
+                        "org_id": "323532",
+                        "products": [
+                                {
+                                        "matrl_code": "P64453",
+                                        "plant": "001"
+                                },
+                                {
+                                        "matrl_code": "P4453",
+                                        "plant": "002"
+                                }
+                        ]
+                }
+        }
+}
+
+
+
+2019-09-13 10:15:30.792, FINE, [Thread]: 250 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  14590  Entry getKycSyncAttributesByInterfaceId..
+2019-09-13 10:15:30.796, FINE, [Thread]: 250 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  14638  Exit getKycSyncAttributesByInterfaceId..
+2019-09-13 10:15:30.800, FINE, [Thread]: 250 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  165  Payload : {"order":{"org_id":"323532","products":[{"plant":"001","matrl_code":"P64453"},{"plant":"002","matrl_code":"P4453"}]}}
+2019-09-13 10:15:30.813, FINE, [Thread]: 250 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  194  templateFileName :queryStock-template.xml
+2019-09-13 10:15:30.817, FINE, [Thread]: 250 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  294  JsonXmlDataConverter : Entry generateXml..
+2019-09-13 10:15:30.817, FINE, [Thread]: 250 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  436  soapenv:Header : element.getChildNodes().getLength() : 0
+2019-09-13 10:15:30.818, FINE, [Thread]: 250 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  588  soapenv:Header value : null
+2019-09-13 10:15:30.819, FINE, [Thread]: 250 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  609  soapenv:Header :  : null
+2019-09-13 10:15:30.819, FINE, [Thread]: 250 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  436  soapenv:Body : element.getChildNodes().getLength() : 3
+2019-09-13 10:15:30.820, FINE, [Thread]: 250 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  294  JsonXmlDataConverter : Entry generateXml..
+2019-09-13 10:15:30.821, FINE, [Thread]: 250 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  436  mob:MT_QueryStock_Request : element.getChildNodes().getLength() : 3
+2019-09-13 10:15:30.822, FINE, [Thread]: 250 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  294  JsonXmlDataConverter : Entry generateXml..
+2019-09-13 10:15:30.822, FINE, [Thread]: 250 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  294  JsonXmlDataConverter : Entry generateXml..
+2019-09-13 10:15:30.823, FINE, [Thread]: 250 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  348  element.getAttribute(SOURCE) : matrl_code
+2019-09-13 10:15:30.824, FINE, [Thread]: 250 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  350  Result : P64453
+2019-09-13 10:15:30.825, FINE, [Thread]: 250 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  436  MaterialCode : element.getChildNodes().getLength() : 0
+2019-09-13 10:15:30.825, FINE, [Thread]: 250 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  588  MaterialCode value : P64453
+2019-09-13 10:15:30.826, FINE, [Thread]: 250 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  609  MaterialCode : matrl_code : P64453
+2019-09-13 10:15:30.827, FINE, [Thread]: 250 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  348  element.getAttribute(SOURCE) : plant
+2019-09-13 10:15:30.827, FINE, [Thread]: 250 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  350  Result : 001
+2019-09-13 10:15:30.828, FINE, [Thread]: 250 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  436  Plant : element.getChildNodes().getLength() : 0
+2019-09-13 10:15:30.829, FINE, [Thread]: 250 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  588  Plant value : 001
+2019-09-13 10:15:30.830, FINE, [Thread]: 250 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  609  Plant : plant : 001
+2019-09-13 10:15:30.830, FINE, [Thread]: 250 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  649  JsonXmlDataConverter : Exit generateXml..
+2019-09-13 10:15:30.831, FINE, [Thread]: 250 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  294  JsonXmlDataConverter : Entry generateXml..
+2019-09-13 10:15:30.832, FINE, [Thread]: 250 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  348  element.getAttribute(SOURCE) : matrl_code
+2019-09-13 10:15:30.832, FINE, [Thread]: 250 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  350  Result : P4453
+2019-09-13 10:15:30.833, FINE, [Thread]: 250 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  436  MaterialCode : element.getChildNodes().getLength() : 0
+2019-09-13 10:15:30.834, FINE, [Thread]: 250 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  588  MaterialCode value : P4453
+2019-09-13 10:15:30.834, FINE, [Thread]: 250 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  609  MaterialCode : matrl_code : P4453
+2019-09-13 10:15:30.835, FINE, [Thread]: 250 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  348  element.getAttribute(SOURCE) : plant
+2019-09-13 10:15:30.837, FINE, [Thread]: 250 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  350  Result : 002
+2019-09-13 10:15:30.838, FINE, [Thread]: 250 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  436  Plant : element.getChildNodes().getLength() : 0
+2019-09-13 10:15:30.839, FINE, [Thread]: 250 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  588  Plant value : 002
+2019-09-13 10:15:30.839, FINE, [Thread]: 250 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  609  Plant : plant : 002
+2019-09-13 10:15:30.840, FINE, [Thread]: 250 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  649  JsonXmlDataConverter : Exit generateXml..
+2019-09-13 10:15:30.841, FINE, [Thread]: 250 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  649  JsonXmlDataConverter : Exit generateXml..
+2019-09-13 10:15:30.842, FINE, [Thread]: 250 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  649  JsonXmlDataConverter : Exit generateXml..
+2019-09-13 10:15:30.842, FINE, [Thread]: 250 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  649  JsonXmlDataConverter : Exit generateXml..
+2019-09-13 10:15:30.864, FINE, [Thread]: 250 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  228  End ::  1568349930863 -- <soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:mob="http://mobii.com/">
+<soapenv:Header/>
+<soapenv:Body>
+<mob:MT_QueryStock_Request>
+<Item>
+<MaterialCode>P64453</MaterialCode>
+<Plant>001</Plant>
+</Item>
+<Item>
+<MaterialCode>P4453</MaterialCode>
+<Plant>002</Plant>
+</Item>
+</mob:MT_QueryStock_Request>
+</soapenv:Body>
+</soapenv:Envelope>
+
+2019-09-13 10:15:30.865, FINE, [Thread]: 250 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  271  JsonXmlDataConverter : Exit processRequest..processingTime : 74
+2019-09-13 10:15:30.865, FINE, [Thread]: 250 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  12493  IsException : false
+2019-09-13 10:15:30.867, FINE, [Thread]: 250 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  12557  refData1 : 323532 : refData5 : 323532 : TransID : 229589
+2019-09-13 10:15:30.869, FINE, [Thread]: 250 [ClassName]: com.enhancesys.integration.publisher.WebServicePublisher [LineNumber]:  78  Entry processRequest.. TransactionId :: 229589, InterfaceId :: 1140
+2019-09-13 10:15:30.869, FINE, [Thread]: 250 [ClassName]: com.enhancesys.integration.publisher.WebServicePublisher [LineNumber]:  96  Request --> <soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:mob="http://mobii.com/">
+<soapenv:Header/>
+<soapenv:Body>
+<mob:MT_QueryStock_Request>
+<Item>
+<MaterialCode>P64453</MaterialCode>
+<Plant>001</Plant>
+</Item>
+<Item>
+<MaterialCode>P4453</MaterialCode>
+<Plant>002</Plant>
+</Item>
+</mob:MT_QueryStock_Request>
+</soapenv:Body>
+</soapenv:Envelope>
+
+2019-09-13 10:15:30.883, FINE, [Thread]: 250 [ClassName]: com.enhancesys.integration.publisher.WebServicePublisher [LineNumber]:  148  URL -->
+2019-09-13 10:15:30.883, FINE, [Thread]: 250 [ClassName]: com.enhancesys.integration.publisher.WebServicePublisher [LineNumber]:  156  Static Service URL :: http://interface.enhancesys.com:80/interfaceResponseServices/webservices/InterfaceResponseServicesImpl?wsdl
+2019-09-13 10:15:30.884, FINE, [Thread]: 250 [ClassName]: com.enhancesys.integration.publisher.WebServicePublisher [LineNumber]:  249  Entry sendSoapRequest ...
+2019-09-13 10:15:30.914, FINE, [Thread]: 250 [ClassName]: com.enhancesys.integration.publisher.WebServicePublisher [LineNumber]:  340  Exit sendSoapRequest ...
+2019-09-13 10:15:30.916, FINE, [Thread]: 250 [ClassName]: com.enhancesys.integration.publisher.WebServicePublisher [LineNumber]:  167  Response --> <?xml version = "1.0" encoding = "UTF-8"?> <SOAP:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:mob="http://mobii.com/"><soapenv:Header/><SOAP:Body><nm:MT_QueryStock_Response><Item><MaterialCode>P64453</MaterialCode><Plant>001</Plant><Stock>0.00</Stock><Remarks>Request Failed..</Remarks></Item><Item><MaterialCode>P4453</MaterialCode><Plant>002</Plant><Stock>0.00</Stock><Remarks>Request Failed..</Remarks></Item></nm:MT_QueryStock_Response></SOAP:Body></SOAP:Envelope>
+2019-09-13 10:15:30.917, FINE, [Thread]: 250 [ClassName]: com.enhancesys.integration.publisher.WebServicePublisher [LineNumber]:  227  Exit processRequest..
+2019-09-13 10:15:30.919, FINE, [Thread]: 250 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  11785  responseBean.getStatus() : Success
+2019-09-13 10:15:30.927, FINE, [Thread]: 250 [ClassName]: com.enhancesys.integration.services.converter.LookupMapping [LineNumber]:  1745  Entry convertStringToDocument..
+2019-09-13 10:15:30.931, FINE, [Thread]: 250 [ClassName]: com.enhancesys.integration.services.converter.LookupMapping [LineNumber]:  1774  Exit convertStringToDocument..
+2019-09-13 10:15:30.933, FINE, [Thread]: 250 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  11829  jsonResponseObject : {"SOAP:Envelope":{"SOAP:Body":{"nm:MT_QueryStock_Response":{"Item":[{"Plant":"001","MaterialCode":"P64453","Remarks":"Request Failed..","Stock":"0.00"},{"Plant":"002","MaterialCode":"P4453","Remarks":"Request Failed..","Stock":"0.00"}]}}}}
+2019-09-13 10:15:30.977, FINE, [Thread]: 250 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  11999  Exit invokePrimarySalesInterface..
+2019-09-13 10:15:41.741, FINE, [Thread]: 237 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  11734  Entry invokePrimarySalesInterface..
+2019-09-13 10:15:41.765, FINE, [Thread]: 237 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  12409  Ref ID : 323532
+2019-09-13 10:15:41.768, FINE, [Thread]: 237 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  12430  Ref Data Path Value : 323532
+2019-09-13 10:15:41.768, FINE, [Thread]: 237 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  12433  Ref Data 5 : 323532
+2019-09-13 10:15:41.769, FINE, [Thread]: 237 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  119  JsonXmlDataConverter : Entry processRequest.. interfaceId : 1140 : requestData :
+
+{
+        "payload": {
+                "order": {
+                        "org_id": "323532",
+                        "products": [
+                                {
+                                        "matrl_code": "P64453",
+                                        "plant": "001"
+                                },
+                                {
+                                        "matrl_code": "P4453",
+                                        "plant": "002"
+                                }
+                        ]
+                }
+        }
+}
+
+
+
+2019-09-13 10:15:41.770, FINE, [Thread]: 237 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  14590  Entry getKycSyncAttributesByInterfaceId..
+2019-09-13 10:15:41.771, FINE, [Thread]: 237 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  14638  Exit getKycSyncAttributesByInterfaceId..
+2019-09-13 10:15:41.773, FINE, [Thread]: 237 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  165  Payload : {"order":{"org_id":"323532","products":[{"plant":"001","matrl_code":"P64453"},{"plant":"002","matrl_code":"P4453"}]}}
+2019-09-13 10:15:41.778, FINE, [Thread]: 237 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  194  templateFileName :queryStock-template.xml
+2019-09-13 10:15:41.780, FINE, [Thread]: 237 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  294  JsonXmlDataConverter : Entry generateXml..
+2019-09-13 10:15:41.780, FINE, [Thread]: 237 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  436  soapenv:Header : element.getChildNodes().getLength() : 0
+2019-09-13 10:15:41.781, FINE, [Thread]: 237 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  588  soapenv:Header value : null
+2019-09-13 10:15:41.781, FINE, [Thread]: 237 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  609  soapenv:Header :  : null
+2019-09-13 10:15:41.781, FINE, [Thread]: 237 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  436  soapenv:Body : element.getChildNodes().getLength() : 3
+2019-09-13 10:15:41.782, FINE, [Thread]: 237 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  294  JsonXmlDataConverter : Entry generateXml..
+2019-09-13 10:15:41.782, FINE, [Thread]: 237 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  436  mob:MT_QueryStock_Request : element.getChildNodes().getLength() : 3
+2019-09-13 10:15:41.782, FINE, [Thread]: 237 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  294  JsonXmlDataConverter : Entry generateXml..
+2019-09-13 10:15:41.783, FINE, [Thread]: 237 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  294  JsonXmlDataConverter : Entry generateXml..
+2019-09-13 10:15:41.783, FINE, [Thread]: 237 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  348  element.getAttribute(SOURCE) : matrl_code
+2019-09-13 10:15:41.783, FINE, [Thread]: 237 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  350  Result : P64453
+2019-09-13 10:15:41.784, FINE, [Thread]: 237 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  436  MaterialCode : element.getChildNodes().getLength() : 0
+2019-09-13 10:15:41.784, FINE, [Thread]: 237 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  588  MaterialCode value : P64453
+2019-09-13 10:15:41.784, FINE, [Thread]: 237 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  609  MaterialCode : matrl_code : P64453
+2019-09-13 10:15:41.785, FINE, [Thread]: 237 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  348  element.getAttribute(SOURCE) : plant
+2019-09-13 10:15:41.785, FINE, [Thread]: 237 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  350  Result : 001
+2019-09-13 10:15:41.785, FINE, [Thread]: 237 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  436  Plant : element.getChildNodes().getLength() : 0
+2019-09-13 10:15:41.786, FINE, [Thread]: 237 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  588  Plant value : 001
+2019-09-13 10:15:41.786, FINE, [Thread]: 237 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  609  Plant : plant : 001
+2019-09-13 10:15:41.786, FINE, [Thread]: 237 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  649  JsonXmlDataConverter : Exit generateXml..
+2019-09-13 10:15:41.787, FINE, [Thread]: 237 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  294  JsonXmlDataConverter : Entry generateXml..
+2019-09-13 10:15:41.787, FINE, [Thread]: 237 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  348  element.getAttribute(SOURCE) : matrl_code
+2019-09-13 10:15:41.787, FINE, [Thread]: 237 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  350  Result : P4453
+2019-09-13 10:15:41.787, FINE, [Thread]: 237 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  436  MaterialCode : element.getChildNodes().getLength() : 0
+2019-09-13 10:15:41.788, FINE, [Thread]: 237 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  588  MaterialCode value : P4453
+2019-09-13 10:15:41.788, FINE, [Thread]: 237 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  609  MaterialCode : matrl_code : P4453
+2019-09-13 10:15:41.788, FINE, [Thread]: 237 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  348  element.getAttribute(SOURCE) : plant
+2019-09-13 10:15:41.789, FINE, [Thread]: 237 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  350  Result : 002
+2019-09-13 10:15:41.789, FINE, [Thread]: 237 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  436  Plant : element.getChildNodes().getLength() : 0
+2019-09-13 10:15:41.789, FINE, [Thread]: 237 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  588  Plant value : 002
+2019-09-13 10:15:41.790, FINE, [Thread]: 237 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  609  Plant : plant : 002
+2019-09-13 10:15:41.790, FINE, [Thread]: 237 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  649  JsonXmlDataConverter : Exit generateXml..
+2019-09-13 10:15:41.790, FINE, [Thread]: 237 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  649  JsonXmlDataConverter : Exit generateXml..
+2019-09-13 10:15:41.790, FINE, [Thread]: 237 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  649  JsonXmlDataConverter : Exit generateXml..
+2019-09-13 10:15:41.791, FINE, [Thread]: 237 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  649  JsonXmlDataConverter : Exit generateXml..
+2019-09-13 10:15:41.800, FINE, [Thread]: 237 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  228  End ::  1568349941800 -- <soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:mob="http://mobii.com/">
+<soapenv:Header/>
+<soapenv:Body>
+<mob:MT_QueryStock_Request>
+<Item>
+<MaterialCode>P64453</MaterialCode>
+<Plant>001</Plant>
+</Item>
+<Item>
+<MaterialCode>P4453</MaterialCode>
+<Plant>002</Plant>
+</Item>
+</mob:MT_QueryStock_Request>
+</soapenv:Body>
+</soapenv:Envelope>
+
+2019-09-13 10:15:41.801, FINE, [Thread]: 237 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  271  JsonXmlDataConverter : Exit processRequest..processingTime : 32
+2019-09-13 10:15:41.801, FINE, [Thread]: 237 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  12493  IsException : false
+2019-09-13 10:15:41.802, FINE, [Thread]: 237 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  12557  refData1 : 323532 : refData5 : 323532 : TransID : 229590
+2019-09-13 10:15:41.803, FINE, [Thread]: 237 [ClassName]: com.enhancesys.integration.publisher.WebServicePublisher [LineNumber]:  78  Entry processRequest.. TransactionId :: 229590, InterfaceId :: 1140
+2019-09-13 10:15:41.803, FINE, [Thread]: 237 [ClassName]: com.enhancesys.integration.publisher.WebServicePublisher [LineNumber]:  96  Request --> <soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:mob="http://mobii.com/">
+<soapenv:Header/>
+<soapenv:Body>
+<mob:MT_QueryStock_Request>
+<Item>
+<MaterialCode>P64453</MaterialCode>
+<Plant>001</Plant>
+</Item>
+<Item>
+<MaterialCode>P4453</MaterialCode>
+<Plant>002</Plant>
+</Item>
+</mob:MT_QueryStock_Request>
+</soapenv:Body>
+</soapenv:Envelope>
+
+2019-09-13 10:15:41.809, FINE, [Thread]: 237 [ClassName]: com.enhancesys.integration.publisher.WebServicePublisher [LineNumber]:  148  URL -->
+2019-09-13 10:15:41.809, FINE, [Thread]: 237 [ClassName]: com.enhancesys.integration.publisher.WebServicePublisher [LineNumber]:  156  Static Service URL :: http://interface.enhancesys.com:80/interfaceResponseServices/webservices/InterfaceResponseServicesImpl?wsdl
+2019-09-13 10:15:41.810, FINE, [Thread]: 237 [ClassName]: com.enhancesys.integration.publisher.WebServicePublisher [LineNumber]:  249  Entry sendSoapRequest ...
+2019-09-13 10:15:41.823, FINE, [Thread]: 237 [ClassName]: com.enhancesys.integration.publisher.WebServicePublisher [LineNumber]:  340  Exit sendSoapRequest ...
+2019-09-13 10:15:41.824, FINE, [Thread]: 237 [ClassName]: com.enhancesys.integration.publisher.WebServicePublisher [LineNumber]:  167  Response --> <?xml version = "1.0" encoding = "UTF-8"?> <SOAP:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:mob="http://mobii.com/"><soapenv:Header/><SOAP:Body><nm:MT_QueryStock_Response><Item><MaterialCode>P64453</MaterialCode><Plant>001</Plant><Stock>1000.00</Stock><Remarks>OK</Remarks></Item><Item><MaterialCode>P4453</MaterialCode><Plant>002</Plant><Stock>1000.00</Stock><Remarks>OK</Remarks></Item></nm:MT_QueryStock_Response></SOAP:Body></SOAP:Envelope>
+2019-09-13 10:15:41.824, FINE, [Thread]: 237 [ClassName]: com.enhancesys.integration.publisher.WebServicePublisher [LineNumber]:  227  Exit processRequest..
+2019-09-13 10:15:41.824, FINE, [Thread]: 237 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  11785  responseBean.getStatus() : Success
+2019-09-13 10:15:41.827, FINE, [Thread]: 237 [ClassName]: com.enhancesys.integration.services.converter.LookupMapping [LineNumber]:  1745  Entry convertStringToDocument..
+2019-09-13 10:15:41.829, FINE, [Thread]: 237 [ClassName]: com.enhancesys.integration.services.converter.LookupMapping [LineNumber]:  1774  Exit convertStringToDocument..
+2019-09-13 10:15:41.829, FINE, [Thread]: 237 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  11829  jsonResponseObject : {"SOAP:Envelope":{"SOAP:Body":{"nm:MT_QueryStock_Response":{"Item":[{"Plant":"001","MaterialCode":"P64453","Remarks":"OK","Stock":"1000.00"},{"Plant":"002","MaterialCode":"P4453","Remarks":"OK","Stock":"1000.00"}]}}}}
+2019-09-13 10:15:41.849, FINE, [Thread]: 237 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  11999  Exit invokePrimarySalesInterface..
+
+
+
+
+2019-09-13 10:15:53.122, FINE, [Thread]: 237 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  11734  Entry invokePrimarySalesInterface..
+2019-09-13 10:15:53.170, FINE, [Thread]: 237 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  12409  Ref ID : 323532
+2019-09-13 10:15:53.176, FINE, [Thread]: 237 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  12430  Ref Data Path Value : 323532
+2019-09-13 10:15:53.177, FINE, [Thread]: 237 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  12433  Ref Data 5 : 323532
+2019-09-13 10:15:53.179, FINE, [Thread]: 237 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  119  JsonXmlDataConverter : Entry processRequest.. interfaceId : 1140 : requestData :
+
+{
+        "payload": {
+                "order": {
+                        "org_id": "323532",
+                        "products": [
+                                {
+                                        "matrl_code": "P64453",
+                                        "plant": "001"
+                                },
+                                {
+                                        "matrl_code": "P4453",
+                                        "plant": "002"
+                                }
+                        ]
+                }
+        }
+}
+
+
+
+2019-09-13 10:15:53.180, FINE, [Thread]: 237 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  14590  Entry getKycSyncAttributesByInterfaceId..
+2019-09-13 10:15:53.183, FINE, [Thread]: 237 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  14638  Exit getKycSyncAttributesByInterfaceId..
+2019-09-13 10:15:53.187, FINE, [Thread]: 237 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  165  Payload : {"order":{"org_id":"323532","products":[{"plant":"001","matrl_code":"P64453"},{"plant":"002","matrl_code":"P4453"}]}}
+2019-09-13 10:15:53.198, FINE, [Thread]: 237 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  194  templateFileName :queryStock-template.xml
+2019-09-13 10:15:53.201, FINE, [Thread]: 237 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  294  JsonXmlDataConverter : Entry generateXml..
+2019-09-13 10:15:53.202, FINE, [Thread]: 237 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  436  soapenv:Header : element.getChildNodes().getLength() : 0
+2019-09-13 10:15:53.203, FINE, [Thread]: 237 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  588  soapenv:Header value : null
+2019-09-13 10:15:53.203, FINE, [Thread]: 237 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  609  soapenv:Header :  : null
+2019-09-13 10:15:53.204, FINE, [Thread]: 237 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  436  soapenv:Body : element.getChildNodes().getLength() : 3
+2019-09-13 10:15:53.205, FINE, [Thread]: 237 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  294  JsonXmlDataConverter : Entry generateXml..
+2019-09-13 10:15:53.206, FINE, [Thread]: 237 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  436  mob:MT_QueryStock_Request : element.getChildNodes().getLength() : 3
+2019-09-13 10:15:53.206, FINE, [Thread]: 237 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  294  JsonXmlDataConverter : Entry generateXml..
+2019-09-13 10:15:53.207, FINE, [Thread]: 237 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  294  JsonXmlDataConverter : Entry generateXml..
+2019-09-13 10:15:53.208, FINE, [Thread]: 237 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  348  element.getAttribute(SOURCE) : matrl_code
+2019-09-13 10:15:53.209, FINE, [Thread]: 237 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  350  Result : P64453
+2019-09-13 10:15:53.210, FINE, [Thread]: 237 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  436  MaterialCode : element.getChildNodes().getLength() : 0
+2019-09-13 10:15:53.210, FINE, [Thread]: 237 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  588  MaterialCode value : P64453
+2019-09-13 10:15:53.211, FINE, [Thread]: 237 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  609  MaterialCode : matrl_code : P64453
+2019-09-13 10:15:53.212, FINE, [Thread]: 237 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  348  element.getAttribute(SOURCE) : plant
+2019-09-13 10:15:53.212, FINE, [Thread]: 237 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  350  Result : 001
+2019-09-13 10:15:53.213, FINE, [Thread]: 237 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  436  Plant : element.getChildNodes().getLength() : 0
+2019-09-13 10:15:53.214, FINE, [Thread]: 237 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  588  Plant value : 001
+2019-09-13 10:15:53.215, FINE, [Thread]: 237 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  609  Plant : plant : 001
+2019-09-13 10:15:53.215, FINE, [Thread]: 237 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  649  JsonXmlDataConverter : Exit generateXml..
+2019-09-13 10:15:53.216, FINE, [Thread]: 237 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  294  JsonXmlDataConverter : Entry generateXml..
+2019-09-13 10:15:53.217, FINE, [Thread]: 237 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  348  element.getAttribute(SOURCE) : matrl_code
+2019-09-13 10:15:53.218, FINE, [Thread]: 237 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  350  Result : P4453
+2019-09-13 10:15:53.218, FINE, [Thread]: 237 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  436  MaterialCode : element.getChildNodes().getLength() : 0
+2019-09-13 10:15:53.219, FINE, [Thread]: 237 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  588  MaterialCode value : P4453
+2019-09-13 10:15:53.220, FINE, [Thread]: 237 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  609  MaterialCode : matrl_code : P4453
+2019-09-13 10:15:53.221, FINE, [Thread]: 237 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  348  element.getAttribute(SOURCE) : plant
+2019-09-13 10:15:53.221, FINE, [Thread]: 237 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  350  Result : 002
+2019-09-13 10:15:53.222, FINE, [Thread]: 237 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  436  Plant : element.getChildNodes().getLength() : 0
+2019-09-13 10:15:53.223, FINE, [Thread]: 237 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  588  Plant value : 002
+2019-09-13 10:15:53.223, FINE, [Thread]: 237 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  609  Plant : plant : 002
+2019-09-13 10:15:53.224, FINE, [Thread]: 237 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  649  JsonXmlDataConverter : Exit generateXml..
+2019-09-13 10:15:53.225, FINE, [Thread]: 237 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  649  JsonXmlDataConverter : Exit generateXml..
+2019-09-13 10:15:53.225, FINE, [Thread]: 237 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  649  JsonXmlDataConverter : Exit generateXml..
+2019-09-13 10:15:53.226, FINE, [Thread]: 237 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  649  JsonXmlDataConverter : Exit generateXml..
+2019-09-13 10:15:53.245, FINE, [Thread]: 237 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  228  End ::  1568349953244 -- <soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:mob="http://mobii.com/">
+<soapenv:Header/>
+<soapenv:Body>
+<mob:MT_QueryStock_Request>
+<Item>
+<MaterialCode>P64453</MaterialCode>
+<Plant>001</Plant>
+</Item>
+<Item>
+<MaterialCode>P4453</MaterialCode>
+<Plant>002</Plant>
+</Item>
+</mob:MT_QueryStock_Request>
+</soapenv:Body>
+</soapenv:Envelope>
+
+2019-09-13 10:15:53.246, FINE, [Thread]: 237 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  271  JsonXmlDataConverter : Exit processRequest..processingTime : 67
+2019-09-13 10:15:53.247, FINE, [Thread]: 237 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  12493  IsException : false
+2019-09-13 10:15:53.249, FINE, [Thread]: 237 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  12557  refData1 : 323532 : refData5 : 323532 : TransID : 229591
+2019-09-13 10:15:53.250, FINE, [Thread]: 237 [ClassName]: com.enhancesys.integration.publisher.WebServicePublisher [LineNumber]:  78  Entry processRequest.. TransactionId :: 229591, InterfaceId :: 1140
+2019-09-13 10:15:53.251, FINE, [Thread]: 237 [ClassName]: com.enhancesys.integration.publisher.WebServicePublisher [LineNumber]:  96  Request --> <soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:mob="http://mobii.com/">
+<soapenv:Header/>
+<soapenv:Body>
+<mob:MT_QueryStock_Request>
+<Item>
+<MaterialCode>P64453</MaterialCode>
+<Plant>001</Plant>
+</Item>
+<Item>
+<MaterialCode>P4453</MaterialCode>
+<Plant>002</Plant>
+</Item>
+</mob:MT_QueryStock_Request>
+</soapenv:Body>
+</soapenv:Envelope>
+
+2019-09-13 10:15:53.264, FINE, [Thread]: 237 [ClassName]: com.enhancesys.integration.publisher.WebServicePublisher [LineNumber]:  148  URL -->
+2019-09-13 10:15:53.265, FINE, [Thread]: 237 [ClassName]: com.enhancesys.integration.publisher.WebServicePublisher [LineNumber]:  156  Static Service URL :: http://interface.enhancesys.com:80/interfaceResponseServices/webservices/InterfaceResponseServicesImpl?wsdl
+2019-09-13 10:15:53.265, FINE, [Thread]: 237 [ClassName]: com.enhancesys.integration.publisher.WebServicePublisher [LineNumber]:  249  Entry sendSoapRequest ...
+2019-09-13 10:15:53.294, FINE, [Thread]: 237 [ClassName]: com.enhancesys.integration.publisher.WebServicePublisher [LineNumber]:  340  Exit sendSoapRequest ...
+2019-09-13 10:15:53.295, FINE, [Thread]: 237 [ClassName]: com.enhancesys.integration.publisher.WebServicePublisher [LineNumber]:  167  Response --> <?xml version = "1.0" encoding = "UTF-8"?> <SOAP:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/"><SOAP:Body><SOAP:Fault><faultcode>soapenv:Server</faultcode><faultstring>Application Error. Please see FaultInfo</faultstring><detail><ns2:FaultInfo xmlns:ns3="http://com/enhancesys/entities/schema/integration" xmlns:ns2="http://com/enhancesys/integration/services/interfaces/IntegrationManagement"><causedBy>java.lang.NullPointerException</causedBy><message>Error in initialising entity manager</message></ns2:FaultInfo></detail></SOAP:Fault></SOAP:Body></SOAP:Envelope>
+2019-09-13 10:15:53.296, FINE, [Thread]: 237 [ClassName]: com.enhancesys.integration.publisher.WebServicePublisher [LineNumber]:  227  Exit processRequest..
+2019-09-13 10:15:53.296, FINE, [Thread]: 237 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  11785  responseBean.getStatus() : Success
+2019-09-13 10:15:53.303, FINE, [Thread]: 237 [ClassName]: com.enhancesys.integration.services.converter.LookupMapping [LineNumber]:  1745  Entry convertStringToDocument..
+2019-09-13 10:15:53.306, FINE, [Thread]: 237 [ClassName]: com.enhancesys.integration.services.converter.LookupMapping [LineNumber]:  1774  Exit convertStringToDocument..
+2019-09-13 10:15:53.308, FINE, [Thread]: 237 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  11829  jsonResponseObject : {"SOAP:Envelope":{"SOAP:Body":{"SOAP:Fault":{"detail":{"ns2:FaultInfo":{"message":"Error in initialising entity manager","causedBy":"java.lang.NullPointerException"}},"faultcode":"soapenv:Server","faultstring":"Application Error. Please see FaultInfo"}}}}
+2019-09-13 10:15:53.347, FINE, [Thread]: 237 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  11999  Exit invokePrimarySalesInterface..
+2019-09-13 10:16:04.454, FINE, [Thread]: 237 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  11734  Entry invokePrimarySalesInterface..
+2019-09-13 10:16:04.503, FINE, [Thread]: 237 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  12409  Ref ID : 323532
+2019-09-13 10:16:04.511, FINE, [Thread]: 237 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  12430  Ref Data Path Value : 323532
+2019-09-13 10:16:04.511, FINE, [Thread]: 237 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  12433  Ref Data 5 : 323532
+2019-09-13 10:16:04.513, FINE, [Thread]: 237 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  119  JsonXmlDataConverter : Entry processRequest.. interfaceId : 1140 : requestData :
+
+{
+        "payload": {
+                "order": {
+                        "org_id": "323532",
+                        "products": [
+                                {
+                                        "matrl_code": "P64453",
+                                        "plant": "001"
+                                },
+                                {
+                                        "matrl_code": "P4453",
+                                        "plant": "002"
+                                }
+                        ]
+                }
+        }
+}
+
+
+
+2019-09-13 10:16:04.515, FINE, [Thread]: 237 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  14590  Entry getKycSyncAttributesByInterfaceId..
+2019-09-13 10:16:04.519, FINE, [Thread]: 237 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  14638  Exit getKycSyncAttributesByInterfaceId..
+2019-09-13 10:16:04.522, FINE, [Thread]: 237 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  165  Payload : {"order":{"org_id":"323532","products":[{"plant":"001","matrl_code":"P64453"},{"plant":"002","matrl_code":"P4453"}]}}
+2019-09-13 10:16:04.533, FINE, [Thread]: 237 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  194  templateFileName :queryStock-template.xml
+2019-09-13 10:16:04.537, FINE, [Thread]: 237 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  294  JsonXmlDataConverter : Entry generateXml..
+2019-09-13 10:16:04.538, FINE, [Thread]: 237 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  436  soapenv:Header : element.getChildNodes().getLength() : 0
+2019-09-13 10:16:04.539, FINE, [Thread]: 237 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  588  soapenv:Header value : null
+2019-09-13 10:16:04.540, FINE, [Thread]: 237 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  609  soapenv:Header :  : null
+2019-09-13 10:16:04.541, FINE, [Thread]: 237 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  436  soapenv:Body : element.getChildNodes().getLength() : 3
+2019-09-13 10:16:04.542, FINE, [Thread]: 237 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  294  JsonXmlDataConverter : Entry generateXml..
+2019-09-13 10:16:04.543, FINE, [Thread]: 237 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  436  mob:MT_QueryStock_Request : element.getChildNodes().getLength() : 3
+2019-09-13 10:16:04.544, FINE, [Thread]: 237 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  294  JsonXmlDataConverter : Entry generateXml..
+2019-09-13 10:16:04.545, FINE, [Thread]: 237 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  294  JsonXmlDataConverter : Entry generateXml..
+2019-09-13 10:16:04.546, FINE, [Thread]: 237 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  348  element.getAttribute(SOURCE) : matrl_code
+2019-09-13 10:16:04.547, FINE, [Thread]: 237 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  350  Result : P64453
+2019-09-13 10:16:04.548, FINE, [Thread]: 237 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  436  MaterialCode : element.getChildNodes().getLength() : 0
+2019-09-13 10:16:04.549, FINE, [Thread]: 237 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  588  MaterialCode value : P64453
+2019-09-13 10:16:04.551, FINE, [Thread]: 237 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  609  MaterialCode : matrl_code : P64453
+2019-09-13 10:16:04.552, FINE, [Thread]: 237 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  348  element.getAttribute(SOURCE) : plant
+2019-09-13 10:16:04.553, FINE, [Thread]: 237 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  350  Result : 001
+2019-09-13 10:16:04.554, FINE, [Thread]: 237 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  436  Plant : element.getChildNodes().getLength() : 0
+2019-09-13 10:16:04.555, FINE, [Thread]: 237 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  588  Plant value : 001
+2019-09-13 10:16:04.556, FINE, [Thread]: 237 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  609  Plant : plant : 001
+2019-09-13 10:16:04.557, FINE, [Thread]: 237 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  649  JsonXmlDataConverter : Exit generateXml..
+2019-09-13 10:16:04.558, FINE, [Thread]: 237 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  294  JsonXmlDataConverter : Entry generateXml..
+2019-09-13 10:16:04.559, FINE, [Thread]: 237 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  348  element.getAttribute(SOURCE) : matrl_code
+2019-09-13 10:16:04.560, FINE, [Thread]: 237 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  350  Result : P4453
+2019-09-13 10:16:04.561, FINE, [Thread]: 237 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  436  MaterialCode : element.getChildNodes().getLength() : 0
+2019-09-13 10:16:04.562, FINE, [Thread]: 237 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  588  MaterialCode value : P4453
+2019-09-13 10:16:04.563, FINE, [Thread]: 237 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  609  MaterialCode : matrl_code : P4453
+2019-09-13 10:16:04.564, FINE, [Thread]: 237 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  348  element.getAttribute(SOURCE) : plant
+2019-09-13 10:16:04.565, FINE, [Thread]: 237 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  350  Result : 002
+2019-09-13 10:16:04.566, FINE, [Thread]: 237 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  436  Plant : element.getChildNodes().getLength() : 0
+2019-09-13 10:16:04.567, FINE, [Thread]: 237 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  588  Plant value : 002
+2019-09-13 10:16:04.568, FINE, [Thread]: 237 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  609  Plant : plant : 002
+2019-09-13 10:16:04.569, FINE, [Thread]: 237 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  649  JsonXmlDataConverter : Exit generateXml..
+2019-09-13 10:16:04.570, FINE, [Thread]: 237 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  649  JsonXmlDataConverter : Exit generateXml..
+2019-09-13 10:16:04.571, FINE, [Thread]: 237 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  649  JsonXmlDataConverter : Exit generateXml..
+2019-09-13 10:16:04.572, FINE, [Thread]: 237 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  649  JsonXmlDataConverter : Exit generateXml..
+2019-09-13 10:16:04.591, FINE, [Thread]: 237 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  228  End ::  1568349964591 -- <soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:mob="http://mobii.com/">
+<soapenv:Header/>
+<soapenv:Body>
+<mob:MT_QueryStock_Request>
+<Item>
+<MaterialCode>P64453</MaterialCode>
+<Plant>001</Plant>
+</Item>
+<Item>
+<MaterialCode>P4453</MaterialCode>
+<Plant>002</Plant>
+</Item>
+</mob:MT_QueryStock_Request>
+</soapenv:Body>
+</soapenv:Envelope>
+
+2019-09-13 10:16:04.592, FINE, [Thread]: 237 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  271  JsonXmlDataConverter : Exit processRequest..processingTime : 79
+2019-09-13 10:16:04.593, FINE, [Thread]: 237 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  12493  IsException : false
+2019-09-13 10:16:04.595, FINE, [Thread]: 237 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  12557  refData1 : 323532 : refData5 : 323532 : TransID : 229592
+2019-09-13 10:16:04.597, FINE, [Thread]: 237 [ClassName]: com.enhancesys.integration.publisher.WebServicePublisher [LineNumber]:  78  Entry processRequest.. TransactionId :: 229592, InterfaceId :: 1140
+2019-09-13 10:16:04.598, FINE, [Thread]: 237 [ClassName]: com.enhancesys.integration.publisher.WebServicePublisher [LineNumber]:  96  Request --> <soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:mob="http://mobii.com/">
+<soapenv:Header/>
+<soapenv:Body>
+<mob:MT_QueryStock_Request>
+<Item>
+<MaterialCode>P64453</MaterialCode>
+<Plant>001</Plant>
+</Item>
+<Item>
+<MaterialCode>P4453</MaterialCode>
+<Plant>002</Plant>
+</Item>
+</mob:MT_QueryStock_Request>
+</soapenv:Body>
+</soapenv:Envelope>
+
+2019-09-13 10:16:04.610, FINE, [Thread]: 237 [ClassName]: com.enhancesys.integration.publisher.WebServicePublisher [LineNumber]:  148  URL -->
+2019-09-13 10:16:04.611, FINE, [Thread]: 237 [ClassName]: com.enhancesys.integration.publisher.WebServicePublisher [LineNumber]:  156  Static Service URL :: http://interface.enhancesys.com:80/interfaceResponseServices/webservices/InterfaceResponseServicesImpl?wsdl
+2019-09-13 10:16:04.612, FINE, [Thread]: 237 [ClassName]: com.enhancesys.integration.publisher.WebServicePublisher [LineNumber]:  249  Entry sendSoapRequest ...
+2019-09-13 10:16:04.639, FINE, [Thread]: 237 [ClassName]: com.enhancesys.integration.publisher.WebServicePublisher [LineNumber]:  340  Exit sendSoapRequest ...
+2019-09-13 10:16:04.640, FINE, [Thread]: 237 [ClassName]: com.enhancesys.integration.publisher.WebServicePublisher [LineNumber]:  167  Response --> <?xml version = "1.0" encoding = "UTF-8"?> <SOAP:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:mob="http://mobii.com/"><soapenv:Header/><SOAP:Body><nm:MT_QueryStock_Response><Item><MaterialCode>P64453</MaterialCode><Plant>001</Plant><Stock>1000.00</Stock><Remarks>OK</Remarks></Item><Item><MaterialCode>P4453</MaterialCode><Plant>002</Plant><Stock>1000.00</Stock><Remarks>OK</Remarks></Item></nm:MT_QueryStock_Response></SOAP:Body></SOAP:Envelope>
+2019-09-13 10:16:04.640, FINE, [Thread]: 237 [ClassName]: com.enhancesys.integration.publisher.WebServicePublisher [LineNumber]:  227  Exit processRequest..
+2019-09-13 10:16:04.641, FINE, [Thread]: 237 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  11785  responseBean.getStatus() : Success
+2019-09-13 10:16:04.647, FINE, [Thread]: 237 [ClassName]: com.enhancesys.integration.services.converter.LookupMapping [LineNumber]:  1745  Entry convertStringToDocument..
+2019-09-13 10:16:04.650, FINE, [Thread]: 237 [ClassName]: com.enhancesys.integration.services.converter.LookupMapping [LineNumber]:  1774  Exit convertStringToDocument..
+2019-09-13 10:16:04.651, FINE, [Thread]: 237 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  11829  jsonResponseObject : {"SOAP:Envelope":{"SOAP:Body":{"nm:MT_QueryStock_Response":{"Item":[{"Plant":"001","MaterialCode":"P64453","Remarks":"OK","Stock":"1000.00"},{"Plant":"002","MaterialCode":"P4453","Remarks":"OK","Stock":"1000.00"}]}}}}
+2019-09-13 10:16:04.690, FINE, [Thread]: 237 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  11999  Exit invokePrimarySalesInterface..
+2019-09-13 10:16:12.384, FINE, [Thread]: 246 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  11734  Entry invokePrimarySalesInterface..
+2019-09-13 10:16:12.432, FINE, [Thread]: 246 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  12409  Ref ID : 323532
+2019-09-13 10:16:12.439, FINE, [Thread]: 246 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  12430  Ref Data Path Value : 323532
+2019-09-13 10:16:12.440, FINE, [Thread]: 246 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  12433  Ref Data 5 : 323532
+2019-09-13 10:16:12.442, FINE, [Thread]: 246 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  119  JsonXmlDataConverter : Entry processRequest.. interfaceId : 1140 : requestData :
+
+{
+        "payload": {
+                "order": {
+                        "org_id": "323532",
+                        "products": [
+                                {
+                                        "matrl_code": "P64453",
+                                        "plant": "001"
+                                }
+                        ]
+                }
+        }
+}
+
+
+
+2019-09-13 10:16:12.444, FINE, [Thread]: 246 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  14590  Entry getKycSyncAttributesByInterfaceId..
+2019-09-13 10:16:12.448, FINE, [Thread]: 246 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  14638  Exit getKycSyncAttributesByInterfaceId..
+2019-09-13 10:16:12.451, FINE, [Thread]: 246 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  165  Payload : {"order":{"org_id":"323532","products":[{"plant":"001","matrl_code":"P64453"}]}}
+2019-09-13 10:16:12.463, FINE, [Thread]: 246 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  194  templateFileName :queryStock-template.xml
+2019-09-13 10:16:12.468, FINE, [Thread]: 246 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  294  JsonXmlDataConverter : Entry generateXml..
+2019-09-13 10:16:12.469, FINE, [Thread]: 246 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  436  soapenv:Header : element.getChildNodes().getLength() : 0
+2019-09-13 10:16:12.470, FINE, [Thread]: 246 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  588  soapenv:Header value : null
+2019-09-13 10:16:12.471, FINE, [Thread]: 246 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  609  soapenv:Header :  : null
+2019-09-13 10:16:12.472, FINE, [Thread]: 246 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  436  soapenv:Body : element.getChildNodes().getLength() : 3
+2019-09-13 10:16:12.474, FINE, [Thread]: 246 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  294  JsonXmlDataConverter : Entry generateXml..
+2019-09-13 10:16:12.475, FINE, [Thread]: 246 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  436  mob:MT_QueryStock_Request : element.getChildNodes().getLength() : 3
+2019-09-13 10:16:12.476, FINE, [Thread]: 246 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  294  JsonXmlDataConverter : Entry generateXml..
+2019-09-13 10:16:12.477, FINE, [Thread]: 246 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  294  JsonXmlDataConverter : Entry generateXml..
+2019-09-13 10:16:12.479, FINE, [Thread]: 246 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  348  element.getAttribute(SOURCE) : matrl_code
+2019-09-13 10:16:12.480, FINE, [Thread]: 246 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  350  Result : P64453
+2019-09-13 10:16:12.481, FINE, [Thread]: 246 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  436  MaterialCode : element.getChildNodes().getLength() : 0
+2019-09-13 10:16:12.482, FINE, [Thread]: 246 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  588  MaterialCode value : P64453
+2019-09-13 10:16:12.483, FINE, [Thread]: 246 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  609  MaterialCode : matrl_code : P64453
+2019-09-13 10:16:12.484, FINE, [Thread]: 246 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  348  element.getAttribute(SOURCE) : plant
+2019-09-13 10:16:12.485, FINE, [Thread]: 246 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  350  Result : 001
+2019-09-13 10:16:12.485, FINE, [Thread]: 246 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  436  Plant : element.getChildNodes().getLength() : 0
+2019-09-13 10:16:12.486, FINE, [Thread]: 246 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  588  Plant value : 001
+2019-09-13 10:16:12.487, FINE, [Thread]: 246 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  609  Plant : plant : 001
+2019-09-13 10:16:12.488, FINE, [Thread]: 246 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  649  JsonXmlDataConverter : Exit generateXml..
+2019-09-13 10:16:12.489, FINE, [Thread]: 246 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  649  JsonXmlDataConverter : Exit generateXml..
+2019-09-13 10:16:12.491, FINE, [Thread]: 246 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  649  JsonXmlDataConverter : Exit generateXml..
+2019-09-13 10:16:12.492, FINE, [Thread]: 246 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  649  JsonXmlDataConverter : Exit generateXml..
+2019-09-13 10:16:12.511, FINE, [Thread]: 246 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  228  End ::  1568349972510 -- <soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:mob="http://mobii.com/">
+<soapenv:Header/>
+<soapenv:Body>
+<mob:MT_QueryStock_Request>
+<Item>
+<MaterialCode>P64453</MaterialCode>
+<Plant>001</Plant>
+</Item>
+</mob:MT_QueryStock_Request>
+</soapenv:Body>
+</soapenv:Envelope>
+
+2019-09-13 10:16:12.512, FINE, [Thread]: 246 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  271  JsonXmlDataConverter : Exit processRequest..processingTime : 70
+2019-09-13 10:16:12.513, FINE, [Thread]: 246 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  12493  IsException : false
+2019-09-13 10:16:12.515, FINE, [Thread]: 246 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  12557  refData1 : 323532 : refData5 : 323532 : TransID : 229593
+2019-09-13 10:16:12.517, FINE, [Thread]: 246 [ClassName]: com.enhancesys.integration.publisher.WebServicePublisher [LineNumber]:  78  Entry processRequest.. TransactionId :: 229593, InterfaceId :: 1140
+2019-09-13 10:16:12.518, FINE, [Thread]: 246 [ClassName]: com.enhancesys.integration.publisher.WebServicePublisher [LineNumber]:  96  Request --> <soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:mob="http://mobii.com/">
+<soapenv:Header/>
+<soapenv:Body>
+<mob:MT_QueryStock_Request>
+<Item>
+<MaterialCode>P64453</MaterialCode>
+<Plant>001</Plant>
+</Item>
+</mob:MT_QueryStock_Request>
+</soapenv:Body>
+</soapenv:Envelope>
+
+2019-09-13 10:16:12.532, FINE, [Thread]: 246 [ClassName]: com.enhancesys.integration.publisher.WebServicePublisher [LineNumber]:  148  URL -->
+2019-09-13 10:16:12.533, FINE, [Thread]: 246 [ClassName]: com.enhancesys.integration.publisher.WebServicePublisher [LineNumber]:  156  Static Service URL :: http://interface.enhancesys.com:80/interfaceResponseServices/webservices/InterfaceResponseServicesImpl?wsdl
+2019-09-13 10:16:12.534, FINE, [Thread]: 246 [ClassName]: com.enhancesys.integration.publisher.WebServicePublisher [LineNumber]:  249  Entry sendSoapRequest ...
+2019-09-13 10:16:12.560, FINE, [Thread]: 246 [ClassName]: com.enhancesys.integration.publisher.WebServicePublisher [LineNumber]:  340  Exit sendSoapRequest ...
+2019-09-13 10:16:12.560, FINE, [Thread]: 246 [ClassName]: com.enhancesys.integration.publisher.WebServicePublisher [LineNumber]:  167  Response --> <?xml version = "1.0" encoding = "UTF-8"?> <SOAP:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:mob="http://mobii.com/"><soapenv:Header/><SOAP:Body><nm:MT_QueryStock_Response><Item><MaterialCode>P64453</MaterialCode><Plant>001</Plant><Stock>1000.00</Stock><Remarks>OK</Remarks></Item></nm:MT_QueryStock_Response></SOAP:Body></SOAP:Envelope>
+2019-09-13 10:16:12.561, FINE, [Thread]: 246 [ClassName]: com.enhancesys.integration.publisher.WebServicePublisher [LineNumber]:  227  Exit processRequest..
+2019-09-13 10:16:12.562, FINE, [Thread]: 246 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  11785  responseBean.getStatus() : Success
+2019-09-13 10:16:12.567, FINE, [Thread]: 246 [ClassName]: com.enhancesys.integration.services.converter.LookupMapping [LineNumber]:  1745  Entry convertStringToDocument..
+2019-09-13 10:16:12.570, FINE, [Thread]: 246 [ClassName]: com.enhancesys.integration.services.converter.LookupMapping [LineNumber]:  1774  Exit convertStringToDocument..
+2019-09-13 10:16:12.571, FINE, [Thread]: 246 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  11829  jsonResponseObject : {"SOAP:Envelope":{"SOAP:Body":{"nm:MT_QueryStock_Response":{"Item":{"Plant":"001","MaterialCode":"P64453","Remarks":"OK","Stock":"1000.00"}}}}}
+2019-09-13 10:16:12.611, FINE, [Thread]: 246 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  11999  Exit invokePrimarySalesInterface..
+2019-09-13 10:16:28.048, FINE, [Thread]: 250 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  11734  Entry invokePrimarySalesInterface..
+2019-09-13 10:16:28.091, FINE, [Thread]: 250 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  12409  Ref ID : 323532
+2019-09-13 10:16:28.098, FINE, [Thread]: 250 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  12430  Ref Data Path Value : 323532
+2019-09-13 10:16:28.099, FINE, [Thread]: 250 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  12433  Ref Data 5 : 323532
+2019-09-13 10:16:28.101, FINE, [Thread]: 250 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  119  JsonXmlDataConverter : Entry processRequest.. interfaceId : 1140 : requestData :
+
+{
+        "payload": {
+                "order": {
+                        "org_id": "323532",
+                        "products": [
+                                {
+                                        "matrl_code": "P64453",
+                                        "plant": "001"
+                                }
+                        ]
+                }
+        }
+}
+
+
+
+2019-09-13 10:16:28.102, FINE, [Thread]: 250 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  14590  Entry getKycSyncAttributesByInterfaceId..
+2019-09-13 10:16:28.106, FINE, [Thread]: 250 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  14638  Exit getKycSyncAttributesByInterfaceId..
+2019-09-13 10:16:28.110, FINE, [Thread]: 250 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  165  Payload : {"order":{"org_id":"323532","products":[{"plant":"001","matrl_code":"P64453"}]}}
+2019-09-13 10:16:28.123, FINE, [Thread]: 250 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  194  templateFileName :queryStock-template.xml
+2019-09-13 10:16:28.128, FINE, [Thread]: 250 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  294  JsonXmlDataConverter : Entry generateXml..
+2019-09-13 10:16:28.129, FINE, [Thread]: 250 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  436  soapenv:Header : element.getChildNodes().getLength() : 0
+2019-09-13 10:16:28.130, FINE, [Thread]: 250 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  588  soapenv:Header value : null
+2019-09-13 10:16:28.132, FINE, [Thread]: 250 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  609  soapenv:Header :  : null
+2019-09-13 10:16:28.133, FINE, [Thread]: 250 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  436  soapenv:Body : element.getChildNodes().getLength() : 3
+2019-09-13 10:16:28.134, FINE, [Thread]: 250 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  294  JsonXmlDataConverter : Entry generateXml..
+2019-09-13 10:16:28.135, FINE, [Thread]: 250 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  436  mob:MT_QueryStock_Request : element.getChildNodes().getLength() : 3
+2019-09-13 10:16:28.136, FINE, [Thread]: 250 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  294  JsonXmlDataConverter : Entry generateXml..
+2019-09-13 10:16:28.137, FINE, [Thread]: 250 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  294  JsonXmlDataConverter : Entry generateXml..
+2019-09-13 10:16:28.139, FINE, [Thread]: 250 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  348  element.getAttribute(SOURCE) : matrl_code
+2019-09-13 10:16:28.140, FINE, [Thread]: 250 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  350  Result : P64453
+2019-09-13 10:16:28.141, FINE, [Thread]: 250 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  436  MaterialCode : element.getChildNodes().getLength() : 0
+2019-09-13 10:16:28.142, FINE, [Thread]: 250 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  588  MaterialCode value : P64453
+2019-09-13 10:16:28.144, FINE, [Thread]: 250 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  609  MaterialCode : matrl_code : P64453
+2019-09-13 10:16:28.146, FINE, [Thread]: 250 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  348  element.getAttribute(SOURCE) : plant
+2019-09-13 10:16:28.147, FINE, [Thread]: 250 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  350  Result : 001
+2019-09-13 10:16:28.148, FINE, [Thread]: 250 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  436  Plant : element.getChildNodes().getLength() : 0
+2019-09-13 10:16:28.149, FINE, [Thread]: 250 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  588  Plant value : 001
+2019-09-13 10:16:28.150, FINE, [Thread]: 250 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  609  Plant : plant : 001
+2019-09-13 10:16:28.151, FINE, [Thread]: 250 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  649  JsonXmlDataConverter : Exit generateXml..
+2019-09-13 10:16:28.152, FINE, [Thread]: 250 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  649  JsonXmlDataConverter : Exit generateXml..
+2019-09-13 10:16:28.154, FINE, [Thread]: 250 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  649  JsonXmlDataConverter : Exit generateXml..
+2019-09-13 10:16:28.155, FINE, [Thread]: 250 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  649  JsonXmlDataConverter : Exit generateXml..
+2019-09-13 10:16:28.174, FINE, [Thread]: 250 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  228  End ::  1568349988173 -- <soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:mob="http://mobii.com/">
+<soapenv:Header/>
+<soapenv:Body>
+<mob:MT_QueryStock_Request>
+<Item>
+<MaterialCode>P64453</MaterialCode>
+<Plant>001</Plant>
+</Item>
+</mob:MT_QueryStock_Request>
+</soapenv:Body>
+</soapenv:Envelope>
+
+2019-09-13 10:16:28.175, FINE, [Thread]: 250 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  271  JsonXmlDataConverter : Exit processRequest..processingTime : 74
+2019-09-13 10:16:28.176, FINE, [Thread]: 250 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  12493  IsException : false
+2019-09-13 10:16:28.178, FINE, [Thread]: 250 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  12557  refData1 : 323532 : refData5 : 323532 : TransID : 229594
+2019-09-13 10:16:28.180, FINE, [Thread]: 250 [ClassName]: com.enhancesys.integration.publisher.WebServicePublisher [LineNumber]:  78  Entry processRequest.. TransactionId :: 229594, InterfaceId :: 1140
+2019-09-13 10:16:28.181, FINE, [Thread]: 250 [ClassName]: com.enhancesys.integration.publisher.WebServicePublisher [LineNumber]:  96  Request --> <soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:mob="http://mobii.com/">
+<soapenv:Header/>
+<soapenv:Body>
+<mob:MT_QueryStock_Request>
+<Item>
+<MaterialCode>P64453</MaterialCode>
+<Plant>001</Plant>
+</Item>
+</mob:MT_QueryStock_Request>
+</soapenv:Body>
+</soapenv:Envelope>
+
+2019-09-13 10:16:28.194, FINE, [Thread]: 250 [ClassName]: com.enhancesys.integration.publisher.WebServicePublisher [LineNumber]:  148  URL -->
+2019-09-13 10:16:28.196, FINE, [Thread]: 250 [ClassName]: com.enhancesys.integration.publisher.WebServicePublisher [LineNumber]:  156  Static Service URL :: http://interface.enhancesys.com:80/interfaceResponseServices/webservices/InterfaceResponseServicesImpl?wsdl
+2019-09-13 10:16:28.197, FINE, [Thread]: 250 [ClassName]: com.enhancesys.integration.publisher.WebServicePublisher [LineNumber]:  249  Entry sendSoapRequest ...
+2019-09-13 10:16:28.230, FINE, [Thread]: 250 [ClassName]: com.enhancesys.integration.publisher.WebServicePublisher [LineNumber]:  340  Exit sendSoapRequest ...
+2019-09-13 10:16:28.231, FINE, [Thread]: 250 [ClassName]: com.enhancesys.integration.publisher.WebServicePublisher [LineNumber]:  167  Response --> <?xml version = "1.0" encoding = "UTF-8"?> <SOAP:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:mob="http://mobii.com/"><soapenv:Header/><SOAP:Body><nm:MT_QueryStock_Response><Item><MaterialCode>P64453</MaterialCode><Plant>001</Plant><Stock>1000.00</Stock><Remarks>OK</Remarks></Item></nm:MT_QueryStock_Response></SOAP:Body></SOAP:Envelope>
+2019-09-13 10:16:28.232, FINE, [Thread]: 250 [ClassName]: com.enhancesys.integration.publisher.WebServicePublisher [LineNumber]:  227  Exit processRequest..
+2019-09-13 10:16:28.233, FINE, [Thread]: 250 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  11785  responseBean.getStatus() : Success
+2019-09-13 10:16:28.239, FINE, [Thread]: 250 [ClassName]: com.enhancesys.integration.services.converter.LookupMapping [LineNumber]:  1745  Entry convertStringToDocument..
+2019-09-13 10:16:28.243, FINE, [Thread]: 250 [ClassName]: com.enhancesys.integration.services.converter.LookupMapping [LineNumber]:  1774  Exit convertStringToDocument..
+2019-09-13 10:16:28.244, FINE, [Thread]: 250 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  11829  jsonResponseObject : {"SOAP:Envelope":{"SOAP:Body":{"nm:MT_QueryStock_Response":{"Item":{"Plant":"001","MaterialCode":"P64453","Remarks":"OK","Stock":"1000.00"}}}}}
+2019-09-13 10:16:28.286, FINE, [Thread]: 250 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  11999  Exit invokePrimarySalesInterface..
+
+2019-09-13 10:16:36.542, FINE, [Thread]: 237 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  11734  Entry invokePrimarySalesInterface..
+2019-09-13 10:16:36.606, FINE, [Thread]: 237 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  12409  Ref ID : 323532
+2019-09-13 10:16:36.612, FINE, [Thread]: 237 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  12430  Ref Data Path Value : 323532
+2019-09-13 10:16:36.613, FINE, [Thread]: 237 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  12433  Ref Data 5 : 323532
+2019-09-13 10:16:36.615, FINE, [Thread]: 237 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  119  JsonXmlDataConverter : Entry processRequest.. interfaceId : 1140 : requestData :
+
+{
+        "payload": {
+                "order": {
+                        "org_id": "323532",
+                        "products": [
+                                {
+                                        "matrl_code": "P64453",
+                                        "plant": "001"
+                                }
+                        ]
+                }
+        }
+}
+
+
+
+2019-09-13 10:16:36.616, FINE, [Thread]: 237 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  14590  Entry getKycSyncAttributesByInterfaceId..
+2019-09-13 10:16:36.620, FINE, [Thread]: 237 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  14638  Exit getKycSyncAttributesByInterfaceId..
+2019-09-13 10:16:36.623, FINE, [Thread]: 237 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  165  Payload : {"order":{"org_id":"323532","products":[{"plant":"001","matrl_code":"P64453"}]}}
+2019-09-13 10:16:36.635, FINE, [Thread]: 237 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  194  templateFileName :queryStock-template.xml
+2019-09-13 10:16:36.639, FINE, [Thread]: 237 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  294  JsonXmlDataConverter : Entry generateXml..
+2019-09-13 10:16:36.640, FINE, [Thread]: 237 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  436  soapenv:Header : element.getChildNodes().getLength() : 0
+2019-09-13 10:16:36.641, FINE, [Thread]: 237 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  588  soapenv:Header value : null
+2019-09-13 10:16:36.642, FINE, [Thread]: 237 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  609  soapenv:Header :  : null
+2019-09-13 10:16:36.642, FINE, [Thread]: 237 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  436  soapenv:Body : element.getChildNodes().getLength() : 3
+2019-09-13 10:16:36.643, FINE, [Thread]: 237 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  294  JsonXmlDataConverter : Entry generateXml..
+2019-09-13 10:16:36.644, FINE, [Thread]: 237 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  436  mob:MT_QueryStock_Request : element.getChildNodes().getLength() : 3
+2019-09-13 10:16:36.645, FINE, [Thread]: 237 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  294  JsonXmlDataConverter : Entry generateXml..
+2019-09-13 10:16:36.645, FINE, [Thread]: 237 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  294  JsonXmlDataConverter : Entry generateXml..
+2019-09-13 10:16:36.646, FINE, [Thread]: 237 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  348  element.getAttribute(SOURCE) : matrl_code
+2019-09-13 10:16:36.647, FINE, [Thread]: 237 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  350  Result : P64453
+2019-09-13 10:16:36.648, FINE, [Thread]: 237 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  436  MaterialCode : element.getChildNodes().getLength() : 0
+2019-09-13 10:16:36.648, FINE, [Thread]: 237 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  588  MaterialCode value : P64453
+2019-09-13 10:16:36.649, FINE, [Thread]: 237 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  609  MaterialCode : matrl_code : P64453
+2019-09-13 10:16:36.650, FINE, [Thread]: 237 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  348  element.getAttribute(SOURCE) : plant
+2019-09-13 10:16:36.650, FINE, [Thread]: 237 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  350  Result : 001
+2019-09-13 10:16:36.651, FINE, [Thread]: 237 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  436  Plant : element.getChildNodes().getLength() : 0
+2019-09-13 10:16:36.652, FINE, [Thread]: 237 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  588  Plant value : 001
+2019-09-13 10:16:36.652, FINE, [Thread]: 237 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  609  Plant : plant : 001
+2019-09-13 10:16:36.653, FINE, [Thread]: 237 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  649  JsonXmlDataConverter : Exit generateXml..
+2019-09-13 10:16:36.654, FINE, [Thread]: 237 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  649  JsonXmlDataConverter : Exit generateXml..
+2019-09-13 10:16:36.654, FINE, [Thread]: 237 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  649  JsonXmlDataConverter : Exit generateXml..
+2019-09-13 10:16:36.655, FINE, [Thread]: 237 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  649  JsonXmlDataConverter : Exit generateXml..
+2019-09-13 10:16:36.674, FINE, [Thread]: 237 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  228  End ::  1568349996673 -- <soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:mob="http://mobii.com/">
+<soapenv:Header/>
+<soapenv:Body>
+<mob:MT_QueryStock_Request>
+<Item>
+<MaterialCode>P64453</MaterialCode>
+<Plant>001</Plant>
+</Item>
+</mob:MT_QueryStock_Request>
+</soapenv:Body>
+</soapenv:Envelope>
+
+2019-09-13 10:16:36.675, FINE, [Thread]: 237 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  271  JsonXmlDataConverter : Exit processRequest..processingTime : 60
+2019-09-13 10:16:36.675, FINE, [Thread]: 237 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  12493  IsException : false
+2019-09-13 10:16:36.677, FINE, [Thread]: 237 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  12557  refData1 : 323532 : refData5 : 323532 : TransID : 229595
+2019-09-13 10:16:36.678, FINE, [Thread]: 237 [ClassName]: com.enhancesys.integration.publisher.WebServicePublisher [LineNumber]:  78  Entry processRequest.. TransactionId :: 229595, InterfaceId :: 1140
+2019-09-13 10:16:36.679, FINE, [Thread]: 237 [ClassName]: com.enhancesys.integration.publisher.WebServicePublisher [LineNumber]:  96  Request --> <soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:mob="http://mobii.com/">
+<soapenv:Header/>
+<soapenv:Body>
+<mob:MT_QueryStock_Request>
+<Item>
+<MaterialCode>P64453</MaterialCode>
+<Plant>001</Plant>
+</Item>
+</mob:MT_QueryStock_Request>
+</soapenv:Body>
+</soapenv:Envelope>
+
+2019-09-13 10:16:36.692, FINE, [Thread]: 237 [ClassName]: com.enhancesys.integration.publisher.WebServicePublisher [LineNumber]:  148  URL -->
+2019-09-13 10:16:36.693, FINE, [Thread]: 237 [ClassName]: com.enhancesys.integration.publisher.WebServicePublisher [LineNumber]:  156  Static Service URL :: http://interface.enhancesys.com:80/interfaceResponseServices/webservices/InterfaceResponseServicesImpl?wsdl
+2019-09-13 10:16:36.693, FINE, [Thread]: 237 [ClassName]: com.enhancesys.integration.publisher.WebServicePublisher [LineNumber]:  249  Entry sendSoapRequest ...
+2019-09-13 10:16:36.723, FINE, [Thread]: 237 [ClassName]: com.enhancesys.integration.publisher.WebServicePublisher [LineNumber]:  340  Exit sendSoapRequest ...
+2019-09-13 10:16:36.724, FINE, [Thread]: 237 [ClassName]: com.enhancesys.integration.publisher.WebServicePublisher [LineNumber]:  167  Response --> <?xml version = "1.0" encoding = "UTF-8"?> <SOAP:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/"><SOAP:Body><SOAP:Fault><faultcode>soapenv:Server</faultcode><faultstring>Application Error. Please see FaultInfo</faultstring><detail><ns2:FaultInfo xmlns:ns3="http://com/enhancesys/entities/schema/integration" xmlns:ns2="http://com/enhancesys/integration/services/interfaces/IntegrationManagement"><causedBy>java.lang.NullPointerException</causedBy><message>Error in initialising entity manager</message></ns2:FaultInfo></detail></SOAP:Fault></SOAP:Body></SOAP:Envelope>
+2019-09-13 10:16:36.724, FINE, [Thread]: 237 [ClassName]: com.enhancesys.integration.publisher.WebServicePublisher [LineNumber]:  227  Exit processRequest..
+2019-09-13 10:16:36.725, FINE, [Thread]: 237 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  11785  responseBean.getStatus() : Success
+2019-09-13 10:16:36.731, FINE, [Thread]: 237 [ClassName]: com.enhancesys.integration.services.converter.LookupMapping [LineNumber]:  1745  Entry convertStringToDocument..
+2019-09-13 10:16:36.734, FINE, [Thread]: 237 [ClassName]: com.enhancesys.integration.services.converter.LookupMapping [LineNumber]:  1774  Exit convertStringToDocument..
+2019-09-13 10:16:36.735, FINE, [Thread]: 237 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  11829  jsonResponseObject : {"SOAP:Envelope":{"SOAP:Body":{"SOAP:Fault":{"detail":{"ns2:FaultInfo":{"message":"Error in initialising entity manager","causedBy":"java.lang.NullPointerException"}},"faultcode":"soapenv:Server","faultstring":"Application Error. Please see FaultInfo"}}}}
+2019-09-13 10:16:36.771, FINE, [Thread]: 237 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  11999  Exit invokePrimarySalesInterface..
+2019-09-13 10:16:45.997, FINE, [Thread]: 237 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  11734  Entry invokePrimarySalesInterface..
+2019-09-13 10:16:46.041, FINE, [Thread]: 237 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  12409  Ref ID : 323532
+2019-09-13 10:16:46.047, FINE, [Thread]: 237 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  12430  Ref Data Path Value : 323532
+2019-09-13 10:16:46.048, FINE, [Thread]: 237 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  12433  Ref Data 5 : 323532
+2019-09-13 10:16:46.049, FINE, [Thread]: 237 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  119  JsonXmlDataConverter : Entry processRequest.. interfaceId : 1140 : requestData :
+
+{
+        "payload": {
+                "order": {
+                        "org_id": "323532",
+                        "products": [
+                                {
+                                        "matrl_code": "P64453",
+                                        "plant": "001"
+                                }
+                        ]
+                }
+        }
+}
+
+
+
+2019-09-13 10:16:46.050, FINE, [Thread]: 237 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  14590  Entry getKycSyncAttributesByInterfaceId..
+2019-09-13 10:16:46.054, FINE, [Thread]: 237 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  14638  Exit getKycSyncAttributesByInterfaceId..
+2019-09-13 10:16:46.057, FINE, [Thread]: 237 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  165  Payload : {"order":{"org_id":"323532","products":[{"plant":"001","matrl_code":"P64453"}]}}
+2019-09-13 10:16:46.068, FINE, [Thread]: 237 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  194  templateFileName :queryStock-template.xml
+2019-09-13 10:16:46.071, FINE, [Thread]: 237 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  294  JsonXmlDataConverter : Entry generateXml..
+2019-09-13 10:16:46.072, FINE, [Thread]: 237 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  436  soapenv:Header : element.getChildNodes().getLength() : 0
+2019-09-13 10:16:46.072, FINE, [Thread]: 237 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  588  soapenv:Header value : null
+2019-09-13 10:16:46.073, FINE, [Thread]: 237 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  609  soapenv:Header :  : null
+2019-09-13 10:16:46.074, FINE, [Thread]: 237 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  436  soapenv:Body : element.getChildNodes().getLength() : 3
+2019-09-13 10:16:46.075, FINE, [Thread]: 237 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  294  JsonXmlDataConverter : Entry generateXml..
+2019-09-13 10:16:46.075, FINE, [Thread]: 237 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  436  mob:MT_QueryStock_Request : element.getChildNodes().getLength() : 3
+2019-09-13 10:16:46.076, FINE, [Thread]: 237 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  294  JsonXmlDataConverter : Entry generateXml..
+2019-09-13 10:16:46.077, FINE, [Thread]: 237 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  294  JsonXmlDataConverter : Entry generateXml..
+2019-09-13 10:16:46.078, FINE, [Thread]: 237 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  348  element.getAttribute(SOURCE) : matrl_code
+2019-09-13 10:16:46.078, FINE, [Thread]: 237 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  350  Result : P64453
+2019-09-13 10:16:46.079, FINE, [Thread]: 237 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  436  MaterialCode : element.getChildNodes().getLength() : 0
+2019-09-13 10:16:46.080, FINE, [Thread]: 237 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  588  MaterialCode value : P64453
+2019-09-13 10:16:46.080, FINE, [Thread]: 237 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  609  MaterialCode : matrl_code : P64453
+2019-09-13 10:16:46.081, FINE, [Thread]: 237 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  348  element.getAttribute(SOURCE) : plant
+2019-09-13 10:16:46.082, FINE, [Thread]: 237 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  350  Result : 001
+2019-09-13 10:16:46.082, FINE, [Thread]: 237 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  436  Plant : element.getChildNodes().getLength() : 0
+2019-09-13 10:16:46.083, FINE, [Thread]: 237 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  588  Plant value : 001
+2019-09-13 10:16:46.084, FINE, [Thread]: 237 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  609  Plant : plant : 001
+2019-09-13 10:16:46.084, FINE, [Thread]: 237 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  649  JsonXmlDataConverter : Exit generateXml..
+2019-09-13 10:16:46.085, FINE, [Thread]: 237 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  649  JsonXmlDataConverter : Exit generateXml..
+2019-09-13 10:16:46.086, FINE, [Thread]: 237 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  649  JsonXmlDataConverter : Exit generateXml..
+2019-09-13 10:16:46.086, FINE, [Thread]: 237 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  649  JsonXmlDataConverter : Exit generateXml..
+2019-09-13 10:16:46.104, FINE, [Thread]: 237 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  228  End ::  1568350006104 -- <soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:mob="http://mobii.com/">
+<soapenv:Header/>
+<soapenv:Body>
+<mob:MT_QueryStock_Request>
+<Item>
+<MaterialCode>P64453</MaterialCode>
+<Plant>001</Plant>
+</Item>
+</mob:MT_QueryStock_Request>
+</soapenv:Body>
+</soapenv:Envelope>
+
+2019-09-13 10:16:46.105, FINE, [Thread]: 237 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverter [LineNumber]:  271  JsonXmlDataConverter : Exit processRequest..processingTime : 55
+2019-09-13 10:16:46.106, FINE, [Thread]: 237 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  12493  IsException : false
+2019-09-13 10:16:46.107, FINE, [Thread]: 237 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  12557  refData1 : 323532 : refData5 : 323532 : TransID : 229596
+2019-09-13 10:16:46.109, FINE, [Thread]: 237 [ClassName]: com.enhancesys.integration.publisher.WebServicePublisher [LineNumber]:  78  Entry processRequest.. TransactionId :: 229596, InterfaceId :: 1140
+2019-09-13 10:16:46.109, FINE, [Thread]: 237 [ClassName]: com.enhancesys.integration.publisher.WebServicePublisher [LineNumber]:  96  Request --> <soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:mob="http://mobii.com/">
+<soapenv:Header/>
+<soapenv:Body>
+<mob:MT_QueryStock_Request>
+<Item>
+<MaterialCode>P64453</MaterialCode>
+<Plant>001</Plant>
+</Item>
+</mob:MT_QueryStock_Request>
+</soapenv:Body>
+</soapenv:Envelope>
+
+2019-09-13 10:16:46.122, FINE, [Thread]: 237 [ClassName]: com.enhancesys.integration.publisher.WebServicePublisher [LineNumber]:  148  URL -->
+2019-09-13 10:16:46.123, FINE, [Thread]: 237 [ClassName]: com.enhancesys.integration.publisher.WebServicePublisher [LineNumber]:  156  Static Service URL :: http://interface.enhancesys.com:80/interfaceResponseServices/webservices/InterfaceResponseServicesImpl?wsdl
+2019-09-13 10:16:46.124, FINE, [Thread]: 237 [ClassName]: com.enhancesys.integration.publisher.WebServicePublisher [LineNumber]:  249  Entry sendSoapRequest ...
+2019-09-13 10:16:46.151, FINE, [Thread]: 237 [ClassName]: com.enhancesys.integration.publisher.WebServicePublisher [LineNumber]:  340  Exit sendSoapRequest ...
+2019-09-13 10:16:46.152, FINE, [Thread]: 237 [ClassName]: com.enhancesys.integration.publisher.WebServicePublisher [LineNumber]:  167  Response --> <?xml version = "1.0" encoding = "UTF-8"?> <SOAP:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:mob="http://mobii.com/"><soapenv:Header/><SOAP:Body><nm:MT_QueryStock_Response><Item><MaterialCode>P64453</MaterialCode><Plant>001</Plant><Stock>1000.00</Stock><Remarks>OK</Remarks></Item></nm:MT_QueryStock_Response></SOAP:Body></SOAP:Envelope>
+2019-09-13 10:16:46.154, FINE, [Thread]: 237 [ClassName]: com.enhancesys.integration.publisher.WebServicePublisher [LineNumber]:  227  Exit processRequest..
+2019-09-13 10:16:46.155, FINE, [Thread]: 237 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  11785  responseBean.getStatus() : Success
+2019-09-13 10:16:46.161, FINE, [Thread]: 237 [ClassName]: com.enhancesys.integration.services.converter.LookupMapping [LineNumber]:  1745  Entry convertStringToDocument..
+2019-09-13 10:16:46.165, FINE, [Thread]: 237 [ClassName]: com.enhancesys.integration.services.converter.LookupMapping [LineNumber]:  1774  Exit convertStringToDocument..
+2019-09-13 10:16:46.166, FINE, [Thread]: 237 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  11829  jsonResponseObject : {"SOAP:Envelope":{"SOAP:Body":{"nm:MT_QueryStock_Response":{"Item":{"Plant":"001","MaterialCode":"P64453","Remarks":"OK","Stock":"1000.00"}}}}}
+2019-09-13 10:16:46.296, FINE, [Thread]: 237 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  11999  Exit invokePrimarySalesInterface..

@@ -1,0 +1,6 @@
+service call
+
+
+1. publishToInterface
+2. processInQueueRecords
+3. processResponseAvailableRecords

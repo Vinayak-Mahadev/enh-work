@@ -1,0 +1,187 @@
+13.09.2019 10:15:21  INFO (InterfaceResponseServicesImpl.java:72) - InterfaceId :: 1140, Request  :: <soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:mob="http://mobii.com/">
+<soapenv:Header/>
+<soapenv:Body>
+<mob:MT_QueryStock_Request>
+<Item>
+<MaterialCode>P64453</MaterialCode>
+<Plant>001</Plant>
+</Item>
+<Item>
+<MaterialCode>P4453</MaterialCode>
+<Plant>002</Plant>
+</Item>
+</mob:MT_QueryStock_Request>
+</soapenv:Body>
+</soapenv:Envelope>
+
+13.09.2019 10:15:21  INFO (PropertiesFileLoader.java:102) - Reading Properties file...
+13.09.2019 10:15:21  INFO (InterfaceDatabaseManager.java:20) - Loading the Postgres Driver..!
+13.09.2019 10:15:21  INFO (InterfaceDatabaseManager.java:22) - Getting the Postgres Connection..!
+13.09.2019 10:15:21  INFO (InterfaceResponseServicesImpl.java:78) - resConf :: {"soap-envelope":"SOAP:Envelope","soap-response":"nm:MT_QueryStock_Response","soap-body":"SOAP:Body","soap-fault":"SOAP:Fault"}
+13.09.2019 10:15:21  INFO (InterfaceResponseServicesImpl.java:84) - staticResConf :: {"enabled":true,"replace-elements":{"soapEnv":"soapenv:Envelope","soapBody":"soapenv:Body","products":"Item","productsObj":"mob:MT_QueryStock_Request"},"res_type":"Success","url":"http://interface.enhancesys.com:80/interfaceResponseServices/webservices/InterfaceResponseServicesImpl?wsdl"}
+13.09.2019 10:15:21  INFO (InterfaceResponseServicesImpl.java:93) - Response Type : Success
+13.09.2019 10:15:21  INFO (InterfaceResponseServicesImpl.java:111) - staticResponse :: <?xml version = "1.0" encoding = "UTF-8"?> <SOAP:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:mob="http://mobii.com/"><soapenv:Header/><SOAP:Body><nm:MT_QueryStock_Response><Item><MaterialCode>P64453</MaterialCode><Plant>001</Plant><Stock>1000.00</Stock><Remarks>OK</Remarks></Item><Item><MaterialCode>P4453</MaterialCode><Plant>002</Plant><Stock>1000.00</Stock><Remarks>OK</Remarks></Item></nm:MT_QueryStock_Response></SOAP:Body></SOAP:Envelope>
+13.09.2019 10:15:26  INFO (InterfaceResponseServicesImpl.java:72) - InterfaceId :: 1140, Request  :: <soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:mob="http://mobii.com/">
+<soapenv:Header/>
+<soapenv:Body>
+<mob:MT_QueryStock_Request>
+<Item>
+<MaterialCode>P64453</MaterialCode>
+<Plant>001</Plant>
+</Item>
+<Item>
+<MaterialCode>P4453</MaterialCode>
+<Plant>002</Plant>
+</Item>
+</mob:MT_QueryStock_Request>
+</soapenv:Body>
+</soapenv:Envelope>
+
+13.09.2019 10:15:26  INFO (InterfaceResponseServicesImpl.java:78) - resConf :: {"soap-envelope":"SOAP:Envelope","soap-response":"nm:MT_QueryStock_Response","soap-body":"SOAP:Body","soap-fault":"SOAP:Fault"}
+13.09.2019 10:15:26  INFO (InterfaceResponseServicesImpl.java:84) - staticResConf :: {"enabled":true,"replace-elements":{"soapEnv":"soapenv:Envelope","soapBody":"soapenv:Body","products":"Item","productsObj":"mob:MT_QueryStock_Request"},"res_type":"Success","url":"http://interface.enhancesys.com:80/interfaceResponseServices/webservices/InterfaceResponseServicesImpl?wsdl"}
+13.09.2019 10:15:26  INFO (InterfaceResponseServicesImpl.java:93) - Response Type : Success
+13.09.2019 10:15:26  INFO (InterfaceResponseServicesImpl.java:111) - staticResponse :: <?xml version = "1.0" encoding = "UTF-8"?> <SOAP:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:mob="http://mobii.com/"><soapenv:Header/><SOAP:Body><nm:MT_QueryStock_Response><Item><MaterialCode>P64453</MaterialCode><Plant>001</Plant><Stock>1000.00</Stock><Remarks>OK</Remarks></Item><Item><MaterialCode>P4453</MaterialCode><Plant>002</Plant><Stock>1000.00</Stock><Remarks>OK</Remarks></Item></nm:MT_QueryStock_Response></SOAP:Body></SOAP:Envelope>
+13.09.2019 10:15:30  INFO (InterfaceResponseServicesImpl.java:72) - InterfaceId :: 1140, Request  :: <soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:mob="http://mobii.com/">
+<soapenv:Header/>
+<soapenv:Body>
+<mob:MT_QueryStock_Request>
+<Item>
+<MaterialCode>P64453</MaterialCode>
+<Plant>001</Plant>
+</Item>
+<Item>
+<MaterialCode>P4453</MaterialCode>
+<Plant>002</Plant>
+</Item>
+</mob:MT_QueryStock_Request>
+</soapenv:Body>
+</soapenv:Envelope>
+
+13.09.2019 10:15:30  INFO (InterfaceResponseServicesImpl.java:78) - resConf :: {"soap-envelope":"SOAP:Envelope","soap-response":"nm:MT_QueryStock_Response","soap-body":"SOAP:Body","soap-fault":"SOAP:Fault"}
+13.09.2019 10:15:30  INFO (InterfaceResponseServicesImpl.java:84) - staticResConf :: {"enabled":true,"replace-elements":{"soapEnv":"soapenv:Envelope","soapBody":"soapenv:Body","products":"Item","productsObj":"mob:MT_QueryStock_Request"},"res_type":"Success","url":"http://interface.enhancesys.com:80/interfaceResponseServices/webservices/InterfaceResponseServicesImpl?wsdl"}
+13.09.2019 10:15:30  INFO (InterfaceResponseServicesImpl.java:93) - Response Type : Failure
+13.09.2019 10:15:30  INFO (InterfaceResponseServicesImpl.java:111) - staticResponse :: <?xml version = "1.0" encoding = "UTF-8"?> <SOAP:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:mob="http://mobii.com/"><soapenv:Header/><SOAP:Body><nm:MT_QueryStock_Response><Item><MaterialCode>P64453</MaterialCode><Plant>001</Plant><Stock>0.00</Stock><Remarks>Request Failed..</Remarks></Item><Item><MaterialCode>P4453</MaterialCode><Plant>002</Plant><Stock>0.00</Stock><Remarks>Request Failed..</Remarks></Item></nm:MT_QueryStock_Response></SOAP:Body></SOAP:Envelope>
+13.09.2019 10:15:41  INFO (InterfaceResponseServicesImpl.java:72) - InterfaceId :: 1140, Request  :: <soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:mob="http://mobii.com/">
+<soapenv:Header/>
+<soapenv:Body>
+<mob:MT_QueryStock_Request>
+<Item>
+<MaterialCode>P64453</MaterialCode>
+<Plant>001</Plant>
+</Item>
+<Item>
+<MaterialCode>P4453</MaterialCode>
+<Plant>002</Plant>
+</Item>
+</mob:MT_QueryStock_Request>
+</soapenv:Body>
+</soapenv:Envelope>
+
+13.09.2019 10:15:41  INFO (InterfaceResponseServicesImpl.java:78) - resConf :: {"soap-envelope":"SOAP:Envelope","soap-response":"nm:MT_QueryStock_Response","soap-body":"SOAP:Body","soap-fault":"SOAP:Fault"}
+13.09.2019 10:15:41  INFO (InterfaceResponseServicesImpl.java:84) - staticResConf :: {"enabled":true,"replace-elements":{"soapEnv":"soapenv:Envelope","soapBody":"soapenv:Body","products":"Item","productsObj":"mob:MT_QueryStock_Request"},"res_type":"Success","url":"http://interface.enhancesys.com:80/interfaceResponseServices/webservices/InterfaceResponseServicesImpl?wsdl"}
+13.09.2019 10:15:41  INFO (InterfaceResponseServicesImpl.java:93) - Response Type : Success
+13.09.2019 10:15:41  INFO (InterfaceResponseServicesImpl.java:111) - staticResponse :: <?xml version = "1.0" encoding = "UTF-8"?> <SOAP:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:mob="http://mobii.com/"><soapenv:Header/><SOAP:Body><nm:MT_QueryStock_Response><Item><MaterialCode>P64453</MaterialCode><Plant>001</Plant><Stock>1000.00</Stock><Remarks>OK</Remarks></Item><Item><MaterialCode>P4453</MaterialCode><Plant>002</Plant><Stock>1000.00</Stock><Remarks>OK</Remarks></Item></nm:MT_QueryStock_Response></SOAP:Body></SOAP:Envelope>
+13.09.2019 10:15:53  INFO (InterfaceResponseServicesImpl.java:72) - InterfaceId :: 1140, Request  :: <soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:mob="http://mobii.com/">
+<soapenv:Header/>
+<soapenv:Body>
+<mob:MT_QueryStock_Request>
+<Item>
+<MaterialCode>P64453</MaterialCode>
+<Plant>001</Plant>
+</Item>
+<Item>
+<MaterialCode>P4453</MaterialCode>
+<Plant>002</Plant>
+</Item>
+</mob:MT_QueryStock_Request>
+</soapenv:Body>
+</soapenv:Envelope>
+
+13.09.2019 10:15:53  INFO (InterfaceResponseServicesImpl.java:78) - resConf :: {"soap-envelope":"SOAP:Envelope","soap-response":"nm:MT_QueryStock_Response","soap-body":"SOAP:Body","soap-fault":"SOAP:Fault"}
+13.09.2019 10:15:53  INFO (InterfaceResponseServicesImpl.java:84) - staticResConf :: {"enabled":true,"replace-elements":{"soapEnv":"soapenv:Envelope","soapBody":"soapenv:Body","products":"Item","productsObj":"mob:MT_QueryStock_Request"},"res_type":"Success","url":"http://interface.enhancesys.com:80/interfaceResponseServices/webservices/InterfaceResponseServicesImpl?wsdl"}
+13.09.2019 10:15:53  INFO (InterfaceResponseServicesImpl.java:93) - Response Type : Error
+13.09.2019 10:15:53  INFO (InterfaceResponseServicesImpl.java:111) - staticResponse :: <?xml version = "1.0" encoding = "UTF-8"?> <SOAP:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/"><SOAP:Body><SOAP:Fault><faultcode>soapenv:Server</faultcode><faultstring>Application Error. Please see FaultInfo</faultstring><detail><ns2:FaultInfo xmlns:ns3="http://com/enhancesys/entities/schema/integration" xmlns:ns2="http://com/enhancesys/integration/services/interfaces/IntegrationManagement"><causedBy>java.lang.NullPointerException</causedBy><message>Error in initialising entity manager</message></ns2:FaultInfo></detail></SOAP:Fault></SOAP:Body></SOAP:Envelope>
+13.09.2019 10:16:04  INFO (InterfaceResponseServicesImpl.java:72) - InterfaceId :: 1140, Request  :: <soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:mob="http://mobii.com/">
+<soapenv:Header/>
+<soapenv:Body>
+<mob:MT_QueryStock_Request>
+<Item>
+<MaterialCode>P64453</MaterialCode>
+<Plant>001</Plant>
+</Item>
+<Item>
+<MaterialCode>P4453</MaterialCode>
+<Plant>002</Plant>
+</Item>
+</mob:MT_QueryStock_Request>
+</soapenv:Body>
+</soapenv:Envelope>
+
+13.09.2019 10:16:04  INFO (InterfaceResponseServicesImpl.java:78) - resConf :: {"soap-envelope":"SOAP:Envelope","soap-response":"nm:MT_QueryStock_Response","soap-body":"SOAP:Body","soap-fault":"SOAP:Fault"}
+13.09.2019 10:16:04  INFO (InterfaceResponseServicesImpl.java:84) - staticResConf :: {"enabled":true,"replace-elements":{"soapEnv":"soapenv:Envelope","soapBody":"soapenv:Body","products":"Item","productsObj":"mob:MT_QueryStock_Request"},"res_type":"Success","url":"http://interface.enhancesys.com:80/interfaceResponseServices/webservices/InterfaceResponseServicesImpl?wsdl"}
+13.09.2019 10:16:04  INFO (InterfaceResponseServicesImpl.java:93) - Response Type : Success
+13.09.2019 10:16:04  INFO (InterfaceResponseServicesImpl.java:111) - staticResponse :: <?xml version = "1.0" encoding = "UTF-8"?> <SOAP:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:mob="http://mobii.com/"><soapenv:Header/><SOAP:Body><nm:MT_QueryStock_Response><Item><MaterialCode>P64453</MaterialCode><Plant>001</Plant><Stock>1000.00</Stock><Remarks>OK</Remarks></Item><Item><MaterialCode>P4453</MaterialCode><Plant>002</Plant><Stock>1000.00</Stock><Remarks>OK</Remarks></Item></nm:MT_QueryStock_Response></SOAP:Body></SOAP:Envelope>
+13.09.2019 10:16:12  INFO (InterfaceResponseServicesImpl.java:72) - InterfaceId :: 1140, Request  :: <soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:mob="http://mobii.com/">
+<soapenv:Header/>
+<soapenv:Body>
+<mob:MT_QueryStock_Request>
+<Item>
+<MaterialCode>P64453</MaterialCode>
+<Plant>001</Plant>
+</Item>
+</mob:MT_QueryStock_Request>
+</soapenv:Body>
+</soapenv:Envelope>
+
+13.09.2019 10:16:12  INFO (InterfaceResponseServicesImpl.java:78) - resConf :: {"soap-envelope":"SOAP:Envelope","soap-response":"nm:MT_QueryStock_Response","soap-body":"SOAP:Body","soap-fault":"SOAP:Fault"}
+13.09.2019 10:16:12  INFO (InterfaceResponseServicesImpl.java:84) - staticResConf :: {"enabled":true,"replace-elements":{"soapEnv":"soapenv:Envelope","soapBody":"soapenv:Body","products":"Item","productsObj":"mob:MT_QueryStock_Request"},"res_type":"Success","url":"http://interface.enhancesys.com:80/interfaceResponseServices/webservices/InterfaceResponseServicesImpl?wsdl"}
+13.09.2019 10:16:12  INFO (InterfaceResponseServicesImpl.java:93) - Response Type : Success
+13.09.2019 10:16:12  INFO (InterfaceResponseServicesImpl.java:111) - staticResponse :: <?xml version = "1.0" encoding = "UTF-8"?> <SOAP:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:mob="http://mobii.com/"><soapenv:Header/><SOAP:Body><nm:MT_QueryStock_Response><Item><MaterialCode>P64453</MaterialCode><Plant>001</Plant><Stock>1000.00</Stock><Remarks>OK</Remarks></Item></nm:MT_QueryStock_Response></SOAP:Body></SOAP:Envelope>
+13.09.2019 10:16:28  INFO (InterfaceResponseServicesImpl.java:72) - InterfaceId :: 1140, Request  :: <soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:mob="http://mobii.com/">
+<soapenv:Header/>
+<soapenv:Body>
+<mob:MT_QueryStock_Request>
+<Item>
+<MaterialCode>P64453</MaterialCode>
+<Plant>001</Plant>
+</Item>
+</mob:MT_QueryStock_Request>
+</soapenv:Body>
+</soapenv:Envelope>
+
+13.09.2019 10:16:28  INFO (InterfaceResponseServicesImpl.java:78) - resConf :: {"soap-envelope":"SOAP:Envelope","soap-response":"nm:MT_QueryStock_Response","soap-body":"SOAP:Body","soap-fault":"SOAP:Fault"}
+13.09.2019 10:16:28  INFO (InterfaceResponseServicesImpl.java:84) - staticResConf :: {"enabled":true,"replace-elements":{"soapEnv":"soapenv:Envelope","soapBody":"soapenv:Body","products":"Item","productsObj":"mob:MT_QueryStock_Request"},"res_type":"Success","url":"http://interface.enhancesys.com:80/interfaceResponseServices/webservices/InterfaceResponseServicesImpl?wsdl"}
+13.09.2019 10:16:28  INFO (InterfaceResponseServicesImpl.java:93) - Response Type : Success
+13.09.2019 10:16:28  INFO (InterfaceResponseServicesImpl.java:111) - staticResponse :: <?xml version = "1.0" encoding = "UTF-8"?> <SOAP:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:mob="http://mobii.com/"><soapenv:Header/><SOAP:Body><nm:MT_QueryStock_Response><Item><MaterialCode>P64453</MaterialCode><Plant>001</Plant><Stock>1000.00</Stock><Remarks>OK</Remarks></Item></nm:MT_QueryStock_Response></SOAP:Body></SOAP:Envelope>
+13.09.2019 10:16:36  INFO (InterfaceResponseServicesImpl.java:72) - InterfaceId :: 1140, Request  :: <soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:mob="http://mobii.com/">
+<soapenv:Header/>
+<soapenv:Body>
+<mob:MT_QueryStock_Request>
+<Item>
+<MaterialCode>P64453</MaterialCode>
+<Plant>001</Plant>
+</Item>
+</mob:MT_QueryStock_Request>
+</soapenv:Body>
+</soapenv:Envelope>
+
+13.09.2019 10:16:36  INFO (InterfaceResponseServicesImpl.java:78) - resConf :: {"soap-envelope":"SOAP:Envelope","soap-response":"nm:MT_QueryStock_Response","soap-body":"SOAP:Body","soap-fault":"SOAP:Fault"}
+13.09.2019 10:16:36  INFO (InterfaceResponseServicesImpl.java:84) - staticResConf :: {"enabled":true,"replace-elements":{"soapEnv":"soapenv:Envelope","soapBody":"soapenv:Body","products":"Item","productsObj":"mob:MT_QueryStock_Request"},"res_type":"Success","url":"http://interface.enhancesys.com:80/interfaceResponseServices/webservices/InterfaceResponseServicesImpl?wsdl"}
+13.09.2019 10:16:36  INFO (InterfaceResponseServicesImpl.java:93) - Response Type : Error
+13.09.2019 10:16:36  INFO (InterfaceResponseServicesImpl.java:111) - staticResponse :: <?xml version = "1.0" encoding = "UTF-8"?> <SOAP:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/"><SOAP:Body><SOAP:Fault><faultcode>soapenv:Server</faultcode><faultstring>Application Error. Please see FaultInfo</faultstring><detail><ns2:FaultInfo xmlns:ns3="http://com/enhancesys/entities/schema/integration" xmlns:ns2="http://com/enhancesys/integration/services/interfaces/IntegrationManagement"><causedBy>java.lang.NullPointerException</causedBy><message>Error in initialising entity manager</message></ns2:FaultInfo></detail></SOAP:Fault></SOAP:Body></SOAP:Envelope>
+13.09.2019 10:16:46  INFO (InterfaceResponseServicesImpl.java:72) - InterfaceId :: 1140, Request  :: <soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:mob="http://mobii.com/">
+<soapenv:Header/>
+<soapenv:Body>
+<mob:MT_QueryStock_Request>
+<Item>
+<MaterialCode>P64453</MaterialCode>
+<Plant>001</Plant>
+</Item>
+</mob:MT_QueryStock_Request>
+</soapenv:Body>
+</soapenv:Envelope>
+
+13.09.2019 10:16:46  INFO (InterfaceResponseServicesImpl.java:78) - resConf :: {"soap-envelope":"SOAP:Envelope","soap-response":"nm:MT_QueryStock_Response","soap-body":"SOAP:Body","soap-fault":"SOAP:Fault"}
+13.09.2019 10:16:46  INFO (InterfaceResponseServicesImpl.java:84) - staticResConf :: {"enabled":true,"replace-elements":{"soapEnv":"soapenv:Envelope","soapBody":"soapenv:Body","products":"Item","productsObj":"mob:MT_QueryStock_Request"},"res_type":"Success","url":"http://interface.enhancesys.com:80/interfaceResponseServices/webservices/InterfaceResponseServicesImpl?wsdl"}
+13.09.2019 10:16:46  INFO (InterfaceResponseServicesImpl.java:93) - Response Type : Success
+13.09.2019 10:16:46  INFO (InterfaceResponseServicesImpl.java:111) - staticResponse :: <?xml version = "1.0" encoding = "UTF-8"?> <SOAP:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:mob="http://mobii.com/"><soapenv:Header/><SOAP:Body><nm:MT_QueryStock_Response><Item><MaterialCode>P64453</MaterialCode><Plant>001</Plant><Stock>1000.00</Stock><Remarks>OK</Remarks></Item></nm:MT_QueryStock_Response></SOAP:Body></SOAP:Envelope>

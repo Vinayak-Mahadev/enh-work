@@ -1,0 +1,152 @@
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:api="http://cps.huawei.com/synccpsinterface/api_requestmgr" xmlns:com="http://cps.huawei.com/synccpsinterface/common" xmlns:req="http://cps.huawei.com/synccpsinterface/request">
+	<soapenv:Header/>
+	<soapenv:Body>
+		<api:Request>
+			<req:Header>
+				<req:Version>1.0</req:Version>
+				<req:CommandID>CreateTopOrg</req:CommandID>
+				<req:OriginatorConversationID>229695</req:OriginatorConversationID>
+				<req:ConversationID>229695</req:ConversationID>
+				<req:Caller>
+					<req:CallerType>2</req:CallerType>
+					<req:ThirdPartyID>POS_Broker</req:ThirdPartyID>
+					<req:Password>gMMqGGrKxsE=</req:Password>
+					<req:ResultURL>http://10.63.146.235:8082/mockResultBinding</req:ResultURL>
+				</req:Caller>
+				<req:KeyOwner>1</req:KeyOwner>
+				<req:Timestamp>20190920094726</req:Timestamp>
+				<req:ChannelCode>1010</req:ChannelCode>
+			</req:Header>
+			<req:Body>
+				<req:Identity>
+					<req:Initiator>
+						<req:IdentifierType>14</req:IdentifierType>
+						<req:Identifier>wyz1</req:Identifier>
+						<req:SecurityCredential>k+JtvqNV3eg=</req:SecurityCredential>
+						<req:GPSPosition>12345678901234567890123456</req:GPSPosition>
+					</req:Initiator>
+				</req:Identity>
+				<req:CreateTopOrgRequest>
+					<req:ShortCode>968216551</req:ShortCode>
+					<req:OrganizationName>Int0919001</req:OrganizationName>
+					<req:ChargeProfileID>293</req:ChargeProfileID>
+					<req:RuleProfileID>12</req:RuleProfileID>
+					<req:SimpleKYCUpdateData>
+						<req:AddField>
+							<com:KYCName>[KYC][Organization SubType][Channel Category]</com:KYCName>
+							<com:KYCValue>Community</com:KYCValue>
+						</req:AddField>
+						<req:AddField>
+							<com:KYCName>[KYC][Organization SubType][Organization Location Type]</com:KYCName>
+							<com:KYCValue>INDOOR</com:KYCValue>
+						</req:AddField>
+						<req:AddField>
+							<com:KYCName>[KYC][Organization Details][Organization Group]</com:KYCName>
+							<com:KYCValue>Default</com:KYCValue>
+						</req:AddField>
+						<req:AddField>
+							<com:KYCName>[KYC][Organization SubType][Organization Classification]</com:KYCName>
+							<com:KYCValue>Gold</com:KYCValue>
+						</req:AddField>
+						<req:AddField>
+							<com:KYCName>[KYC][Organization SubType][Organization Category]</com:KYCName>
+							<com:KYCValue>Gadget Center</com:KYCValue>
+						</req:AddField>
+						<req:AddField>
+							<com:KYCName>[KYC][Owner Information][Owner Alternative ID Type]</com:KYCName>
+							<com:KYCValue>Child Identity Card</com:KYCValue>
+						</req:AddField>
+						<req:AddField>
+							<com:KYCName>[KYC][Owner Information][Owner Alternative ID Number]</com:KYCName>
+							<com:KYCValue>636752172123</com:KYCValue>
+						</req:AddField>
+						<req:AddField>
+							<com:KYCName>[KYC][Owner Information][Owner Name]</com:KYCName>
+							<com:KYCValue>Mahadev</com:KYCValue>
+						</req:AddField>
+						<req:AddField>
+							<com:KYCName>[KYC][Owner Information][Owner mother's maiden name]</com:KYCName>
+							<com:KYCValue>Mahadevs</com:KYCValue>
+						</req:AddField>
+						<req:AddField>
+							<com:KYCName>[KYC][Owner Information][Owner Contact Number]</com:KYCName>
+							<com:KYCValue>623456189723</com:KYCValue>
+						</req:AddField>
+						<req:AddField>
+							<com:KYCName>[KYC][Owner Permanent Address][Province]</com:KYCName>
+							<com:KYCValue>51</com:KYCValue>
+						</req:AddField>
+						<req:AddField>
+							<com:KYCName>[KYC][Organization Details][Charge Profile Key]</com:KYCName>
+							<com:KYCValue>NASIONAL_BANK_CHANNEL</com:KYCValue>
+						</req:AddField>
+						<req:AddField>
+							<com:KYCName>[KYC][Organization SubType][Dompetku MSISDN]</com:KYCName>
+							<com:KYCValue>62134968216551</com:KYCValue>
+						</req:AddField>
+						<req:AddField>
+							<com:KYCName>[KYC][Contact Details][Preferred Notification Language]</com:KYCName>
+							<com:KYCValue>en</com:KYCValue>
+						</req:AddField>
+						<req:AddField>
+							<com:KYCName>[KYC][Organization Details][Partner Type]</com:KYCName>
+							<com:KYCValue>2</com:KYCValue>
+						</req:AddField>
+						<req:AddField>
+							<com:KYCName>[KYC][Organization SubType][Organization Type]</com:KYCName>
+							<com:KYCValue>Outlet</com:KYCValue>
+						</req:AddField>
+						<req:AddField>
+							<com:KYCName>[KYC][Owner Permanent Address][City/District]</com:KYCName>
+							<com:KYCValue>5103</com:KYCValue>
+						</req:AddField>
+						<req:AddField>
+							<com:KYCName>[KYC][Owner Permanent Address][Districts]</com:KYCName>
+							<com:KYCValue>5103050</com:KYCValue>
+						</req:AddField>
+						<req:AddField>
+							<com:KYCName>[KYC][Owner Permanent Address][Street Address]</com:KYCName>
+							<com:KYCValue>Mahadev</com:KYCValue>
+						</req:AddField>
+						<req:AddField>
+							<com:KYCName>[KYC][Permanent Address][Additional Address]</com:KYCName>
+							<com:KYCValue>Kolur</com:KYCValue>
+						</req:AddField>
+						<req:AddField>
+							<com:KYCName>[KYC][Permanent Address][City/District]</com:KYCName>
+							<com:KYCValue>5103</com:KYCValue>
+						</req:AddField>
+						<req:AddField>
+							<com:KYCName>[KYC][Permanent Address][Districts]</com:KYCName>
+							<com:KYCValue>5103050</com:KYCValue>
+						</req:AddField>
+						<req:AddField>
+							<com:KYCName>[KYC][Permanent Address][Province]</com:KYCName>
+							<com:KYCValue>51</com:KYCValue>
+						</req:AddField>
+						<req:AddField>
+							<com:KYCName>[KYC][Permanent Address][Street Address]</com:KYCName>
+							<com:KYCValue>#96</com:KYCValue>
+						</req:AddField>
+						<req:AddField>
+							<com:KYCName>[KYC][Organization Details][Marketing Program]</com:KYCName>
+							<com:KYCValue>BOMBER</com:KYCValue>
+						</req:AddField>
+					</req:SimpleKYCUpdateData>
+					<req:UpdateProductsData>
+						<req:AddProduct>
+							<req:ProductID>4</req:ProductID>
+							<req:EffectiveDate>20190920</req:EffectiveDate>
+							<req:ExpiryDate>20991230</req:ExpiryDate>
+						</req:AddProduct>
+						<req:AddProduct>
+							<req:ProductID>212</req:ProductID>
+							<req:EffectiveDate>20190920</req:EffectiveDate>
+							<req:ExpiryDate>20991230</req:ExpiryDate>
+						</req:AddProduct>
+					</req:UpdateProductsData>
+				</req:CreateTopOrgRequest>
+			</req:Body>
+		</api:Request>
+	</soapenv:Body>
+</soapenv:Envelope>

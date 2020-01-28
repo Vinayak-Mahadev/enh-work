@@ -1,0 +1,21 @@
+
+
+
+Date|Region|HOR Name|Area|HOS Name|Sales Area|SAM Name|MPC code|MPC Name|Contact number|Total Child Outlets|Starter pack|Voucher|MOBO Balance
+
+{
+	"date": "data",
+	"region": "region",
+	"hor name": "horname",
+	"area": "area",
+	"hos name": "hosname",
+	"sales area": "salesarea",
+	"sam name": "samname",
+	"mpc code": "mpccode",
+	"mpc name": "mpcname",
+	"contact number": "contactnumber",
+	"total child outlets": "totalchildoutlets",
+	"starter pack": "starterpack",
+	"voucher": "voucher",
+	"mobo balance": "mobobalance"
+}

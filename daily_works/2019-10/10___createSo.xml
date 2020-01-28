@@ -1,0 +1,159 @@
+createSo 1141
+
+
+---------------------------------------------------------------------------------------------------------------------------------------------------
+REQUEST
+---------------------------------------------------------------------------------------------------------------------------------------------------
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:int="http://com/enhancesys/integration/services/interfaces/IntegrationManagement">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <int:invokePrimarySalesInterface>
+         <!--Optional:-->
+         <moduleId>225</moduleId>
+         <!--Optional:-->
+         <jsonRequestData>
+         <![CDATA[
+			
+{
+	"payload": {
+		"order": {
+			"po_no": "634487",
+			"po_ord_type": "ssfet",
+			"dist_chnl": "10",
+			"division": "30",
+			"sold_to_party": "",
+			"ship_to_party": "AK5443",
+			"ord_dt": "2019-10-11",
+			"req_deliv_dt": "2019-10-11",
+			"products": [
+				{
+					"matrl_code": "P64453",
+					"qty": "100"
+				},
+				{
+					"matrl_code": "P453",
+					"qty": "200"
+				}
+			]
+		}
+	}
+}
+			
+			
+		]]>
+         
+         </jsonRequestData>
+      </int:invokePrimarySalesInterface>
+   </soapenv:Body>
+</soapenv:Envelope>
+
+----------------------------------------------------------------------
+Converted ...
+----------------------------------------------------------------------
+ 
+ 
+
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:mob="http://mobii.com/">
+	<soapenv:Header/>
+	<soapenv:Body>
+		<mob:MT_SOCreation_Request>
+			<Item>
+				<Mobii_PO_Number>634487</Mobii_PO_Number>
+				<Order_Type/>
+				<Distribution_Channel/>
+				<Division/>
+				<Sold_to_Party/>
+				<Ship_to_Party>AK5443</Ship_to_Party>
+				<Mobii_PO_Date>11.10.2019</Mobii_PO_Date>
+				<Request_Delivery_Date>11.10.2019</Request_Delivery_Date>
+				<SO_Item>
+					<Material_Code>P64453</Material_Code>
+					<Quantity>100</Quantity>
+				</SO_Item>
+				<SO_Item>
+					<Material_Code>P453</Material_Code>
+					<Quantity>200</Quantity>
+				</SO_Item>
+			</Item>
+		</mob:MT_SOCreation_Request>
+	</soapenv:Body>
+</soapenv:Envelope>
+ 
+ 
+----------------------------------------------------------------------
+Result template...
+----------------------------------------------------------------------
+
+
+<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
+   <soap:Body>
+      <ns2:getStaticResponseResponse xmlns:ns2="http://com/enhancesys/integration/response/services/interfaces/InterfaceResponseServices">
+         <getStaticResponse><![CDATA[
+		 
+		 
+				<RESULT HERE>
+		 
+		 ]]></getStaticResponse>
+      </ns2:getStaticResponseResponse>
+   </soap:Body>
+</soap:Envelope>
+
+----------------------------------------------------------------------
+Error ...
+----------------------------------------------------------------------
+ <?xml version = "1.0" encoding = "UTF-8"?>
+<SOAP:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
+	<SOAP:Body>
+		<SOAP:Fault>
+			<faultcode>soapenv:Server</faultcode>
+			<faultstring>Application Error. Please see FaultInfo</faultstring>
+			<detail>
+				<ns2:FaultInfo xmlns:ns3="http://com/enhancesys/entities/schema/integration" xmlns:ns2="http://com/enhancesys/integration/services/interfaces/IntegrationManagement">
+					<causedBy>java.lang.NullPointerException</causedBy>
+					<message>Error in initialising entity manager</message>
+				</ns2:FaultInfo>
+			</detail>
+		</SOAP:Fault>
+	</SOAP:Body>
+</SOAP:Envelope>
+
+
+----------------------------------------------------------------------
+Success ...
+----------------------------------------------------------------------
+	
+	
+<?xml version = "1.0" encoding = "UTF-8"?>
+<SOAP:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:mob="http://mobii.com/">
+	<soapenv:Header/>
+	<SOAP:Body>
+		<nm:MT_SOCreation_Response>
+			<Item>
+				<SAP_SO_Number>10101103</SAP_SO_Number>
+				<Mobii_PO_Number>634487</Mobii_PO_Number>
+				<SO_Date>10.10.2019</SO_Date>
+				<Status>1</Status>
+				<SO_Amount>20000.00</SO_Amount>
+			</Item>
+		</nm:MT_SOCreation_Response>
+	</SOAP:Body>
+</SOAP:Envelope>
+
+
+----------------------------------------------------------------------
+Failure ...
+----------------------------------------------------------------------
+ <?xml version = "1.0" encoding = "UTF-8"?>
+<SOAP:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:mob="http://mobii.com/">
+	<soapenv:Header/>
+	<SOAP:Body>
+		<nm:MT_SOCreation_Response>
+			<Item>
+				<Mobii_PO_Number>634487</Mobii_PO_Number>
+				<SO_Date>10.10.2019</SO_Date>
+				<Status>0</Status>
+				<Rejection_Note>Request failed..</Rejection_Note>
+			</Item>
+		</nm:MT_SOCreation_Response>
+	</SOAP:Body>
+</SOAP:Envelope>

@@ -1,0 +1,139 @@
+
+
+----------------------------------------------------------------------
+Converted ...
+----------------------------------------------------------------------
+ <soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:api="http://cps.huawei.com/synccpsinterface/api_requestmgr" xmlns:com="http://cps.huawei.com/synccpsinterface/common" xmlns:req="http://cps.huawei.com/synccpsinterface/request">
+	<soapenv:Header/>
+	<soapenv:Body>
+		<api:Request>
+			<req:Header>
+				<req:Version>1.0</req:Version>
+				<req:CommandID>ChangeOrgOperatorStatus</req:CommandID>
+				<req:OriginatorConversationID>229146</req:OriginatorConversationID>
+				<req:Caller>
+					<req:CallerType>2</req:CallerType>
+					<req:ThirdPartyID>POS_Broker</req:ThirdPartyID>
+					<req:Password>gMMqGGrKxsE=</req:Password>
+					<req:ResultURL>http://10.63.146.235:8082/mockResultBinding</req:ResultURL>
+				</req:Caller>
+				<req:KeyOwner>1</req:KeyOwner>
+				<req:Timestamp>20190822144939</req:Timestamp>
+			</req:Header>
+			<req:Body>
+				<req:Identity>
+					<req:Initiator>
+						<req:IdentifierType>14</req:IdentifierType>
+						<req:Identifier>wyz1</req:Identifier>
+						<req:SecurityCredential>k+JtvqNV3eg=</req:SecurityCredential>
+					</req:Initiator>
+					<req:ReceiverParty>
+						<req:IdentifierType>11</req:IdentifierType>
+						<req:Identifier>MOBII39381</req:Identifier>
+						<req:ShortCode>17046624</req:ShortCode>
+					</req:ReceiverParty>
+				</req:Identity>
+				<req:ChangeOrgOperatorStatusRequest>
+					<req:IdentityStatus>03</req:IdentityStatus>
+				</req:ChangeOrgOperatorStatusRequest>
+			</req:Body>
+		</api:Request>
+	</soapenv:Body>
+</soapenv:Envelope> 
+ 
+----------------------------------------------------------------------
+Result template...
+----------------------------------------------------------------------
+
+
+<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
+   <soap:Body>
+      <ns2:getStaticResponseResponse xmlns:ns2="http://com/enhancesys/integration/response/services/interfaces/InterfaceResponseServices">
+         <getStaticResponse><![CDATA[
+		 
+		 
+				<RESULT HERE>
+		 
+		 ]]></getStaticResponse>
+      </ns2:getStaticResponseResponse>
+   </soap:Body>
+</soap:Envelope>
+
+----------------------------------------------------------------------
+Error ...
+----------------------------------------------------------------------
+
+ <?xml version = "1.0" encoding = "UTF-8"?>
+<soap-envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
+	<soap-body>
+		<soap-fault>
+			<faultcode>soapenv:Server</faultcode>
+			<faultstring>Application Error. Please see FaultInfo</faultstring>
+			<detail>
+				<ns2:FaultInfo xmlns:ns3="http://com/enhancesys/entities/schema/integration" xmlns:ns2="http://com/enhancesys/integration/services/interfaces/IntegrationManagement">
+					<causedBy>java.lang.NullPointerException</causedBy>
+					<message>Error in initialising entity manager</message>
+				</ns2:FaultInfo>
+			</detail>
+		</soap-fault>
+	</soap-body>
+</soap-envelope>
+
+
+
+----------------------------------------------------------------------
+Success ...
+----------------------------------------------------------------------
+	
+ <?xml version = "1.0" encoding = "UTF-8"?>
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:api="http://cps.huawei.com/cpsinterface/api_resultmgr" xmlns:res="http://cps.huawei.com/cpsinterface/result" xmlns:com="http://cps.huawei.com/cpsinterface/common">
+	<soapenv:Header/>
+	<soapenv:Body>
+		<api:Result>
+			<res:Header>
+				<res:Version>1.0</res:Version>
+				<res:OriginatorConversationID>229146</res:OriginatorConversationID>
+				<res:ConversationID>229146</res:ConversationID>
+			</res:Header>
+			<res:Body>
+				<res:ResultType>0</res:ResultType>
+				<res:ResultCode>0</res:ResultCode>
+				<res:ResultDesc>Process service request successfully.</res:ResultDesc>
+				<res:ChangeOrgOperatorStatusResult>
+					<res:BOCompletedTime>20190827162105</res:BOCompletedTime>
+					<res:OldStatus>03</res:OldStatus>
+				</res:ChangeOrgOperatorStatusResult>
+			</res:Body>
+		</api:Result>
+	</soapenv:Body>
+</soapenv:Envelope>
+
+
+
+----------------------------------------------------------------------
+Failure ...
+----------------------------------------------------------------------
+
+ <?xml version = "1.0" encoding = "UTF-8"?>
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:api="http://cps.huawei.com/cpsinterface/api_resultmgr" xmlns:res="http://cps.huawei.com/cpsinterface/result" xmlns:com="http://cps.huawei.com/cpsinterface/common">
+	<soapenv:Header/>
+	<soapenv:Body>
+		<api:Result>
+			<res:Header>
+				<res:Version>1.0</res:Version>
+				<res:OriginatorConversationID>229146</res:OriginatorConversationID>
+				<res:ConversationID>229146</res:ConversationID>
+			</res:Header>
+			<res:Body>
+				<res:ResultType>0</res:ResultType>
+				<res:ResultCode>2001</res:ResultCode>
+				<res:ResultDesc>Initiator authenthication error.</res:ResultDesc>
+				<res:ChangeOrgOperatorStatusResult>
+					<res:BOCompletedTime>20190827162015</res:BOCompletedTime>
+					<res:OldStatus>03</res:OldStatus>
+				</res:ChangeOrgOperatorStatusResult>
+			</res:Body>
+		</api:Result>
+	</soapenv:Body>
+</soapenv:Envelope>
+

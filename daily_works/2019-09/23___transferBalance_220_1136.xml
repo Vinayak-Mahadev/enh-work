@@ -1,0 +1,184 @@
+
+1136|Transfer Balance
+220|Transfer Balance
+
+----------------------------------------------------------------------
+REQUEST
+----------------------------------------------------------------------
+
+
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:int="http://com/enhancesys/integration/services/interfaces/IntegrationManagement">
+	<soapenv:Header/>
+	<soapenv:Body>
+		<int:syncBalanceInterface>
+			<moduleId>220</moduleId>
+			<jsonRequestData>
+			<![CDATA[
+	{
+		"payload": {
+			{
+            	"to_org_id": "54832",
+            	"fm_node_id": "50889",
+            	"fm_acc_id": "5001861",
+            	"operator_id": "lcan7",
+            	"uname": "LCAN7",
+            	"trans_amt": "20",
+            	"currency": "IDR",
+            	"fm_org_id": "50475",
+            	"acc_type": "",
+            	"destn_ref_code": "17000263",
+            	"pin": "kMhIAmNE4h8=",
+            	"org_ref_code": "05123423",
+            	"user_id": "30902",
+            	"to_node_id": "55783",
+            	"to_acc_id": "5015096",
+            	"trans_dt": "2019-09-23T09:57:34.393Z"
+		 }
+		}
+	}
+			]]>
+			</jsonRequestData>
+		</int:syncBalanceInterface>
+	</soapenv:Body>
+</soapenv:Envelope>
+
+
+
+ 
+----------------------------------------------------------------------
+Converted ...
+----------------------------------------------------------------------
+
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:api="http://cps.huawei.com/synccpsinterface/api_requestmgr" xmlns:com="http://cps.huawei.com/synccpsinterface/common" xmlns:req="http://cps.huawei.com/synccpsinterface/request">
+	<soapenv:Header/>
+	<soapenv:Body>
+		<api:Request>
+			<req:Header>
+				<req:Version>1.0</req:Version>
+				<req:CommandID>InitTrans_Canvasser Initiate Allocation</req:CommandID>
+				<req:OriginatorConversationID>229185</req:OriginatorConversationID>
+				<req:Caller>
+					<req:CallerType>2</req:CallerType>
+					<req:ThirdPartyID>POS_Broker</req:ThirdPartyID>
+					<req:Password>gMMqGGrKxsE=</req:Password>
+					<req:ResultURL>http://10.71.109.150:8888/mockResultBinding</req:ResultURL>
+				</req:Caller>
+				<req:KeyOwner>1</req:KeyOwner>
+				<req:Timestamp>20190826111250</req:Timestamp>
+			</req:Header>
+			<req:Body>
+				<req:Identity>
+					<req:Initiator>
+						<req:IdentifierType>12</req:IdentifierType>
+						<req:Identifier>OP01</req:Identifier>
+						<req:SecurityCredential>2112</req:SecurityCredential>
+						<req:ShortCode>0091</req:ShortCode>
+					</req:Initiator>
+					<req:ReceiverParty>
+						<req:IdentifierType>4</req:IdentifierType>
+						<req:Identifier>001</req:Identifier>
+					</req:ReceiverParty>
+				</req:Identity>
+				<req:TransactionRequest>
+					<req:Parameters>
+						<req:Amount>122.11</req:Amount>
+						<req:Currency>INR</req:Currency>
+					</req:Parameters>
+				</req:TransactionRequest>
+			</req:Body>
+		</api:Request>
+	</soapenv:Body>
+</soapenv:Envelope>
+
+
+
+ 
+----------------------------------------------------------------------
+Result template...
+----------------------------------------------------------------------
+
+
+<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
+   <soap:Body>
+      <ns2:getStaticResponseResponse xmlns:ns2="http://com/enhancesys/integration/response/services/interfaces/InterfaceResponseServices">
+         <getStaticResponse><![CDATA[
+		 
+		 
+				<RESULT HERE>
+		 
+		 ]]></getStaticResponse>
+      </ns2:getStaticResponseResponse>
+   </soap:Body>
+</soap:Envelope>
+
+----------------------------------------------------------------------
+Error ...
+----------------------------------------------------------------------
+
+<?xml version = "1.0" encoding = "UTF-8"?>
+<SOAP:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
+	<SOAP:Body>
+		<SOAP:Fault>
+			<faultcode>soapenv:Server</faultcode>
+			<faultstring>Application Error. Please see FaultInfo</faultstring>
+			<detail>
+				<ns2:FaultInfo xmlns:ns3="http://com/enhancesys/entities/schema/integration" xmlns:ns2="http://com/enhancesys/integration/services/interfaces/IntegrationManagement">
+					<causedBy>java.lang.NullPointerException</causedBy>
+					<message>Error in initialising entity manager</message>
+				</ns2:FaultInfo>
+			</detail>
+		</SOAP:Fault>
+	</SOAP:Body>
+</SOAP:Envelope>
+
+----------------------------------------------------------------------
+Success ...
+----------------------------------------------------------------------
+	
+
+<?xml version = "1.0" encoding = "UTF-8"?>
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/">
+	<soapenv:Body>
+		<api:Result xmlns:api="http://cps.huawei.com/synccpsinterface/api_requestmgr" xmlns:res="http://cps.huawei.com/synccpsinterface/result">
+			<res:Header>
+				<res:Version>1.0</res:Version>
+				<res:OriginatorConversationID>229185</res:OriginatorConversationID>
+				<res:ConversationID>SM-229185</res:ConversationID>
+			</res:Header>
+			<res:Body>
+				<res:ResultType>0</res:ResultType>
+				<res:ResultCode>0</res:ResultCode>
+				<res:ResultDesc>Process service request successfully.</res:ResultDesc>
+				<res:TransactionResult>
+					<res:TransactionID>22918520190827114200</res:TransactionID>
+				</res:TransactionResult>
+			</res:Body>
+		</api:Result>
+	</soapenv:Body>
+</soapenv:Envelope>
+
+----------------------------------------------------------------------
+Failure ...
+----------------------------------------------------------------------
+
+<?xml version = "1.0" encoding = "UTF-8"?>
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/">
+	<soapenv:Body>
+		<api:Result xmlns:api="http://cps.huawei.com/synccpsinterface/api_requestmgr" xmlns:res="http://cps.huawei.com/synccpsinterface/result">
+			<res:Header>
+				<res:Version>1.0</res:Version>
+				<res:OriginatorConversationID>229185</res:OriginatorConversationID>
+				<res:ConversationID>SM-229185</res:ConversationID>
+			</res:Header>
+			<res:Body>
+				<res:ResultType>0</res:ResultType>
+				<res:ResultCode>100</res:ResultCode>
+				<res:ResultDesc>Process service request failed.</res:ResultDesc>
+				<res:TransactionResult>
+					<res:TransactionID>22918520190827114131</res:TransactionID>
+				</res:TransactionResult>
+			</res:Body>
+		</api:Result>
+	</soapenv:Body>
+</soapenv:Envelope>
+

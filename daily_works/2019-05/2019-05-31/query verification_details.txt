@@ -1,0 +1,11 @@
+file=1101
+tr_interface_file_summary 			 - file_id_n	
+tr_interface_failure				 - file_id_n
+tr_interface_summary				 - ref_data3_n
+tr_interface_file_summary_details	 - file_id_n
+
+online - 1102
+
+tr_interface_summary				- trans_id_n
+tr_interface_failure				- trans_id_n
+

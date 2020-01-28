@@ -1,0 +1,23 @@
+
+
+Date|Region|HOR Name|Area|HOS Name|Sales Area|SAM Name|CSM Name|CSO Name|SSO|SSO 3+|Daily SSO|URO|URO 20K+|Daily URO|MOBO sellin >=50K
+
+
+{
+	"date": "date",
+	"region": "region",
+	"hor name": "horname",
+	"area": "area",
+	"hos name": "hosname",
+	"sales area": "salesarea",
+	"sam name": "samname",
+	"csm name": "csmname",
+	"cso name": "csoname",
+	"sso": "sso",
+	"sso 3+": "sso3+",
+	"daily sso": "dailysso",
+	"uro": "uro",
+	"uro 20k+": "uro20k+",
+	"daily uro": "dailyuro",
+	"mobo sellin >=50k": "mobosellin>=50k"
+}

@@ -1,0 +1,29 @@
+<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
+   <soap:Body>
+      <ns2:invokePrimarySalesInterfaceResponse xmlns:ns2="http://com/enhancesys/integration/services/interfaces/IntegrationManagement" xmlns:ns3="http://com/enhancesys/entities/schema/integration">
+         <invokePrimarySalesInterface>
+		 
+		 
+	{
+	"status": "SUCCESS",
+	"products": [
+		{
+			"plant": "001",
+			"stock": "1000.00",
+			"matrl_code": "P64453",
+			"remarks": "OK"
+		},
+		{
+			"stock": "1000.00",
+			"matrl_code": "P453",
+			"remarks": "OK"
+		}
+	],
+	"trans_dt": "2019-07-29T17:27:35.86",
+	"transaction_id": 228247
+}	 
+		 
+		 </invokePrimarySalesInterface>
+      </ns2:invokePrimarySalesInterfaceResponse>
+   </soap:Body>
+</soap:Envelope>

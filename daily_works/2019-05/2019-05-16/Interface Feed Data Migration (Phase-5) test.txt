@@ -1,0 +1,573 @@
+
+================== Test ==================
+SELECT interface_id_n , name_v, value_v from interface.ms_interface_attr where interface_id_n in (1076,1077,1078,1079,1080,1081) and name_v in ('Remote Dir','Remote Host','Remote File' ,'Local Dir','File Headers') order by 1
+
+==================================================================
+1. RELOAD A - 1076
+
+1076|Remote File|reload_a
+1076|Remote Dir|/home/appuser/interfaces/DWH/master_files/reload_a/
+1076|Local backup directory|/home/appuser/interfaces/S-NOC/interfaces/backup/master_file/reload_a/
+1076|File Headers|Date|LAC ID|CI ID|Reload system|Product Value|Reload Channel|Reload Value|Org Id|Reload Count
+1076|Remote Host|192.168.2.251
+
+
+<====FILE ====>
+
+Date|LAC ID|CI ID|Reload system|Product Value|Reload Channel|Reload Value|Org Id|Reload Count
+2019-05-16 09:25:31|1001|10193|Sys1|873483278|ReloadChannel1|22.22|SAT10|23
+2019-05-16 09:25:31|1001|1373|Sys1|38738|ReloadChannel2|22.22|SAT1000|23
+2019-05-16 09:25:31|1001|1373|Sys1|894398348|ReloadChannel1|22.22|SAT10|23
+2019-05-16 09:25:31|10009|10193|Sys1|4332|ReloadChannel1|22.22|SAT10|23
+
+
+
+<===SERVICE====>
+1. process file service call :  1076
+	file id - 16494
+2. processReceivedFiles service call :  1076
+
+3. reProcessFileBasedOrders 1076-16494
+
+<====  file summary 1st time ====>
+total|success|failed
+4|1|3
+<====  failed table ====>
+
+1.	failed msg 
+		Actor mapping not found for CI ID : 1001~10193
+		Source mapping not found for Org Id : SAT1000
+		Actor mapping not found for CI ID : 10009~10193
+
+
+1. updated 
+		
+		actor_key_v  - '1001~1373'
+		
+2.	failed msg 
+		Source mapping not found for Org Id : SAT1000
+		
+2. updated 
+		
+		source_key_v - 'SAT10'
+
+<====update query=====>
+
+update  kpi.tr_temp_upload_aggr_failure set actor_key_v = '1001~1373' where file_id_n = 16494
+update  kpi.tr_temp_upload_aggr_failure set source_key_v = 'SAT10' where file_id_n = 16494
+
+
+<===daily table=====>
+
+SELECT * from kpi.tr_daily_reload_seller_aggr where day_id_n = 20190516 order by 1 desc limit 10
+
+20190516|8|280462|107|30|115679|2300|2222|<NULL>|<NULL>|<NULL>|<NULL>|<NULL>|<NULL>|<NULL>|<NULL>|1|1|181638|0|38|115680|External|2019-05-16 15:02:40.137672+05:30
+20190516|8|280462|107|30|9450053|2300|2222|<NULL>|<NULL>|<NULL>|<NULL>|<NULL>|<NULL>|<NULL>|<NULL>|1|1|181638|0|38|115680|External|2019-05-16 15:04:16.924295+05:30
+20190516|8|280462|107|30|9450054|2300|2222|<NULL>|<NULL>|<NULL>|<NULL>|<NULL>|<NULL>|<NULL>|<NULL>|1|1|181638|0|38|115680|External|2019-05-16 15:02:40.137672+05:30
+20190516|8|280462|107|30|9450055|2300|2222|<NULL>|<NULL>|<NULL>|<NULL>|<NULL>|<NULL>|<NULL>|<NULL>|1|1|181638|0|38|115680|External|2019-05-16 14:48:17.291972+05:30
+
+
+<====monthly table======>
+
+SELECT * from kpi.tr_monthly_reload_seller_aggr  order by 1 desc limit 10
+
+201905|8|280462|107|30|115679|2300|2222|<NULL>|<NULL>|<NULL>|<NULL>|<NULL>|<NULL>|<NULL>|<NULL>|1|1|181638|0|38|115680|External|2019-05-16 15:02:40.137672+05:30
+201905|8|280462|107|30|9450053|2300|2222|<NULL>|<NULL>|<NULL>|<NULL>|<NULL>|<NULL>|<NULL>|<NULL>|1|1|181638|0|38|115680|External|2019-05-16 15:04:16.924295+05:30
+201905|8|280462|107|30|9450054|2300|2222|<NULL>|<NULL>|<NULL>|<NULL>|<NULL>|<NULL>|<NULL>|<NULL>|1|1|181638|0|38|115680|External|2019-05-16 15:02:40.137672+05:30
+201905|8|280462|107|30|9450055|2300|2222|<NULL>|<NULL>|<NULL>|<NULL>|<NULL>|<NULL>|<NULL>|<NULL>|1|1|181638|0|38|115680|External|2019-05-16 14:48:17.291972+05:30
+
+
+<===query used=====>
+
+SELECT * from interface.ms_interface_attr where interface_id_n = 1076
+SELECT * from interface.tr_interface_file_summary  where interface_id_n = 1076 order by 1 desc limit 5
+
+SELECT * from kpi.tr_daily_reload_seller_aggr where day_id_n = 20190516 order by 1 desc limit 10
+
+SELECT * from kpi.tr_monthly_reload_seller_aggr  where month_id_n = 201905 order by 1 desc limit 10
+
+select * from kpi.tr_temp_upload_aggr_failure where file_id_n = 16494
+update  kpi.tr_temp_upload_aggr_failure set actor_key_v = '1001~1373' where file_id_n = 16494
+update  kpi.tr_temp_upload_aggr_failure set source_key_v = 'SAT10' where file_id_n = 16494
+=================================================================================================================================================================================
+
+
+
+1. RELOAD B - 1077
+
+
+1077|Remote Host|192.168.2.251
+1077|Remote File|reload_b
+1077|Remote Dir|/home/appuser/interfaces/DWH/master_files/reload_b/
+1077|Local backup directory|/home/appuser/interfaces/S-NOC/interfaces/backup/master_file/reload_b/
+1077|File Headers|Date|LAC ID|CI ID|Reload system|Product Value|Reload Channel|Reload Value|Reload Count
+
+<====FILE ====>
+
+Date|LAC ID|CI ID|Reload system|Product Value|Reload Channel|Reload Value|Reload Count
+2017-05-16 09:25:31|1001|1373|Sys1|674373478|ReloadChannel1|22.22|10
+2017-05-16 09:25:31|1001|1363|Sys1|84848|ReloadChannel1|22.22|60
+2017-05-16 09:25:31|10009|10193|Sys1|84893489|ReloadChannel1|22.22|30
+
+
+
+<===SERVICE====>
+1. process file service call :  1077
+	file id - 16495
+2. processReceivedFiles service call :  1077
+
+3. reProcessFileBasedOrders 1077-16495
+
+<====  file summary 1st time ====>
+total|success|failed
+3|1|2
+<====  failed table ====>
+
+1.	failed msg 
+		Actor mapping not found for CI ID : 1001~1363
+		Actor mapping not found for CI ID : 10009~10193
+
+1. updated 
+		
+		actor_key_v  - '1001~1373'
+		
+
+<====update query=====>
+
+update  kpi.tr_temp_upload_aggr_failure set actor_key_v = '1001~1373' where file_id_n = 16495
+update  kpi.tr_temp_upload_aggr_failure set source_key_v = 'SAT10' where file_id_n = 16495
+
+
+<===daily table=====>
+
+SELECT * from kpi.tr_daily_reload_buyer_aggr where day_id_n = 20190516 order by 1 desc limit 10
+
+20170516|8|280462|108|30|9450056|6000|2222|<NULL>|<NULL>|<NULL>|<NULL>|<NULL>|<NULL>|<NULL>|<NULL>|1|0|0|0|38|115680|External|2019-05-16 15:23:23.078882+05:30
+20170516|8|280462|108|30|9450057|3000|2222|<NULL>|<NULL>|<NULL>|<NULL>|<NULL>|<NULL>|<NULL>|<NULL>|1|0|0|0|38|115680|External|2019-05-16 15:23:23.078882+05:30
+20170516|8|280462|108|30|9450108|1000|2222|<NULL>|<NULL>|<NULL>|<NULL>|<NULL>|<NULL>|<NULL>|<NULL>|1|0|0|0|38|115680|External|2019-05-16 15:19:43.479315+05:30
+
+
+<====monthly table======>
+
+SELECT * from kpi.tr_monthly_reload_buyer_aggr  order by 1 desc limit 10
+
+201705|8|280462|108|30|9450056|6000|2222|<NULL>|<NULL>|<NULL>|<NULL>|<NULL>|<NULL>|<NULL>|<NULL>|1|0|0|0|38|115680|External|2019-05-16 15:23:23.078882+05:30
+201705|8|280462|108|30|9450057|3000|2222|<NULL>|<NULL>|<NULL>|<NULL>|<NULL>|<NULL>|<NULL>|<NULL>|1|0|0|0|38|115680|External|2019-05-16 15:23:23.078882+05:30
+201705|8|280462|108|30|9450108|1000|2222|<NULL>|<NULL>|<NULL>|<NULL>|<NULL>|<NULL>|<NULL>|<NULL>|1|0|0|0|38|115680|External|2019-05-16 15:19:43.479315+05:30
+
+
+<===query used=====>
+
+SELECT * from interface.ms_interface_attr where interface_id_n = 1077
+SELECT * from interface.tr_interface_file_summary  where interface_id_n = 1077 order by 1 desc limit 5
+
+SELECT * from kpi.tr_daily_reload_buyer_aggr where day_id_n = 20170516 order by 1 desc limit 10
+
+SELECT * from kpi.tr_monthly_reload_buyer_aggr  where month_id_n = 201705 order by 1 desc limit 10
+
+select * from kpi.tr_temp_upload_aggr_failure where file_id_n = 16495
+update  kpi.tr_temp_upload_aggr_failure set actor_key_v = '1001~1373' where file_id_n = 16495
+
+
+==================================================================================================
+
+
+1. usage_ab - 1078
+
+
+1078|Remote Host|192.168.2.251
+1078|Remote File|usage_ab
+1078|Remote Dir|/home/appuser/interfaces/DWH/master_files/usage_ab/
+1078|Local backup directory|/home/appuser/interfaces/S-NOC/interfaces/backup/master_file/usage_ab/
+1078|File Headers|Date|Org Id|Org Code|A#MSISDN|OperatorID|B#MSISDN|Voice_Duration|SMS_Hit|Data_Volume_KB|Voice_REV|SMS_REV|Data_REV|Activation Date|Total Chargeable|Total Billable
+
+
+
+<====FILE ====>
+
+Date|Org Id|Org Code|A#MSISDN|OperatorID|B#MSISDN|Voice_Duration|SMS_Hit|Data_Volume_KB|Voice_REV|SMS_REV|Data_REV|Activation Date|Total Chargeable|Total Billable
+2019-05-16 09:25:31|2343|SAT10|6376276|BADSAW4218|99850020|674|2|43434|23.23|45.34|34.34|2019-05-16 09:25:31|746|78.84
+2019-05-16 09:25:31|2343|SAT10|6376276|BADSAW4218|1994|674|2|43434|23.23|45.34|34.34|2019-05-16 09:25:31|746|78.ghs
+2019-05-16 09:25:31|2343|SAT1000|6376276|BADSAW421800|1994|674|2|43434|23.23|45.34|34.34|2019-05-16 09:25:31|746|78.ghs
+2019-05-16 09:25:31|2343|44|6376276|BADSAW4218|65467476|674|2|43434|23.23|45.34|34.34|2019-05-16 09:25:31|746|78.84
+
+
+
+<===SERVICE====>
+1. process file service call :  1078
+	file id - 16497
+2. processReceivedFiles service call :  1078
+
+3. reProcessFileBasedOrders 1078-16497
+
+<====  file summary 1st time ====>
+total|success|failed
+4|3|1
+<====  failed table ====>
+
+1.	failed msg 
+		Source mapping not found for OperatorID : BADSAW421800
+
+1. updated 
+		
+		source_key_v = 'BADSAW4218'
+		
+
+<====update query=====>
+
+update  kpi.tr_temp_upload_aggr_failure set source_key_v = 'BADSAW4218' where file_id_n = 16497
+
+
+<===daily table=====>
+
+SELECT * from kpi.tr_daily_usage_customer_aggr where day_id_n = 20190516 order by 1 desc limit 10
+
+20190516|7|360749|111|13|14976|67400|200|4343400|2323|4534|3434|<NULL>|<NULL>|<NULL>|<NULL>|1|3|254198|0|-1|20190516|External|2019-05-16 15:36:23.535452+05:30
+20190516|7|360755|111|13|10710|67400|200|4343400|2323|4534|3434|<NULL>|<NULL>|<NULL>|<NULL>|1|3|254198|0|-1|20190516|External|2019-05-16 15:36:23.535452+05:30
+20190516|7|360747|111|13|14977|67400|200|4343400|2323|4534|3434|<NULL>|<NULL>|<NULL>|<NULL>|1|3|254198|0|-1|20190516|External|2019-05-16 15:46:57.900015+05:30
+
+
+<====monthly table======>
+
+SELECT * from kpi.tr_monthly_usage_customer_aggr  order by 1 desc limit 10
+
+201905|7|360755|111|13|10710|67400|200|4343400|2323|4534|3434|<NULL>|<NULL>|<NULL>|<NULL>|1|3|254198|0|-1|20190516|External|2019-05-16 15:36:23.535452+05:30
+201905|7|360749|111|13|14976|67400|200|4343400|2323|4534|3434|<NULL>|<NULL>|<NULL>|<NULL>|1|3|254198|0|-1|20190516|External|2019-05-16 15:36:23.535452+05:30
+201905|7|360747|111|13|14977|67400|200|4343400|2323|4534|3434|<NULL>|<NULL>|<NULL>|<NULL>|1|3|254198|0|-1|20190516|External|2019-05-16 15:46:57.900015+05:30
+
+
+<===query used=====>
+
+SELECT * from interface.ms_interface_attr where interface_id_n = 1078
+SELECT * from interface.tr_interface_file_summary  where interface_id_n = 1078 order by 1 desc limit 5
+
+SELECT * from kpi.tr_daily_usage_customer_aggr where day_id_n = 20190516 order by 1 desc limit 10
+
+SELECT * from kpi.tr_monthly_usage_customer_aggr  where month_id_n = 201905 order by 1 desc limit 10
+
+select * from kpi.tr_temp_upload_aggr_failure where file_id_n = 16497
+update  kpi.tr_temp_upload_aggr_failure set source_key_v = 'BADSAW4218' where file_id_n = 16497
+
+
+=================================================================================================================================================================
+1. ADDON_AB B - 1079
+
+1079|Local backup directory|/home/appuser/interfaces/S-NOC/interfaces/backup/master_file/addon_ab/
+1079|Remote Host|192.168.2.251
+1079|Remote File|addon_ab
+1079|Remote Dir|/home/appuser/interfaces/DWH/master_files/addon_ab/
+1079|File Headers|Date|Org Id|Org Code|A#MSISDN|OperatorID|B#MSISDN|ACTIVATION_DATE|SERVICE_ID|PACKAGE_NAME|Activation Amount
+
+
+
+
+<====FILE ====>
+
+Date|Org Id|Org Code|A#MSISDN|OperatorID|B#MSISDN|ACTIVATION_DATE|SERVICE_ID|PACKAGE_NAME|Activation Amount
+2019-05-16 09:25:31|2343|SAT10|6376276|TMAIND8|289978|2019-05-16 09:25:31|servic_id_001|Voucher GPRS 10K|13.23
+2019-05-16 09:25:31|2343|SAT10|6376276|TMAIND80|1992|2019-05-16 09:25:31|servic_id_001|Voucher GPRS 10K|33.23
+2019-05-16 09:25:31|2343|SAT10|6376276|TMAIND8|2019|2019-05-16 09:25:31|servic_id_001|Voucher GPRS 10K|43.23
+2019-05-16 09:25:31|2343|SAT100|6376276|TMAIND8|19021|2019-05-16 09:25:31|servic_id_001|Voucher GPRS 10K|27.23
+
+
+<===SERVICE====>
+1. process file service call :  1079
+	file id - 16498
+2. processReceivedFiles service call :  1077
+
+3. reProcessFileBasedOrders 1077-16498
+
+<====  file summary 1st time ====>
+total|success|failed
+4|1|3
+<====  failed table ====>
+
+1.	failed msg 
+		Actor mapping not found for B#MSISDN : 2019
+		Actor mapping not found for B#MSISDN : 289978
+		Source mapping not found for OperatorID : TMAIND80
+
+
+
+1. updated 
+		
+		actor_key_v  - '19021'
+		
+2.	failed msg 
+		Actor mapping not found for B#MSISDN : 2019
+		Actor mapping not found for B#MSISDN : 289978
+		Source mapping not found for OperatorID : TMAIND80
+
+		
+2. updated 
+		actor_key_v  - '1992'
+		source_key_v - 'SAT10'
+		
+3.	failed msg 
+		
+		Source mapping not found for OperatorID : TMAIND80
+
+		
+3. updated 
+		source_key_v - 'SAT10'
+
+4.	failed msg 
+		
+		Source mapping not found for OperatorID : SAT10
+
+		
+4. updated 
+		source_key_v - 'TMAIND8'
+
+5.	failed msg 
+		
+		Source mapping not found for OperatorID : SAT10
+
+		
+5. updated 
+		source_key_v - 'TMAIND8'
+
+
+
+<====update query=====>
+
+update  kpi.tr_temp_upload_aggr_failure set actor_key_v = '19021' where file_id_n = 16498
+update  kpi.tr_temp_upload_aggr_failure set source_key_v = 'TMAIND8' where file_id_n = 16498
+
+
+<===daily table=====>
+
+SELECT * from kpi.tr_daily_addon_customer_aggr where day_id_n = 20190516 order by 1 desc limit 10
+
+20190516|7|360739|112|13|3005|5646|<NULL>|<NULL>|<NULL>|<NULL>|<NULL>|<NULL>|<NULL>|<NULL>|<NULL>|2|3|247466|0|-1|20190516|External|2019-05-16 16:00:18.655695+05:30
+20190516|7|6118827|112|13|3005|2723|<NULL>|<NULL>|<NULL>|<NULL>|<NULL>|<NULL>|<NULL>|<NULL>|<NULL>|1|3|247466|0|-1|20190516|External|2019-05-16 15:54:52.89029+05:30
+
+
+<====monthly table======>
+
+SELECT * from kpi.tr_monthly_addon_customer_aggr  order by 1 desc limit 10
+
+201905|7|360731|112|13|3005|6969|<NULL>|<NULL>|<NULL>|<NULL>|<NULL>|<NULL>|<NULL>|<NULL>|<NULL>|3|3|247466|0|-1|20190307|External|2019-05-06 20:18:52.428803+05:30
+201905|7|360739|112|13|3005|6969|<NULL>|<NULL>|<NULL>|<NULL>|<NULL>|<NULL>|<NULL>|<NULL>|<NULL>|3|3|247466|0|-1|20190307|External|2019-05-06 20:18:52.428803+05:30
+201905|7|360739|112|13|3005|5646|<NULL>|<NULL>|<NULL>|<NULL>|<NULL>|<NULL>|<NULL>|<NULL>|<NULL>|2|3|247466|0|-1|20190516|External|2019-05-16 16:00:18.655695+05:30
+201905|7|6118827|112|13|3005|2723|<NULL>|<NULL>|<NULL>|<NULL>|<NULL>|<NULL>|<NULL>|<NULL>|<NULL>|1|3|247466|0|-1|20190516|External|2019-05-16 15:54:52.89029+05:30
+
+
+<===query used=====>
+
+SELECT * from interface.ms_interface_attr where interface_id_n = 1079
+SELECT * from interface.tr_interface_file_summary  where interface_id_n = 1079 order by 1 desc limit 5
+
+SELECT * from kpi.tr_daily_addon_customer_aggr where day_id_n = 20190516 order by 1 desc limit 10
+
+SELECT * from kpi.tr_monthly_addon_customer_aggr  where month_id_n = 201905 order by 1 desc limit 10
+
+select * from kpi.tr_temp_upload_aggr_failure where file_id_n = 16498
+update  kpi.tr_temp_upload_aggr_failure set actor_key_v = '1001~1373' where file_id_n = 16498
+update  kpi.tr_temp_upload_aggr_failure set source_key_v = 'SAT10' where file_id_n = 16498
+
+
+
+
+
+
+==================================================================================================
+
+
+
+5. RELOAD AB - 1080
+
+1080|Local backup directory|/home/appuser/interfaces/S-NOC/interfaces/backup/master_file/reload_ab/
+1080|Remote Host|192.168.2.251
+1080|Remote File|reload_ab
+1080|Remote Dir|/home/appuser/interfaces/DWH/master_files/reload_ab/
+1080|File Headers|Date|Org Id|Org Code|A#MSISDN|OperatorID|B#MSISDN|ACTIVATION_DATE|Reload value|Reload Date|LAC ID|CI ID
+
+<====FILE ====>
+
+Date|Org Id|Org Code|A#MSISDN|OperatorID|B#MSISDN|ACTIVATION_DATE|Reload value|Reload Date|LAC ID|CI ID
+2019-05-16 09:25:31|2343|SAT10|6376276|BADSAW6716|99850020|2019-05-16 09:25:31|23.23|2019-05-16 09:25:31|74784|8949
+2019-05-16 09:25:31|2343|SAT10|6376276|BADSAW6716|1285736237620|2019-05-16 09:25:31|23.23|2019-05-16 09:25:31|74784|8949
+2019-05-16 09:25:31|2343|SAT10|6376276|BADSAW6716|3655300012|2019-05-16 09:25:31|23.23|2019-05-16 09:25:31|74784|8949
+2019-05-16 09:25:31|2343|SAT10|6376276|BADSAW6716|1234|2019-05-16 09:25:31|23.23|2019-05-16 09:25:31|74784|8949
+2019-05-16 09:25:31|2343|SAT10|6376276|BADSAW6716|11411|2019-05-16 09:25:31|23.23|2019-05-16 09:25:31|74784|8949
+2019-05-16 09:25:31|2343|SAT10|6376276|BADSAW6716|112211|2019-05-16 09:25:31|23.23|2019-05-16 09:25:31|74784|8949
+2019-05-16 09:25:31|2343|SAT10|6376276|BADSAW6716|19870000001|2019-05-16 09:25:31|23.23|2019-05-16 09:25:31|74784|8949
+2019-05-16 09:25:31|2343|SAT10|6376276|BADSAW6716|6285736237623|2019-05-16 09:25:31|23.23|2019-05-16 09:25:31|74784|8949
+2019-05-16 09:25:31|2343|SAT10|6376276|BADSAW6716|625647838456|2019-05-16 09:25:31|23.23|2019-05-16 09:25:31|74784|8949
+2019-05-16 09:25:31|2343|SAT10|6376276|BADSAW6716|6234566666|2019-05-16 09:25:31|23.23|2019-05-16 09:25:31|74784|8949
+
+
+<===SERVICE====>
+1. process file service call :  1080
+	file id - 16499
+2. processReceivedFiles service call :  1080
+
+3. reProcessFileBasedOrders 1080-16499
+
+<====  file summary 1st time ====>
+total|success|failed
+10|9|1
+<====  failed table ====>
+
+1.	failed msg 
+		Metric mapping not found for B#MSISDN : 19870000001
+
+
+
+
+1. updated 
+		
+		metrics_key_v = '112211'
+
+<====update query=====>
+
+update  kpi.tr_temp_upload_aggr_failure set metrics_key_v = '112211' where file_id_n = 16500
+
+<===daily table=====>
+
+SELECT * from kpi.tr_daily_reload_customer_aggr where day_id_n = 20190516 order by 1 desc limit 10
+
+20190516|7|360755|109|13|10710|2323|<NULL>|<NULL>|<NULL>|<NULL>|<NULL>|<NULL>|<NULL>|<NULL>|<NULL>|1|3|256696|0|-1|20190516|External|2019-05-16 16:17:40.92747+05:30
+20190516|7|791570|109|13|10231|2323|<NULL>|<NULL>|<NULL>|<NULL>|<NULL>|<NULL>|<NULL>|<NULL>|<NULL>|1|3|256696|0|-1|20190516|External|2019-05-16 16:24:49.764507+05:30
+20190516|7|791574|109|13|10231|2323|<NULL>|<NULL>|<NULL>|<NULL>|<NULL>|<NULL>|<NULL>|<NULL>|<NULL>|1|3|250596|0|-1|20190516|External|2019-05-16 16:17:40.92747+05:30
+20190516|7|791580|109|13|10085|2323|<NULL>|<NULL>|<NULL>|<NULL>|<NULL>|<NULL>|<NULL>|<NULL>|<NULL>|1|3|256696|0|-1|20190516|External|2019-05-16 16:17:40.92747+05:30
+
+
+<====monthly table======>
+
+SELECT * from kpi.tr_monthly_reload_customer_aggr  order by 1 desc limit 10
+
+201905|7|791574|109|13|10231|2323|<NULL>|<NULL>|<NULL>|<NULL>|<NULL>|<NULL>|<NULL>|<NULL>|<NULL>|1|3|250596|0|-1|20190516|External|2019-05-16 16:17:40.92747+05:30
+201905|7|791580|109|13|10085|2323|<NULL>|<NULL>|<NULL>|<NULL>|<NULL>|<NULL>|<NULL>|<NULL>|<NULL>|1|3|256696|0|-1|20190516|External|2019-05-16 16:17:40.92747+05:30
+201905|7|360755|109|13|10710|2323|<NULL>|<NULL>|<NULL>|<NULL>|<NULL>|<NULL>|<NULL>|<NULL>|<NULL>|1|3|256696|0|-1|20190516|External|2019-05-16 16:17:40.92747+05:30
+201905|7|791570|109|13|10231|2323|<NULL>|<NULL>|<NULL>|<NULL>|<NULL>|<NULL>|<NULL>|<NULL>|<NULL>|1|3|256696|0|-1|20190516|External|2019-05-16 16:24:49.764507+05:30
+
+
+<===query used=====>
+
+SELECT * from interface.ms_interface_attr where interface_id_n = 1080
+SELECT * from interface.tr_interface_file_summary  where interface_id_n = 1080 order by 1 desc limit 5
+
+SELECT * from kpi.tr_daily_reload_customer_aggr where day_id_n = 20190516 order by 1 desc limit 10
+
+SELECT * from kpi.tr_monthly_reload_customer_aggr  where month_id_n = 201905 order by 1 desc limit 10
+
+select * from kpi.tr_temp_upload_aggr_failure where file_id_n = 16500
+update  kpi.tr_temp_upload_aggr_failure set metrics_key_v = '112211' where file_id_n = 16500
+
+
+
+
+==================================================================================================
+
+
+1. reload_sellin_sellout - 1081
+
+
+1081|File Headers|Date|Organization code|RELOAD_Sell_In Count|RELOAD_Sell_In Amt|RELOAD_Sell_Out Count|RELOAD_Sell_Out Amt
+1081|Remote Dir|/home/appuser/interfaces/DWH/master_files/reload_sales/
+1081|Remote Host|192.168.2.251
+1081|Remote File|reload_sellin_sellout
+1081|Local backup directory|/home/appuser/interfaces/S-NOC/interfaces/backup/master_file/reload_sales/
+
+<====FILE ====>
+
+Date|Organization code|RELOAD_Sell_In Count|RELOAD_Sell_In Amt|RELOAD_Sell_Out Count|RELOAD_Sell_Out Amt
+2019-05-16 09:25:31|SAT10|1|100|200|300
+2019-05-16 09:25:31|SAT1000|1|100|200|300
+2019-05-16 09:25:31|MYOUTLET|1|100|200|300
+2019-05-16 09:25:31|SAT10|1|100|200|300
+2019-01-16 09:25:31|SAT10|1|100|200|300
+
+
+<===SERVICE====>
+1. process file service call :  1081
+	file id - 16501
+2. processReceivedFiles service call :  1081
+
+3. reProcessFileBasedOrders 1081-16501
+
+<====  file summary 1st time ====>
+total|success|failed
+5|4|1
+<====  failed table ====>
+
+1.	failed msg 
+		Actor mapping not found for Organization code : SAT1000
+		
+1. updated 
+		
+		actor_key_v  - 'SAT10'
+		
+2.	failed msg 
+		Source mapping not found for Organization code : SAT1000
+		
+2. updated 
+		
+		source_key_v - 'SAT10'
+
+<====update query=====>
+
+update  kpi.tr_temp_upload_aggr_failure set actor_key_v = 'SAT10' where file_id_n = 16501
+update  kpi.tr_temp_upload_aggr_failure set source_key_v = 'SAT10' where file_id_n = 16501
+
+
+<===daily table=====>
+
+SELECT * from kpi.tr_daily_reload_sellinout_aggr where day_id_n = 20190516 order by 1 desc limit 10
+
+20190516|1|181638|110|21|107|100|10000|20000|30000|<NULL>|<NULL>|<NULL>|<NULL>|<NULL>|<NULL>|1|1|181638|0|0|0|External|2019-05-16 16:36:51.892791+05:30
+
+<====monthly table======>
+
+SELECT * from kpi.tr_monthly_reload_sellinout_aggr  order by 1 desc limit 10
+
+201905|1|181638|110|21|107|100|10000|20000|30000|<NULL>|<NULL>|<NULL>|<NULL>|<NULL>|<NULL>|1|1|181638|0|0|0|External|2019-05-16 16:36:51.892791+05:30
+
+<===query used=====>
+
+SELECT * from interface.ms_interface_attr where interface_id_n = 1081
+SELECT * from interface.tr_interface_file_summary  where interface_id_n = 1081 order by 1 desc limit 5
+
+SELECT * from kpi.tr_daily_reload_sellinout_aggr where day_id_n = 20190516 order by 1 desc limit 10
+
+SELECT * from kpi.tr_monthly_reload_sellinout_aggr  where month_id_n = 201905 order by 1 desc limit 10
+
+select * from kpi.tr_temp_upload_aggr_failure where file_id_n = 16501
+
+
+update  kpi.tr_temp_upload_aggr_failure set actor_key_v = '1001~1373' where file_id_n = 16501
+update  kpi.tr_temp_upload_aggr_failure set source_key_v = 'SAT10' where file_id_n = 16501
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

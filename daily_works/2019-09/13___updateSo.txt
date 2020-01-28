@@ -1,0 +1,40 @@
+WSDL url
+
+
+http://192.168.2.251/IntegrationServices/ExternalInterface?wsdl
+
+
+
+---------------------
+REQUEST
+---------------------
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ext="http://com/enhancesys/integration/services/interfaces/ExternalInterface">
+  <soapenv:Header/>
+  <soapenv:Body>
+     <ext:updateSOStatus>
+        <!--Optional:-->
+        <arg0>
+           <soNumber>33232</soNumber>
+           <sourceChannel>SAP</sourceChannel>
+           <referenceNumber>1234</referenceNumber>
+           <soStatus>10</soStatus>
+           <soAmount>10000</soAmount>
+           <orderType>Stock</orderType>
+           <distributionChannel>DistChnl</distributionChannel>
+           <division>Div</division>
+           <!--Optional:-->
+           <soldToParty>999</soldToParty>
+           <shipToParty>GD001</shipToParty>
+           <poDate>11.11.2018</poDate>
+           <requestDeliveryDate>11.11.2018</requestDeliveryDate>
+           <!--Zero or more repetitions:-->
+           <item>
+              <materialCode>MatCode001</materialCode>
+              <quantity>100</quantity>
+              <!--Optional:-->
+              <unitPrice>10</unitPrice>
+           </item>
+        </arg0>
+     </ext:updateSOStatus>
+  </soapenv:Body>
+</soapenv:Envelope>

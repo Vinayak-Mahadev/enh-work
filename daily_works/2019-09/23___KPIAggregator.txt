@@ -1,0 +1,865 @@
+package com.enhancesys.integration.services.springCamel;
+
+import java.sql.BatchUpdateException;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.Types;
+import java.util.Date;
+import java.util.List;
+import java.util.Map;
+import java.util.concurrent.TimeUnit;
+
+import net.treetechnologies.common.exception.ApplicationException;
+import net.treetechnologies.common.logger.TLogger;
+
+import org.apache.camel.Exchange;
+import org.json.JSONObject;
+import org.springframework.beans.factory.annotation.Autowired;
+
+import com.enhancesys.integration.services.interfaces.FileDataBean;
+import com.enhancesys.integration.services.interfaces.IntegrationConstants;
+import com.enhancesys.integration.services.interfaces.IntegrationManagement;
+import com.enhancesys.integration.services.util.InterfaceServiceUtil;
+import com.enhancesys.integration.services.util.JdbcUtility;
+import com.enhancesys.integration.services.util.MongoUtil;
+import com.mongodb.BasicDBObject;
+import com.mongodb.util.JSON;
+
+public class KPIAggregator extends AbstractFileProcessor implements Runnable
+{
+	@Autowired
+	InterfaceServiceUtil interfaceServiceUtil;
+	
+	@Autowired
+	JdbcUtility jdbcUtility;
+	
+	@Autowired
+	MongoUtil mongoUtil;
+	
+	public void initiateProcess(Exchange exchange) throws ApplicationException
+	{
+		super.setChildProcessor(this);
+		super.initiateProcess(exchange);
+	}
+	
+	private Long startTime = System.currentTimeMillis();
+	
+	public void processRequest(Long interfaceId, Long fileId) throws Exception
+	{
+		Connection connection = null;
+		FileDataBean inputFileDataBean = null;
+		FileDataBean outputFileDataBean = null;
+		Long batchId = null;
+		List<JSONObject> successList = null;
+		List<JSONObject> failureList = null;
+		Integer frequency = null;
+		Integer insertThreshold = null;
+		PreparedStatement dailyTblInsertStmnt = null;
+		PreparedStatement dailyTblUpdateStmnt = null;
+		Integer updateCount = null;
+		Integer insertCount = null;
+		Long updateTime = null;
+		Long insertTime = null;
+		PreparedStatement monthlyTblInsertStmnt = null;
+		PreparedStatement monthlyTblUpdateStmnt = null;
+		Long updtTm = null;
+		Long insertTm = null;
+		String frequencyType = null;
+		Boolean crossSellingFlag = false;
+		Map<String, String> attributeMap = null;
+		String fieldLookupConf = null;
+		BasicDBObject fieldLookupConfObj = null;
+		String dailyTable = null;
+		String monthlyTable = null;
+		String csDailyTable = null;
+		String csMonthlyTable = null;
+		
+		try
+		{
+			TLogger.debug("KPIAggregator  thread " + Thread.currentThread().getName() + "initiated at "
+					+ new Date() + ", interfaceId : " + interfaceId + " file Id : " + fileId);
+			connection = InterfaceServiceUtil.getConnection();
+			connection.setAutoCommit(false);
+			if(inputQueue == null)
+			{
+				TLogger.debug("Input Queue is null..");
+				throw new IntegrationManagement.InterfaceServiceException("Input Queue is null..", null);
+			}
+			if(outputQueue == null)
+			{
+				TLogger.debug("Output Queue is null..");
+//				throw new IntegrationManagement.InterfaceServiceException("Output Queue is null..", null);
+			}
+			if(failureQueue == null)
+			{
+				TLogger.debug("Failure Queue is null..");
+				throw new IntegrationManagement.InterfaceServiceException("Failure Queue is null..", null);
+			}
+			
+			attributeMap = interfaceServiceUtil.getInterfaceAttributes(interfaceId);
+			fieldLookupConf = attributeMap.get(IntegrationConstants.FIELD_LOOKUP_CONF_ATTR);
+			if(fieldLookupConf != null)
+			{
+				fieldLookupConfObj = (BasicDBObject) JSON.parse(fieldLookupConf);
+				if(fieldLookupConfObj.containsField("daily_table") && fieldLookupConfObj.get("daily_table") != null)
+					dailyTable = fieldLookupConfObj.getString("daily_table");
+				if(fieldLookupConfObj.containsField("monthly_table") && fieldLookupConfObj.get("monthly_table") != null)
+					monthlyTable = fieldLookupConfObj.getString("monthly_table");
+				if(fieldLookupConfObj.containsField("cs_daily_table") && fieldLookupConfObj.get("cs_daily_table") != null)
+					csDailyTable = fieldLookupConfObj.getString("cs_daily_table");
+				if(fieldLookupConfObj.containsField("cs_monthly_table") && fieldLookupConfObj.get("cs_monthly_table") != null)
+					csMonthlyTable = fieldLookupConfObj.getString("cs_monthly_table");
+			}
+		
+			insertThreshold = 1000;
+			
+			/*aggregation process starts*/
+			while (true) 
+			{
+				try 
+				{
+					if (failureQueue.size() > 0) 
+					{
+						connection.rollback();
+						TLogger.debug("Exception occured..");
+						break;
+					}
+					inputFileDataBean = inputQueue.peek();
+					if (inputFileDataBean == null) 
+					{
+						Thread.sleep(1000L);
+						continue;
+					}
+					
+					if (inputFileDataBean.getBatchId() == null) 
+					{
+						if (outputQueue != null) 
+						{
+							int retryCount = 0;
+							while (true) 
+							{
+								outputFileDataBean = outputQueue.peek();
+								if (outputFileDataBean != null && outputFileDataBean.getBatchId() == null) 
+								{
+									break;
+								} 
+								else if (outputQueue.offer(inputFileDataBean, 5, TimeUnit.SECONDS)) 
+								{
+									TLogger.debug("Sent Empty FileDataBean to InterfaceFileProcessor");
+									break;
+								}
+								if(retryCount >= IntegrationConstants.KPI_FEED_QUEUE_RETRY_COUNT.intValue())
+								{
+									TLogger.error("Failed to send the Request Data even after configured retry times..");
+									failureQueue.offer(new FileDataBean(), 5, TimeUnit.SECONDS);
+								}
+								retryCount ++;
+								TLogger.debug("Failed to send Empty FileDataBean to InterfaceFileProcessor");
+								Thread.sleep(1500);
+							}
+						}
+						break;
+					} 
+					
+					inputFileDataBean = inputQueue.poll(5, TimeUnit.SECONDS);
+						
+					batchId = inputFileDataBean.getBatchId();
+					successList = inputFileDataBean.getSuccessData();
+					frequency = inputFileDataBean.getFrequency();
+					frequencyType = inputFileDataBean.getFrequencyType();
+					crossSellingFlag = inputFileDataBean.getCrossSellingFlag();	
+					/*TLogger.info("successList :: " + successList);
+					TLogger.info("frequency :: " + frequency);*/
+					
+					
+					if (successList.size() > 0 && (frequency == 1 || frequency == 3) && frequencyType.equalsIgnoreCase("Daily")) 
+					{
+						if(crossSellingFlag != null && crossSellingFlag)
+						{
+							dailyTblInsertStmnt = connection.prepareStatement(IntegrationConstants.dailyTableInsertQry.replaceAll("daily_table", csDailyTable));
+							dailyTblUpdateStmnt = connection.prepareStatement(IntegrationConstants.dailyTableUpdateQry.replaceAll("daily_table", csDailyTable));
+						}
+						else
+						{
+							if(interfaceId.longValue() == IntegrationConstants.ORG_BALANCE_INTERFACE_ID.longValue())
+								dailyTblInsertStmnt = connection.prepareStatement(IntegrationConstants.dailyTableInsertQryForOrgBalance.replaceAll("daily_table", dailyTable));
+							else
+								dailyTblInsertStmnt = connection.prepareStatement(IntegrationConstants.dailyTableInsertQry.replaceAll("daily_table", dailyTable));
+							dailyTblUpdateStmnt = connection.prepareStatement(IntegrationConstants.dailyTableUpdateQry.replaceAll("daily_table", dailyTable));
+						}
+						
+						updateCount = 0;
+						insertCount = 0;
+						updateTime = 0L;
+						insertTime = 0L;
+
+						for (JSONObject joinResultSet : successList) //
+						{
+							if (joinResultSet.has("day_id_n") && !joinResultSet.getString("day_id_n").isEmpty()) 
+							{
+								if(joinResultSet.has("dimension_1_n") && !joinResultSet.getString("dimension_1_n").trim().isEmpty())
+									dailyTblUpdateStmnt.setLong(1, joinResultSet.getLong("dimension_1_n"));
+								else 
+									dailyTblUpdateStmnt.setNull(1, Types.NULL);
+								
+								if(joinResultSet.has("dimension_2_n") && !joinResultSet.getString("dimension_2_n").trim().isEmpty())
+									dailyTblUpdateStmnt.setLong(2, joinResultSet.getLong("dimension_2_n"));
+								else 
+									dailyTblUpdateStmnt.setNull(2, Types.NULL);
+								
+								if(joinResultSet.has("dimension_3_n") && !joinResultSet.getString("dimension_3_n").trim().isEmpty())
+									dailyTblUpdateStmnt.setLong(3, joinResultSet.getLong("dimension_3_n"));
+								else 
+									dailyTblUpdateStmnt.setNull(3, Types.NULL);
+								
+								if(joinResultSet.has("dimension_4_n") && !joinResultSet.getString("dimension_4_n").trim().isEmpty())
+									dailyTblUpdateStmnt.setLong(4, joinResultSet.getLong("dimension_4_n"));
+								else 
+									dailyTblUpdateStmnt.setNull(4, Types.NULL);
+								
+								if(joinResultSet.has("dimension_5_n") && !joinResultSet.getString("dimension_5_n").trim().isEmpty())
+									dailyTblUpdateStmnt.setLong(5, joinResultSet.getLong("dimension_5_n"));
+								else 
+									dailyTblUpdateStmnt.setNull(5, Types.NULL);
+								
+								if(joinResultSet.has("dimension_6_n") && !joinResultSet.getString("dimension_6_n").trim().isEmpty())
+									dailyTblUpdateStmnt.setLong(6, joinResultSet.getLong("dimension_6_n"));
+								else 
+									dailyTblUpdateStmnt.setNull(6, Types.NULL);
+								
+								if(joinResultSet.has("dimension_7_n") && !joinResultSet.getString("dimension_7_n").trim().isEmpty())
+									dailyTblUpdateStmnt.setLong(7, joinResultSet.getLong("dimension_7_n"));
+								else 
+									dailyTblUpdateStmnt.setNull(7, Types.NULL);
+								
+								if(joinResultSet.has("dimension_8_n") && !joinResultSet.getString("dimension_8_n").trim().isEmpty())
+									dailyTblUpdateStmnt.setLong(8, joinResultSet.getLong("dimension_8_n"));
+								else 
+									dailyTblUpdateStmnt.setNull(8, Types.NULL);
+								
+								if(joinResultSet.has("dimension_9_n") && !joinResultSet.getString("dimension_9_n").trim().isEmpty())
+									dailyTblUpdateStmnt.setLong(9, joinResultSet.getLong("dimension_9_n"));
+								else 
+									dailyTblUpdateStmnt.setNull(9, Types.NULL);
+								
+								if(joinResultSet.has("dimension_10_n") && !joinResultSet.getString("dimension_10_n").trim().isEmpty())
+									dailyTblUpdateStmnt.setLong(10, joinResultSet.getLong("dimension_10_n"));
+								else 
+									dailyTblUpdateStmnt.setNull(10, Types.NULL);
+								
+								dailyTblUpdateStmnt.setLong(11, joinResultSet.getLong("no_of_events_n"));
+								dailyTblUpdateStmnt.setLong(12, joinResultSet.getLong("id_n"));
+								dailyTblUpdateStmnt.setLong(13, joinResultSet.getLong("event_type_n"));
+								dailyTblUpdateStmnt.setLong(14, joinResultSet.getLong("actor_type_n"));
+								dailyTblUpdateStmnt.setLong(15, joinResultSet.getLong("actor_id_n"));
+								dailyTblUpdateStmnt.setLong(16, joinResultSet.getLong("metrics_type_n"));
+								dailyTblUpdateStmnt.setLong(17, joinResultSet.getLong("metrics_id_n"));
+								dailyTblUpdateStmnt.setLong(18, joinResultSet.getLong("source_type_n"));
+								dailyTblUpdateStmnt.setLong(19, joinResultSet.getLong("source_id_n"));
+								dailyTblUpdateStmnt.setLong(20, joinResultSet.getLong("data_flag_n"));
+								dailyTblUpdateStmnt.setLong(21, joinResultSet.getLong("instance_type_n"));
+								dailyTblUpdateStmnt.setLong(22, joinResultSet.getLong("instance_id_n"));
+								
+								updateCount++;
+								dailyTblUpdateStmnt.addBatch();
+								if (updateCount >= insertThreshold) {
+									updtTm = System.currentTimeMillis();
+									int[] rowsUpdated = dailyTblUpdateStmnt.executeBatch();
+									TLogger.debug(rowsUpdated.length + " Rows Updated in daily table..");
+									updateTime = updateTime + TimeUnit.MILLISECONDS.toMillis(System.currentTimeMillis() - updtTm);
+									updateCount = 0;
+								}
+							} 
+							else 
+							{
+								dailyTblInsertStmnt.setLong(1, joinResultSet.getLong("id_n"));
+								dailyTblInsertStmnt.setLong(2, joinResultSet.getLong("actor_type_n"));
+								dailyTblInsertStmnt.setLong(3, joinResultSet.getLong("actor_id_n"));
+								dailyTblInsertStmnt.setLong(4, joinResultSet.getLong("event_type_n"));
+								dailyTblInsertStmnt.setLong(5, joinResultSet.getLong("metrics_type_n"));
+								dailyTblInsertStmnt.setLong(6, joinResultSet.getLong("metrics_id_n"));
+								
+								if(joinResultSet.has("dimension_1_n") && !joinResultSet.getString("dimension_1_n").trim().isEmpty())
+									dailyTblInsertStmnt.setLong(7, joinResultSet.getLong("dimension_1_n"));
+								else 
+									dailyTblInsertStmnt.setNull(7, Types.NULL);
+								
+								if(joinResultSet.has("dimension_2_n") && !joinResultSet.getString("dimension_2_n").trim().isEmpty())
+									dailyTblInsertStmnt.setLong(8, joinResultSet.getLong("dimension_2_n"));
+								else 
+									dailyTblInsertStmnt.setNull(8, Types.NULL);
+								
+								if(joinResultSet.has("dimension_3_n") && !joinResultSet.getString("dimension_3_n").trim().isEmpty())
+									dailyTblInsertStmnt.setLong(9, joinResultSet.getLong("dimension_3_n"));
+								else 
+									dailyTblInsertStmnt.setNull(9, Types.NULL);
+								
+								if(joinResultSet.has("dimension_4_n") && !joinResultSet.getString("dimension_4_n").trim().isEmpty())
+									dailyTblInsertStmnt.setLong(10, joinResultSet.getLong("dimension_4_n"));
+								else 
+									dailyTblInsertStmnt.setNull(10, Types.NULL);
+								
+								if(joinResultSet.has("dimension_5_n") && !joinResultSet.getString("dimension_5_n").trim().isEmpty())
+									dailyTblInsertStmnt.setLong(11, joinResultSet.getLong("dimension_5_n"));
+								else 
+									dailyTblInsertStmnt.setNull(11, Types.NULL);
+								
+								if(joinResultSet.has("dimension_6_n") && !joinResultSet.getString("dimension_6_n").trim().isEmpty())
+									dailyTblInsertStmnt.setLong(12, joinResultSet.getLong("dimension_6_n"));
+								else 
+									dailyTblInsertStmnt.setNull(12, Types.NULL);
+								
+								if(joinResultSet.has("dimension_7_n") && !joinResultSet.getString("dimension_7_n").trim().isEmpty())
+									dailyTblInsertStmnt.setLong(13, joinResultSet.getLong("dimension_7_n"));
+								else 
+									dailyTblInsertStmnt.setNull(13, Types.NULL);
+								
+								if(joinResultSet.has("dimension_8_n") && !joinResultSet.getString("dimension_8_n").trim().isEmpty())
+									dailyTblInsertStmnt.setLong(14, joinResultSet.getLong("dimension_8_n"));
+								else 
+									dailyTblInsertStmnt.setNull(14, Types.NULL);
+								
+								if(joinResultSet.has("dimension_9_n") && !joinResultSet.getString("dimension_9_n").trim().isEmpty())
+									dailyTblInsertStmnt.setLong(15, joinResultSet.getLong("dimension_9_n"));
+								else 
+									dailyTblInsertStmnt.setNull(15, Types.NULL);
+								
+								if(joinResultSet.has("dimension_10_n") && !joinResultSet.getString("dimension_10_n").trim().isEmpty())
+									dailyTblInsertStmnt.setLong(16, joinResultSet.getLong("dimension_10_n"));
+								else 
+									dailyTblInsertStmnt.setNull(16, Types.NULL);
+								
+								dailyTblInsertStmnt.setLong(17, joinResultSet.getLong("no_of_events_n"));
+								dailyTblInsertStmnt.setLong(18, joinResultSet.getLong("source_type_n"));
+								dailyTblInsertStmnt.setLong(19, joinResultSet.getLong("source_id_n"));
+								dailyTblInsertStmnt.setLong(20, joinResultSet.getLong("data_flag_n"));
+								dailyTblInsertStmnt.setLong(21, joinResultSet.getLong("instance_type_n"));
+								dailyTblInsertStmnt.setLong(22, joinResultSet.getLong("instance_id_n"));
+								dailyTblInsertStmnt.setString(23, "External");
+								
+								if(interfaceId.longValue() == IntegrationConstants.ORG_BALANCE_INTERFACE_ID.longValue())
+								{
+									if(joinResultSet.has("dimension_1_n") && !joinResultSet.getString("dimension_1_n").trim().isEmpty())
+										dailyTblInsertStmnt.setLong(24, joinResultSet.getLong("dimension_1_n"));
+									else 
+										dailyTblInsertStmnt.setNull(24, Types.NULL);
+									
+									if(joinResultSet.has("dimension_2_n") && !joinResultSet.getString("dimension_2_n").trim().isEmpty())
+										dailyTblInsertStmnt.setLong(25, joinResultSet.getLong("dimension_2_n"));
+									else 
+										dailyTblInsertStmnt.setNull(25, Types.NULL);
+									
+									if(joinResultSet.has("dimension_3_n") && !joinResultSet.getString("dimension_3_n").trim().isEmpty())
+										dailyTblInsertStmnt.setLong(26, joinResultSet.getLong("dimension_3_n"));
+									else 
+										dailyTblInsertStmnt.setNull(26, Types.NULL);
+									
+									if(joinResultSet.has("dimension_4_n") && !joinResultSet.getString("dimension_4_n").trim().isEmpty())
+										dailyTblInsertStmnt.setLong(27, joinResultSet.getLong("dimension_4_n"));
+									else 
+										dailyTblInsertStmnt.setNull(27, Types.NULL);
+									
+									if(joinResultSet.has("dimension_5_n") && !joinResultSet.getString("dimension_5_n").trim().isEmpty())
+										dailyTblInsertStmnt.setLong(28, joinResultSet.getLong("dimension_5_n"));
+									else 
+										dailyTblInsertStmnt.setNull(28, Types.NULL);
+									
+									if(joinResultSet.has("dimension_6_n") && !joinResultSet.getString("dimension_6_n").trim().isEmpty())
+										dailyTblInsertStmnt.setLong(29, joinResultSet.getLong("dimension_6_n"));
+									else 
+										dailyTblInsertStmnt.setNull(29, Types.NULL);
+									
+									if(joinResultSet.has("dimension_7_n") && !joinResultSet.getString("dimension_7_n").trim().isEmpty())
+										dailyTblInsertStmnt.setLong(30, joinResultSet.getLong("dimension_7_n"));
+									else 
+										dailyTblInsertStmnt.setNull(30, Types.NULL);
+									
+									if(joinResultSet.has("dimension_8_n") && !joinResultSet.getString("dimension_8_n").trim().isEmpty())
+										dailyTblInsertStmnt.setLong(31, joinResultSet.getLong("dimension_8_n"));
+									else 
+										dailyTblInsertStmnt.setNull(31, Types.NULL);
+									
+									if(joinResultSet.has("dimension_9_n") && !joinResultSet.getString("dimension_9_n").trim().isEmpty())
+										dailyTblInsertStmnt.setLong(32, joinResultSet.getLong("dimension_9_n"));
+									else 
+										dailyTblInsertStmnt.setNull(32, Types.NULL);
+									
+									if(joinResultSet.has("dimension_10_n") && !joinResultSet.getString("dimension_10_n").trim().isEmpty())
+										dailyTblInsertStmnt.setLong(33, joinResultSet.getLong("dimension_10_n"));
+									else 
+										dailyTblInsertStmnt.setNull(33, Types.NULL);
+									
+									dailyTblInsertStmnt.setLong(34, joinResultSet.getLong("no_of_events_n"));
+								}
+
+								insertCount++;
+								dailyTblInsertStmnt.addBatch();
+
+								if (insertCount >= insertThreshold) {
+									insertTm = System.currentTimeMillis();
+									int[] rowsUpdated = dailyTblInsertStmnt.executeBatch();
+									TLogger.debug(rowsUpdated.length + " Rows Inserted in daily table..");
+									insertTime = insertTime + TimeUnit.MILLISECONDS.toMillis(System.currentTimeMillis() - insertTm);
+									insertCount = 0;
+								}
+							}
+						}
+
+						// executing remaining statements if any
+						if (updateCount % insertThreshold > 0) {
+							updtTm = System.currentTimeMillis();
+							int[] rowsUpdated;
+
+							try
+							{ 
+								rowsUpdated = dailyTblUpdateStmnt.executeBatch(); 
+							}
+							catch(BatchUpdateException e)
+							{
+								throw e.getNextException(); 
+							} 
+							finally 
+							{
+								dailyTblUpdateStmnt.close();
+							}
+							TLogger.debug(rowsUpdated.length + " Rows Updated in daily table..");
+							updateTime = updateTime + TimeUnit.MILLISECONDS.toMillis(System.currentTimeMillis() - updtTm);
+						}
+
+						if (insertCount % insertThreshold > 0) {
+							insertTm = System.currentTimeMillis();
+							int[] rowsUpdated;
+
+							try
+							{ 
+								rowsUpdated = dailyTblInsertStmnt.executeBatch(); 
+							}
+							catch(BatchUpdateException e)
+							{
+								throw e.getNextException(); 
+							} 
+							finally 
+							{
+								dailyTblUpdateStmnt.close();
+							}
+
+							TLogger.debug(rowsUpdated.length + " Rows Inserted in daily table..");
+							insertTime = insertTime + TimeUnit.MILLISECONDS.toMillis(System.currentTimeMillis() - insertTm);
+						}
+
+						TLogger.info("Daily Table - Total Insert time :: " + insertTime + " ms");
+						TLogger.info("Daily Table - Total update time :: " + updateTime + " ms");
+
+//						dailyTblInsertStmnt.close();
+//						dailyTblUpdateStmnt.close();
+					}
+						
+					if (successList.size() > 0 && (frequency == 2 || frequency == 3) && frequencyType.equalsIgnoreCase("Monthly")) 
+					{
+						if(crossSellingFlag != null && crossSellingFlag)
+						{
+							monthlyTblInsertStmnt = connection.prepareStatement(IntegrationConstants.monthlyTableInsertQry.replaceAll("monthly_table", csMonthlyTable));
+							monthlyTblUpdateStmnt = connection.prepareStatement(IntegrationConstants.monthlyTableUpdateQry.replaceAll("monthly_table", csMonthlyTable));
+						}
+						else
+						{
+							monthlyTblInsertStmnt = connection.prepareStatement(IntegrationConstants.monthlyTableInsertQry.replaceAll("monthly_table", monthlyTable));
+							monthlyTblUpdateStmnt = connection.prepareStatement(IntegrationConstants.monthlyTableUpdateQry.replaceAll("monthly_table", monthlyTable));
+						}
+
+						updateCount = 0;
+						insertCount = 0;
+						updateTime = 0L;
+						insertTime = 0L;
+
+						for (JSONObject joinResultSet : successList) 
+						{
+							if (joinResultSet.has("month_id_n") && !joinResultSet.getString("month_id_n").isEmpty()) 
+							{
+								if(joinResultSet.has("dimension_1_n") && !joinResultSet.getString("dimension_1_n").trim().isEmpty())
+									monthlyTblUpdateStmnt.setLong(1, joinResultSet.getLong("dimension_1_n"));
+								else 
+									monthlyTblUpdateStmnt.setNull(1, Types.NULL);
+								
+								if(joinResultSet.has("dimension_2_n") && !joinResultSet.getString("dimension_2_n").trim().isEmpty())
+									monthlyTblUpdateStmnt.setLong(2, joinResultSet.getLong("dimension_2_n"));
+								else 
+									monthlyTblUpdateStmnt.setNull(2, Types.NULL);
+								
+								if(joinResultSet.has("dimension_3_n") && !joinResultSet.getString("dimension_3_n").trim().isEmpty())
+									monthlyTblUpdateStmnt.setLong(3, joinResultSet.getLong("dimension_3_n"));
+								else 
+									monthlyTblUpdateStmnt.setNull(3, Types.NULL);
+								
+								if(joinResultSet.has("dimension_4_n") && !joinResultSet.getString("dimension_4_n").trim().isEmpty())
+									monthlyTblUpdateStmnt.setLong(4, joinResultSet.getLong("dimension_4_n"));
+								else 
+									monthlyTblUpdateStmnt.setNull(4, Types.NULL);
+								
+								if(joinResultSet.has("dimension_5_n") && !joinResultSet.getString("dimension_5_n").trim().isEmpty())
+									monthlyTblUpdateStmnt.setLong(5, joinResultSet.getLong("dimension_5_n"));
+								else 
+									monthlyTblUpdateStmnt.setNull(5, Types.NULL);
+								
+								if(joinResultSet.has("dimension_6_n") && !joinResultSet.getString("dimension_6_n").trim().isEmpty())
+									monthlyTblUpdateStmnt.setLong(6, joinResultSet.getLong("dimension_6_n"));
+								else 
+									monthlyTblUpdateStmnt.setNull(6, Types.NULL);
+								
+								if(joinResultSet.has("dimension_7_n") && !joinResultSet.getString("dimension_7_n").trim().isEmpty())
+									monthlyTblUpdateStmnt.setLong(7, joinResultSet.getLong("dimension_7_n"));
+								else 
+									monthlyTblUpdateStmnt.setNull(7, Types.NULL);
+								
+								if(joinResultSet.has("dimension_8_n") && !joinResultSet.getString("dimension_8_n").trim().isEmpty())
+									monthlyTblUpdateStmnt.setLong(8, joinResultSet.getLong("dimension_8_n"));
+								else 
+									monthlyTblUpdateStmnt.setNull(8, Types.NULL);
+								
+								if(joinResultSet.has("dimension_9_n") && !joinResultSet.getString("dimension_9_n").trim().isEmpty())
+									monthlyTblUpdateStmnt.setLong(9, joinResultSet.getLong("dimension_9_n"));
+								else 
+									monthlyTblUpdateStmnt.setNull(9, Types.NULL);
+								
+								if(joinResultSet.has("dimension_10_n") && !joinResultSet.getString("dimension_10_n").trim().isEmpty())
+									monthlyTblUpdateStmnt.setLong(10, joinResultSet.getLong("dimension_10_n"));
+								else 
+									monthlyTblUpdateStmnt.setNull(10, Types.NULL);
+								
+								monthlyTblUpdateStmnt.setLong(11, joinResultSet.getLong("no_of_events_n"));
+								monthlyTblUpdateStmnt.setLong(12, joinResultSet.getLong("month_id_n"));
+								monthlyTblUpdateStmnt.setLong(13, joinResultSet.getLong("event_type_n"));
+								monthlyTblUpdateStmnt.setLong(14, joinResultSet.getLong("actor_type_n"));
+								monthlyTblUpdateStmnt.setLong(15, joinResultSet.getLong("actor_id_n"));
+								monthlyTblUpdateStmnt.setLong(16, joinResultSet.getLong("metrics_type_n"));
+								monthlyTblUpdateStmnt.setLong(17, joinResultSet.getLong("metrics_id_n"));
+								monthlyTblUpdateStmnt.setLong(18, joinResultSet.getLong("source_type_n"));
+								monthlyTblUpdateStmnt.setLong(19, joinResultSet.getLong("source_id_n"));
+								monthlyTblUpdateStmnt.setLong(20, joinResultSet.getLong("data_flag_n"));
+								monthlyTblUpdateStmnt.setLong(21, joinResultSet.getLong("instance_type_n"));
+								monthlyTblUpdateStmnt.setLong(22, joinResultSet.getLong("instance_id_n"));
+
+								updateCount++;
+								monthlyTblUpdateStmnt.addBatch();
+								if (updateCount >= insertThreshold) {
+									updtTm = System.currentTimeMillis();
+									int[] rowsUpdated = monthlyTblUpdateStmnt.executeBatch();
+									TLogger.debug(rowsUpdated.length + " Rows Updated in monthly table..");
+									updateTime = updateTime + TimeUnit.MILLISECONDS.toMillis(System.currentTimeMillis() - updtTm);
+									updateCount = 0;
+								}
+							} 
+							else 
+							{
+								monthlyTblInsertStmnt.setLong(1, joinResultSet.getLong("id_n"));
+								monthlyTblInsertStmnt.setLong(2, joinResultSet.getLong("actor_type_n"));
+								monthlyTblInsertStmnt.setLong(3, joinResultSet.getLong("actor_id_n"));
+								monthlyTblInsertStmnt.setLong(4, joinResultSet.getLong("event_type_n"));
+								monthlyTblInsertStmnt.setLong(5, joinResultSet.getLong("metrics_type_n"));
+								monthlyTblInsertStmnt.setLong(6, joinResultSet.getLong("metrics_id_n"));
+								
+								if(joinResultSet.has("dimension_1_n") && !joinResultSet.getString("dimension_1_n").trim().isEmpty())
+									monthlyTblInsertStmnt.setLong(7, joinResultSet.getLong("dimension_1_n"));
+								else 
+									monthlyTblInsertStmnt.setNull(7, Types.NULL);
+								
+								if(joinResultSet.has("dimension_2_n") && !joinResultSet.getString("dimension_2_n").trim().isEmpty())
+									monthlyTblInsertStmnt.setLong(8, joinResultSet.getLong("dimension_2_n"));
+								else 
+									monthlyTblInsertStmnt.setNull(8, Types.NULL);
+								
+								if(joinResultSet.has("dimension_3_n") && !joinResultSet.getString("dimension_3_n").trim().isEmpty())
+									monthlyTblInsertStmnt.setLong(9, joinResultSet.getLong("dimension_3_n"));
+								else 
+									monthlyTblInsertStmnt.setNull(9, Types.NULL);
+								
+								if(joinResultSet.has("dimension_4_n") && !joinResultSet.getString("dimension_4_n").trim().isEmpty())
+									monthlyTblInsertStmnt.setLong(10, joinResultSet.getLong("dimension_4_n"));
+								else 
+									monthlyTblInsertStmnt.setNull(10, Types.NULL);
+								
+								if(joinResultSet.has("dimension_5_n") && !joinResultSet.getString("dimension_5_n").trim().isEmpty())
+									monthlyTblInsertStmnt.setLong(11, joinResultSet.getLong("dimension_5_n"));
+								else 
+									monthlyTblInsertStmnt.setNull(11, Types.NULL);
+								
+								if(joinResultSet.has("dimension_6_n") && !joinResultSet.getString("dimension_6_n").trim().isEmpty())
+									monthlyTblInsertStmnt.setLong(12, joinResultSet.getLong("dimension_6_n"));
+								else 
+									monthlyTblInsertStmnt.setNull(12, Types.NULL);
+								
+								if(joinResultSet.has("dimension_7_n") && !joinResultSet.getString("dimension_7_n").trim().isEmpty())
+									monthlyTblInsertStmnt.setLong(13, joinResultSet.getLong("dimension_7_n"));
+								else 
+									monthlyTblInsertStmnt.setNull(13, Types.NULL);
+								
+								if(joinResultSet.has("dimension_8_n") && !joinResultSet.getString("dimension_8_n").trim().isEmpty())
+									monthlyTblInsertStmnt.setLong(14, joinResultSet.getLong("dimension_8_n"));
+								else 
+									monthlyTblInsertStmnt.setNull(14, Types.NULL);
+								
+								if(joinResultSet.has("dimension_9_n") && !joinResultSet.getString("dimension_9_n").trim().isEmpty())
+									monthlyTblInsertStmnt.setLong(15, joinResultSet.getLong("dimension_9_n"));
+								else 
+									monthlyTblInsertStmnt.setNull(15, Types.NULL);
+								
+								if(joinResultSet.has("dimension_10_n") && !joinResultSet.getString("dimension_10_n").trim().isEmpty())
+									monthlyTblInsertStmnt.setLong(16, joinResultSet.getLong("dimension_10_n"));
+								else 
+									monthlyTblInsertStmnt.setNull(16, Types.NULL);
+								
+								monthlyTblInsertStmnt.setLong(17, joinResultSet.getLong("no_of_events_n"));
+								monthlyTblInsertStmnt.setLong(18, joinResultSet.getLong("source_type_n"));
+								monthlyTblInsertStmnt.setLong(19, joinResultSet.getLong("source_id_n"));
+								monthlyTblInsertStmnt.setLong(20, joinResultSet.getLong("data_flag_n"));
+								monthlyTblInsertStmnt.setLong(21, joinResultSet.getLong("instance_type_n"));
+								monthlyTblInsertStmnt.setLong(22, joinResultSet.getLong("instance_id_n"));
+								monthlyTblInsertStmnt.setString(23, "External");
+
+								insertCount++;
+								monthlyTblInsertStmnt.addBatch();
+
+								if (insertCount >= insertThreshold) {
+									insertTm = System.currentTimeMillis();
+									int[] rowsUpdated = monthlyTblInsertStmnt.executeBatch();
+									TLogger.debug(rowsUpdated.length + " Rows Inserted in monthly table..");
+									insertTime = insertTime + TimeUnit.MILLISECONDS.toMillis(System.currentTimeMillis() - insertTm);
+									insertCount = 0;
+								}
+							}
+						}
+
+						// executing remaining statements if any
+						if (updateCount % insertThreshold > 0) {
+							updtTm = System.currentTimeMillis();
+							int[] rowsUpdated;
+
+							try
+							{ 
+								rowsUpdated = monthlyTblUpdateStmnt.executeBatch(); 
+							}
+							catch(BatchUpdateException e)
+							{
+								throw e.getNextException(); 
+							} 
+							finally 
+							{
+								monthlyTblUpdateStmnt.close();
+							}
+
+							TLogger.debug(rowsUpdated.length + " Rows Updated in monthly table..");
+							updateTime = updateTime + TimeUnit.MILLISECONDS.toMillis(System.currentTimeMillis() - updtTm);
+						}
+
+						if (insertCount % insertThreshold > 0) {
+							insertTm = System.currentTimeMillis();
+							int[] rowsUpdated;
+
+							try
+							{ 
+								rowsUpdated = monthlyTblInsertStmnt.executeBatch(); 
+							}
+							catch(BatchUpdateException e)
+							{
+								throw e.getNextException(); 
+							} 
+							finally 
+							{
+								monthlyTblInsertStmnt.close();
+							}
+
+
+							TLogger.debug(rowsUpdated.length + " Rows Inserted in monthly table..");
+							insertTime = insertTime + TimeUnit.MILLISECONDS.toMillis(System.currentTimeMillis() - insertTm);
+						}
+
+						TLogger.info("Monthly Table - Total Insert time :: " + insertTime + " ms");
+						TLogger.info("Monthly Table - Total update time :: " + updateTime + " ms");
+
+						monthlyTblInsertStmnt.close();
+						monthlyTblUpdateStmnt.close();
+					}
+					
+				} 
+				catch (Exception exception) 
+				{
+					connection.rollback();
+					TLogger.error(exception.getMessage(), exception);
+					failureQueue.offer(new FileDataBean(), 5, TimeUnit.SECONDS);
+				}
+					
+				if (outputQueue != null) 
+				{
+					outputFileDataBean = new FileDataBean();
+					outputFileDataBean.setInterfaceId(interfaceId);
+					outputFileDataBean.setBatchId(batchId);
+					outputFileDataBean.setFileId(fileId);
+					outputFileDataBean.setSuccessData(successList);
+					outputFileDataBean.setFailureData(failureList);
+					int retryCount = 0;
+					while (true)
+					{
+						if (failureQueue.size() > 0) 
+						{
+							TLogger.debug("Exception occured..");
+							break;
+						}
+						if (outputQueue.offer(outputFileDataBean, 5, TimeUnit.SECONDS)) 
+						{
+							TLogger.debug("Sent FileDataBean to InterfaceFileProcessor");
+							break;
+						}
+						if(retryCount >= IntegrationConstants.KPI_FEED_QUEUE_RETRY_COUNT.intValue())
+						{
+							TLogger.error("Failed to send the Request Data even after configured retry times..");
+							failureQueue.offer(new FileDataBean(), 5, TimeUnit.SECONDS);
+						}
+						retryCount ++;
+						TLogger.debug("Failed to send FileDataBean to InterfaceFileProcessor");
+						Thread.sleep(1500);
+					}
+				}
+			}
+			connection.commit();
+		}
+		
+		catch(Exception exception)
+		{
+			connection.rollback();
+			TLogger.error("Unhandled Exception -->", exception);
+			
+			throw exception;
+		}
+		finally
+		{
+			try
+			{
+				if(dailyTblInsertStmnt != null)
+					dailyTblInsertStmnt.close();
+				if(dailyTblUpdateStmnt != null)
+					dailyTblUpdateStmnt.close();
+				if(monthlyTblInsertStmnt != null)
+					monthlyTblInsertStmnt.close();
+				if(monthlyTblUpdateStmnt != null)
+					monthlyTblUpdateStmnt.close();
+				if(connection != null)
+					connection.close();
+			}
+			catch(Exception e)
+			{
+				TLogger.error("Unhandled Exception -->", e);
+			}
+			
+			inputFileDataBean = null;
+			outputFileDataBean = null;
+			batchId = null;
+			successList = null;
+			frequency = null;
+			insertThreshold = null;
+			dailyTblInsertStmnt = null;
+			dailyTblUpdateStmnt = null;
+			updateCount = null;
+			insertCount = null;
+			updateTime = null;
+			insertTime = null;
+			monthlyTblInsertStmnt = null;
+			monthlyTblUpdateStmnt = null;
+			updtTm = null;
+			insertTm = null;
+			attributeMap = null;
+			fieldLookupConf = null;
+			fieldLookupConfObj = null;
+			dailyTable = null;
+			monthlyTable = null;
+			csDailyTable = null;
+			csMonthlyTable = null;
+			crossSellingFlag = null;
+			connection = null;
+			TLogger.info("KPI Aggregation " + interfaceId + " completed in " + TimeUnit.MILLISECONDS.toMillis(System.currentTimeMillis() - startTime)+" ms");
+		}
+	}
+	
+	@Override
+	public void run() {
+		try
+		{
+			processRequest(interfaceId, fileId);
+		}
+		catch (Exception e)
+		{
+			TLogger.error(e.getMessage(),e);
+			if(outputQueue != null)
+				cleanUp();
+			stopProcess();
+		}
+		
+	}
+	
+	
+	private void cleanUp() 
+	{
+		FileDataBean outputFileDataBean = null;
+		int retryCount = 0;
+		try 
+		{
+			while (true) 
+			{
+				if (failureQueue.size() > 0) 
+				{
+					TLogger.debug("Exception occured..");
+					break;
+				}
+				outputFileDataBean = outputQueue.peek();
+				if (outputFileDataBean != null && outputFileDataBean.getBatchId() == null) 
+				{
+					break;
+				} 
+				else if (outputQueue.offer(new FileDataBean(), 5, TimeUnit.SECONDS)) 
+				{
+					TLogger.info("Sent empty FileDataBean to the next level");
+					break;
+				}
+				if(retryCount >= IntegrationConstants.KPI_FEED_QUEUE_RETRY_COUNT.intValue())
+				{
+					TLogger.error("Failed to send the Request Data even after configured retry times..");
+					failureQueue.offer(new FileDataBean(), 5, TimeUnit.SECONDS);
+				}
+				retryCount ++;
+				TLogger.info("Failed to send empty FileDataBean to the next level");
+				Thread.sleep(1000);
+			}
+		} catch (Exception exception) {
+			TLogger.error("Exception occured in KPIAggregator.cleanUp :: " + exception);
+		} finally {
+			outputFileDataBean = null;
+		}
+	}
+	
+	
+	private void stopProcess()
+	{
+		try
+		{
+			while (true)
+			{
+				if(failureQueue.size() > 0)
+				{
+					TLogger.debug("KPIAggregator :: Failure Queue already having message..");
+					break;
+				}
+				if (failureQueue.offer(new FileDataBean(), 5, TimeUnit.SECONDS))
+				{
+					TLogger.info("Sent empty FileDataBean from KPIAggregator");
+					break;
+				}
+				TLogger.info("Failed to send empty FileDataBean from KPIAggregator");
+				Thread.sleep(1000);
+			}
+		}
+		catch (Exception exception)
+		{
+			TLogger.error("Exception occured in KPIAggregator.stopProcess :: " + exception);
+		}
+	}
+	
+}

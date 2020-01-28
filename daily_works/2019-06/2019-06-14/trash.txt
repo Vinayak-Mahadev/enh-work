@@ -1,0 +1,52 @@
+1066,1071,1075,1081
+
+SELECT * from interface.ms_interface where interface_id_n in (1066,1071,1075,1081) order by 1
+
+SELECT * from interface.ms_interface_attr where interface_id_n in (1066,1071,1075,1081) and name_v = 'Field Lookup Conf'order by 1;
+SELECT * from interface.ms_interface_attr where interface_id_n in (1066,1071,1075,1081) order by 1;
+
+SELECT  * from interface.tr_interface_file_summary  where interface_id_n= 1081 order by 1 desc
+
+1081 - FAIL - 10048	 PASS - VEN407 - ACTOR and SOURCE KEY updated and called reprocess
+1075 - PASS - 10047
+1071 - FAIL - 10046	 PASS - NOTIFYTEST04 - ACTOR and SOURCE KEY updated and called reprocess
+1061 - PASS - 10045
+
+
+SELECT * from kpi.tr_temp_upload_aggr_failure where file_id_n = 10048
+
+ACTOR MAP UPDATED TO 1071
+UPDATE kpi.tr_temp_upload_aggr_failure SET actor_key_v  = 'NOTIFYTEST04' where file_id_n = 10046;
+UPDATE kpi.tr_temp_upload_aggr_failure SET source_key_v = 'NOTIFYTEST04' where file_id_n = 10046;
+
+ACTOR MAP UPDATED TO 1081
+UPDATE kpi.tr_temp_upload_aggr_failure SET actor_key_v  = 'VEN407' where file_id_n = 10048;
+UPDATE kpi.tr_temp_upload_aggr_failure SET source_key_v = 'VEN407' where file_id_n = 10048;
+
+
+
+
+
+VERIFY IN DAILY AND MONTHLY TABLE LIKE THAT
+-------------------------------
+interface_id_n : metrics_id_n
+-------------------------------
+1066 : 105
+1071 : 106
+1075 : 109
+1081 : 107
+-------------------------------
+
+SELECT * FROM KPI.tr_daily_sale_revenue_lacci_aggr where day_id_n = 20190613 order by 1 desc ;
+SELECT * FROM KPI.tr_monthly_sale_revenue_lacci_aggr where month_id_n = 201906 order by 1 desc ;
+
+SELECT * FROM KPI.tr_daily_subscriber_event_aggr where day_id_n = 20190613  order by 1 desc ;
+SELECT * FROM KPI.tr_monthly_subscriber_event_aggr where month_id_n = 201906  order by 1 desc ;
+
+SELECT * FROM KPI.tr_daily_mobo_transaction_aggr where day_id_n = 20190613  order by 1 desc ;
+SELECT * FROM KPI.tr_monthly_mobo_transaction_aggr where month_id_n = 201906 order by 1 desc ;
+
+SELECT * FROM KPI.tr_daily_reload_sellinout_aggr where day_id_n = 20190613  order by 1 desc ;
+SELECT * FROM KPI.tr_monthly_reload_sellinout_aggr where month_id_n = 201906 order by 1 desc ;
+
+

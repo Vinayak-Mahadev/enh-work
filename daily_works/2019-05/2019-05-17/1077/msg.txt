@@ -1,0 +1,15 @@
+100188-33396
+Actor mapping not found for CI ID : 10009~10193
+
+SELECT * from interface.ms_interface_attr where interface_id_n = 1077
+SELECT * from interface.tr_interface_file_summary  where interface_id_n = 1077 order by 1 desc limit 5
+
+SELECT * from kpi.tr_daily_reload_buyer_aggr where day_id_n = 20170516 order by 1 desc limit 10
+
+SELECT * from kpi.tr_monthly_reload_buyer_aggr  where month_id_n = 201705 order by 1 desc limit 10
+
+select * from kpi.tr_temp_upload_aggr_failure where file_id_n = 16513
+update  kpi.tr_temp_upload_aggr_failure set actor_key_v = '1001~1373' where file_id_n = 16513
+
+
+

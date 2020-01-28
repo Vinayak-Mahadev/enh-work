@@ -1,0 +1,9 @@
+REG_Channel|Channel|Region|Area|Sales Area|Cluster|Micro Cluster|Additional Territory|TerritoryID|HotSpot_ID|HotSpot_Name|HotSpot Type|HotSpot Longitude|HotSpot Latitude|Crowded Time|Sales Permit cost|Open Booth|Signal Strength|Status|Register DateTime|Register Operator ID|Register Operator Name|Approval DateTime|Approval Operator ID|Approval Operator Name|Ref Code|Parent ID|Parent Ref Code|Parent Desc
+
+
+
+UPDATE INTERFACE.MS_INTERFACE_ATTR SET VALUE_V = 'REG_Channel|Channel|Region|Area|Sales Area|Cluster|Micro Cluster|Additional Territory|TerritoryID|HotSpot_ID|HotSpot_Name|HotSpot Type|HotSpot Longitude|HotSpot Latitude|Crowded Time|Sales Permit cost|Open Booth|Signal Strength|Status|Register DateTime|Register Operator ID|Register Operator Name|Approval DateTime|Approval Operator ID|Approval Operator Name|Ref Code|Parent ID|Parent Ref Code|Parent Desc' WHERE ATTRIBUTE_ID_N = 1042025
+
+UPDATE INTERFACE.MS_INTERFACE_ATTR SET VALUE_V = '{"reg_channel":"src_channel","channel":"chnl_ctgr","region":"regional","area":"area","sales area":"sales_area","cluster":"cluster","micro cluster":"micro_cluster","additional territory":"","territoryid":"teritory_id","hotspot_id":"org_id","hotspot_name":"org_nm","hotspot type":"hotspot_ctgr","hotspot longitude":"longitude","hotspot latitude":"latitude","crowded time":"begin","sales permit cost":"sales_permit","open booth":"booth","signal strength":"signal_strength","status":"status","register datetime":"org_crtd_dt","register operator id":"crtd_operator_id","register operator name":"crtd_operator_nm","approval datetime":"approval_dt","approval operator id":"approval_operator_id","approval operator name":"approval_operator_nm","ref code":"org_ref_code","parent id":"parent_org_id","parent ref code":"parent_org_ref_code","parent desc":"parent_org_desc"}' WHERE ATTRIBUTE_ID_N = 1042030;
+
+

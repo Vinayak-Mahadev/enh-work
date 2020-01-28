@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/">
+	<soapenv:Body>
+		<api:Result xmlns:api="http://cps.huawei.com/synccpsinterface/api_requestmgr" xmlns:res="http://cps.huawei.com/synccpsinterface/result">
+			<res:Header>
+				<res:Version>1.0</res:Version>
+				<res:OriginatorConversationID>227157</res:OriginatorConversationID>
+				<res:ConversationID>SM-227157</res:ConversationID>
+			</res:Header>
+			<res:Body>
+				<res:ResultType>0</res:ResultType>
+				<res:ResultCode>100</res:ResultCode>
+				<res:ResultDesc>Process service request failed.</res:ResultDesc>
+				<res:TransactionResult>
+					<res:TransactionID>227157</res:TransactionID>
+				</res:TransactionResult>
+			</res:Body>
+		</api:Result>
+	</soapenv:Body>
+</soapenv:Envelope>
+
+
+{
+	"res:ResultCode": 100,
+	"res:ResultType": 0,
+	"res:TransactionResult": {
+		"res:TransactionID": 227157
+	},
+	"res:ResultDesc": "Process service request failed."
+}
+
+{
+	"ext_ref_id": "SM-227157",
+	"err_msg": "Process service request failed.",
+	"err_code": 101,
+	"status": "FAIL",
+	"trans_dt": "2019-06-19T14:55:14.460",
+	"transaction_id": 227157
+}

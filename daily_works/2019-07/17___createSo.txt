@@ -1,0 +1,344 @@
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:int="http://com/enhancesys/integration/services/interfaces/IntegrationManagement">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <int:invokePrimarySalesInterface>
+         <!--Optional:-->
+         <moduleId>225</moduleId>
+         <!--Optional:-->
+         <jsonRequestData>
+         <![CDATA[
+			
+{
+	"payload": {
+		"po_no": "634487",
+		"po_ord_type": "ssfet",
+		"dist_chnl": "10",
+		"division": "30",
+		"ship_to_party": "AK5443",
+		"ord_dt": "2019-10-11",
+		"req_deliv_dt": "2019-10-11",
+		"products": [
+			{
+				"matrl_code": "P64453",
+				"qty": "100"
+			},
+			{
+				"matrl_code": "P453",
+				"qty": "200"
+			}
+		]
+	}
+}
+		]]>
+         
+         </jsonRequestData>
+      </int:invokePrimarySalesInterface>
+   </soapenv:Body>
+</soapenv:Envelope>
+
+
+
+
+
+---------------------------
+{"enabled":true,"res_type":"Success"}
+ ---------------------------
+ <soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:mob="http://mobii.com/">
+	<soapenv:Header/>
+	<soapenv:Body>
+		<mob:MT_SOCreation_Request>
+			<Item>
+				<Mobii_PO_Number>634487</Mobii_PO_Number>
+				<Order_Type>ssfet</Order_Type>
+				<Distribution_Channel>10</Distribution_Channel>
+				<Division>30</Division>
+				<Sold_to_Party/>
+				<Ship_to_Party>AK5443</Ship_to_Party>
+				<Mobii_PO_Date>2019-10-11</Mobii_PO_Date>
+				<Request_Delivery_Date>2019-10-11</Request_Delivery_Date>
+				<SO_Item>
+					<Material_Code>P64453</Material_Code>
+					<Quantity>100</Quantity>
+				</SO_Item>
+				<SO_Item>
+					<Material_Code>P453</Material_Code>
+					<Quantity>200</Quantity>
+				</SO_Item>
+			</Item>
+		</mob:MT_SOCreation_Request>
+	</soapenv:Body>
+</soapenv:Envelope>
+
+
+
+ <soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:mob="http://mobii.com/">
+	<soapenv:Header/>
+	<soapenv:Body>
+		<mob:MT_SOCreation_Response>
+			<Item>
+				<SAP_SO_Number>07171644</SAP_SO_Number>
+				<Mobii_PO_Number>634487</Mobii_PO_Number>
+				<SO_Date>2019-07-17</SO_Date>
+				<Status>0</Status>
+				<SO_Amount>20000.00</SO_Amount>
+			</Item>
+		</mob:MT_SOCreation_Response>
+	</soapenv:Body>
+</soapenv:Envelope>
+
+
+
+{
+	"soapenv:Envelope": {
+		"soapenv:Body": {
+			"mob:MT_SOCreation_Response": {
+				"Item": {
+					"Status": "0",
+					"Mobii_PO_Number": "634487",
+					"SO_Amount": "20000.00",
+					"SAP_SO_Number": "07171644",
+					"SO_Date": "2019-07-17"
+				}
+			}
+		}
+	}
+}
+
+<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
+	<soap:Body>
+		<ns2:invokePrimarySalesInterfaceResponse xmlns:ns2="http://com/enhancesys/integration/services/interfaces/IntegrationManagement" xmlns:ns3="http://com/enhancesys/entities/schema/integration">
+			<invokePrimarySalesInterface>
+			{
+				"transaction_id": 227830
+			}
+			</invokePrimarySalesInterface>
+		</ns2:invokePrimarySalesInterfaceResponse>
+	</soap:Body>
+</soap:Envelope>
+
+
+
+<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
+   <soap:Body>
+      <ns2:invokePrimarySalesInterfaceResponse xmlns:ns2="http://com/enhancesys/integration/services/interfaces/IntegrationManagement" xmlns:ns3="http://com/enhancesys/entities/schema/integration">
+         <invokePrimarySalesInterface>
+		 
+		 {
+			"err_msg": "Mobii_PO_Number is Mandatory, but po_no value is coming as empty.. value :: ",
+			"err_code": "10004",
+			"status": "FAIL",
+			"transaction_id": 227833
+		 }
+		 
+		 </invokePrimarySalesInterface>
+      </ns2:invokePrimarySalesInterfaceResponse>
+   </soap:Body>
+</soap:Envelope>
+
+---------------------------
+{"enabled":true,"res_type":"Failure"}
+ ---------------------------
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:mob="http://mobii.com/">
+	<soapenv:Header/>
+	<soapenv:Body>
+		<mob:MT_SOCreation_Request>
+			<Item>
+				<Mobii_PO_Number>634487</Mobii_PO_Number>
+				<Order_Type>ssfet</Order_Type>
+				<Distribution_Channel>10</Distribution_Channel>
+				<Division>30</Division>
+				<Sold_to_Party/>
+				<Ship_to_Party>AK5443</Ship_to_Party>
+				<Mobii_PO_Date>2019-10-11</Mobii_PO_Date>
+				<Request_Delivery_Date>2019-10-11</Request_Delivery_Date>
+				<SO_Item>
+					<Material_Code>P64453</Material_Code>
+					<Quantity>100</Quantity>
+				</SO_Item>
+				<SO_Item>
+					<Material_Code>P453</Material_Code>
+					<Quantity>200</Quantity>
+				</SO_Item>
+			</Item>
+		</mob:MT_SOCreation_Request>
+	</soapenv:Body>
+</soapenv:Envelope>
+
+
+ 
+{
+	"soapenv:Envelope": {
+		"soapenv:Body": {
+			"mob:MT_SOCreation_Response": {
+				"Item": {
+					"Status": "1",
+					"Mobii_PO_Number": "634487",
+					"SO_Date": "2019-07-17",
+					"Rejection_Note": "Request failed.."
+				}
+			}
+		}
+	}
+}
+
+
+  <soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:mob="http://mobii.com/">
+	<soapenv:Header/>
+	<soapenv:Body>
+		<mob:MT_SOCreation_Response>
+			<Item>
+				<Mobii_PO_Number>634487</Mobii_PO_Number>
+				<SO_Date>2019-07-17</SO_Date>
+				<Status>1</Status>
+				<Rejection_Note>Request failed..</Rejection_Note>
+			</Item>
+		</mob:MT_SOCreation_Response>
+	</soapenv:Body>
+</soapenv:Envelope>
+
+
+ 
+ 
+ 
+ <soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
+   <soap:Body>
+      <ns2:invokePrimarySalesInterfaceResponse xmlns:ns2="http://com/enhancesys/integration/services/interfaces/IntegrationManagement" xmlns:ns3="http://com/enhancesys/entities/schema/integration">
+         <invokePrimarySalesInterface>{"transaction_id":227835}</invokePrimarySalesInterface>
+      </ns2:invokePrimarySalesInterfaceResponse>
+   </soap:Body>
+</soap:Envelope>
+
+
+
+
+
+
+
+---------------------------------------
+{"enabled":false,"res_type":"Success"}
+---------------------------------------
+
+
+
+ <soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:mob="http://mobii.com/">
+	<soapenv:Header/>
+	<soapenv:Body>
+		<mob:MT_SOCreation_Request>
+			<Item>
+				<Mobii_PO_Number>634487</Mobii_PO_Number>
+				<Order_Type>ssfet</Order_Type>
+				<Distribution_Channel>10</Distribution_Channel>
+				<Division>30</Division>
+				<Sold_to_Party/>
+				<Ship_to_Party>AK5443</Ship_to_Party>
+				<Mobii_PO_Date>2019-10-11</Mobii_PO_Date>
+				<Request_Delivery_Date>2019-10-11</Request_Delivery_Date>
+				<SO_Item>
+					<Material_Code>P64453</Material_Code>
+					<Quantity>100</Quantity>
+				</SO_Item>
+				<SO_Item>
+					<Material_Code>P453</Material_Code>
+					<Quantity>200</Quantity>
+				</SO_Item>
+			</Item>
+		</mob:MT_SOCreation_Request>
+	</soapenv:Body>
+</soapenv:Envelope>
+
+
+
+
+
+
+<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
+   <soap:Body>
+      <soap:Fault>
+         <faultcode>soap:Server</faultcode>
+         <faultstring>Transaction was rolled back, presumably because setRollbackOnly was called during a synchronization while invoking public abstract java.lang.String com.enhancesys.integration.services.interfaces.IntegrationManagement.invokePrimarySalesInterface(java.lang.Long,java.lang.String) throws net.treetechnologies.common.exception.ApplicationException with params [225, 
+         
+			
+{
+	"payload": {
+		"po_no": "634487",
+		"po_ord_type": "ssfet",
+		"dist_chnl": "10",
+		"division": "30",
+		"ship_to_party": "AK5443",
+		"ord_dt": "2019-10-11",
+		"req_deliv_dt": "2019-10-11",
+		"products": [
+			{
+				"matrl_code": "P64453",
+				"qty": "100"
+			},
+			{
+				"matrl_code": "P453",
+				"qty": "200"
+			}
+		]
+	}
+}
+		
+         
+         </faultstring>
+      </soap:Fault>
+   </soap:Body>
+</soap:Envelope>
+----------------------------------------------------------------------------------------------------
+
+
+{
+	"status": "SUCCESS",
+	"item": {
+		"Mobii_PO_Number": "634487",
+		"SO_Amount": "20000.00",
+		"SAP_SO_Number": "07171915",
+		"SO_Date": "2019-07-17"
+	},
+	"trans_dt": "2019-07-17T19:15:41.188",
+	"transaction_id": 227845
+}
+
+
+
+
+{
+	"status": "SUCCESS",
+	"item": {
+		"Mobii_PO_Number": "634487",
+		"SO_Amount": "20000.00",
+		"SAP_SO_Number": "07171916",
+		"SO_Date": "2019-07-17"
+	},
+	"trans_dt": "2019-07-17T19:16:22.921",
+	"transaction_id": 227846
+}
+
+
+{
+	"err_msg": "Mobii_PO_Number is Mandatory, but po_no value is coming as empty.. value :: ",
+	"err_code": "10004",
+	"status": "FAIL",
+	"transaction_id": 227847
+}
+
+{
+	"err_msg": "Order_Type is Mandatory, but po_ord_type value is coming as empty.. value :: ",
+	"err_code": "10004",
+	"status": "FAIL",
+	"transaction_id": 227848
+}
+{
+	"err_msg": "Ship_to_Party is Mandatory, but ship_to_party value is coming as empty.. value :: ",
+	"err_code": "10004",
+	"status": "FAIL",
+	"transaction_id": 227849
+}

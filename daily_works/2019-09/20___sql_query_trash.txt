@@ -1,0 +1,42 @@
+-- select * from interface.ms_interface_attr  where interface_id_n = 1082 order by 1 ;
+-- select * from interface.ms_interface_attr  where  name_v = 'Remote Dir' order by 1 ;
+
+
+-- select * from interface.ms_interface order by 1 desc limit 300;
+-- select * from interface.tr_interface_file_summary where file_name_v ilike '%20190920_01%' order by 1 desc limit 50;
+
+-- select * from interface.tr_interface_file_summary where interface_id_n = 1082 order by 1 desc limit 50;
+-- http://192.168.2.144:8080/organization-services/org/interfaceCallBack1
+-- select * from interface.tr_interface_summary where interface_id_n = 1018 and status_n = 1303 order by 1 desc limit 50;
+
+-- select * from interface.tr_interface_summary where trans_id_n = 229695 order by 1 desc limit 10;
+
+-- select * from interface.ms_interface_attr  where interface_id_n = 1018 order by 1 desc;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+-- update  interface.ms_interface_attr set value_v = 'http://192.168.2.144:8080/organization-services/org/interfaceCallBack' where attribute_id_n = 1018009;
+
+-- select trans_id_n, convert_from(loread(lo_open(orgnl_request_data_b::int, x'40000'::int), x'40000'::int),  'UTF8') from interface.tr_interface_summary where trans_id_n = 229695;
+
+-- select trans_id_n, convert_from(loread(lo_open(request_data_b::int, x'40000'::int), x'40000'::int),  'UTF8') from interface.tr_interface_summary where trans_id_n = 229695;
+
+-- select trans_id_n, convert_from(loread(lo_open(orgnl_response_data_b::int, x'40000'::int), x'40000'::int),  'UTF8') from interface.tr_interface_summary where trans_id_n = 229695;
+
+-- select trans_id_n, convert_from(loread(lo_open(response_data_b::int, x'40000'::int), x'40000'::int),  'UTF8') from interface.tr_interface_summary where trans_id_n = 229695;

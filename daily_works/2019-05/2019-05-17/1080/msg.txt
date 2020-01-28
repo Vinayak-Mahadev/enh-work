@@ -1,0 +1,17 @@
+
+108432|97632|10800
+
+Actor mapping not found for metric : 99850020
+Source mapping not found for OperatorID : BADSAW6716000
+
+SELECT * from interface.ms_interface_attr where interface_id_n = 1080
+SELECT * from interface.tr_interface_file_summary  where interface_id_n = 1080 order by 1 desc limit 5
+
+SELECT * from kpi.tr_daily_reload_customer_aggr where day_id_n = 20190516 order by 1 desc limit 10
+
+SELECT * from kpi.tr_monthly_reload_customer_aggr  where month_id_n = 201905 order by 1 desc limit 10
+
+select * from kpi.tr_temp_upload_aggr_failure where file_id_n = 16517
+update  kpi.tr_temp_upload_aggr_failure set metrics_key_v = '112211' where file_id_n = 16517
+update  kpi.tr_temp_upload_aggr_failure set source_key_v = 'BADSAW6716' where file_id_n = 16517
+
