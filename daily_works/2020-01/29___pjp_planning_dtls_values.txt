@@ -1,0 +1,35 @@
+192.168.2.251
+22
+appuser
+app@123
+PJP_Planning_Details
+yyyyMMdd
+csv
+ctl
+/home/appuser/interfaces/DAILY_DUMPS/master_files/pjp_planning_details/
+/home/appuser/interfaces/DAILY_DUMPS/master_files/pjp_planning_details/
+/home/appuser/interfaces/DAILY_DUMPS/rejected_file/pjp_planning_details/
+/home/appuser/interfaces/DAILY_DUMPS/rejected_file/pjp_planning_details/
+/home/appuser/interfaces/DAILY_DUMPS/backup/master_files/pjp_planning_details/
+/home/appuser/interfaces/DAILY_DUMPS/backup/master_files/pjp_planning_details/
+/home/appuser/interfaces/S-NOC/interfaces/master_file/daily_dumps/pjp_planning_details/
+/home/appuser/interfaces/S-NOC/interfaces/master_file/daily_dumps/pjp_planning_details/
+/home/appuser/interfaces/S-NOC/interfaces/backup/master_file/daily_dumps/pjp_planning_details/
+/home/appuser/interfaces/S-NOC/interfaces/backup/master_file/daily_dumps/pjp_planning_details/
+/home/appuser/interfaces/S-NOC/interfaces/rejected_file/daily_dumps/pjp_planning_details/
+/home/appuser/interfaces/S-NOC/interfaces/rejected_file/daily_dumps/pjp_planning_details/
+/home/appuser/interfaces/S-NOC/interfaces/backup/rejected_file/daily_dumps/pjp_planning_details/
+/home/appuser/interfaces/S-NOC/interfaces/backup/rejected_file/daily_dumps/pjp_planning_details/
+Request File Type
+|
+Region|Area|Sales Area|Cluster|Micro Cluster|MPC Code|SPV Code|SPV Name|CSO Code|CSO Name|PJP Plan Id|PJP Plan name|PJP start date|PJP end date|PJP created by|PJP creation date|PJP Frequency|PJP Modify Date|PJP Status|Outlet Code|Total Planned calls|Planned Days
+0
+true
+daily_dump
+pjp_planning_details
+{"scheduledatetime":"schedule_date_time","visitdatetime":"visit_date_time","channel":"channel","region":"region","area":"area","sales area":"sales_area","cluster":"cluster","micro cluster":"micro_cluster","additional territory":"additional_territory","territoryid":"territory_id","visit_type":"visit_type","beatplanid":"beat_plan_id","beatplanname":"beat_plan_name","visitororgtype":"visitor_org_type","visitororgid":"visitor_org_id","visitorsaldomobo org id":"visitor_saldomobo_org_id","visitororgname":"visitor_org_name","visitedorgtype":"visited_org_type","visitedorgid":"visited_org_id","visitedsaldomobo org id":"visited_saldomobo_org_id","visitedorgname":"visited_org_name","visitedorg address":"visited_org_addr","operatortype":"operator_type","operatorid":"operator_id","username":"user_name","operator full name":"operator_full_name","startdatetime":"start_date_time","enddatetime":"end_date_time","time on beat":"time_on_beat","comments":"comments","planned distance(in km)":"planned_distance","activity name":"activity_name","activity status":"activity_status","product_category":"txn_id","product_brand":"product_brand","product_code":"product_code","product_name":"product_name","total sales qty":"total_sales_qty","total sales value":"total_sales_value","org location":"org_location","activity location":"activity_location","deviation distance(in km)":"deviation_distance","reason":"reason_desc"}
+dump_crtd_dt_num
+1
+PJP_Planning_Details
+snoc-r5
+java:global/EnhancesysManagement/IntegrationServices/GenericDailyDump!com.enhancesys.integration.services.interfaces.processor.PullFromMongo

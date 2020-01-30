@@ -1,0 +1,138 @@
+{
+	"Primary": {
+		"connection-id": "MONGO_144_22020",
+		"schema-name": "snoc",
+		"collection-name": "organization",
+		"projection": {
+			"_id": 1
+		},
+		"parameters": [
+			{
+				"param-name": "sub_org_type",
+				"param-value": {
+				"$in":[59,66]
+				}
+			},
+			{
+				"param-name": "status",
+				"param-value": 174
+			}
+		],
+		"sort-by": {
+			"_id": 1
+		}
+	},
+	"Secondary": {
+		"connection-id": "MONGO_144_22020",
+		"schema-name": "beat",
+		"collection-name": "beat_schedule",
+		"parameters": [],
+		"projection": {
+			"_id": 1
+		},
+		"sort-by": {
+			"_id": 1
+		}
+	},
+	"Tertiary": {
+		"connection-id": "MONGO_144_22020",
+		"schema-name": "beat",
+		"collection-name": "beat_defn",
+		"parameters": [],
+		"projection": {
+			"_id": 1
+		},
+		"sort-by": {
+			"_id": 1
+		}
+	},
+	"Lookup": {
+		"organization-lookup": {
+			"connection-id": "snoc-r1",
+			"schema-name": "snoc",
+			"collection-name": "organization",
+			"parameters": [
+				{
+					"param-name": "sub_org_type",
+					"param-value": 66
+				},
+				{
+					"param-name": "status",
+					"param-value": 174
+				}
+			]
+		}
+	},
+	"Configuration": {
+		"date": {
+			"field": "",
+			"collection-name": "",
+			"date-format": "yyyyMMdd"
+		},
+		"region": {
+			"field": "region_name",
+			"collection-name": "outlet_hierachy_dump"
+		},
+		"hor_name": {
+			"field": "hor_name",
+			"collection-name": "outlet_hierachy_dump"
+		},
+		"area": {
+			"field": "sub_area_name",
+			"collection-name": "outlet_hierachy_dump"
+		},
+		"hos_name": {
+			"field": "hos_name",
+			"collection-name": "outlet_hierachy_dump"
+		},
+		"sales_area": {
+			"field": "sales_area_name",
+			"collection-name": "outlet_hierachy_dump"
+		},
+		"sam_name": {
+			"field": "sam_name",
+			"collection-name": "outlet_hierachy_dump"
+		},
+		"mpc_code": {
+			"field": "mpc_short_code",
+			"collection-name": "outlet_hierachy_dump"
+		},
+		"mpc_name": {
+			"field": "mpc_name",
+			"collection-name": "outlet_hierachy_dump"
+		},
+		"contact_number": {
+			"field": "outlet_mobile_number",
+			"collection-name": "outlet_hierachy_dump"
+		},
+		"total_child_outlets": {
+			"field": "mpc_org_id",
+			"collection-name": "outlet_hierachy_dump",
+			"lookup": [
+				{
+					"name": "organization-lookup",
+					"mapping-field": "parent_org_id",
+					"lookup-field": "total_child_outlets",
+					"lookup-function": "count"
+				}
+			]
+		},
+		"starter_pack_count": {
+			"field": "starter_pack_count",
+			"collection-name": "Collection-3"
+		},
+		"voucher_count": {
+			"field": "voucher_count",
+			"collection-name": "Collection-4"
+		},
+		"mobo_balance": {
+			"field": "mobo_balance",
+			"collection-name": "Collection-5"
+		}
+	},
+	"OutputConf": {
+		"file-headers": "Date|Region|HOR Name|Area|HOS Name|Sales Area|SAM Name|MPC code|MPC Name|Contact number|Total Child Outlets|Starter pack|Voucher|MOBO Balance",
+		"fields": "region,hor_name,area,hos_name,sales_area,sam_name,mpc_code,mpc_name,contact_number,total_child_outlets,starter_pack_count,voucher_count,mobo_balance",
+		"dump-date-field": "date"
+	}
+}

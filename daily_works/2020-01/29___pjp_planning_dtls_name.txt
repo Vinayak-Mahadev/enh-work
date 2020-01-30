@@ -1,0 +1,35 @@
+Remote Host
+Remote Port
+Remote User
+Remote Password
+Remote File
+Remote FileName Format
+Remote File Format
+Control file format
+Remote Dir
+Remote control directory
+Remote rejected directory
+Remote rejected control directory
+Remote backup directory
+Remote Control Backup Directory
+Local Dir
+Local control directory
+Local backup directory
+Local Control Backup Directory
+Local rejected directory
+Local rejected control directory
+Local rejected backup directory
+Local rejected control backup directory
+Received File Type
+Csv Delimeter
+File Headers
+Client Id
+Is Sftp
+Schema Name
+Collection Name
+Daily Dump Conf
+Query Field
+Date Duration
+Process Name
+Mongo Connection Id
+Processor Url
