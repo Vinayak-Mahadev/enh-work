@@ -1,0 +1,137 @@
+{
+	"custom-date-format": "dd-MM-yyyy",
+	"custom-date-value": "15-11-2019",
+	"Primary-child": {
+		"connection-id": "MONGO_144_22030",
+		"schema-name": "daily_dump_snapshot",
+		"collection-name": "outlet_hierachy_dump",
+		"Primary-result-in-query": "outlet_org_id",
+		"parameters": [],
+		"projection": {
+			"_id": 1,
+			"hor_name": 1,
+			"hor_mobile_number": 1,
+			"hos_name": 1,
+			"hos_mobile_number": 1,
+			"sam_name": 1,
+			"sam_mobile_number": 1,
+			"csm_name": 1,
+			"csm_mobile_number": 1,
+			"outlet_code": 1,
+			"outlet_name": 1,
+			"outlet_mobile_number": 1,
+			"channel": 1,
+			"outlet_category": 1,
+			"outlet_business_type": 1,
+			"outlet_class": 1,
+			"mobo_dealer": 1,
+			"latitude": 1,
+			"longitude": 1,
+			"org_group_desc": 1,
+			"region_name": 1,
+			"sub_area_name": 1,
+			"sales_area_name": 1,
+			"cluster_name": 1,
+			"micro_cluster_name": 1,
+			"cso_code": 1,
+			"cso_mobile_number": 1,
+			"supervisor_code": 1,
+			"supervisor_mobile_number": 1,
+			"mpc_name": 1,
+			"mpc_short_code": 1,
+			"mpc_mobile_number": 1,
+			"beat_id": 1,
+			"beat_name": 1,
+			"outlet_org_id": 1
+		},
+		"sort-by": {
+			"outlet_org_id": -1
+		}
+	},
+	"Primary": {
+		"connection-id": "MONGO_144_22020",
+		"schema-name": "snoc",
+		"collection-name": "organization",
+		"projection": {
+			"_id": 1
+		},
+		"parameters": [
+			{
+				"param-name": "sub_org_type",
+				"param-value": {
+					"$in": [
+						66
+					]
+				}
+			},
+			{
+				"param-name": "status",
+				"param-value": 174
+			}
+		],
+		"sort-by": {
+			"_id": 1
+		}
+	},
+	"Secondary": {
+		"connection-id": "MONGO_144_22020",
+		"schema-name": "beat",
+		"collection-name": "beat_schedule",
+		"parameters": [],
+		"Primary-result-in-query": "org_id",
+		"projection": {
+			"_id": 1,
+			"dist_org_id": 1,
+			"node_id": 1,
+			"assigned_node_id": 1,
+			"ent_no": 1,
+			"ent_tp": 1,
+			"status": 1,
+			"schedule_dt": 1,
+			"crtd_by": 1,
+			"created_dt": 1,
+			"beat_id": 1,
+			"beat_plan_id": 1,
+			"schedule_dt_num": 1,
+			"org_id": 1,
+			"beat_schedule_id": 1,
+			"priority": 1
+		},
+		"sort-by": {
+			"_id": 1
+		}
+	},
+	"Tertiary": {
+		"connection-id": "MONGO_144_22020",
+		"schema-name": "beat",
+		"collection-name": "beat_defn",
+		"parameters": [],
+		"projection": {
+			"_id": 1,
+			"crtd_by": 1,
+			"crtd_dt": 1,
+			"dist_org_id": 1,
+			"end_dt": 1,
+			"filter_Org_Type": 1,
+			"name": 1,
+			"node_id": 1,
+			"planned_distance": 1,
+			"retailers": 1,
+			"sale_territory": 1,
+			"schedule": 1,
+			"search_param": 1,
+			"start_dt": 1,
+			"start_point": 1,
+			"status": 1,
+			"updtd_by": 1,
+			"updtd_dt": 1
+		},
+		"sort-by": {
+			"_id": 1
+		}
+	},
+	"OutputConf": {
+		"file-headers": "Region|Area|Sales Area|Cluster|Micro Cluster|MPC Code|SPV Code|SPV Name|CSO Code|CSO Name|PJP Plan Id|PJP Plan name|PJP start date|PJP end date|PJP created by|PJP creation date|PJP Frequency|PJP Modify Date|PJP Status|Outlet Code|Total Planned calls|Planned Days",
+		"fields": "region,area,sales_area,cluster,micro_cluster,mpc_code,spv_code,spv_name,cso_code,cso_name,pjp_plan_id,pjp_plan_name,pjp_start_date,pjp_end_date,pjp_created_by,pjp_creation_date,pjp_frequency,pjp_modify_date,pjp_status,outlet_code,total_planned_calls,planned_days"
+	}
+}

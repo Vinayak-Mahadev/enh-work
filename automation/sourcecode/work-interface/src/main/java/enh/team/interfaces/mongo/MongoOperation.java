@@ -1,18 +1,14 @@
 package enh.team.interfaces.mongo;
 
 import java.io.BufferedReader;
-import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileReader;
-import java.io.FileWriter;
 import java.io.IOException;
-import java.io.Writer;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.HashMap;
-import java.util.LinkedHashMap;
-import java.util.LinkedList;
+import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
@@ -24,57 +20,75 @@ import org.json.JSONArray;
 import org.json.JSONObject;
 
 import com.finevm.enh.util.MongoDB;
-import com.mongodb.AggregationOptions;
+import com.finevm.enh.util.TestWriter;
 import com.mongodb.BasicDBList;
 import com.mongodb.BasicDBObject;
-import com.mongodb.Cursor;
 import com.mongodb.DB;
 import com.mongodb.DBCollection;
 import com.mongodb.DBCursor;
 import com.mongodb.DBObject;
-import com.mongodb.util.JSON;
+
 
 public class MongoOperation {
 
 
+	TestWriter writer = TestWriter.getWriter("test.txt");
 	DateTimeFormatter EEEE_dateTimeFormat = DateTimeFormat.forPattern("EEEE");
 	SimpleDateFormat dd_MM_yyyy_DateFormat = new SimpleDateFormat("dd-MM-yyyy");
 
+	public void journeyPlanSummaryReport15055_Step_1(DBObject pjpConfigTemplate) {
 
-	public void journeyPlanSummaryReport15055(DBObject pjpConfigTemplate, final Date unConvertedDate) 
-	{
+
+		writer.writeln("[PjpPlanDetailsDump] Entry processRequest..");
+
+		Long startTime = null;
+		Long endTime = null;
+
+
 		DB primaryDB = null;
-		DB secondaryDB = null;
-		DB tertiaryDB = null;
+		DB primaryChildDB = null;
 		DBObject queryDbObject = null;
 		DBObject projectionDbObject = null;
 		DBObject orderBy = null;
 		DBCursor cursor = null;
 		List<Long> orgIDs = null;
 		BasicDBObject primaryDBobj = null;
-		BasicDBObject secondaryDBobj = null;
-		BasicDBObject tertiaryDBobj = null;
+		BasicDBObject primaryChildDBobj = null;
 
-		final DateTime givenDate  =   new DateTime(unConvertedDate);
 
 		DateTime firstDateOfMonth =   null;
 		DateTime lastDateOfMonth  =   null;
 
-		try 
+
+		DateTime currentDate  =   new DateTime(new Date());
+		JSONObject writeJsonObj = null;
+		//JSONObject mapOfWriteJsonObj = new JSONObject();
+		JSONArray mapOfWriteJsonObj = new JSONArray();
+		DateTimeFormatter EEE_dateTimeFormat = DateTimeFormat.forPattern("EEE");
+		SimpleDateFormat dd_MM_yyyy_DateFormat = new SimpleDateFormat("dd-MM-yyyy");
+
+
+
+		try
 		{
-
-			firstDateOfMonth =   new DateTime(givenDate.getYear(), givenDate.getMonthOfYear(), givenDate.dayOfMonth().getMinimumValue(), 0, 0);
-			lastDateOfMonth  =   new DateTime(givenDate.getYear(), givenDate.getMonthOfYear(), givenDate.dayOfMonth().getMaximumValue(), 0, 0);
-
-			System.out.println("GivenDate  :  "+dd_MM_yyyy_DateFormat.format(givenDate.toDate()) + "  |   Day  :  "+EEEE_dateTimeFormat.print(givenDate));
-
-			System.out.println("FirstDateOfMonth  :  "+dd_MM_yyyy_DateFormat.format(firstDateOfMonth.toDate()) + "  |   Day  :  "+EEEE_dateTimeFormat.print(firstDateOfMonth));
-
-			System.out.println("LastDateOfMonth  :  "+dd_MM_yyyy_DateFormat.format(lastDateOfMonth.toDate()) + "  |   Day  :  "+EEEE_dateTimeFormat.print(lastDateOfMonth));
+			startTime = System.currentTimeMillis();
 
 
 
-			// start ---------------------------   	primary 		
+			if(pjpConfigTemplate.get("custom-date-format")!=null && pjpConfigTemplate.get("custom-date-value")!=null) {
+				if(pjpConfigTemplate.get("custom-date-format").toString().equals("dd-MM-yyyy"))
+					currentDate =  new DateTime(dd_MM_yyyy_DateFormat.parse(pjpConfigTemplate.get("custom-date-value").toString()));
+			}
+			else
+				currentDate  =   new DateTime(new Date());
+
+			firstDateOfMonth =   new DateTime(currentDate.getYear(), currentDate.getMonthOfYear(), currentDate.dayOfMonth().getMinimumValue(), 0, 0);
+			lastDateOfMonth  =   new DateTime(currentDate.getYear(), currentDate.getMonthOfYear(), currentDate.dayOfMonth().getMaximumValue(), 0, 0);
+
+			writer.writeln("CurrentDate  :  "+dd_MM_yyyy_DateFormat.format(currentDate.toDate()) + "  |   Day  :  "+EEE_dateTimeFormat.print(currentDate));
+			writer.writeln("FirstDateOfMonth  :  "+dd_MM_yyyy_DateFormat.format(firstDateOfMonth.toDate()) + "  |   Day  :  "+EEE_dateTimeFormat.print(firstDateOfMonth));
+			writer.writeln("LastDateOfMonth  :  "+dd_MM_yyyy_DateFormat.format(lastDateOfMonth.toDate()) + "  |   Day  :  "+EEE_dateTimeFormat.print(lastDateOfMonth));
+
 
 			primaryDBobj = (BasicDBObject) (pjpConfigTemplate.get("Primary"));
 			primaryDB = MongoDB.getMongoClient(primaryDBobj.getString("connection-id")).getDB(primaryDBobj.getString("schema-name"));
@@ -88,306 +102,339 @@ public class MongoOperation {
 
 			projectionDbObject  = (DBObject) primaryDBobj.get("projection");
 			orderBy = (DBObject) primaryDBobj.get("sort-by");
-			System.out.println("primary queryDbObject "+ queryDbObject);
+			writer.writeln("primary queryDbObject "+ queryDbObject);
 			cursor = primaryDB.getCollection(primaryDBobj.getString("collection-name")).find(queryDbObject, projectionDbObject).sort(orderBy);
 			orgIDs = new ArrayList<Long>();
 
 			if(cursor==null || cursor.count()==0)
 			{
-				System.out.println("No org found...");
+				writer.writeln("No org found...");
 				return;
 			}
 			for (DBObject dbObject : cursor) {
 				orgIDs.add(Long.parseLong(dbObject.get("_id")!=null ? dbObject.get("_id").toString() : "0"));
 			}
 
-			System.out.println("total orgIDs ::: "+orgIDs.size());
-			System.out.println(orgIDs+"\n\n\n");
+			writer.writeln("total orgIDs ::: "+orgIDs.size());
+			writer.writeln(orgIDs+"\n\n\n");
 
 			//-------------------------------------- Primary end ------------------------------------------
-			//-------------------------------------- secondary start ------------------------------------------
+
+			//-------------------------------------- Primary child start ------------------------------------------
 
 
-			secondaryDBobj = (BasicDBObject) (pjpConfigTemplate.get("Secondary"));
-			secondaryDB = MongoDB.getMongoClient(secondaryDBobj.getString("connection-id")).getDB(secondaryDBobj.getString("schema-name"));
-
-
-			queryDbObject = new BasicDBObject();
-
-			queryDbObject.put("org_id", new BasicDBObject("$in",orgIDs));
-
-			queryDbObject.put("schedule_dt",new BasicDBObject("$gte",firstDateOfMonth.toDate()).append("$lte",givenDate.toDate() ));
-
-			projectionDbObject  = (DBObject) secondaryDBobj.get("projection");
-			System.out.println(queryDbObject);
-
-			orderBy = (DBObject) secondaryDBobj.get("sort-by");
-			cursor = secondaryDB.getCollection(secondaryDBobj.getString("collection-name")).find(queryDbObject).sort(orderBy);
-			//			cursor = secondaryDB.getCollection(secondaryDBobj.getString("collection-name")).find(queryDbObject, projectionDbObject).sort(orderBy);
-
-			if(cursor==null || cursor.count()==0)
-			{
-				System.out.println("No secondary data found...");
-
-			}
-			else {
-				System.out.println("\n\nsecondary cursor count ::: "+cursor.count());
-				System.out.println("secondary data   :   ");
-				for (DBObject dbObject : cursor) {
-					System.out.println(dbObject);
-					break;
-				}
-			}
-			System.out.println("\n\n\n");
-			//-------------------------------------- secondary end ------------------------------------------
-
-
-			//-------------------------------------- tertiary start ------------------------------------------
-			tertiaryDBobj = (BasicDBObject) (pjpConfigTemplate.get("Tertiary"));
-			
-			tertiaryDB = MongoDB.getMongoClient(tertiaryDBobj.getString("connection-id")).getDB(tertiaryDBobj.getString("schema-name"));
+			primaryChildDBobj = (BasicDBObject) (pjpConfigTemplate.get("Primary-child"));
+			primaryChildDB = MongoDB.getMongoClient(primaryChildDBobj.getString("connection-id")).getDB(primaryChildDBobj.getString("schema-name"));
 
 
 			queryDbObject = new BasicDBObject();
+			for (Object obj : (BasicDBList)primaryChildDBobj.get("parameters")) {
+				DBObject dbObj = (DBObject) obj;
+				queryDbObject.put(dbObj.get("param-name").toString(), dbObj.get("param-value"));
+			}
+			queryDbObject.put(primaryChildDBobj.getString("Primary-result-in-query"), new BasicDBObject("$in",orgIDs));
 
-			queryDbObject.put("dist_org_id", new BasicDBObject("$in",orgIDs));
+			//queryDbObject.put("schedule_dt",new BasicDBObject("$gte",firstDateOfMonth.toDate()).append("$lte",currentDate.toDate() ));
 
-			queryDbObject.put("start_dt", new BasicDBObject("$gte",givenDate.toDate()));
-			queryDbObject.put("end_dt", new BasicDBObject("$lte",lastDateOfMonth.toDate()));
+			projectionDbObject  = (DBObject) primaryChildDBobj.get("projection");
+			writer.writeln("Primary child  QueryDBObject    "+queryDbObject);
 
-			projectionDbObject  = (DBObject) tertiaryDBobj.get("projection");
-			System.out.println(queryDbObject);
-			orderBy = (DBObject) tertiaryDBobj.get("sort-by");
-			cursor = tertiaryDB.getCollection(tertiaryDBobj.getString("collection-name")).find(queryDbObject).sort(orderBy);
-			//			cursor = secondaryDB.getCollection(tertiaryDBobj.getString("collection-name")).find(queryDbObject, projectionDbObject).sort(orderBy);
+			orderBy = (DBObject) primaryChildDBobj.get("sort-by");
+			cursor = primaryChildDB.getCollection(primaryChildDBobj.getString("collection-name")).find(queryDbObject, projectionDbObject).sort(orderBy);
 
 			if(cursor==null || cursor.count()==0)
 			{
-				System.out.println("No tertiary data found...");
+				writer.writeln("No primaryChild data found...");
+
 			}
 			else {
-				System.out.println("\n\ntertiary cursor count ::: "+cursor.count());
-				System.out.println("Tertiary data found...");
-				for (DBObject dbObject : cursor) {
-					System.out.println(dbObject);
-					break;
+				writer.writeln("\n\nprimary Child cursor count ::: "+cursor.count());
+				writer.writeln("primary child  data   :   ");
+				for (DBObject object : cursor) {
+					BasicDBObject dbObject = (BasicDBObject) object;
+					writeJsonObj = new JSONObject();
+					//writer.writeln("primary child cursor dbObject  "+ dbObject);
+					writeJsonObj.put("region", dbObject.get("region_name"));
+					writeJsonObj.put("area", dbObject.get("sub_area_name"));
+					writeJsonObj.put("sales_area", dbObject.get("sales_area_name"));
+					writeJsonObj.put("cluster", dbObject.get("cluster_name"));
+					writeJsonObj.put("micro_cluster", dbObject.get("micro_cluster_name"));
+					writeJsonObj.put("mpc_code", dbObject.get("mpc_short_code"));
+					writeJsonObj.put("spv_code", dbObject.get("supervisor_code"));
+					writeJsonObj.put("spv_name", dbObject.get("supervisor_mobile_number"));
+					writeJsonObj.put("cso_code", dbObject.get("cso_code"));
+					writeJsonObj.put("outlet_code", dbObject.get("outlet_org_id"));
+
+					if(dbObject.get("cso_code")!=null && dbObject.get("cso_code").toString().isEmpty()) {
+						queryDbObject = new BasicDBObject();
+						queryDbObject.put("operator_id", dbObject.get("cso_code").toString());
+						projectionDbObject = new BasicDBObject();
+						projectionDbObject.put("operator_id", 1);
+						projectionDbObject.put("operator_nm", 1);
+						projectionDbObject.put("_id", 1);
+						DBObject resultDBobj = primaryChildDB.getCollection("user_dtls_dump").findOne(queryDbObject);
+						if(resultDBobj!=null && resultDBobj.get("operator_nm")!=null && !resultDBobj.get("operator_nm").toString().isEmpty()) {
+							writeJsonObj.put("cso_name",resultDBobj.get("operator_nm"));
+							writer.writeln("resultDBobj.get(\"operator_nm\")     "+resultDBobj.get("operator_nm"));
+						}
+						else {
+							writeJsonObj.put("cso_name", "");
+						}
+					}
+					else {
+						writeJsonObj.put("cso_name", "");
+					}
+
+
+					//mapOfWriteJsonObj.put(dbObject.get("outlet_org_id").toString(), writeJsonObj);
+
+					long orgId = Long.parseLong(writeJsonObj.get("outlet_code").toString());
+					journeyPlanSummaryReport15055_Step_3_find_org_id_from_beat_schedule(orgId, writeJsonObj, pjpConfigTemplate);
+					journeyPlanSummaryReport15055_Step_2_find_org_id_from_beat_defn(orgId, writeJsonObj, pjpConfigTemplate);
+
+					mapOfWriteJsonObj.put(writeJsonObj);
+					//break;
 				}
 			}
+			writer.writeln(mapOfWriteJsonObj);
+			writer.writeln("\n\n\n");
+			//-------------------------------------- primary child end ------------------------------------------
 
-			//-------------------------------------- tertiary end ------------------------------------------
-			System.out.println("\n\n\n\n\n");
+
 		}
-		catch (Exception e) 
+		catch(Exception exception)
 		{
-			e.printStackTrace();
+			writer.writeln("[PjpPlanDetailsDump] - Exception :: " + exception.getMessage());
+			exception.printStackTrace();
 		}
-		finally {
-			MongoDB.closeAllConnection();
+		finally
+		{
+
 			primaryDB = null;
-			secondaryDB = null;
 			cursor = null;
 			orgIDs = null;
 			queryDbObject = null;
 			projectionDbObject = null;
-
+			endTime = System.currentTimeMillis();
+			writer.writeln("PjpPlanDetailsDump : Exit processRequest.. "+(endTime - startTime)+"\n\n\n\n");
+			writeJsonObj = null;
+			endTime = null;
+			startTime = null;
+			MongoDB.closeAllConnection();
 		}
+
 
 
 	}
 
 
-	public static DBObject keyValueExchange(String confStr) {
+	public void journeyPlanSummaryReport15055_Step_2_find_org_id_from_beat_defn(final long orgId, final JSONObject info, final DBObject pjpConfigTemplate) {
 
-		BasicDBObject confObj = (BasicDBObject) JSON.parse(confStr);
-		BasicDBObject newObj = new BasicDBObject();
-		for(String field : confObj.keySet())
+
+		writer.writeln("[PjpPlanDetailsDump] Entry processRequest..");
+
+		Long startTime = null;
+		Long endTime = null;
+
+		DB dB = null;
+		DBObject queryDbObject = null;
+		DBObject projectionDbObject = null;
+		DBObject orderBy = null;
+		DBCursor cursor = null;
+		BasicDBObject templateObj = null;
+
+		DateTime firstDateOfMonth =   null;
+		DateTime lastDateOfMonth  =   null;
+		DateTime currentDate  =   new DateTime(new Date());
+
+		DateTimeFormatter EEE_dateTimeFormat = DateTimeFormat.forPattern("EEE");
+		SimpleDateFormat dd_MM_yyyy_DateFormat = new SimpleDateFormat("dd-MM-yyyy");
+
+		try
 		{
-			newObj.put(confObj.getString(field), field);
-		}
+			startTime = System.currentTimeMillis();
 
-		return newObj;
-	}
+			if(pjpConfigTemplate.get("custom-date-format")!=null && pjpConfigTemplate.get("custom-date-value")!=null) {
+				if(pjpConfigTemplate.get("custom-date-format").toString().equals("dd-MM-yyyy"))
+					currentDate =  new DateTime(dd_MM_yyyy_DateFormat.parse(pjpConfigTemplate.get("custom-date-value").toString()));
+			}
+			else
+				currentDate  =   new DateTime(new Date());
 
-	public Cursor match(DBCollection collection,String key, Object value){
+			firstDateOfMonth =   new DateTime(currentDate.getYear(), currentDate.getMonthOfYear(), currentDate.dayOfMonth().getMinimumValue(), 0, 0);
+			lastDateOfMonth  =   new DateTime(currentDate.getYear(), currentDate.getMonthOfYear(), currentDate.dayOfMonth().getMaximumValue(), 0, 0);
 
-		DBObject       match    = new BasicDBObject();
-		DBObject       matchObj = new BasicDBObject();
-		List<DBObject> pipeline = new ArrayList<DBObject>();
+			writer.writeln("CurrentDate  :  "+dd_MM_yyyy_DateFormat.format(currentDate.toDate()) + "  |   Day  :  "+EEE_dateTimeFormat.print(currentDate));
+			writer.writeln("FirstDateOfMonth  :  "+dd_MM_yyyy_DateFormat.format(firstDateOfMonth.toDate()) + "  |   Day  :  "+EEE_dateTimeFormat.print(firstDateOfMonth));
+			writer.writeln("LastDateOfMonth  :  "+dd_MM_yyyy_DateFormat.format(lastDateOfMonth.toDate()) + "  |   Day  :  "+EEE_dateTimeFormat.print(lastDateOfMonth));
 
-		matchObj.put(key, value);
-		match.put("$match", matchObj);
 
-		pipeline.add(match);
-		return aggregate(collection, pipeline);
-	}	
+			templateObj = (BasicDBObject) (pjpConfigTemplate.get("Tertiary"));
+			dB = MongoDB.getMongoClient(templateObj.getString("connection-id")).getDB(templateObj.getString("schema-name"));
 
-	public boolean insertDBObject(DB db,String collectionName, DBObject dbo) {
-		try {
-			db.getCollection(collectionName).insert(dbo);
-			return true;
-		} catch (Exception e) {
-			System.out.println("Insertion failed");
-			e.printStackTrace();
-		}
-		return false;
-	}
+			queryDbObject = new BasicDBObject();
+			queryDbObject.put("start_dt", new BasicDBObject("$gte",currentDate.toDate()));
+			queryDbObject.put("end_dt", new BasicDBObject("$lte",lastDateOfMonth.toDate()));
+			queryDbObject.put("retailers", new BasicDBObject("$elemMatch",new BasicDBObject("org_id", orgId)));
 
-	public void copyCollection(DB from , DB to ,String collectionName) {
-
-		Cursor       cursor           = null;
-		DBCollection toDBCollection   = null;
-		DBCollection fromDBCollection = null;
-		try {
-			toDBCollection    = to.getCollection(collectionName);
-			fromDBCollection  = from.getCollection(collectionName);
-			cursor            = fromDBCollection.find();
-			while(cursor.hasNext())
-				toDBCollection.insert(cursor.next());
-			cursor = toDBCollection.getDB().getCollection(collectionName).find();
-			System.out.println("-----------------------------"+collectionName+"------------------------------------");
-			while(cursor.hasNext())
-				System.out.println(cursor.next());
-		} finally {
-			toDBCollection      = null;
-			fromDBCollection    = null;
-			cursor              = null;
-			from                = null;
-			to	                = null;
-			collectionName      = null;
-		}	
-	}
-
-	public void twoColumnMatch(DBCollection collection1, DBCollection collection2, String key1, String key2, String getValue) {
-
-		DBObject dbo1 = null;
-		DBObject dbo2 = null;
-		Cursor cursor1= null;
-		Cursor cursor2=null;
-		int i = 0;
-		int j = 0;
-
-		try {
-			cursor1 = collection1.find().sort(new BasicDBObject(key1, 1));
-			collection1   = null;
-			while(cursor1.hasNext()){
-				dbo1 = cursor1.next();
-				cursor2 = collection2.find(new BasicDBObject(key2,""+(dbo1.get(key1).toString())));
-				System.out.println(++i+".  "+key1+" < "+dbo1.get(key1)+" > -"+getValue+"- < "+dbo1.get(getValue)+" >\n");
-				j = 0;
-				while(cursor2.hasNext()){
-					dbo2 = cursor2.next();
-					System.out.println("\t"+(++j)+". "+dbo2.get(getValue));
+			if(templateObj.get("parameters")!=null && templateObj.get("parameters") instanceof BasicDBList) {
+				for (Object obj : (BasicDBList)templateObj.get("parameters")) {
+					DBObject dbObj = (DBObject) obj;
+					queryDbObject.put(dbObj.get("param-name").toString(), dbObj.get("param-value"));
 				}
-
-				System.out.println("----------------------------------------------------------------------");
-			}
-		} finally {
-			collection1   = null;
-			collection2   = null;
-			cursor1       = null;
-			cursor2       = null;
-			dbo1		  = null;
-			dbo2          = null;
-		}
-
-	}
-
-	public Cursor aggregate(DBCollection collection, List<DBObject> pipeline) {
-		try {
-			AggregationOptions aggregationOptions = AggregationOptions.builder()
-					.outputMode(AggregationOptions.OutputMode.CURSOR).build(); 
-
-			return	collection.aggregate(pipeline, aggregationOptions);
-		} 
-		catch (Exception e) {
-			e.printStackTrace();
-			return null;
-		}
-	}
-
-	public Cursor find(DB db,String collectionName, DBObject dbObject) {
-		try {
-			return db.getCollection(collectionName).find(dbObject);	
-
-		} catch (Exception e) {
-			e.printStackTrace();
-			return null;
-		}
-	}
-
-	public Map<String,Object> createMap(Cursor cursor,String key,String value) {
-		Map<String, Object> map = new LinkedHashMap<>();
-		map.put(key, value);
-		try {
-			while (cursor.hasNext()) {
-				DBObject dbObject = (DBObject) cursor.next();
-				map.put(
-						dbObject.get(key).toString(), dbObject
-						);
 			}
 
-			return map;
-		} catch (Exception e) {
-			e.printStackTrace();		
-			return null;
-		}
-	}
+			projectionDbObject  = (DBObject) templateObj.get("projection");
+			orderBy = (DBObject) templateObj.get("sort-by");
+			writer.writeln("queryDbObject ::: "+ queryDbObject);
+			writer.writeln("projectionDbObject ::: "+ projectionDbObject);
+			writer.writeln("orderBy ::: "+ orderBy+"\n\n");
 
-	public boolean writeMapToCSVFile(Map<String,Object> myHashMap, String filename) {
-		try (Writer writer = new BufferedWriter(new  FileWriter(csvFilelocation+filename+csv))) {
-			for (Map.Entry<String, Object> entry : myHashMap.entrySet()) {
-				writer.write(entry.getKey() + delimiter + entry.getValue().toString() + delimiter+eol);
+			cursor = dB.getCollection(templateObj.getString("collection-name")).find(queryDbObject, projectionDbObject).sort(orderBy);
+
+
+			if(cursor==null || cursor.count()==0)
+			{
+				writer.writeln("No beat_defn data found...");
+				return;
 			}
-		} catch (IOException ex) {
-			ex.printStackTrace(System.err);
-		}
-		return false;
-	}
-
-	public static boolean writeListToCSVFile(List<String> list, String filename) {
-		try (Writer writer = new BufferedWriter(new  FileWriter(csvFilelocation+filename+csv))) {
-			for(String line : list){ 
-				writer.write(line+eol);
+			writer.writeln("\n\n\n");
+			writer.writeln("cursor beat_defn count ::: "+cursor.count());
+			for (DBObject object : cursor) {
+				BasicDBObject dbObject = (BasicDBObject) object;
+				writer.writeln(dbObject);
 			}
-		} catch (IOException ex) {
-			ex.printStackTrace(System.err);
+
+			writer.writeln("\n\n\n");
+
+
 		}
-		return false;
+		catch(Exception exception)
+		{
+			writer.writeln("[PjpPlanDetailsDump] - Exception :: " + exception.getMessage());
+			exception.printStackTrace();
+		}
+		finally
+		{
+
+			dB = null;
+			cursor = null;
+			queryDbObject = null;
+			projectionDbObject = null;
+			endTime = System.currentTimeMillis();
+			writer.writeln("PjpPlanDetailsDump : Exit processRequest.. "+(endTime - startTime)+"\n\n\n\n");
+			endTime = null;
+			startTime = null;
+		}
+
+
+
+
 	}
 
-	public void fetchData(JSONArray keyField, JSONObject fetchedData) throws Exception 
-	{
-		BufferedReader reader = null;
-		List<JSONObject> list = new LinkedList<>();
 
-		String fileName = "nodes";
-		String separator = "|";
-		String line = null;
-		try {
-			reader = new BufferedReader(new FileReader(csvFilelocation+fileName+csv));
+	public void journeyPlanSummaryReport15055_Step_3_find_org_id_from_beat_schedule(final long orgId, final JSONObject info, final DBObject pjpConfigTemplate) {
 
 
-			line = reader.readLine();
+		writer.writeln("[PjpPlanDetailsDump] Entry processRequest..");
 
-			while (line != null) {
-				System.out.println(line.substring(line.lastIndexOf(separator)+1, line.length()).toString());
-				JSONObject jsonObject = new JSONObject(line.substring(line.lastIndexOf(separator)+1, line.length()).toString());
-				list.add(jsonObject);
-				line = reader.readLine();
+		Long startTime = null;
+		Long endTime = null;
+
+		DB dB = null;
+		DBObject queryDbObject = null;
+		DBObject projectionDbObject = null;
+		DBObject orderBy = null;
+		DBCursor cursor = null;
+		Set<Long> orgIDs = null;
+		BasicDBObject templateObj = null;
+
+		DateTime firstDateOfMonth =   null;
+		DateTime lastDateOfMonth  =   null;
+		DateTime currentDate  =   new DateTime(new Date());
+
+		DateTimeFormatter EEE_dateTimeFormat = DateTimeFormat.forPattern("EEE");
+		SimpleDateFormat dd_MM_yyyy_DateFormat = new SimpleDateFormat("dd-MM-yyyy");
+
+		try
+		{
+			startTime = System.currentTimeMillis();
+
+			if(pjpConfigTemplate.get("custom-date-format")!=null && pjpConfigTemplate.get("custom-date-value")!=null) {
+				if(pjpConfigTemplate.get("custom-date-format").toString().equals("dd-MM-yyyy"))
+					currentDate =  new DateTime(dd_MM_yyyy_DateFormat.parse(pjpConfigTemplate.get("custom-date-value").toString()));
 			}
-			reader.close();
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-		finally {
-			System.out.println("-----------------------------------------");
-			if(!list.isEmpty())
-				for (JSONObject jsonObject : list) 
-					System.out.println(jsonObject);
+			else
+				currentDate  =   new DateTime(new Date());
+
+			firstDateOfMonth =   new DateTime(currentDate.getYear(), currentDate.getMonthOfYear(), currentDate.dayOfMonth().getMinimumValue(), 0, 0);
+			lastDateOfMonth  =   new DateTime(currentDate.getYear(), currentDate.getMonthOfYear(), currentDate.dayOfMonth().getMaximumValue(), 0, 0);
+
+			writer.writeln("CurrentDate  :  "+dd_MM_yyyy_DateFormat.format(currentDate.toDate()) + "  |   Day  :  "+EEE_dateTimeFormat.print(currentDate));
+			writer.writeln("FirstDateOfMonth  :  "+dd_MM_yyyy_DateFormat.format(firstDateOfMonth.toDate()) + "  |   Day  :  "+EEE_dateTimeFormat.print(firstDateOfMonth));
+			writer.writeln("LastDateOfMonth  :  "+dd_MM_yyyy_DateFormat.format(lastDateOfMonth.toDate()) + "  |   Day  :  "+EEE_dateTimeFormat.print(lastDateOfMonth));
+
+
+			templateObj = (BasicDBObject) (pjpConfigTemplate.get("Secondary"));
+			dB = MongoDB.getMongoClient(templateObj.getString("connection-id")).getDB(templateObj.getString("schema-name"));
+
+			queryDbObject = new BasicDBObject();
+			queryDbObject.put("schedule_dt",new BasicDBObject("$gte",firstDateOfMonth.toDate()).append("$lte",currentDate.toDate() ));
+			queryDbObject.put("org_id", orgId);
+
+			for (Object obj : (BasicDBList)templateObj.get("parameters")) {
+				DBObject dbObj = (DBObject) obj;
+				queryDbObject.put(dbObj.get("param-name").toString(), dbObj.get("param-value"));
+			}
+
+			projectionDbObject  = (DBObject) templateObj.get("projection");
+			orderBy = (DBObject) templateObj.get("sort-by");
+			writer.writeln("primary queryDbObject ::: "+ queryDbObject);
+			cursor = dB.getCollection(templateObj.getString("collection-name")).find(queryDbObject,projectionDbObject).sort(orderBy);
+
+			orgIDs = new HashSet<Long>();
+
+			if(cursor==null || cursor.count()==0)
+			{
+				writer.writeln("No org found...");
+				return;
+			}
+			for (DBObject object : cursor) {
+				BasicDBObject dbObject = (BasicDBObject) object;
+				writer.writeln(dbObject);
+			}
+
+			writer.writeln("total orgIDs ::: "+orgIDs.size());
+			writer.writeln(orgIDs+"\n\n\n");
+			writer.writeln("\n\n\n");
+
 
 		}
+		catch(Exception exception)
+		{
+			writer.writeln("[PjpPlanDetailsDump] - Exception :: " + exception.getMessage());
+			exception.printStackTrace();
+		}
+		finally
+		{
+
+			dB = null;
+			cursor = null;
+			orgIDs = null;
+			queryDbObject = null;
+			projectionDbObject = null;
+			endTime = System.currentTimeMillis();
+			writer.writeln("PjpPlanDetailsDump : Exit processRequest.. "+(endTime - startTime)+"\n\n\n\n");
+			endTime = null;
+			startTime = null;
+		}
+
+
+
 
 	}
+
+
 
 	/**
 	 * <p>This method get the product_properties object with product_values's addnl_sl_ctgr details</p>
@@ -660,10 +707,10 @@ public class MongoOperation {
 
 
 
-	private static String csvFilelocation = "src/main/resources/file/csv/";
-	private static String csv  = ".csv";
-	private static String eol = System.getProperty("line.separator");
-	private String delimiter = "|";
+	static String csvFilelocation = "src/main/resources/file/csv/";
+	static String csv  = ".csv";
+	static String eol = System.getProperty("line.separator");
+	String delimiter = "|";
 	private BufferedReader  reader ;
 
 

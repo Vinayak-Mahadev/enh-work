@@ -3,6 +3,7 @@ package com.finevm.enh.util;
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Set;
 
 import org.json.JSONObject;
 
@@ -16,7 +17,7 @@ public class MongoDB {
 
 	private static final JSONObject MONGO_USERS = IWorkConstants.MONGODB_LIST;
 
-	private static final Map<String, MongoClient> MONGO_CLIENTS_MAP = new HashMap<String, MongoClient>();
+	private static final  Map<String, MongoClient> MONGO_CLIENTS_MAP = new HashMap<String, MongoClient>();
 
 	private  MongoDB(){
 
@@ -128,23 +129,39 @@ public class MongoDB {
 	 *and it will remove MongoClient reference from MONGOCLIENT_MAP </pre>
 	 */
 	public static void closeAllConnection(){
+		try {
 
-		for (String key : MONGO_CLIENTS_MAP.keySet()) {
-			closeConnection(key);
+
+			Set<String> keys = MONGO_CLIENTS_MAP.keySet();
+			for (String key : keys) {
+				closeConnection(key);
+			}
+			System.out.println(MONGO_CLIENTS_MAP);
+
+		} catch (Exception e) {
+			
+			e.printStackTrace();
 		}
 	}
 
 	public static void closeConnection(String mongoUrlPort) {
+		try {
 
-		if(MONGO_CLIENTS_MAP.get(mongoUrlPort)!=null) {
-			MONGO_CLIENTS_MAP.get(mongoUrlPort).close();
-			MONGO_CLIENTS_MAP.remove(mongoUrlPort);
-			System.out.println("connection closed for id : "+mongoUrlPort);
-		}
-		else {
-			System.out.println("No connection present for id : "+mongoUrlPort);
-		}
 
+			if(MONGO_CLIENTS_MAP.get(mongoUrlPort)!=null) {
+				MONGO_CLIENTS_MAP.get(mongoUrlPort).close();
+				MONGO_CLIENTS_MAP.put(mongoUrlPort, null);
+				//	MONGO_CLIENTS_MAP.remove(mongoUrlPort);
+				System.out.println("connection closed for id : "+mongoUrlPort);
+			}
+			else {
+				System.out.println("No connection present for id : "+mongoUrlPort);
+			}
+
+
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
 	}
 
 	public static void closeConnection(PropType mongoUrlPort) {

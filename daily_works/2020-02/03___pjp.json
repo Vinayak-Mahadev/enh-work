@@ -1,0 +1,142 @@
+Beat Definition : "beat_defn"
+
+"asssigned_node_ids" --> User assigned to this node performs Beat
+"asssigned_user_ids" -- > The Users assigned to perform Beat
+"dist_org_id" --> Organization(Dealer) assigning the Beat
+"retailers.org_id" --> Organizations(Outlets) on which Beat is performed
+
+
+{
+    "_id" : NumberLong(89442),
+    "activities" : [ 
+        {
+            "act_id" : NumberLong(551),
+            "mandatory" : 1,
+            "lat_long" : 0
+        }
+	],   
+    "asssigned_node_ids" : [ 
+        303628
+    ],
+    "asssigned_user_ids" : [ 
+        277096
+    ],
+    "crtd_by" : NumberLong(277090),
+    "crtd_dt" : ISODate("2019-06-27T09:06:06.811Z"),
+    "dist_org_id" : 294249,
+    "end_dt" : ISODate("2019-06-30T18:29:59.999Z"),
+    "end_point" : {},
+    "filter_Org_Type" : 66,
+    "holiday_type" : 1,
+    "is_proccessed" : 0,
+    "is_self" : 0,
+    "name" : "AristoOrg01",
+    "node_id" : 303623,
+    "planned_distance" : "0.0",
+    "ret_sel_mode" : 1,
+    "retailers" : [ 
+        {
+            "org_id" : 294291,
+            "priority" : 1
+        }, 
+        {
+            "org_id" : 294407,
+            "priority" : 2
+        }, 
+        {
+            "org_id" : 294408,
+            "priority" : 3
+        }
+    ],
+    "sale_territory" : "MC-BLOREM; CW-CJA-BLOREMPATIGRO; ASIA AFRIKA; CENTRAL JAVA1; Central and West Java; NASIONAL",
+    "schedule" : {
+        "schdlr_mode" : 1,
+        "schdlr_data" : {
+            "daily_mode" : 1,
+            "frequency" : 1
+        }
+    },
+    "search_param" : {
+        "node_id" : 303628
+    },
+    "start_dt" : ISODate("2019-06-26T18:30:00.000Z"),
+    "start_point" : {},
+    "status" : 174,
+    "updtd_by" : NumberLong(277330),
+    "updtd_dt" : ISODate("2020-01-13T06:39:39.843Z")
+}
+
+
+Region,Area,Sales  Area,Cluster,Micro  Cluster 
+MPC  Code
+SPV  Code
+SPV  Name
+CSO  Code
+CSO  Name
+PJP  Plan  Id
+PJP  Plan  name
+PJP  start  date
+PJP  end  date
+PJP  created  by
+PJP  creation  date
+PJP  Frequency
+PJP  Modify  Date
+PJP  Status
+Outlet  Code
+Plan Date - Plan Day
+
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Beat Schedule : "beat_schedule"
+
+"dist_org_id" --> Organization(Dealer) assigning the Beat
+"org_id" --> Organizations(Outlets) on which Beat is performed
+
+
+{
+    "_id" : "89642~89981~20190923~4441371",
+    "dist_org_id" : 294404,
+    "node_id" : NumberLong(303831),
+    "assigned_node_id" : NumberLong(303839),
+    "ent_no" : NumberLong(277349),
+    "ent_tp" : 730,
+    "acts" : [ 
+        {
+            "_id" : NumberLong(551),
+            "status" : NumberLong(169),
+            "mandatory" : 1,
+            "lat_long" : 0
+        }
+    ],
+    "status" : NumberLong(180),
+    "schedule_dt" : ISODate("2019-09-23T00:00:00.000Z"),
+    "crtd_by" : NumberLong(277330),
+    "created_dt" : ISODate("2019-11-13T09:43:23.902Z"),
+    "beat_id" : NumberLong(89642),
+    "beat_plan_id" : NumberLong(89981),
+    "schedule_dt_num" : NumberLong(20190923),
+    "org_id" : NumberLong(294419),
+    "beat_schedule_id" : NumberLong(4441371),
+    "priority" : NumberLong(2)
+}
+
+Region,Area,Sales  Area,Cluster,Micro  Cluster 
+MPC  Code
+SPV  Code
+SPV  Name
+CSO  Code
+CSO  Name
+PJP  Plan  Id
+PJP  Plan  name
+PJP  start  date
+PJP  end  date
+PJP  created  by
+PJP  creation  date
+PJP  Frequency
+PJP  Modify  Date
+PJP  Status
+Outlet  Code
+Plan Date - Plan Day
+
+
+

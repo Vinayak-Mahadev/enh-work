@@ -1,8 +1,6 @@
 package enh.team.interfaces.mongo;
 
 import java.io.File;
-import java.text.SimpleDateFormat;
-import java.util.Date;
 
 import com.finevm.enh.util.IWorkConstants;
 import com.mongodb.DBObject;
@@ -25,25 +23,18 @@ public class MongoApp
 
 		//  start--------------------- journeyPlanSummaryReport15055 -------------------------
 		//
-		String pathname = IWorkConstants.FILE_OPERATION_LOC+"\\PJP_TEST.json";
+		String pathname = IWorkConstants.FILE_OPERATION_LOC+"\\PJP_Planning_Details.json";
 		File file = new File(pathname);
 		String jsonStr = FileOperation.readFileWithoutNewLine(file);
 		Object o = com.mongodb.util.JSON.parse(jsonStr);
 
 		DBObject pjpConfigTemplate = (DBObject) o;
 
-
-		SimpleDateFormat dateFormat = new SimpleDateFormat("dd-MM-yyyy");
-		String givenDateStr = "15-11-2019";
-		Date convertedDate = dateFormat.parse(givenDateStr);
-
-
-
 		MongoOperation operation = new MongoOperation();
 
-		operation.journeyPlanSummaryReport15055(pjpConfigTemplate, convertedDate);
-
-
+		operation.journeyPlanSummaryReport15055_Step_1(pjpConfigTemplate);
+		//operation.journeyPlanSummaryReport15055_Step_3_find_org_id_from_beat_schedule(294826l, null, pjpConfigTemplate);
+		//		operation.journeyPlanSummaryReport15055_Step_2_find_org_id_from_beat_defn(294826l, null, pjpConfigTemplate);
 
 
 		// end--------------------- journeyPlanSummaryReport15055 -------------------------

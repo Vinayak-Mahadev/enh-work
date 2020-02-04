@@ -29,7 +29,7 @@ import com.jcraft.jsch.SftpException;
  * @author VINAY
  *
  */
-public class FineVMssh 
+public class SshOperation 
 {
 
 	private String  username;
@@ -44,10 +44,10 @@ public class FineVMssh
 	private ChannelSftp sftpChannel;
 	private ChannelExec execChannel;
 
-	private static  FineVMssh fineVMssh = null;
+	private static  SshOperation sshOperation = null;
 
 
-	public FineVMssh(Server server) throws Exception{
+	public SshOperation(Server server) throws Exception{
 		username = server.getUsername();
 		password = server.getPassword();
 		hostName = server.getHostName();
@@ -56,19 +56,19 @@ public class FineVMssh
 		session = getSession();
 	}
 
-	public static FineVMssh getFineVMssh(PropType serverType)throws Exception{
-		fineVMssh = new FineVMssh(new Server(serverType));
-		return fineVMssh;
+	public static SshOperation getSshOperation(PropType serverType)throws Exception{
+		sshOperation = new SshOperation(new Server(serverType));
+		return sshOperation;
 	}
-	public static FineVMssh getFineVMssh(String serverType)throws Exception{
-		fineVMssh = new FineVMssh(new Server(serverType));
-		return fineVMssh;
+	public static SshOperation getSshOperation(String serverType)throws Exception{
+		sshOperation = new SshOperation(new Server(serverType));
+		return sshOperation;
 	}
 
 
-	public static FineVMssh getFineVMssh(Server server)throws Exception{
-		fineVMssh = new FineVMssh(server);
-		return fineVMssh;
+	public static SshOperation getSshOperation(Server server)throws Exception{
+		sshOperation = new SshOperation(server);
+		return sshOperation;
 	}
 	public Session getSession() throws Exception{
 
@@ -91,7 +91,7 @@ public class FineVMssh
 		return session;
 	}
 
-	public FineVMssh connectExecChannel(){
+	public SshOperation connectExecChannel(){
 		try {
 			getSession();
 			channel = session.openChannel("exec");
@@ -138,7 +138,7 @@ public class FineVMssh
 
 
 
-	public FineVMssh setCommand(String cmd){
+	public SshOperation setCommand(String cmd){
 		try {
 			String command=JOptionPane.showInputDialog("Enter command", "set|grep SSH");
 
@@ -187,7 +187,7 @@ public class FineVMssh
 	}
 
 
-	public FineVMssh disconnect() {
+	public SshOperation disconnect() {
 
 		if (channel!=null) {
 
@@ -212,7 +212,7 @@ public class FineVMssh
 	 * @throws JSchException
 	 */
 	@SuppressWarnings("unused")
-	private FineVMssh createPath(String root, String createPath) throws SftpException, JSchException   {
+	private SshOperation createPath(String root, String createPath) throws SftpException, JSchException   {
 
 		channel = session.openChannel("sftp");
 		channel.connect();
@@ -294,7 +294,7 @@ public class FineVMssh
 
 		return sftpChannel;
 	}
-	public final FineVMssh upload(final String remoteFileName,final String remoteFileLocation,final String localDir) {
+	public final SshOperation upload(final String remoteFileName,final String remoteFileLocation,final String localDir) {
 
 		FileInputStream fis = null;
 		File file = null;
@@ -337,7 +337,7 @@ public class FineVMssh
 	 * @return
 	 * @author VINAY
 	 */
-	public final FineVMssh download(final String remoteFileName,final String remoteFileLocation,final String localDir) {
+	public final SshOperation download(final String remoteFileName,final String remoteFileLocation,final String localDir) {
 
 		byte[] buffer = new byte[1024];
 		BufferedInputStream bis;
@@ -385,7 +385,7 @@ public class FineVMssh
 	 * @throws SftpException
 	 * @author VINAY
 	 */
-	public final FineVMssh deleteFile(final String localDir, final String fileName) {
+	public final SshOperation deleteFile(final String localDir, final String fileName) {
 		try {
 
 			getsftpChannel().rm(localDir+fileName);
@@ -445,7 +445,7 @@ public class FineVMssh
 	 * @throws SftpException
 	 * @author VINAY
 	 */
-	public final FineVMssh deleteFileDir(final String localDir, final String fileDir) {
+	public final SshOperation deleteFileDir(final String localDir, final String fileDir) {
 		try {
 			channel =  session.openChannel("sftp");
 			channel.connect();
