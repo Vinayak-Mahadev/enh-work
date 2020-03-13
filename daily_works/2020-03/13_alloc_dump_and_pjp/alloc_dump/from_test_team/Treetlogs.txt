@@ -1,0 +1,288 @@
+
+
+2020-03-12 15:56:55.190, FINE, [Thread]: 1793 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  2779  Entry processReceivedFiles : interfaceId :: 1003
+2020-03-12 15:56:55.217, FINE, [Thread]: 1793 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  7748  Entry getInterfaceFileSummaryByInterfaceIdAndStatus.. Started at --> Thu Mar 12 15:56:55 WIB 2020
+2020-03-12 15:56:55.218, FINE, [Thread]: 1793 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  7757  getInterfaceFileSummaryByInterfaceIdAndStatus service received interface id-->1003statusId-->1321
+2020-03-12 15:56:55.232, FINE, [Thread]: 1793 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  7807  Exit getInterfaceFileSummaryByInterfaceIdAndStatus service at -->Thu Mar 12 15:56:55 WIB 2020 --- and took 15 milliseconds
+2020-03-12 15:56:55.246, FINE, [Thread]: 1793 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  10334  Entry getEncodedKey.. Started at --> Thu Mar 12 15:56:55 WIB 2020
+2020-03-12 15:56:55.247, FINE, [Thread]: 1793 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  10341  getEncodedKey service received file-->/home/appuser/interfaces/S-NOC/interfaces/master_file/sp_dump/ALLOC_DUMP_20200312000004.csv
+2020-03-12 15:56:55.249, FINE, [Thread]: 1793 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  10378  Exit getEncodedKey service at -->Thu Mar 12 15:56:55 WIB 2020 --- and took 3 milliseconds
+2020-03-12 15:56:55.311, FINE, [Thread]: 1793 [ClassName]: com.enhancesys.integration.services.merger.SPAllocDumpMerger [LineNumber]:  108  Starter Packs - Alloc Dump Started >> Interface ID ::1003 , File ID :: 40073
+2020-03-12 15:56:55.322, FINE, [Thread]: 1793 [ClassName]: com.enhancesys.integration.services.util.Utility [LineNumber]:  276  Entry backupFile..
+2020-03-12 15:56:55.345, FINE, [Thread]: 1793 [ClassName]: com.enhancesys.integration.services.util.Utility [LineNumber]:  320  Exit backupFile..
+2020-03-12 15:56:55.346, FINE, [Thread]: 1793 [ClassName]: com.enhancesys.integration.services.util.Utility [LineNumber]:  276  Entry backupFile..
+2020-03-12 15:56:55.351, FINE, [Thread]: 1793 [ClassName]: com.enhancesys.integration.services.util.Utility [LineNumber]:  320  Exit backupFile..
+2020-03-12 15:56:55.408, FINE, [Thread]: 1793 [ClassName]: com.enhancesys.integration.services.merger.SPAllocDumpMerger [LineNumber]:  229  Sort file script is initiated for file :: /home/appuser/interfaces/S-NOC/interfaces/backup/master_file/sp_dump/ALLOC_DUMP_20200312000004.csv.cp
+2020-03-12 15:56:55.468, FINE, [Thread]: 1793 [ClassName]: com.enhancesys.integration.services.merger.SPAllocDumpMerger [LineNumber]:  231  Process : waitFor() :: 0
+2020-03-12 15:56:55.536, FINE, [Thread]: 1793 [ClassName]: com.enhancesys.integration.services.merger.SPAllocDumpMerger [LineNumber]:  370  Remaining Record Count : 5
+2020-03-12 15:56:55.563, FINE, [Thread]: 1793 [ClassName]: com.enhancesys.integration.services.merger.SPAllocDumpMerger [LineNumber]:  376  File data inserted into the DB Successfully..
+2020-03-12 15:57:00.003, FINE, [Thread]: 75 [ClassName]: com.enhancesys.integration.scheduler.ProcessInQueueRecordsJob [LineNumber]:  55  Entry ProcessInQueueRecordsJob.. Started at --> Thu Mar 12 15:57:00 WIB 2020
+2020-03-12 15:57:00.003, FINE, [Thread]: 75 [ClassName]: com.enhancesys.integration.scheduler.ProcessInQueueRecordsJob [LineNumber]:  71  ProcessInQueueRecordsJob received interface id-->1102
+2020-03-12 15:57:00.004, FINE, [Thread]: 78 [ClassName]: com.enhancesys.integration.scheduler.ProcessPendingResponseConsumerJob [LineNumber]:  49  Entry ProcessPendingResponseConsumerJob.. Started at --> Thu Mar 12 15:57:00 WIB 2020
+2020-03-12 15:57:00.004, FINE, [Thread]: 78 [ClassName]: com.enhancesys.integration.scheduler.ProcessPendingResponseConsumerJob [LineNumber]:  58  ProcessConsumersJob received interface id-->1002
+2020-03-12 15:57:00.006, FINE, [Thread]: 73 [ClassName]: com.enhancesys.integration.scheduler.ProcessPendingResponseConsumerJob [LineNumber]:  49  Entry ProcessPendingResponseConsumerJob.. Started at --> Thu Mar 12 15:57:00 WIB 2020
+2020-03-12 15:57:00.006, FINE, [Thread]: 73 [ClassName]: com.enhancesys.integration.scheduler.ProcessPendingResponseConsumerJob [LineNumber]:  58  ProcessConsumersJob received interface id-->1004
+2020-03-12 15:57:00.007, FINE, [Thread]: 76 [ClassName]: com.enhancesys.integration.scheduler.ProcessPendingResponseConsumerJob [LineNumber]:  49  Entry ProcessPendingResponseConsumerJob.. Started at --> Thu Mar 12 15:57:00 WIB 2020
+2020-03-12 15:57:00.008, FINE, [Thread]: 76 [ClassName]: com.enhancesys.integration.scheduler.ProcessPendingResponseConsumerJob [LineNumber]:  58  ProcessConsumersJob received interface id-->1006
+2020-03-12 15:57:00.010, FINE, [Thread]: 79 [ClassName]: com.enhancesys.integration.scheduler.ProcessPendingResponseConsumerJob [LineNumber]:  49  Entry ProcessPendingResponseConsumerJob.. Started at --> Thu Mar 12 15:57:00 WIB 2020
+2020-03-12 15:57:00.010, FINE, [Thread]: 79 [ClassName]: com.enhancesys.integration.scheduler.ProcessPendingResponseConsumerJob [LineNumber]:  58  ProcessConsumersJob received interface id-->1008
+2020-03-12 15:57:00.010, FINE, [Thread]: 71 [ClassName]: com.enhancesys.integration.scheduler.ProcessResponseAvailableRecordsJob [LineNumber]:  50  Entry ProcessResponseAvailableRecordsJob.. Started at --> Thu Mar 12 15:57:00 WIB 2020
+2020-03-12 15:57:00.015, FINE, [Thread]: 74 [ClassName]: com.enhancesys.integration.scheduler.ProcessResponseAvailableRecordsJob [LineNumber]:  50  Entry ProcessResponseAvailableRecordsJob.. Started at --> Thu Mar 12 15:57:00 WIB 2020
+2020-03-12 15:57:00.020, FINE, [Thread]: 80 [ClassName]: com.enhancesys.integration.scheduler.ProcessResponseAvailableRecordsJob [LineNumber]:  50  Entry ProcessResponseAvailableRecordsJob.. Started at --> Thu Mar 12 15:57:00 WIB 2020
+2020-03-12 15:57:00.022, FINE, [Thread]: 72 [ClassName]: com.enhancesys.integration.scheduler.ProcessResponseAvailableRecordsJob [LineNumber]:  50  Entry ProcessResponseAvailableRecordsJob.. Started at --> Thu Mar 12 15:57:00 WIB 2020
+2020-03-12 15:57:00.024, FINE, [Thread]: 77 [ClassName]: com.enhancesys.integration.scheduler.ProcessResponseAvailableRecordsJob [LineNumber]:  50  Entry ProcessResponseAvailableRecordsJob.. Started at --> Thu Mar 12 15:57:00 WIB 2020
+2020-03-12 15:57:00.027, FINE, [Thread]: 1809 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  2030  Entry processResponseAvailableRecords : InterfaceId :: 1019, Started at :: Thu Mar 12 15:57:00 WIB 2020
+2020-03-12 15:57:00.028, FINE, [Thread]: 1809 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  2048  processResponseAvailableRecords service received status id --> 1303
+2020-03-12 15:57:00.029, FINE, [Thread]: 1789 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  2030  Entry processResponseAvailableRecords : InterfaceId :: 1020, Started at :: Thu Mar 12 15:57:00 WIB 2020
+2020-03-12 15:57:00.029, FINE, [Thread]: 1789 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  2048  processResponseAvailableRecords service received status id --> 1303
+2020-03-12 15:57:00.029, FINE, [Thread]: 1797 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  2030  Entry processResponseAvailableRecords : InterfaceId :: 1018, Started at :: Thu Mar 12 15:57:00 WIB 2020
+2020-03-12 15:57:00.036, FINE, [Thread]: 1797 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  2048  processResponseAvailableRecords service received status id --> 1303
+2020-03-12 15:57:00.041, FINE, [Thread]: 1809 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  2199  Exit processResponseAvailableRecords service :: InterfaceId :: 1019 at --> Thu Mar 12 15:57:00 WIB 2020 and took 9 milliseconds
+2020-03-12 15:57:00.045, INFO, [Thread]: 75 [ClassName]: com.enhancesys.integration.scheduler.ProcessInQueueRecordsJob [LineNumber]:  99  INT: 100 Process In-Queue Status Records Job is Initiated at Thu Mar 12 15:57:00 WIB 2020
+2020-03-12 15:57:00.046, INFO, [Thread]: 76 [ClassName]: com.enhancesys.integration.scheduler.ProcessPendingResponseConsumerJob [LineNumber]:  63  INT: 103 Process Pending Order Response JMS Queue Message Job is Initiated at Thu Mar 12 15:57:00 WIB 2020
+2020-03-12 15:57:00.049, INFO, [Thread]: 73 [ClassName]: com.enhancesys.integration.scheduler.ProcessPendingResponseConsumerJob [LineNumber]:  63  INT: 102 Process Pending Order Response JMS Queue Message Job is Initiated at Thu Mar 12 15:57:00 WIB 2020
+2020-03-12 15:57:00.049, FINE, [Thread]: 1789 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  2199  Exit processResponseAvailableRecords service :: InterfaceId :: 1020 at --> Thu Mar 12 15:57:00 WIB 2020 and took 21 milliseconds
+2020-03-12 15:57:00.049, INFO, [Thread]: 79 [ClassName]: com.enhancesys.integration.scheduler.ProcessPendingResponseConsumerJob [LineNumber]:  63  INT: 104 Process Pending Order Response JMS Queue Message Job is Initiated at Thu Mar 12 15:57:00 WIB 2020
+2020-03-12 15:57:00.051, INFO, [Thread]: 78 [ClassName]: com.enhancesys.integration.scheduler.ProcessPendingResponseConsumerJob [LineNumber]:  63  INT: 101 Process Pending Order Response JMS Queue Message Job is Initiated at Thu Mar 12 15:57:00 WIB 2020
+2020-03-12 15:57:00.052, FINE, [Thread]: 74 [ClassName]: com.enhancesys.integration.scheduler.ProcessResponseAvailableRecordsJob [LineNumber]:  75  Exit ProcessResponseAvailableRecordsJob at -->Thu Mar 12 15:57:00 WIB 2020 --- and took 38 milliseconds
+2020-03-12 15:57:00.057, FINE, [Thread]: 1810 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  1575  Entry processInQueueRecords : InterfaceId :: 1102, Status :: [1302], Started at :: Thu Mar 12 15:57:00 WIB 2020
+2020-03-12 15:57:00.057, FINE, [Thread]: 1810 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  1592  processInQueueRecords service required status list --> [1300, 1306, 1302] and partnerd list --> null
+2020-03-12 15:57:00.057, FINE, [Thread]: 80 [ClassName]: com.enhancesys.integration.scheduler.ProcessResponseAvailableRecordsJob [LineNumber]:  75  Exit ProcessResponseAvailableRecordsJob at -->Thu Mar 12 15:57:00 WIB 2020 --- and took 38 milliseconds
+2020-03-12 15:57:00.081, FINE, [Thread]: 80 [ClassName]: com.enhancesys.integration.scheduler.ProcessResponseAvailableRecordsJob [LineNumber]:  50  Entry ProcessResponseAvailableRecordsJob.. Started at --> Thu Mar 12 15:57:00 WIB 2020
+2020-03-12 15:57:00.114, FINE, [Thread]: 1809 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  14559  Entry processOrderResponseConsumer : InterfaceId :: 1008 Started at --> Thu Mar 12 15:57:00 WIB 2020
+2020-03-12 15:57:00.116, FINE, [Thread]: 1799 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  14559  Entry processOrderResponseConsumer : InterfaceId :: 1002 Started at --> Thu Mar 12 15:57:00 WIB 2020
+2020-03-12 15:57:00.116, FINE, [Thread]: 1837 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  14559  Entry processOrderResponseConsumer : InterfaceId :: 1004 Started at --> Thu Mar 12 15:57:00 WIB 2020
+2020-03-12 15:57:00.116, FINE, [Thread]: 1815 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  14559  Entry processOrderResponseConsumer : InterfaceId :: 1006 Started at --> Thu Mar 12 15:57:00 WIB 2020
+2020-03-12 15:57:00.116, FINE, [Thread]: 1795 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  2030  Entry processResponseAvailableRecords : InterfaceId :: 1021, Started at :: Thu Mar 12 15:57:00 WIB 2020
+2020-03-12 15:57:00.117, FINE, [Thread]: 1795 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  2048  processResponseAvailableRecords service received status id --> 1303
+2020-03-12 15:57:00.118, FINE, [Thread]: 1810 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  1661  Process in-queue records job for interface id-->1102 and for partners -->null totally quried 0 records from DB
+2020-03-12 15:57:00.118, FINE, [Thread]: 1806 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  2030  Entry processResponseAvailableRecords : InterfaceId :: 1023, Started at :: Thu Mar 12 15:57:00 WIB 2020
+2020-03-12 15:57:00.118, FINE, [Thread]: 1810 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  1705  Exit processInQueueRecords service : InterfaceId :: 1102 at Thu Mar 12 15:57:00 WIB 2020 and took 62 milliseconds
+2020-03-12 15:57:00.118, FINE, [Thread]: 1806 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  2048  processResponseAvailableRecords service received status id --> 1303
+2020-03-12 15:57:00.121, FINE, [Thread]: 1816 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  2030  Entry processResponseAvailableRecords : InterfaceId :: 1022, Started at :: Thu Mar 12 15:57:00 WIB 2020
+2020-03-12 15:57:00.121, FINE, [Thread]: 1816 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  2048  processResponseAvailableRecords service received status id --> 1303
+2020-03-12 15:57:00.123, FINE, [Thread]: 1795 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  2199  Exit processResponseAvailableRecords service :: InterfaceId :: 1021 at --> Thu Mar 12 15:57:00 WIB 2020 and took 7 milliseconds
+2020-03-12 15:57:00.124, FINE, [Thread]: 1809 [ClassName]: com.enhancesys.services.consumer.QueueConsumer [LineNumber]:  86  Entry processRequest..:interfaceId :1008
+2020-03-12 15:57:00.124, FINE, [Thread]: 1806 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  2199  Exit processResponseAvailableRecords service :: InterfaceId :: 1023 at --> Thu Mar 12 15:57:00 WIB 2020 and took 8 milliseconds
+2020-03-12 15:57:00.125, FINE, [Thread]: 1837 [ClassName]: com.enhancesys.services.consumer.QueueConsumer [LineNumber]:  86  Entry processRequest..:interfaceId :1004
+2020-03-12 15:57:00.125, FINE, [Thread]: 1799 [ClassName]: com.enhancesys.services.consumer.QueueConsumer [LineNumber]:  86  Entry processRequest..:interfaceId :1002
+2020-03-12 15:57:00.127, FINE, [Thread]: 72 [ClassName]: com.enhancesys.integration.scheduler.ProcessResponseAvailableRecordsJob [LineNumber]:  75  Exit ProcessResponseAvailableRecordsJob at -->Thu Mar 12 15:57:00 WIB 2020 --- and took 105 milliseconds
+2020-03-12 15:57:00.127, FINE, [Thread]: 1815 [ClassName]: com.enhancesys.services.consumer.QueueConsumer [LineNumber]:  86  Entry processRequest..:interfaceId :1006
+2020-03-12 15:57:00.131, FINE, [Thread]: 1816 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  2199  Exit processResponseAvailableRecords service :: InterfaceId :: 1022 at --> Thu Mar 12 15:57:00 WIB 2020 and took 8 milliseconds
+2020-03-12 15:57:00.131, FINE, [Thread]: 80 [ClassName]: com.enhancesys.integration.scheduler.ProcessResponseAvailableRecordsJob [LineNumber]:  75  Exit ProcessResponseAvailableRecordsJob at -->Thu Mar 12 15:57:00 WIB 2020 --- and took 51 milliseconds
+2020-03-12 15:57:00.131, INFO, [Thread]: 75 [ClassName]: com.enhancesys.integration.scheduler.ProcessInQueueRecordsJob [LineNumber]:  101  INT: 100 Process In-Queue Status Records Job is Completed at Thu Mar 12 15:57:00 WIB 2020
+2020-03-12 15:57:00.131, FINE, [Thread]: 75 [ClassName]: com.enhancesys.integration.scheduler.ProcessInQueueRecordsJob [LineNumber]:  116  Exit ProcessInQueueRecordsJob at -->Thu Mar 12 15:57:00 WIB 2020 --- and took 128 milliseconds
+2020-03-12 15:57:00.133, SEVERE, [Thread]: 1797 : Persistence Exception org.hibernate.exception.SQLGrammarException: ERROR: large object 1243510 does not exist : javax.persistence.PersistenceException: org.hibernate.exception.SQLGrammarException: ERROR: large object 1243510 does not exist
+        at org.hibernate.ejb.AbstractEntityManagerImpl.convert(AbstractEntityManagerImpl.java:1361)
+        at org.hibernate.ejb.AbstractEntityManagerImpl.convert(AbstractEntityManagerImpl.java:1289)
+        at org.hibernate.ejb.QueryImpl.getResultList(QueryImpl.java:261)
+        at com.enhancesys.integration.services.IntegrationManagementImpl.processResponseAvailableRecords(IntegrationManagementImpl.java:2058)
+        at sun.reflect.GeneratedMethodAccessor408.invoke(Unknown Source)
+        at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+        at java.lang.reflect.Method.invoke(Method.java:606)
+        at org.apache.openejb.core.interceptor.ReflectionInvocationContext$Invocation.invoke(ReflectionInvocationContext.java:192)
+        at org.apache.openejb.core.interceptor.ReflectionInvocationContext.proceed(ReflectionInvocationContext.java:173)
+        at org.apache.openejb.monitoring.StatsInterceptor.record(StatsInterceptor.java:181)
+        at org.apache.openejb.monitoring.StatsInterceptor.invoke(StatsInterceptor.java:100)
+        at sun.reflect.GeneratedMethodAccessor362.invoke(Unknown Source)
+        at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+        at java.lang.reflect.Method.invoke(Method.java:606)
+        at org.apache.openejb.core.interceptor.ReflectionInvocationContext$Invocation.invoke(ReflectionInvocationContext.java:192)
+        at org.apache.openejb.core.interceptor.ReflectionInvocationContext.proceed(ReflectionInvocationContext.java:173)
+        at org.apache.openejb.server.cxf.ejb.EjbMethodInvoker.performInvocation(EjbMethodInvoker.java:86)
+        at org.apache.openejb.server.cxf.ejb.EjbMethodInvoker.directEjbInvoke(EjbMethodInvoker.java:199)
+        at org.apache.openejb.server.cxf.ejb.EjbInterceptor.intercept(EjbInterceptor.java:90)
+        at sun.reflect.GeneratedMethodAccessor360.invoke(Unknown Source)
+        at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+        at java.lang.reflect.Method.invoke(Method.java:606)
+        at org.apache.openejb.core.interceptor.ReflectionInvocationContext$Invocation.invoke(ReflectionInvocationContext.java:192)
+        at org.apache.openejb.core.interceptor.ReflectionInvocationContext.proceed(ReflectionInvocationContext.java:173)
+        at org.apache.openejb.core.interceptor.InterceptorStack.invoke(InterceptorStack.java:97)
+        at org.apache.openejb.core.stateless.StatelessContainer.invokeWebService(StatelessContainer.java:301)
+        at org.apache.openejb.core.stateless.StatelessContainer._invoke(StatelessContainer.java:222)
+        at org.apache.openejb.core.stateless.StatelessContainer.invoke(StatelessContainer.java:194)
+        at org.apache.openejb.server.cxf.ejb.EjbMethodInvoker.preEjbInvoke(EjbMethodInvoker.java:120)
+        at org.apache.openejb.server.cxf.ejb.EjbMethodInvoker.invoke(EjbMethodInvoker.java:73)
+        at org.apache.cxf.service.invoker.AbstractInvoker.invoke(AbstractInvoker.java:75)
+        at org.apache.cxf.interceptor.ServiceInvokerInterceptor$1.run(ServiceInvokerInterceptor.java:57)
+        at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:473)
+        at java.util.concurrent.FutureTask.run(FutureTask.java:262)
+        at org.apache.cxf.workqueue.SynchronousExecutor.execute(SynchronousExecutor.java:37)
+        at org.apache.cxf.interceptor.ServiceInvokerInterceptor.handleMessage(ServiceInvokerInterceptor.java:106)
+        at org.apache.cxf.phase.PhaseInterceptorChain.doIntercept(PhaseInterceptorChain.java:263)
+        at org.apache.cxf.transport.ChainInitiationObserver.onMessage(ChainInitiationObserver.java:121)
+        at org.apache.cxf.transport.http.AbstractHTTPDestination.invoke(AbstractHTTPDestination.java:240)
+        at org.apache.openejb.server.cxf.CxfWsContainer.onMessage(CxfWsContainer.java:86)
+        at org.apache.openejb.server.webservices.WsServlet.service(WsServlet.java:98)
+        at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:303)
+        at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:208)
+        at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:220)
+        at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:122)
+        at org.apache.tomee.catalina.OpenEJBValve.invoke(OpenEJBValve.java:44)
+        at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:610)
+        at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:171)
+        at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:103)
+        at org.apache.catalina.valves.RemoteIpValve.invoke(RemoteIpValve.java:683)
+        at org.apache.catalina.valves.AccessLogValve.invoke(AccessLogValve.java:950)
+        at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:116)
+        at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:408)
+        at org.apache.coyote.http11.AbstractHttp11Processor.process(AbstractHttp11Processor.java:1070)
+        at org.apache.coyote.AbstractProtocol$AbstractConnectionHandler.process(AbstractProtocol.java:611)
+        at org.apache.tomcat.util.net.JIoEndpoint$SocketProcessor.run(JIoEndpoint.java:314)
+        at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1152)
+        at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:622)
+        at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+        at java.lang.Thread.run(Thread.java:748)
+Caused by: org.hibernate.exception.SQLGrammarException: ERROR: large object 1243510 does not exist
+        at org.hibernate.exception.internal.SQLStateConversionDelegate.convert(SQLStateConversionDelegate.java:122)
+        at org.hibernate.exception.internal.StandardSQLExceptionConverter.convert(StandardSQLExceptionConverter.java:47)
+        at org.hibernate.engine.jdbc.spi.SqlExceptionHelper.convert(SqlExceptionHelper.java:125)
+        at org.hibernate.engine.jdbc.spi.SqlExceptionHelper.convert(SqlExceptionHelper.java:110)
+        at org.hibernate.engine.jdbc.internal.proxy.AbstractResultSetProxyHandler.continueInvocation(AbstractResultSetProxyHandler.java:108)
+        at org.hibernate.engine.jdbc.internal.proxy.AbstractProxyHandler.invoke(AbstractProxyHandler.java:81)
+        at com.sun.proxy.$Proxy335.getBlob(Unknown Source)
+        at org.hibernate.type.descriptor.sql.BlobTypeDescriptor$5.doExtract(BlobTypeDescriptor.java:118)
+        at org.hibernate.type.descriptor.sql.BasicExtractor.extract(BasicExtractor.java:65)
+        at org.hibernate.type.AbstractStandardBasicType.nullSafeGet(AbstractStandardBasicType.java:269)
+        at org.hibernate.type.AbstractStandardBasicType.nullSafeGet(AbstractStandardBasicType.java:265)
+        at org.hibernate.type.AbstractStandardBasicType.nullSafeGet(AbstractStandardBasicType.java:238)
+        at org.hibernate.type.AbstractStandardBasicType.hydrate(AbstractStandardBasicType.java:357)
+        at org.hibernate.persister.entity.AbstractEntityPersister.hydrate(AbstractEntityPersister.java:2695)
+        at org.hibernate.loader.Loader.loadFromResultSet(Loader.java:1552)
+        at org.hibernate.loader.Loader.instanceNotYetLoaded(Loader.java:1484)
+        at org.hibernate.loader.Loader.getRow(Loader.java:1384)
+        at org.hibernate.loader.Loader.getRowFromResultSet(Loader.java:640)
+        at org.hibernate.loader.Loader.doQuery(Loader.java:856)
+        at org.hibernate.loader.Loader.doQueryAndInitializeNonLazyCollections(Loader.java:289)
+        at org.hibernate.loader.Loader.doList(Loader.java:2463)
+        at org.hibernate.loader.Loader.doList(Loader.java:2449)
+        at org.hibernate.loader.Loader.listIgnoreQueryCache(Loader.java:2279)
+        at org.hibernate.loader.Loader.list(Loader.java:2274)
+        at org.hibernate.loader.hql.QueryLoader.list(QueryLoader.java:470)
+        at org.hibernate.hql.internal.ast.QueryTranslatorImpl.list(QueryTranslatorImpl.java:355)
+        at org.hibernate.engine.query.spi.HQLQueryPlan.performList(HQLQueryPlan.java:196)
+        at org.hibernate.internal.SessionImpl.list(SessionImpl.java:1115)
+        at org.hibernate.internal.QueryImpl.list(QueryImpl.java:101)
+        at org.hibernate.ejb.QueryImpl.getResultList(QueryImpl.java:252)
+        ... 57 more
+Caused by: org.postgresql.util.PSQLException: ERROR: large object 1243510 does not exist
+        at org.postgresql.core.v3.QueryExecutorImpl.receiveErrorResponse(QueryExecutorImpl.java:2103)
+        at org.postgresql.core.v3.QueryExecutorImpl.receiveFastpathResult(QueryExecutorImpl.java:652)
+        at org.postgresql.core.v3.QueryExecutorImpl.fastpathCall(QueryExecutorImpl.java:482)
+        at org.postgresql.fastpath.Fastpath.fastpath(Fastpath.java:74)
+        at org.postgresql.fastpath.Fastpath.fastpath(Fastpath.java:114)
+        at org.postgresql.fastpath.Fastpath.getInteger(Fastpath.java:126)
+        at org.postgresql.largeobject.LargeObject.<init>(LargeObject.java:93)
+        at org.postgresql.largeobject.LargeObjectManager.open(LargeObjectManager.java:202)
+        at org.postgresql.largeobject.LargeObjectManager.open(LargeObjectManager.java:172)
+        at org.postgresql.jdbc2.AbstractJdbc2BlobClob.<init>(AbstractJdbc2BlobClob.java:47)
+        at org.postgresql.jdbc2.AbstractJdbc2Blob.<init>(AbstractJdbc2Blob.java:21)
+        at org.postgresql.jdbc3.AbstractJdbc3Blob.<init>(AbstractJdbc3Blob.java:19)
+        at org.postgresql.jdbc4.AbstractJdbc4Blob.<init>(AbstractJdbc4Blob.java:20)
+        at org.postgresql.jdbc4.Jdbc4Blob.<init>(Jdbc4Blob.java:20)
+        at org.postgresql.jdbc4.Jdbc4ResultSet.getBlob(Jdbc4ResultSet.java:52)
+        at org.postgresql.jdbc2.AbstractJdbc2ResultSet.getBlob(AbstractJdbc2ResultSet.java:336)
+        at sun.reflect.GeneratedMethodAccessor411.invoke(Unknown Source)
+        at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+        at java.lang.reflect.Method.invoke(Method.java:606)
+        at org.hibernate.engine.jdbc.internal.proxy.AbstractResultSetProxyHandler.continueInvocation(AbstractResultSetProxyHandler.java:104)
+        ... 82 more
+
+2020-03-12 15:57:00.135, FINE, [Thread]: 1797 [ClassName]: net.treetechnologies.common.exception.ApplicationException [LineNumber]:  25  Application Exception :: integration.services.interfaces.IntegrationManagement.ProcessResponseAvailableRecordsException
+2020-03-12 15:57:00.135, FINE, [Thread]: 1797 [ClassName]: net.treetechnologies.common.exception.ApplicationException [LineNumber]:  26  code :: null
+2020-03-12 15:57:00.136, FINE, [Thread]: 77 [ClassName]: com.enhancesys.integration.scheduler.ProcessResponseAvailableRecordsJob [LineNumber]:  75  Exit ProcessResponseAvailableRecordsJob at -->Thu Mar 12 15:57:00 WIB 2020 --- and took 112 milliseconds
+2020-03-12 15:57:00.136, FINE, [Thread]: 1797 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  2199  Exit processResponseAvailableRecords service :: InterfaceId :: 1018 at --> Thu Mar 12 15:57:00 WIB 2020 and took 107 milliseconds
+2020-03-12 15:57:00.142, FINE, [Thread]: 1799 [ClassName]: com.enhancesys.services.consumer.QueueConsumer [LineNumber]:  576  Entry consumeActiveMQItem..
+2020-03-12 15:57:00.144, FINE, [Thread]: 1815 [ClassName]: com.enhancesys.services.consumer.QueueConsumer [LineNumber]:  576  Entry consumeActiveMQItem..
+2020-03-12 15:57:00.145, FINE, [Thread]: 1837 [ClassName]: com.enhancesys.services.consumer.QueueConsumer [LineNumber]:  576  Entry consumeActiveMQItem..
+2020-03-12 15:57:00.145, FINE, [Thread]: 1809 [ClassName]: com.enhancesys.services.consumer.QueueConsumer [LineNumber]:  576  Entry consumeActiveMQItem..
+2020-03-12 15:57:00.145, SEVERE, [Thread]: 71 : Application Error. Please see FaultInfo : com.enhancesys.integration.services.interfaces.integrationmanagement.ApplicationException: Application Error. Please see FaultInfo
+        at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+        at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:57)
+        at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+        at java.lang.reflect.Constructor.newInstance(Constructor.java:526)
+        at org.apache.cxf.interceptor.ClientFaultConverter.processFaultDetail(ClientFaultConverter.java:175)
+        at org.apache.cxf.interceptor.ClientFaultConverter.handleMessage(ClientFaultConverter.java:78)
+        at org.apache.cxf.phase.PhaseInterceptorChain.doIntercept(PhaseInterceptorChain.java:263)
+        at org.apache.cxf.interceptor.AbstractFaultChainInitiatorObserver.onMessage(AbstractFaultChainInitiatorObserver.java:113)
+        at org.apache.cxf.binding.soap.interceptor.CheckFaultInterceptor.handleMessage(CheckFaultInterceptor.java:69)
+        at org.apache.cxf.binding.soap.interceptor.CheckFaultInterceptor.handleMessage(CheckFaultInterceptor.java:34)
+        at org.apache.cxf.phase.PhaseInterceptorChain.doIntercept(PhaseInterceptorChain.java:263)
+        at org.apache.cxf.endpoint.ClientImpl.onMessage(ClientImpl.java:845)
+        at org.apache.cxf.transport.http.HTTPConduit$WrappedOutputStream.handleResponseInternal(HTTPConduit.java:1705)
+        at org.apache.cxf.transport.http.HTTPConduit$WrappedOutputStream.handleResponse(HTTPConduit.java:1538)
+        at org.apache.cxf.transport.http.HTTPConduit$WrappedOutputStream.close(HTTPConduit.java:1445)
+        at org.apache.cxf.transport.AbstractConduit.close(AbstractConduit.java:56)
+        at org.apache.cxf.transport.http.HTTPConduit.close(HTTPConduit.java:660)
+        at org.apache.cxf.interceptor.MessageSenderInterceptor$MessageSenderEndingInterceptor.handleMessage(MessageSenderInterceptor.java:62)
+        at org.apache.cxf.phase.PhaseInterceptorChain.doIntercept(PhaseInterceptorChain.java:263)
+        at org.apache.cxf.endpoint.ClientImpl.doInvoke(ClientImpl.java:570)
+        at org.apache.cxf.endpoint.ClientImpl.invoke(ClientImpl.java:479)
+        at org.apache.cxf.endpoint.ClientImpl.invoke(ClientImpl.java:382)
+        at org.apache.cxf.endpoint.ClientImpl.invoke(ClientImpl.java:335)
+        at org.apache.cxf.frontend.ClientProxy.invokeSync(ClientProxy.java:96)
+        at org.apache.cxf.jaxws.JaxWsClientProxy.invoke(JaxWsClientProxy.java:136)
+        at com.sun.proxy.$Proxy201.processResponseAvailableRecords(Unknown Source)
+        at com.enhancesys.integration.scheduler.ProcessResponseAvailableRecordsJob.execute(ProcessResponseAvailableRecordsJob.java:62)
+        at org.quartz.core.JobRunShell.run(JobRunShell.java:202)
+        at org.quartz.simpl.SimpleThreadPool$WorkerThread.run(SimpleThreadPool.java:573)
+
+2020-03-12 15:57:00.145, FINE, [Thread]: 71 [ClassName]: com.enhancesys.integration.scheduler.ProcessResponseAvailableRecordsJob [LineNumber]:  75  Exit ProcessResponseAvailableRecordsJob at -->Thu Mar 12 15:57:00 WIB 2020 --- and took 135 milliseconds
+2020-03-12 15:57:00.167, FINE, [Thread]: 1799 [ClassName]: com.enhancesys.services.consumer.QueueConsumer [LineNumber]:  613  Waiting for message...
+2020-03-12 15:57:00.167, FINE, [Thread]: 1815 [ClassName]: com.enhancesys.services.consumer.QueueConsumer [LineNumber]:  613  Waiting for message...
+2020-03-12 15:57:00.168, FINE, [Thread]: 1837 [ClassName]: com.enhancesys.services.consumer.QueueConsumer [LineNumber]:  613  Waiting for message...
+2020-03-12 15:57:00.174, FINE, [Thread]: 1809 [ClassName]: com.enhancesys.services.consumer.QueueConsumer [LineNumber]:  613  Waiting for message...
+2020-03-12 15:57:00.878, FINE, [Thread]: 1793 [ClassName]: com.enhancesys.integration.services.merger.SPAllocDumpMerger [LineNumber]:  539  Stock Entry..
+2020-03-12 15:57:00.912, FINE, [Thread]: 1793 [ClassName]: com.enhancesys.integration.publisher.WebServicePublisher [LineNumber]:  78  Entry processRequest.. TransactionId :: null, InterfaceId :: 1004
+2020-03-12 15:57:00.913, FINE, [Thread]: 1793 [ClassName]: com.enhancesys.integration.publisher.WebServicePublisher [LineNumber]:  96  Request --> { "envelope" : { "payload" : { "inventory" : { "so_id" : "9999999991099901~1099901" , "transaction_dt" : "12-Mar-2020" , "batch_dtls" : [ { "lead_no" : 0 , "storage_location" : "" , "prd_id" : 12160 , "ac_no" : 3 , "supplr_ac_no" : 3 , "prd_sl" : 1 , "batch" : "50475" , "exp_date" : "31-Dec-2099" , "qty" : 5 , "prd_slnos" : [ { "addnl_serials" : [ { "id" : 1201 , "desc" : "ICCID" , "serial_no" : "18962089272222222222"} , { "id" : 1202 , "desc" : "MSISDN" , "serial_no" : "6292224801001"} , { "id" : 1203 , "desc" : "IMSI" , "serial_no" : "3333333333"}] , "start" : "18962089272222222222" , "end" : "18962089272222222222" , "prd_sl_type" : 2 , "prd_id" : 12160 , "sl_exp_date" : "30-Mar-2099" , "sl_exp_dt_no" : 20990330 , "crtd_dttm" : "2020-03-12T15:57:00.896Z"} , { "addnl_serials" : [ { "id" : 1201 , "desc" : "ICCID" , "serial_no" : "33333333334444444444"} , { "id" : 1202 , "desc" : "MSISDN" , "serial_no" : "6294444801001"} , { "id" : 1203 , "desc" : "IMSI" , "serial_no" : "3434343434"}] , "start" : "33333333334444444444" , "end" : "33333333334444444444" , "prd_sl_type" : 2 , "prd_id" : 12160 , "sl_exp_date" : "30-Mar-2099" , "sl_exp_dt_no" : 20990330 , "crtd_dttm" : "2020-03-12T15:57:00.896Z"} , { "addnl_serials" : [ { "id" : 1201 , "desc" : "ICCID" , "serial_no" : "33333333335555555555"} , { "id" : 1202 , "desc" : "MSISDN" , "serial_no" : "6295554801001"} , { "id" : 1203 , "desc" : "IMSI" , "serial_no" : "3434343434"}] , "start" : "33333333335555555555" , "end" : "33333333335555555555" , "prd_sl_type" : 2 , "prd_id" : 12160 , "sl_exp_date" : "30-Mar-2099" , "sl_exp_dt_no" : 20990330 , "crtd_dttm" : "2020-03-12T15:57:00.896Z"} , { "addnl_serials" : [ { "id" : 1201 , "desc" : "ICCID" , "serial_no" : "66666666666666666666"} , { "id" : 1202 , "desc" : "MSISDN" , "serial_no" : "6666666666"} , { "id" : 1203 , "desc" : "IMSI" , "serial_no" : "66666"}] , "start" : "66666666666666666666" , "end" : "66666666666666666666" , "prd_sl_type" : 2 , "prd_id" : 12160 , "sl_exp_date" : "30-Mar-2099" , "sl_exp_dt_no" : 20990330 , "crtd_dttm" : "2020-03-12T15:57:00.896Z"} , { "addnl_serials" : [ { "id" : 1201 , "desc" : "ICCID" , "serial_no" : "77777777777777777777"} , { "id" : 1202 , "desc" : "MSISDN" , "serial_no" : "7777777777"} , { "id" : 1203 , "desc" : "IMSI" , "serial_no" : "77777"}] , "start" : "77777777777777777777" , "end" : "77777777777777777777" , "prd_sl_type" : 2 , "prd_id" : 12160 , "sl_exp_date" : "30-Mar-2099" , "sl_exp_dt_no" : 20990330 , "crtd_dttm" : "2020-03-12T15:57:00.896Z"}]}]}} , "header" : { "pwd" : "zDJTdIPVOkS8wvvxO4RxfoqcQjsYC3wH+R6DJIohiLQ=" , "uname" : "FOSS" , "uid" : 10002 , "tz" : "20141029180647" , "chnl" : "Interface" , "locale" : "en" , "rqst" : "Create Order" , "src" : "FOSS" , "utype" : 1}}}
+2020-03-12 15:57:00.924, FINE, [Thread]: 1793 [ClassName]: com.enhancesys.integration.publisher.WebServicePublisher [LineNumber]:  148  URL --> http://services.enhancesys.com:8080/inventoryServices/inventory/validate/serialNumbers
+2020-03-12 15:57:00.925, FINE, [Thread]: 1793 [ClassName]: com.enhancesys.integration.publisher.WebServicePublisher [LineNumber]:  362  Entry sendRestRequest ...
+2020-03-12 15:57:01.828, FINE, [Thread]: 1793 [ClassName]: com.enhancesys.integration.publisher.WebServicePublisher [LineNumber]:  388  [response] POST http://services.enhancesys.com:8080/inventoryServices/inventory/validate/serialNumbers returned a response status of 200 OK
+2020-03-12 15:57:01.831, FINE, [Thread]: 1793 [ClassName]: com.enhancesys.integration.publisher.WebServicePublisher [LineNumber]:  411  Exit sendRestRequest ...
+2020-03-12 15:57:01.839, FINE, [Thread]: 1793 [ClassName]: com.enhancesys.integration.publisher.WebServicePublisher [LineNumber]:  173  Response --> {"req_id": "2003120357016773001","res_msg": "Request Processed Successfully..!","res_code": 100,"payload":[ { "lead_no" : 0 , "storage_location" : "" , "prd_id" : 12160 , "ac_no" : 3 , "supplr_ac_no" : 3 , "prd_sl" : 1 , "batch" : "50475" , "exp_date" : "31-Dec-2099" , "qty" : 5 , "prd_slnos" : [ { "addnl_serials" : [ { "id" : 1201 , "desc" : "ICCID" , "serial_no" : "18962089272222222222"} , { "id" : 1202 , "desc" : "MSISDN" , "serial_no" : "6292224801001"} , { "id" : 1203 , "desc" : "IMSI" , "serial_no" : "3333333333"}] , "start" : "18962089272222222222" , "end" : "18962089272222222222" , "prd_sl_type" : 2 , "prd_id" : 12160 , "sl_exp_date" : "30-Mar-2099" , "sl_exp_dt_no" : 20990330 , "crtd_dttm" : "2020-03-12T15:57:00.896Z" , "isValid" : true , "validated_sl_nos" : [ { "desc" : "ICCID" , "prd_slno" : "18962089272222222222" , "index" : 0 , "isValid" : true} , { "desc" : "MSISDN" , "prd_slno" : "6292224801001" , "index" : 1 , "isValid" : true} , { "desc" : "IMSI" , "prd_slno" : "3333333333" , "index" : 2 , "isValid" : true}]} , { "addnl_serials" : [ { "id" : 1201 , "desc" : "ICCID" , "serial_no" : "33333333334444444444"} , { "id" : 1202 , "desc" : "MSISDN" , "serial_no" : "6294444801001"} , { "id" : 1203 , "desc" : "IMSI" , "serial_no" : "3434343434"}] , "start" : "33333333334444444444" , "end" : "33333333334444444444" , "prd_sl_type" : 2 , "prd_id" : 12160 , "sl_exp_date" : "30-Mar-2099" , "sl_exp_dt_no" : 20990330 , "crtd_dttm" : "2020-03-12T15:57:00.896Z" , "isValid" : true , "validated_sl_nos" : [ { "desc" : "ICCID" , "prd_slno" : "33333333334444444444" , "index" : 0 , "isValid" : true} , { "desc" : "MSISDN" , "prd_slno" : "6294444801001" , "index" : 1 , "isValid" : true} , { "desc" : "IMSI" , "prd_slno" : "3434343434" , "index" : 2 , "isValid" : true}]} , { "addnl_serials" : [ { "id" : 1201 , "desc" : "ICCID" , "serial_no" : "33333333335555555555"} , { "id" : 1202 , "desc" : "MSISDN" , "serial_no" : "6295554801001"} , { "id" : 1203 , "desc" : "IMSI" , "serial_no" : "3434343434"}] , "start" : "33333333335555555555" , "end" : "33333333335555555555" , "prd_sl_type" : 2 , "prd_id" : 12160 , "sl_exp_date" : "30-Mar-2099" , "sl_exp_dt_no" : 20990330 , "crtd_dttm" : "2020-03-12T15:57:00.896Z" , "isValid" : false , "validated_sl_nos" : [ { "desc" : "ICCID" , "prd_slno" : "33333333335555555555" , "index" : 0 , "isValid" : true} , { "desc" : "MSISDN" , "prd_slno" : "6295554801001" , "index" : 1 , "isValid" : true} , { "desc" : "IMSI" , "prd_slno" : "3434343434" , "index" : 2 , "isValid" : false , "err_msg" : "Ordered duplicate serial numbers"}] , "err_msg" : "Ordered duplicate serial numbers"} , { "addnl_serials" : [ { "id" : 1201 , "desc" : "ICCID" , "serial_no" : "66666666666666666666"} , { "id" : 1202 , "desc" : "MSISDN" , "serial_no" : "6666666666"} , { "id" : 1203 , "desc" : "IMSI" , "serial_no" : "66666"}] , "start" : "66666666666666666666" , "end" : "66666666666666666666" , "prd_sl_type" : 2 , "prd_id" : 12160 , "sl_exp_date" : "30-Mar-2099" , "sl_exp_dt_no" : 20990330 , "crtd_dttm" : "2020-03-12T15:57:00.896Z" , "isValid" : true , "validated_sl_nos" : [ { "desc" : "ICCID" , "prd_slno" : "66666666666666666666" , "index" : 0 , "isValid" : true} , { "desc" : "MSISDN" , "prd_slno" : "6666666666" , "index" : 1 , "isValid" : true} , { "desc" : "IMSI" , "prd_slno" : "66666" , "index" : 2 , "isValid" : true}]} , { "addnl_serials" : [ { "id" : 1201 , "desc" : "ICCID" , "serial_no" : "77777777777777777777"} , { "id" : 1202 , "desc" : "MSISDN" , "serial_no" : "7777777777"} , { "id" : 1203 , "desc" : "IMSI" , "serial_no" : "77777"}] , "start" : "77777777777777777777" , "end" : "77777777777777777777" , "prd_sl_type" : 2 , "prd_id" : 12160 , "sl_exp_date" : "30-Mar-2099" , "sl_exp_dt_no" : 20990330 , "crtd_dttm" : "2020-03-12T15:57:00.896Z" , "isValid" : true , "validated_sl_nos" : [ { "desc" : "ICCID" , "prd_slno" : "77777777777777777777" , "index" : 0 , "isValid" : true} , { "desc" : "MSISDN" , "prd_slno" : "7777777777" , "index" : 1 , "isValid" : true} , { "desc" : "IMSI" , "prd_slno" : "77777" , "index" : 2 , "isValid" : true}]}] , "batch_valid" : false , "batch_err_msg" : "Ordered duplicate serial numbers"}]}
+2020-03-12 15:57:01.840, FINE, [Thread]: 1793 [ClassName]: com.enhancesys.integration.publisher.WebServicePublisher [LineNumber]:  227  Exit processRequest..
+2020-03-12 15:57:02.793, FINE, [Thread]: 1793 [ClassName]: com.enhancesys.integration.services.util.MongoUtil [LineNumber]:  2220  Entry prepareCollectionData..
+2020-03-12 15:57:02.796, FINE, [Thread]: 1793 [ClassName]: com.enhancesys.integration.services.util.MongoUtil [LineNumber]:  2289  Exit prepareCollectionData..
+2020-03-12 15:57:02.799, FINE, [Thread]: 1793 [ClassName]: com.enhancesys.integration.services.merger.SPAllocDumpMerger [LineNumber]:  562  isException : false
+2020-03-12 15:57:03.736, FINE, [Thread]: 1793 [ClassName]: com.enhancesys.integration.services.merger.SPAllocDumpMerger [LineNumber]:  701  5 Rows updated Sucessfully..
+2020-03-12 15:57:05.175, FINE, [Thread]: 1799 [ClassName]: com.enhancesys.services.consumer.QueueConsumer [LineNumber]:  680  Exit consumeActiveMQItem..
+2020-03-12 15:57:05.175, FINE, [Thread]: 1815 [ClassName]: com.enhancesys.services.consumer.QueueConsumer [LineNumber]:  680  Exit consumeActiveMQItem..
+2020-03-12 15:57:05.175, FINE, [Thread]: 1815 [ClassName]: com.enhancesys.services.consumer.QueueConsumer [LineNumber]:  268  Exit processRequest..
+2020-03-12 15:57:05.176, FINE, [Thread]: 1799 [ClassName]: com.enhancesys.services.consumer.QueueConsumer [LineNumber]:  268  Exit processRequest..
+2020-03-12 15:57:05.176, FINE, [Thread]: 1837 [ClassName]: com.enhancesys.services.consumer.QueueConsumer [LineNumber]:  680  Exit consumeActiveMQItem..
+2020-03-12 15:57:05.176, FINE, [Thread]: 1815 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  14749  Response is empty from Queue..
+2020-03-12 15:57:05.176, FINE, [Thread]: 1799 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  14749  Response is empty from Queue..
+2020-03-12 15:57:05.177, FINE, [Thread]: 1837 [ClassName]: com.enhancesys.services.consumer.QueueConsumer [LineNumber]:  268  Exit processRequest..
+2020-03-12 15:57:05.177, FINE, [Thread]: 1815 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  14784  Exit processOrderResponseConsumer :  InterfaceId :: 1006 at --> Thu Mar 12 15:57:05 WIB 2020 and took 5061 milliseconds
+2020-03-12 15:57:05.177, FINE, [Thread]: 1799 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  14784  Exit processOrderResponseConsumer :  InterfaceId :: 1002 at --> Thu Mar 12 15:57:05 WIB 2020 and took 5061 milliseconds
+2020-03-12 15:57:05.177, FINE, [Thread]: 1837 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  14749  Response is empty from Queue..
+2020-03-12 15:57:05.178, FINE, [Thread]: 1837 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  14784  Exit processOrderResponseConsumer :  InterfaceId :: 1004 at --> Thu Mar 12 15:57:05 WIB 2020 and took 5062 milliseconds
+2020-03-12 15:57:05.181, FINE, [Thread]: 1809 [ClassName]: com.enhancesys.services.consumer.QueueConsumer [LineNumber]:  680  Exit consumeActiveMQItem..
+2020-03-12 15:57:05.182, FINE, [Thread]: 1809 [ClassName]: com.enhancesys.services.consumer.QueueConsumer [LineNumber]:  268  Exit processRequest..
+2020-03-12 15:57:05.183, FINE, [Thread]: 1809 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  14749  Response is empty from Queue..
+2020-03-12 15:57:05.184, INFO, [Thread]: 78 [ClassName]: com.enhancesys.integration.scheduler.ProcessPendingResponseConsumerJob [LineNumber]:  65  INT: 101 Process Pending Order Response JMS Queue Message Job is Completed at Thu Mar 12 15:57:05 WIB 2020
+2020-03-12 15:57:05.184, FINE, [Thread]: 1809 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  14784  Exit processOrderResponseConsumer :  InterfaceId :: 1008 at --> Thu Mar 12 15:57:05 WIB 2020 and took 5070 milliseconds
+2020-03-12 15:57:05.184, FINE, [Thread]: 78 [ClassName]: com.enhancesys.integration.scheduler.ProcessPendingResponseConsumerJob [LineNumber]:  79  Exit ProcessPendingResponseConsumerJob at -->Thu Mar 12 15:57:05 WIB 2020 --- and took 5180 milliseconds
+2020-03-12 15:57:05.184, INFO, [Thread]: 73 [ClassName]: com.enhancesys.integration.scheduler.ProcessPendingResponseConsumerJob [LineNumber]:  65  INT: 102 Process Pending Order Response JMS Queue Message Job is Completed at Thu Mar 12 15:57:05 WIB 2020
+2020-03-12 15:57:05.185, FINE, [Thread]: 73 [ClassName]: com.enhancesys.integration.scheduler.ProcessPendingResponseConsumerJob [LineNumber]:  79  Exit ProcessPendingResponseConsumerJob at -->Thu Mar 12 15:57:05 WIB 2020 --- and took 5179 milliseconds
+2020-03-12 15:57:05.186, INFO, [Thread]: 76 [ClassName]: com.enhancesys.integration.scheduler.ProcessPendingResponseConsumerJob [LineNumber]:  65  INT: 103 Process Pending Order Response JMS Queue Message Job is Completed at Thu Mar 12 15:57:05 WIB 2020
+2020-03-12 15:57:05.187, FINE, [Thread]: 76 [ClassName]: com.enhancesys.integration.scheduler.ProcessPendingResponseConsumerJob [LineNumber]:  79  Exit ProcessPendingResponseConsumerJob at -->Thu Mar 12 15:57:05 WIB 2020 --- and took 5179 milliseconds
+2020-03-12 15:57:05.194, INFO, [Thread]: 79 [ClassName]: com.enhancesys.integration.scheduler.ProcessPendingResponseConsumerJob [LineNumber]:  65  INT: 104 Process Pending Order Response JMS Queue Message Job is Completed at Thu Mar 12 15:57:05 WIB 2020
+2020-03-12 15:57:05.195, FINE, [Thread]: 79 [ClassName]: com.enhancesys.integration.scheduler.ProcessPendingResponseConsumerJob [LineNumber]:  79  Exit ProcessPendingResponseConsumerJob at -->Thu Mar 12 15:57:05 WIB 2020 --- and took 5185 milliseconds
+2020-03-12 15:57:06.355, FINE, [Thread]: 1793 [ClassName]: com.enhancesys.integration.services.merger.SPAllocDumpMerger [LineNumber]:  820  1302 : 5
+2020-03-12 15:57:06.356, FINE, [Thread]: 1793 [ClassName]: com.enhancesys.integration.services.merger.SPAllocDumpMerger [LineNumber]:  820  total : 5
+2020-03-12 15:57:06.373, FINE, [Thread]: 1793 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  7942  total count-->5File ID : 40073
+2020-03-12 15:57:07.689, FINE, [Thread]: 1793 [ClassName]: com.enhancesys.integration.services.merger.SPAllocDumpMerger [LineNumber]:  842  0 Rows Deleted..
+2020-03-12 15:57:07.690, FINE, [Thread]: 1793 [ClassName]: com.enhancesys.integration.services.merger.SPAllocDumpMerger [LineNumber]:  955  Starter Packs - Alloc Dump Ended.. Total time taken is :12380
+2020-03-12 15:57:07.691, FINE, [Thread]: 1793 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  3152  Inside ... interfaceFileSummaryDetails.getFileName() :: ALLOC_DUMP_20200312000004.csv
+2020-03-12 15:57:07.692, FINE, [Thread]: 1793 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  3153  localServerjsonObject :: {"CtlBkpDir":"\/home\/appuser\/interfaces\/S-NOC\/interfaces\/backup\/master_file\/sp_dump\/","Dir":"\/home\/appuser\/interfaces\/S-NOC\/interfaces\/master_file\/sp_dump\/","BkpDir":"\/home\/appuser\/interfaces\/S-NOC\/interfaces\/backup\/master_file\/sp_dump\/","RejectedDir":"\/home\/appuser\/interfaces\/S-NOC\/interfaces\/rejected_file\/sp_dump\/","RejectedBkpDir":"\/home\/appuser\/interfaces\/S-NOC\/interfaces\/backup\/rejected_file\/sp_dump\/","CtlDir":"\/home\/appuser\/interfaces\/S-NOC\/interfaces\/master_file\/sp_dump\/","RejectedCtlDir":"\/home\/appuser\/interfaces\/S-NOC\/interfaces\/rejected_file\/sp_dump\/","RejectedCtlBkpDir":"\/home\/appuser\/interfaces\/S-NOC\/interfaces\/backup\/rejected_file\/sp_dump\/"}
+2020-03-12 15:57:07.693, FINE, [Thread]: 1793 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  10817  Entry compressGzipFile.. Started at --> Thu Mar 12 15:57:07 WIB 2020
+2020-03-12 15:57:07.693, FINE, [Thread]: 1793 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  10827  compressGzipFile service received gzipFile Name-->/home/appuser/interfaces/S-NOC/interfaces/backup/master_file/sp_dump/ALLOC_DUMP_20200312000004.csv.gzfile Name -->/home/appuser/interfaces/S-NOC/interfaces/backup/master_file/sp_dump/ALLOC_DUMP_20200312000004.csv
+2020-03-12 15:57:07.699, FINE, [Thread]: 1793 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  10866  Exit compressGzipFile service at -->Thu Mar 12 15:57:07 WIB 2020 --- and took 7 milliseconds
+2020-03-12 15:57:07.700, FINE, [Thread]: 1793 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  10817  Entry compressGzipFile.. Started at --> Thu Mar 12 15:57:07 WIB 2020
+2020-03-12 15:57:07.700, FINE, [Thread]: 1793 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  10827  compressGzipFile service received gzipFile Name-->/home/appuser/interfaces/S-NOC/interfaces/backup/master_file/sp_dump/ALLOC_DUMP_20200312000004.ctl.gzfile Name -->/home/appuser/interfaces/S-NOC/interfaces/backup/master_file/sp_dump/ALLOC_DUMP_20200312000004.ctl
+2020-03-12 15:57:07.701, FINE, [Thread]: 1793 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  10866  Exit compressGzipFile service at -->Thu Mar 12 15:57:07 WIB 2020 --- and took 2 milliseconds
+2020-03-12 15:57:07.717, FINE, [Thread]: 1793 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  3208  InterfaceId : 1003 : FileId : 40073 processReceivedFiles method is completed at Thu Mar 12 15:57:07 WIB 2020
+2020-03-12 15:57:07.717, FINE, [Thread]: 1793 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  3286  Exit processReceivedFiles service : InterfaceId :: 1003  at --> Thu Mar 12 15:57:07 WIB 2020 and took 12528 milliseconds
+^C
+[readuser@version3 logs]$

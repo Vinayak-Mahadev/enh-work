@@ -1,0 +1,1649 @@
+package com.enhancesys.integration.services.util;
+
+import java.io.ByteArrayInputStream;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.io.FileReader;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.LineNumberReader;
+import java.io.OutputStreamWriter;
+import java.security.MessageDigest;
+import java.sql.Blob;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Timestamp;
+import java.sql.Types;
+import java.text.SimpleDateFormat;
+import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.Date;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
+import net.treetechnologies.common.exception.ApplicationException;
+import net.treetechnologies.common.logger.TLogger;
+import net.treetechnologies.entities.masters.Status;
+
+import org.postgresql.largeobject.LargeObject;
+import org.postgresql.largeobject.LargeObjectManager;
+
+import com.enhancesys.entities.integration.InterfaceFileSummary;
+import com.enhancesys.entities.integration.InterfaceFileSummaryDetails;
+import com.enhancesys.entities.integration.InterfaceSummary;
+import com.enhancesys.entities.integration.Interfaces;
+import com.enhancesys.entities.integration.Module;
+import com.enhancesys.integration.services.interfaces.IntegrationConstants;
+import com.enhancesys.integration.services.interfaces.IntegrationManagement;
+import com.enhancesys.integration.services.interfaces.ResponseBean;
+
+/**
+ * <b>Purpose:</b><br>
+ * 		Class to provide the services with the JDBC connection..<br>
+ * <br>
+ * <br>
+ * <br>
+ * 
+ * <b>DesignReference:</b><br>
+ * <br>
+ * <br>
+ * 
+ * <b>CopyRights:</b><br>
+ * 		Enhancesys Innovations 2018<br>
+ * <br>
+ * 
+ * <b>RevisionHistory:</b>
+ * 
+ * <pre>
+ * <b>
+ *  Sl No   Modified Date        Author</b>
+ *  ==============================================
+ *  1        13-06-2018          Suresh Upparu
+ *    	-- Base Release
+ * </pre>
+ * 
+ * <br>
+ */
+public class InterfaceServiceUtil
+{
+	/**
+	 * @author Suresh Upparu
+	 * <b>Algorithm</b>
+	 * <pre>
+	 * 
+	 * </pre>
+	 * @return Connection
+	 * @throws ApplicationException
+	 */
+	public static Connection getConnection() throws ApplicationException
+	{
+		Connection sqlConnection = null;
+		try
+		{
+			Class.forName(IntegrationConstants.INTERFACE_JDBC_DRIVER);
+			sqlConnection = DriverManager.getConnection(IntegrationConstants.INTERFACE_JDBC_URL, IntegrationConstants.INTERFACE_JDBC_USER, IntegrationConstants.INTERFACE_JDBC_PASS);
+			return sqlConnection;
+		}
+		catch(Exception exception)
+		{
+			TLogger.error("Unhandled Exception : " + exception.getMessage(), exception);
+			throw new IntegrationManagement.InterfaceServiceException("Unhandled Exception : " + exception.getMessage(), exception);
+		}
+	}
+	
+	/**
+	 * @author Harish Kumar S
+	 * <b>Algorithm</b>
+	 * <pre>
+	 * 
+	 * </pre>
+	 * @param transactionId
+	 * @return InterfaceSummary
+	 * @throws ApplicationException
+	 */
+	public InterfaceSummary getInterfaceSummary(Long transactionId) throws ApplicationException
+	{
+		Connection connection = null;
+		InterfaceSummary summary = null;
+		PreparedStatement statement = null;
+		ResultSet resultSet = null;
+		Interfaces interfaces = null;
+		Status status = null;
+		Module module = null;
+		
+		try
+		{
+			if(transactionId == null)
+			{
+				TLogger.error("transaction Id should not be empty..");
+				throw new IntegrationManagement.InterfaceServiceException("transaction Id should not be empty..", null);
+			}
+			connection = getConnection();
+			if(connection == null)
+			{
+				TLogger.error("Connection object should not be empty..");
+				throw new IntegrationManagement.InterfaceServiceException("Connection object should not be empty..", null);
+			}
+			
+			connection.setAutoCommit(false);
+			
+			summary = new InterfaceSummary();
+			interfaces = new Interfaces();
+			status = new Status();
+			module = new Module();
+			
+			statement = connection.prepareStatement(IntegrationConstants.INTERFACE_SUMMARY_SELECT_QUERY);
+			statement.setLong(1, transactionId);
+			resultSet = statement.executeQuery();
+			if(resultSet.next())
+			{
+				if(resultSet.getBlob("ack_data_b") != null)
+					summary.setAckData(getStringFromBlob(resultSet.getBlob("ack_data_b")).getBytes());
+				summary.setAckTime(resultSet.getTimestamp("ack_time_dt"));
+				summary.setDueTime(resultSet.getTimestamp("due_time_dt"));
+				
+				if(resultSet.getBlob("orgnl_request_data_b") != null)
+					summary.setOriginalRequestData(getStringFromBlob(resultSet.getBlob("orgnl_request_data_b")).getBytes());
+				if(resultSet.getBlob("orgnl_response_data_b") != null)
+					summary.setOriginalResponseData(getStringFromBlob(resultSet.getBlob("orgnl_response_data_b")).getBytes());
+				
+				summary.setReferenceData1(resultSet.getString("ref_data1_v"));
+				summary.setReferenceData2(resultSet.getLong("ref_data2_n"));
+				summary.setReferenceData3(resultSet.getLong("ref_data3_n"));
+				summary.setReferenceData4(resultSet.getLong("ref_data4_n"));
+				summary.setReferenceData5(resultSet.getString("ref_data5_v"));
+				
+				if(resultSet.getBlob("request_data_b") != null)
+					summary.setRequestData(getStringFromBlob(resultSet.getBlob("request_data_b")).getBytes());
+				summary.setRequestTime(resultSet.getTimestamp("request_time_dt"));
+				
+				if(resultSet.getBlob("response_data_b") != null)
+					summary.setResponseData(getStringFromBlob(resultSet.getBlob("response_data_b")).getBytes());
+				summary.setResponseTime(resultSet.getTimestamp("response_time_dt"));
+				summary.setRetryCount(resultSet.getLong("retry_count_n"));
+				summary.setTransactionId(resultSet.getLong("trans_id_n"));
+				
+				status.setStatusId(resultSet.getLong("status_n"));
+				summary.setStatus(status);
+				
+				interfaces.setConverter(resultSet.getString("converter_v"));
+				interfaces.setInterfaceId(resultSet.getLong("interface_id_n"));
+				interfaces.setInterfaceType(resultSet.getLong("interface_type_n"));
+				
+				module.setModuleId(resultSet.getLong("module_id_n"));
+				interfaces.setModule(module);
+				
+				interfaces.setName(resultSet.getString("name_v"));
+				interfaces.setPublisher(resultSet.getString("publisher_v"));
+				interfaces.setResponseProcessor(resultSet.getString("response_processor_v"));
+				interfaces.setSequence(resultSet.getLong("seq_n"));
+				interfaces.setTransactionType(resultSet.getLong("trans_type_n"));
+				summary.setInterfaces(interfaces);
+			}
+			
+			resultSet.close();
+			statement.close();
+			connection.close();
+			
+			return summary;
+		}
+		catch(Exception exception)
+		{
+			TLogger.error("Unhandled Exception : " + exception.getMessage(), exception);
+			throw new IntegrationManagement.InterfaceServiceException("Unhandled Exception : " + exception.getMessage(), exception);
+		}
+		finally
+		{
+			try
+			{
+				if(resultSet != null)
+					resultSet.close();
+				if(statement != null)
+					statement.close();
+			}
+			catch(Exception exception)
+			{
+				TLogger.error(exception.getMessage(), exception);
+			}
+			
+			summary = null;
+			statement = null;
+			resultSet = null;
+			connection = null;
+			interfaces = null;
+			status = null;
+			module = null;
+		}
+	}
+	
+	/**
+	 * @author Suresh Upparu
+	 * <b>Algorithm</b>
+	 * <pre>
+	 * 
+	 * </pre>
+	 * @param blobData
+	 * @return String
+	 * @throws SQLException
+	 */
+	private String getStringFromBlob(Blob blobData) throws SQLException
+	{
+		return new String(blobData.getBytes(1L, (int) blobData.length()));
+	}
+	
+	/**
+	 * @author Suresh Upparu
+	 * <b>Algorithm</b>
+	 * <pre>
+	 * 
+	 * </pre>
+	 * @param interfaceSummary
+	 * @return InterfaceSummary
+	 * @throws ApplicationException
+	 */
+	public InterfaceSummary createInterfaceSummary(InterfaceSummary interfaceSummary) throws ApplicationException
+	{
+		Connection connection = null;
+		InterfaceSummary summary = null;
+		PreparedStatement statement = null;
+		ResultSet resultSet = null;
+		Calendar calendar = null;
+		Timestamp timestamp = null;
+		LargeObjectManager lobj = null;
+		Long transactionId = null;
+		
+		try
+		{
+			connection = getConnection();
+			if(connection == null)
+			{
+				TLogger.error("Connection object should not be empty..");
+				throw new IntegrationManagement.InterfaceServiceException("Connection object should not be empty..", null);
+			}
+			
+			connection.setAutoCommit(false);
+			
+			statement = connection.prepareStatement(IntegrationConstants.INTERFACE_SUMMARY_SEQ_QUERY);
+			resultSet = statement.executeQuery();
+			if(resultSet.next())
+			{
+				transactionId = resultSet.getLong(1);
+//				TLogger.debug("transactionId : " + transactionId);
+			}
+			statement.close();
+			
+			calendar = Calendar.getInstance();  
+	        timestamp = new Timestamp(calendar.getTimeInMillis());
+	        lobj = ((org.postgresql.PGConnection) connection).getLargeObjectAPI();
+	        
+			statement = connection.prepareStatement(IntegrationConstants.INTERFACE_SUMMARY_INSERT_QUERY);
+			
+			statement.setLong(1, transactionId);
+			statement.setLong(2, interfaceSummary.getInterfaces().getInterfaceId());
+			
+			if(interfaceSummary.getOriginalRequestData() != null && !new String(interfaceSummary.getOriginalRequestData(),IntegrationConstants.FILE_ENCODE_FORMAT).trim().isEmpty())
+			{
+				int oReqOid = getOidForData(lobj, interfaceSummary.getOriginalRequestData());
+				statement.setInt(3, oReqOid);
+			}
+			if(interfaceSummary.getRequestData() != null && !new String(interfaceSummary.getRequestData(),IntegrationConstants.FILE_ENCODE_FORMAT).trim().isEmpty())
+			{
+				int reqOid = getOidForData(lobj, interfaceSummary.getRequestData());
+				statement.setInt(4, reqOid);
+				statement.setTimestamp(5, timestamp);
+			}
+			if(interfaceSummary.getAckData() != null && !new String(interfaceSummary.getAckData(),IntegrationConstants.FILE_ENCODE_FORMAT).trim().isEmpty())
+			{
+				int ackOid = getOidForData(lobj, interfaceSummary.getAckData());
+				statement.setInt(6, ackOid);
+				statement.setTimestamp(7, timestamp);
+			}
+			else
+			{
+				statement.setNull(6, Types.NULL);
+				statement.setNull(7, Types.NULL);
+			}
+			if(interfaceSummary.getOriginalResponseData() != null && !new String(interfaceSummary.getOriginalResponseData(),IntegrationConstants.FILE_ENCODE_FORMAT).trim().isEmpty())
+			{
+				int oResOid = getOidForData(lobj, interfaceSummary.getOriginalResponseData());
+				statement.setInt(8, oResOid);
+			}
+			else
+			{
+				statement.setNull(8, Types.NULL);
+			}
+			if(interfaceSummary.getResponseData() != null && !new String(interfaceSummary.getResponseData(),IntegrationConstants.FILE_ENCODE_FORMAT).trim().isEmpty())
+			{
+				int resOid = getOidForData(lobj, interfaceSummary.getResponseData());
+				statement.setInt(9, resOid);
+				statement.setTimestamp(10, timestamp);
+			}
+			else
+			{
+				statement.setNull(9, Types.NULL);
+				statement.setNull(10, Types.NULL);
+			}
+			statement.setLong(11, interfaceSummary.getStatus().getStatusId());
+			if(interfaceSummary.getRetryCount() != null)
+				statement.setLong(12, interfaceSummary.getRetryCount());
+			else
+				statement.setNull(12, Types.NULL);
+			if(interfaceSummary.getReferenceData1() != null)
+				statement.setString(13, interfaceSummary.getReferenceData1());
+			else 
+				statement.setNull(13, Types.NULL);
+			if(interfaceSummary.getReferenceData2() != null)
+				statement.setLong(14, interfaceSummary.getReferenceData2());
+			else
+				statement.setNull(14, Types.NULL);
+			if(interfaceSummary.getReferenceData3() != null)
+				statement.setLong(15, interfaceSummary.getReferenceData3());
+			else
+				statement.setNull(15, Types.NULL);
+			if(interfaceSummary.getReferenceData4() != null)
+				statement.setLong(16, interfaceSummary.getReferenceData4());
+			else
+				statement.setNull(16, Types.NULL);
+			if(interfaceSummary.getReferenceData5() != null)
+				statement.setString(17, interfaceSummary.getReferenceData5());
+			else
+				statement.setNull(17, Types.NULL);
+			
+			int rowsUpdated = statement.executeUpdate();
+			TLogger.debug(rowsUpdated + " Rows Updated in Interface Summary..");
+			
+			connection.commit();
+			
+			summary = getInterfaceSummary(transactionId);
+			return summary;
+		}
+		catch(Exception exception)
+		{
+			TLogger.error("Unhandled Exception : " + exception.getMessage(), exception);
+			throw new IntegrationManagement.InterfaceServiceException("Unhandled Exception : " + exception.getMessage(), exception);
+		}
+		finally
+		{
+			try
+			{
+				if(resultSet != null)
+					resultSet.close();
+				if(statement != null)
+					statement.close();
+				if(connection != null)
+					connection.close();
+			}
+			catch(Exception exception)
+			{
+				TLogger.error(exception.getMessage(),  exception);
+			}
+			
+			summary = null;
+			statement = null;
+			resultSet = null;
+			calendar = null;
+			timestamp = null;
+			lobj = null;
+			transactionId = null;
+			connection = null;
+		}
+	}
+	
+	/**
+	 * @author Suresh Upparu
+	 * <b>Algorithm</b>
+	 * <pre>
+	 * 
+	 * </pre>
+	 * @param interfaceSummary
+	 * @return InterfaceSummary
+	 * @throws ApplicationException
+	 */
+	public InterfaceSummary updateInterfaceSummary(InterfaceSummary interfaceSummary) throws ApplicationException
+	{
+		Connection connection = null;
+		InterfaceSummary summary = null;
+		PreparedStatement statement = null;
+		Calendar calendar = null;
+		Timestamp timestamp = null;
+		LargeObjectManager lobj = null;
+		
+		try
+		{
+			connection = getConnection();
+			if(connection == null)
+			{
+				TLogger.error("Connection object should not be empty..");
+				throw new IntegrationManagement.InterfaceServiceException("Connection object should not be empty..", null);
+			}
+			
+			connection.setAutoCommit(false);
+			
+			summary = getInterfaceSummary(interfaceSummary.getTransactionId());
+			if(summary == null)
+			{
+				TLogger.error("Summary does not exist for the given transactionID : " + interfaceSummary.getTransactionId());
+				throw new IntegrationManagement.InterfaceServiceException("Summary does not exist for the given transactionID : " + interfaceSummary.getTransactionId(), null);
+			}
+			
+			calendar = Calendar.getInstance();  
+	        timestamp = new Timestamp(calendar.getTimeInMillis());
+	        lobj = ((org.postgresql.PGConnection) connection).getLargeObjectAPI();
+	        
+			statement = connection.prepareStatement(IntegrationConstants.INTERFACE_SUMMARY_UPDATE_QUERY);
+			if(interfaceSummary.getRequestData() != null && !new String(interfaceSummary.getRequestData(),IntegrationConstants.FILE_ENCODE_FORMAT).trim().isEmpty())
+			{
+				int reqOid = getOidForData(lobj, interfaceSummary.getRequestData());
+				statement.setInt(1, reqOid);
+			}
+			if(interfaceSummary.getAckData() != null && !new String(interfaceSummary.getAckData(),IntegrationConstants.FILE_ENCODE_FORMAT).trim().isEmpty())
+			{
+				int ackOid = getOidForData(lobj, interfaceSummary.getAckData());
+				statement.setInt(2, ackOid);
+				statement.setTimestamp(3, timestamp);
+			}
+			else
+			{
+				statement.setNull(2, Types.NULL);
+				statement.setNull(3, Types.NULL);
+			}
+			if(interfaceSummary.getOriginalResponseData() != null && !new String(interfaceSummary.getOriginalResponseData(),IntegrationConstants.FILE_ENCODE_FORMAT).trim().isEmpty())
+			{
+				int oResOid = getOidForData(lobj, interfaceSummary.getOriginalResponseData());
+				statement.setInt(4, oResOid);
+			}
+			else
+			{
+				statement.setNull(4, Types.NULL);
+			}
+			if(interfaceSummary.getResponseData() != null && !new String(interfaceSummary.getResponseData(),IntegrationConstants.FILE_ENCODE_FORMAT).trim().isEmpty())
+			{
+				int resOid = getOidForData(lobj, interfaceSummary.getResponseData());
+				statement.setInt(5, resOid);
+				statement.setTimestamp(6, timestamp);
+			}
+			else
+			{
+				statement.setNull(5, Types.NULL);
+				statement.setNull(6, Types.NULL);
+			}
+			statement.setLong(7, interfaceSummary.getStatus().getStatusId());
+			statement.setLong(8, interfaceSummary.getRetryCount());
+			statement.setString(9, interfaceSummary.getReferenceData1());
+			if(interfaceSummary.getReferenceData2() != null)
+				statement.setLong(10, interfaceSummary.getReferenceData2());
+			else
+				statement.setNull(10, Types.NULL);
+			if(interfaceSummary.getReferenceData3() != null)
+				statement.setLong(11, interfaceSummary.getReferenceData3());
+			else
+				statement.setNull(11, Types.NULL);
+			if(interfaceSummary.getReferenceData4() != null)
+				statement.setLong(12, interfaceSummary.getReferenceData4());
+			else
+				statement.setNull(12, Types.NULL);
+			statement.setString(13, interfaceSummary.getReferenceData5());
+			statement.setLong(14, interfaceSummary.getTransactionId());
+			
+			int rowsUpdated = statement.executeUpdate();
+			TLogger.debug(rowsUpdated + " Rows Updated in Interface Summary..");
+			
+			connection.commit();
+			
+			summary = getInterfaceSummary(interfaceSummary.getTransactionId());
+			return summary;
+		}
+		catch(Exception exception)
+		{
+			TLogger.error("Unhandled Exception : " + exception.getMessage(), exception);
+			throw new IntegrationManagement.InterfaceServiceException("Unhandled Exception : " + exception.getMessage(), exception);
+		}
+		finally
+		{
+			try
+			{
+				if(statement != null)
+					statement.close();
+				if(connection != null)
+					connection.close();
+			}
+			catch(Exception exception)
+			{
+				TLogger.error(exception.getMessage(), exception);
+			}
+			
+			summary = null;
+			statement = null;
+			calendar = null;
+			timestamp = null;
+			lobj = null;
+			connection = null;
+		}
+	}
+	
+	/**
+	 * @author Suresh Upparu
+	 * <b>Algorithm</b>
+	 * <pre>
+	 * 
+	 * </pre>
+	 * @param responseBean
+	 * @throws ApplicationException
+	 */	
+	public void createInterfaceFailure(ResponseBean responseBean) throws ApplicationException
+	{
+		Connection connection = null;
+		PreparedStatement statement = null;
+		InterfaceSummary summary = null;
+		ResultSet resultSet = null; 
+		Calendar calendar = null;
+		Timestamp timestamp = null;
+		LargeObjectManager lobj = null;
+		Long failureId = null;
+		int rowsUpdated = 0;
+		
+		try
+		{
+			connection = getConnection();
+			if(connection == null)
+			{
+				TLogger.error("Connection object should not be empty..");
+				throw new IntegrationManagement.InterfaceServiceException("Connection object should not be empty..", null);
+			}
+			
+			summary = getInterfaceSummary(responseBean.getTransactionId());
+			if(summary == null)
+			{
+				TLogger.error("Summary does not exist for the given transactionID : " + responseBean.getTransactionId());
+				throw new IntegrationManagement.InterfaceServiceException("Summary does not exist for the given transactionID : " + responseBean.getTransactionId(), null);
+			}
+			
+			connection.setAutoCommit(false);
+			
+			statement = connection.prepareStatement(IntegrationConstants.INTERFACE_FAILURE_SEQ_QUERY);
+			resultSet = statement.executeQuery();
+			if(resultSet.next())
+			{
+				failureId = resultSet.getLong(1);
+//				TLogger.debug("failureId : " + failureId);
+			}
+			statement.close();
+			
+			calendar = Calendar.getInstance();  
+	        timestamp = new Timestamp(calendar.getTimeInMillis());
+	        lobj = ((org.postgresql.PGConnection) connection).getLargeObjectAPI();
+            
+			statement = connection.prepareStatement(IntegrationConstants.INTERFACE_FAILURE_INSERT_QUERY);
+			statement.setLong(1, failureId);
+			statement.setLong(2, summary.getTransactionId());
+			if(responseBean.getAckData() != null)
+			{
+				int ackOid = getOidForData(lobj, responseBean.getAckData().getBytes());
+				statement.setInt(3, ackOid);
+				statement.setTimestamp(4, timestamp);
+			}
+			else
+			{
+				statement.setNull(3, Types.NULL);
+				statement.setNull(4, Types.NULL);
+			}
+			
+			if(responseBean.getResponseData() != null)
+			{
+				int resOid = getOidForData(lobj, responseBean.getResponseData().getBytes());
+				statement.setInt(5, resOid);
+				statement.setTimestamp(6, timestamp);
+			}
+			else
+			{
+				statement.setNull(5, Types.NULL);
+				statement.setNull(6, Types.NULL);
+			}
+			statement.setLong(7, summary.getReferenceData3());
+			statement.setLong(8, responseBean.getErrorCode());
+			statement.setString(9, responseBean.getErrorMessage());
+			
+			rowsUpdated = statement.executeUpdate();
+			TLogger.debug(rowsUpdated + " Rows Updated in Interface Failure..");
+			
+			connection.commit();
+		}
+		catch(Exception exception)
+		{
+			TLogger.error("Unhandled Exception : " + exception.getMessage(), exception);
+			throw new IntegrationManagement.InterfaceServiceException("Unhandled Exception : " + exception.getMessage(), exception);
+		}
+		finally
+		{
+			try
+			{
+				if(resultSet != null)
+					resultSet.close();
+				if(statement != null)
+					statement.close();
+				if(connection != null)
+					connection.close();
+			}
+			catch(Exception exception)
+			{
+				TLogger.error(exception.getMessage(), exception);
+			}
+			
+			summary = null;
+			statement = null;
+			resultSet = null; 
+			calendar = null;
+			timestamp = null;
+			lobj = null;
+			failureId = null;
+			connection = null;
+		}
+	}
+	
+	/**
+	 * @author Suresh Upparu
+	 * <b>Algorithm</b>
+	 * <pre>
+	 * 
+	 * </pre>
+	 * @param responseBean
+	 * @throws ApplicationException
+	 */
+	public void updateInterfaceFailureStatus(ResponseBean responseBean) throws ApplicationException
+	{
+		Connection connection = null;
+		PreparedStatement statement = null;
+		InterfaceSummary summary = null;
+		ResultSet resultSet = null; 
+		int rowsUpdated = 0;
+
+		try
+		{
+			connection = getConnection();
+			if(connection == null)
+			{
+				TLogger.error("Connection object should not be empty..");
+				throw new IntegrationManagement.InterfaceServiceException("Connection object should not be empty..", null);
+			}
+
+			summary = getInterfaceSummary(responseBean.getTransactionId());
+			if(summary == null)
+			{
+				TLogger.error("Summary does not exist for the given transactionID : " + responseBean.getTransactionId());
+				throw new IntegrationManagement.InterfaceServiceException("Summary does not exist for the given transactionID : " + responseBean.getTransactionId(), null);
+			}
+
+			connection.setAutoCommit(false);
+			statement = connection.prepareStatement(IntegrationConstants.INTERFACE_SUMMARY_STAUS_UPDATE_QUERY);
+			statement.setLong(1, responseBean.getStatusId());
+			statement.setLong(2, responseBean.getRetryCount() != null ? responseBean.getRetryCount() : (summary.getRetryCount() != null ? summary.getRetryCount() : 0L));
+			statement.setLong(3, responseBean.getTransactionId());
+			rowsUpdated = statement.executeUpdate();
+			statement.close();
+			connection.commit();
+
+			TLogger.debug(rowsUpdated + " Rows Updated in Interface Summary..");
+			createInterfaceFailure(responseBean);	
+		}
+		catch(Exception exception)
+		{
+			TLogger.error("Unhandled Exception : " + exception.getMessage(), exception);
+			throw new IntegrationManagement.InterfaceServiceException("Unhandled Exception : " + exception.getMessage(), exception);
+		}
+		finally
+		{
+			try
+			{
+				if(resultSet != null)
+					resultSet.close();
+				if(statement != null)
+					statement.close();
+				if(connection != null)
+					connection.close();
+			}
+			catch(Exception exception)
+			{
+				TLogger.error(exception.getMessage(), exception);
+			}
+
+			summary = null;
+			statement = null;
+			resultSet = null; 
+			connection = null;
+		}
+	}
+	
+	
+		
+	/**
+	 * @author Suresh Upparu
+	 * <b>Algorithm</b>
+	 * <pre>
+	 * 
+	 * </pre>
+	 * @param lobj
+	 * @param data
+	 * @return int
+	 * @throws ApplicationException
+	 */
+	@SuppressWarnings("deprecation")
+	private int getOidForData(LargeObjectManager lobj, byte[] bytes) throws ApplicationException
+	{
+		LargeObject largeObject = null;
+		InputStream inputStream = null;
+		byte[] buffer = null;
+		
+		try
+		{
+			int oid = lobj.create(LargeObjectManager.READ | LargeObjectManager.WRITE);
+			largeObject = lobj.open(oid, LargeObjectManager.WRITE);
+	        buffer = new byte[2048];
+			inputStream = new ByteArrayInputStream(bytes);
+			int stream;
+			while ((stream = inputStream.read(buffer, 0, 2048)) > 0) 
+			{
+				largeObject.write(buffer, 0, stream);
+			}
+
+			inputStream.close();
+			if (largeObject != null) 
+			{
+				largeObject.close();
+			}
+			return oid;
+		}
+		catch(Exception exception)
+		{
+			TLogger.error(exception.getMessage(), exception);
+			throw new IntegrationManagement.InterfaceServiceException(exception.getMessage(), exception);
+		}
+		finally
+		{
+			try
+			{
+				if(inputStream != null)
+					inputStream.close();
+				if(largeObject != null)
+					largeObject.close();
+			}
+			catch(Exception exception)
+			{
+				TLogger.error(exception.getMessage(), exception);
+			}
+			
+			largeObject = null;
+			inputStream = null;
+			buffer = null;
+		}
+	}
+	
+	/**
+	 * @author Suresh Upparu
+	 * <b>Algorithm</b>
+	 * <pre>
+	 * 
+	 * </pre>
+	 * @param fileId
+	 * @return InterfaceFileSummary
+	 * @throws ApplicationException
+	 */
+	public InterfaceFileSummary getInterfaceFileSummary(Long fileId) throws ApplicationException
+	{
+		InterfaceFileSummary interfaceFileSummary = null;
+		Connection connection = null;
+		PreparedStatement statement = null;
+		ResultSet resultSet = null;
+		Interfaces interfaces = null;
+		Status status = null;
+		
+		try
+		{
+			connection = getConnection();
+			if(connection == null)
+			{
+				TLogger.error("Connection object should not be empty..");
+				throw new IntegrationManagement.InterfaceServiceException("Connection object should not be empty..", null);
+			}
+			
+			statement = connection.prepareStatement(IntegrationConstants.INTERFACE_FILE_SUMMARY_SELECT_QUERY);
+			statement.setLong(1, fileId);
+			resultSet = statement.executeQuery();
+			if(resultSet.next())
+			{
+				interfaceFileSummary = new InterfaceFileSummary();
+				interfaces = new Interfaces();
+				status = new Status();
+				interfaceFileSummary.setFileId(resultSet.getLong("file_id_n"));
+				interfaceFileSummary.setFileName(resultSet.getString("file_name_v"));
+				interfaces.setInterfaceId(resultSet.getLong("interface_id_n"));
+				interfaceFileSummary.setInterfaces(interfaces);
+				interfaceFileSummary.setReceivedServerDetails(resultSet.getString("received_server_v"));
+				interfaceFileSummary.setSendServerDetails(resultSet.getString("send_server_v"));
+				interfaceFileSummary.setLocalServerDetails(resultSet.getString("local_server_v"));
+				interfaceFileSummary.setTotalCount(resultSet.getLong("total_count_n"));
+				interfaceFileSummary.setSuccessCount(resultSet.getLong("success_count_n"));
+				interfaceFileSummary.setErrorCount(resultSet.getLong("error_count_n"));
+				interfaceFileSummary.setUploadedBy(resultSet.getLong("uploaded_by_n"));
+				status.setStatusId(resultSet.getLong("status_n"));
+				interfaceFileSummary.setStatus(status);
+				interfaceFileSummary.setMessage(resultSet.getString("message_v"));
+				interfaceFileSummary.setRetryCount(resultSet.getLong("retry_count_n"));
+				interfaceFileSummary.setValidatedOn(resultSet.getTimestamp("validated_on_dt"));
+				interfaceFileSummary.setProcessedOn(resultSet.getTimestamp("processed_on_dt"));
+				interfaceFileSummary.setUploadedOn(resultSet.getTimestamp("uploaded_on_dt"));
+			}
+			
+			return interfaceFileSummary;
+		}
+		catch(Exception exception)
+		{
+			TLogger.error(exception.getMessage(), exception);
+			throw new IntegrationManagement.InterfaceServiceException(exception.getMessage(), exception);
+		}
+		finally
+		{
+			try
+			{
+				if(resultSet != null)
+					resultSet.close();
+				if(statement != null)
+					statement.close();
+				if(connection != null)
+					connection.close();
+			}
+			catch(Exception exception)
+			{
+				TLogger.error(exception.getMessage(), exception);
+			}
+			
+			interfaceFileSummary = null;
+			connection = null;
+			statement = null;
+			resultSet = null;
+			interfaces = null;
+			status = null;
+		}
+	}
+	
+	/**
+	 * @author Suresh Upparu
+	 * <b>Algorithm</b>
+	 * <pre>
+	 * 
+	 * </pre>
+	 * @param interfaceFileSummary
+	 * @return InterfaceFileSummary
+	 * @throws ApplicationException
+	 */
+	public InterfaceFileSummary updateInterfaceFileSummary(InterfaceFileSummary interfaceFileSummary) throws ApplicationException
+	{
+		InterfaceFileSummary fileSummary = null;
+		Connection connection = null;
+		PreparedStatement statement = null;
+		Calendar calendar = null;
+		Timestamp timestamp = null;
+		
+		try
+		{
+			connection = getConnection();
+			if(connection == null)
+			{
+				TLogger.error("Connection object should not be empty..");
+				throw new IntegrationManagement.InterfaceServiceException("Connection object should not be empty..", null);
+			}
+			
+			fileSummary = getInterfaceFileSummary(interfaceFileSummary.getFileId());
+			if(fileSummary == null)
+			{
+				TLogger.error("File Summary does not exist for the given fileID : " + interfaceFileSummary.getFileId());
+				throw new IntegrationManagement.InterfaceServiceException("File Summary does not exist for the given fileID : " + interfaceFileSummary.getFileId(), null);
+			}
+			
+			calendar = Calendar.getInstance();  
+	        timestamp = new Timestamp(calendar.getTimeInMillis());
+	        
+			statement = connection.prepareStatement(IntegrationConstants.INTERFACE_FILE_SUMMARY_UPDATE_QUERY);
+			statement.setLong(1, interfaceFileSummary.getTotalCount());
+			statement.setLong(2, interfaceFileSummary.getSuccessCount());
+			statement.setLong(3, interfaceFileSummary.getErrorCount());
+			if(interfaceFileSummary.getFilterCount() != null)
+				statement.setLong(4, interfaceFileSummary.getFilterCount());
+			else
+				statement.setLong(4, Types.NULL);
+			statement.setLong(5, interfaceFileSummary.getStatus().getStatusId());
+			statement.setString(6, interfaceFileSummary.getMessage());
+			statement.setTimestamp(7, timestamp);
+			statement.setTimestamp(8, timestamp);
+			statement.setString(9, ((interfaceFileSummary.getErrorMessage() != null && !interfaceFileSummary.getErrorMessage().trim().isEmpty()) ? interfaceFileSummary.getErrorMessage() : ""));
+			statement.setLong(10, interfaceFileSummary.getRetryCount() != null ? interfaceFileSummary.getRetryCount() : 0l);
+			statement.setLong(11, interfaceFileSummary.getFileId());
+			int rowsUpdated = statement.executeUpdate();
+			TLogger.debug(rowsUpdated + " Rows Updated in Interface File Summary..");
+			
+			statement.close();
+			connection.close();
+			
+			fileSummary = getInterfaceFileSummary(interfaceFileSummary.getFileId());  
+			return fileSummary;
+		}
+		catch(Exception exception)
+		{
+			TLogger.error(exception.getMessage(), exception);
+			throw new IntegrationManagement.InterfaceServiceException(exception.getMessage(), exception);
+		}
+		finally
+		{
+			try
+			{
+				if(statement != null)
+					statement.close();
+				if(connection != null)
+					connection.close();
+			}
+			catch(Exception exception)
+			{
+				TLogger.error(exception.getMessage(), exception);
+			}
+			
+			fileSummary = null;
+			connection = null;
+			statement = null;
+			calendar = null;
+			timestamp = null;
+		}
+	}
+	
+	/**
+	 * @author Suresh Upparu
+	 * <b>Algorithm</b>
+	 * <pre>
+	 * 
+	 * </pre>
+	 * @param fileId
+	 * @return List<InterfaceFileSummaryDetails>
+	 * @throws ApplicationException
+	 */
+	public List<InterfaceFileSummaryDetails> getInterfaceFileSummaryDetails(Long fileId) throws ApplicationException
+	{
+		List<InterfaceFileSummaryDetails> interfaceFileSummaryDtlList = null;
+		InterfaceFileSummaryDetails interfaceFileSummaryDtls = null;
+		InterfaceFileSummary fileSummary = null;
+		Connection connection = null;
+		PreparedStatement statement = null;
+		ResultSet resultSet = null;
+		
+		try
+		{
+			connection = getConnection();
+			if(connection == null)
+			{
+				TLogger.error("Connection object should not be empty..");
+				throw new IntegrationManagement.InterfaceServiceException("Connection object should not be empty..", null);
+			}
+			
+			interfaceFileSummaryDtlList = new ArrayList<InterfaceFileSummaryDetails>();
+			statement = connection.prepareStatement(IntegrationConstants.INTERFACE_FILE_SUMMARY_DTLS_SELECT_QUERY);
+			statement.setLong(1, fileId);
+			resultSet = statement.executeQuery();
+			while(resultSet.next())
+			{
+				interfaceFileSummaryDtls = new InterfaceFileSummaryDetails();
+				fileSummary = new InterfaceFileSummary();
+				
+				interfaceFileSummaryDtls.setFileDetailsId(resultSet.getLong("file_details_id_n"));
+				fileSummary.setFileId(resultSet.getLong("file_id_n"));
+				interfaceFileSummaryDtls.setInterfaceFileSummary(fileSummary);
+				interfaceFileSummaryDtls.setFileName(resultSet.getString("file_name_v"));
+				interfaceFileSummaryDtls.setControlFileName(resultSet.getString("ctrl_file_name_v"));
+				interfaceFileSummaryDtls.setFileType(resultSet.getString("file_type_v"));
+				interfaceFileSummaryDtls.setTotalCount(resultSet.getLong("total_count_n"));
+				interfaceFileSummaryDtls.setSuccessCount(resultSet.getLong("success_count_n"));
+				interfaceFileSummaryDtls.setErrorCount(resultSet.getLong("error_count_n"));
+				
+				interfaceFileSummaryDtlList.add(interfaceFileSummaryDtls);
+			}
+			
+			return interfaceFileSummaryDtlList;
+		}
+		catch(Exception exception)
+		{
+			TLogger.error(exception.getMessage(), exception);
+			throw new IntegrationManagement.InterfaceServiceException(exception.getMessage(), exception);
+		}
+		finally
+		{
+			try
+			{
+				if(resultSet != null)
+					resultSet.close();
+				if(statement != null)
+					statement.close();
+				if(connection != null)
+					connection.close();
+			}
+			catch(Exception exception)
+			{
+				TLogger.error(exception.getMessage(), exception);
+			}
+			
+			interfaceFileSummaryDtlList = null;
+			interfaceFileSummaryDtls = null;
+			fileSummary = null;
+			connection = null;
+			statement = null;
+			resultSet = null;
+		}
+	}
+	
+	/**
+	 * @author Suresh Upparu
+	 * <b>Algorithm</b>
+	 * <pre>
+	 * 
+	 * </pre>
+	 * @param fileDetailsId
+	 * @return InterfaceFileSummaryDetails
+	 * @throws ApplicationException
+	 */
+	public InterfaceFileSummaryDetails getInterfaceFileSummaryDetailsById(Long fileDetailsId) throws ApplicationException
+	{
+		InterfaceFileSummaryDetails interfaceFileSummaryDtls = null;
+		InterfaceFileSummary fileSummary = null;
+		Connection connection = null;
+		PreparedStatement statement = null;
+		ResultSet resultSet = null;
+		
+		try
+		{
+			connection = getConnection();
+			if(connection == null)
+			{
+				TLogger.error("Connection object should not be empty..");
+				throw new IntegrationManagement.InterfaceServiceException("Connection object should not be empty..", null);
+			}
+			
+			statement = connection.prepareStatement(IntegrationConstants.INTERFACE_FILE_SUM_DTLS_BY_DETAIL_ID_SEL_QUERY);
+			statement.setLong(1, fileDetailsId);
+			resultSet = statement.executeQuery();
+			if(resultSet.next())
+			{
+				interfaceFileSummaryDtls = new InterfaceFileSummaryDetails();
+				fileSummary = new InterfaceFileSummary();
+			
+				interfaceFileSummaryDtls.setFileDetailsId(resultSet.getLong("file_details_id_n"));
+				fileSummary.setFileId(resultSet.getLong("file_id_n"));
+				interfaceFileSummaryDtls.setInterfaceFileSummary(fileSummary);
+				interfaceFileSummaryDtls.setFileName(resultSet.getString("file_name_v"));
+				interfaceFileSummaryDtls.setControlFileName(resultSet.getString("ctrl_file_name_v"));
+				interfaceFileSummaryDtls.setFileType(resultSet.getString("file_type_v"));
+				interfaceFileSummaryDtls.setTotalCount(resultSet.getLong("total_count_n"));
+				interfaceFileSummaryDtls.setSuccessCount(resultSet.getLong("success_count_n"));
+				interfaceFileSummaryDtls.setErrorCount(resultSet.getLong("error_count_n"));
+			}
+			
+			return interfaceFileSummaryDtls;
+		}
+		catch(Exception exception)
+		{
+			TLogger.error(exception.getMessage(), exception);
+			throw new IntegrationManagement.InterfaceServiceException(exception.getMessage(), exception);
+		}
+		finally
+		{
+			try
+			{
+				if(resultSet != null)
+					resultSet.close();
+				if(statement != null)
+					statement.close();
+				if(connection != null)
+					connection.close();
+			}
+			catch(Exception exception)
+			{
+				TLogger.error(exception.getMessage(), exception);
+			}
+			
+			interfaceFileSummaryDtls = null;
+			fileSummary = null;
+			connection = null;
+			statement = null;
+			resultSet = null;
+		}
+	}
+	
+	/**
+	 * @author Suresh Upparu
+	 * <b>Algorithm</b>
+	 * <pre>
+	 * 
+	 * </pre>
+	 * @param interfaceId
+	 * @return Map<String, String>
+	 * @throws ApplicationException
+	 */
+	public Map<String, String> getInterfaceAttributes(Long interfaceId) throws ApplicationException
+	{
+		Connection connection = null;
+		PreparedStatement statement = null;
+		ResultSet resultSet = null;
+		Map<String, String> attributeMap = null;
+		
+		try
+		{
+			connection = getConnection();
+			if(connection == null)
+			{
+				TLogger.error("Connection object should not be empty..");
+				throw new IntegrationManagement.InterfaceServiceException("Connection object should not be empty..", null);
+			}
+			
+			attributeMap = new HashMap<String, String>();
+			statement = connection.prepareStatement(IntegrationConstants.INTERFACE_ATTR_SELECT_QUERY);
+			statement.setLong(1, interfaceId);
+			resultSet = statement.executeQuery();
+			while(resultSet.next())
+			{
+				attributeMap.put(resultSet.getString("name_v"), resultSet.getString("value_v"));
+			}
+			return attributeMap;
+		}
+		catch(Exception exception)
+		{
+			TLogger.error(exception.getMessage(), exception);
+			throw new IntegrationManagement.InterfaceServiceException(exception.getMessage(), exception);
+		}
+		finally
+		{
+			try
+			{
+				if(resultSet != null)
+					resultSet.close();
+				if(statement != null)
+					statement.close();
+				if(connection != null)
+					connection.close();
+			}
+			catch(Exception exception)
+			{
+				TLogger.error(exception.getMessage(), exception);
+			}
+			
+			attributeMap = null;
+			connection = null;
+			statement = null;
+			resultSet = null;
+		}
+	}
+	
+	/**
+	 * @author Suresh Upparu
+	 * <b>Algorithm</b>
+	 * <pre>
+	 * 
+	 * </pre>
+	 * @param interfaceFileSummary
+	 * @return InterfaceFileSummary
+	 * @throws ApplicationException
+	 */
+	public InterfaceFileSummary createInterfaceFileSummary(InterfaceFileSummary interfaceFileSummary) throws ApplicationException
+	{
+		Connection connection = null;
+		InterfaceFileSummary fileSummary = null;
+		PreparedStatement statement = null;
+		ResultSet resultSet = null;
+		Calendar calendar = null;
+		Timestamp timestamp = null;
+		Long fileId = null;
+		
+		try
+		{
+			connection = getConnection();
+			if(connection == null)
+			{
+				TLogger.error("Connection object should not be empty..");
+				throw new IntegrationManagement.InterfaceServiceException("Connection object should not be empty..", null);
+			}
+			
+			connection.setAutoCommit(false);
+			
+			statement = connection.prepareStatement(IntegrationConstants.INTERFACE_FILE_SUM_SEQ_QUERY);
+			resultSet = statement.executeQuery();
+			if(resultSet.next())
+			{
+				fileId = resultSet.getLong(1);
+//				TLogger.debug("fileId : " + fileId);
+			}
+			statement.close();
+			
+			calendar = Calendar.getInstance();  
+	        timestamp = new Timestamp(calendar.getTimeInMillis());
+	        
+			statement = connection.prepareStatement(IntegrationConstants.INTERFACE_FILE_SUM_INSERT_QUERY);
+			
+			statement.setLong(1, fileId);
+			statement.setString(2, interfaceFileSummary.getFileName());
+			statement.setLong(3, interfaceFileSummary.getInterfaces().getInterfaceId());
+			if(interfaceFileSummary.getReceivedServerDetails() != null)
+				statement.setString(4, interfaceFileSummary.getReceivedServerDetails());
+			else
+				statement.setNull(4, Types.NULL);
+			if(interfaceFileSummary.getSendServerDetails() != null)
+				statement.setString(5, interfaceFileSummary.getSendServerDetails());
+			else
+				statement.setNull(5, Types.NULL);
+			if(interfaceFileSummary.getLocalServerDetails() != null)
+				statement.setString(6, interfaceFileSummary.getLocalServerDetails());
+			else
+				statement.setNull(6, Types.NULL);
+			statement.setLong(7, interfaceFileSummary.getTotalCount());
+			if(interfaceFileSummary.getSuccessCount() != null)
+				statement.setLong(8, interfaceFileSummary.getSuccessCount());
+			else
+				statement.setNull(8, Types.NULL);
+			if(interfaceFileSummary.getErrorCount() != null)
+				statement.setLong(9, interfaceFileSummary.getErrorCount());
+			else
+				statement.setNull(9, Types.NULL);
+			if(interfaceFileSummary.getUploadedBy() != null)
+				statement.setLong(10, interfaceFileSummary.getUploadedBy());
+			else
+				statement.setNull(10, Types.NULL);
+			statement.setLong(11, interfaceFileSummary.getStatus().getStatusId());
+			if(interfaceFileSummary.getMessage() != null)
+				statement.setString(12, interfaceFileSummary.getMessage());
+			else
+				statement.setNull(12, Types.NULL);
+			if(interfaceFileSummary.getValidatedOn() != null)
+			{
+				calendar = Calendar.getInstance();
+				calendar.setTime(interfaceFileSummary.getValidatedOn());
+				timestamp = new Timestamp(calendar.getTimeInMillis());
+				statement.setTimestamp(13, timestamp);
+			}
+			else
+				statement.setNull(13, Types.NULL);
+			if(interfaceFileSummary.getProcessedOn() != null)
+			{
+				calendar = Calendar.getInstance();
+				calendar.setTime(interfaceFileSummary.getProcessedOn());
+				timestamp = new Timestamp(calendar.getTimeInMillis());
+				statement.setTimestamp(14, timestamp);
+			}
+			else
+				statement.setNull(14, Types.NULL);
+			if(interfaceFileSummary.getUploadedOn() != null)
+			{
+				calendar = Calendar.getInstance();
+				calendar.setTime(interfaceFileSummary.getUploadedOn());
+				timestamp = new Timestamp(calendar.getTimeInMillis());
+				statement.setTimestamp(15, timestamp);
+			}
+			else
+				statement.setNull(15, Types.NULL);
+			
+			int rowsUpdated = statement.executeUpdate();
+			TLogger.debug(rowsUpdated + " Rows Updated in Interface File Summary..");
+			
+			connection.commit();
+			
+			fileSummary = getInterfaceFileSummary(fileId);
+			return fileSummary;
+		}
+		catch(Exception exception)
+		{
+			TLogger.error("Unhandled Exception : " + exception.getMessage(), exception);
+			throw new IntegrationManagement.InterfaceServiceException("Unhandled Exception : " + exception.getMessage(), exception);
+		}
+		finally
+		{
+			try
+			{
+				if(resultSet != null)
+					resultSet.close();
+				if(statement != null)
+					statement.close();
+				if(connection != null)
+					connection.close();
+			}
+			catch(Exception exception)
+			{
+				TLogger.error(exception.getMessage(),  exception);
+			}
+			
+			fileSummary = null;
+			statement = null;
+			resultSet = null;
+			calendar = null;
+			timestamp = null;
+			fileId = null;
+			connection = null;
+		}
+	}
+	
+	/**
+	 * @author Suresh Upparu
+	 * <b>Algorithm</b>
+	 * <pre>
+	 * 
+	 * </pre>
+	 * @param fileSummaryDetails
+	 * @return InterfaceFileSummaryDetails
+	 * @throws ApplicationException
+	 */
+	public InterfaceFileSummaryDetails createFileSummaryDetails(InterfaceFileSummaryDetails fileSummaryDetails) throws ApplicationException
+	{
+		Connection connection = null;
+		PreparedStatement statement = null;
+		ResultSet resultSet = null;
+		Long fileDetailsId = null;
+		
+		try
+		{
+			connection = getConnection();
+			if(connection == null)
+			{
+				TLogger.error("Connection object should not be empty..");
+				throw new IntegrationManagement.InterfaceServiceException("Connection object should not be empty..", null);
+			}
+			
+			connection.setAutoCommit(false);
+			
+			statement = connection.prepareStatement(IntegrationConstants.INTERFACE_FILE_SUM_DTLS_SEQ_QUERY);
+			resultSet = statement.executeQuery();
+			if(resultSet.next())
+			{
+				fileDetailsId = resultSet.getLong(1);
+//				TLogger.debug("fileDetailId : " + fileDetailId);
+			}
+			statement.close();
+			
+			statement = connection.prepareStatement(IntegrationConstants.INTERFACE_FILE_SUM_DTLS_INSERT_QUERY);
+			
+			statement.setLong(1, fileDetailsId);
+			statement.setLong(2, fileSummaryDetails.getInterfaceFileSummary().getFileId());
+			statement.setString(3, fileSummaryDetails.getFileName());
+			statement.setString(4, fileSummaryDetails.getControlFileName());
+			statement.setString(5, fileSummaryDetails.getFileType());
+			if(fileSummaryDetails.getTotalCount() != null)
+				statement.setLong(6, fileSummaryDetails.getTotalCount());
+			else
+				statement.setNull(6, Types.NULL);
+			if(fileSummaryDetails.getSuccessCount() != null)
+				statement.setLong(7, fileSummaryDetails.getSuccessCount());
+			else
+				statement.setNull(7, Types.NULL);
+			if(fileSummaryDetails.getErrorCount() != null)
+				statement.setLong(8, fileSummaryDetails.getErrorCount());
+			else
+				statement.setNull(8, Types.NULL);
+			
+			int rowsUpdated = statement.executeUpdate();
+			TLogger.debug(rowsUpdated + " Rows Updated in Interface File Summary Details..");
+			
+			connection.commit();
+			
+			fileSummaryDetails = getInterfaceFileSummaryDetailsById(fileDetailsId);
+			return fileSummaryDetails;
+		}
+		catch(Exception exception)
+		{
+			TLogger.error("Unhandled Exception : " + exception.getMessage(), exception);
+			throw new IntegrationManagement.InterfaceServiceException("Unhandled Exception : " + exception.getMessage(), exception);
+		}
+		finally
+		{
+			try
+			{
+				if(resultSet != null)
+					resultSet.close();
+				if(statement != null)
+					statement.close();
+				if(connection != null)
+					connection.close();
+			}
+			catch(Exception exception)
+			{
+				TLogger.error(exception.getMessage(),  exception);
+			}
+			
+			statement = null;
+			resultSet = null;
+			fileDetailsId = null;
+			connection = null;
+		}
+	}
+	
+	/**
+	 * @author Suresh Upparu
+	 * <b>Algorithm</b>
+	 * <pre>
+	 * 
+	 * </pre>
+	 * @param fileSummaryDetails
+	 * @return InterfaceFileSummaryDetails
+	 * @throws ApplicationException
+	 */
+	public InterfaceFileSummaryDetails updateFileSummaryDetails(InterfaceFileSummaryDetails fileSummaryDetails) throws ApplicationException
+	{
+		Connection connection = null;
+		PreparedStatement statement = null;
+		ResultSet resultSet = null;
+		
+		try
+		{
+			connection = getConnection();
+			if(connection == null)
+			{
+				TLogger.error("Connection object should not be empty..");
+				throw new IntegrationManagement.InterfaceServiceException("Connection object should not be empty..", null);
+			}
+			
+			connection.setAutoCommit(false);
+			
+			statement = connection.prepareStatement(IntegrationConstants.INTERFACE_FILE_SUM_DTLS_UPDATE_QUERY);
+			
+			statement.setString(1, fileSummaryDetails.getFileName());
+			statement.setString(2, fileSummaryDetails.getControlFileName());
+			statement.setString(3, fileSummaryDetails.getFileType());
+			if(fileSummaryDetails.getTotalCount() != null)
+				statement.setLong(4, fileSummaryDetails.getTotalCount());
+			else
+				statement.setNull(4, Types.NULL);
+			if(fileSummaryDetails.getSuccessCount() != null)
+				statement.setLong(5, fileSummaryDetails.getSuccessCount());
+			else
+				statement.setNull(5, Types.NULL);
+			if(fileSummaryDetails.getErrorCount() != null)
+				statement.setLong(6, fileSummaryDetails.getErrorCount());
+			else
+				statement.setNull(6, Types.NULL);
+			statement.setLong(7, fileSummaryDetails.getFileDetailsId());
+			
+			int rowsUpdated = statement.executeUpdate();
+			TLogger.debug(rowsUpdated + " Rows Updated in Interface File Summary Details..");
+			
+			connection.commit();
+			
+			fileSummaryDetails = getInterfaceFileSummaryDetailsById(fileSummaryDetails.getFileDetailsId());
+			return fileSummaryDetails;
+		}
+		catch(Exception exception)
+		{
+			TLogger.error("Unhandled Exception : " + exception.getMessage(), exception);
+			throw new IntegrationManagement.InterfaceServiceException("Unhandled Exception : " + exception.getMessage(), exception);
+		}
+		finally
+		{
+			try
+			{
+				if(resultSet != null)
+					resultSet.close();
+				if(statement != null)
+					statement.close();
+				if(connection != null)
+					connection.close();
+			}
+			catch(Exception exception)
+			{
+				TLogger.error(exception.getMessage(),  exception);
+			}
+			
+			statement = null;
+			resultSet = null;
+			connection = null;
+		}
+	}
+	
+	/**
+	 * 
+	 * @param filePath
+	 * @param totalCount
+	 * @param fileName
+	 * @param fileFormat
+	 * @param fileDetailsId
+	 * @param contolFileFormat
+	 * @param contolFilePath
+	 * @throws ApplicationException
+	 */
+	public void createControlFile(String filePath, Long totalCount, String fileName, String fileFormat, Long fileDetailsId, String contolFileFormat, String contolFilePath) throws ApplicationException 
+	{
+		//MetricLog.startMetric("FileDetailsId", fileDetailsId);
+		Long startTime = System.currentTimeMillis();
+		if(TLogger.debugIsEnabled())
+		{
+			TLogger.debug("Entry createControlFile.. Started at --> "+ new Date());
+		}
+
+		File controlFile = null;
+		FileOutputStream fileOutputStream = null;
+		OutputStreamWriter outputStreamWriter = null;
+		String ctrlFileFinalName = null;
+		MessageDigest md = null;
+		FileInputStream fis = null;
+		String data = null;
+		InterfaceFileSummaryDetails interfaceFileSummaryDetails = null;
+		File file = null;
+		SimpleDateFormat dateFormat = null;
+		StringBuffer stringBuffer = null;
+		byte[] dataBytes = null;
+		byte[] mdbytes = null;
+		
+		try
+		{
+			TLogger.debug("createControlFile service received filePath	-->"+filePath+"totalCount-->"+totalCount+"fileName-->"+fileName+"fileFormat-->"+fileFormat+"currentFileId-->"+fileDetailsId+"contolFileFormat-->"+contolFileFormat+"contolFilePath-->"+contolFilePath);
+
+			dateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+			file = new File(filePath);
+			md = MessageDigest.getInstance("MD5");
+			fis = new FileInputStream(file);
+
+			dataBytes = new byte[1024];
+
+			int nread = 0;
+			while ((nread = fis.read(dataBytes)) != -1) 
+			{
+				md.update(dataBytes, 0, nread);
+			}
+
+			mdbytes = md.digest();
+			stringBuffer = new StringBuffer();
+
+			for (int i = 0; i < mdbytes.length; i++) 
+			{
+				stringBuffer.append(Integer.toString((mdbytes[i] & 0xff) + 0x100, 16).substring(1));
+			}
+
+			ctrlFileFinalName = contolFilePath + File.separator +fileName +"." + contolFileFormat;
+			controlFile = new File(ctrlFileFinalName);
+			fileOutputStream = new FileOutputStream(controlFile, false);
+			outputStreamWriter = new OutputStreamWriter(fileOutputStream, IntegrationConstants.FILE_ENCODE_FORMAT);
+			data = dateFormat.format(new Date())+IntegrationConstants.CONTROL_FILE_DELIMETER+countLines(file)+IntegrationConstants.CONTROL_FILE_DELIMETER+file.length()+IntegrationConstants.CONTROL_FILE_DELIMETER+stringBuffer.toString()+IntegrationConstants.CONTROL_FILE_DELIMETER+fileName+"."+fileFormat;
+			outputStreamWriter.write(data);
+			
+			interfaceFileSummaryDetails = getInterfaceFileSummaryDetailsById(fileDetailsId);
+			interfaceFileSummaryDetails.setControlFileName(ctrlFileFinalName.substring(ctrlFileFinalName.lastIndexOf(File.separator)+1));
+			interfaceFileSummaryDetails.setFileName(file.getName());
+			interfaceFileSummaryDetails.setTotalCount(totalCount);
+			updateFileSummaryDetails(interfaceFileSummaryDetails);
+			outputStreamWriter.close();
+		}
+		catch(Exception e)
+		{
+			TLogger.error("[unhandled exception] "+e.getMessage(),e);
+			throw new IntegrationManagement.PrepareFileException(e.getMessage(),e);
+		}
+		finally
+		{
+			controlFile = null;
+			ctrlFileFinalName = null;
+			md = null;
+			data = null;
+			interfaceFileSummaryDetails = null;
+			file = null;
+			dateFormat = null;
+			stringBuffer = null;
+			dataBytes = null;
+			mdbytes = null;
+			
+			try 
+			{
+				if(outputStreamWriter != null)
+					outputStreamWriter.close();
+				if(fileOutputStream != null)
+					fileOutputStream.close();
+				if(fis != null)
+					fis.close();
+			} 
+			catch (IOException ioException) 
+			{
+				TLogger.error("[ioException] "+ioException.getMessage(),ioException);
+				throw new IntegrationManagement.PrepareFileException(ioException.getMessage(),ioException);
+			}
+
+			if(TLogger.debugIsEnabled())
+			{
+				TLogger.debug("Exit control file creation service at -->"+new Date()+" --- and took "+(System.currentTimeMillis()-startTime)+" milliseconds");
+			}
+			startTime = null;
+			//MetricLog.stopMetric("FileDetailsId", fileDetailsId);
+		}
+	}
+	
+	/**
+	 * @author Suresh Upparu
+	 * <b>Algorithm</b>
+	 * <pre>
+	 * 
+	 * </pre>
+	 * @param aFile
+	 * @return int
+	 * @throws IOException
+	 */
+	public int countLines(File aFile) throws IOException 
+	{
+		LineNumberReader reader = null;
+		
+		try 
+		{
+			reader = new LineNumberReader(new FileReader(aFile));
+			while ((reader.readLine()) != null)
+				continue;
+			return reader.getLineNumber();
+		}
+		catch (Exception ex) 
+		{
+			return -1;
+		}
+		finally 
+		{ 
+			if(reader != null) 
+				reader.close();
+		}
+	}
+}

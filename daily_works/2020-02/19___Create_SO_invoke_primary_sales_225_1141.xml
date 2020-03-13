@@ -1,0 +1,38 @@
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:int="http://com/enhancesys/integration/services/interfaces/IntegrationManagement">
+	<soapenv:Header/>
+	<soapenv:Body>
+		<int:invokePrimarySalesInterface>
+			<!--Optional:-->
+			<moduleId>225</moduleId>
+			<!--Optional:-->
+			<jsonRequestData>
+			<![CDATA[
+			{
+				"payload": {
+					"order": {
+						"po_no": "634487",
+						"po_ord_type": "ssfet",
+						"dist_chnl": "10",
+						"division": "30",
+						"sold_to_party": "",
+						"ship_to_party": "AK5443",
+						"ord_dt": "2019-10-11",
+						"req_deliv_dt": "2019-10-11",
+						"products": [
+							{
+								"matrl_code": "P64453",
+								"qty": "100"
+							},
+							{
+								"matrl_code": "P453",
+								"qty": "200"
+							}
+						]
+					}
+				}
+			}
+			]]>
+			</jsonRequestData>
+		</int:invokePrimarySalesInterface>
+	</soapenv:Body>
+</soapenv:Envelope>

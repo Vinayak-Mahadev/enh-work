@@ -20,15 +20,19 @@ public interface IWorkConstants {
 
 	public static final String  FILE_OPERATION_LOADKEY_OUTPUT_FILE = Environment.INTERFACE_WORK_SOURCECODE_LOC+  "/output/fileOperation/";
 
-	public static final String  FILE_OPERATION_SEARCH_OUTPUT_LOC = Environment.INTERFACE_WORK_SOURCECODE_LOC+  "/output/fileOperation/";
+	public static final String  FILE_OPERATION_SEARCH_OUTPUT_LOC   = Environment.INTERFACE_WORK_SOURCECODE_LOC+  "/output/fileOperation/";
 
-	public final static String DELETE_LINE_IN_FILE_INPUT          = Environment.INTERFACE_WORK_SOURCECODE_LOC +  "/commons/fileOperation/deleteLineInFile/input.txt";
+	public final static String DELETE_LINE_IN_FILE_INPUT           = Environment.INTERFACE_WORK_SOURCECODE_LOC +  "/commons/fileOperation/deleteLineInFile/input.txt";
 
-	public final static String DELETE_LINE_IN_FILE_OUTPUT         = Environment.INTERFACE_WORK_SOURCECODE_LOC +  "/commons/fileOperation/deleteLineInFile/output.txt";
+	public final static String DELETE_LINE_IN_FILE_OUTPUT          = Environment.INTERFACE_WORK_SOURCECODE_LOC +  "/commons/fileOperation/deleteLineInFile/output.txt";
 
-	public final static String DELETE_LINE_IN_FILE_DELETE         = Environment.INTERFACE_WORK_SOURCECODE_LOC +  "/commons/fileOperation/deleteLineInFile/delete.txt";
+	public final static String DELETE_LINE_IN_FILE_DELETE          = Environment.INTERFACE_WORK_SOURCECODE_LOC +  "/commons/fileOperation/deleteLineInFile/delete.txt";
 
-	public final static String FILE_OPERATION_LOC         = Environment.INTERFACE_WORK_SOURCECODE_LOC +  "/commons/fileOperation/";
+	public final static String FILE_OPERATION_LOC        		   = Environment.INTERFACE_WORK_SOURCECODE_LOC +  "/commons/fileOperation/";
+	
+	public final static String SAMPLE_FILES__LOC        		   = Environment.INTERFACE_WORK_SOURCECODE_LOC +  "/commons/sample/";
+	
+	public final static String LOG_LOC        		               = Environment.INTERFACE_WORK_SOURCECODE_LOC +  "/commons/log/";
 
 
 	public final static String queryCreationSetPath              =  Environment.INTERFACE_WORK_SOURCECODE_LOC +  "/commons/queryGenerate/set_where/setField.txt";

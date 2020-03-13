@@ -6,30 +6,23 @@ PJP_Planning_Details
 yyyyMMdd
 csv
 ctl
-/home/appuser/interfaces/DAILY_DUMPS/master_files/pjp_planning_details/
-/home/appuser/interfaces/DAILY_DUMPS/master_files/pjp_planning_details/
-/home/appuser/interfaces/DAILY_DUMPS/rejected_file/pjp_planning_details/
-/home/appuser/interfaces/DAILY_DUMPS/rejected_file/pjp_planning_details/
-/home/appuser/interfaces/DAILY_DUMPS/backup/master_files/pjp_planning_details/
-/home/appuser/interfaces/DAILY_DUMPS/backup/master_files/pjp_planning_details/
-/home/appuser/interfaces/S-NOC/interfaces/master_file/daily_dumps/pjp_planning_details/
-/home/appuser/interfaces/S-NOC/interfaces/master_file/daily_dumps/pjp_planning_details/
-/home/appuser/interfaces/S-NOC/interfaces/backup/master_file/daily_dumps/pjp_planning_details/
-/home/appuser/interfaces/S-NOC/interfaces/backup/master_file/daily_dumps/pjp_planning_details/
-/home/appuser/interfaces/S-NOC/interfaces/rejected_file/daily_dumps/pjp_planning_details/
-/home/appuser/interfaces/S-NOC/interfaces/rejected_file/daily_dumps/pjp_planning_details/
-/home/appuser/interfaces/S-NOC/interfaces/backup/rejected_file/daily_dumps/pjp_planning_details/
-/home/appuser/interfaces/S-NOC/interfaces/backup/rejected_file/daily_dumps/pjp_planning_details/
-Request File Type
+/home/appuser/interfaces/DAILY_DUMPS/master_files/pjp_planned_calls/
+/home/appuser/interfaces/DAILY_DUMPS/master_files/pjp_planned_calls/
+/home/appuser/interfaces/DAILY_DUMPS/rejected_file/pjp_planned_calls/
+/home/appuser/interfaces/DAILY_DUMPS/rejected_file/pjp_planned_calls/
+/home/appuser/interfaces/DAILY_DUMPS/backup/master_files/pjp_planned_calls/
+/home/appuser/interfaces/DAILY_DUMPS/backup/master_files/pjp_planned_calls/
+/home/appuser/interfaces/S-NOC/interfaces/master_file/daily_dumps/pjp_planned_calls/
+/home/appuser/interfaces/S-NOC/interfaces/master_file/daily_dumps/pjp_planned_calls/
+/home/appuser/interfaces/S-NOC/interfaces/backup/master_file/daily_dumps/pjp_planned_calls/
+/home/appuser/interfaces/S-NOC/interfaces/backup/master_file/daily_dumps/pjp_planned_calls/
+/home/appuser/interfaces/S-NOC/interfaces/rejected_file/daily_dumps/pjp_planned_calls/
+/home/appuser/interfaces/S-NOC/interfaces/rejected_file/daily_dumps/pjp_planned_calls/
+/home/appuser/interfaces/S-NOC/interfaces/backup/rejected_file/daily_dumps/pjp_planned_calls/
+/home/appuser/interfaces/S-NOC/interfaces/backup/rejected_file/daily_dumps/pjp_planned_calls/
 |
-Region|Area|Sales Area|Cluster|Micro Cluster|MPC Code|SPV Code|SPV Name|CSO Code|CSO Name|PJP Plan Id|PJP Plan name|PJP start date|PJP end date|PJP created by|PJP creation date|PJP Frequency|PJP Modify Date|PJP Status|Outlet Code|Total Planned calls|Planned Days
+Region|Area|Sales Area|Cluster|Micro Cluster|MPC Code|SPV Code|SPV Name|CSO Code|CSO Name|PJP Plan Id|PJP Plan name|PJP start date|PJP end date|PJP created by|PJP creation date|PJP Frequency|PJP Modify Date|PJP Status|Outlet Code|Plan Date|Plan Day
+java:global/EnhancesysManagement/IntegrationServices/PJPPlannedCallsDump!com.enhancesys.integration.services.interfaces.processor.PullDataToFile
 0
-true
-daily_dump
-pjp_planning_details
-{"region":"region","area":"area","sales area":"sales_area","cluster":"cluster","micro cluster":"micro_cluster","mpc code":"mpc_code","spv code":"spv_code","spv name":"spv_name","cso code":"cso_code","cso name":"cso_name","pjp plan id":"pjp_plan_id","pjp plan name":"pjp_plan_name","pjp start date":"pjp_start_date","pjp end date":"pjp_end_date","pjp created by":"pjp_created_by","pjp creation date":"pjp_creation_date","pjp frequency":"pjp_frequency","pjp modify date":"pjp_modify_date","pjp status":"pjp_status","outlet code":"outlet_code","total planned calls":"total_planned_calls","planned days":"planned_days"}
-dump_crtd_dt_num
+001
 1
-PJP_Planning_Details
-snoc-r5
-java:global/EnhancesysManagement/IntegrationServices/GenericDailyDump!com.enhancesys.integration.services.interfaces.processor.PullFromMongo

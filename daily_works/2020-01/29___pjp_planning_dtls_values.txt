@@ -32,4 +32,4 @@ dump_crtd_dt_num
 1
 PJP_Planning_Details
 snoc-r5
-java:global/EnhancesysManagement/IntegrationServices/GenericDailyDump!com.enhancesys.integration.services.interfaces.processor.PullFromMongo
+java:global/EnhancesysManagement/IntegrationServices/PJPPlannedCallsDump!com.enhancesys.integration.services.interfaces.processor.PullDataToFile

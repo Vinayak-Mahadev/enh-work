@@ -1,0 +1,194 @@
+{
+	"Primary": [
+		{
+			"connection-id": "snoc-r4",
+			"schema-name": "snoc_report",
+			"collection-name": "org_user_node_acc_prod",
+			"projection": {
+				"operator_name": 1,
+				"operator_id": 1,
+				"node_id": 1
+			},
+			"parameters": [
+				{
+					"param-name": "position_id",
+					"param-value": "1031"
+				},
+				{
+					"param-name": "node_status",
+					"param-value": 174
+				}
+			],
+			"sort-by": {
+				"node_id": 1
+			}
+		},
+		{
+			"collection-name": "Collection-2",
+			"is-postgres": true,
+			"query": "select cso_org_links.node_id_n as node_id_n, count(distinct(outlet_node_master.org_id_n)) as sso_outlets_n from kpi.tr_daily_serial_injection_aggr as daily_event_aggr inner join kpi.ms_report_node_master as outlet_node_master on (daily_event_aggr.day_id_n between to_char((date_trunc('month', current_date))::date,'yyyymmdd')::numeric and to_char(now() -'1 day'::interval,'yyyymmdd')::numeric and daily_event_aggr.metrics_type_n = 11 and daily_event_aggr.metrics_id_n in (select metrics_id_n from kpi.ms_metrics_master where ext_metrics_id_v in (select unnest(string_to_array(property_value_v::text, ','::text)::character varying[]) from kpi.ms_property_master where property_key_v ilike 'starter_pack_master')) and daily_event_aggr.actor_id_n = outlet_node_master.aggregation_id_n and outlet_node_master.org_type_n = 6 and outlet_node_master.org_aggr_id_n = daily_event_aggr.source_id_n) inner join kpi.ms_user_org_links as cso_org_links on (cso_org_links.dest_org_id_n = outlet_node_master.org_id_n and cso_org_links.status_n = 174 and 1031 = any(cso_org_links.position_id_n)) group by cso_org_links.node_id_n order by cso_org_links.node_id_n;",
+			"map-key": {
+				"key": "node_id_n",
+				"type": "Long",
+				"local-key": "node_id"
+			},
+			"fields": "sso"
+		},
+		{
+			"collection-name": "Collection-3",
+			"is-postgres": true,
+			"query": "select cso_org_links.node_id_n as node_id_n, count(distinct(outlet_org_master.org_id_n)) as sso3_count_n from (select source_id_n as aggregation_id_n, round((sum(dimension_1_n)/100),0) as injection_qty_n from kpi.tr_daily_serial_injection_aggr where day_id_n between to_char((date_trunc('month', current_date))::date,'yyyymmdd')::numeric and to_char(now() -'1 day'::interval,'yyyymmdd')::numeric and metrics_type_n = 11 and metrics_id_n in (select metrics_id_n from kpi.ms_metrics_master where ext_metrics_id_v in (select unnest(string_to_array(property_value_v::text, ','::text)::character varying[]) from kpi.ms_property_master where property_key_v ilike 'starter_pack_master')) group by aggregation_id_n having round((sum(dimension_1_n)/100),0) >= (select property_value_n from kpi.ms_property_master where property_key_v = 'stable_sso_injection_qty') ) as daily_event_aggr inner join kpi.ms_report_org_master as outlet_org_master on (outlet_org_master.org_type_n = 6 and outlet_org_master.aggregation_id_n = daily_event_aggr.aggregation_id_n) inner join kpi.ms_user_org_links as cso_org_links on (cso_org_links.dest_org_id_n = outlet_org_master.org_id_n and cso_org_links.status_n = 174 and 1031 = any(cso_org_links.position_id_n)) group by cso_org_links.node_id_n order by cso_org_links.node_id_n;",
+			"map-key": {
+				"key": "node_id_n",
+				"type": "Long",
+				"local-key": "node_id"
+			},
+			"fields": "sso3_count_n"
+		},
+		{
+			"connection-id": "snoc-r5",
+			"schema-name": "daily_dump_snapshot",
+			"collection-name": "outlet_hierachy_dump_prod",
+			"projection": {
+				"region_name": 1
+			},
+			"is-lookup": true,
+			"fields": "region,hor_name,area,hos_name,sales_area,sam_name,csm_name,cso_name"
+		}
+	],
+	"Lookup": {
+		"outlet_hierachy_dump_prod": {
+			"connection-id": "snoc-r5",
+			"schema-name": "daily_dump_snapshot",
+			"collection-name": "outlet_hierachy_dump_prod"
+		}
+	},
+	"Configuration": {
+		"date": {
+			"field": "",
+			"collection-name": "",
+			"date-format": "yyyyMMdd"
+		},
+		"region": {
+			"field": "operator_id",
+			"collection-name": "org_user_node_acc_prod",
+			"lookup": [
+				{
+					"name": "outlet_hierachy_dump_prod",
+					"mapping-field": "cso_code",
+					"lookup-field": "region_name"
+				}
+			]
+		},
+		"hor_name": {
+			"field": "operator_id",
+			"collection-name": "org_user_node_acc_prod",
+			"lookup": [
+				{
+					"name": "outlet_hierachy_dump_prod",
+					"mapping-field": "cso_code",
+					"lookup-field": "hor_name"
+				}
+			]
+		},
+		"area": {
+			"field": "operator_id",
+			"collection-name": "org_user_node_acc_prod",
+			"lookup": [
+				{
+					"name": "outlet_hierachy_dump_prod",
+					"mapping-field": "cso_code",
+					"lookup-field": "sub_area_name"
+				}
+			]
+		},
+		"hos_name": {
+			"field": "operator_id",
+			"collection-name": "org_user_node_acc_prod",
+			"lookup": [
+				{
+					"name": "outlet_hierachy_dump_prod",
+					"mapping-field": "cso_code",
+					"lookup-field": "hos_name"
+				}
+			]
+		},
+		"sales_area": {
+			"field": "operator_id",
+			"collection-name": "org_user_node_acc_prod",
+			"lookup": [
+				{
+					"name": "outlet_hierachy_dump_prod",
+					"mapping-field": "cso_code",
+					"lookup-field": "sales_area_name"
+				}
+			]
+		},
+		"sam_name": {
+			"field": "operator_id",
+			"collection-name": "org_user_node_acc_prod",
+			"lookup": [
+				{
+					"name": "outlet_hierachy_dump_prod",
+					"mapping-field": "cso_code",
+					"lookup-field": "sam_name"
+				}
+			]
+		},
+		"csm_name": {
+			"field": "operator_id",
+			"collection-name": "org_user_node_acc_prod",
+			"lookup": [
+				{
+					"name": "outlet_hierachy_dump_prod",
+					"mapping-field": "cso_code",
+					"lookup-field": "csm_name"
+				}
+			]
+		},
+		"cso_name": {
+			"field": "operator_name",
+			"collection-name": "org_user_node_acc_prod"
+		},
+		"sso": {
+			"field": "sso_outlets_n",
+			"collection-name": "Collection-2"
+		},
+		"sso3_count_n": {
+			"field": "sso3_count_n",
+			"collection-name": "Collection-3"
+		},
+		"daily_sso": {
+			"field": "daily_sso_n",
+			"collection-name": "Collection-4"
+		},
+		"uro": {
+			"field": "uro_count_n",
+			"collection-name": "Collection-5"
+		},
+		"uro_20k_plus": {
+			"field": "uro20_count_n",
+			"collection-name": "Collection-6"
+		},
+		"daily_uro": {
+			"field": "daily_uro_n",
+			"collection-name": "Collection-7"
+		},
+		"mobo_sellin_ge50k": {
+			"field": "mobo_sellin_count_n",
+			"collection-name": "Collection-8"
+		}
+	},
+	"OutputConf": {
+		"file-headers": "Date|Region|HOR Name|Area|HOS Name|Sales Area|SAM Name|CSM Name|CSO Name|SSO|SSO 3+|Daily SSO|URO|URO 20K+|Daily URO|MOBO sellin >=50K",
+		"fields": "region,hor_name,area,hos_name,sales_area,sam_name,csm_name,cso_name,sso,sso3_count_n,daily_sso,uro,uro_20k_plus,daily_uro,mobo_sellin_ge50k",
+		"dump-date-field": "date"
+	},
+	"SortConf": {
+		"extension": "csv",
+		"file-name-pattern": "yyyyMMddHHmmssSSS",
+		"file-path": "/home/appuser/snoc/snocconf/interfaceconf/sort/",
+		"field-delimiter": "|",
+		"sort-filepath_0": "/home/appuser/snoc/snocconf/interfaceconf/sort/collection1.sh"
+	}
+}

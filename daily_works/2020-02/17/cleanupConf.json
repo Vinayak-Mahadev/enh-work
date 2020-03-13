@@ -1,0 +1,142 @@
+[
+	{
+		"id": 1,
+		"name": "sp_stock_dump (1001)",
+		"sel_query": "select file_id_n from interface.tr_interface_file_summary where interface_id_n = 1001 and uploaded_on_dt  < current_date - REPLACE_RETENSION",
+		"cnt_query": "select count(1) from interface.sp_stock_dump where file_id in (select file_id_n::character varying from interface.tr_interface_file_summary where interface_id_n = 1001 and uploaded_on_dt  < current_date - REPLACE_RETENSION)",
+		"del_query": "delete from interface.sp_stock_dump where file_id = ?::character varying",
+		"retension": 100,
+		"batch_size":100,
+		"isEnabled": "false"
+	},
+	{
+		"id": 2,
+		"name": "sp_alloc_dump (1003)",
+		"sel_query": "select file_id_n from interface.tr_interface_file_summary where interface_id_n = 1003 and uploaded_on_dt  < current_date - REPLACE_RETENSION",
+		"cnt_query": "select count(1) from interface.sp_alloc_dump where file_id in (select file_id_n::character varying from interface.tr_interface_file_summary where interface_id_n = 1003 and uploaded_on_dt  < current_date - REPLACE_RETENSION)",
+		"del_query": "delete from interface.sp_alloc_dump where file_id = ?::character varying",
+		"retension": 100,
+		"batch_size":100,
+		"isEnabled": "false"
+	},
+	{
+		"id": 3,
+		"name": "stock_dump_voucher (1005)",
+		"sel_query": "select file_id_n from interface.tr_interface_file_summary where interface_id_n = 1005 and uploaded_on_dt  < current_date - REPLACE_RETENSION",
+		"cnt_query": "select count(1) from interface.stock_dump_voucher where file_id_n in (select file_id_n from interface.tr_interface_file_summary where interface_id_n = 1005 and uploaded_on_dt  < current_date - REPLACE_RETENSION)",
+		"del_query": "delete from interface.stock_dump_voucher where file_id_n = ?",
+		"retension": 100,
+		"batch_size":100,
+		"isEnabled": "false"
+	},
+	{
+		"id": 4,
+		"name": "alloc_dump_voucher (1007)",
+		"sel_query": "select file_id_n from interface.tr_interface_file_summary where interface_id_n = 1007 and uploaded_on_dt  < current_date - REPLACE_RETENSION",
+		"cnt_query": "select count(1) from interface.alloc_dump_voucher where file_id_n in (select file_id_n from interface.tr_interface_file_summary where interface_id_n = 1007 and uploaded_on_dt  < current_date - REPLACE_RETENSION)",
+		"del_query": "delete from interface.alloc_dump_voucher where file_id_n = ?",
+		"retension": 100,
+		"batch_size":100,
+		"isEnabled": "false"
+	},
+	{
+		"id": 5,
+		"name": "product_details (1009)",
+		"sel_query": "select file_id_n from interface.tr_interface_file_summary where interface_id_n = 1009 and uploaded_on_dt  < current_date - REPLACE_RETENSION",
+		"cnt_query": "select count(1) from interface.product_details where file_id_n in (select file_id_n from interface.tr_interface_file_summary where interface_id_n = 1009 and uploaded_on_dt  < current_date - REPLACE_RETENSION)",
+		"del_query": "delete from interface.product_details where file_id_n = ?",
+		"retension": 100,
+		"batch_size":100,
+		"isEnabled": "false"
+	},
+	{
+		"id": 6,
+		"name": "serial_expiry (1011)",
+		"sel_query": "select file_id_n from interface.tr_interface_file_summary where interface_id_n = 1011 and  uploaded_on_dt  < current_date - REPLACE_RETENSION",
+		"cnt_query": "select count(1) from interface.serial_expiry where file_id in (select file_id_n from interface.tr_interface_file_summary where interface_id_n = 1011 and  uploaded_on_dt  < current_date - REPLACE_RETENSION)",
+		"del_query": "delete from interface.serial_expiry where file_id = ?",
+		"retension": 100,
+		"batch_size":100,
+		"isEnabled": "false"
+	},
+	{
+		"id": 7,
+		"name": "lacci_data (1062)",
+		"sel_query": "select file_id_n from interface.tr_interface_file_summary where interface_id_n = 1062 and uploaded_on_dt  < current_date - REPLACE_RETENSION",
+		"cnt_query": "select count(1) from interface.lacci_data where file_id in (select file_id_n::character varying from interface.tr_interface_file_summary where interface_id_n = 1062 and uploaded_on_dt  < current_date - REPLACE_RETENSION)",
+		"del_query": "delete from interface.lacci_data where file_id = ?::character varying",
+		"retension": 100,
+		"batch_size":100,
+		"isEnabled": "false"
+	},
+	{
+		"id": 8,
+		"name": "tr_temp_upload_aggr_failure(1064-1071,1075-1082 =>16)",
+		"sel_query": "select file_id_n from interface.tr_interface_file_summary where interface_id_n in (1064,1065,1066,1067,1068,1069,1070,1071,1075,1076,1077,1078,1079,1080,1081,1082) and uploaded_on_dt  < current_date - REPLACE_RETENSION",
+		"cnt_query": "select count(1) from kpi.tr_temp_upload_aggr_failure where file_id_n in (select file_id_n from interface.tr_interface_file_summary where interface_id_n in (1064,1065,1066,1067,1068,1069,1070,1071,1075,1076,1077,1078,1079,1080,1081,1082) and uploaded_on_dt  < current_date - REPLACE_RETENSION)",
+		"del_query": "delete from kpi.tr_temp_upload_aggr_failure where file_id_n = ?",
+		"retension": 100,
+		"batch_size":100,
+		"isEnabled": "false"
+	},
+	{
+		"id": 9,
+		"name": "tr_temp_org_to_org_validation(1064)",
+		"sel_query": "select count(1) from kpi.tr_temp_org_to_org_validation where created_dt  < current_date - REPLACE_RETENSION",
+		"cnt_query": "select count(1) from kpi.tr_temp_org_to_org_validation where created_dt  < current_date - REPLACE_RETENSION",
+		"del_query": "delete from kpi.tr_temp_org_to_org_validation where created_dt  < current_date - REPLACE_RETENSION",
+		"retension": 100,
+		"batch_size":100,
+		"isEnabled": "false"
+	},
+	{
+		"id": 10,
+		"name": "tr_temp_indosat_to_org_validation(1065)",
+		"sel_query": "select count(1) from kpi.tr_temp_indosat_to_org_validation where created_dt  < current_date - REPLACE_RETENSION",
+		"cnt_query": "select count(1) from kpi.tr_temp_indosat_to_org_validation where created_dt  < current_date - REPLACE_RETENSION",
+		"del_query": "delete from kpi.tr_temp_indosat_to_org_validation where created_dt  < current_date - REPLACE_RETENSION",
+		"retension": 100,
+		"batch_size":100,
+		"isEnabled": "false"
+	},
+	{
+		"id": 11,
+		"name": "tr_temp_trans_sum_validation(1075)",
+		"sel_query": "select count(1) from kpi.tr_temp_trans_sum_validation where created_dt  < current_date - REPLACE_RETENSION",
+		"cnt_query": "select count(1) from kpi.tr_temp_trans_sum_validation where created_dt  < current_date - REPLACE_RETENSION",
+		"del_query": "delete from kpi.tr_temp_trans_sum_validation where created_dt  < current_date - REPLACE_RETENSION",
+		"retension": 100,
+		"batch_size":100,
+		"isEnabled": "false"
+	},
+	{
+		"id": 13,
+		"name": "tr_interface_file_summary (->37)",
+		"sel_query": "select file_id_n from interface.tr_interface_file_summary where interface_id_n in (1001,1003,1005,1007,1009,1011,1013,1015,1017,1024,1025,1027,1029,1049,1051,1053,1061,1062,1064,1065,1066,1067,1068,1069,1070,1071,1072,1075,1076,1077,1078,1079,1080,1081,1082,1090,1092) and uploaded_on_dt  < current_date - REPLACE_RETENSION",
+		"cnt_query": "select count(1) from interface.tr_interface_file_summary where file_id_n in (select file_id_n from interface.tr_interface_file_summary where interface_id_n in (1001,1003,1005,1007,1009,1011,1013,1015,1017,1024,1025,1027,1029,1049,1051,1053,1061,1062,1064,1065,1066,1067,1068,1069,1070,1071,1072,1075,1076,1077,1078,1079,1080,1081,1082,1090,1092) and uploaded_on_dt  < current_date - REPLACE_RETENSION)",
+		"del_query": "delete from interface.tr_interface_failure where file_id_n = ?#delete from interface.tr_interface_summary where ref_data3_n = ?#delete from interface.tr_interface_file_summary_details where file_id_n = ?#delete from interface.tr_interface_file_summary where file_id_n = ?",
+		"retension": 100,
+		"batch_size":100,
+		"isEnabled": "false"
+	},
+	{
+		"id": 14,
+		"name": "tr_interface_summary (1018,1019,1020,1021,1022,1023)",
+		"sel_query": "select trans_id_n from interface.tr_interface_summary where interface_id_n in (1018,1019,1020,1021,1022,1023) and request_time_dt  < current_date - REPLACE_RETENSION",
+		"cnt_query": "select count(1) from interface.tr_interface_summary where trans_id_n in (select trans_id_n from interface.tr_interface_summary where interface_id_n in (1018,1019,1020,1021,1022,1023) and request_time_dt  < current_date - REPLACE_RETENSION)",
+		"del_query": "delete from interface.tr_interface_failure where trans_id_n = ?#delete from interface.tr_interface_summary where trans_id_n = ?",
+		"retension": 100,
+		"batch_size":100,
+		"isEnabled": "false"
+	},
+	{
+		"id": 15,
+		"name": "tr_interface_summary (1137)",
+		"sel_query": "select trans_id_n from interface.tr_interface_summary where interface_id_n in (1137) and request_time_dt  < current_date - REPLACE_RETENSION",
+		"cnt_query": "select count(1) from interface.tr_interface_summary where trans_id_n in (select trans_id_n from interface.tr_interface_summary where interface_id_n in (1137) and request_time_dt  < current_date - REPLACE_RETENSION)",
+		"del_query": "delete from interface.tr_interface_failure where trans_id_n = ?#delete from interface.tr_interface_summary where trans_id_n = ?",
+		"retension": 100,
+		"batch_size":100,
+		"isEnabled": "true"
+	}
+]

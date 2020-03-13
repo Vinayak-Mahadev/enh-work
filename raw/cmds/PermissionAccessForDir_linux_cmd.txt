@@ -1,0 +1,5 @@
+[appuser@newserver sort]$ chmod 755 *
+
+[appuser@newserver sort]$ ls
+collection1.sh  collection2.sh  collection3.sh  outlet_hierachy_dump_20200206130606444.csv  outlet_hierachy_dump_20200206130606444.csv.cp  sorting_log.txt
+[appuser@newserver sort]$

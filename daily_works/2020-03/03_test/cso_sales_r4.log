@@ -1,0 +1,7 @@
+Tue Mar  3 23:28:46.080 [initandlisten] connection accepted from 192.168.2.143:47494 #33 (33 connections now open)
+Tue Mar  3 23:28:46.088 [initandlisten] connection accepted from 192.168.2.143:47496 #34 (34 connections now open)
+Tue Mar  3 23:28:46.091 [conn34]  authenticate db: admin { authenticate: 1, user: "admin", nonce: "eb24422c38928876", key: "d6237a0962b4a7ac12aa4e8512364f42" }
+Tue Mar  3 23:28:53.392 [conn34] command snoc_report.$cmd command: { count: "org_user_node_acc_prod", query: { position_id: "1031", node_status: 174 }, fields: { operator_name: 1, operator_id: 1, node_id: 1 } } ntoreturn:1 keyUpdates:0 locks(micros) r:7298509 reslen:48 7298ms
+Tue Mar  3 23:28:58.184 [conn34] query snoc_report.org_user_node_acc_prod query: { $query: { position_id: "1031", node_status: 174 }, $orderby: { node_id: 1 } } cursorid:2434860309681450 ntoreturn:0 ntoskip:0 nscanned:223111 keyUpdates:0 locks(micros) r:4677860 nreturned:101 reslen:4125 4677ms
+Tue Mar  3 23:29:04.175 [conn34] getmore snoc_report.org_user_node_acc_prod query: { $query: { position_id: "1031", node_status: 174 }, $orderby: { node_id: 1 } } cursorid:2434860309681450 ntoreturn:0 keyUpdates:0 locks(micros) r:5966074 nreturned:6979 reslen:525953 5966ms
+

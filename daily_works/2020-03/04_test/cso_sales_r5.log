@@ -1,0 +1,51 @@
+login as: mongo
+mongo@192.168.2.144's password:
+Last login: Wed Mar  4 10:39:08 2020 from 192.168.5.246
+[mongo@144 ~]$ cd /snoc/mongo/tokumx-data/logs/
+[mongo@144 logs]$ tail -f r05.log
+Wed Mar  4 10:06:34.317 [initandlisten] build info: Linux vps-centos6-x64-05.ci.percona.com 2.6.32-042stab106.6 #1 SMP Mon Apr 20 14:48:47 MSK 2015 x86_64 x86_64 x86_64 GNU/Linux BOOST_LIB_VERSION=1_49
+Wed Mar  4 10:06:34.317 [initandlisten] options: { auth: "true", config: "/etc/mongoconf/r05.config", dbpath: "/snoc/mongo/tokumx-data/r05/", expireOplogDays: 4, logappend: "true", logpath: "/snoc/mongo/tokumx-data/logs/r05.log", port: 22030 }
+Wed Mar  4 10:06:34.416 [initandlisten] [tokumx] startup
+Wed Mar  4 10:06:34.641 [initandlisten] waiting for connections on port 22030
+Wed Mar  4 10:06:34.641 [websvr] admin web console waiting for connections on port 23030
+Wed Mar  4 10:06:35.452 [initandlisten] connection accepted from 192.168.2.251:38967 #1 (1 connection now open)
+Wed Mar  4 10:06:36.395 [initandlisten] connection accepted from 192.168.2.144:60632 #2 (2 connections now open)
+Wed Mar  4 10:06:36.784 [initandlisten] connection accepted from 192.168.2.143:36831 #3 (3 connections now open)
+Wed Mar  4 10:06:38.268 [initandlisten] connection accepted from 192.168.2.143:36832 #4 (4 connections now open)
+Wed Mar  4 10:06:38.865 [initandlisten] connection accepted from 192.168.2.143:36833 #5 (5 connections now open)
+Wed Mar  4 10:41:58.514 [initandlisten] connection accepted from 192.168.2.143:36839 #6 (6 connections now open)
+Wed Mar  4 10:42:13.515 [initandlisten] connection accepted from 192.168.2.143:36841 #7 (7 connections now open)
+Wed Mar  4 10:42:13.521 [conn7]  authenticate db: admin { authenticate: 1, user: "admin", nonce: "ff650cf69451bcd9", key: "4dd486a52773cf6b463c3e5910a047da" }
+Wed Mar  4 10:42:13.692 [conn7] command daily_dump_snapshot.$cmd command: { count: "outlet_hierachy_dump_prod", query: {}, fields: { outlet_org_id: 1, sales_area_name: 1, hos_name: 1, cso_mobile_number: 1, outlet_code: 1, csm_name: 1, hor_name: 1, cso_code: 1, sam_name: 1, region_name: 1, outlet_name: 1, outlet_mobile_number: 1, sub_area_name: 1 } } ntoreturn:1 keyUpdates:0 locks(micros) r:167205 reslen:48 166ms
+Wed Mar  4 10:42:15.062 [conn7] getmore daily_dump_snapshot.outlet_hierachy_dump_prod query: { $query: {}, $orderby: { outlet_org_id: 1 } } cursorid:8978509819970523 ntoreturn:0 keyUpdates:0 locks(micros) r:487248 nreturned:10518 reslen:4194653 487ms
+Wed Mar  4 10:43:02.828 [conn7] getmore daily_dump_snapshot.outlet_hierachy_dump_prod query: { $query: {}, $orderby: { outlet_org_id: 1 } } cursorid:8978509819970523 ntoreturn:0 keyUpdates:0 locks(micros) r:545957 nreturned:10515 reslen:4194652 545ms
+Wed Mar  4 10:43:20.433 [conn7] getmore daily_dump_snapshot.outlet_hierachy_dump_prod query: { $query: {}, $orderby: { outlet_org_id: 1 } } cursorid:8978509819970523 ntoreturn:0 keyUpdates:0 locks(micros) r:495591 nreturned:10485 reslen:4194671 495ms
+Wed Mar  4 10:43:35.141 [conn7] getmore daily_dump_snapshot.outlet_hierachy_dump_prod query: { $query: {}, $orderby: { outlet_org_id: 1 } } cursorid:8978509819970523 ntoreturn:0 keyUpdates:0 locks(micros) r:501499 nreturned:10532 reslen:4194297 501ms
+Wed Mar  4 10:44:02.348 [conn7] getmore daily_dump_snapshot.outlet_hierachy_dump_prod query: { $query: {}, $orderby: { outlet_org_id: 1 } } cursorid:8978509819970523 ntoreturn:0 keyUpdates:0 locks(micros) r:510343 nreturned:10504 reslen:4194592 510ms
+Wed Mar  4 10:44:14.945 [conn7] getmore daily_dump_snapshot.outlet_hierachy_dump_prod query: { $query: {}, $orderby: { outlet_org_id: 1 } } cursorid:8978509819970523 ntoreturn:0 keyUpdates:0 locks(micros) r:525102 nreturned:10512 reslen:4194489 525ms
+Wed Mar  4 10:44:28.183 [conn7] getmore daily_dump_snapshot.outlet_hierachy_dump_prod query: { $query: {}, $orderby: { outlet_org_id: 1 } } cursorid:8978509819970523 ntoreturn:0 keyUpdates:0 locks(micros) r:784952 nreturned:10518 reslen:4194658 784ms
+Wed Mar  4 10:44:41.967 [conn7] getmore daily_dump_snapshot.outlet_hierachy_dump_prod query: { $query: {}, $orderby: { outlet_org_id: 1 } } cursorid:8978509819970523 ntoreturn:0 keyUpdates:0 locks(micros) r:599259 nreturned:10527 reslen:4194345 599ms
+Wed Mar  4 10:45:00.381 [conn7] getmore daily_dump_snapshot.outlet_hierachy_dump_prod query: { $query: {}, $orderby: { outlet_org_id: 1 } } cursorid:8978509819970523 ntoreturn:0 keyUpdates:0 locks(micros) r:550195 nreturned:10543 reslen:4194336 550ms
+Wed Mar  4 10:45:13.605 [conn7] getmore daily_dump_snapshot.outlet_hierachy_dump_prod query: { $query: {}, $orderby: { outlet_org_id: 1 } } cursorid:8978509819970523 ntoreturn:0 keyUpdates:0 locks(micros) r:548106 nreturned:10519 reslen:4194378 548ms
+Wed Mar  4 10:45:30.509 [conn7] getmore daily_dump_snapshot.outlet_hierachy_dump_prod query: { $query: {}, $orderby: { outlet_org_id: 1 } } cursorid:8978509819970523 ntoreturn:0 keyUpdates:0 locks(micros) r:531611 nreturned:10557 reslen:4194561 531ms
+Wed Mar  4 10:45:47.694 [conn7] getmore daily_dump_snapshot.outlet_hierachy_dump_prod query: { $query: {}, $orderby: { outlet_org_id: 1 } } cursorid:8978509819970523 ntoreturn:0 keyUpdates:0 locks(micros) r:520920 nreturned:10546 reslen:4194476 520ms
+Wed Mar  4 10:46:00.305 [conn7] getmore daily_dump_snapshot.outlet_hierachy_dump_prod query: { $query: {}, $orderby: { outlet_org_id: 1 } } cursorid:8978509819970523 ntoreturn:0 keyUpdates:0 locks(micros) r:513907 nreturned:10589 reslen:4194541 513ms
+
+
+Wed Mar  4 10:46:16.327 [conn7] getmore daily_dump_snapshot.outlet_hierachy_dump_prod query: { $query: {}, $orderby: { outlet_org_id: 1 } } cursorid:8978509819970523 ntoreturn:0 keyUpdates:0 locks(micros) r:568632 nreturned:10574 reslen:4194637 568ms
+Wed Mar  4 10:46:28.601 [conn7] getmore daily_dump_snapshot.outlet_hierachy_dump_prod query: { $query: {}, $orderby: { outlet_org_id: 1 } } cursorid:8978509819970523 ntoreturn:0 keyUpdates:0 locks(micros) r:598470 nreturned:10616 reslen:4194407 598ms
+Wed Mar  4 10:46:42.091 [conn7] getmore daily_dump_snapshot.outlet_hierachy_dump_prod query: { $query: {}, $orderby: { outlet_org_id: 1 } } cursorid:8978509819970523 ntoreturn:0 keyUpdates:0 locks(micros) r:647861 nreturned:10680 reslen:4194296 647ms
+Wed Mar  4 10:46:53.447 [conn7] getmore daily_dump_snapshot.outlet_hierachy_dump_prod query: { $query: {}, $orderby: { outlet_org_id: 1 } } cursorid:8978509819970523 ntoreturn:0 keyUpdates:0 locks(micros) r:621983 nreturned:10751 reslen:4194516 621ms
+Wed Mar  4 10:47:04.386 [conn7] getmore daily_dump_snapshot.outlet_hierachy_dump_prod query: { $query: {}, $orderby: { outlet_org_id: 1 } } cursorid:8978509819970523 ntoreturn:0 keyUpdates:0 locks(micros) r:619979 nreturned:11055 reslen:4194289 619ms
+Wed Mar  4 10:47:11.261 [conn7] getmore daily_dump_snapshot.outlet_hierachy_dump_prod query: { $query: {}, $orderby: { outlet_org_id: 1 } } cursorid:8978509819970523 ntoreturn:0 keyUpdates:0 locks(micros) r:512975 nreturned:10763 reslen:4194393 512ms
+Wed Mar  4 10:47:18.220 [conn7] getmore daily_dump_snapshot.outlet_hierachy_dump_prod query: { $query: {}, $orderby: { outlet_org_id: 1 } } cursorid:8978509819970523 ntoreturn:0 keyUpdates:0 locks(micros) r:546151 nreturned:10847 reslen:4194376 546ms
+Wed Mar  4 10:47:24.021 [conn7] getmore daily_dump_snapshot.outlet_hierachy_dump_prod query: { $query: {}, $orderby: { outlet_org_id: 1 } } cursorid:8978509819970523 ntoreturn:0 keyUpdates:0 locks(micros) r:632501 nreturned:11014 reslen:4194444 632ms
+Wed Mar  4 10:47:31.231 [conn3] end connection 192.168.2.143:36831 (6 connections now open)
+Wed Mar  4 10:47:31.232 [conn7] end connection 192.168.2.143:36841 (5 connections now open)
+Wed Mar  4 10:47:31.232 [conn4] end connection 192.168.2.143:36832 (5 connections now open)
+Wed Mar  4 10:47:31.233 [conn6] end connection 192.168.2.143:36839 (3 connections now open)
+Wed Mar  4 10:47:31.236 [conn5] end connection 192.168.2.143:36833 (2 connections now open)
+Wed Mar  4 10:50:19.951 [initandlisten] connection accepted from 192.168.2.143:36853 #8 (3 connections now open)
+Wed Mar  4 10:50:46.727 [initandlisten] connection accepted from 192.168.2.143:36855 #9 (4 connections now open)
+Wed Mar  4 10:50:46.742 [conn9]  authenticate db: admin { authenticate: 1, user: "admin", nonce: "c40363ed39f60db6", key: "a157d273af2f3b83244786196c914730" }
+Wed Mar  4 10:50:46.860 [conn9] command daily_dump_snapshot.$cmd command: { count: "outlet_hierachy_dump_prod", query: {}, fields: { region_name: 1 } } ntoreturn:1 keyUpdates:0 locks(micros) r:116111 reslen:48 116ms

@@ -1,0 +1,319 @@
+
+<1137>Query Balance Interface ID</1137>
+<221>Query Balance Module ID</221>
+
+----------------------------------------------------------------------
+REQUEST
+----------------------------------------------------------------------
+
+
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:int="http://com/enhancesys/integration/services/interfaces/IntegrationManagement">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <int:syncBalanceInterface>
+         <!--Optional:-->
+         <moduleId>221</moduleId>
+         <!--Optional:-->
+         <jsonRequestData><![CDATA[
+
+	{
+                "payload": {
+                        "query_details": [
+                                "001",
+                                "002",
+                                "003",
+                                "004"
+                        ],
+                        "acc_type": "abc123",
+                        "operator_id": "OP01",
+                        "org_ref_code": "0091",
+                        "user_id": "123",
+                        "uname": "CAN01",
+                        "trans_dt": "2019-06-13T00:00:00.000",
+                        "pin": "1121",
+                        "currency": ""
+                }
+        }
+
+			]]></jsonRequestData>
+      </int:syncBalanceInterface>
+   </soapenv:Body>
+</soapenv:Envelope>
+
+
+ 
+----------------------------------------------------------------------
+Converted ...
+----------------------------------------------------------------------
+
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:api="http://cps.huawei.com/synccpsinterface/api_requestmgr" xmlns:com="http://cps.huawei.com/synccpsinterface/common" xmlns:req="http://cps.huawei.com/synccpsinterface/request">
+	<soapenv:Header/>
+	<soapenv:Body>
+		<api:Request>
+			<req:Header>
+				<req:Version>1.0</req:Version>
+				<req:CommandID>QueryOrganizationBalance</req:CommandID>
+				<req:OriginatorConversationID>2220200211144033379</req:OriginatorConversationID>
+				<req:Caller>
+					<req:CallerType>2</req:CallerType>
+					<req:ThirdPartyID>POS_Broker</req:ThirdPartyID>
+					<req:Password>gMMqGGrKxsE=</req:Password>
+					<req:ResultURL>http://10.71.109.150:8888/mockResultBinding</req:ResultURL>
+				</req:Caller>
+				<req:KeyOwner>1</req:KeyOwner>
+				<req:Timestamp>20200211144033</req:Timestamp>
+			</req:Header>
+			<req:Body>
+				<req:Identity>
+					<req:Initiator>
+						<req:IdentifierType>14</req:IdentifierType>
+						<req:Identifier>supervisor</req:Identifier>
+						<req:SecurityCredential>gMMqGGrKxsE=</req:SecurityCredential>
+					</req:Initiator>
+					<req:ReceiverParty>
+						<req:IdentifierType>4</req:IdentifierType>
+						<req:Identifier>0091</req:Identifier>
+					</req:ReceiverParty>
+				</req:Identity>
+				<req:QueryOrganizationBalanceRequest>
+					<req:TargetOrgList>001;002;003;004</req:TargetOrgList>
+					<req:AccountType>Stock Account_Normal</req:AccountType>
+				</req:QueryOrganizationBalanceRequest>
+			</req:Body>
+		</api:Request>
+	</soapenv:Body>
+</soapenv:Envelope>
+
+  
+----------------------------------------------------------------------
+Result template...
+----------------------------------------------------------------------
+
+
+<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
+   <soap:Body>
+      <ns2:getStaticResponseResponse xmlns:ns2="http://com/enhancesys/integration/response/services/interfaces/InterfaceResponseServices">
+         <getStaticResponse><![CDATA[
+		 
+		 
+				<RESULT HERE>
+		 
+		 ]]></getStaticResponse>
+      </ns2:getStaticResponseResponse>
+   </soap:Body>
+</soap:Envelope>
+
+----------------------------------------------------------------------
+Success ...
+----------------------------------------------------------------------
+
+  <?xml version = "1.0" encoding = "UTF-8"?>
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/">
+	<soapenv:Body>
+		<api:Result xmlns:api="http://cps.huawei.com/synccpsinterface/api_requestmgr" xmlns:res="http://cps.huawei.com/synccpsinterface/result">
+			<res:Header>
+				<res:Version>1.0</res:Version>
+				<res:OriginatorConversationID>2220200211144033379</res:OriginatorConversationID>
+				<res:ConversationID>SM-2220200211144033379</res:ConversationID>
+			</res:Header>
+			<res:Body>
+				<res:ResultType>0</res:ResultType>
+				<res:ResultCode>0</res:ResultCode>
+				<res:ResultDesc>Process service request successfully.</res:ResultDesc>
+				<res:QueryOrganizationBalanceResult>
+					<res:BOCompletedTime>20200211154008</res:BOCompletedTime>
+					<res:AccountBalanceData>
+						<res:AccountBalanceItem>
+							<res:AccountHolderID>0091</res:AccountHolderID>
+							<res:AccountHolderPublicName>211674 - Agent A</res:AccountHolderPublicName>
+							<res:AccountTypeName>Float Account</res:AccountTypeName>
+							<res:AccountTypeAlias>Float Account</res:AccountTypeAlias>
+							<res:AccountRuleProfileID>16</res:AccountRuleProfileID>
+							<res:AccountRuleProfileName>Band A Store Float Account Rule Profile</res:AccountRuleProfileName>
+							<res:AccountNo>800000000101002000</res:AccountNo>
+							<res:AccountStatus>active</res:AccountStatus>
+							<res:Currency>IDR</res:Currency>
+							<res:AvailableBalance>10000.00</res:AvailableBalance>
+							<res:ReservedBalance>10.00</res:ReservedBalance>
+							<res:UnclearedBalance>0</res:UnclearedBalance>
+							<res:CurrentBalance>1000.00</res:CurrentBalance>
+						</res:AccountBalanceItem>
+						<res:AccountBalanceItem>
+							<res:AccountHolderID>001</res:AccountHolderID>
+							<res:AccountHolderPublicName>211674 - Agent A</res:AccountHolderPublicName>
+							<res:AccountTypeName>Float Account</res:AccountTypeName>
+							<res:AccountTypeAlias>Float Account</res:AccountTypeAlias>
+							<res:AccountRuleProfileID>16</res:AccountRuleProfileID>
+							<res:AccountRuleProfileName>Band A Store Float Account Rule Profile</res:AccountRuleProfileName>
+							<res:AccountNo>800000000101002000</res:AccountNo>
+							<res:AccountStatus>active</res:AccountStatus>
+							<res:Currency>IDR</res:Currency>
+							<res:AvailableBalance>50000.00</res:AvailableBalance>
+							<res:ReservedBalance>500.00</res:ReservedBalance>
+							<res:UnclearedBalance>110</res:UnclearedBalance>
+							<res:CurrentBalance>3000.00</res:CurrentBalance>
+						</res:AccountBalanceItem>
+						<res:AccountBalanceItem>
+							<res:AccountHolderID>002</res:AccountHolderID>
+							<res:AccountHolderPublicName>211674 - Agent A</res:AccountHolderPublicName>
+							<res:AccountTypeName>Float Account</res:AccountTypeName>
+							<res:AccountTypeAlias>Float Account</res:AccountTypeAlias>
+							<res:AccountRuleProfileID>16</res:AccountRuleProfileID>
+							<res:AccountRuleProfileName>Band A Store Float Account Rule Profile</res:AccountRuleProfileName>
+							<res:AccountNo>800000000101002000</res:AccountNo>
+							<res:AccountStatus>active</res:AccountStatus>
+							<res:Currency>IDR</res:Currency>
+							<res:AvailableBalance>50000.00</res:AvailableBalance>
+							<res:ReservedBalance>500.00</res:ReservedBalance>
+							<res:UnclearedBalance>110</res:UnclearedBalance>
+							<res:CurrentBalance>3000.00</res:CurrentBalance>
+						</res:AccountBalanceItem>
+						<res:AccountBalanceItem>
+							<res:AccountHolderID>003</res:AccountHolderID>
+							<res:AccountHolderPublicName>211674 - Agent A</res:AccountHolderPublicName>
+							<res:AccountTypeName>Float Account</res:AccountTypeName>
+							<res:AccountTypeAlias>Float Account</res:AccountTypeAlias>
+							<res:AccountRuleProfileID>16</res:AccountRuleProfileID>
+							<res:AccountRuleProfileName>Band A Store Float Account Rule Profile</res:AccountRuleProfileName>
+							<res:AccountNo>800000000101002000</res:AccountNo>
+							<res:AccountStatus>active</res:AccountStatus>
+							<res:Currency>IDR</res:Currency>
+							<res:AvailableBalance>50000.00</res:AvailableBalance>
+							<res:ReservedBalance>500.00</res:ReservedBalance>
+							<res:UnclearedBalance>110</res:UnclearedBalance>
+							<res:CurrentBalance>3000.00</res:CurrentBalance>
+						</res:AccountBalanceItem>
+						<res:AccountBalanceItem>
+							<res:AccountHolderID>004</res:AccountHolderID>
+							<res:AccountHolderPublicName>211674 - Agent A</res:AccountHolderPublicName>
+							<res:AccountTypeName>Float Account</res:AccountTypeName>
+							<res:AccountTypeAlias>Float Account</res:AccountTypeAlias>
+							<res:AccountRuleProfileID>16</res:AccountRuleProfileID>
+							<res:AccountRuleProfileName>Band A Store Float Account Rule Profile</res:AccountRuleProfileName>
+							<res:AccountNo>800000000101002000</res:AccountNo>
+							<res:AccountStatus>active</res:AccountStatus>
+							<res:Currency>IDR</res:Currency>
+							<res:AvailableBalance>50000.00</res:AvailableBalance>
+							<res:ReservedBalance>500.00</res:ReservedBalance>
+							<res:UnclearedBalance>110</res:UnclearedBalance>
+							<res:CurrentBalance>3000.00</res:CurrentBalance>
+						</res:AccountBalanceItem>
+					</res:AccountBalanceData>
+				</res:QueryOrganizationBalanceResult>
+			</res:Body>
+		</api:Result>
+	</soapenv:Body>
+</soapenv:Envelope>
+
+
+
+{
+	"soapenv:Envelope": {
+		"soapenv:Body": {
+			"api:Result": {
+				"res:Body": {
+					"res:ResultCode": "0",
+					"res:ResultType": "0",
+					"res:QueryOrganizationBalanceResult": {
+						"res:AccountBalanceData": {
+							"res:AccountBalanceItem": [
+								{
+									"res:Currency": "IDR",
+									"res:AccountTypeAlias": "Float Account",
+									"res:AccountHolderPublicName": "211674 - Agent A",
+									"res:AvailableBalance": "10000.00",
+									"res:UnclearedBalance": "0",
+									"res:CurrentBalance": "1000.00",
+									"res:AccountRuleProfileName": "Band A Store Float Account Rule Profile",
+									"res:ReservedBalance": "10.00",
+									"res:AccountHolderID": "0091",
+									"res:AccountNo": "800000000101002000",
+									"res:AccountRuleProfileID": "16",
+									"res:AccountTypeName": "Float Account",
+									"res:AccountStatus": "active"
+								},
+								{
+									"res:Currency": "IDR",
+									"res:AccountTypeAlias": "Float Account",
+									"res:AccountHolderPublicName": "211674 - Agent A",
+									"res:AvailableBalance": "50000.00",
+									"res:UnclearedBalance": "110",
+									"res:CurrentBalance": "3000.00",
+									"res:AccountRuleProfileName": "Band A Store Float Account Rule Profile",
+									"res:ReservedBalance": "500.00",
+									"res:AccountHolderID": "001",
+									"res:AccountNo": "800000000101002000",
+									"res:AccountRuleProfileID": "16",
+									"res:AccountTypeName": "Float Account",
+									"res:AccountStatus": "active"
+								},
+								{
+									"res:Currency": "IDR",
+									"res:AccountTypeAlias": "Float Account",
+									"res:AccountHolderPublicName": "211674 - Agent A",
+									"res:AvailableBalance": "50000.00",
+									"res:UnclearedBalance": "110",
+									"res:CurrentBalance": "3000.00",
+									"res:AccountRuleProfileName": "Band A Store Float Account Rule Profile",
+									"res:ReservedBalance": "500.00",
+									"res:AccountHolderID": "002",
+									"res:AccountNo": "800000000101002000",
+									"res:AccountRuleProfileID": "16",
+									"res:AccountTypeName": "Float Account",
+									"res:AccountStatus": "active"
+								},
+								{
+									"res:Currency": "IDR",
+									"res:AccountTypeAlias": "Float Account",
+									"res:AccountHolderPublicName": "211674 - Agent A",
+									"res:AvailableBalance": "50000.00",
+									"res:UnclearedBalance": "110",
+									"res:CurrentBalance": "3000.00",
+									"res:AccountRuleProfileName": "Band A Store Float Account Rule Profile",
+									"res:ReservedBalance": "500.00",
+									"res:AccountHolderID": "003",
+									"res:AccountNo": "800000000101002000",
+									"res:AccountRuleProfileID": "16",
+									"res:AccountTypeName": "Float Account",
+									"res:AccountStatus": "active"
+								},
+								{
+									"res:Currency": "IDR",
+									"res:AccountTypeAlias": "Float Account",
+									"res:AccountHolderPublicName": "211674 - Agent A",
+									"res:AvailableBalance": "50000.00",
+									"res:UnclearedBalance": "110",
+									"res:CurrentBalance": "3000.00",
+									"res:AccountRuleProfileName": "Band A Store Float Account Rule Profile",
+									"res:ReservedBalance": "500.00",
+									"res:AccountHolderID": "004",
+									"res:AccountNo": "800000000101002000",
+									"res:AccountRuleProfileID": "16",
+									"res:AccountTypeName": "Float Account",
+									"res:AccountStatus": "active"
+								}
+							]
+						},
+						"res:BOCompletedTime": "20200211154008"
+					},
+					"res:ResultDesc": "Process service request successfully."
+				},
+				"res:Header": {
+					"res:Version": "1.0",
+					"res:ConversationID": "SM-2220200211144033379",
+					"res:OriginatorConversationID": "2220200211144033379"
+				}
+			}
+		}
+	}
+}
+
+----------------------------------------------------------------------
+Failure ...
+----------------------------------------------------------------------
+
+
+
+----------------------------------------------------------------------
+Error ...
+----------------------------------------------------------------------

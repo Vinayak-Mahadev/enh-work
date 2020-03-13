@@ -1,0 +1,53 @@
+login as: mongo
+mongo@192.168.2.144's password:
+Last login: Wed Mar  4 09:55:18 2020 from 192.168.3.223
+[mongo@144 ~]$ ps -ef|grep mongod
+mongo     7891     1  1 10:05 ?        00:00:23 mongod --config=/etc/mongoconf/r01.config
+mongo     8179     1  2 10:05 ?        00:00:46 mongod --config=/etc/mongoconf/r02.config
+mongo     8440     1  0 10:05 ?        00:00:19 mongod --config=/etc/mongoconf/r03.config
+mongo     8780     1  0 10:06 ?        00:00:05 mongod --config=/etc/mongoconf/r04.config
+mongo     8862     1  0 10:06 ?        00:00:02 mongod --config=/etc/mongoconf/r05.config
+mongo    10714 10690  0 10:38 pts/0    00:00:00 grep mongod
+[mongo@144 ~]$ cd /snoc/mongo/tokumx-data/logs/
+[mongo@144 logs]$ tail -f r04.log
+Wed Mar  4 10:36:13.267 [conn45] end connection 192.168.5.113:49761 (40 connections now open)
+Wed Mar  4 10:36:13.268 [conn44] end connection 192.168.5.113:49702 (39 connections now open)
+Wed Mar  4 10:36:29.129 [initandlisten] connection accepted from 192.168.3.54:56271 #50 (40 connections now open)
+Wed Mar  4 10:36:29.130 [initandlisten] connection accepted from 192.168.3.54:56272 #51 (41 connections now open)
+Wed Mar  4 10:36:38.647 [initandlisten] connection accepted from 192.168.3.54:56372 #52 (42 connections now open)
+Wed Mar  4 10:36:38.647 [initandlisten] connection accepted from 192.168.3.54:56373 #53 (43 connections now open)
+Wed Mar  4 10:36:45.179 [initandlisten] connection accepted from 192.168.3.54:56446 #54 (44 connections now open)
+Wed Mar  4 10:36:45.179 [initandlisten] connection accepted from 192.168.3.54:56448 #55 (45 connections now open)
+Wed Mar  4 10:36:50.198 [initandlisten] connection accepted from 192.168.3.54:56515 #56 (46 connections now open)
+Wed Mar  4 10:36:50.230 [initandlisten] connection accepted from 192.168.3.54:56516 #57 (47 connections now open)
+
+
+
+
+\Wed Mar  4 10:41:58.488 [initandlisten] connection accepted from 192.168.2.143:40624 #58 (48 connections now open)
+Wed Mar  4 10:42:44.212 [initandlisten] connection accepted from 192.168.5.113:52069 #59 (49 connections now open)
+Wed Mar  4 10:44:29.782 [initandlisten] connection accepted from 192.168.5.113:55463 #60 (50 connections now open)
+Wed Mar  4 10:44:29.786 [initandlisten] connection accepted from 192.168.5.113:55465 #61 (51 connections now open)
+Wed Mar  4 10:44:31.396 [initandlisten] connection accepted from 192.168.5.113:55513 #62 (52 connections now open)
+Wed Mar  4 10:44:31.404 [initandlisten] connection accepted from 192.168.5.113:55514 #63 (53 connections now open)
+Wed Mar  4 10:44:32.220 [initandlisten] connection accepted from 192.168.5.113:55297 #64 (54 connections now open)
+Wed Mar  4 10:44:32.720 [initandlisten] connection accepted from 192.168.5.113:55331 #65 (55 connections now open)
+Wed Mar  4 10:44:32.728 [initandlisten] connection accepted from 192.168.5.113:55332 #66 (56 connections now open)
+
+
+Wed Mar  4 10:47:31.229 [conn4] end connection 192.168.2.143:40609 (55 connections now open)
+Wed Mar  4 10:47:31.230 [conn30] end connection 192.168.2.143:40612 (54 connections now open)
+Wed Mar  4 10:47:31.231 [conn3] end connection 192.168.2.143:40608 (53 connections now open)
+Wed Mar  4 10:47:31.231 [conn58] end connection 192.168.2.143:40624 (53 connections now open)
+Wed Mar  4 10:49:59.917 [initandlisten] connection accepted from 192.168.5.113:56636 #67 (53 connections now open)
+Wed Mar  4 10:49:59.921 [initandlisten] connection accepted from 192.168.5.113:56637 #68 (54 connections now open)
+Wed Mar  4 10:50:19.949 [initandlisten] connection accepted from 192.168.2.143:40638 #69 (55 connections now open)
+Wed Mar  4 10:50:19.992 [initandlisten] connection accepted from 192.168.2.143:40640 #70 (56 connections now open)
+Wed Mar  4 10:50:20.003 [conn70]  authenticate db: admin { authenticate: 1, user: "admin", nonce: "b3365fa29d056e43", key: "558cedee59277321300fe8d68c17f11d" }
+Wed Mar  4 10:50:46.694 [conn70] command snoc_report.$cmd command: { count: "org_user_node_acc_prod", query: { position_id: "1031", node_status: 174 }, fields: { operator_name: 1, operator_id: 1, node_id: 1 } } ntoreturn:1 keyUpdates:0 locks(micros) r:26688040 reslen:48 26687ms
+Wed Mar  4 10:50:51.534 [conn70] query snoc_report.org_user_node_acc_prod query: { $query: { position_id: "1031", node_status: 174 }, $orderby: { node_id: 1 } } cursorid:11174156999554974 ntoreturn:0 ntoskip:0 nscanned:223111 keyUpdates:0 locks(micros) r:4665606 nreturned:101 reslen:4125 4665ms
+Wed Mar  4 10:50:57.586 [conn70] getmore snoc_report.org_user_node_acc_prod query: { $query: { position_id: "1031", node_status: 174 }, $orderby: { node_id: 1 } } cursorid:11174156999554974 ntoreturn:0 keyUpdates:0 locks(micros) r:5910209 nreturned:6979 reslen:525953 5910ms
+Wed Mar  4 10:53:55.900 [conn36] end connection 192.168.5.240:49357 (55 connections now open)
+Wed Mar  4 10:53:55.909 [conn38] end connection 192.168.5.240:49562 (54 connections now open)
+Wed Mar  4 10:53:55.909 [conn39] end connection 192.168.5.240:49564 (54 connections now open)
+Wed Mar  4 10:55:13.807 [initandlisten] connection accepted from 192.168.5.145:54920 #71 (54 connections now open)

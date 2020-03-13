@@ -1,0 +1,3 @@
+C_ID;C_NAME;C_CAP;errorMessage
+;Kumar;1000; C_ID.matches("") != true failed
+;Ramji;1000; C_ID.matches("") != true failed

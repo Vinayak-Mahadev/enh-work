@@ -1,0 +1,233 @@
+OUTLET_SALES => 1156 
+db.user_dtls_dump_prod.createIndex({operator_id:1});
+
+CSO_SALES => 1157 
+db.outlet_hierachy_dump_prod.createIndex( { cso_code: 1 } );
+
+MPC_SALES => 1157
+db.organization_prod.createIndex({parent_org_id:1});
+
+
+
+OUTLET_SALES => 1156   2:21:18 PM to 2:26:31 PM (around 5 min)
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+Mar 03, 2020 2:21:18 PM com.enhancesys.common.logger
+FINE: [Thread]: 244 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  8746  Entry pullDataToFile.. Started at --> Tue Mar 03 14:21:18 IST 2020
+Mar 03, 2020 2:21:18 PM com.enhancesys.common.logger
+FINE: [Thread]: 244 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  8749  pullDataToFile service received interface id-->[1156]
+Mar 03, 2020 2:21:18 PM com.enhancesys.common.logger
+FINE: [Thread]: 244 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  8787  Started pullDataToFile.. 1156  Started at --> Tue Mar 03 14:21:18 IST 2020
+Mar 03, 2020 2:21:18 PM com.enhancesys.common.logger
+FINE: [Thread]: 244 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  8888  [dataConverter] class com.sun.proxy.$Proxy209
+Mar 03, 2020 2:21:18 PM com.enhancesys.common.logger
+FINE: [Thread]: 244 [ClassName]: com.enhancesys.integration.services.processor.OutletSalesDump [LineNumber]:  73  OutletSalesDump :: Entry processRequest ... InterfaceId : 1156, RequiredDate : null
+Mar 03, 2020 2:21:18 PM com.enhancesys.common.logger
+FINE: [Thread]: 244 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  9467  Entry readFilePropertyBeans.. Started at --> Tue Mar 03 14:21:18 IST 2020
+Mar 03, 2020 2:21:18 PM com.enhancesys.common.logger
+FINE: [Thread]: 244 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  9481  readFilePropertyBeans service received interface id-->1156
+Mar 03, 2020 2:21:18 PM com.enhancesys.common.logger
+FINE: [Thread]: 244 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  10283  Exit readFilePropertyBeans service at -->Tue Mar 03 14:21:18 IST 2020 --- and took 34 milliseconds
+Mar 03, 2020 2:21:18 PM com.enhancesys.common.logger
+FINE: [Thread]: 244 [ClassName]: com.enhancesys.integration.services.processor.OutletSalesDump [LineNumber]:  161  Interface : 1156 : File : Outlet_Sales_20200303.csv
+Mar 03, 2020 2:21:18 PM com.enhancesys.common.logger
+FINE: [Thread]: 244 [ClassName]: com.enhancesys.integration.services.util.CursorUtil [LineNumber]:  239  Entry getMongoCursor..
+Mar 03, 2020 2:21:18 PM com.enhancesys.common.logger
+FINE: [Thread]: 244 [ClassName]: com.enhancesys.integration.services.util.CursorUtil [LineNumber]:  266  collectionName : organization_prod
+Mar 03, 2020 2:21:18 PM com.enhancesys.common.logger
+FINE: [Thread]: 244 [ClassName]: com.enhancesys.integration.services.util.CursorUtil [LineNumber]:  336  Query Object : { }
+Mar 03, 2020 2:21:18 PM com.enhancesys.common.logger
+FINE: [Thread]: 244 [ClassName]: com.enhancesys.integration.services.util.CursorUtil [LineNumber]:  348  collectionName : organization_prod mongoCursors size : 1
+Mar 03, 2020 2:21:18 PM com.enhancesys.common.logger
+FINE: [Thread]: 244 [ClassName]: com.enhancesys.integration.services.util.CursorUtil [LineNumber]:  266  collectionName : outlet_hierachy_dump_prod
+Mar 03, 2020 2:21:18 PM com.enhancesys.common.logger
+FINE: [Thread]: 244 [ClassName]: com.enhancesys.integration.services.util.CursorUtil [LineNumber]:  336  Query Object : { }
+Mar 03, 2020 2:21:18 PM com.enhancesys.common.logger
+FINE: [Thread]: 244 [ClassName]: com.enhancesys.integration.services.util.CursorUtil [LineNumber]:  348  collectionName : outlet_hierachy_dump_prod mongoCursors size : 2
+Mar 03, 2020 2:21:18 PM com.enhancesys.common.logger
+FINE: [Thread]: 244 [ClassName]: com.enhancesys.integration.services.util.CursorUtil [LineNumber]:  373  Exit getMongoCursor..
+Mar 03, 2020 2:26:29 PM com.enhancesys.common.logger
+FINE: [Thread]: 244 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  8139  Entry createInterfaceFileSummary.. Started at --> Tue Mar 03 14:26:29 IST 2020
+Mar 03, 2020 2:26:29 PM com.enhancesys.common.logger
+FINE: [Thread]: 244 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  8152  createInterfaceFileSummary service received interfaceFileSummary for file id-->null
+Mar 03, 2020 2:26:29 PM com.enhancesys.common.logger
+FINE: [Thread]: 244 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  8227  Exit createInterfaceFileSummary service at -->Tue Mar 03 14:26:29 IST 2020 --- and took 36 milliseconds
+Mar 03, 2020 2:26:29 PM com.enhancesys.common.logger
+FINE: [Thread]: 244 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  7586  Entry createControlFile.. Started at --> Tue Mar 03 14:26:29 IST 2020
+Mar 03, 2020 2:26:29 PM com.enhancesys.common.logger
+FINE: [Thread]: 244 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  7601  createControlFile service received filePath -->/home/appuser/interfaces/S-NOC/interfaces/master_file/daily_dumps/outlet_sales/Outlet_Sales_20200303.csvtotalCount-->331629fileName-->Outlet_Sales_20200303fileFormat-->csvcurrentFileId-->10887contolFileFormat-->ctlcontolFilePath-->/home/appuser/interfaces/S-NOC/interfaces/master_file/daily_dumps/outlet_sales/
+Mar 03, 2020 2:26:30 PM com.enhancesys.common.logger
+FINE: [Thread]: 244 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  8056  updateInterfaceFileSummaryDetails service received interfaceFileSummaryDetails object for file details id-->10887
+Mar 03, 2020 2:26:31 PM com.enhancesys.common.logger
+FINE: [Thread]: 244 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  7665  Exit control file creation service at -->Tue Mar 03 14:26:31 IST 2020 --- and took 1284 milliseconds
+Mar 03, 2020 2:26:31 PM com.enhancesys.common.logger
+FINE: [Thread]: 244 [ClassName]: com.enhancesys.integration.services.processor.OutletSalesDump [LineNumber]:  499  OutletSalesDump : Exit processRequest... InterfaceId : 1156 Took : 312762 milliseconds
+Mar 03, 2020 2:26:31 PM com.enhancesys.common.logger
+FINE: [Thread]: 244 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  8909  Completed pullDataToFile.. 1156  Service at --> Tue Mar 03 14:26:31 IST 2020 --- and took 312777 milliseconds
+Mar 03, 2020 2:26:31 PM com.enhancesys.common.logger
+FINE: [Thread]: 244 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  8975  Exit pullData service at -->Tue Mar 03 14:26:31 IST 2020 --- and took 312779 milliseconds
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+CSO_SALES => 1157    2:27:53 PM to  2:28:36 PM (1.2 min)
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+Mar 03, 2020 2:27:53 PM com.enhancesys.common.logger
+FINE: [Thread]: 254 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  8746  Entry pullDataToFile.. Started at --> Tue Mar 03 14:27:53 IST 2020
+Mar 03, 2020 2:27:53 PM com.enhancesys.common.logger
+FINE: [Thread]: 254 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  8749  pullDataToFile service received interface id-->[1157]
+Mar 03, 2020 2:27:53 PM com.enhancesys.common.logger
+FINE: [Thread]: 254 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  8787  Started pullDataToFile.. 1157  Started at --> Tue Mar 03 14:27:53 IST 2020
+Mar 03, 2020 2:27:53 PM com.enhancesys.common.logger
+FINE: [Thread]: 254 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  8888  [dataConverter] class com.sun.proxy.$Proxy209
+Mar 03, 2020 2:27:53 PM com.enhancesys.common.logger
+FINE: [Thread]: 254 [ClassName]: com.enhancesys.integration.services.processor.OutletSalesDump [LineNumber]:  73  OutletSalesDump :: Entry processRequest ... InterfaceId : 1157, RequiredDate : null
+Mar 03, 2020 2:27:53 PM com.enhancesys.common.logger
+FINE: [Thread]: 254 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  9467  Entry readFilePropertyBeans.. Started at --> Tue Mar 03 14:27:53 IST 2020
+Mar 03, 2020 2:27:53 PM com.enhancesys.common.logger
+FINE: [Thread]: 254 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  9481  readFilePropertyBeans service received interface id-->1157
+Mar 03, 2020 2:27:53 PM com.enhancesys.common.logger
+FINE: [Thread]: 254 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  10283  Exit readFilePropertyBeans service at -->Tue Mar 03 14:27:53 IST 2020 --- and took 40 milliseconds
+Mar 03, 2020 2:27:53 PM com.enhancesys.common.logger
+FINE: [Thread]: 254 [ClassName]: com.enhancesys.integration.services.processor.OutletSalesDump [LineNumber]:  161  Interface : 1157 : File : CSO_Sales_20200303.csv
+Mar 03, 2020 2:27:53 PM com.enhancesys.common.logger
+FINE: [Thread]: 254 [ClassName]: com.enhancesys.integration.services.util.CursorUtil [LineNumber]:  239  Entry getMongoCursor..
+Mar 03, 2020 2:27:53 PM com.enhancesys.common.logger
+FINE: [Thread]: 254 [ClassName]: com.enhancesys.integration.services.util.CursorUtil [LineNumber]:  266  collectionName : org_user_node_acc_prod
+Mar 03, 2020 2:27:53 PM com.enhancesys.common.logger
+FINE: [Thread]: 254 [ClassName]: com.enhancesys.integration.services.util.CursorUtil [LineNumber]:  336  Query Object : { "position_id" : "1031" , "node_status" : 174}
+Mar 03, 2020 2:28:13 PM com.enhancesys.common.logger
+FINE: [Thread]: 254 [ClassName]: com.enhancesys.integration.services.util.CursorUtil [LineNumber]:  348  collectionName : org_user_node_acc_prod mongoCursors size : 1
+Mar 03, 2020 2:28:13 PM com.enhancesys.common.logger
+FINE: [Thread]: 254 [ClassName]: com.enhancesys.integration.services.util.CursorUtil [LineNumber]:  266  collectionName : outlet_hierachy_dump_prod
+Mar 03, 2020 2:28:13 PM com.enhancesys.common.logger
+FINE: [Thread]: 254 [ClassName]: com.enhancesys.integration.services.util.CursorUtil [LineNumber]:  336  Query Object : { }
+Mar 03, 2020 2:28:13 PM com.enhancesys.common.logger
+FINE: [Thread]: 254 [ClassName]: com.enhancesys.integration.services.util.CursorUtil [LineNumber]:  348  collectionName : outlet_hierachy_dump_prod mongoCursors size : 2
+Mar 03, 2020 2:28:13 PM com.enhancesys.common.logger
+FINE: [Thread]: 254 [ClassName]: com.enhancesys.integration.services.util.CursorUtil [LineNumber]:  373  Exit getMongoCursor..
+Mar 03, 2020 2:28:36 PM com.enhancesys.common.logger
+FINE: [Thread]: 254 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  8139  Entry createInterfaceFileSummary.. Started at --> Tue Mar 03 14:28:36 IST 2020
+Mar 03, 2020 2:28:36 PM com.enhancesys.common.logger
+FINE: [Thread]: 254 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  8152  createInterfaceFileSummary service received interfaceFileSummary for file id-->null
+Mar 03, 2020 2:28:36 PM com.enhancesys.common.logger
+FINE: [Thread]: 254 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  8227  Exit createInterfaceFileSummary service at -->Tue Mar 03 14:28:36 IST 2020 --- and took 69 milliseconds
+Mar 03, 2020 2:28:36 PM com.enhancesys.common.logger
+FINE: [Thread]: 254 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  7586  Entry createControlFile.. Started at --> Tue Mar 03 14:28:36 IST 2020
+Mar 03, 2020 2:28:36 PM com.enhancesys.common.logger
+FINE: [Thread]: 254 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  7601  createControlFile service received filePath -->/home/appuser/interfaces/S-NOC/interfaces/master_file/daily_dumps/cso_sales/CSO_Sales_20200303.csvtotalCount-->4213fileName-->CSO_Sales_20200303fileFormat-->csvcurrentFileId-->10888contolFileFormat-->ctlcontolFilePath-->/home/appuser/interfaces/S-NOC/interfaces/master_file/daily_dumps/cso_sales/
+Mar 03, 2020 2:28:36 PM com.enhancesys.common.logger
+FINE: [Thread]: 254 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  8056  updateInterfaceFileSummaryDetails service received interfaceFileSummaryDetails object for file details id-->10888
+Mar 03, 2020 2:28:36 PM com.enhancesys.common.logger
+FINE: [Thread]: 254 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  7665  Exit control file creation service at -->Tue Mar 03 14:28:36 IST 2020 --- and took 85 milliseconds
+Mar 03, 2020 2:28:36 PM com.enhancesys.common.logger
+FINE: [Thread]: 254 [ClassName]: com.enhancesys.integration.services.processor.OutletSalesDump [LineNumber]:  499  OutletSalesDump : Exit processRequest... InterfaceId : 1157 Took : 43411 milliseconds
+Mar 03, 2020 2:28:36 PM com.enhancesys.common.logger
+FINE: [Thread]: 254 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  8909  Completed pullDataToFile.. 1157  Service at --> Tue Mar 03 14:28:36 IST 2020 --- and took 43424 milliseconds
+Mar 03, 2020 2:28:36 PM com.enhancesys.common.logger
+FINE: [Thread]: 254 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  8975  Exit pullData service at -->Tue Mar 03 14:28:36 IST 2020 --- and took 43429 milliseconds
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+MPC SALES => 1158    2:29:23 PM to 2:29:24 PM (0 min)
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+
+Mar 03, 2020 2:29:23 PM com.enhancesys.common.logger
+FINE: [Thread]: 264 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  8746  Entry pullDataToFile.. Started at --> Tue Mar 03 14:29:23 IST 2020
+Mar 03, 2020 2:29:23 PM com.enhancesys.common.logger
+FINE: [Thread]: 264 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  8749  pullDataToFile service received interface id-->[1158]
+Mar 03, 2020 2:29:23 PM com.enhancesys.common.logger
+FINE: [Thread]: 264 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  8787  Started pullDataToFile.. 1158  Started at --> Tue Mar 03 14:29:23 IST 2020
+Mar 03, 2020 2:29:23 PM com.enhancesys.common.logger
+FINE: [Thread]: 264 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  8888  [dataConverter] class com.sun.proxy.$Proxy209
+Mar 03, 2020 2:29:23 PM com.enhancesys.common.logger
+FINE: [Thread]: 264 [ClassName]: com.enhancesys.integration.services.processor.OutletSalesDump [LineNumber]:  73  OutletSalesDump :: Entry processRequest ... InterfaceId : 1158, RequiredDate : null
+Mar 03, 2020 2:29:23 PM com.enhancesys.common.logger
+FINE: [Thread]: 264 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  9467  Entry readFilePropertyBeans.. Started at --> Tue Mar 03 14:29:23 IST 2020
+Mar 03, 2020 2:29:23 PM com.enhancesys.common.logger
+FINE: [Thread]: 264 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  9481  readFilePropertyBeans service received interface id-->1158
+Mar 03, 2020 2:29:23 PM com.enhancesys.common.logger
+FINE: [Thread]: 264 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  10283  Exit readFilePropertyBeans service at -->Tue Mar 03 14:29:23 IST 2020 --- and took 44 milliseconds
+Mar 03, 2020 2:29:23 PM com.enhancesys.common.logger
+FINE: [Thread]: 264 [ClassName]: com.enhancesys.integration.services.processor.OutletSalesDump [LineNumber]:  161  Interface : 1158 : File : MPC_Sales_20200303.csv
+Mar 03, 2020 2:29:23 PM com.enhancesys.common.logger
+FINE: [Thread]: 264 [ClassName]: com.enhancesys.integration.services.util.CursorUtil [LineNumber]:  239  Entry getMongoCursor..
+Mar 03, 2020 2:29:23 PM com.enhancesys.common.logger
+FINE: [Thread]: 264 [ClassName]: com.enhancesys.integration.services.util.CursorUtil [LineNumber]:  266  collectionName : organization
+Mar 03, 2020 2:29:23 PM com.enhancesys.common.logger
+FINE: [Thread]: 264 [ClassName]: com.enhancesys.integration.services.util.CursorUtil [LineNumber]:  336  Query Object : { "org_type" : 7 , "sub_org_type" : 59 , "status" : 174}
+Mar 03, 2020 2:29:23 PM com.enhancesys.common.logger
+FINE: [Thread]: 264 [ClassName]: com.enhancesys.integration.services.util.CursorUtil [LineNumber]:  348  collectionName : organization mongoCursors size : 1
+Mar 03, 2020 2:29:23 PM com.enhancesys.common.logger
+FINE: [Thread]: 264 [ClassName]: com.enhancesys.integration.services.util.CursorUtil [LineNumber]:  266  collectionName : outlet_hierachy_dump
+Mar 03, 2020 2:29:23 PM com.enhancesys.common.logger
+FINE: [Thread]: 264 [ClassName]: com.enhancesys.integration.services.util.CursorUtil [LineNumber]:  336  Query Object : { }
+Mar 03, 2020 2:29:23 PM com.enhancesys.common.logger
+FINE: [Thread]: 264 [ClassName]: com.enhancesys.integration.services.util.CursorUtil [LineNumber]:  348  collectionName : outlet_hierachy_dump mongoCursors size : 2
+Mar 03, 2020 2:29:23 PM com.enhancesys.common.logger
+FINE: [Thread]: 264 [ClassName]: com.enhancesys.integration.services.util.CursorUtil [LineNumber]:  373  Exit getMongoCursor..
+Mar 03, 2020 2:29:23 PM com.enhancesys.common.logger
+FINE: [Thread]: 264 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  8139  Entry createInterfaceFileSummary.. Started at --> Tue Mar 03 14:29:23 IST 2020
+Mar 03, 2020 2:29:23 PM com.enhancesys.common.logger
+FINE: [Thread]: 264 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  8152  createInterfaceFileSummary service received interfaceFileSummary for file id-->null
+Mar 03, 2020 2:29:24 PM com.enhancesys.common.logger
+FINE: [Thread]: 264 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  8227  Exit createInterfaceFileSummary service at -->Tue Mar 03 14:29:24 IST 2020 --- and took 45 milliseconds
+Mar 03, 2020 2:29:24 PM com.enhancesys.common.logger
+FINE: [Thread]: 264 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  7586  Entry createControlFile.. Started at --> Tue Mar 03 14:29:24 IST 2020
+Mar 03, 2020 2:29:24 PM com.enhancesys.common.logger
+FINE: [Thread]: 264 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  7601  createControlFile service received filePath -->/home/appuser/interfaces/S-NOC/interfaces/master_file/daily_dumps/mpc_sales/MPC_Sales_20200303.csvtotalCount-->0fileName-->MPC_Sales_20200303fileFormat-->csvcurrentFileId-->10889contolFileFormat-->ctlcontolFilePath-->/home/appuser/interfaces/S-NOC/interfaces/master_file/daily_dumps/mpc_sales/
+Mar 03, 2020 2:29:24 PM com.enhancesys.common.logger
+FINE: [Thread]: 264 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  8056  updateInterfaceFileSummaryDetails service received interfaceFileSummaryDetails object for file details id-->10889
+Mar 03, 2020 2:29:24 PM com.enhancesys.common.logger
+FINE: [Thread]: 264 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  7665  Exit control file creation service at -->Tue Mar 03 14:29:24 IST 2020 --- and took 78 milliseconds
+Mar 03, 2020 2:29:24 PM com.enhancesys.common.logger
+FINE: [Thread]: 264 [ClassName]: com.enhancesys.integration.services.processor.OutletSalesDump [LineNumber]:  499  OutletSalesDump : Exit processRequest... InterfaceId : 1158 Took : 606 milliseconds
+Mar 03, 2020 2:29:24 PM com.enhancesys.common.logger
+FINE: [Thread]: 264 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  8909  Completed pullDataToFile.. 1158  Service at --> Tue Mar 03 14:29:24 IST 2020 --- and took 623 milliseconds
+Mar 03, 2020 2:29:24 PM com.enhancesys.common.logger
+FINE: [Thread]: 264 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  8975  Exit pullData service at -->Tue Mar 03 14:29:24 IST 2020 --- and took 627 milliseconds
+

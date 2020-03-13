@@ -15,6 +15,9 @@ public class FileApp
 		//new FileApp().loadkey();
 		//new FileApp().startFileSearch();
 		new FileApp().checkCsvColumnDataIfValueNotEmptyWriteInFileWithLineNumberOfFile();
+		//System.out.println("delete from interface.sp_alloc_dump where file_id = ?::character varying".split("#").length);
+	
+	
 	}
 
 
@@ -22,16 +25,27 @@ public class FileApp
 
 
 
-		String csvFileAbPath =  "E:\\interface\\work\\enh-work\\daily_works\\2020-01\\___29_visit_org_dtls\\Visit_Organization_Detail_20200128.csv";
-		String outputFileAbPath = "E:\\interface\\work\\enh-work\\daily_works\\2020-01\\___29_visit_org_dtls\\Visit_Organization_Detail.log";
+		//		String csvFileAbPath =  "E:\\interface\\work\\enh-work\\daily_works\\2020-01\\___29_visit_org_dtls\\Visit_Organization_Detail_20200128.csv";
+		//		String outputFileAbPath = "E:\\interface\\work\\enh-work\\daily_works\\2020-01\\___29_visit_org_dtls\\Visit_Organization_Detail.log";
+		//		String csvDelimiter = "\\|";
+		//		String header = "SCHEDULEDATETIME|VIsitDatetime|Channel|Region|Area|Sales Area|Cluster|Micro Cluster|Additional Territory|TerritoryID|VISIT_TYPE|BeatPlanID|BeatPlanName|VisitorOrgType|VisitorORGID|VisitorSaldoMOBO Org ID|VisitorOrgName|VisitedOrgType|VisitedORGID|VisitedSaldoMOBO Org ID|VisitedOrgName|VisitedOrg Address|OperatorType|OperatorId|UserName|Operator Full Name|StartDateTime|EndDatetime|Time On Beat|Comments|Planned Distance(in KM)|Activity Name|Activity Status|PRODUCT_CATEGORY|PRODUCT_BRAND|PRODUCT_CODE|PRODUCT_NAME|Total Sales Qty|Total Sales Value|Org Location|Activity Location|Deviation Distance(in KM)|Reason";
+		//		String columnName = "Reason";
+		//
+		//		fileOperation.checkCsvColumnDataIfValueNotEmptyWriteInFileWithLineNumberOfFile(header, columnName, csvFileAbPath, outputFileAbPath, csvDelimiter);
+		//
+
+
+
+		String csvFileAbPath =  "E:\\interface\\work\\enh-work\\daily_works\\2020-02\\17\\Pjp_Planned_Calls_20200217001.csv";
+		String outputFileAbPath = "E:\\interface\\work\\enh-work\\daily_works\\2020-02\\17\\Pjp_Planned_Calls_20200217001.log";
 		String csvDelimiter = "\\|";
-		String header = "SCHEDULEDATETIME|VIsitDatetime|Channel|Region|Area|Sales Area|Cluster|Micro Cluster|Additional Territory|TerritoryID|VISIT_TYPE|BeatPlanID|BeatPlanName|VisitorOrgType|VisitorORGID|VisitorSaldoMOBO Org ID|VisitorOrgName|VisitedOrgType|VisitedORGID|VisitedSaldoMOBO Org ID|VisitedOrgName|VisitedOrg Address|OperatorType|OperatorId|UserName|Operator Full Name|StartDateTime|EndDatetime|Time On Beat|Comments|Planned Distance(in KM)|Activity Name|Activity Status|PRODUCT_CATEGORY|PRODUCT_BRAND|PRODUCT_CODE|PRODUCT_NAME|Total Sales Qty|Total Sales Value|Org Location|Activity Location|Deviation Distance(in KM)|Reason";
-		String columnName = "Reason";
+		String header = "Region|Area|Sales Area|Cluster|Micro Cluster|MPC Code|SPV Code|SPV Name|CSO Code|CSO Name|PJP Plan Id|PJP Plan name|PJP start date|PJP end date|PJP created by|PJP creation date|PJP Frequency|PJP Modify Date|PJP Status|Outlet Code|Plan Date|Plan Day";
+		String columnName = "SPV Name";
 
 		fileOperation.checkCsvColumnDataIfValueNotEmptyWriteInFileWithLineNumberOfFile(header, columnName, csvFileAbPath, outputFileAbPath, csvDelimiter);
 
 
-
+		System.out.println("done");
 
 	}
 
@@ -111,7 +125,7 @@ public class FileApp
 
 	void test() throws Exception
 	{
-		
+
 	}
 
 

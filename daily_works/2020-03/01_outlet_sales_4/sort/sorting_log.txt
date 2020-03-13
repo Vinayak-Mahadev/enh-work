@@ -1,0 +1,4 @@
+Input file --->/home/appuser/snoc/snocconf/interfaceconf/sort/organization_20200301192525808.csv.cp
+Output file --->/home/appuser/snoc/snocconf/interfaceconf/sort/organization_20200301192525808.csv.cp
+Input file --->/home/appuser/snoc/snocconf/interfaceconf/sort/outlet_hierachy_dump_20200301192526029.csv.cp
+Output file --->/home/appuser/snoc/snocconf/interfaceconf/sort/outlet_hierachy_dump_20200301192526029.csv.cp

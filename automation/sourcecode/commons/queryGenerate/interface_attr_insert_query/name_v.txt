@@ -20,16 +20,9 @@ Local rejected directory
 Local rejected control directory
 Local rejected backup directory
 Local rejected control backup directory
-Received File Type
 Csv Delimeter
 File Headers
-Client Id
-Is Sftp
-Schema Name
-Collection Name
-Daily Dump Conf
-Query Field
-Date Duration
-Process Name
-Mongo Connection Id
 Processor Url
+Client Id
+File Name Sequence
+Date Duration

@@ -1,0 +1,47 @@
+Using username "appuser".
+Last login: Mon Mar  2 12:04:23 2020 from 192.168.5.246
+[appuser@newserver ~]$ cd snoc/apps/logs/
+[appuser@newserver logs]$ tail -100f treetlogs.2020-03-02.log
+2020-03-02 12:05:52.320, FINE, [Thread]: 230 [ClassName]: com.enhancesys.integration.services.util.TokuUser [LineNumber]:  33  Initiating TokuMx-Java Adapter.....
+2020-03-02 12:05:53.828, FINE, [Thread]: 230 [ClassName]: com.enhancesys.integration.services.util.TokuUser [LineNumber]:  42  TokuMx-Java Adapter Initiated Successfully For Replica-Set user....!
+2020-03-02 12:11:08.195, FINE, [Thread]: 1 [ClassName]: com.enhancesys.common.configuration.PropertiesLoader [LineNumber]:  129  Reading Properties file...
+2020-03-02 12:11:08.376, FINE, [Thread]: 1 [ClassName]: com.enhancesys.integration.services.util.TemplateLoader [LineNumber]:  71  File /home/appuser/snoc/snocconf/interfaceconf/integration-json-templates/Product_Creation.json is loading to template loader
+2020-03-02 12:11:08.420, FINE, [Thread]: 1 [ClassName]: com.enhancesys.integration.services.util.TemplateLoader [LineNumber]:  71  File /home/appuser/snoc/snocconf/interfaceconf/integration-json-templates/Interface_Transactions_validation.json is loading to template loader
+2020-03-02 12:11:08.430, FINE, [Thread]: 1 [ClassName]: com.enhancesys.integration.services.util.TemplateLoader [LineNumber]:  71  File /home/appuser/snoc/snocconf/interfaceconf/integration-json-templates/Edit_Product.json is loading to template loader
+2020-03-02 12:12:25.254, FINE, [Thread]: 224 [ClassName]: com.enhancesys.integration.services.util.TokuUser [LineNumber]:  33  Initiating TokuMx-Java Adapter.....
+2020-03-02 12:12:25.305, FINE, [Thread]: 224 [ClassName]: com.enhancesys.integration.services.util.TokuUser [LineNumber]:  42  TokuMx-Java Adapter Initiated Successfully For Replica-Set user....!
+2020-03-02 12:12:25.516, FINE, [Thread]: 224 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  8746  Entry pullDataToFile.. Started at --> Mon Mar 02 12:12:25 IST 2020
+2020-03-02 12:12:25.516, FINE, [Thread]: 224 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  8749  pullDataToFile service received interface id-->[1162]
+2020-03-02 12:12:25.517, FINE, [Thread]: 224 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  8787  Started pullDataToFile.. 1162  Started at --> Mon Mar 02 12:12:25 IST 2020
+2020-03-02 12:12:26.847, FINE, [Thread]: 224 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  8888  [dataConverter] class com.sun.proxy.$Proxy207
+2020-03-02 12:12:27.013, FINE, [Thread]: 224 [ClassName]: com.enhancesys.integration.services.processor.PJPPlannedCallsDump [LineNumber]:  110  PJPPlannedCallsDump Entry processRequest..
+2020-03-02 12:12:27.084, FINE, [Thread]: 224 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  9467  Entry readFilePropertyBeans.. Started at --> Mon Mar 02 12:12:27 IST 2020
+2020-03-02 12:12:27.085, FINE, [Thread]: 224 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  9481  readFilePropertyBeans service received interface id-->1162
+2020-03-02 12:12:29.074, FINE, [Thread]: 224 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  10283  Exit readFilePropertyBeans service at -->Mon Mar 02 12:12:29 IST 2020 --- and took 1991 milliseconds
+2020-03-02 12:12:29.338, FINE, [Thread]: 224 [ClassName]: com.enhancesys.integration.services.util.TokuR4User [LineNumber]:  32  Initiating TokuMx-Java Adapter.....
+2020-03-02 12:12:29.344, FINE, [Thread]: 224 [ClassName]: com.enhancesys.integration.services.util.TokuR4User [LineNumber]:  38  TokuMx-Java Adapter Initiated Successfully For Replica-Set user....!
+2020-03-02 12:12:29.348, FINE, [Thread]: 224 [ClassName]: com.enhancesys.integration.services.util.TokuStandAloneUser [LineNumber]:  32  Initiating TokuMx-Java Adapter.....
+2020-03-02 12:12:29.392, FINE, [Thread]: 224 [ClassName]: com.enhancesys.integration.services.util.TokuStandAloneUser [LineNumber]:  38  TokuMx-Java Adapter Initiated Successfully For Replica-Set user....!
+2020-03-02 12:12:29.432, FINE, [Thread]: 224 [ClassName]: com.enhancesys.integration.services.processor.PJPPlannedCallsDump [LineNumber]:  223  Interface : 1162 : File : Pjp_Planned_Calls_20200302001.csv
+2020-03-02 12:12:29.520, FINE, [Thread]: 224 [ClassName]: com.enhancesys.integration.services.processor.PJPPlannedCallsDump [LineNumber]:  248  outletHierarchyCursor Size : 407
+2020-03-02 12:12:29.522, FINE, [Thread]: 224 [ClassName]: com.enhancesys.integration.services.processor.PJPPlannedCallsDump [LineNumber]:  569  SortColumns : { "outlet_org_id" : 1}
+2020-03-02 12:12:30.257, FINE, [Thread]: 224 [ClassName]: com.enhancesys.integration.services.processor.PJPPlannedCallsDump [LineNumber]:  593  Sort file script initiated for file :: /home/appuser/snoc/snocconf/interfaceconf/sort/outlet_hierachy_dump_20200302121229520.csv.cp
+2020-03-02 12:12:30.258, FINE, [Thread]: 224 [ClassName]: com.enhancesys.integration.services.processor.PJPPlannedCallsDump [LineNumber]:  594  Script file : /home/appuser/snoc/snocconf/interfaceconf/sort/collection1.sh
+2020-03-02 12:12:30.662, FINE, [Thread]: 224 [ClassName]: com.enhancesys.integration.services.processor.PJPPlannedCallsDump [LineNumber]:  596  Process : waitFor() :: 0
+2020-03-02 12:12:30.672, FINE, [Thread]: 224 [ClassName]: com.enhancesys.integration.services.processor.PJPPlannedCallsDump [LineNumber]:  264  Query Object : { "org_type" : 6 , "sub_org_type" : 66 , "status" : 174}
+2020-03-02 12:12:30.708, FINE, [Thread]: 224 [ClassName]: com.enhancesys.integration.services.processor.PJPPlannedCallsDump [LineNumber]:  269  outletOrgCursor Size : 309
+2020-03-02 12:12:30.710, FINE, [Thread]: 224 [ClassName]: com.enhancesys.integration.services.processor.PJPPlannedCallsDump [LineNumber]:  569  SortColumns : { "org_id" : 1}
+2020-03-02 12:12:30.847, FINE, [Thread]: 224 [ClassName]: com.enhancesys.integration.services.processor.PJPPlannedCallsDump [LineNumber]:  593  Sort file script initiated for file :: /home/appuser/snoc/snocconf/interfaceconf/sort/organization_20200302121230709.csv.cp
+2020-03-02 12:12:30.848, FINE, [Thread]: 224 [ClassName]: com.enhancesys.integration.services.processor.PJPPlannedCallsDump [LineNumber]:  594  Script file : /home/appuser/snoc/snocconf/interfaceconf/sort/collection1.sh
+2020-03-02 12:12:30.986, FINE, [Thread]: 224 [ClassName]: com.enhancesys.integration.services.processor.PJPPlannedCallsDump [LineNumber]:  596  Process : waitFor() :: 0
+2020-03-02 12:14:10.380, FINE, [Thread]: 224 [ClassName]: com.enhancesys.integration.services.processor.PJPPlannedCallsDump [LineNumber]:  378  Total Number of Records : 398
+2020-03-02 12:14:10.408, FINE, [Thread]: 224 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  8139  Entry createInterfaceFileSummary.. Started at --> Mon Mar 02 12:14:10 IST 2020
+2020-03-02 12:14:10.409, FINE, [Thread]: 224 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  8152  createInterfaceFileSummary service received interfaceFileSummary for file id-->null
+2020-03-02 12:14:11.272, FINE, [Thread]: 224 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  8227  Exit createInterfaceFileSummary service at -->Mon Mar 02 12:14:11 IST 2020 --- and took 864 milliseconds
+2020-03-02 12:15:15.717, FINE, [Thread]: 224 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  7586  Entry createControlFile.. Started at --> Mon Mar 02 12:15:15 IST 2020
+2020-03-02 12:15:15.718, FINE, [Thread]: 224 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  7601  createControlFile service received filePath        -->/home/appuser/interfaces/S-NOC/interfaces/master_file/daily_dumps/pjp_planned_calls/Pjp_Planned_Calls_20200302001.csvtotalCount-->398fileName-->Pjp_Planned_Calls_20200302001fileFormat-->csvcurrentFileId-->20483contolFileFormat-->ctlcontolFilePath-->/home/appuser/interfaces/S-NOC/interfaces/master_file/daily_dumps/pjp_planned_calls/
+2020-03-02 12:15:15.808, FINE, [Thread]: 224 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  8056  updateInterfaceFileSummaryDetails service received interfaceFileSummaryDetails object for file details id-->20483
+2020-03-02 12:15:15.923, FINE, [Thread]: 224 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  7665  Exit control file creation service at -->Mon Mar 02 12:15:15 IST 2020 --- and took 206 milliseconds
+2020-03-02 12:15:15.924, FINE, [Thread]: 224 [ClassName]: com.enhancesys.integration.services.processor.PJPPlannedCallsDump [LineNumber]:  543  PJPPlannedCallsDump : Exit processRequest.. 168910
+2020-03-02 12:15:15.926, FINE, [Thread]: 224 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  8909  Completed pullDataToFile.. 1162  Service at --> Mon Mar 02 12:15:15 IST 2020 --- and took 170408 milliseconds
+2020-03-02 12:15:15.927, FINE, [Thread]: 224 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  8975  Exit pullData service at -->Mon Mar 02 12:15:15 IST 2020 --- and took 170411 milliseconds
