@@ -14,10 +14,13 @@ public class FileApp
 		//new FileApp().deleteLineInFile();
 		//new FileApp().loadkey();
 		//new FileApp().startFileSearch();
-		new FileApp().checkCsvColumnDataIfValueNotEmptyWriteInFileWithLineNumberOfFile();
+		//new FileApp().checkCsvColumnDataIfValueNotEmptyWriteInFileWithLineNumberOfFile();
 		//System.out.println("delete from interface.sp_alloc_dump where file_id = ?::character varying".split("#").length);
 	
-	
+
+		System.out.println("123|vinay|abc".split("\\|").length);
+		System.out.println("123||abc".split("\\|").length);
+		System.out.println("123|vinay||".split("\\|", -1).length);
 	}
 
 

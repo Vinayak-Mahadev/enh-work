@@ -2,12 +2,9 @@ package enh.team.interfaces.dates;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
-import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.HashSet;
-
-import org.joda.time.LocalDate;
 
 class AppDate {
 
@@ -15,7 +12,7 @@ class AppDate {
 	public static void main(String[] args) throws ParseException {
 
 
-		DateOpration dateOpration = new DateOpration();
+		//DateOpration dateOpration = new DateOpration();
 
 
 		//		for (LocalDate localDate : dateOpration.daysBetween(new LocalDate(2020,01,1), new LocalDate()))

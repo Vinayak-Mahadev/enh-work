@@ -1,0 +1,147 @@
+100|Notification||
+101|INTFS001A - Sales Allocation (Starter Pack - Stock Dump)||Incoming Starter Pack Stock Dump File from FOSS
+102|INTFS001B - Sales Allocation (Starter Pack - Alloc Dump)||Incoming Starter Pack Alloc Dump File from FOSS
+103|INTFS002A - Sales Allocation (Vouchers - Stock Dump)||Incoming Vouchers Stock Dump File from FOSS
+104|INTFS002B - Sales Allocation (Vouchers - Alloc Dump)||Incoming Vouchers Alloc Dump File from FOSS
+105|INTFS003 - Product Creation||Incoming Product Creation File from FOSS
+106|INTFS004 - Serail Number Expiry||Incoming Serail Number Expiry File from FOSS
+107|INTDW001 - Activation Feed||Incoming Activation Feed File from DWH
+108|INTDW002 - Deactivation Feed||Incoming Deactivation Feed File from DWH
+109|INTID006 - Hierarchy Sync||Outgoing Hierarchy Sync File to IDM
+110|INTSM001 - Organization Creation|IntegrationCallbackProcessor!CallbackProcessor|
+111|INTSM002 - Organization Status Change|IntegrationCallbackProcessor!CallbackProcessor|
+112|INTSM003 - Organization Modification|IntegrationCallbackProcessor!CallbackProcessor|
+113|INTSM004 - User Creation|IntegrationCallbackProcessor!CallbackProcessor|
+114|INTSM005 - User Status Change|IntegrationCallbackProcessor!CallbackProcessor|
+115|INTSM006 - User Modification|IntegrationCallbackProcessor!CallbackProcessor|
+116|INTSM015 - Transaction Details||Outgoing Transaction Details File to SM
+117|INTSM016 - Organization Sync SM||Incoming Organization Sync File from SM
+118|INTSM017 - User Sync SM||Incoming User Sync File from SM
+119|INTID007 - User Sync ID||Outgoing User Sync File to IDM
+120|INTRAFMS001 & DAILY_DUMP - Snapshot Organization Details||Outgoing Snapshot Organization Details Dump File to RAFMS
+121|INTRAFMS003 & DAILY_DUMP - Snapshot User detail||Outgoing Snapshot User Details Dump File to RAFMS
+122|DAILY_DUMP - Snapshot_NodeID_detail||
+123|DAILY_DUMP - Snapshot_Role_detail||
+124|DAILY_DUMP - Master and dictionary Detail||
+125|DAILY_DUMP - NodeId_to_territory_map||
+126|DAILY_DUMP - Stock Organization Summary||
+127|DAILY_DUMP - Product Extend Expired Date||
+128|DAILY_DUMP - User Registration Detail||
+129|DAILY_DUMP - Survey Detail Report||
+130|INTRAFMS002 & DAILY_DUMP - Organization mapping to user Detail||Outgoing Organization mapping to user Detail Dump File to RAFMS
+131|DAILY_DUMP - Internal Sales Detail Activity||
+132|DAILY_DUMP - Snapshot HotSpot Detail||
+133|DAILY_DUMP - Foss/StockEntry Detail||
+134|DAILY_DUMP - Physical Distribution Detail||
+135|INTRAFMS005 & DAILY_DUMP - Sellout transaction Detail||Outgoing Sellout transaction Detail Dump File to RAFMS
+136|DAILY_DUMP - Stock Adjustment Detail||
+137|DAILY_DUMP - Stock Expired Date Detail||
+138|DAILY_DUMP - Activation Detail||
+139|INTDW017 - Transactions Details||Outgoing Transactions Details File to DWH
+140|INTRAFMS004 & DAILY_DUMP - Organization Stock Detail||Outgoing Organization Stock Detail Dump File to RAFMS
+141|INTSM021 - Voucher Injection||Incoming Voucher Injection File from SM
+142|INTDW003 - Voucher Redemption||Incoming Voucher Redemption File from DWH
+143|DAILY_DUMP - Sozialition Details||
+144|DAILY_DUMP - Attendance Details||
+145|DAILY_DUMP - VC Data Detail Dist||
+146|DAILY_DUMP - VC Data Injected||
+147|DAILY_DUMP - VC Data Redeem Detail||
+148|DAILY_DUMP - VC Data Tracking Detail||
+149|INTSM020 - Organization Stock Detail||Outgoing Organization Stock Detail File to SM
+150|INTNDB001 - LACCI Data||Incoming LACCI Data File from NDB
+151|INTSM023 - Org To Org Transfer||Incoming Org To Org Transfer File from SM
+152|INTSM024 - Indosat to Org Transfer||Incoming Indosat to Org Transfer File from SM
+153|INTDW004 - Sale Revenue LACCI||Incoming Sale Revenue LACCI File from DWH
+154|INTDW005 - Sale Revenue Organization||Incoming Sale Revenue Organization File from DWH
+155|INTDW006 - Package Activation A#||Incoming Package Activation A# File from DWH
+156|INTDW007 - Package Activation B#||Incoming Package Activation B# File from DWH
+157|INTDW008 - Usage Revenue LACCI||Incoming Usage Revenue LACCI File from DWH
+158|INTDW015 - SGE||Incoming SGE File from DWH
+159|DAILY_DUMP - Snapshot Organization Stock Detail||
+160|INTDW016 - WHITELIST A#B#||Outgoing WHITELIST A#B# File to DWH
+161|INTSM018 - Transaction Summary||Incoming Transaction Summary File from SM
+162|INTDW009 - Reload A#||Incoming Reload A# File from DWH
+163|INTDW010 - Reload B#||Incoming Reload B# File from DWH
+164|INTDW012 - Usage A#B#||Incoming Usage A#B# File from DWH
+165|INTDW013 - Add On A#B#||Incoming Add On A#B# File from DWH
+166|INTDW014 - Reload A#B#||Incoming Reload A#B# File from DWH
+167|INTDW011 - Reload Sellin-Sellout||Incoming Reload Sellin-Sellout File from DWH
+168|INTSM019 - Organization Balance||Incoming Organization Balance File from SM
+169|DAILY_DUMP - Sales Promo Program Daily Dump||
+170|DAILY_DUMP - Sales Event Daily Dump||
+171|DAILY_DUMP - Sales Event Detail MSISDN||
+172|DAILY_DUMP - Network Survey Detail Dump||
+173|DAILY_DUMP - Complaint Detail||
+174|DAILY_DUMP - Quiz Sum Detail||
+175|DAILY_DUMP - Quiz Detail||
+176|INTUP001 - Organization Sync With SM - Upload||Incoming Organization Sync With SM File by Upload
+177|INTUP002 - User Sync With SM - Upload||Incoming User Sync With SM File by Upload
+178|DAILY_DUMP - SOM Summary Territory||
+179|DAILY_DUMP - Rating Detail Dump||
+180|DAILY_DUMP - Deactivation Dump||
+181|DAILY_DUMP - Create POI Object||
+182|DAILY_DUMP - Close POI Object||
+183|DAILY_DUMP - POI Detail||
+184|DAILY_DUMP - Detail Usage Report||
+185|DAILY_DUMP - SP Act and Deact Baseon SO Detail||
+186|DAILY_DUMP - Map Object Detail||
+187|DAILY_DUMP - SI Dompetku||
+188|DAILY_DUMP - SOM Summary Org Wise||
+189|DAILY_DUMP - POI Revenue LACCI Wise||
+190|DAILY_DUMP - POI Revenue Org Wise||
+191|DAILY_DUMP - Hotspot Performance||
+192|DAILY_DUMP - Reload A# By LACCI||
+193|DAILY_DUMP - Reload B# By LACCI||
+194|DAILY_DUMP - Detail Package Activation A#||
+195|DAILY_DUMP - Detail Package Activation B#||
+196|DAILY_DUMP - Rev By MC||
+197|DAILY_DUMP - Rev By LACCI||
+198|DAILY_DUMP - KPI Detail||
+199|DAILY_DUMP - Sellout Reload||
+200|DAILY_DUMP - Sellout Addon||
+201|DAILY_DUMP - Sellout Usage||
+202|DAILY_DUMP - Detail SP CS Act MSISDN||
+203|DAILY_DUMP - CS Reload Physical Report SN||
+204|DAILY_DUMP - Summary HVC Report||
+205|DAILY_DUMP - Visit Organization Detail||
+206|DAILY_DUMP - Physical Reload by allocation||
+207|DAILY_DUMP - Summary CS Reload Physical Report||
+208|DAILY_DUMP - CS Reload Physical Report||
+209|DAILY_DUMP - Sum CS Reload of e-voucher||
+210|DAILY_DUMP - Detail CS Reload of e-voucher||
+211|DAILY_DUMP - Summary CS SP Act||
+212|DAILY_DUMP - Detail SP CS Act||
+213|DAILY_DUMP - Identity Management Log||
+214|DAILY_DUMP - Detail AWR Report||
+215|DAILY_DUMP - Configuration Management Log||
+216|DAILY_DUMP - KPI and Incentive Management Log||
+217|DAILY_DUMP - Incentive Detail||
+218|DAILY_DUMP - Visit Org Activity Detail||
+219|DAILY_DUMP - Detail HVC||
+220|INTSM026 - Transfer Balance| , );
+221|Query Balance| , );
+222|INTDW018 - Injection Feed||Incoming First time recharge injection to MSISDN after activation File from SM
+223|INTDW019 - RGU-GA Feed||Incoming First incoming/outgoing/SMS/data usage happened for MSISDN after activation File from SM
+224|INTSAP002 - Query Stock||
+225|INTSAP001 - Create SO||
+226|INTSAP003 - Update SO Status||
+227|INTDW022 - Master Hierarchy Feed||
+228|INTDW020 - Registration Feed (ACT2)||MSISDN registered to new customers Feed File from DWH
+229|INTDW021 - SIM Swap Activation Feed||MSISDN registered to existing customers Feed File from DWH
+230|INTUP003 - Stock Entry Upload||Incoming Stock Entry Upload File
+231|INTDW023 - Primary MOBO||Incoming Primary MOBO File from DWH
+232|INTDW024 - Secondary MOBO||Incoming Secondary MOBO File from DWH
+233|INTDW025 - Tertiary MOBO||Incoming Tertiary MOBO File from DWH
+234|INTDW026 - Surviavability||Incoming Surviavability MOBO File from DWH
+235|DAILY_DUMP - Outlet Sales||
+236|DAILY_DUMP - CSO Sales||
+237|DAILY_DUMP - MPC Sales||
+238|INTDWH020 – Quality of Acquisition||Incoming Quality of Acquisition File from DWH
+239|DAILY_DUMP - Quality of Acquisition Dump||
+240|DAILY_DUMP - PJP Planned Calls Dump||
+241|INTTNM007 - Query Stock||
+242|INTTNM008 - Reserve Stock||
+--SAP
+--SM
+--TNM
+--UPLOAD

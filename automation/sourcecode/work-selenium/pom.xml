@@ -3,24 +3,38 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd"
 	xmlns="http://maven.apache.org/POM/4.0.0"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+
 	<modelVersion>4.0.0</modelVersion>
+
 	<parent>
 		<groupId>org.finevm.work.ehnancesys.com</groupId>
 		<artifactId>work</artifactId>
 		<version>work-0.0.1</version>
 	</parent>
+
 	<artifactId>work-selenium</artifactId>
 	<name>work-selenium</name>
 	<url>http://maven.apache.org</url>
+
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<selenium.java>3.0.1</selenium.java>
+		<selenium.chrome.driver>3.0.1</selenium.chrome.driver>
 	</properties>
+
 	<dependencies>
 
 		<dependency>
 			<groupId>${parent.groupId}</groupId>
 			<artifactId>work-common</artifactId>
 			<version>${parent.version}</version>
+		</dependency>
+
+
+		<dependency>
+			<groupId>com.googlecode.json-simple</groupId>
+			<artifactId>json-simple</artifactId>
+			<version>1.1.1</version>
 		</dependency>
 
 		<dependency>
@@ -34,14 +48,14 @@
 		<dependency>
 			<groupId>org.seleniumhq.selenium</groupId>
 			<artifactId>selenium-java</artifactId>
-			<version>3.0.1</version>
+			<version>${selenium.java}</version>
 		</dependency>
 
-
+		<!-- https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-chrome-driver -->
 		<dependency>
-			<groupId>com.googlecode.json-simple</groupId>
-			<artifactId>json-simple</artifactId>
-			<version>1.1.1</version>
+			<groupId>org.seleniumhq.selenium</groupId>
+			<artifactId>selenium-chrome-driver</artifactId>
+			<version>${selenium.chrome.driver}</version>
 		</dependency>
 
 	</dependencies>
