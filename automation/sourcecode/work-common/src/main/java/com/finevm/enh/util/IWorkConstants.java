@@ -29,9 +29,9 @@ public interface IWorkConstants {
 	public final static String DELETE_LINE_IN_FILE_DELETE          = Environment.INTERFACE_WORK_SOURCECODE_LOC +  "/commons/fileOperation/deleteLineInFile/delete.txt";
 
 	public final static String FILE_OPERATION_LOC        		   = Environment.INTERFACE_WORK_SOURCECODE_LOC +  "/commons/fileOperation/";
-	
+
 	public final static String SAMPLE_FILES__LOC        		   = Environment.INTERFACE_WORK_SOURCECODE_LOC +  "/commons/sample/";
-	
+
 	public final static String LOG_LOC        		               = Environment.INTERFACE_WORK_SOURCECODE_LOC +  "/commons/log/";
 
 
@@ -42,5 +42,7 @@ public interface IWorkConstants {
 	public final static String attribute_id_file                 =  Environment.INTERFACE_WORK_SOURCECODE_LOC +  "/commons/queryGenerate/interface_attr_insert_query/attribute_id.txt";
 	public final static String name_v_file                       =  Environment.INTERFACE_WORK_SOURCECODE_LOC +  "/commons/queryGenerate/interface_attr_insert_query/name_v.txt";
 	public final static String value_v_file                      =  Environment.INTERFACE_WORK_SOURCECODE_LOC +  "/commons/queryGenerate/interface_attr_insert_query/value_v.txt";
+	public final static String INTERFACE_REFERENCE_GENERATION    =  Environment.INTERFACE_WORK_SOURCECODE_LOC +  "/commons/interfaceReference";
+
 
 }

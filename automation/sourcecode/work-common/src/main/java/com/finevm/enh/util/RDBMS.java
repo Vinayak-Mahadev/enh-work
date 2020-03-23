@@ -77,7 +77,7 @@ public class RDBMS {
 			}
 		}
 
-		if(con!=null)
+		if(con != null)
 			System.out.println("<==   RDBMS connection is given to you ==> " + ++db_connection_count + "  time");
 		else 
 			db_connection_count = 0;
@@ -89,7 +89,7 @@ public class RDBMS {
 
 	public static Connection getDBConnection(PropType rDBMSType) {
 		if(rDBMSType!=null)
-			return getDBConnection(IWorkConstants.RDBMS_LIST.get(rDBMSType.toString())!=null ? IWorkConstants.RDBMS_LIST.getJSONObject( rDBMSType.toString()) : null);
+			return getDBConnection(IWorkConstants.RDBMS_LIST.get(rDBMSType.toString()) != null ? IWorkConstants.RDBMS_LIST.getJSONObject( rDBMSType.toString()) : null);
 		return null;
 	}
 	public static Connection getDBConnection(String rDBMSType) {
@@ -131,7 +131,10 @@ public class RDBMS {
 				Class.forName(classForName);
 				System.out.println("=> DATABASE Authentication <=\n	URL : "+url+"\n	USERNAME : "+username+"\n	PASSWORD : "+password+"\n");
 				con = DriverManager.getConnection(url, username, password);
-				System.out.println("<==   RDBMS Connection made    ==> ");
+				if(con == null)
+					System.out.println("<==   Failed to connect RDBMS Connection  ==> ");
+				else
+					System.out.println("<==   RDBMS Connection made    ==> ");
 			}
 
 		} 

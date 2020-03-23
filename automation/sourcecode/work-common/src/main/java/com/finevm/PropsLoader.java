@@ -46,19 +46,63 @@ public final class PropsLoader {
 		{
 			e.printStackTrace();
 		}
-		finally {
+		finally
+		{
 			file = null;
 			properties = null;
 			configFileName = null;
-			if(fis!=null)
-				try {
+			try 
+			{
+				if(fis!=null)
 					fis.close();
-				} catch (IOException e) {
-					e.printStackTrace();
-				}
+			} 
+			catch (IOException e) 
+			{
+				e.printStackTrace();
+			}
 		}
 		return confMap;
 	}
+
+
+	public static Properties loadProperties(String configFileName)
+	{
+		Properties properties = null;
+		InputStream fis = null;
+		File file       = null;
+		try
+		{
+
+			//System.out.println("configFileName location :: "+configFileName);
+			properties     = new Properties();
+			file = new File((configFileName));
+			if(file.exists())
+			{
+				fis = new  FileInputStream(file);
+				properties.load(fis);
+			}
+					
+		}
+		catch (Exception e)
+		{
+			e.printStackTrace();
+		}
+		finally 
+		{
+			file = null;
+			configFileName = null;
+			try 
+			{
+				if(fis != null)
+					fis.close();
+			} 
+			catch (IOException e) {
+				e.printStackTrace();
+			}
+		}
+		return properties;
+	}
+
 
 	public static String getProperties(String param) {
 		if((confMap == null)){
@@ -68,5 +112,5 @@ public final class PropsLoader {
 		return confMap.get(param);
 	}
 
-	
+
 }

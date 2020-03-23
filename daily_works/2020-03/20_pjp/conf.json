@@ -1,0 +1,29 @@
+[
+	{
+		"region": "regional_desc",
+		"area": "area_desc",
+		"sales area": "sales_area_desc",
+		"cluster": "cluster_desc",
+		"micro cluster": "micro_cluster_desc",
+		"mpc code": "mpc_code",
+		"spv code": "spv_code",
+		"spv name": "spv_name",
+		"cso code": "cso_code",
+		"cso name": "cso_name",
+		"pjp plan id": "beat_id",
+		"pjp plan name": "beat_name",
+		"pjp start date": "beat_st_dt",
+		"pjp end date": "beat_ed_dt",
+		"pjp created by": "beat_crtd_by",
+		"pjp creation date": "beat_crtd_dt",
+		"pjp frequency": "beat_frequency",
+		"pjp modify date": "beat_updtd_dt",
+		"pjp status": "beat_status",
+		"outlet code": "org_ref_code",
+		"plan date": "plan_dt",
+		"plan day": "plan_day"
+	},
+	{
+		"header": "Region|Area|Sales Area|Cluster|Micro Cluster|MPC Code|SPV Code|SPV Name|CSO Code|CSO Name|PJP Plan Id|PJP Plan name|PJP start date|PJP end date|PJP created by|PJP creation date|PJP Frequency|PJP Modify Date|PJP Status|Outlet Code|Plan Date|Plan Day"
+	}
+]
