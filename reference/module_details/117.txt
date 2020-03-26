@@ -1,4 +1,4 @@
-101 INTFS001A - Sales Allocation (Starter Pack - Stock Dump)
+117 INTSM016 - Organization Sync SM
 
 It have two different type of interfaces
 
@@ -41,16 +41,16 @@ It have two different type of interfaces
 			6.6 Then tr_interface_file_summary and tr_interface_file_summary_details will updated.
 			
 	 *
-		1.  java:global/EnhancesysManagement/IntegrationServices/SPStockDumpMerger!com.enhancesys.integration.services.interfaces.merger.CSVMerger
-		2.  SPStockDumpMerger
+		1.  java:global/EnhancesysManagement/IntegrationServices/OrganizationSyncMerger!com.enhancesys.integration.services.interfaces.merger.CSVMerger
+		2.  OrganizationSyncMerger
 			2.1 Do basic validation and get properties and file from interfaceAttribute and tr_interface_file_summary_details with fileId and interfaceId.
 			2.2 Get interface with PUBLISHER_INTERFACE_ATTR from interfaceAttribute (java:global/EnhancesysManagement/IntegrationPublishers/WebServicePublisher!com.enhancesys.integration.services.interfaces.publisher.DataPublisher)
-			2.4 Read file and file's data dumped to interface.sp_stock_dump
+			2.4 Read file, if Additional Fields File true, then file's data dumped to interface.tr_interface_summary.
 			2.5 In table each iteration
 				2.5.1 create convertedRequestData
 				2.5.2 invoke PUBLISHER_INTERFACE with convertedRequestData, remoteWsUrl and publisherInterfaces.getInterfaceId()
 				2.5.3 responseBean's status  
-
+			2.6 According to status org create, status change or update request will be created
 	 *
 		1. WebServicePublisher can call rest and soap service 
 		2. return response with responseBean
@@ -59,8 +59,8 @@ It have two different type of interfaces
 3 => prepareRejectionFile (interfaceId, partners)
 
 	*
-		1. Get REJECTION_FILE class from REJECTION_FILE_ATTR with interfaceId (java:global/EnhancesysManagement/IntegrationServices/FOSSRejectionFilePreparation!com.enhancesys.integration.services.interfaces.rejection.RejectionFilePreparation)
-		2. Create rejection file with sp_stock_dump's fail query.
+		1. Get REJECTION_FILE class from REJECTION_FILE_ATTR with interfaceId (java:global/EnhancesysManagement/IntegrationServices/SMRejectionFilePreparation!com.enhancesys.integration.services.interfaces.rejection.RejectionFilePreparation)
+		2. Create rejection file with product_details's fail query.
 		3. File moved to RejectedDir and RejectedCtlBkpDir.
 		4. Then update tr_interface_file_summary
 		

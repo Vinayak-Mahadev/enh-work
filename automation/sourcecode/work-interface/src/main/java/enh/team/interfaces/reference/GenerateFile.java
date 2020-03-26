@@ -284,8 +284,17 @@ public class GenerateFile {
 
 
 				row = rowIterator.next();
+
+				if(row.getRowNum() != 0 &&  interfaces.size() > row.getRowNum()-1 ) 
+				{
+					interfac = interfaces.get(row.getRowNum()-1);
+					System.out.println(interfac.getInterfaceId() +"  :: " + interfac);
+				} 
+
+
 				//For each row, iterate through each columns
 				cellIterator = row.cellIterator();
+
 
 
 				cell_iterator : while(cellIterator.hasNext()) 
@@ -300,13 +309,8 @@ public class GenerateFile {
 						continue cell_iterator;
 					}
 
-					if(row.getRowNum() != 0 &&  interfaces.size() > row.getRowNum()-1 ) 
-						interfac = interfaces.get(row.getRowNum()-1);
-					else 
-						continue row_iterator;
-
-					
-
+					//if(row.getRowNum() == 0 &&  interfaces.size() < row.getRowNum()-1 )
+					//continue row_iterator;
 
 					if(cell.getColumnIndex() == 0) 
 						cell.setCellValue(interfac.getInterfaceId());//INTERFACE ID	
@@ -566,7 +570,7 @@ public class GenerateFile {
 						cell.setCellValue(interfac.getInterfaceId());	
 					}
 					continue cell_iterator;
-					
+
 				} 
 			}
 			workbook.write(outputStream);

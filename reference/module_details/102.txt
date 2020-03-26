@@ -1,6 +1,6 @@
-101 INTFS001A - Sales Allocation (Starter Pack - Stock Dump)
+102	INTFS001B - Sales Allocation (Starter Pack - Alloc Dump)
 
-It have two different type of 
+It have two different type of interfaces
 
 1 =>  processFile(interfaceIds)		
 
