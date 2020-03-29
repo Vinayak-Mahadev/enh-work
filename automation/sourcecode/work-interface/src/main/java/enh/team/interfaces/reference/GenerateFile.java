@@ -262,7 +262,9 @@ public class GenerateFile {
 		PreparedStatement preparedStatement = null;
 		ResultSet resultSet = null;
 		String descAndServiceStr = null;
-
+		String iType = null;
+		String iTransType = null;
+		
 		try 
 		{
 			file = new File(xlsxFileLoc);
@@ -279,7 +281,8 @@ public class GenerateFile {
 			rowIterator = sheet.iterator();
 
 			System.out.println("headers size :: " + headers.keySet().size());
-			row_iterator : while(rowIterator.hasNext()) 
+			
+			while(rowIterator.hasNext()) 
 			{
 
 
@@ -300,7 +303,7 @@ public class GenerateFile {
 				cell_iterator : while(cellIterator.hasNext()) 
 				{
 					cell = cellIterator.next();
-					cell.setCellValue("");
+					cell.setCellValue("-");
 					if(row.getRowNum() == 0)
 					{
 						if(cell.getColumnIndex() < headers.keySet().size()) {
@@ -325,13 +328,32 @@ public class GenerateFile {
 					{
 						//DESCRIPTION
 						descAndServiceStr = (String) descProperties.get(interfac.getInterfaceId().toString());
-						if(descAndServiceStr != null && !descAndServiceStr.trim().isEmpty()) {
+						if(descAndServiceStr != null ) {
 							descAndService = new JSONObject(descAndServiceStr);
-							if(descAndService.get("description") != null && !descAndService.getString("description").trim().isEmpty()) {
-								cell.setCellValue(descAndService.getString("description").trim());	
+							if(descAndService.get("description") == null)
+								descAndService.put("description", "");
+							
+							if(descAndService.get("description") != null) {
+								if(interfac.getInterfaceType().intValue() == 1)
+									iType = "1. ASYNC_QUEUE_INTERFACE_TYPE\n";
+								if(interfac.getInterfaceType().intValue() == 2)
+									iType = "1. ASYNC_FILE_INTERFACE_TYPE\n";
+								if(interfac.getInterfaceType().intValue() == 3)
+									iType = "1. SYNC_INTERFACE_TYPE\n";
+								
+								if(interfac.getTransactionType().intValue() == 1)
+									iTransType = "2. SEND_TRANS_TYPE\n\n";
+								if(interfac.getTransactionType().intValue() == 2)
+									iTransType = "2. RECEIVE_TRANS_TYPE\n\n";
+								System.out.println(iType + iTransType + descAndService.getString("description").trim());
+								cell.setCellValue(iType + iTransType + descAndService.getString("description").trim());	
 							}
 						}
-
+						//-- ASYNC_QUEUE_INTERFACE_TYPE = 1
+						//-- ASYNC_FILE_INTERFACE_TYPE = 2
+						//-- SYNC_INTERFACE_TYPE = 3
+						//-- SEND_TRANS_TYPE = 1
+						//-- RECEIVE_TRANS_TYPE = 2
 					}
 					else if(cell.getColumnIndex() == 4) 
 					{
@@ -345,15 +367,18 @@ public class GenerateFile {
 
 					}
 
-					else if(cell.getColumnIndex() == 5) 
-						cell.setCellValue(interfac.getModule().getCallBack());//CALLBACK	
-
-					else if(cell.getColumnIndex() == 6) 
-						cell.setCellValue(interfac.getConverter());//CONVERTER	
-
-					else if(cell.getColumnIndex() == 7) 
-						cell.setCellValue(interfac.getPublisher());//PUBLISHER	
-
+					else if(cell.getColumnIndex() == 5) {
+						if(interfac.getModule().getCallBack() != null && !interfac.getModule().getCallBack().trim().isEmpty())
+							cell.setCellValue(interfac.getModule().getCallBack());//CALLBACK	
+					}
+					else if(cell.getColumnIndex() == 6) {
+						if(interfac.getConverter() != null && !interfac.getConverter().trim().isEmpty())
+							cell.setCellValue(interfac.getConverter());//CONVERTER	
+					}
+					else if(cell.getColumnIndex() == 7) { 
+						if(interfac.getPublisher() != null && !interfac.getPublisher().trim().isEmpty())
+							cell.setCellValue(interfac.getPublisher());//PUBLISHER	
+					}
 					else if(cell.getColumnIndex() == 8) 
 					{
 
@@ -614,7 +639,9 @@ public class GenerateFile {
 			preparedStatement = null;
 			resultSet = null;
 			descAndServiceStr = null;
-
+			iType = null;
+			iTransType = null;
+			
 			System.out.println("Exit from StartJob...\n\n");
 		}
 	}
