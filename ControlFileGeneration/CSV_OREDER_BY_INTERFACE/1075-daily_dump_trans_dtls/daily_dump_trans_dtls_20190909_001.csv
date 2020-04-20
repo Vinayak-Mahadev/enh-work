@@ -1,0 +1,13 @@
+Date|TransactionChannel|TransactionType|ProductGroup|ProductName|ProductPrice|SMORGShortcode|OperatorID|A#MSISDN|A#LACID|A#CIID|B#LACID|B#CIID|VoucherType|TransactionHit|AmountDebit|TotalMainPrice
+2019-09-08 01:11:10|Traditional|TransactionType 5|Internet Bank  Prodcut Group Internet Banking|Voucher GPRS 5K   Product   Vocher Category|10|outletSFalse|BADSAW3763|1000000|||||Voucher Type|1|2|3
+2019-09-08 01:11:10|Traditional|TransactionType 5|Internet Bank  Prodcut Group Internet Banking|Voucher GPRS 5K   Product   Vocher Category|10|SYNCout01|BADSAW3763|1000000|NA|NA|NA|NA|Voucher Type|1|2|3
+2019-09-08 01:11:10|Traditional|TransactionType 5|Internet Bank  Prodcut Group Internet Banking|Voucher GPRS 5K   Product   Vocher Category|10|SYNCout03|BADSAW3763|1000000|||||Voucher Type|1|2|3
+2019-09-08 01:11:10|Traditional|Voucher card injection|Internet Bank  Prodcut Group Internet Banking|Voucher GPRS 5K   Product   Vocher Category|10|mobo20|BADSAW3763|1000000|NA|NA|NA|NA|Voucher Type|1|2|3
+2019-09-08 01:11:10|Traditional|Voucher card injection|Internet Bank  Prodcut Group Internet Banking|Voucher GPRS 5K   Product   Vocher Category|10|mobo20|BADSAW3763|1000000|NA|NA|NA|NA|Voucher Type|1|2|3
+2019-09-08 01:11:10|Traditional|Voucher card injection|Internet Bank  Prodcut Group Internet Banking|Voucher GPRS 5K   Product   Vocher Category|10|mobo20|BADSAW3763|1000000|NA|NA|NA|NA|Voucher Type|1|2|3
+2019-09-08 01:11:10|Traditional|Indosat Reload|Internet Bank  Prodcut Group Internet Banking|Voucher GPRS 5K   Product   Vocher Category|10|moboOut11|BADSAW3763|1000000|||||Voucher Type|1|2|3
+2019-09-08 01:11:10|Traditional|Indosat Reload|Internet Bank  Prodcut Group Internet Banking|Voucher GPRS 5K   Product   Vocher Category|10|moboOut11|BADSAW3763|1000000|||||Voucher Type|1|2|3
+2019-09-08 01:11:10|Traditional|Indosat Reload|Internet Bank  Prodcut Group Internet Banking|Voucher GPRS 5K   Product   Vocher Category|10|moboOut11|BADSAW3763|1000000|||||Voucher Type|1|2|3
+2019-09-08 01:11:10|Traditional|Purchase Data Package|Internet Bank  Prodcut Group Internet Banking|Voucher GPRS 5K   Product   Vocher Category|10|MoboOutlet1|BADSAW3763|1000000|NA|NA|NA|NA|Voucher Type|1|2|3
+2019-09-08 01:11:10|Traditional|Purchase Data Package|Internet Bank  Prodcut Group Internet Banking|Voucher GPRS 5K   Product   Vocher Category|10|NKDEALER|BADSAW3763|1000000|||||Voucher Type|1|2|3
+2019-09-08 01:11:10|Traditional|Purchase Data Package|Internet Bank  Prodcut Group Internet Banking|Voucher GPRS 5K   Product   Vocher Category|10|NKOUTLET|BADSAW3763|1000000|NA|NA|NA|NA|Voucher Type|1|2|3

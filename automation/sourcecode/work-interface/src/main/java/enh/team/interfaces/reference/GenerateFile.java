@@ -659,7 +659,7 @@ public class GenerateFile {
 		{
 			for (Interfaces inter : getInterfaces()) {
 				if((inter.getInterfaceType().longValue()== 2l && inter.getTransactionType().longValue() == 1l) || (inter.getInterfaceType().longValue()== 2l && inter.getTransactionType().longValue() == 2l))
-				System.out.println("INSERT INTO INTERFACE.MS_INTERFACE_ATTR (ATTRIBUTE_ID_N, INTERFACE_ID_N, NAME_V, VALUE_V, LAST_UPDATED_TIME_DT) VALUES (10010"+(inter.getAttributes().size()+1)+", "+inter.getInterfaceId()+", 'PPK Path', '/home/appuser/snoc/snocconf/interfaceconf/credentials/SFTP.ppk', NOW());");
+				System.out.println("INSERT INTO INTERFACE.MS_INTERFACE_ATTR (ATTRIBUTE_ID_N, INTERFACE_ID_N, NAME_V, VALUE_V, LAST_UPDATED_TIME_DT) VALUES ("+inter.getInterfaceId()+"0"+(inter.getAttributes().size()+1)+", "+inter.getInterfaceId()+", 'PPK Path', '/home/appuser/snoc/snocconf/interfaceconf/credentials/SFTP.ppk', NOW());");
 				
 			}
 		} catch (Exception e) 

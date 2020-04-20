@@ -1,0 +1,7 @@
+Product Code|Product Name|Product Category|Product Sub Category|Product Start date|Product End date|Sale Price|MRP Price|Is Serialized|Serial Type|Serial Length
+Product1108001|Pr*o|SP|IM3|2019-02-19|2099-12-31|170|170|1|1|20
+Product1108002|P%ro123|Voucher|IM3|2019-02-19|2099-12-31|170|170|1|1|01
+Product1108004|Po|Voucher|IM3|2019-02-19|2099-12-31|170|170|1|1|01
+Product1108003|01|SP|IM3|2019-02-19|2099-12-31|170|170|1|1|20
+Product1108005|a p|SP|IM3|2019-02-19|2099-12-31|170|170|1|1|20
+Product1108006|^12|Voucher|IM3|2019-02-19|2099-12-31|170|170|1|1|01

@@ -1,0 +1,11 @@
+Product Code|Product Name|Product Category|Product Sub Category|Product Start date|Product End date|Sale Price|MRP Price|Is Serialized|Serial Type|Serial Length
+Product1108001|Pro|SP|IM3|2019-02-19|2099-12-31|170|170|1|1|20
+Product1108002|Pro123|Voucher|IM3|2019-02-19|2099-12-31|170|170|1|1|01
+Product1108004|Pr o|Voucher|IM3|2019-02-19|2099-12-31|170|170|1|1|01
+Product1108003|001|SP|IM3|2019-02-19|2099-12-31|170|170|1|1|20
+Product1108005|Product  002|SP|IM3|2019-02-19|2099-12-31|170|170|1|1|20
+Product1108006|Product_003|Voucher|IM3|2019-02-19|2099-12-31|170|170|1|1|01
+Product1108007|Product$004|SP|IM3|2019-02-19|2099-12-31|170|170|1|1|20
+Product1108008|Product#005|Voucher|IM3|2019-02-19|2099-12-31|170|170|1|1|01
+Product1108009|Product-006|SP|IM3|2019-02-19|2099-12-31|170|170|1|1|20
+Product1108010|Product $#-_007|Voucher|IM3|2019-02-19|2099-12-31|170|170|1|1|01
