@@ -1,0 +1,210 @@
+2020-04-20 16:32:30.379, FINE, [Thread]: 244 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  12330  Entry syncBalanceInterface : ModuleId :: 221 
+2020-04-20 16:32:30.446, FINE, [Thread]: 244 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  12715  Ref ID : 0091 
+2020-04-20 16:32:30.448, FINE, [Thread]: 244 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  12736  Ref Data Path Value : 0091 
+2020-04-20 16:32:30.448, FINE, [Thread]: 244 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  12739  Ref Data 5 : 0091 
+2020-04-20 16:32:30.449, FINE, [Thread]: 244 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverterLocal [LineNumber]:  98  JsonXmlDataConverter : Entry processRequest.. interfaceId : 1137 : requestData : 
+
+	{
+                "payload": {
+                        "query_details": [
+                                "001",
+                                "002",
+                                "003",
+                                "004"
+                        ],
+                        "acc_type": "abc123",
+                        "operator_id": "OP01",
+                        "org_ref_code": "0091",
+                        "user_id": "123",
+                        "uname": "CAN01",
+                        "trans_dt": "2019-06-13T00:00:00.000",
+                        "pin": "1121",
+                        "currency": ""
+                }
+        }
+
+			 
+2020-04-20 16:32:30.459, FINE, [Thread]: 244 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverterLocal [LineNumber]:  137  Payload : {"acc_type":"abc123","query_details":["001","002","003","004"],"pin":"1121","operator_id":"OP01","uname":"CAN01","org_ref_code":"0091","user_id":"123","trans_dt":"2019-06-13T00:00:00.000","currency":""} 
+2020-04-20 16:32:30.468, FINE, [Thread]: 244 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverterLocal [LineNumber]:  165  templateFileName :queryBalance-template.xml 
+2020-04-20 16:32:30.562, FINE, [Thread]: 244 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverterLocal [LineNumber]:  263  JsonXmlDataConverter : Entry generateXml.. 
+2020-04-20 16:32:30.563, FINE, [Thread]: 244 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverterLocal [LineNumber]:  405  soapenv:Header : element.getChildNodes().getLength() : 0 
+2020-04-20 16:32:30.564, FINE, [Thread]: 244 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverterLocal [LineNumber]:  557  soapenv:Header value : null 
+2020-04-20 16:32:30.564, FINE, [Thread]: 244 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverterLocal [LineNumber]:  578  soapenv:Header :  : null 
+2020-04-20 16:32:30.565, FINE, [Thread]: 244 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverterLocal [LineNumber]:  405  soapenv:Body : element.getChildNodes().getLength() : 3 
+2020-04-20 16:32:30.565, FINE, [Thread]: 244 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverterLocal [LineNumber]:  263  JsonXmlDataConverter : Entry generateXml.. 
+2020-04-20 16:32:30.566, FINE, [Thread]: 244 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverterLocal [LineNumber]:  405  api:Request : element.getChildNodes().getLength() : 5 
+2020-04-20 16:32:30.566, FINE, [Thread]: 244 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverterLocal [LineNumber]:  263  JsonXmlDataConverter : Entry generateXml.. 
+2020-04-20 16:32:30.567, FINE, [Thread]: 244 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverterLocal [LineNumber]:  405  req:Header : element.getChildNodes().getLength() : 15 
+2020-04-20 16:32:30.567, FINE, [Thread]: 244 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverterLocal [LineNumber]:  263  JsonXmlDataConverter : Entry generateXml.. 
+2020-04-20 16:32:30.568, FINE, [Thread]: 244 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverterLocal [LineNumber]:  405  req:Version : element.getChildNodes().getLength() : 0 
+2020-04-20 16:32:30.568, FINE, [Thread]: 244 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverterLocal [LineNumber]:  557  req:Version value : 1.0 
+2020-04-20 16:32:30.569, FINE, [Thread]: 244 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverterLocal [LineNumber]:  578  req:Version :  : 1.0 
+2020-04-20 16:32:30.570, FINE, [Thread]: 244 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverterLocal [LineNumber]:  405  req:CommandID : element.getChildNodes().getLength() : 0 
+2020-04-20 16:32:30.570, FINE, [Thread]: 244 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverterLocal [LineNumber]:  557  req:CommandID value : QueryOrganizationBalance 
+2020-04-20 16:32:30.571, FINE, [Thread]: 244 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverterLocal [LineNumber]:  578  req:CommandID :  : QueryOrganizationBalance 
+2020-04-20 16:32:30.571, FINE, [Thread]: 244 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverterLocal [LineNumber]:  405  req:OriginatorConversationID : element.getChildNodes().getLength() : 0 
+2020-04-20 16:32:30.572, FINE, [Thread]: 244 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverterLocal [LineNumber]:  557  req:OriginatorConversationID value : TRANS_ID_IN_CONVERTER_TEMPLATE 
+2020-04-20 16:32:30.573, FINE, [Thread]: 244 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverterLocal [LineNumber]:  578  req:OriginatorConversationID :  : TRANS_ID_IN_CONVERTER_TEMPLATE 
+2020-04-20 16:32:30.573, FINE, [Thread]: 244 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverterLocal [LineNumber]:  405  req:Caller : element.getChildNodes().getLength() : 9 
+2020-04-20 16:32:30.574, FINE, [Thread]: 244 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverterLocal [LineNumber]:  263  JsonXmlDataConverter : Entry generateXml.. 
+2020-04-20 16:32:30.574, FINE, [Thread]: 244 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverterLocal [LineNumber]:  405  req:CallerType : element.getChildNodes().getLength() : 0 
+2020-04-20 16:32:30.575, FINE, [Thread]: 244 [ClassName]: com.enhancesys.integration.services.util.CacheLoader [LineNumber]:  272  getLookupEntity entry ... entityType: 307 entityId: 9 applicationId:301 
+2020-04-20 16:32:30.579, FINE, [Thread]: 244 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverterLocal [LineNumber]:  557  req:CallerType value : 2 
+2020-04-20 16:32:30.580, FINE, [Thread]: 244 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverterLocal [LineNumber]:  578  req:CallerType :  : 2 
+2020-04-20 16:32:30.580, FINE, [Thread]: 244 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverterLocal [LineNumber]:  405  req:ThirdPartyID : element.getChildNodes().getLength() : 0 
+2020-04-20 16:32:30.581, FINE, [Thread]: 244 [ClassName]: com.enhancesys.integration.services.util.CacheLoader [LineNumber]:  272  getLookupEntity entry ... entityType: 307 entityId: 10 applicationId:301 
+2020-04-20 16:32:30.582, FINE, [Thread]: 244 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverterLocal [LineNumber]:  557  req:ThirdPartyID value : POS_Broker 
+2020-04-20 16:32:30.582, FINE, [Thread]: 244 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverterLocal [LineNumber]:  578  req:ThirdPartyID :  : POS_Broker 
+2020-04-20 16:32:30.583, FINE, [Thread]: 244 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverterLocal [LineNumber]:  405  req:Password : element.getChildNodes().getLength() : 0 
+2020-04-20 16:32:30.584, FINE, [Thread]: 244 [ClassName]: com.enhancesys.integration.services.util.CacheLoader [LineNumber]:  272  getLookupEntity entry ... entityType: 307 entityId: 11 applicationId:301 
+2020-04-20 16:32:30.584, FINE, [Thread]: 244 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverterLocal [LineNumber]:  557  req:Password value : gMMqGGrKxsE= 
+2020-04-20 16:32:30.585, FINE, [Thread]: 244 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverterLocal [LineNumber]:  578  req:Password :  : gMMqGGrKxsE= 
+2020-04-20 16:32:30.585, FINE, [Thread]: 244 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverterLocal [LineNumber]:  405  req:ResultURL : element.getChildNodes().getLength() : 0 
+2020-04-20 16:32:30.586, FINE, [Thread]: 244 [ClassName]: com.enhancesys.integration.services.util.CacheLoader [LineNumber]:  272  getLookupEntity entry ... entityType: 307 entityId: 12 applicationId:301 
+2020-04-20 16:32:30.587, FINE, [Thread]: 244 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverterLocal [LineNumber]:  557  req:ResultURL value : http://10.71.109.150:8888/mockResultBinding 
+2020-04-20 16:32:30.587, FINE, [Thread]: 244 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverterLocal [LineNumber]:  578  req:ResultURL :  : http://10.71.109.150:8888/mockResultBinding 
+2020-04-20 16:32:30.588, FINE, [Thread]: 244 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverterLocal [LineNumber]:  618  JsonXmlDataConverter : Exit generateXml.. 
+2020-04-20 16:32:30.589, FINE, [Thread]: 244 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverterLocal [LineNumber]:  405  req:KeyOwner : element.getChildNodes().getLength() : 0 
+2020-04-20 16:32:30.589, FINE, [Thread]: 244 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverterLocal [LineNumber]:  557  req:KeyOwner value : 1 
+2020-04-20 16:32:30.590, FINE, [Thread]: 244 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverterLocal [LineNumber]:  578  req:KeyOwner :  : 1 
+2020-04-20 16:32:30.590, FINE, [Thread]: 244 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverterLocal [LineNumber]:  405  req:Timestamp : element.getChildNodes().getLength() : 0 
+2020-04-20 16:32:30.602, FINE, [Thread]: 244 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverterLocal [LineNumber]:  557  req:Timestamp value : 20200420163230 
+2020-04-20 16:32:30.602, FINE, [Thread]: 244 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverterLocal [LineNumber]:  578  req:Timestamp :  : 20200420163230 
+2020-04-20 16:32:30.603, FINE, [Thread]: 244 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverterLocal [LineNumber]:  618  JsonXmlDataConverter : Exit generateXml.. 
+2020-04-20 16:32:30.604, FINE, [Thread]: 244 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverterLocal [LineNumber]:  405  req:Body : element.getChildNodes().getLength() : 5 
+2020-04-20 16:32:30.604, FINE, [Thread]: 244 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverterLocal [LineNumber]:  263  JsonXmlDataConverter : Entry generateXml.. 
+2020-04-20 16:32:30.605, FINE, [Thread]: 244 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverterLocal [LineNumber]:  405  req:Identity : element.getChildNodes().getLength() : 5 
+2020-04-20 16:32:30.605, FINE, [Thread]: 244 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverterLocal [LineNumber]:  263  JsonXmlDataConverter : Entry generateXml.. 
+2020-04-20 16:32:30.606, FINE, [Thread]: 244 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverterLocal [LineNumber]:  405  req:Initiator : element.getChildNodes().getLength() : 9 
+2020-04-20 16:32:30.607, FINE, [Thread]: 244 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverterLocal [LineNumber]:  263  JsonXmlDataConverter : Entry generateXml.. 
+2020-04-20 16:32:30.607, FINE, [Thread]: 244 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverterLocal [LineNumber]:  405  req:IdentifierType : element.getChildNodes().getLength() : 0 
+2020-04-20 16:32:30.608, FINE, [Thread]: 244 [ClassName]: com.enhancesys.integration.services.util.CacheLoader [LineNumber]:  272  getLookupEntity entry ... entityType: 307 entityId: 13 applicationId:301 
+2020-04-20 16:32:30.608, FINE, [Thread]: 244 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverterLocal [LineNumber]:  557  req:IdentifierType value : 14 
+2020-04-20 16:32:30.609, FINE, [Thread]: 244 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverterLocal [LineNumber]:  578  req:IdentifierType :  : 14 
+2020-04-20 16:32:30.610, FINE, [Thread]: 244 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverterLocal [LineNumber]:  405  req:Identifier : element.getChildNodes().getLength() : 0 
+2020-04-20 16:32:30.610, FINE, [Thread]: 244 [ClassName]: com.enhancesys.integration.services.util.CacheLoader [LineNumber]:  272  getLookupEntity entry ... entityType: 307 entityId: 14 applicationId:301 
+2020-04-20 16:32:30.611, FINE, [Thread]: 244 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverterLocal [LineNumber]:  557  req:Identifier value : supervisor 
+2020-04-20 16:32:30.612, FINE, [Thread]: 244 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverterLocal [LineNumber]:  578  req:Identifier :  : supervisor 
+2020-04-20 16:32:30.612, FINE, [Thread]: 244 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverterLocal [LineNumber]:  405  req:SecurityCredential : element.getChildNodes().getLength() : 0 
+2020-04-20 16:32:30.613, FINE, [Thread]: 244 [ClassName]: com.enhancesys.integration.services.util.CacheLoader [LineNumber]:  272  getLookupEntity entry ... entityType: 307 entityId: 15 applicationId:301 
+2020-04-20 16:32:30.613, FINE, [Thread]: 244 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverterLocal [LineNumber]:  557  req:SecurityCredential value : gMMqGGrKxsE= 
+2020-04-20 16:32:30.614, FINE, [Thread]: 244 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverterLocal [LineNumber]:  578  req:SecurityCredential :  : gMMqGGrKxsE= 
+2020-04-20 16:32:30.615, FINE, [Thread]: 244 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverterLocal [LineNumber]:  618  JsonXmlDataConverter : Exit generateXml.. 
+2020-04-20 16:32:30.616, FINE, [Thread]: 244 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverterLocal [LineNumber]:  405  req:ReceiverParty : element.getChildNodes().getLength() : 7 
+2020-04-20 16:32:30.616, FINE, [Thread]: 244 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverterLocal [LineNumber]:  263  JsonXmlDataConverter : Entry generateXml.. 
+2020-04-20 16:32:30.617, FINE, [Thread]: 244 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverterLocal [LineNumber]:  405  req:IdentifierType : element.getChildNodes().getLength() : 0 
+2020-04-20 16:32:30.618, FINE, [Thread]: 244 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverterLocal [LineNumber]:  557  req:IdentifierType value : 4 
+2020-04-20 16:32:30.618, FINE, [Thread]: 244 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverterLocal [LineNumber]:  578  req:IdentifierType :  : 4 
+2020-04-20 16:32:30.619, FINE, [Thread]: 244 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverterLocal [LineNumber]:  317  element.getAttribute(SOURCE) : org_ref_code 
+2020-04-20 16:32:30.625, FINE, [Thread]: 244 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverterLocal [LineNumber]:  319  Result : 0091 
+2020-04-20 16:32:30.626, FINE, [Thread]: 244 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverterLocal [LineNumber]:  405  req:Identifier : element.getChildNodes().getLength() : 0 
+2020-04-20 16:32:30.627, FINE, [Thread]: 244 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverterLocal [LineNumber]:  557  req:Identifier value : 0091 
+2020-04-20 16:32:30.627, FINE, [Thread]: 244 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverterLocal [LineNumber]:  578  req:Identifier : org_ref_code : 0091 
+2020-04-20 16:32:30.628, FINE, [Thread]: 244 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverterLocal [LineNumber]:  618  JsonXmlDataConverter : Exit generateXml.. 
+2020-04-20 16:32:30.629, FINE, [Thread]: 244 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverterLocal [LineNumber]:  618  JsonXmlDataConverter : Exit generateXml.. 
+2020-04-20 16:32:30.629, FINE, [Thread]: 244 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverterLocal [LineNumber]:  405  req:QueryOrganizationBalanceRequest : element.getChildNodes().getLength() : 5 
+2020-04-20 16:32:30.630, FINE, [Thread]: 244 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverterLocal [LineNumber]:  263  JsonXmlDataConverter : Entry generateXml.. 
+2020-04-20 16:32:30.631, FINE, [Thread]: 244 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverterLocal [LineNumber]:  317  element.getAttribute(SOURCE) : query_details 
+2020-04-20 16:32:30.631, FINE, [Thread]: 244 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverterLocal [LineNumber]:  319  Result : ["001","002","003","004"] 
+2020-04-20 16:32:30.632, FINE, [Thread]: 244 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverterLocal [LineNumber]:  405  req:TargetOrgList : element.getChildNodes().getLength() : 0 
+2020-04-20 16:32:30.633, FINE, [Thread]: 244 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverterLocal [LineNumber]:  557  req:TargetOrgList value : 001;002;003;004 
+2020-04-20 16:32:30.633, FINE, [Thread]: 244 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverterLocal [LineNumber]:  578  req:TargetOrgList : query_details : 001;002;003;004 
+2020-04-20 16:32:30.634, FINE, [Thread]: 244 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverterLocal [LineNumber]:  405  req:AccountType : element.getChildNodes().getLength() : 0 
+2020-04-20 16:32:30.634, FINE, [Thread]: 244 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverterLocal [LineNumber]:  557  req:AccountType value : Stock Account_Normal 
+2020-04-20 16:32:30.635, FINE, [Thread]: 244 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverterLocal [LineNumber]:  578  req:AccountType :  : Stock Account_Normal 
+2020-04-20 16:32:30.637, FINE, [Thread]: 244 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverterLocal [LineNumber]:  618  JsonXmlDataConverter : Exit generateXml.. 
+2020-04-20 16:32:30.638, FINE, [Thread]: 244 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverterLocal [LineNumber]:  618  JsonXmlDataConverter : Exit generateXml.. 
+2020-04-20 16:32:30.638, FINE, [Thread]: 244 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverterLocal [LineNumber]:  618  JsonXmlDataConverter : Exit generateXml.. 
+2020-04-20 16:32:30.639, FINE, [Thread]: 244 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverterLocal [LineNumber]:  618  JsonXmlDataConverter : Exit generateXml.. 
+2020-04-20 16:32:30.639, FINE, [Thread]: 244 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverterLocal [LineNumber]:  618  JsonXmlDataConverter : Exit generateXml.. 
+2020-04-20 16:32:31.133, FINE, [Thread]: 244 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverterLocal [LineNumber]:  199  End ::  1587380551132 -- <soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:api="http://cps.huawei.com/synccpsinterface/api_requestmgr" xmlns:com="http://cps.huawei.com/synccpsinterface/common" xmlns:req="http://cps.huawei.com/synccpsinterface/request">
+<soapenv:Header/>
+<soapenv:Body>
+<api:Request>
+<req:Header>
+<req:Version>1.0</req:Version>
+<req:CommandID>QueryOrganizationBalance</req:CommandID>
+<req:OriginatorConversationID>TRANS_ID_IN_CONVERTER_TEMPLATE</req:OriginatorConversationID>
+<req:Caller>
+<req:CallerType>2</req:CallerType>
+<req:ThirdPartyID>POS_Broker</req:ThirdPartyID>
+<req:Password>gMMqGGrKxsE=</req:Password>
+<req:ResultURL>http://10.71.109.150:8888/mockResultBinding</req:ResultURL>
+</req:Caller>
+<req:KeyOwner>1</req:KeyOwner>
+<req:Timestamp>20200420163230</req:Timestamp>
+</req:Header>
+<req:Body>
+<req:Identity>
+<req:Initiator>
+<req:IdentifierType>14</req:IdentifierType>
+<req:Identifier>supervisor</req:Identifier>
+<req:SecurityCredential>gMMqGGrKxsE=</req:SecurityCredential>
+</req:Initiator>
+<req:ReceiverParty>
+<req:IdentifierType>4</req:IdentifierType>
+<req:Identifier>0091</req:Identifier>
+</req:ReceiverParty>
+</req:Identity>
+<req:QueryOrganizationBalanceRequest>
+<req:TargetOrgList>001;002;003;004</req:TargetOrgList>
+<req:AccountType>Stock Account_Normal</req:AccountType>
+</req:QueryOrganizationBalanceRequest>
+</req:Body>
+</api:Request>
+</soapenv:Body>
+</soapenv:Envelope>
+ 
+2020-04-20 16:32:31.134, FINE, [Thread]: 244 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverterLocal [LineNumber]:  240  JsonXmlDataConverter : Exit processRequest..processingTime : 685 
+2020-04-20 16:32:31.134, FINE, [Thread]: 244 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  12781  IsException : false 
+2020-04-20 16:32:31.146, FINE, [Thread]: 244 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  12831  refData1 : 0091 : refData5 : 0091 : TransID : 1920200420163231145 
+2020-04-20 16:32:31.146, FINE, [Thread]: 244 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  13160  Entry processSoapRequest.. InterfaceId :: 1137 
+2020-04-20 16:32:31.147, FINE, [Thread]: 244 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  13175  Request --> <soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:api="http://cps.huawei.com/synccpsinterface/api_requestmgr" xmlns:com="http://cps.huawei.com/synccpsinterface/common" xmlns:req="http://cps.huawei.com/synccpsinterface/request">
+<soapenv:Header/>
+<soapenv:Body>
+<api:Request>
+<req:Header>
+<req:Version>1.0</req:Version>
+<req:CommandID>QueryOrganizationBalance</req:CommandID>
+<req:OriginatorConversationID>1920200420163231145</req:OriginatorConversationID>
+<req:Caller>
+<req:CallerType>2</req:CallerType>
+<req:ThirdPartyID>POS_Broker</req:ThirdPartyID>
+<req:Password>gMMqGGrKxsE=</req:Password>
+<req:ResultURL>http://10.71.109.150:8888/mockResultBinding</req:ResultURL>
+</req:Caller>
+<req:KeyOwner>1</req:KeyOwner>
+<req:Timestamp>20200420163230</req:Timestamp>
+</req:Header>
+<req:Body>
+<req:Identity>
+<req:Initiator>
+<req:IdentifierType>14</req:IdentifierType>
+<req:Identifier>supervisor</req:Identifier>
+<req:SecurityCredential>gMMqGGrKxsE=</req:SecurityCredential>
+</req:Initiator>
+<req:ReceiverParty>
+<req:IdentifierType>4</req:IdentifierType>
+<req:Identifier>0091</req:Identifier>
+</req:ReceiverParty>
+</req:Identity>
+<req:QueryOrganizationBalanceRequest>
+<req:TargetOrgList>001;002;003;004</req:TargetOrgList>
+<req:AccountType>Stock Account_Normal</req:AccountType>
+</req:QueryOrganizationBalanceRequest>
+</req:Body>
+</api:Request>
+</soapenv:Body>
+</soapenv:Envelope>
+ 
+2020-04-20 16:32:31.160, FINE, [Thread]: 244 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  13193  URL -->  
+2020-04-20 16:32:31.161, FINE, [Thread]: 244 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  13201  Static Service URL :: http://192.168.2.251:80/interfaceResponseServices/webservices/InterfaceResponseServicesImpl?wsdl 
+2020-04-20 16:32:31.161, FINE, [Thread]: 244 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  13259  Entry sendSoapRequest ... 
+2020-04-20 16:32:32.415, FINE, [Thread]: 244 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  13350  Exit sendSoapRequest ... 
+2020-04-20 16:32:32.416, FINE, [Thread]: 244 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  13212  Response --> <?xml version = "1.0" encoding = "UTF-8"?> <soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"> <soapenv:Body><api:Result xmlns:api="http://cps.huawei.com/synccpsinterface/api_requestmgr" xmlns:res="http://cps.huawei.com/synccpsinterface/result"> <res:Header><res:Version>1.0</res:Version><res:OriginatorConversationID>1920200420163231145</res:OriginatorConversationID><res:ConversationID>SM-1920200420163231145</res:ConversationID> </res:Header> <res:Body><res:ResultType>0</res:ResultType><res:ResultCode>0</res:ResultCode><res:ResultDesc>Process service request successfully.</res:ResultDesc><res:QueryOrganizationBalanceResult> <res:BOCompletedTime>20200420163232</res:BOCompletedTime> <res:AccountBalanceData><res:AccountBalanceItem> <res:AccountHolderID>0091</res:AccountHolderID> <res:AccountHolderPublicName>211674 - Agent A</res:AccountHolderPublicName> <res:AccountTypeName>Float Account</res:AccountTypeName> <res:AccountTypeAlias>Float Account</res:AccountTypeAlias> <res:AccountRuleProfileID>16</res:AccountRuleProfileID> <res:AccountRuleProfileName>Band A Store Float Account Rule Profile</res:AccountRuleProfileName> <res:AccountNo>800000000101002000</res:AccountNo> <res:AccountStatus>active</res:AccountStatus> <res:Currency>IDR</res:Currency> <res:AvailableBalance>10000.00</res:AvailableBalance> <res:ReservedBalance>10.00</res:ReservedBalance> <res:UnclearedBalance>0</res:UnclearedBalance> <res:CurrentBalance>1000.00</res:CurrentBalance></res:AccountBalanceItem><res:AccountBalanceItem> <res:AccountHolderID>001</res:AccountHolderID> <res:AccountHolderPublicName>211674 - Agent A</res:AccountHolderPublicName> <res:AccountTypeName>Float Account</res:AccountTypeName> <res:AccountTypeAlias>Float Account</res:AccountTypeAlias> <res:AccountRuleProfileID>16</res:AccountRuleProfileID> <res:AccountRuleProfileName>Band A Store Float Account Rule Profile</res:AccountRuleProfileName> <res:AccountNo>800000000101002000</res:AccountNo> <res:AccountStatus>active</res:AccountStatus> <res:Currency>IDR</res:Currency> <res:AvailableBalance>50000.00</res:AvailableBalance> <res:ReservedBalance>500.00</res:ReservedBalance> <res:UnclearedBalance>110</res:UnclearedBalance> <res:CurrentBalance>3000.00</res:CurrentBalance></res:AccountBalanceItem><res:AccountBalanceItem> <res:AccountHolderID>002</res:AccountHolderID> <res:AccountHolderPublicName>211674 - Agent A</res:AccountHolderPublicName> <res:AccountTypeName>Float Account</res:AccountTypeName> <res:AccountTypeAlias>Float Account</res:AccountTypeAlias> <res:AccountRuleProfileID>16</res:AccountRuleProfileID> <res:AccountRuleProfileName>Band A Store Float Account Rule Profile</res:AccountRuleProfileName> <res:AccountNo>800000000101002000</res:AccountNo> <res:AccountStatus>active</res:AccountStatus> <res:Currency>IDR</res:Currency> <res:AvailableBalance>50000.00</res:AvailableBalance> <res:ReservedBalance>500.00</res:ReservedBalance> <res:UnclearedBalance>110</res:UnclearedBalance> <res:CurrentBalance>3000.00</res:CurrentBalance></res:AccountBalanceItem><res:AccountBalanceItem> <res:AccountHolderID>003</res:AccountHolderID> <res:AccountHolderPublicName>211674 - Agent A</res:AccountHolderPublicName> <res:AccountTypeName>Float Account</res:AccountTypeName> <res:AccountTypeAlias>Float Account</res:AccountTypeAlias> <res:AccountRuleProfileID>16</res:AccountRuleProfileID> <res:AccountRuleProfileName>Band A Store Float Account Rule Profile</res:AccountRuleProfileName> <res:AccountNo>800000000101002000</res:AccountNo> <res:AccountStatus>active</res:AccountStatus> <res:Currency>IDR</res:Currency> <res:AvailableBalance>50000.00</res:AvailableBalance> <res:ReservedBalance>500.00</res:ReservedBalance> <res:UnclearedBalance>110</res:UnclearedBalance> <res:CurrentBalance>3000.00</res:CurrentBalance></res:AccountBalanceItem><res:AccountBalanceItem> <res:AccountHolderID>004</res:AccountHolderID> <res:AccountHolderPublicName>211674 - Agent A</res:AccountHolderPublicName> <res:AccountTypeName>Float Account</res:AccountTypeName> <res:AccountTypeAlias>Float Account</res:AccountTypeAlias> <res:AccountRuleProfileID>16</res:AccountRuleProfileID> <res:AccountRuleProfileName>Band A Store Float Account Rule Profile</res:AccountRuleProfileName> <res:AccountNo>800000000101002000</res:AccountNo> <res:AccountStatus>active</res:AccountStatus> <res:Currency>IDR</res:Currency> <res:AvailableBalance>50000.00</res:AvailableBalance> <res:ReservedBalance>500.00</res:ReservedBalance> <res:UnclearedBalance>110</res:UnclearedBalance> <res:CurrentBalance>3000.00</res:CurrentBalance></res:AccountBalanceItem></res:AccountBalanceData></res:QueryOrganizationBalanceResult> </res:Body></api:Result> </soapenv:Body></soapenv:Envelope> 
+2020-04-20 16:32:32.417, FINE, [Thread]: 244 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  13237  Exit processSoapRequest.. 
+2020-04-20 16:32:32.422, FINE, [Thread]: 244 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  12421  responseBean.getStatus() : Success 
+2020-04-20 16:32:32.535, FINE, [Thread]: 244 [ClassName]: com.enhancesys.integration.services.converter.LookupMapping [LineNumber]:  1745  Entry convertStringToDocument.. 
+2020-04-20 16:32:32.569, FINE, [Thread]: 244 [ClassName]: com.enhancesys.integration.services.converter.LookupMapping [LineNumber]:  1774  Exit convertStringToDocument.. 
+2020-04-20 16:32:32.590, FINE, [Thread]: 244 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  12472  jsonResponseObject : {"soapenv:Envelope":{"soapenv:Body":{"api:Result":{"res:Body":{"res:ResultCode":"0","res:ResultType":"0","res:QueryOrganizationBalanceResult":{"res:AccountBalanceData":{"res:AccountBalanceItem":[{"res:Currency":"IDR","res:AccountTypeAlias":"Float Account","res:AccountHolderPublicName":"211674 - Agent A","res:AvailableBalance":"10000.00","res:UnclearedBalance":"0","res:CurrentBalance":"1000.00","res:AccountRuleProfileName":"Band A Store Float Account Rule Profile","res:ReservedBalance":"10.00","res:AccountHolderID":"0091","res:AccountNo":"800000000101002000","res:AccountRuleProfileID":"16","res:AccountTypeName":"Float Account","res:AccountStatus":"active"},{"res:Currency":"IDR","res:AccountTypeAlias":"Float Account","res:AccountHolderPublicName":"211674 - Agent A","res:AvailableBalance":"50000.00","res:UnclearedBalance":"110","res:CurrentBalance":"3000.00","res:AccountRuleProfileName":"Band A Store Float Account Rule Profile","res:ReservedBalance":"500.00","res:AccountHolderID":"001","res:AccountNo":"800000000101002000","res:AccountRuleProfileID":"16","res:AccountTypeName":"Float Account","res:AccountStatus":"active"},{"res:Currency":"IDR","res:AccountTypeAlias":"Float Account","res:AccountHolderPublicName":"211674 - Agent A","res:AvailableBalance":"50000.00","res:UnclearedBalance":"110","res:CurrentBalance":"3000.00","res:AccountRuleProfileName":"Band A Store Float Account Rule Profile","res:ReservedBalance":"500.00","res:AccountHolderID":"002","res:AccountNo":"800000000101002000","res:AccountRuleProfileID":"16","res:AccountTypeName":"Float Account","res:AccountStatus":"active"},{"res:Currency":"IDR","res:AccountTypeAlias":"Float Account","res:AccountHolderPublicName":"211674 - Agent A","res:AvailableBalance":"50000.00","res:UnclearedBalance":"110","res:CurrentBalance":"3000.00","res:AccountRuleProfileName":"Band A Store Float Account Rule Profile","res:ReservedBalance":"500.00","res:AccountHolderID":"003","res:AccountNo":"800000000101002000","res:AccountRuleProfileID":"16","res:AccountTypeName":"Float Account","res:AccountStatus":"active"},{"res:Currency":"IDR","res:AccountTypeAlias":"Float Account","res:AccountHolderPublicName":"211674 - Agent A","res:AvailableBalance":"50000.00","res:UnclearedBalance":"110","res:CurrentBalance":"3000.00","res:AccountRuleProfileName":"Band A Store Float Account Rule Profile","res:ReservedBalance":"500.00","res:AccountHolderID":"004","res:AccountNo":"800000000101002000","res:AccountRuleProfileID":"16","res:AccountTypeName":"Float Account","res:AccountStatus":"active"}]},"res:BOCompletedTime":"20200420163232"},"res:ResultDesc":"Process service request successfully."},"res:Header":{"res:Version":"1.0","res:ConversationID":"SM-1920200420163231145","res:OriginatorConversationID":"1920200420163231145"}}}}} 
+2020-04-20 16:32:32.610, FINE, [Thread]: 244 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  12671  Exit syncBalanceInterface : ModuleId :: 221 
