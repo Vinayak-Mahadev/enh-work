@@ -235,9 +235,10 @@ public class GenerateFile {
 	}
 
 	@SuppressWarnings("unchecked")
-	private void getInterfaces() 
+	private List<Interfaces> getInterfaces() 
 	{
 		interfaces = manager.createQuery("from " + Interfaces.class.getCanonicalName()+" order by 1").getResultList();
+		return interfaces;
 	}
 
 
@@ -294,7 +295,9 @@ public class GenerateFile {
 					System.out.println(interfac.getInterfaceId() +"  :: " + interfac);
 				} 
 
-
+				if(interfaces.size() < row.getRowNum()) {
+					break;
+				}
 				//For each row, iterate through each columns
 				cellIterator = row.cellIterator();
 
@@ -646,4 +649,24 @@ public class GenerateFile {
 		}
 	}
 
+
+	public void test() 
+	{
+		pgConnection = RDBMS.getDBConnection(PropType.RDBMS_LOCALHOST);
+		manager = DataSourceConfig.getEntityManager("com.finevm.enh.interfaces.entities");
+		//ResultSet resultSet = null;
+		try 
+		{
+			for (Interfaces inter : getInterfaces()) {
+				if((inter.getInterfaceType().longValue()== 2l && inter.getTransactionType().longValue() == 1l) || (inter.getInterfaceType().longValue()== 2l && inter.getTransactionType().longValue() == 2l))
+				System.out.println("INSERT INTO INTERFACE.MS_INTERFACE_ATTR (ATTRIBUTE_ID_N, INTERFACE_ID_N, NAME_V, VALUE_V, LAST_UPDATED_TIME_DT) VALUES (10010"+(inter.getAttributes().size()+1)+", "+inter.getInterfaceId()+", 'PPK Path', '/home/appuser/snoc/snocconf/interfaceconf/credentials/SFTP.ppk', NOW());");
+				
+			}
+		} catch (Exception e) 
+		{
+			// TODO: handle exception
+		}
+		
+	}
+	
 }

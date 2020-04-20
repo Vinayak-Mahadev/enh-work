@@ -8,7 +8,7 @@ public class App {
 		try 
 		{
 			generateFile = new GenerateFile();
-			generateFile.start(false);
+			generateFile.test();
 		}
 		catch (Exception e) 
 		{
