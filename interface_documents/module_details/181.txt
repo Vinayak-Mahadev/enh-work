@@ -1,0 +1,68 @@
+181 DAILY_DUMP - Create POI Object
+
+1=>  notifyInterfaceOnDump(ID, date(yyyy-MM-dd))
+
+		1. Read the interfaceId and date as input parameters 
+		2. InterfaceId should be present in DAILY_DUMP_INTERFACE_LIST
+		3. Find the interface and create TR_DAILY_DUMP_SUMMARY with interfaceId and date
+		4. After creating dump id will be consider as transaction Id
+
+2 => pullDataToFile(interfaceIds)
+
+	*
+		1.	Read the interfaceIds as input parameters.
+		2.	If the interface id is null or If any interface id object is not available in the database then throw the exception.
+		3.	ASYNC_PULL_DATA_TO_FILE_INTERFACE_LIST
+				3.1 Read the interfaceId as input parameters.
+				3.2 Create PullDataToFileBean and load properties from InterfaceAttribute.
+		4.  ASYNC_PULL_DATA_TO_FILE_FROM_MONGO_INTERFACE_LIST
+				4.1 Load InitialContext from interfaces's converter.
+				4.2 If DUMP_JOB_INTERFACE_IDS
+					4.2.1 Get fileId from TR_INTERFACE_FILE_SUMMARY with interfaceId and current date.
+					4.2.1 If fileId not present converter is invoked.
+		5.  ASYNC_PULL_DATA_TO_FILE_AND_PUSH_INTERFACE_LIST
+				5.1 Load InitialContext from interfaces's converter.
+				5.2 converter will be invoked.
+		6.  ASYNC_PULL_DATA_TO_FILE_FROM_EXCEL_INTERFACE_LIST
+				5.1 Load InitialContext from interfaces's converter.
+				5.2 converter will be invoked.
+			
+	 *
+		1.  java:global/EnhancesysManagement/IntegrationServices/GenericDataProcessor!com.enhancesys.integration.services.interfaces.processor.PullFromMongo
+		2.  GenericDataProcessor
+			2.1 Get FilePropertiesBean with interfaceId. integrationManagementLocal.readFilePropertyBeans(interfaceId);
+			2.2 DataInitProcessor
+			2.3 If data is present then process will be contine otherwise it throw already dump file generated exception.
+			2.4 DataInitProcessor.initiateProcess(interfaceId, FileDataBean, null);
+				2.4.1 Load Camel Context with Spring App Context 
+				2.4.2 Create ProducerTemplate with interfaceId, processName, FileDataBean, Spring App Context and required date.
+				2.4.3 Start end point with direct:generic_data_processor.
+			
+			2.5 Invoke...
+				2.5.1 BasicDataProcessor.
+				2.5.2 LookupDataProcessor.
+				2.5.3 FileDataWriter
+			
+
+
+
+3 =>  processFile(interfaceIds)		
+
+		1.	Read the list of interfaceIds as input parameters.
+		2.	Validate the interface ids list is null or not null.
+		3.	If the interface ids list is null then throw the exception.
+		4.	Otherwise get the all interface ids objects.
+		5.	If any interface id object is not available in the database then throw the exception.
+		6.	Otherwise, process the each and every interface object.
+		7.	In each iteration,
+			7.1	Get the attribute details of interface like host,port, user name, password, Local file path, and remove file path.
+			7.2	Verify the transaction type.
+			7.3	If the transaction type is "SEND".
+				7.3.1	Call the sendFile service. Where send csv file then ctl file.
+			7.4	If the transaction type is "RECEIVE".
+				7.4.1	Call the receiveFile service. Where send ctl file then csv file.
+			7.5	Update the status, acknowledgment, and dateTime in interface file summary.
+		8. If the service (sendFile or receiveFile) call is failed, place the entry in TR_INTERFACE_FAILURE table with failure details.
+		
+
+note : no use of publisher

@@ -1,0 +1,70 @@
+156 INTDW007 - Package Activation B#
+
+1 =>  processFile(interfaceIds)		
+
+		1.	Read the list of interfaceIds as input parameters.
+		2.	Validate the interface ids list is null or not null.
+		3.	If the interface ids list is null then throw the exception.
+		4.	Otherwise get the all interface ids objects.
+		5.	If any interface id object is not available in the database then throw the exception.
+		6.	Otherwise, process the each and every interface object.
+		7.	In each iteration,
+			7.1	Get the attribute details of interface like host,port, user name, password, Local file path, and remove file path.
+			7.2	Verify the transaction type.
+			7.3	If the transaction type is "SEND".
+				7.3.1	Call the sendFile service. Where send csv file then ctl file.
+			7.4	If the transaction type is "RECEIVE".
+				7.4.1	Call the receiveFile service. Where send ctl file then csv file.
+			7.5	Update the status, acknowledgment, and dateTime in interface file summary.
+		8. If the service (sendFile or receiveFile) call is failed, place the entry in TR_INTERFACE_FAILURE table with failure details.
+		
+
+
+2 => processReceivedFiles(interfaceId, partners)
+
+	*
+		1.	Read the interfaceId as input parameters.
+		2.	If the interface id is null or If any interface id object is not available in the database then throw the exception.
+		3.	Otherwise get the all interface id interfaceAttribute.
+		4.  Collect tr_interface_file_summary with interfaceId and partners.
+		5. 	Get tr_interface_file_summary's tr_interface_file_summary_details
+		6.	In each iteration,
+			6.1 Get file and validate with ctl's md5 logic
+			6.2 If Received File Type is Request File Type
+				6.2.1 If Request File Type is File Transfer Process then file sendFile service will invoked.
+				6.2.2 Else if, get the CSVMerger's implemented class and call with csvMerger.processRequest(interfaceId, fileId).
+				6.2.3 Responce is updated to tr_interface_file_summary_details.
+			6.3 If is A means files moved backup dir are BkpDir and CtlBkpDir with zip format.
+			6.4 If is R means files moved backup dir are RejectedBkpDir and RejectedCtlBkpDir with zip format.
+			6.5 If is F means files moved backup dir are FilterBkpDir and FilterCtlBkpDir with zip format.
+			6.6 Then tr_interface_file_summary and tr_interface_file_summary_details will updated.
+			
+	 *
+		1. java:global/EnhancesysManagement/IntegrationServices/GenericFileProcessor!com.enhancesys.integration.services.interfaces.merger.CSVMerger
+		2.  GenericFileProcessor
+			2.1 Get FilePropertyBean and  InterfaceFileSummary with interfaceId and fileId
+			2.2 Invoke fileProcessor.initiateProcess(interfaceId, fileId, fileDataBean)
+			2.3 FileProcessor
+				2.3.1 Get spring ApplicationContext with SPRING_APP_CONFIG_PATH
+				2.3.2 CamelContext = SpringCamelContext.springCamelContext(appContext, false);
+				2.3.3 Endpoint("direct:generic_file_processor")
+				2.3.5 paramMap = [interfaceId, fileId, fileDataBean]
+				2.3.4 ProducerTemplate.sendBodyAndHeader("direct:generic_file_processor", ExchangePattern.InOut, "generic_file_processor", "methodParams", paramMap);
+			
+
+	* 
+		1. SpringCamelContext
+		2. generic_file_processor => invokes InterfaceFileReader and KPIAggregator
+		
+3 => prepareRejectionFile (interfaceId, partners)
+
+	*
+		1. Get REJECTION_FILE class from REJECTION_FILE_ATTR with interfaceId (java:global/EnhancesysManagement/IntegrationServices/DWHRejectionFilePreparation!com.enhancesys.integration.services.interfaces.rejection.RejectionFilePreparation)
+		2. Load attributes and getInterfaceFileSummaryByInterfaceIdAndStatus(interfaceId, status FILE_PROCESSED)
+		3. Get tr_interface_file_summary_details with tr_interface_file_summary
+		4. In each iteration with query (SELECT date_active, lac_id, cell_id, description, bts_id, bts_name, bts_type,site_id,site_name,site_type,territory_id,updated_date,latitude,longitude,error_code, error_message from interface.lacci_data where file_id = ? and status = ?)
+				4.1	Write the data in rejection file location.
+		5. Update tr_interface_file_summary 
+		
+
+note : no use of converter and publisher

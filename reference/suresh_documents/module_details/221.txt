@@ -1,0 +1,16 @@
+221 Query Balance
+
+
+1 => syncBalanceInterface(Long moduleId, String jsonRequestData)
+
+	*
+		1.	Read the moduleId as input parameters.
+		2.	If the moduleId id is null or If any moduleId's interface id object is not available in the database then throw the exception.
+		3.  Load Attributes from CacheLoader.getTransferBalAttributes() and CacheLoader.getQryBalAttributes().
+		3.	processTransferBalance
+		4.  processQueryBalance
+		5.  Convert json request to xml request..
+				5.1 Invoke Soap service and update to interface summary.
+				5.2 If interface is TransferBalance then summary is updated as asyc.
+
+note : no use of publisher

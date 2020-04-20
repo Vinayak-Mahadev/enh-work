@@ -1,0 +1,42 @@
+113 INTSM004 - User Creation
+
+1=> processResponseAvailableRecords(interfaceId, status)
+
+	*
+		1. Read the given parameter status.
+ 		2. Get the list of interfaceSummary objects from the persistence layer based on the status.
+ 		3. If the list is empty return.  
+ 		4. In each interation, invoke the call back with transactionId and update the status as completed on success.
+				4.1 InterfaceSummary with transactionId and get interfaceId and callback class
+				4.2 transIds = getSummaryTransIdsByRefData3(transactionId)
+				4.3 responseBean = callback class invoked with transactionId and InterfaceSummary.ResponseData
+				4.4 processCallback(Long transactionId)
+				4.5 responseBean.Error
+					4.5.1 mongodb.snoc_interface.interface_summary with query (status:174,185 and transactionId)
+					4.5.2 If record found, find tr_interface_summary with transIds and update as completed status.
+					4.5.3 Else processCallback invoked with transactionId util Callback Retry Limit
+						  4.5.3.1 If sucess, find tr_interface_summary with transIds and update as completed status.
+						  4.5.3.2 Else, find tr_interface_summary with transIds and update as fail status.
+ 		5. In case of failure update with the failure status and transIds.
+		
+	*
+		processCallback
+		
+		1. java:global/EnhancesysManagement/IntegrationServices/IntegrationCallbackProcessor!com.enhancesys.integration.services.interfaces.callback.CallbackProcessor
+		2. IntegrationCallbackProcessor (refData1, responseData)
+				2.1 Get getInterfaceSummary(refData1)
+				2.2 If summary = null, getInterfaceSummaryByRefData1(refData1, RES_AVAILABLE_STATUS )
+				2.2 Get DataPublisher with InterfaceAttribute
+				2.3 Invoke DataPublisher.processRequest with (summary.getTransactionId(), responseData, null, null)
+				
+	*
+		processRequest
+		
+		1. java:global/EnhancesysManagement/IntegrationPublishers/SMCallbackPublisher!com.enhancesys.integration.services.interfaces.publisher.DataPublisher
+		2. SMCallbackPublisher (transactionId, requestData, tragetAddress, interfaceId)
+		3. interfaceSummary = getInterfaceSummary(transactionId)
+		4. Create SOAP and REST request then invoke service and return responseBean.
+
+				
+
+note : no use of convertor
