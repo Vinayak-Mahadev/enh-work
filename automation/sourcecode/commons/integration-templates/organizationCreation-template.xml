@@ -1,0 +1,330 @@
+<?xml version = "1.0" encoding = "UTF-8"?>
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:api="http://cps.huawei.com/synccpsinterface/api_requestmgr" xmlns:req="http://cps.huawei.com/synccpsinterface/request" xmlns:com="http://cps.huawei.com/synccpsinterface/common"> 
+	<soapenv:Header/> 
+	<soapenv:Body> 
+		<api:Request> 
+			<req:Header> 
+				<req:Version isMultiple="false" defaultValue="1.0" required="true"/>
+				<req:CommandID isMultiple="false" defaultValue="CreateChildOrg" required ="true"/>
+				<req:OriginatorConversationID isMultiple="false" defaultValue="TRANS_ID_IN_CONVERTER_TEMPLATE" required ="true"/> <!-- Transaction ID - Reference Number -->
+				<req:ConversationID isMultiple="false" defaultValue="TRANS_ID_IN_CONVERTER_TEMPLATE" required ="true"/> <!-- Transaction ID - Reference Number -->
+				<req:Caller> 
+					<req:CallerType isMultiple="false" source="" lookup-type="1" lookup-entity-type-id="307" entity-id="1" required="true"/>
+					<req:ThirdPartyID isMultiple="false" source="" lookup-type="1" lookup-entity-type-id="307" entity-id="2" required="true"/>
+					<req:Password isMultiple="false" source="" lookup-type="1" lookup-entity-type-id="307" entity-id="3" required="true"/>
+					<req:ResultURL isMultiple="false" source="" lookup-type="1" lookup-entity-type-id="307" entity-id="4" required="true"/>
+				</req:Caller> 
+				<req:KeyOwner isMultiple="false" defaultValue="1" required ="true"/>
+				<req:Timestamp isMultiple="false" defaultValue="" lookup-type="4" date-to-format="yyyyMMddHHmmss" required ="true"/>
+				<req:ChannelCode isMultiple="false" defaultValue="1010" required="true"/>
+			</req:Header>
+			<req:Body> 
+				<req:Identity> 
+					<req:Initiator> 
+						<req:IdentifierType isMultiple="false" source="" lookup-type="1" lookup-entity-type-id="307" entity-id="5" required="true"/>
+						<req:Identifier isMultiple="false" source="" lookup-type="1" lookup-entity-type-id="307" entity-id="6" required="true"/>
+						<req:SecurityCredential isMultiple="false" source="" lookup-type="1" lookup-entity-type-id="307" entity-id="7" required="true"/>
+						<req:GPSPosition isMultiple="false" source="" lookup-type="1" lookup-entity-type-id="307" entity-id="8" required="true"/>
+					</req:Initiator> 
+					<!--req:Requester> 
+						<req:IdentifierType isMultiple="false" defaultValue="11" required ="true"/>
+						<req:Identifier isMultiple="false" source="user.crtd_by" lookup-type="3" schema="snoc" collection="user" type="number" target-field="operator_id" required ="true"/>
+						<req:ShortCode isMultiple="false" source="organization.addnl_params.parent_short_code" required ="true"/>
+					</req:Requester--> 
+				</req:Identity> 
+				<req:CreateChildOrgRequest> 
+					<req:ShortCode isMultiple="false" source="organization.ref_code" required ="true"/> <!-- we've to generate -->
+					<req:ParentShortCode isMultiple="false" source="organization.addnl_params.parent_short_code" required ="true"/> <!-- under whom creating-->
+					<req:OrganizationName isMultiple="false" source="organization.desc" required ="true"/> <!-- new one-->
+					<req:ChargeProfileID isMultiple="false" source="organization.addnl_params.charge_prof_id" lookup-type="3" schema="snoc" collection="transitionValueCollection" type="char" required ="false"/>
+					<req:RuleProfileID isMultiple="false" source="organization.addnl_params.rule_prof_id" lookup-type="3" schema="snoc" collection="transitionValueCollection" type="char" required ="false"/>
+					<req:ChargeDistributionModel isMultiple="false" source="organization.addnl_params.charge_dist_model" lookup-type="3" schema="snoc" collection="transitionValueCollection" type="char" required ="false"/> <!--optional-->
+					<req:SimpleKYCUpdateData> 
+						<req:AddField> 
+							<com:KYCName isMultiple="false" defaultValue="[KYC][Personal Information][NPWP Number]" required="true"/>
+							<com:KYCValue isMultiple="false" source="organization.addnl_params.npwp_num" required="false"/>
+						</req:AddField> 
+						<req:AddField> 
+							<com:KYCName isMultiple="false" defaultValue="[KYC][Sales Territory][Region]" required="true"/>
+							<com:KYCValue isMultiple="false" source="organization.sale_territory" fetch-order="micro_cluster,cluster,sales_area,area,regional,nasional" lookup-type="3" schema="snoc" collection="transitionValueCollection" type="char" required="true"/>
+						</req:AddField>
+						<req:AddField>
+							<com:KYCName isMultiple="false" defaultValue="[KYC][Contact Information][SMS Address]" required="true"/>
+							<com:KYCValue isMultiple="false" source="user.contacts" source-tag="type" value="mobile_no" target-tag="no" required="true"/>
+						</req:AddField>
+						<req:AddField> 
+							<com:KYCName isMultiple="false" defaultValue="[KYC][Organization SubType][Channel Category]" required="true"/>
+							<com:KYCValue isMultiple="false" source="organization.addnl_params.chnl_ctgr" lookup-type="3" schema="snoc" collection="transitionValueCollection" type="char" required="false"/>
+						</req:AddField> 	
+						<req:AddField> 
+							<com:KYCName isMultiple="false" defaultValue="[KYC][Personal Details][Long (m)]" required="true"/>
+							<com:KYCValue isMultiple="false" source="organization.addnl_params.org_long" required="false"/>
+						</req:AddField> 
+						<req:AddField> 
+							<com:KYCName isMultiple="false" defaultValue="[KYC][Personal Details][Width (m)]" required="true"/>
+							<com:KYCValue isMultiple="false" source="organization.addnl_params.org_width" required="false"/>
+						</req:AddField>
+						<req:AddField> 
+							<com:KYCName isMultiple="false" defaultValue="[KYC][Personal Details][Painting]" required="true"/>
+							<com:KYCValue isMultiple="false" source="organization.addnl_params.org_painting" required="false"/>
+						</req:AddField>	
+						<!--req:AddField> 
+							<com:KYCName isMultiple="false" defaultValue="[KYC][Organization SubType][Organization Invoice Note]" required="true"/>
+							<com:KYCValue isMultiple="false" source="organization.addnl_params.invoice_note" required="false"/>
+						</req:AddField-->
+						<req:AddField> 
+							<com:KYCName isMultiple="false" defaultValue="[KYC][Organization SubType][Organization Location Type]" required="true"/>
+							<com:KYCValue isMultiple="false" source="organization.addnl_params.org_loc_type" lookup-type="3" schema="snoc" collection="transitionValueCollection" type="char" required="false"/>
+						</req:AddField>
+						<req:AddField> 
+							<com:KYCName isMultiple="false" defaultValue="[KYC][Organization Details][Organization Group]" required="true"/>
+							<com:KYCValue isMultiple="false" source="organization.addnl_params.org_group" lookup-type="3" schema="snoc" collection="transitionValueCollection" type="char" required="false"/>
+						</req:AddField>
+						<req:AddField> 
+							<com:KYCName isMultiple="false" defaultValue="[KYC][Organization SubType][Organization Classification]" required="true"/>
+							<com:KYCValue isMultiple="false" source="organization.addnl_params.org_classification" lookup-type="3" schema="snoc" collection="transitionValueCollection" type="char" required="true"/>
+						</req:AddField>
+						<req:AddField> 
+							<com:KYCName isMultiple="false" defaultValue="[KYC][Organization SubType][Organization Category]" required="true"/>
+							<com:KYCValue isMultiple="false" source="organization.addnl_params.org_category" lookup-type="3" schema="snoc" collection="transitionValueCollection" type="char" required="true"/>
+						</req:AddField>
+						<req:AddField> 
+							<com:KYCName isMultiple="false" defaultValue="[KYC][Owner Information][Owner Alternative ID Type]" required="true"/>
+							<com:KYCValue isMultiple="false" source="user.owner_alt_id_type" lookup-type="3" schema="snoc" collection="transitionValueCollection" type="char" required="true"/>
+						</req:AddField>
+						<req:AddField> 
+							<com:KYCName isMultiple="false" defaultValue="[KYC][Owner Information][Owner Alternative ID Number]" required ="true"/> 
+							<com:KYCValue isMultiple="false" source="user.owner_alt_id_no" required ="true"/>
+						</req:AddField>
+						<req:AddField> 
+							<com:KYCName isMultiple="false" defaultValue="[KYC][Owner Information][Owner Name]" required="true"/>
+							<com:KYCValue isMultiple="false" source="user.owner_name" lookup-type="5" condition-tag="user.org_owner" condition-value="1" required ="false"/>
+						</req:AddField>
+						<req:AddField> 
+							<com:KYCName isMultiple="false" defaultValue="[KYC][Owner Information][Owner mother's maiden name]" required="true"/>
+							<com:KYCValue isMultiple="false" source="user.mother_mad_name" required="true"/>
+						</req:AddField>
+						<req:AddField> 
+							<com:KYCName isMultiple="false" defaultValue="[KYC][Owner Information][Owner Contact Number]" required="true"/>
+							<com:KYCValue isMultiple="false" source="user.contacts" source-tag="type" value="mobile_no" target-tag="no" required="true"/>
+						</req:AddField>
+						<req:AddField> 
+							<com:KYCName isMultiple="false" defaultValue="[KYC][Owner Permanent Address][Province]" required ="true"/>
+							<com:KYCValue isMultiple="false" source="user.addresses" target-tag="state" lookup-type="3" schema="snoc" collection="transitionValueCollection" type="char" required="true"/>
+						</req:AddField>
+						
+						<!-- req:AddField> 
+							<com:KYCName isMultiple="false" defaultValue="[KYC][Organization Details][Rule Profile Id]" required="true"/>
+							<com:KYCValue isMultiple="false" source="organization.addnl_params.rule_prof_id" lookup-type="3" schema="snoc" collection="transitionValueCollection" type="char" required="true"/>
+						</req:AddField>
+						<req:AddField> 
+							<com:KYCName isMultiple="false" defaultValue="[KYC][Organization Details][Charge Distribution Model]" required="true"/>
+							<com:KYCValue isMultiple="false" source="organization.addnl_params.charge_dist_model" lookup-type="3" schema="snoc" collection="transitionValueCollection" type="char" required="true"/>
+						</req:AddField>
+						<req:AddField> 
+							<com:KYCName isMultiple="false" defaultValue="[KYC][Organization Details][Charge Profile Id]" required="true"/>
+							<com:KYCValue isMultiple="false" source="organization.addnl_params.charge_prof_id" lookup-type="3" schema="snoc" collection="transitionValueCollection" type="char" required="true"/>
+						</req:AddField-->
+						<req:AddField> 
+							<com:KYCName isMultiple="false" defaultValue="[KYC][Organization Details][Charge Profile Key]" required="true"/>
+							<com:KYCValue isMultiple="false" source="organization.addnl_params.charge_prof_key" lookup-type="3" schema="snoc" collection="transitionValueCollection" type="char" required="true"/>
+						</req:AddField>
+						<req:AddField> 
+							<com:KYCName isMultiple="false" defaultValue="[KYC][Organization Details][Dealer Code]" required="true"/>
+							<com:KYCValue isMultiple="false" source="organization.addnl_params.dealer_code" required="false"/>
+						</req:AddField>
+						<req:AddField> 
+							<com:KYCName isMultiple="false" defaultValue="[KYC][Personal Details][Organization strategic Information]" required="true"/>
+							<com:KYCValue isMultiple="false" source="organization.addnl_params.org_stg_info" required="false"/>
+						</req:AddField>
+						<req:AddField> 
+							<com:KYCName isMultiple="false" defaultValue="[KYC][Organization SubType][Dompetku MSISDN]" required="true"/>
+							<com:KYCValue isMultiple="false" source="organization.addnl_params.dompetku_no" required="true"/>
+						</req:AddField>
+						<req:AddField> 
+							<com:KYCName isMultiple="false" defaultValue="[KYC][Bank Account][Bank Name]" required ="true"/>
+							<com:KYCValue isMultiple="false" source="user.bank_name" lookup-type="3" schema="snoc" collection="transitionValueCollection" type="char" required ="false"/>
+						</req:AddField>
+						<req:AddField> 
+							<com:KYCName isMultiple="false" defaultValue="[KYC][Bank Account][Organization Bank Account Number]" required ="true"/>
+							<com:KYCValue isMultiple="false" source="user.bank_acc_no" required ="false"/>
+						</req:AddField>
+						<req:AddField> 
+							<com:KYCName isMultiple="false" defaultValue="[KYC][Contact Details][Notification Receiving E-mail]" required ="true"/>
+							<com:KYCValue isMultiple="false" source="user.contacts" source-tag="type" value="email_id" target-tag="no" lookup-type="5" condition-tag="user.notify_chnl" condition-value="1202" required="false"/> 
+						</req:AddField>	
+						<req:AddField> 
+							<com:KYCName isMultiple="false" defaultValue="[KYC][Contact Details][Notification Receiving MSISDN]" required ="true"/>
+							<com:KYCValue isMultiple="false" source="user.contacts" source-tag="type" value="mobile_no" target-tag="no" lookup-type="5" condition-tag="user.notify_chnl" condition-value="1201" required ="false"/>
+						</req:AddField>
+						<req:AddField> 
+							<com:KYCName isMultiple="false" defaultValue="[KYC][Contact Details][Preferred Notification Channel]" required ="true"/>
+							<com:KYCValue isMultiple="false" source="user.notify_chnl" lookup-type="3" schema="snoc" collection="transitionValueCollection" type="char" required ="true"/> 
+						</req:AddField> 	
+						<req:AddField> 
+							<com:KYCName isMultiple="false" defaultValue="[KYC][Contact Details][Preferred Notification Language]" required ="true"/>
+							<com:KYCValue isMultiple="false" source="user.notifi_lang" lookup-type="3" schema="snoc" collection="transitionValueCollection" type="char" required ="true"/>
+						</req:AddField>	
+						<req:AddField> 
+							<com:KYCName isMultiple="false" defaultValue="[KYC][Contact Information][Contact Number]" required ="true"/>
+							<com:KYCValue isMultiple="false" source="user.contacts" source-tag="type" value="telephone_no" target-tag="no" required ="false"/>
+						</req:AddField>	
+						<req:AddField> 
+							<com:KYCName isMultiple="false" defaultValue="[KYC][Location][Organization Latitude]" required ="true"/>
+							<com:KYCValue isMultiple="false" source="organization.addresses" target-tag="latitude"  required="false"/>
+						</req:AddField>	
+						<req:AddField> 
+							<com:KYCName isMultiple="false" defaultValue="[KYC][Registration Location][Organization Longitude]" required ="true"/>
+							<com:KYCValue isMultiple="false" source="organization.addresses" target-tag="longitude"  required="false"/>
+						</req:AddField>			
+						<req:AddField> 
+							<com:KYCName isMultiple="false" defaultValue="[KYC][Organization Details][Partner Type]" required ="true"/>
+							<com:KYCValue isMultiple="false" source="organization.addnl_params.partner_type" lookup-type="3" schema="snoc" collection="transitionValueCollection" type="char" required ="false"/>
+						</req:AddField>		
+						<req:AddField> 
+							<com:KYCName isMultiple="false" defaultValue="[KYC][Organization SubType][Organization Type]" required ="true"/>
+							<com:KYCValue isMultiple="false" source="organization.sub_org_type" lookup-type="3" schema="snoc" collection="transitionValueCollection" type="char" required ="true"/>
+						</req:AddField>		
+						<req:AddField> 
+							<com:KYCName isMultiple="false" defaultValue="[KYC][Owner Information][Birth Date]" required ="true"/> 
+							<com:KYCValue isMultiple="false" source="user.dob.$date" lookup-type="4" date-from-format="yyyy-MM-dd" date-to-format="yyyyMMdd" required ="false"/> 
+						</req:AddField>		
+						<req:AddField> 
+							<com:KYCName isMultiple="false" defaultValue="[KYC][Owner Permanent Address][Additional Address]" required ="true"/>
+							<com:KYCValue isMultiple="false" source="user.addresses" target-tag="adrs_2" required="false"/>
+						</req:AddField>		
+						<req:AddField> 
+							<com:KYCName isMultiple="false" defaultValue="[KYC][Owner Permanent Address][City/District]" required ="true"/>
+							<com:KYCValue isMultiple="false" source="user.addresses" target-tag="zone" lookup-type="3" schema="snoc" collection="transitionValueCollection" type="char" required="true"/>
+						</req:AddField>	
+						<req:AddField> 
+							<com:KYCName isMultiple="false" defaultValue="[KYC][Owner Permanent Address][Districts]" required ="true"/>
+							<com:KYCValue isMultiple="false" source="user.addresses" target-tag="city" lookup-type="3" schema="snoc" collection="transitionValueCollection" type="char" required="true"/>
+						</req:AddField>	
+						<req:AddField> 
+							<com:KYCName isMultiple="false" defaultValue="[KYC][Owner Permanent Address][Street Address]" required ="true"/>
+							<com:KYCValue isMultiple="false" source="user.addresses" target-tag="adrs_1" required="true"/>
+						</req:AddField>	
+						<req:AddField> 
+							<com:KYCName isMultiple="false" defaultValue="[KYC][Owner Permanent Address][Sub District]" required ="true"/>
+							<com:KYCValue isMultiple="false" source="user.addresses" target-tag="subDistrict" lookup-type="3" schema="snoc" collection="transitionValueCollection" type="char" required="false"/>
+						</req:AddField>	
+						<req:AddField> 
+							<com:KYCName isMultiple="false" defaultValue="[KYC][Permanent Address][Additional Address]" required ="true"/>
+							<com:KYCValue isMultiple="false" source="organization.addresses" target-tag="adrs_2" required="false"/>
+						</req:AddField>
+						<req:AddField> 
+							<com:KYCName isMultiple="false" defaultValue="[KYC][Permanent Address][City/District]" required ="true"/>
+							<com:KYCValue isMultiple="false" source="organization.addresses" target-tag="zone" lookup-type="3" schema="snoc" collection="transitionValueCollection" type="char" required="true"/>
+						</req:AddField>	
+						<req:AddField> 
+							<com:KYCName isMultiple="false" defaultValue="[KYC][Permanent Address][Districts]" required ="true"/>
+							<com:KYCValue isMultiple="false" source="organization.addresses" target-tag="city" lookup-type="3" schema="snoc" collection="transitionValueCollection" type="char" required="true"/>
+						</req:AddField>	
+						<req:AddField> 
+							<com:KYCName isMultiple="false" defaultValue="[KYC][Permanent Address][Province]" required ="true"/>
+							<com:KYCValue isMultiple="false" source="organization.addresses" target-tag="state" lookup-type="3" schema="snoc" collection="transitionValueCollection" type="char" required="true"/>
+						</req:AddField>	
+						<req:AddField> 
+							<com:KYCName isMultiple="false" defaultValue="[KYC][Permanent Address][Street Address]" required ="true"/>
+							<com:KYCValue isMultiple="false" source="organization.addresses" target-tag="adrs_1" required="true"/>
+						</req:AddField>	
+						<req:AddField> 
+							<com:KYCName isMultiple="false" defaultValue="[KYC][Permanent Address][Sub District]" required ="true"/>
+							<com:KYCValue isMultiple="false" source="organization.addresses" target-tag="subDistrict" lookup-type="3" schema="snoc" collection="transitionValueCollection" type="char" required="false"/>
+						</req:AddField>	
+						<req:AddField> 
+							<com:KYCName isMultiple="false" defaultValue="[KYC][Organization Details][Marketing Program]" required ="true"/>
+							<com:KYCValue isMultiple="false" source="organization.addnl_params.marketing_program" lookup-type="3" schema="snoc" collection="transitionValueCollection" type="char" required="false"/>
+						</req:AddField>
+						<req:AddField> 
+							<com:KYCName isMultiple="false" defaultValue="[KYC][Organization Details][Additional Field 1]" required ="true"/>
+							<com:KYCValue isMultiple="false" source="organization.addnl_params.org_addnl_field_1" required="false"/>
+						</req:AddField>
+						<req:AddField> 
+							<com:KYCName isMultiple="false" defaultValue="[KYC][Organization Details][Additional Field 2]" required ="true"/>
+							<com:KYCValue isMultiple="false" source="organization.addnl_params.org_addnl_field_2" required="false"/>
+						</req:AddField>
+						<req:AddField> 
+							<com:KYCName isMultiple="false" defaultValue="[KYC][Organization Details][Additional Field 3]" required ="true"/>
+							<com:KYCValue isMultiple="false" source="organization.addnl_params.org_addnl_field_3" required="false"/>
+						</req:AddField>
+						<req:AddField> 
+							<com:KYCName isMultiple="false" defaultValue="[KYC][Organization Details][Additional Field 4]" required ="true"/>
+							<com:KYCValue isMultiple="false" source="organization.addnl_params.org_addnl_field_4" required="false"/>
+						</req:AddField>
+						<req:AddField> 
+							<com:KYCName isMultiple="false" defaultValue="[KYC][Organization Details][Additional Field 5]" required ="true"/>
+							<com:KYCValue isMultiple="false" source="organization.addnl_params.org_addnl_field_5" required="false"/>
+						</req:AddField>
+						<req:AddField> 
+							<com:KYCName isMultiple="false" defaultValue="[KYC][Organization Details][Additional Select 1]" required ="true"/>
+							<com:KYCValue isMultiple="false" source="organization.addnl_params.org_addnl_dropdown_1" lookup-type="3" schema="snoc" collection="transitionValueCollection" type="char" required="false"/>
+						</req:AddField>
+						<req:AddField> 
+							<com:KYCName isMultiple="false" defaultValue="[KYC][Organization Details][Additional Select 2]" required ="true"/>
+							<com:KYCValue isMultiple="false" source="organization.addnl_params.org_addnl_dropdown_2" lookup-type="3" schema="snoc" collection="transitionValueCollection" type="char" required="false"/>
+						</req:AddField>
+						<req:AddField> 
+							<com:KYCName isMultiple="false" defaultValue="[KYC][Organization Details][Additional Select 3]" required ="true"/>
+							<com:KYCValue isMultiple="false" source="organization.addnl_params.org_addnl_dropdown_3" lookup-type="3" schema="snoc" collection="transitionValueCollection" type="char" required="false"/>
+						</req:AddField>
+						<req:AddField> 
+							<com:KYCName isMultiple="false" defaultValue="[KYC][Organization Details][Additional Select 4]" required ="true"/>
+							<com:KYCValue isMultiple="false" source="organization.addnl_params.org_addnl_dropdown_4" lookup-type="3" schema="snoc" collection="transitionValueCollection" type="char" required="false"/>
+						</req:AddField>
+						<req:AddField> 
+							<com:KYCName isMultiple="false" defaultValue="[KYC][Organization Details][Additional Select 5]" required ="true"/>
+							<com:KYCValue isMultiple="false" source="organization.addnl_params.org_addnl_dropdown_5" lookup-type="3" schema="snoc" collection="transitionValueCollection" type="char" required="false"/>
+						</req:AddField>
+						<!--req:AddField> 
+							<com:KYCName isMultiple="false" defaultValue="[KYC][Organization SubType][Partner Type]" required="true"/>
+							<com:KYCValue isMultiple="false" source="organization.addnl_params.partner_type" lookup-type="3" schema="snoc" collection="transitionValueCollection" type="char" required="false"/>
+						</req:AddField>
+						<req:AddField> 
+							<com:KYCName isMultiple="false" defaultValue="[KYC][Organization SubType][Organization Telephone Number]" required="true"/>
+							<com:KYCValue isMultiple="false" source="organization.addnl_params.telephone_no" required="false"/>
+						</req:AddField-->	
+						
+						<!-- req:AddField> 
+							<com:KYCName isMultiple="false" defaultValue="[KYC][Certification Image][Organziation Physical Picture]" required="true"/>
+							<com:KYCValue isMultiple="false" source="image1.jpeg" required="true"/>
+						</req:AddField> 
+						<req:AddField> 
+							<com:KYCName isMultiple="false" defaultValue="[KYC][Certification Image][Owner ID Card Picture]" required="true"/>
+							<com:KYCValue isMultiple="false" source="image3.jpeg" required="true"/>
+						</req:AddField> 
+						<req:AddField> 
+							<com:KYCName isMultiple="false" defaultValue="[KYC][Certification Image][Owner Signatures]" required="true"/>
+							<com:KYCValue isMultiple="false" source="image5.jpeg" required="true"/>
+						</req:AddField -->
+					</req:SimpleKYCUpdateData> 
+					<!-- req:UpdateOrganizationContactDetails>
+						<req:AddContactRecord>
+							<com:ContactTypeValue isMultiple="false" source="" required="false"/> 
+							<com:ContactFirstName isMultiple="false" source="user.first_name" required="false"/> 
+							<com:ContactSecondName isMultiple="false" source="user.middle_name" required="false"/>
+							<com:ContactSurname isMultiple="false" source="user.last_name" required="false"/> 
+							<com:ContactPhoneNumber isMultiple="false" source="user.contacts" source-tag="type" value="telephone_no" target-tag="no" required="false"/>
+							<com:ContactIDTypeValue isMultiple="false" source="" required="false"/> 
+							<com:ContactIDNumber isMultiple="false" source="" required="false"/>
+							<com:ContactEmail isMultiple="false" source="user.contacts" source-tag="type" value="email_id" target-tag="no" required="false"/> 
+						</req:AddContactRecord>
+					</req:UpdateOrganizationContactDetails -->
+					<req:UpdateProductsData> 
+						<req:AddProduct isMultiple="true" source="organization.addnl_params.prd_dtls" required="true"> 
+							<req:ProductID isMultiple="false" source="prd_id" lookup-type="3" schema="snoc" collection="transitionValueCollection" type="char" required="true"/> <!-- org linked product -->
+							<req:EffectiveDate isMultiple="false" source="prd_efct_date.$date" lookup-type="4" date-from-format="yyyy-MM-dd" date-to-format="yyyyMMdd" required="true"/> <!-- from  core -->
+							<req:ExpiryDate isMultiple="false" source="prd_exp_date.$date" lookup-type="4" date-from-format="yyyy-MM-dd" date-to-format="yyyyMMdd" required="true"/> <!-- from  core -->
+						</req:AddProduct> 
+					</req:UpdateProductsData> 
+					<!-- req:TaxExemptionData>
+						<req:TaxCodeItem>
+							<req:TaxCode isMultiple="false" source="" required="false"/>
+						</req:TaxCodeItem>
+					</req:TaxExemptionData -->
+				</req:CreateChildOrgRequest> 
+			</req:Body> 
+		</api:Request> 
+	</soapenv:Body> 
+</soapenv:Envelope>

@@ -1,0 +1,21 @@
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:mob="http://mobii.com/">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <mob:MT_SOCreation_Request>
+         <Item required ="true">
+            <Mobii_PO_Number isMultiple="false" source="order.po_no" required ="true"/>
+            <Order_Type isMultiple="false" source="" defaultValue="" required ="false"/>
+            <Distribution_Channel isMultiple="false" source="" defaultValue="" required ="false"/>
+            <Division isMultiple="false" source="" defaultValue="" required ="false"/>
+            <Sold_to_Party isMultiple="false" source="" required ="false"/>
+            <Ship_to_Party isMultiple="false" source="order.ship_to_party" required ="true"/>
+            <Mobii_PO_Date isMultiple="false" source="order.ord_dt" lookup-type="4" date-from-format="yyyy-MM-dd" date-to-format="dd.MM.yyyy" required ="true"/>
+            <Request_Delivery_Date isMultiple="false" source="order.req_deliv_dt" lookup-type="4" date-from-format="yyyy-MM-dd" date-to-format="dd.MM.yyyy" required ="true"/>
+            <SO_Item isMultiple="true" source="order.products" required ="true">
+               <Material_Code isMultiple="false" source="matrl_code" required ="true"/>
+               <Quantity isMultiple="false" source="qty" required ="true"/>
+            </SO_Item>
+         </Item>
+      </mob:MT_SOCreation_Request>
+   </soapenv:Body>
+</soapenv:Envelope>

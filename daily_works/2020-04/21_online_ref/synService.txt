@@ -1,0 +1,86 @@
+{
+                "payload": {
+                        "currency": "INR",
+                        "trans_amt": "122.11",
+                        "destn_ref_code": "001",
+                        "operator_id": "OP01",
+                        "org_ref_code": "0091",
+                        "user_id": "123",
+                        "uname": "CAN01",
+                        "trans_dt": "2019-06-13T00:00:00.000",
+                        "pin": "2112",
+                        "acc_type": ""
+                }
+        }
+
+
+
+moduleId, jsonRequestData
+	(Module ID should not be empty.. && Request Data should not be empty..)
+
+create flag to findout TransferBalance or QueryBalance
+
+
+Map<String, String> attributes  => Taking attributes from CacheLoader
+
+serviceResponseJsonObject <= processTransferBalance(attributes, jsonRequestData) || processQueryBalance(attributes, jsonRequestData)
+		
+	serviceResponseJsonObject contains
+		1. interfaceId
+		2. trasactionID
+		3. convertedRequestData
+		4. refData1
+		5. refData5
+		6. responseBean
+		
+		throw exeption if(Interface ID does not exist.. && Transaction ID does not exist.. && status[FAIL])
+
+		
+		if (responseBean. getStatus (ERROR))
+		
+			if(isTransferBalance)
+				InterfaceSummary(update)     <= interfaceServiceUtil   (jdbc(syn))
+	
+		create and return => responseJsonObject [status,err_code, err_msg]
+		
+		document = lookupMappingLocal.convertStringToDocument(formatXml(responseBean.getResponseData()));
+	
+	create jsonResponseObject <= from document
+	
+	take api:Result from jsonResponseObject
+	
+	if (api:Result is null) => throw exeption responseJsonObject [status,err_code, err_msg]
+		
+responce	INVOKED_THIRD_PARTY_SERVICE(responseJsonObject)
+
+
+	if(isTransferBalance)
+		InterfaceSummary(update)     <= InterfaceServiceUtilThread   (jdbc(asyn))
+	
+
+
+
+* processTransferBalance(attributes, jsonRequestData)
+
+
+	initiate InterfaceSummary with INTERMEDIATE_STATUS
+			InterfaceSummary's refData1 is payload.org_ref_code
+			InterfaceSummary's refData5 is payload.destn_ref_code
+			
+			
+			
+
+ 	initiate ResponseBean failureBean
+			failureBean.setTransactionId(newInterfaceSummary.getTransactionId());
+			failureBean.setRefData1(refData1);
+			failureBean.setRefData5(refData5);
+			failureBean.setStatusId(IntegrationConstants.ERROR_STATUS);
+			
+	
+	
+	
+	
+	
+
+	
+	

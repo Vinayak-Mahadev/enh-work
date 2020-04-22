@@ -34,7 +34,7 @@ public interface IWorkConstants {
 
 	public final static String LOG_LOC        		               = Environment.INTERFACE_WORK_SOURCECODE_LOC +  "/commons/log/";
 
-
+	public final static String INTEGRATION_XML_REQUEST_TEMPLATE_PATH   = Environment.INTERFACE_WORK_SOURCECODE_LOC +  "/commons/integration-templates/";
 	public final static String queryCreationSetPath              =  Environment.INTERFACE_WORK_SOURCECODE_LOC +  "/commons/queryGenerate/set_where/setField.txt";
 	public final static String queryCreationWherePath            =  Environment.INTERFACE_WORK_SOURCECODE_LOC +  "/commons/queryGenerate/set_where/whereField.txt";
 	public final static String setWhereResultFile                =  Environment.INTERFACE_WORK_SOURCECODE_LOC +  "/commons/queryGenerate/result/setWhereResult.sql";

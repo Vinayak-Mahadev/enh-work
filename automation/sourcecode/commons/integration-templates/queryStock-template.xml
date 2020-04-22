@@ -1,0 +1,12 @@
+<?xml version = "1.0" encoding = "UTF-8"?>
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:mob="http://mobii.com/">
+	<soapenv:Header/>
+	<soapenv:Body>
+		<mob:MT_QueryStock_Request>
+			<Item isMultiple="true" source="order.products" required ="true">
+				<MaterialCode isMultiple="false" source="matrl_code" required ="true"/>
+				<Plant isMultiple="false" source="" required ="false"/>
+			</Item>
+		</mob:MT_QueryStock_Request>
+	</soapenv:Body>
+</soapenv:Envelope>
