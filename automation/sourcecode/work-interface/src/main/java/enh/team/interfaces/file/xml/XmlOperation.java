@@ -67,7 +67,6 @@ public class XmlOperation {
 		JsonXmlDataConverterLocal jsonXmlDataConverterLocal = new JsonXmlDataConverterLocal();
 		long TRANSFER_BALANCE_INTERFACE_ID = 1136l;	
 		Map<String, String> attributes = CacheLoader.getTransferBalAttributes();
-		String convertedRequestData = null;
 		String jsonRequestData = "		{\r\n" + 
 				"                \"payload\": {\r\n" + 
 				"                        \"currency\": \"INR\",\r\n" + 
@@ -84,9 +83,8 @@ public class XmlOperation {
 				"        }";
 		try
 		{
-			convertedRequestData = jsonXmlDataConverterLocal.processRequest(attributes, TRANSFER_BALANCE_INTERFACE_ID, jsonRequestData, null);;
+			jsonXmlDataConverterLocal.processRequest(attributes, TRANSFER_BALANCE_INTERFACE_ID, jsonRequestData, null);;
 
-			System.out.println(convertedRequestData);
 		} 
 		catch (Exception e) 
 		{

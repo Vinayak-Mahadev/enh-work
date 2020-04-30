@@ -126,45 +126,47 @@
 2020-04-20 16:36:14.826, FINE, [Thread]: 248 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverterLocal [LineNumber]:  618  JsonXmlDataConverter : Exit generateXml.. 
 2020-04-20 16:36:14.826, FINE, [Thread]: 248 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverterLocal [LineNumber]:  618  JsonXmlDataConverter : Exit generateXml.. 
 2020-04-20 16:36:14.827, FINE, [Thread]: 248 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverterLocal [LineNumber]:  618  JsonXmlDataConverter : Exit generateXml.. 
-2020-04-20 16:36:14.864, FINE, [Thread]: 248 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverterLocal [LineNumber]:  199  End ::  1587380774863 -- <soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:api="http://cps.huawei.com/synccpsinterface/api_requestmgr" xmlns:com="http://cps.huawei.com/synccpsinterface/common" xmlns:req="http://cps.huawei.com/synccpsinterface/request">
-<soapenv:Header/>
-<soapenv:Body>
-<api:Request>
-<req:Header>
-<req:Version>1.0</req:Version>
-<req:CommandID>InitTrans_Canvasser Initiate Allocation</req:CommandID>
-<req:OriginatorConversationID>TRANS_ID_IN_CONVERTER_TEMPLATE</req:OriginatorConversationID>
-<req:Caller>
-<req:CallerType>2</req:CallerType>
-<req:ThirdPartyID>POS_Broker</req:ThirdPartyID>
-<req:Password>gMMqGGrKxsE=</req:Password>
-<req:ResultURL>http://10.71.109.150:8888/mockResultBinding</req:ResultURL>
-</req:Caller>
-<req:KeyOwner>1</req:KeyOwner>
-<req:Timestamp>20200420163614</req:Timestamp>
-</req:Header>
-<req:Body>
-<req:Identity>
-<req:Initiator>
-<req:IdentifierType>12</req:IdentifierType>
-<req:Identifier>OP01</req:Identifier>
-<req:SecurityCredential>2112</req:SecurityCredential>
-<req:ShortCode>0091</req:ShortCode>
-</req:Initiator>
-<req:ReceiverParty>
-<req:IdentifierType>4</req:IdentifierType>
-<req:Identifier>001</req:Identifier>
-</req:ReceiverParty>
-</req:Identity>
-<req:TransactionRequest>
-<req:Parameters>
-<req:Amount>122.11</req:Amount>
-<req:Currency>INR</req:Currency>
-</req:Parameters>
-</req:TransactionRequest>
-</req:Body>
-</api:Request>
-</soapenv:Body>
+2020-04-20 16:36:14.864, FINE, [Thread]: 248 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverterLocal [LineNumber]:  199  End ::  1587380774863 -- 
+
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:api="http://cps.huawei.com/synccpsinterface/api_requestmgr" xmlns:com="http://cps.huawei.com/synccpsinterface/common" xmlns:req="http://cps.huawei.com/synccpsinterface/request">
+	<soapenv:Header/>
+	<soapenv:Body>
+		<api:Request>
+			<req:Header>
+				<req:Version>1.0</req:Version>
+				<req:CommandID>InitTrans_Canvasser Initiate Allocation</req:CommandID>
+				<req:OriginatorConversationID>TRANS_ID_IN_CONVERTER_TEMPLATE</req:OriginatorConversationID>
+				<req:Caller>
+					<req:CallerType>2</req:CallerType>
+					<req:ThirdPartyID>POS_Broker</req:ThirdPartyID>
+					<req:Password>gMMqGGrKxsE=</req:Password>
+					<req:ResultURL>http://10.71.109.150:8888/mockResultBinding</req:ResultURL>
+				</req:Caller>
+				<req:KeyOwner>1</req:KeyOwner>
+				<req:Timestamp>20200420163614</req:Timestamp>
+			</req:Header>
+			<req:Body>
+				<req:Identity>
+					<req:Initiator>
+						<req:IdentifierType>12</req:IdentifierType>
+						<req:Identifier>OP01</req:Identifier>
+						<req:SecurityCredential>2112</req:SecurityCredential>
+						<req:ShortCode>0091</req:ShortCode>
+					</req:Initiator>
+					<req:ReceiverParty>
+						<req:IdentifierType>4</req:IdentifierType>
+						<req:Identifier>001</req:Identifier>
+					</req:ReceiverParty>
+				</req:Identity>
+				<req:TransactionRequest>
+					<req:Parameters>
+						<req:Amount>122.11</req:Amount>
+						<req:Currency>INR</req:Currency>
+					</req:Parameters>
+				</req:TransactionRequest>
+			</req:Body>
+		</api:Request>
+	</soapenv:Body>
 </soapenv:Envelope>
  
 2020-04-20 16:36:14.865, FINE, [Thread]: 248 [ClassName]: com.enhancesys.integration.services.converter.JsonXmlDataConverterLocal [LineNumber]:  240  JsonXmlDataConverter : Exit processRequest..processingTime : 154 

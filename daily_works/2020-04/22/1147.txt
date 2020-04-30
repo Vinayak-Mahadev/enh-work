@@ -1,0 +1,53 @@
+Using username "appuser".
+Authenticating with public key "imported-openssh-key"
+Last login: Wed Apr 22 19:09:38 2020 from 14.98.18.150
+
+       __|  __|_  )
+       _|  (     /   Amazon Linux AMI
+      ___|\___|___|
+
+https://aws.amazon.com/amazon-linux-ami/2018.03-release-notes/
+2 package(s) needed for security, out of 2 available
+Run "sudo yum update" to apply all updates.
+[appuser@ip-10-0-0-213 ~]$ /opt/PostgreSQL/9.5/bin/psql -U postgres snoc2
+Password for user postgres:
+psql.bin: FATAL:  password authentication failed for user "postgres"
+[appuser@ip-10-0-0-213 ~]$ /opt/PostgreSQL/9.5/bin/psql -U postgres snoc2
+Password for user postgres:
+psql.bin (9.5.6)
+Type "help" for help.
+
+snoc2=# select name_v,value_v from interface.ms_interface_attr  where interface_id_n = 1145 order by attribute_id_n;
+                 name_v                  |value_v
+
+ Remote Host                             | 10.0.0.213
+ Remote Port                             | 22
+ Remote User                             | appuser
+ Remote Password                         | app@123
+ Remote File                             | master_hierarchy_feed
+ Remote FileName Format                  | yyyyMMdd
+ Remote File Format                      | csv
+ Control file format                     | ctl
+ Remote Dir                              | /home/appuser/interfaces/DAILY_DUMPS/master_files/master_hierarchy_feed/
+ Remote control directory                | /home/appuser/interfaces/DAILY_DUMPS/master_files/master_hierarchy_feed/
+ Remote rejected directory               | /home/appuser/interfaces/DAILY_DUMPS/rejected_file/master_hierarchy_feed/
+ Remote rejected control directory       | /home/appuser/interfaces/DAILY_DUMPS/rejected_file/master_hierarchy_feed/
+ Remote backup directory                 | /home/appuser/interfaces/DAILY_DUMPS/backup/master_files/master_hierarchy_feed/
+ Remote Control Backup Directory         | /home/appuser/interfaces/DAILY_DUMPS/backup/master_files/master_hierarchy_feed/
+ Local Dir                               | /home/appuser/interfaces/S-NOC/interfaces/master_file/daily_dumps/master_hierarchy_feed/
+ Local control directory                 | /home/appuser/interfaces/S-NOC/interfaces/master_file/daily_dumps/master_hierarchy_feed/
+ Local backup directory                  | /home/appuser/interfaces/S-NOC/interfaces/backup/master_file/daily_dumps/master_hierarchy_feed/
+ Local Control Backup Directory          | /home/appuser/interfaces/S-NOC/interfaces/backup/master_file/daily_dumps/master_hierarchy_feed/
+ Local rejected directory                | /home/appuser/interfaces/S-NOC/interfaces/rejected_file/daily_dumps/master_hierarchy_feed/
+ Local rejected control directory        | /home/appuser/interfaces/S-NOC/interfaces/rejected_file/daily_dumps/master_hierarchy_feed/
+ Local rejected backup directory         | /home/appuser/interfaces/S-NOC/interfaces/backup/rejected_file/daily_dumps/master_hierarchy_feed/
+ Local rejected control backup directory | /home/appuser/interfaces/S-NOC/interfaces/backup/rejected_file/daily_dumps/master_hierarchy_feed/
+ Received File Type                      | Request File Type
+ Csv Delimeter                           | |
+ File Headers                            | Region Name|HOR Name|HOR Mobile Number|Sub Area Name|HOS Name|HOS Mobile Number|Sales Area Name|SAM Name|SAM Mobile Number|Cluster Name|MPC Name|MPC Short Code|MPC Mobile Number|Micro Cluster Name|CSM Name|CSM Mobile Number|Supervisor Code|Supervisor Mobile Number|CSO Code|CSO Mobile Number|Outlet Code|Outlet Name|Outlet Mobile Number|Outlet_category|Channel|Outlet_business_type|Outlet_Class|beat_name|Beat ID|MOBO Dealer|LATITUDE|LONGITUDE|Organisation Group
+ Client Id                               | 0
+ Is Sftp                                 | true
+ Schema Name                             | daily_dump_snapshot
+ Collection Name                         | outlet_hierachy_dump
+ Daily Dump Conf                         | {"region name":"region_name","hor name":"hor_name","hor mobile number":"hor_mobile_number","sub area name":"sub_area_name","hos name":"hos_name","hos mobile number":"hos_mobile_number","sales area name":"sales_area_name","sam name":"sam_name","sam mobile number":"sam_mobile_number","cluster name":"cluster_name","mpc name":"mpc_name","mpc short code":"mpc_short_code","mpc mobile number":"mpc_mobile_number","micro cluster name":"micro_cluster_name","csm name":"csm_name","csm mobile number":"csm_mobile_number","supervisor code":"supervisor_code","supervisor mobile number":"supervisor_mobile_number","cso code":"cso_code","cso mobile number":"cso_mobile_number","outlet code":"outlet_code","outlet name":"outlet_name","outlet mobile number":"outlet_mobile_number","outlet_category":"outlet_category","channel":"channel","outlet_business_type":"outlet_business_type","outlet_class":"outlet_class","beat_name":"beat_name","beat id":"beat_id","mobo dealer":"mobo_dealer","latitude":"latitude","longitude":"longitude","organisation group":"org_group_desc"}
+ PPK Path                                | /home/appuser/snoc/snocconf/interfaceconf/credentials/153PPK.ppk
