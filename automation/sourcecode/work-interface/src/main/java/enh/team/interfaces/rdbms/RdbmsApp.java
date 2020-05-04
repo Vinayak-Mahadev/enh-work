@@ -7,6 +7,6 @@ public class RdbmsApp
 {
 	public static void main(String[] args) throws Exception
 	{
-		new RDBMSOperation().getDatabaseMetaData(RDBMS.getDBConnection(PropType.RDBMS_251));
+		new RDBMSOperation().getDatabaseMetaData(RDBMS.getDBConnection(PropType.RDBMS_144));
 	}
 }
