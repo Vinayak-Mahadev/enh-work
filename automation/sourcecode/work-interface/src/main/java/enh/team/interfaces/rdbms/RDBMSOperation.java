@@ -139,7 +139,7 @@ public class RDBMSOperation {
 			out : while (outlet.next()) {
 
 				for (String siteRef : siteList) {
-					fos.write((dateInFile+ "|"+format.format(i+10)+"|"+siteRef+"|"+outlet.getString(1)+ (i+10) +"1"+format.format(i+10)+".05\n").getBytes());
+					fos.write((dateInFile+ "|"+format.format(i+10)+"|"+siteRef+"|"+outlet.getString(1)+ (i+10) +"|1"+format.format(i+10)+".05\n").getBytes());
 					i++;
 					if(limit != 0 )
 						if( limit==i)
