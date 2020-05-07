@@ -1,0 +1,4 @@
+"month_id_n";"actor_type_n";"actor_id_n";"event_type_n";"metrics_type_n";"metrics_id_n";"dimension_1_n";"dimension_2_n";"dimension_3_n";"dimension_4_n";"dimension_5_n";"dimension_6_n";"dimension_7_n";"dimension_8_n";"dimension_9_n";"dimension_10_n";"no_of_events_n";"source_type_n";"source_id_n";"data_flag_n";"instance_type_n";"instance_id_n";"status_flag_n";"data_string_v";"system_type_v";"last_updated_time_dt"
+202004;1;0;301;21;0;20000;;;;;;;;;;2;1;22743;0;0;0;;"";"External";"2020-05-04 18:01:22.553324+05:30"
+202004;1;0;301;21;0;20000;;;;;;;;;;1;1;22750;0;0;0;;"";"External";"2020-05-04 18:01:22.553324+05:30"
+202004;1;0;301;21;0;30000;;;;;;;;;;1;1;10289;0;0;0;;"";"External";"2020-05-04 18:01:22.553324+05:30"

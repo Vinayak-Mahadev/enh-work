@@ -18,9 +18,11 @@ public class FileApp
 		//System.out.println("delete from interface.sp_alloc_dump where file_id = ?::character varying".split("#").length);
 	
 
-		System.out.println("123|vinay|abc".split("\\|").length);
-		System.out.println("123||abc".split("\\|").length);
-		System.out.println("123|vinay||".split("\\|", -1).length);
+		//System.out.println("123|vinay|abc".split("\\|").length);
+		//System.out.println("123||abc".split("\\|").length);
+		//System.out.println("123|vinay||".split("\\|", -1).length);
+		
+		fileOperation.printDecimalFormatNumber(50);
 	}
 
 

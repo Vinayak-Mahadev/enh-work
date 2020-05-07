@@ -9,6 +9,7 @@ import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
@@ -378,5 +379,27 @@ public class FileOperation
 		return responce;
 	} 
 
+	
+	public void printDecimalFormatNumber(int count) {
+		DecimalFormat format = new DecimalFormat("00000");
+		
+		for (int i = 0; i < count; i++) 
+		{
+			System.out.println("100");
+			System.out.println("200");
+			System.out.println("300");
+			System.out.println("400");
+			System.out.println("500");
+			
+			System.out.println("600");
+			System.out.println("700");
+			System.out.println("800");
+			System.out.println("900");
+			System.out.println("1000");
+			//System.out.println(format.format(i));
+			
+		}
+		
+	}
 	
 }
