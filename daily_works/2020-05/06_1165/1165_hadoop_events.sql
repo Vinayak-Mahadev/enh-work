@@ -19,7 +19,7 @@ insert into kpi.mp_event_format_mapping (event_type_n, format_type_v, format_v, 
 insert into kpi.mp_event_actor_mapping (event_type_n, configuration_n, actor_key_v, description_v, actor_type_n, actor_id_n, is_default_bl) values (302, 1, 'ID OUTLET', 'RGU-GA Injection', 10, null, true);
 
 -- MP_EVENT_METRIC_MAPPING:
-insert into kpi.mp_event_metric_mapping (event_type_n, configuration_n, metric_key_v, description_v, metrics_type_n, metrics_id_n, selection_v, condition_key_v, condition_val_v, data_flag_n, rollup_flag_bl, delimiter_v) values (302, 1, 'ORGANIZATION_ID', 'RGU-GA Injection', 21, array[112], 'Fixed', null, null, 0, true, null);
+insert into kpi.mp_event_metric_mapping (event_type_n, configuration_n, metric_key_v, description_v, metrics_type_n, metrics_id_n, selection_v, condition_key_v, condition_val_v, data_flag_n, rollup_flag_bl, delimiter_v) values (302, 1, 'ID OUTLET', 'RGU-GA Injection', 21, array[112], 'Fixed', null, null, 0, true, null);
 
 -- MP_EVENT_DIMENSION_MAPPING:
 insert into kpi.mp_event_dimension_mapping (event_type_n, configuration_n, dimension_v, description_v, sequence_n, expression_v, procedure_v, correction_v, is_decimal_bl) values (302, 1, 'QTY', 'Qty', 1, null, null, 'Update', true);

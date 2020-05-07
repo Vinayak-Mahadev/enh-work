@@ -16,10 +16,10 @@ insert into kpi.ms_event_type_master (event_type_n, event_type_name_v, system_ty
 insert into kpi.mp_event_format_mapping (event_type_n, format_type_v, format_v, definition_v, date_key_v, date_format_v, source_key_v, source_type_n, instance_key_v, instance_type_n) values(303, 'Csv', 'DATE|MICRO|SITE_ID|ID_OUTLET|QTY|AMOUNT', 'Aggregation', 'DATE', 'yyyy-MM-dd', 'SITE_ID', 12, null, null);
 
 -- MP_EVENT_ACTOR_MAPPING:
-insert into kpi.mp_event_actor_mapping (event_type_n, configuration_n, actor_key_v, description_v, actor_type_n, actor_id_n, is_default_bl) values (303, 1, 'ID OUTLET', 'Daily SSO', 10, null, true);
+insert into kpi.mp_event_actor_mapping (event_type_n, configuration_n, actor_key_v, description_v, actor_type_n, actor_id_n, is_default_bl) values (303, 1, 'ID_OUTLET', 'Daily SSO', 10, null, true);
 
 -- MP_EVENT_METRIC_MAPPING:
-insert into kpi.mp_event_metric_mapping (event_type_n, configuration_n, metric_key_v, description_v, metrics_type_n, metrics_id_n, selection_v, condition_key_v, condition_val_v, data_flag_n, rollup_flag_bl, delimiter_v) values (303, 1, 'ORGANIZATION_ID', 'Daily SSO', 21, array[113], 'Fixed', null, null, 0, true, null);
+insert into kpi.mp_event_metric_mapping (event_type_n, configuration_n, metric_key_v, description_v, metrics_type_n, metrics_id_n, selection_v, condition_key_v, condition_val_v, data_flag_n, rollup_flag_bl, delimiter_v) values (303, 1, 'ID_OUTLET', 'Daily SSO', 21, array[113], 'Fixed', null, null, 0, true, null);
 
 -- MP_EVENT_DIMENSION_MAPPING:
 insert into kpi.mp_event_dimension_mapping (event_type_n, configuration_n, dimension_v, description_v, sequence_n, expression_v, procedure_v, correction_v, is_decimal_bl) values (303, 1, 'QTY', 'Qty', 1, null, null, 'Update', true);
