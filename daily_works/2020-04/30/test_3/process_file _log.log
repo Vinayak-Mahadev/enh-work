@@ -1,0 +1,64 @@
+Apr 30, 2020 6:45:16 PM com.enhancesys.common.logger
+FINE: [Thread]: 224 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  6673  Entry processFile : InterfaceIds ::  [1153] Started at --> Thu Apr 30 18:45:16 IST 2020
+Apr 30, 2020 6:45:16 PM com.enhancesys.common.logger
+FINE: [Thread]: 224 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  6693  processFile service received interface id-->[1153]
+Apr 30, 2020 6:45:16 PM com.enhancesys.common.logger
+FINE: [Thread]: 224 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  6713  Entry processFile.. 1153 Started at --> Thu Apr 30 18:45:16 IST 2020
+Apr 30, 2020 6:45:16 PM com.enhancesys.common.logger
+FINE: [Thread]: 224 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  9468  Entry readFilePropertyBeans.. Started at --> Thu Apr 30 18:45:16 IST 2020
+Apr 30, 2020 6:45:16 PM com.enhancesys.common.logger
+FINE: [Thread]: 224 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  9482  readFilePropertyBeans service received interface id-->1153
+Apr 30, 2020 6:45:16 PM com.enhancesys.common.logger
+FINE: [Thread]: 224 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  10292  Exit readFilePropertyBeans service at -->Thu Apr 30 18:45:16 IST 2020 --- and took 34 milliseconds
+Apr 30, 2020 6:45:16 PM com.enhancesys.common.logger
+FINE: [Thread]: 224 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  5886  Entry receiveFile.. Started at --> Thu Apr 30 18:45:16 IST 2020
+Apr 30, 2020 6:45:17 PM com.enhancesys.common.logger
+FINE: [Thread]: 224 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  5971  multipleMap ::::::::::::{secondary_mobo=[-rw-rw-r--    1 appuser  appuser       100 Apr 30 19:01 secondary_mobo_20200430_003.ctl.gz]}
+Apr 30, 2020 6:45:17 PM com.enhancesys.common.logger
+FINE: [Thread]: 224 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  6009  firstFileName :::;secondary_mobo
+Apr 30, 2020 6:45:17 PM com.enhancesys.common.logger
+FINE: [Thread]: 224 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  6010  secondFileName :::;null
+Apr 30, 2020 6:45:17 PM com.enhancesys.common.logger
+FINE: [Thread]: 224 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  6011  size :::::::::1
+Apr 30, 2020 6:45:17 PM com.enhancesys.common.logger
+FINE: [Thread]: 224 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  6023  remoteFileName ::::::::::secondary_mobo_20200430_003.ctl.gz
+Apr 30, 2020 6:45:17 PM com.enhancesys.common.logger
+FINE: [Thread]: 224 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  6419  Entry getInterfaceFileSummaryDetailsByIdAndName.. Started at --> Thu Apr 30 18:45:17 IST 2020
+Apr 30, 2020 6:45:17 PM com.enhancesys.common.logger
+FINE: [Thread]: 224 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  6455  Exit getInterfaceFileSummaryDetailsByIdAndName service at -->Thu Apr 30 18:45:17 IST 2020 --- and took 8 milliseconds
+Apr 30, 2020 6:45:17 PM com.enhancesys.common.logger
+FINE: [Thread]: 224 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  10760  Entry decompressGzipFile.. Started at --> Thu Apr 30 18:45:17 IST 2020
+Apr 30, 2020 6:45:17 PM com.enhancesys.common.logger
+FINE: [Thread]: 224 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  10770  decompressGzipFile service received gzipFile Name-->/home/appuser/interfaces/S-NOC/interfaces/master_file/secondary_mobo/secondary_mobo_20200430_003.ctl.gznewFile Name -->/home/appuser/interfaces/S-NOC/interfaces/master_file/secondary_mobo/secondary_mobo_20200430_003.ctl
+Apr 30, 2020 6:45:17 PM com.enhancesys.common.logger
+FINE: [Thread]: 224 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  10814  Exit decompressGzipFile service at -->Thu Apr 30 18:45:17 IST 2020 --- and took 1 milliseconds
+Apr 30, 2020 6:45:17 PM com.enhancesys.common.logger
+FINE: [Thread]: 224 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  6078  actualFileName ::::::::::secondary_mobo_20200430_003.csv.gz
+Apr 30, 2020 6:45:17 PM com.enhancesys.common.logger
+FINE: [Thread]: 224 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  6419  Entry getInterfaceFileSummaryDetailsByIdAndName.. Started at --> Thu Apr 30 18:45:17 IST 2020
+Apr 30, 2020 6:45:17 PM com.enhancesys.common.logger
+FINE: [Thread]: 224 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  6455  Exit getInterfaceFileSummaryDetailsByIdAndName service at -->Thu Apr 30 18:45:17 IST 2020 --- and took 7 milliseconds
+Apr 30, 2020 6:45:17 PM com.enhancesys.common.logger
+FINE: [Thread]: 224 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  10760  Entry decompressGzipFile.. Started at --> Thu Apr 30 18:45:17 IST 2020
+Apr 30, 2020 6:45:17 PM com.enhancesys.common.logger
+FINE: [Thread]: 224 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  10770  decompressGzipFile service received gzipFile Name-->/home/appuser/interfaces/S-NOC/interfaces/master_file/secondary_mobo/secondary_mobo_20200430_003.csv.gznewFile Name -->/home/appuser/interfaces/S-NOC/interfaces/master_file/secondary_mobo/secondary_mobo_20200430_003.csv
+Apr 30, 2020 6:45:17 PM com.enhancesys.common.logger
+FINE: [Thread]: 224 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  10814  Exit decompressGzipFile service at -->Thu Apr 30 18:45:17 IST 2020 --- and took 3 milliseconds
+Apr 30, 2020 6:45:17 PM com.enhancesys.common.logger
+FINE: [Thread]: 224 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  8140  Entry createInterfaceFileSummary.. Started at --> Thu Apr 30 18:45:17 IST 2020
+Apr 30, 2020 6:45:17 PM com.enhancesys.common.logger
+FINE: [Thread]: 224 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  8153  createInterfaceFileSummary service received interfaceFileSummary for file id-->null
+Apr 30, 2020 6:45:17 PM com.enhancesys.common.logger
+FINE: [Thread]: 224 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  8228  Exit createInterfaceFileSummary service at -->Thu Apr 30 18:45:17 IST 2020 --- and took 27 milliseconds
+Apr 30, 2020 6:45:17 PM com.enhancesys.common.logger
+FINE: [Thread]: 224 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  6327  sftp Channel exited..
+Apr 30, 2020 6:45:17 PM com.enhancesys.common.logger
+FINE: [Thread]: 224 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  6333  Channel disconnected..
+Apr 30, 2020 6:45:17 PM com.enhancesys.common.logger
+FINE: [Thread]: 224 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  6339  Host Session disconnected..
+Apr 30, 2020 6:45:17 PM com.enhancesys.common.logger
+FINE: [Thread]: 224 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  6344  Exit receiveFile service at -->Thu Apr 30 18:45:17 IST 2020 --- and took 662 milliseconds
+Apr 30, 2020 6:45:17 PM com.enhancesys.common.logger
+FINE: [Thread]: 224 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  6809  Completed processFile.. 1153 Service at --> Thu Apr 30 18:45:17 IST 2020 --- and took 698 milliseconds
+Apr 30, 2020 6:45:17 PM com.enhancesys.common.logger
+FINE: [Thread]: 224 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  6845  Exit processFile : InterfaceIds ::  [1153] and took 710 milliseconds

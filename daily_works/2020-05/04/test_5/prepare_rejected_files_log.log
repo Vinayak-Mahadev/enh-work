@@ -1,0 +1,73 @@
+FINE: [Thread]: 218 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  3286  Exit processReceivedFiles service : InterfaceId :: 1153  at --> Mon May 04 18:14:02 IST 2020 and took 2650 milliseconds
+May 04, 2020 6:14:40 PM com.enhancesys.common.logger
+FINE: [Thread]: 219 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  10584  Entry prepareRejectionFile.. 1153 Started at --> Mon May 04 18:14:40 IST 2020
+May 04, 2020 6:14:40 PM com.enhancesys.common.logger
+INFO: [Thread]: 219 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  10593  prepareRejectionFile service received interface id-->1153
+May 04, 2020 6:14:40 PM com.enhancesys.common.logger
+FINE: [Thread]: 219 [ClassName]: com.enhancesys.integration.services.rejection.DWHRejectionFilePreparation [LineNumber]:  101  Entry DWH prepareRejectionFile.. Start time :: Mon May 04 18:14:40 IST 2020
+May 04, 2020 6:14:40 PM com.enhancesys.common.logger
+FINE: [Thread]: 219 [ClassName]: com.enhancesys.integration.services.rejection.DWHRejectionFilePreparation [LineNumber]:  143  interfaces : 1153
+May 04, 2020 6:14:40 PM com.enhancesys.common.logger
+FINE: [Thread]: 219 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  7748  Entry getInterfaceFileSummaryByInterfaceIdAndStatus.. Started at --> Mon May 04 18:14:40 IST 2020
+May 04, 2020 6:14:40 PM com.enhancesys.common.logger
+FINE: [Thread]: 219 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  7757  getInterfaceFileSummaryByInterfaceIdAndStatus service received interface id-->1153statusId-->1323
+May 04, 2020 6:14:40 PM com.enhancesys.common.logger
+FINE: [Thread]: 219 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  7807  Exit getInterfaceFileSummaryByInterfaceIdAndStatus service at -->Mon May 04 18:14:40 IST 2020 --- and took 21 milliseconds
+May 04, 2020 6:14:40 PM com.enhancesys.common.logger
+FINE: [Thread]: 219 [ClassName]: com.enhancesys.integration.services.rejection.DWHRejectionFilePreparation [LineNumber]:  174  interfaceFileSummaryList size : 7
+May 04, 2020 6:14:40 PM com.enhancesys.common.logger
+FINE: [Thread]: 219 [ClassName]: com.enhancesys.integration.services.rejection.DWHRejectionFilePreparation [LineNumber]:  423  Entry createFileSummaryDetails.. Mon May 04 18:14:40 IST 2020
+May 04, 2020 6:14:40 PM com.enhancesys.common.logger
+FINE: [Thread]: 219 [ClassName]: com.enhancesys.integration.services.rejection.DWHRejectionFilePreparation [LineNumber]:  466  Exit createFileSummaryDetails.. Mon May 04 18:14:40 IST 2020 --- and took 59 milliseconds
+May 04, 2020 6:14:40 PM com.enhancesys.common.logger
+FINE: [Thread]: 219 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  7587  Entry createControlFile.. Started at --> Mon May 04 18:14:40 IST 2020
+May 04, 2020 6:14:40 PM com.enhancesys.common.logger
+FINE: [Thread]: 219 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  7602  createControlFile service received filePath	-->/home/appuser/interfaces/S-NOC/interfaces/rejected_file/secondary_mobo/secondary_mobo_20200504_008.csvtotalCount-->1fileName-->secondary_mobo_20200504_008fileFormat-->csvcurrentFileId-->10973contolFileFormat-->ctlcontolFilePath-->/home/appuser/interfaces/S-NOC/interfaces/rejected_file/secondary_mobo/
+May 04, 2020 6:14:40 PM com.enhancesys.common.logger
+FINE: [Thread]: 219 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  8057  updateInterfaceFileSummaryDetails service received interfaceFileSummaryDetails object for file details id-->10973
+May 04, 2020 6:14:40 PM com.enhancesys.common.logger
+FINE: [Thread]: 219 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  7666  Exit control file creation service at -->Mon May 04 18:14:40 IST 2020 --- and took 57 milliseconds
+May 04, 2020 6:14:40 PM com.enhancesys.common.logger
+FINE: [Thread]: 219 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  11691  Entry getInterfaceFileSummaryDetailsById..
+May 04, 2020 6:14:40 PM com.enhancesys.common.logger
+FINE: [Thread]: 219 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  11731  Exit getInterfaceFileSummaryDetailsById..
+May 04, 2020 6:14:40 PM com.enhancesys.common.logger
+FINE: [Thread]: 219 [ClassName]: com.enhancesys.integration.services.rejection.DWHRejectionFilePreparation [LineNumber]:  261  fileSummaryDetailsList : secondary_mobo_20200504_008.ctl
+May 04, 2020 6:14:40 PM com.enhancesys.common.logger
+FINE: [Thread]: 219 [ClassName]: com.enhancesys.integration.services.util.Utility [LineNumber]:  276  Entry backupFile..
+May 04, 2020 6:14:40 PM com.enhancesys.common.logger
+FINE: [Thread]: 219 [ClassName]: com.enhancesys.integration.services.util.Utility [LineNumber]:  320  Exit backupFile..
+May 04, 2020 6:14:40 PM com.enhancesys.common.logger
+FINE: [Thread]: 219 [ClassName]: com.enhancesys.integration.services.util.Utility [LineNumber]:  437  Entry compressGzipFile.. Started at --> Mon May 04 18:14:40 IST 2020
+May 04, 2020 6:14:40 PM com.enhancesys.common.logger
+FINE: [Thread]: 219 [ClassName]: com.enhancesys.integration.services.util.Utility [LineNumber]:  447  compressGzipFile service received gzipFile Name-->/home/appuser/interfaces/S-NOC/interfaces/backup/rejected_file/secondary_mobo/secondary_mobo_20200504_008.csv.gzfile Name -->/home/appuser/interfaces/S-NOC/interfaces/backup/rejected_file/secondary_mobo/secondary_mobo_20200504_008.csv
+May 04, 2020 6:14:40 PM com.enhancesys.common.logger
+FINE: [Thread]: 219 [ClassName]: com.enhancesys.integration.services.util.Utility [LineNumber]:  486  Exit compressGzipFile service at -->Mon May 04 18:14:40 IST 2020 --- and took 2 milliseconds
+May 04, 2020 6:14:40 PM com.enhancesys.common.logger
+FINE: [Thread]: 219 [ClassName]: com.enhancesys.integration.services.util.Utility [LineNumber]:  276  Entry backupFile..
+May 04, 2020 6:14:40 PM com.enhancesys.common.logger
+FINE: [Thread]: 219 [ClassName]: com.enhancesys.integration.services.util.Utility [LineNumber]:  320  Exit backupFile..
+May 04, 2020 6:14:40 PM com.enhancesys.common.logger
+FINE: [Thread]: 219 [ClassName]: com.enhancesys.integration.services.util.Utility [LineNumber]:  437  Entry compressGzipFile.. Started at --> Mon May 04 18:14:40 IST 2020
+May 04, 2020 6:14:40 PM com.enhancesys.common.logger
+FINE: [Thread]: 219 [ClassName]: com.enhancesys.integration.services.util.Utility [LineNumber]:  447  compressGzipFile service received gzipFile Name-->/home/appuser/interfaces/S-NOC/interfaces/backup/rejected_file/secondary_mobo/secondary_mobo_20200504_008.ctl.gzfile Name -->/home/appuser/interfaces/S-NOC/interfaces/backup/rejected_file/secondary_mobo/secondary_mobo_20200504_008.ctl
+May 04, 2020 6:14:40 PM com.enhancesys.common.logger
+FINE: [Thread]: 219 [ClassName]: com.enhancesys.integration.services.util.Utility [LineNumber]:  486  Exit compressGzipFile service at -->Mon May 04 18:14:40 IST 2020 --- and took 2 milliseconds
+May 04, 2020 6:14:40 PM com.enhancesys.common.logger
+FINE: [Thread]: 219 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  7942  total count-->5File ID : 10695
+May 04, 2020 6:14:40 PM com.enhancesys.common.logger
+FINE: [Thread]: 219 [ClassName]: com.enhancesys.integration.services.util.IntegrationUtilManagementImpl [LineNumber]:  203  Entry prepareNotificationJsonData.. Started at --> Mon May 04 18:14:40 IST 2020
+May 04, 2020 6:14:40 PM com.enhancesys.common.logger
+FINE: [Thread]: 219 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  11270  Entry getInterfaceNotificationByInterfaceIdAndScenario.. Started at --> Mon May 04 18:14:40 IST 2020
+May 04, 2020 6:14:40 PM com.enhancesys.common.logger
+FINE: [Thread]: 219 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  11279  getInterfaceNotificationByInterfaceIdAndScenario service received interface id-->1153,scenario-->FILE_REJECTED_PART_0
+May 04, 2020 6:14:40 PM com.enhancesys.common.logger
+FINE: [Thread]: 219 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  11320  Exit GetInterfaceNotificationByInterfaceIdAndScenario service at -->Mon May 04 18:14:40 IST 2020 --- and took 11 milliseconds
+May 04, 2020 6:14:40 PM com.enhancesys.common.logger
+FINE: [Thread]: 219 [ClassName]: com.enhancesys.integration.services.util.IntegrationUtilManagementImpl [LineNumber]:  249  Notification id not configured for 1153with active status
+May 04, 2020 6:14:40 PM com.enhancesys.common.logger
+FINE: [Thread]: 219 [ClassName]: com.enhancesys.integration.services.util.IntegrationUtilManagementImpl [LineNumber]:  268  Exit prepareNotificationJsonData service at -->Mon May 04 18:14:40 IST 2020 --- and took 14 milliseconds
+May 04, 2020 6:14:40 PM com.enhancesys.common.logger
+FINE: [Thread]: 219 [ClassName]: com.enhancesys.integration.services.rejection.DWHRejectionFilePreparation [LineNumber]:  400  Exit prepareRejectionFile.. ::Mon May 04 18:14:40 IST 2020 --- and took 263 milliseconds
+May 04, 2020 6:14:40 PM com.enhancesys.common.logger
+FINE: [Thread]: 219 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  10651  Exit prepareRejectionFile service : InterfaceId :: 1153  at --> Mon May 04 18:14:40 IST 2020 and took 276 milliseconds

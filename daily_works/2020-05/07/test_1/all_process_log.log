@@ -1,0 +1,238 @@
+May 07, 2020 1:05:59 AM com.enhancesys.common.logger
+FINE: [Thread]: 238 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  6673  Entry processFile : InterfaceIds ::  [1166] Started at --> Thu May 07 01:05:59 IST 2020
+May 07, 2020 1:05:59 AM com.enhancesys.common.logger
+FINE: [Thread]: 238 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  6693  processFile service received interface id-->[1166]
+May 07, 2020 1:05:59 AM com.enhancesys.common.logger
+FINE: [Thread]: 238 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  6713  Entry processFile.. 1166 Started at --> Thu May 07 01:05:59 IST 2020
+May 07, 2020 1:05:59 AM com.enhancesys.common.logger
+FINE: [Thread]: 238 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  9468  Entry readFilePropertyBeans.. Started at --> Thu May 07 01:05:59 IST 2020
+May 07, 2020 1:05:59 AM com.enhancesys.common.logger
+FINE: [Thread]: 238 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  9482  readFilePropertyBeans service received interface id-->1166
+May 07, 2020 1:06:00 AM com.enhancesys.common.logger
+FINE: [Thread]: 238 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  10292  Exit readFilePropertyBeans service at -->Thu May 07 01:06:00 IST 2020 --- and took 36 milliseconds
+May 07, 2020 1:06:00 AM com.enhancesys.common.logger
+FINE: [Thread]: 238 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  5886  Entry receiveFile.. Started at --> Thu May 07 01:06:00 IST 2020
+May 07, 2020 1:06:00 AM com.enhancesys.common.logger
+FINE: [Thread]: 238 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  5971  multipleMap ::::::::::::{mobii_daily_sso_bi=[-rw-rw-r--    1 appuser  appuser       105 May  7 01:24 mobii_daily_sso_bi_20200506_005.ctl.gz]}
+May 07, 2020 1:06:00 AM com.enhancesys.common.logger
+FINE: [Thread]: 238 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  6009  firstFileName :::;mobii_daily_sso_bi
+May 07, 2020 1:06:00 AM com.enhancesys.common.logger
+FINE: [Thread]: 238 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  6010  secondFileName :::;null
+May 07, 2020 1:06:00 AM com.enhancesys.common.logger
+FINE: [Thread]: 238 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  6011  size :::::::::1
+May 07, 2020 1:06:00 AM com.enhancesys.common.logger
+FINE: [Thread]: 238 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  6023  remoteFileName ::::::::::mobii_daily_sso_bi_20200506_005.ctl.gz
+May 07, 2020 1:06:00 AM com.enhancesys.common.logger
+FINE: [Thread]: 238 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  6419  Entry getInterfaceFileSummaryDetailsByIdAndName.. Started at --> Thu May 07 01:06:00 IST 2020
+May 07, 2020 1:06:00 AM com.enhancesys.common.logger
+FINE: [Thread]: 238 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  6455  Exit getInterfaceFileSummaryDetailsByIdAndName service at -->Thu May 07 01:06:00 IST 2020 --- and took 9 milliseconds
+May 07, 2020 1:06:00 AM com.enhancesys.common.logger
+FINE: [Thread]: 238 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  10760  Entry decompressGzipFile.. Started at --> Thu May 07 01:06:00 IST 2020
+May 07, 2020 1:06:00 AM com.enhancesys.common.logger
+FINE: [Thread]: 238 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  10770  decompressGzipFile service received gzipFile Name-->/home/appuser/snoc/interfaces/S-NOC/interfaces/master_file/mobii_daily_sso_bi/mobii_daily_sso_bi_20200506_005.ctl.gznewFile Name -->/home/appuser/snoc/interfaces/S-NOC/interfaces/master_file/mobii_daily_sso_bi/mobii_daily_sso_bi_20200506_005.ctl
+May 07, 2020 1:06:00 AM com.enhancesys.common.logger
+FINE: [Thread]: 238 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  10814  Exit decompressGzipFile service at -->Thu May 07 01:06:00 IST 2020 --- and took 1 milliseconds
+May 07, 2020 1:06:00 AM com.enhancesys.common.logger
+FINE: [Thread]: 238 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  6078  actualFileName ::::::::::mobii_daily_sso_bi_20200506_005.csv.gz
+May 07, 2020 1:06:00 AM com.enhancesys.common.logger
+FINE: [Thread]: 238 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  6419  Entry getInterfaceFileSummaryDetailsByIdAndName.. Started at --> Thu May 07 01:06:00 IST 2020
+May 07, 2020 1:06:00 AM com.enhancesys.common.logger
+FINE: [Thread]: 238 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  6455  Exit getInterfaceFileSummaryDetailsByIdAndName service at -->Thu May 07 01:06:00 IST 2020 --- and took 7 milliseconds
+May 07, 2020 1:06:00 AM com.enhancesys.common.logger
+FINE: [Thread]: 238 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  10760  Entry decompressGzipFile.. Started at --> Thu May 07 01:06:00 IST 2020
+May 07, 2020 1:06:00 AM com.enhancesys.common.logger
+FINE: [Thread]: 238 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  10770  decompressGzipFile service received gzipFile Name-->/home/appuser/snoc/interfaces/S-NOC/interfaces/master_file/mobii_daily_sso_bi/mobii_daily_sso_bi_20200506_005.csv.gznewFile Name -->/home/appuser/snoc/interfaces/S-NOC/interfaces/master_file/mobii_daily_sso_bi/mobii_daily_sso_bi_20200506_005.csv
+May 07, 2020 1:06:00 AM com.enhancesys.common.logger
+FINE: [Thread]: 238 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  10814  Exit decompressGzipFile service at -->Thu May 07 01:06:00 IST 2020 --- and took 1 milliseconds
+May 07, 2020 1:06:00 AM com.enhancesys.common.logger
+FINE: [Thread]: 238 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  8140  Entry createInterfaceFileSummary.. Started at --> Thu May 07 01:06:00 IST 2020
+May 07, 2020 1:06:00 AM com.enhancesys.common.logger
+FINE: [Thread]: 238 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  8153  createInterfaceFileSummary service received interfaceFileSummary for file id-->null
+May 07, 2020 1:06:00 AM com.enhancesys.common.logger
+FINE: [Thread]: 238 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  8228  Exit createInterfaceFileSummary service at -->Thu May 07 01:06:00 IST 2020 --- and took 27 milliseconds
+May 07, 2020 1:06:00 AM com.enhancesys.common.logger
+FINE: [Thread]: 238 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  6327  sftp Channel exited..
+May 07, 2020 1:06:00 AM com.enhancesys.common.logger
+FINE: [Thread]: 238 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  6333  Channel disconnected..
+May 07, 2020 1:06:00 AM com.enhancesys.common.logger
+FINE: [Thread]: 238 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  6339  Host Session disconnected..
+May 07, 2020 1:06:00 AM com.enhancesys.common.logger
+FINE: [Thread]: 238 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  6344  Exit receiveFile service at -->Thu May 07 01:06:00 IST 2020 --- and took 839 milliseconds
+May 07, 2020 1:06:00 AM com.enhancesys.common.logger
+FINE: [Thread]: 238 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  6809  Completed processFile.. 1166 Service at --> Thu May 07 01:06:00 IST 2020 --- and took 877 milliseconds
+May 07, 2020 1:06:00 AM com.enhancesys.common.logger
+FINE: [Thread]: 238 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  6845  Exit processFile : InterfaceIds ::  [1166] and took 885 milliseconds
+May 07, 2020 1:06:25 AM com.enhancesys.common.logger
+FINE: [Thread]: 218 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  2779  Entry processReceivedFiles : interfaceId :: 1166
+May 07, 2020 1:06:25 AM com.enhancesys.common.logger
+FINE: [Thread]: 218 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  7748  Entry getInterfaceFileSummaryByInterfaceIdAndStatus.. Started at --> Thu May 07 01:06:25 IST 2020
+May 07, 2020 1:06:25 AM com.enhancesys.common.logger
+FINE: [Thread]: 218 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  7757  getInterfaceFileSummaryByInterfaceIdAndStatus service received interface id-->1166statusId-->1321
+May 07, 2020 1:06:25 AM com.enhancesys.common.logger
+FINE: [Thread]: 218 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  7807  Exit getInterfaceFileSummaryByInterfaceIdAndStatus service at -->Thu May 07 01:06:25 IST 2020 --- and took 12 milliseconds
+May 07, 2020 1:06:25 AM com.enhancesys.common.logger
+FINE: [Thread]: 218 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  10342  Entry getEncodedKey.. Started at --> Thu May 07 01:06:25 IST 2020
+May 07, 2020 1:06:25 AM com.enhancesys.common.logger
+FINE: [Thread]: 218 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  10349  getEncodedKey service received file-->/home/appuser/snoc/interfaces/S-NOC/interfaces/master_file/mobii_daily_sso_bi/mobii_daily_sso_bi_20200506_005.csv
+May 07, 2020 1:06:25 AM com.enhancesys.common.logger
+FINE: [Thread]: 218 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  10386  Exit getEncodedKey service at -->Thu May 07 01:06:25 IST 2020 --- and took 2 milliseconds
+May 07, 2020 1:06:25 AM com.enhancesys.common.logger
+FINE: [Thread]: 218 [ClassName]: com.enhancesys.integration.services.merger.GenericFileProcessor [LineNumber]:  36  GenericFileProcessor initiated at Thu May 07 01:06:25 IST 2020, interfaceId : 1166 file Id : 10727
+May 07, 2020 1:06:25 AM com.enhancesys.common.logger
+FINE: [Thread]: 218 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  9468  Entry readFilePropertyBeans.. Started at --> Thu May 07 01:06:25 IST 2020
+May 07, 2020 1:06:25 AM com.enhancesys.common.logger
+FINE: [Thread]: 218 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  9482  readFilePropertyBeans service received interface id-->1166
+May 07, 2020 1:06:25 AM com.enhancesys.common.logger
+FINE: [Thread]: 218 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  10292  Exit readFilePropertyBeans service at -->Thu May 07 01:06:25 IST 2020 --- and took 11 milliseconds
+May 07, 2020 1:06:25 AM com.enhancesys.common.logger
+FINE: [Thread]: 218 [ClassName]: com.enhancesys.integration.services.springCamel.FileProcessor [LineNumber]:  65  Entry initiateProcess..
+May 07, 2020 1:06:27 AM com.enhancesys.common.logger
+FINE: [Thread]: 218 [ClassName]: com.enhancesys.integration.services.springCamel.FileProcessor [LineNumber]:  77  Spring App Context : org.springframework.context.support.FileSystemXmlApplicationContext@70d4c459: startup date [Thu May 07 01:06:25 IST 2020]; root of context hierarchy
+May 07, 2020 1:06:27 AM com.enhancesys.common.logger
+FINE: [Thread]: 218 [ClassName]: com.enhancesys.integration.services.springCamel.FileProcessor [LineNumber]:  80  Camel Context : SpringCamelContext(interfaceCamelContext) with spring id org.springframework.context.support.FileSystemXmlApplicationContext@70d4c459
+May 07, 2020 1:06:27 AM com.enhancesys.common.logger
+FINE: [Thread]: 218 [ClassName]: com.enhancesys.integration.services.springCamel.FileProcessor [LineNumber]:  107  End Point : direct://generic_file_processor
+May 07, 2020 1:06:27 AM com.enhancesys.common.logger
+FINE: [Thread]: 218 [ClassName]: com.enhancesys.integration.services.springCamel.processor.FilePreProcessor [LineNumber]:  68  Entry process.. 
+May 07, 2020 1:06:27 AM com.enhancesys.common.logger
+FINE: [Thread]: 218 [ClassName]: com.enhancesys.integration.services.springCamel.processor.FilePreProcessor [LineNumber]:  76  paramMap : {fileId=10727, fileDataBean=com.enhancesys.integration.services.interfaces.FileDataBean@674b1088, interfaceId=1166}
+May 07, 2020 1:06:27 AM com.enhancesys.common.logger
+FINE: [Thread]: 218 [ClassName]: com.enhancesys.integration.services.springCamel.processor.FilePreProcessor [LineNumber]:  94  Exit process.. 
+May 07, 2020 1:06:27 AM com.enhancesys.common.logger
+FINE: [Thread]: 254 [ClassName]: com.enhancesys.integration.services.springCamel.AbstractFileProcessor [LineNumber]:  149  Entry initiateProcess..1166
+May 07, 2020 1:06:27 AM com.enhancesys.common.logger
+FINE: [Thread]: 253 [ClassName]: com.enhancesys.integration.services.springCamel.AbstractFileProcessor [LineNumber]:  149  Entry initiateProcess..1166
+May 07, 2020 1:06:27 AM com.enhancesys.common.logger
+FINE: [Thread]: 253 [ClassName]: com.enhancesys.integration.services.springCamel.AbstractFileProcessor [LineNumber]:  169  com.enhancesys.integration.services.springCamel.InterfaceFileReader : Thread ID : 256
+May 07, 2020 1:06:27 AM com.enhancesys.common.logger
+FINE: [Thread]: 254 [ClassName]: com.enhancesys.integration.services.springCamel.AbstractFileProcessor [LineNumber]:  169  com.enhancesys.integration.services.springCamel.KPIAggregator : Thread ID : 257
+May 07, 2020 1:06:27 AM com.enhancesys.common.logger
+FINE: [Thread]: 256 [ClassName]: com.enhancesys.integration.services.springCamel.InterfaceFileReader [LineNumber]:  79  Interface File Reading com.enhancesys.integration.services.springCamel.InterfaceFileReader_1588793787334 initiated at Thu May 07 01:06:27 IST 2020, interfaceId : 1166 file Id : 10727
+May 07, 2020 1:06:27 AM com.enhancesys.common.logger
+FINE: [Thread]: 257 [ClassName]: com.enhancesys.integration.services.springCamel.KPIAggregator [LineNumber]:  78  KPIAggregator  thread com.enhancesys.integration.services.springCamel.KPIAggregator_1588793787334initiated at Thu May 07 01:06:27 IST 2020, interfaceId : 1166 file Id : 10727
+May 07, 2020 1:06:27 AM com.enhancesys.common.logger
+FINE: [Thread]: 256 [ClassName]: com.enhancesys.integration.services.springCamel.InterfaceFileReader [LineNumber]:  246  fieldLookupConf :: { "process_enabled" : true , "fields" : { "actor_field" : "ID_OUTLET" , "metric_field" : "" , "source_field" : "SITE_ID" , "instance_field" : ""} , "error_codes" : { "actor_field" : "60101" , "metric_field" : "" , "source_field" : "60301" , "instance_field" : ""} , "table_name" : "tr_temp_mobii_daily_sso_aggr" , "lookup_query" : "" , "notexist_lookup" : "" , "no_of_params" : { } , "daily_table" : "tr_daily_mobii_daily_sso_aggr" , "monthly_table" : "tr_monthly_mobii_daily_sso_aggr" , "no_of_join_query_params" : 1 , "no_of_daily_join_queries" : 1 , "no_of_monthly_join_queries" : 1 , "duplicate_validation_conf" : { "field_indexes" : [ 0 , 2 , 3] , "schema_name" : "kpi" , "table_name" : "tr_temp_mobii_daily_sso_validation"}}
+May 07, 2020 1:06:27 AM com.enhancesys.common.logger
+FINE: [Thread]: 257 [ClassName]: com.enhancesys.integration.services.springCamel.KPIAggregator [LineNumber]:  89  Output Queue is null..
+May 07, 2020 1:06:27 AM com.enhancesys.common.logger
+FINE: [Thread]: 256 [ClassName]: com.enhancesys.integration.services.springCamel.InterfaceFileReader [LineNumber]:  364  actorConfig : {1=[{"actor_type_n":10,"actor_key_v":"ID OUTLET"}]}
+May 07, 2020 1:06:27 AM com.enhancesys.common.logger
+FINE: [Thread]: 256 [ClassName]: com.enhancesys.integration.services.springCamel.InterfaceFileReader [LineNumber]:  419  metricConfig :: {1=[{"data_flag_n":0,"metrics_id_n":[113],"metric_key_v":"ORGANIZATION_ID","metrics_type_n":21,"selection_v":"Fixed"}]}
+May 07, 2020 1:06:27 AM com.enhancesys.common.logger
+FINE: [Thread]: 256 [ClassName]: com.enhancesys.integration.services.springCamel.InterfaceFileReader [LineNumber]:  453  dimensionConfig :: {1=[{"correction_v":"Update","dimension_v":"QTY","sequence_n":1},{"correction_v":"Update","dimension_v":"AMOUNT","sequence_n":2}]}
+May 07, 2020 1:06:27 AM com.enhancesys.common.logger
+FINE: [Thread]: 256 [ClassName]: com.enhancesys.integration.services.springCamel.InterfaceFileReader [LineNumber]:  503  crossSellFlagAttr :: null
+May 07, 2020 1:06:27 AM com.enhancesys.common.logger
+FINE: [Thread]: 256 [ClassName]: com.enhancesys.integration.services.springCamel.InterfaceFileReader [LineNumber]:  504  crossSellingFlag :: false
+May 07, 2020 1:06:27 AM com.enhancesys.common.logger
+FINE: [Thread]: 256 [ClassName]: com.enhancesys.integration.services.springCamel.InterfaceFileReader [LineNumber]:  505  crossSellingObj :: null
+May 07, 2020 1:06:27 AM com.enhancesys.common.logger
+FINE: [Thread]: 256 [ClassName]: com.enhancesys.integration.services.springCamel.InterfaceFileReader [LineNumber]:  532  Moving Actual File to Backup Directory...
+May 07, 2020 1:06:27 AM com.enhancesys.common.logger
+FINE: [Thread]: 256 [ClassName]: com.enhancesys.integration.services.util.Utility [LineNumber]:  276  Entry backupFile..
+May 07, 2020 1:06:27 AM com.enhancesys.common.logger
+FINE: [Thread]: 256 [ClassName]: com.enhancesys.integration.services.util.Utility [LineNumber]:  320  Exit backupFile..
+May 07, 2020 1:06:27 AM com.enhancesys.common.logger
+FINE: [Thread]: 256 [ClassName]: com.enhancesys.integration.services.springCamel.InterfaceFileReader [LineNumber]:  540  Moving Ctl file to backup dir...
+May 07, 2020 1:06:27 AM com.enhancesys.common.logger
+FINE: [Thread]: 256 [ClassName]: com.enhancesys.integration.services.util.Utility [LineNumber]:  276  Entry backupFile..
+May 07, 2020 1:06:27 AM com.enhancesys.common.logger
+FINE: [Thread]: 256 [ClassName]: com.enhancesys.integration.services.util.Utility [LineNumber]:  320  Exit backupFile..
+May 07, 2020 1:06:27 AM com.enhancesys.common.logger
+FINE: [Thread]: 256 [ClassName]: com.enhancesys.integration.services.springCamel.InterfaceFileReader [LineNumber]:  561  File Reading and Data Insertion started. . . 
+May 07, 2020 1:06:27 AM com.enhancesys.common.logger
+FINE: [Thread]: 256 [ClassName]: com.enhancesys.integration.services.springCamel.InterfaceFileReader [LineNumber]:  1942  Exception :: JSONObject["actor_index"] not found.
+May 07, 2020 1:06:27 AM com.enhancesys.common.logger
+FINE: [Thread]: 256 [ClassName]: com.enhancesys.integration.services.springCamel.InterfaceFileReader [LineNumber]:  1950  Failure..
+May 07, 2020 1:06:27 AM com.enhancesys.common.logger
+FINE: [Thread]: 256 [ClassName]: com.enhancesys.integration.services.springCamel.InterfaceFileReader [LineNumber]:  1942  Exception :: JSONObject["actor_index"] not found.
+May 07, 2020 1:06:27 AM com.enhancesys.common.logger
+FINE: [Thread]: 256 [ClassName]: com.enhancesys.integration.services.springCamel.InterfaceFileReader [LineNumber]:  1950  Failure..
+May 07, 2020 1:06:27 AM com.enhancesys.common.logger
+FINE: [Thread]: 256 [ClassName]: com.enhancesys.integration.services.springCamel.InterfaceFileReader [LineNumber]:  1942  Exception :: JSONObject["actor_index"] not found.
+May 07, 2020 1:06:27 AM com.enhancesys.common.logger
+FINE: [Thread]: 256 [ClassName]: com.enhancesys.integration.services.springCamel.InterfaceFileReader [LineNumber]:  1950  Failure..
+May 07, 2020 1:06:27 AM com.enhancesys.common.logger
+FINE: [Thread]: 256 [ClassName]: com.enhancesys.integration.services.springCamel.InterfaceFileReader [LineNumber]:  1942  Exception :: JSONObject["actor_index"] not found.
+May 07, 2020 1:06:27 AM com.enhancesys.common.logger
+FINE: [Thread]: 256 [ClassName]: com.enhancesys.integration.services.springCamel.InterfaceFileReader [LineNumber]:  1950  Failure..
+May 07, 2020 1:06:27 AM com.enhancesys.common.logger
+FINE: [Thread]: 256 [ClassName]: com.enhancesys.integration.services.springCamel.InterfaceFileReader [LineNumber]:  2000  Data Inserted and File Reading Completed in 53 ms
+May 07, 2020 1:06:27 AM com.enhancesys.common.logger
+FINE: [Thread]: 256 [ClassName]: com.enhancesys.integration.services.springCamel.InterfaceFileReader [LineNumber]:  2087  Starting Join Query
+May 07, 2020 1:06:27 AM com.enhancesys.common.logger
+FINE: [Thread]: 256 [ClassName]: com.enhancesys.integration.services.springCamel.InterfaceFileReader [LineNumber]:  2395  Monthly Aggregation completed..
+May 07, 2020 1:06:27 AM com.enhancesys.common.logger
+INFO: [Thread]: 256 [ClassName]: com.enhancesys.integration.services.springCamel.InterfaceFileReader [LineNumber]:  3101  Sent empty FileDataBean to the next level
+May 07, 2020 1:06:27 AM com.enhancesys.common.logger
+FINE: [Thread]: 256 [ClassName]: com.enhancesys.integration.services.util.InterfaceServiceUtil [LineNumber]:  926  1 Rows Updated in Interface File Summary..
+May 07, 2020 1:06:27 AM com.enhancesys.common.logger
+FINE: [Thread]: 256 [ClassName]: com.enhancesys.integration.services.springCamel.InterfaceFileReader [LineNumber]:  2905  Deleted row count from temp table :: 0
+May 07, 2020 1:06:27 AM com.enhancesys.common.logger
+FINE: [Thread]: 256 [ClassName]: com.enhancesys.integration.services.springCamel.InterfaceFileReader [LineNumber]:  2906  File Reading completed in :157
+May 07, 2020 1:06:27 AM com.enhancesys.common.logger
+FINE: [Thread]: 256 [ClassName]: com.enhancesys.integration.services.springCamel.InterfaceFileReader [LineNumber]:  3076  Interface File Reading com.enhancesys.integration.services.springCamel.InterfaceFileReader_1588793787334 completed at Thu May 07 01:06:27 IST 2020, interfaceId : 1166 file Id : 10727 and took 157 milli seconds
+May 07, 2020 1:06:27 AM com.enhancesys.common.logger
+FINE: [Thread]: 253 [ClassName]: com.enhancesys.integration.services.springCamel.AbstractFileProcessor [LineNumber]:  191  Exit initiateProcess..1166
+May 07, 2020 1:06:28 AM com.enhancesys.common.logger
+INFO: [Thread]: 257 [ClassName]: com.enhancesys.integration.services.springCamel.KPIAggregator [LineNumber]:  719  KPI Aggregation 1166 completed in 1060 ms
+May 07, 2020 1:06:28 AM com.enhancesys.common.logger
+FINE: [Thread]: 254 [ClassName]: com.enhancesys.integration.services.springCamel.AbstractFileProcessor [LineNumber]:  191  Exit initiateProcess..1166
+May 07, 2020 1:06:28 AM com.enhancesys.common.logger
+FINE: [Thread]: 218 [ClassName]: com.enhancesys.integration.services.springCamel.FileProcessor [LineNumber]:  130  Exit initiateProcess..
+May 07, 2020 1:06:28 AM com.enhancesys.common.logger
+FINE: [Thread]: 218 [ClassName]: com.enhancesys.integration.services.merger.GenericFileProcessor [LineNumber]:  75  GenericFileProcessor completed at Thu May 07 01:06:28 IST 2020, interfaceId : 1166 file Id : 10727 and took 2580 milli seconds
+May 07, 2020 1:06:28 AM com.enhancesys.common.logger
+FINE: [Thread]: 218 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  3152  Inside ... interfaceFileSummaryDetails.getFileName() :: mobii_daily_sso_bi_20200506_005.csv
+May 07, 2020 1:06:28 AM com.enhancesys.common.logger
+FINE: [Thread]: 218 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  3153  localServerjsonObject :: {"CtlBkpDir":"\/home\/appuser\/snoc\/interfaces\/S-NOC\/interfaces\/backup\/master_file\/mobii_daily_sso_bi\/","Dir":"\/home\/appuser\/snoc\/interfaces\/S-NOC\/interfaces\/master_file\/mobii_daily_sso_bi\/","BkpDir":"\/home\/appuser\/snoc\/interfaces\/S-NOC\/interfaces\/backup\/master_file\/mobii_daily_sso_bi\/","RejectedDir":"\/home\/appuser\/snoc\/interfaces\/S-NOC\/interfaces\/rejected_file\/mobii_daily_sso_bi\/","RejectedBkpDir":"\/home\/appuser\/snoc\/interfaces\/S-NOC\/interfaces\/backup\/rejected_file\/mobii_daily_sso_bi\/","CtlDir":"\/home\/appuser\/snoc\/interfaces\/S-NOC\/interfaces\/master_file\/mobii_daily_sso_bi\/","RejectedCtlDir":"\/home\/appuser\/snoc\/interfaces\/S-NOC\/interfaces\/rejected_file\/mobii_daily_sso_bi\/","FilterCtlBkpDir":"\/home\/appuser\/snoc\/interfaces\/S-NOC\/interfaces\/backup\/filter_file\/mobii_daily_sso_bi\/","RejectedCtlBkpDir":"\/home\/appuser\/snoc\/interfaces\/S-NOC\/interfaces\/backup\/rejected_file\/mobii_daily_sso_bi\/","FilterBkpDir":"\/home\/appuser\/snoc\/interfaces\/S-NOC\/interfaces\/backup\/filter_file\/mobii_daily_sso_bi\/"}
+May 07, 2020 1:06:28 AM com.enhancesys.common.logger
+FINE: [Thread]: 218 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  10825  Entry compressGzipFile.. Started at --> Thu May 07 01:06:28 IST 2020
+May 07, 2020 1:06:28 AM com.enhancesys.common.logger
+FINE: [Thread]: 218 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  10835  compressGzipFile service received gzipFile Name-->/home/appuser/snoc/interfaces/S-NOC/interfaces/backup/master_file/mobii_daily_sso_bi/mobii_daily_sso_bi_20200506_005.csv.gzfile Name -->/home/appuser/snoc/interfaces/S-NOC/interfaces/backup/master_file/mobii_daily_sso_bi/mobii_daily_sso_bi_20200506_005.csv
+May 07, 2020 1:06:28 AM com.enhancesys.common.logger
+FINE: [Thread]: 218 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  10874  Exit compressGzipFile service at -->Thu May 07 01:06:28 IST 2020 --- and took 2 milliseconds
+May 07, 2020 1:06:28 AM com.enhancesys.common.logger
+FINE: [Thread]: 218 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  10825  Entry compressGzipFile.. Started at --> Thu May 07 01:06:28 IST 2020
+May 07, 2020 1:06:28 AM com.enhancesys.common.logger
+FINE: [Thread]: 218 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  10835  compressGzipFile service received gzipFile Name-->/home/appuser/snoc/interfaces/S-NOC/interfaces/backup/master_file/mobii_daily_sso_bi/mobii_daily_sso_bi_20200506_005.ctl.gzfile Name -->/home/appuser/snoc/interfaces/S-NOC/interfaces/backup/master_file/mobii_daily_sso_bi/mobii_daily_sso_bi_20200506_005.ctl
+May 07, 2020 1:06:28 AM com.enhancesys.common.logger
+FINE: [Thread]: 218 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  10874  Exit compressGzipFile service at -->Thu May 07 01:06:28 IST 2020 --- and took 2 milliseconds
+May 07, 2020 1:06:28 AM com.enhancesys.common.logger
+FINE: [Thread]: 218 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  3208  InterfaceId : 1166 : FileId : 10727 processReceivedFiles method is completed at Thu May 07 01:06:28 IST 2020
+May 07, 2020 1:06:28 AM com.enhancesys.common.logger
+FINE: [Thread]: 218 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  3286  Exit processReceivedFiles service : InterfaceId :: 1166  at --> Thu May 07 01:06:28 IST 2020 and took 2652 milliseconds
+May 07, 2020 1:06:46 AM com.enhancesys.common.logger
+FINE: [Thread]: 218 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  10584  Entry prepareRejectionFile.. 1166 Started at --> Thu May 07 01:06:46 IST 2020
+May 07, 2020 1:06:46 AM com.enhancesys.common.logger
+INFO: [Thread]: 218 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  10593  prepareRejectionFile service received interface id-->1166
+May 07, 2020 1:06:46 AM com.enhancesys.common.logger
+FINE: [Thread]: 218 [ClassName]: com.enhancesys.integration.services.rejection.DWHRejectionFilePreparation [LineNumber]:  101  Entry DWH prepareRejectionFile.. Start time :: Thu May 07 01:06:46 IST 2020
+May 07, 2020 1:06:46 AM com.enhancesys.common.logger
+FINE: [Thread]: 218 [ClassName]: com.enhancesys.integration.services.rejection.DWHRejectionFilePreparation [LineNumber]:  143  interfaces : 1166
+May 07, 2020 1:06:47 AM com.enhancesys.common.logger
+FINE: [Thread]: 218 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  7748  Entry getInterfaceFileSummaryByInterfaceIdAndStatus.. Started at --> Thu May 07 01:06:47 IST 2020
+May 07, 2020 1:06:47 AM com.enhancesys.common.logger
+FINE: [Thread]: 218 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  7757  getInterfaceFileSummaryByInterfaceIdAndStatus service received interface id-->1166statusId-->1323
+May 07, 2020 1:06:47 AM com.enhancesys.common.logger
+FINE: [Thread]: 218 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  7807  Exit getInterfaceFileSummaryByInterfaceIdAndStatus service at -->Thu May 07 01:06:47 IST 2020 --- and took 12 milliseconds
+May 07, 2020 1:06:47 AM com.enhancesys.common.logger
+FINE: [Thread]: 218 [ClassName]: com.enhancesys.integration.services.rejection.DWHRejectionFilePreparation [LineNumber]:  174  interfaceFileSummaryList size : 1
+May 07, 2020 1:06:47 AM com.enhancesys.common.logger
+FINE: [Thread]: 218 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  7942  total count-->4File ID : 10727
+May 07, 2020 1:06:47 AM com.enhancesys.common.logger
+FINE: [Thread]: 218 [ClassName]: com.enhancesys.integration.services.util.IntegrationUtilManagementImpl [LineNumber]:  203  Entry prepareNotificationJsonData.. Started at --> Thu May 07 01:06:47 IST 2020
+May 07, 2020 1:06:47 AM com.enhancesys.common.logger
+FINE: [Thread]: 218 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  11270  Entry getInterfaceNotificationByInterfaceIdAndScenario.. Started at --> Thu May 07 01:06:47 IST 2020
+May 07, 2020 1:06:47 AM com.enhancesys.common.logger
+FINE: [Thread]: 218 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  11279  getInterfaceNotificationByInterfaceIdAndScenario service received interface id-->1166,scenario-->FILE_SUCCESS_0
+May 07, 2020 1:06:47 AM com.enhancesys.common.logger
+FINE: [Thread]: 218 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  11320  Exit GetInterfaceNotificationByInterfaceIdAndScenario service at -->Thu May 07 01:06:47 IST 2020 --- and took 12 milliseconds
+May 07, 2020 1:06:47 AM com.enhancesys.common.logger
+FINE: [Thread]: 218 [ClassName]: com.enhancesys.integration.services.util.IntegrationUtilManagementImpl [LineNumber]:  249  Notification id not configured for 1166with active status
+May 07, 2020 1:06:47 AM com.enhancesys.common.logger
+FINE: [Thread]: 218 [ClassName]: com.enhancesys.integration.services.util.IntegrationUtilManagementImpl [LineNumber]:  268  Exit prepareNotificationJsonData service at -->Thu May 07 01:06:47 IST 2020 --- and took 16 milliseconds
+May 07, 2020 1:06:47 AM com.enhancesys.common.logger
+FINE: [Thread]: 218 [ClassName]: com.enhancesys.integration.services.rejection.DWHRejectionFilePreparation [LineNumber]:  400  Exit prepareRejectionFile.. ::Thu May 07 01:06:47 IST 2020 --- and took 116 milliseconds
+May 07, 2020 1:06:47 AM com.enhancesys.common.logger
+FINE: [Thread]: 218 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  10651  Exit prepareRejectionFile service : InterfaceId :: 1166  at --> Thu May 07 01:06:47 IST 2020 and took 128 milliseconds

@@ -1,0 +1,20 @@
+May 03, 2020 2:52:12 PM com.enhancesys.common.logger
+FINE: [Thread]: 231 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  10584  Entry prepareRejectionFile.. 1153 Started at --> Sun May 03 14:52:12 IST 2020
+May 03, 2020 2:52:12 PM com.enhancesys.common.logger
+INFO: [Thread]: 231 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  10593  prepareRejectionFile service received interface id-->1153
+May 03, 2020 2:52:12 PM com.enhancesys.common.logger
+FINE: [Thread]: 231 [ClassName]: com.enhancesys.integration.services.rejection.DWHRejectionFilePreparation [LineNumber]:  101  Entry DWH prepareRejectionFile.. Start time :: Sun May 03 14:52:12 IST 2020
+May 03, 2020 2:52:12 PM com.enhancesys.common.logger
+FINE: [Thread]: 231 [ClassName]: com.enhancesys.integration.services.rejection.DWHRejectionFilePreparation [LineNumber]:  143  interfaces : 1153
+May 03, 2020 2:52:12 PM com.enhancesys.common.logger
+FINE: [Thread]: 231 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  7748  Entry getInterfaceFileSummaryByInterfaceIdAndStatus.. Started at --> Sun May 03 14:52:12 IST 2020
+May 03, 2020 2:52:12 PM com.enhancesys.common.logger
+FINE: [Thread]: 231 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  7757  getInterfaceFileSummaryByInterfaceIdAndStatus service received interface id-->1153statusId-->1323
+May 03, 2020 2:52:12 PM com.enhancesys.common.logger
+FINE: [Thread]: 231 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  7807  Exit getInterfaceFileSummaryByInterfaceIdAndStatus service at -->Sun May 03 14:52:12 IST 2020 --- and took 15 milliseconds
+May 03, 2020 2:52:12 PM com.enhancesys.common.logger
+FINE: [Thread]: 231 [ClassName]: com.enhancesys.integration.services.rejection.DWHRejectionFilePreparation [LineNumber]:  174  interfaceFileSummaryList size : 3
+May 03, 2020 2:52:12 PM com.enhancesys.common.logger
+FINE: [Thread]: 231 [ClassName]: com.enhancesys.integration.services.rejection.DWHRejectionFilePreparation [LineNumber]:  400  Exit prepareRejectionFile.. ::Sun May 03 14:52:12 IST 2020 --- and took 54 milliseconds
+May 03, 2020 2:52:12 PM com.enhancesys.common.logger
+FINE: [Thread]: 231 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  10651  Exit prepareRejectionFile service : InterfaceId :: 1153  at --> Sun May 03 14:52:12 IST 2020 and took 67 milliseconds

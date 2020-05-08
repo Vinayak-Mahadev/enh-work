@@ -1,0 +1,1340 @@
+May 06, 2020 11:04:43 AM com.enhancesys.common.logger
+FINE: [Thread]: 233 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  6673  Entry processFile : InterfaceIds ::  [1153] Started at --> Wed May 06 11:04:43 IST 2020
+May 06, 2020 11:04:43 AM com.enhancesys.common.logger
+FINE: [Thread]: 233 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  6693  processFile service received interface id-->[1153]
+May 06, 2020 11:04:43 AM com.enhancesys.common.logger
+FINE: [Thread]: 233 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  6713  Entry processFile.. 1153 Started at --> Wed May 06 11:04:43 IST 2020
+May 06, 2020 11:04:43 AM com.enhancesys.common.logger
+FINE: [Thread]: 233 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  9468  Entry readFilePropertyBeans.. Started at --> Wed May 06 11:04:43 IST 2020
+May 06, 2020 11:04:43 AM com.enhancesys.common.logger
+FINE: [Thread]: 233 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  9482  readFilePropertyBeans service received interface id-->1153
+May 06, 2020 11:04:43 AM com.enhancesys.common.logger
+FINE: [Thread]: 233 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  10292  Exit readFilePropertyBeans service at -->Wed May 06 11:04:43 IST 2020 --- and took 44 milliseconds
+May 06, 2020 11:04:43 AM com.enhancesys.common.logger
+FINE: [Thread]: 233 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  5886  Entry receiveFile.. Started at --> Wed May 06 11:04:43 IST 2020
+May 06, 2020 11:04:44 AM com.enhancesys.common.logger
+FINE: [Thread]: 233 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  5971  multipleMap ::::::::::::{secondary_mobo_bi=[-rw-rw-r--    1 appuser  appuser       110 May  6 11:20 secondary_mobo_bi_20200605_002.ctl.gz]}
+May 06, 2020 11:04:44 AM com.enhancesys.common.logger
+FINE: [Thread]: 233 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  6009  firstFileName :::;secondary_mobo_bi
+May 06, 2020 11:04:44 AM com.enhancesys.common.logger
+FINE: [Thread]: 233 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  6010  secondFileName :::;null
+May 06, 2020 11:04:44 AM com.enhancesys.common.logger
+FINE: [Thread]: 233 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  6011  size :::::::::1
+May 06, 2020 11:04:44 AM com.enhancesys.common.logger
+FINE: [Thread]: 233 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  6023  remoteFileName ::::::::::secondary_mobo_bi_20200605_002.ctl.gz
+May 06, 2020 11:04:44 AM com.enhancesys.common.logger
+FINE: [Thread]: 233 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  6419  Entry getInterfaceFileSummaryDetailsByIdAndName.. Started at --> Wed May 06 11:04:44 IST 2020
+May 06, 2020 11:04:44 AM com.enhancesys.common.logger
+FINE: [Thread]: 233 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  6455  Exit getInterfaceFileSummaryDetailsByIdAndName service at -->Wed May 06 11:04:44 IST 2020 --- and took 11 milliseconds
+May 06, 2020 11:04:44 AM com.enhancesys.common.logger
+FINE: [Thread]: 233 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  10760  Entry decompressGzipFile.. Started at --> Wed May 06 11:04:44 IST 2020
+May 06, 2020 11:04:44 AM com.enhancesys.common.logger
+FINE: [Thread]: 233 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  10770  decompressGzipFile service received gzipFile Name-->/home/appuser/snoc/interfaces/S-NOC/interfaces/master_file/secondary_mobo_bi/secondary_mobo_bi_20200605_002.ctl.gznewFile Name -->/home/appuser/snoc/interfaces/S-NOC/interfaces/master_file/secondary_mobo_bi/secondary_mobo_bi_20200605_002.ctl
+May 06, 2020 11:04:44 AM com.enhancesys.common.logger
+FINE: [Thread]: 233 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  10814  Exit decompressGzipFile service at -->Wed May 06 11:04:44 IST 2020 --- and took 4 milliseconds
+May 06, 2020 11:04:44 AM com.enhancesys.common.logger
+FINE: [Thread]: 233 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  6078  actualFileName ::::::::::secondary_mobo_bi_20200605_002.csv.gz
+May 06, 2020 11:04:44 AM com.enhancesys.common.logger
+FINE: [Thread]: 233 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  6419  Entry getInterfaceFileSummaryDetailsByIdAndName.. Started at --> Wed May 06 11:04:44 IST 2020
+May 06, 2020 11:04:44 AM com.enhancesys.common.logger
+FINE: [Thread]: 233 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  6455  Exit getInterfaceFileSummaryDetailsByIdAndName service at -->Wed May 06 11:04:44 IST 2020 --- and took 9 milliseconds
+May 06, 2020 11:04:44 AM com.enhancesys.common.logger
+FINE: [Thread]: 233 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  10760  Entry decompressGzipFile.. Started at --> Wed May 06 11:04:44 IST 2020
+May 06, 2020 11:04:44 AM com.enhancesys.common.logger
+FINE: [Thread]: 233 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  10770  decompressGzipFile service received gzipFile Name-->/home/appuser/snoc/interfaces/S-NOC/interfaces/master_file/secondary_mobo_bi/secondary_mobo_bi_20200605_002.csv.gznewFile Name -->/home/appuser/snoc/interfaces/S-NOC/interfaces/master_file/secondary_mobo_bi/secondary_mobo_bi_20200605_002.csv
+May 06, 2020 11:04:44 AM com.enhancesys.common.logger
+FINE: [Thread]: 233 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  10814  Exit decompressGzipFile service at -->Wed May 06 11:04:44 IST 2020 --- and took 182 milliseconds
+May 06, 2020 11:04:44 AM com.enhancesys.common.logger
+FINE: [Thread]: 233 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  8140  Entry createInterfaceFileSummary.. Started at --> Wed May 06 11:04:44 IST 2020
+May 06, 2020 11:04:44 AM com.enhancesys.common.logger
+FINE: [Thread]: 233 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  8153  createInterfaceFileSummary service received interfaceFileSummary for file id-->null
+May 06, 2020 11:04:44 AM com.enhancesys.common.logger
+FINE: [Thread]: 233 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  8228  Exit createInterfaceFileSummary service at -->Wed May 06 11:04:44 IST 2020 --- and took 139 milliseconds
+May 06, 2020 11:04:44 AM com.enhancesys.common.logger
+FINE: [Thread]: 233 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  6327  sftp Channel exited..
+May 06, 2020 11:04:44 AM com.enhancesys.common.logger
+FINE: [Thread]: 233 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  6333  Channel disconnected..
+May 06, 2020 11:04:44 AM com.enhancesys.common.logger
+FINE: [Thread]: 233 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  6339  Host Session disconnected..
+May 06, 2020 11:04:44 AM com.enhancesys.common.logger
+FINE: [Thread]: 233 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  6344  Exit receiveFile service at -->Wed May 06 11:04:44 IST 2020 --- and took 1328 milliseconds
+May 06, 2020 11:04:44 AM com.enhancesys.common.logger
+FINE: [Thread]: 233 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  6809  Completed processFile.. 1153 Service at --> Wed May 06 11:04:44 IST 2020 --- and took 1375 milliseconds
+May 06, 2020 11:04:44 AM com.enhancesys.common.logger
+FINE: [Thread]: 233 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  6845  Exit processFile : InterfaceIds ::  [1153] and took 1387 milliseconds
+May 06, 2020 11:05:30 AM com.enhancesys.common.logger
+FINE: [Thread]: 236 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  2779  Entry processReceivedFiles : interfaceId :: 1153
+May 06, 2020 11:05:30 AM com.enhancesys.common.logger
+FINE: [Thread]: 236 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  7748  Entry getInterfaceFileSummaryByInterfaceIdAndStatus.. Started at --> Wed May 06 11:05:30 IST 2020
+May 06, 2020 11:05:30 AM com.enhancesys.common.logger
+FINE: [Thread]: 236 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  7757  getInterfaceFileSummaryByInterfaceIdAndStatus service received interface id-->1153statusId-->1321
+May 06, 2020 11:05:31 AM com.enhancesys.common.logger
+FINE: [Thread]: 236 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  7807  Exit getInterfaceFileSummaryByInterfaceIdAndStatus service at -->Wed May 06 11:05:31 IST 2020 --- and took 31 milliseconds
+May 06, 2020 11:05:31 AM com.enhancesys.common.logger
+FINE: [Thread]: 236 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  10342  Entry getEncodedKey.. Started at --> Wed May 06 11:05:31 IST 2020
+May 06, 2020 11:05:31 AM com.enhancesys.common.logger
+FINE: [Thread]: 236 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  10349  getEncodedKey service received file-->/home/appuser/snoc/interfaces/S-NOC/interfaces/master_file/secondary_mobo_bi/secondary_mobo_bi_20200605_002.csv
+May 06, 2020 11:05:31 AM com.enhancesys.common.logger
+FINE: [Thread]: 236 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  10386  Exit getEncodedKey service at -->Wed May 06 11:05:31 IST 2020 --- and took 76 milliseconds
+May 06, 2020 11:05:31 AM com.enhancesys.common.logger
+FINE: [Thread]: 236 [ClassName]: com.enhancesys.integration.services.merger.GenericFileProcessor [LineNumber]:  36  GenericFileProcessor initiated at Wed May 06 11:05:31 IST 2020, interfaceId : 1153 file Id : 10716
+May 06, 2020 11:05:31 AM com.enhancesys.common.logger
+FINE: [Thread]: 236 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  9468  Entry readFilePropertyBeans.. Started at --> Wed May 06 11:05:31 IST 2020
+May 06, 2020 11:05:31 AM com.enhancesys.common.logger
+FINE: [Thread]: 236 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  9482  readFilePropertyBeans service received interface id-->1153
+May 06, 2020 11:05:31 AM com.enhancesys.common.logger
+FINE: [Thread]: 236 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  10292  Exit readFilePropertyBeans service at -->Wed May 06 11:05:31 IST 2020 --- and took 14 milliseconds
+May 06, 2020 11:05:31 AM com.enhancesys.common.logger
+FINE: [Thread]: 236 [ClassName]: com.enhancesys.integration.services.springCamel.FileProcessor [LineNumber]:  65  Entry initiateProcess..
+May 06, 2020 11:05:32 AM com.enhancesys.common.logger
+FINE: [Thread]: 236 [ClassName]: com.enhancesys.integration.services.springCamel.FileProcessor [LineNumber]:  77  Spring App Context : org.springframework.context.support.FileSystemXmlApplicationContext@bff5ddd: startup date [Wed May 06 11:05:31 IST 2020]; root of context hierarchy
+May 06, 2020 11:05:32 AM com.enhancesys.common.logger
+FINE: [Thread]: 236 [ClassName]: com.enhancesys.integration.services.springCamel.FileProcessor [LineNumber]:  80  Camel Context : SpringCamelContext(interfaceCamelContext) with spring id org.springframework.context.support.FileSystemXmlApplicationContext@bff5ddd
+May 06, 2020 11:05:32 AM com.enhancesys.common.logger
+FINE: [Thread]: 236 [ClassName]: com.enhancesys.integration.services.springCamel.FileProcessor [LineNumber]:  107  End Point : direct://generic_file_processor
+May 06, 2020 11:05:32 AM com.enhancesys.common.logger
+FINE: [Thread]: 236 [ClassName]: com.enhancesys.integration.services.springCamel.processor.FilePreProcessor [LineNumber]:  68  Entry process.. 
+May 06, 2020 11:05:32 AM com.enhancesys.common.logger
+FINE: [Thread]: 236 [ClassName]: com.enhancesys.integration.services.springCamel.processor.FilePreProcessor [LineNumber]:  76  paramMap : {fileId=10716, fileDataBean=com.enhancesys.integration.services.interfaces.FileDataBean@3072785c, interfaceId=1153}
+May 06, 2020 11:05:32 AM com.enhancesys.common.logger
+FINE: [Thread]: 236 [ClassName]: com.enhancesys.integration.services.springCamel.processor.FilePreProcessor [LineNumber]:  94  Exit process.. 
+May 06, 2020 11:05:33 AM com.enhancesys.common.logger
+FINE: [Thread]: 238 [ClassName]: com.enhancesys.integration.services.springCamel.AbstractFileProcessor [LineNumber]:  149  Entry initiateProcess..1153
+May 06, 2020 11:05:33 AM com.enhancesys.common.logger
+FINE: [Thread]: 238 [ClassName]: com.enhancesys.integration.services.springCamel.AbstractFileProcessor [LineNumber]:  169  com.enhancesys.integration.services.springCamel.InterfaceFileReader : Thread ID : 241
+May 06, 2020 11:05:33 AM com.enhancesys.common.logger
+FINE: [Thread]: 241 [ClassName]: com.enhancesys.integration.services.springCamel.InterfaceFileReader [LineNumber]:  79  Interface File Reading com.enhancesys.integration.services.springCamel.InterfaceFileReader_1588743333283 initiated at Wed May 06 11:05:33 IST 2020, interfaceId : 1153 file Id : 10716
+May 06, 2020 11:05:33 AM com.enhancesys.common.logger
+FINE: [Thread]: 241 [ClassName]: com.enhancesys.integration.services.springCamel.InterfaceFileReader [LineNumber]:  246  fieldLookupConf :: { "process_enabled" : true , "fields" : { "actor_field" : "ORGANIZATION_ID" , "metric_field" : "ORGANIZATION_ID" , "source_field" : "MPC_CODE" , "instance_field" : ""} , "error_codes" : { "actor_field" : "60101" , "metric_field" : "60201" , "source_field" : "60301" , "instance_field" : "60401"} , "table_name" : "tr_temp_secondary_mobo_bi_aggr" , "lookup_query" : "" , "notexist_lookup" : "" , "no_of_params" : { } , "daily_table" : "tr_daily_secondary_mobo_bi_aggr" , "monthly_table" : "tr_monthly_secondary_mobo_bi_aggr" , "no_of_join_query_params" : 1 , "no_of_daily_join_queries" : 1 , "no_of_monthly_join_queries" : 1 , "duplicate_validation_conf" : { "field_indexes" : [ 0 , 1 , 2] , "schema_name" : "kpi" , "table_name" : "tr_temp_secondary_mobo_bi_validation"}}
+May 06, 2020 11:05:33 AM com.enhancesys.common.logger
+FINE: [Thread]: 239 [ClassName]: com.enhancesys.integration.services.springCamel.AbstractFileProcessor [LineNumber]:  149  Entry initiateProcess..1153
+May 06, 2020 11:05:33 AM com.enhancesys.common.logger
+FINE: [Thread]: 239 [ClassName]: com.enhancesys.integration.services.springCamel.AbstractFileProcessor [LineNumber]:  169  com.enhancesys.integration.services.springCamel.KPIAggregator : Thread ID : 242
+May 06, 2020 11:05:33 AM com.enhancesys.common.logger
+FINE: [Thread]: 242 [ClassName]: com.enhancesys.integration.services.springCamel.KPIAggregator [LineNumber]:  78  KPIAggregator  thread com.enhancesys.integration.services.springCamel.KPIAggregator_1588743333335initiated at Wed May 06 11:05:33 IST 2020, interfaceId : 1153 file Id : 10716
+May 06, 2020 11:05:33 AM com.enhancesys.common.logger
+FINE: [Thread]: 241 [ClassName]: com.enhancesys.integration.services.springCamel.InterfaceFileReader [LineNumber]:  364  actorConfig : {1=[{"actor_index":2,"actor_type_n":10,"actor_key_v":"ORGANIZATION_ID"}]}
+May 06, 2020 11:05:33 AM com.enhancesys.common.logger
+FINE: [Thread]: 241 [ClassName]: com.enhancesys.integration.services.springCamel.InterfaceFileReader [LineNumber]:  419  metricConfig :: {1=[{"data_flag_n":0,"metric_index":2,"metrics_id_n":[111],"metric_key_v":"ORGANIZATION_ID","metrics_type_n":21,"selection_v":"Fixed"}]}
+May 06, 2020 11:05:33 AM com.enhancesys.common.logger
+FINE: [Thread]: 242 [ClassName]: com.enhancesys.integration.services.springCamel.KPIAggregator [LineNumber]:  89  Output Queue is null..
+May 06, 2020 11:05:33 AM com.enhancesys.common.logger
+FINE: [Thread]: 241 [ClassName]: com.enhancesys.integration.services.springCamel.InterfaceFileReader [LineNumber]:  453  dimensionConfig :: {1=[{"correction_v":"Update","dimension_v":"AMOUNT","sequence_n":1}]}
+May 06, 2020 11:05:33 AM com.enhancesys.common.logger
+FINE: [Thread]: 241 [ClassName]: com.enhancesys.integration.services.springCamel.InterfaceFileReader [LineNumber]:  503  crossSellFlagAttr :: null
+May 06, 2020 11:05:33 AM com.enhancesys.common.logger
+FINE: [Thread]: 241 [ClassName]: com.enhancesys.integration.services.springCamel.InterfaceFileReader [LineNumber]:  504  crossSellingFlag :: false
+May 06, 2020 11:05:33 AM com.enhancesys.common.logger
+FINE: [Thread]: 241 [ClassName]: com.enhancesys.integration.services.springCamel.InterfaceFileReader [LineNumber]:  505  crossSellingObj :: null
+May 06, 2020 11:05:33 AM com.enhancesys.common.logger
+FINE: [Thread]: 241 [ClassName]: com.enhancesys.integration.services.springCamel.InterfaceFileReader [LineNumber]:  532  Moving Actual File to Backup Directory...
+May 06, 2020 11:05:33 AM com.enhancesys.common.logger
+FINE: [Thread]: 241 [ClassName]: com.enhancesys.integration.services.util.Utility [LineNumber]:  276  Entry backupFile..
+May 06, 2020 11:05:33 AM com.enhancesys.common.logger
+FINE: [Thread]: 241 [ClassName]: com.enhancesys.integration.services.util.Utility [LineNumber]:  320  Exit backupFile..
+May 06, 2020 11:05:33 AM com.enhancesys.common.logger
+FINE: [Thread]: 241 [ClassName]: com.enhancesys.integration.services.springCamel.InterfaceFileReader [LineNumber]:  540  Moving Ctl file to backup dir...
+May 06, 2020 11:05:33 AM com.enhancesys.common.logger
+FINE: [Thread]: 241 [ClassName]: com.enhancesys.integration.services.util.Utility [LineNumber]:  276  Entry backupFile..
+May 06, 2020 11:05:33 AM com.enhancesys.common.logger
+FINE: [Thread]: 241 [ClassName]: com.enhancesys.integration.services.util.Utility [LineNumber]:  320  Exit backupFile..
+May 06, 2020 11:05:33 AM com.enhancesys.common.logger
+FINE: [Thread]: 241 [ClassName]: com.enhancesys.integration.services.springCamel.InterfaceFileReader [LineNumber]:  561  File Reading and Data Insertion started. . . 
+May 06, 2020 11:29:53 AM com.enhancesys.common.logger
+FINE: [Thread]: 241 [ClassName]: com.enhancesys.integration.services.springCamel.InterfaceFileReader [LineNumber]:  2000  Data Inserted and File Reading Completed in 1459584 ms
+May 06, 2020 11:29:53 AM com.enhancesys.common.logger
+FINE: [Thread]: 241 [ClassName]: com.enhancesys.integration.services.springCamel.InterfaceFileReader [LineNumber]:  2087  Starting Join Query
+May 06, 2020 11:29:56 AM com.enhancesys.common.logger
+INFO: [Thread]: 241 [ClassName]: com.enhancesys.integration.services.springCamel.InterfaceFileReader [LineNumber]:  2106  Time taken to execute 1153_DAILY_JOIN_QUERY_1 :: 3 Seconds
+May 06, 2020 11:29:57 AM com.enhancesys.common.logger
+FINE: [Thread]: 241 [ClassName]: com.enhancesys.integration.services.springCamel.InterfaceFileReader [LineNumber]:  2166  Sent Data size : 5000
+May 06, 2020 11:29:57 AM com.enhancesys.common.logger
+FINE: [Thread]: 241 [ClassName]: com.enhancesys.integration.services.springCamel.InterfaceFileReader [LineNumber]:  2167  Sent FileDataBean to the next level with batch number :: 1
+May 06, 2020 11:29:57 AM com.enhancesys.common.logger
+FINE: [Thread]: 241 [ClassName]: com.enhancesys.integration.services.springCamel.InterfaceFileReader [LineNumber]:  2166  Sent Data size : 5000
+May 06, 2020 11:29:57 AM com.enhancesys.common.logger
+FINE: [Thread]: 241 [ClassName]: com.enhancesys.integration.services.springCamel.InterfaceFileReader [LineNumber]:  2167  Sent FileDataBean to the next level with batch number :: 2
+May 06, 2020 11:29:57 AM com.enhancesys.common.logger
+FINE: [Thread]: 241 [ClassName]: com.enhancesys.integration.services.springCamel.InterfaceFileReader [LineNumber]:  2166  Sent Data size : 5000
+May 06, 2020 11:29:57 AM com.enhancesys.common.logger
+FINE: [Thread]: 241 [ClassName]: com.enhancesys.integration.services.springCamel.InterfaceFileReader [LineNumber]:  2167  Sent FileDataBean to the next level with batch number :: 3
+May 06, 2020 11:29:57 AM com.enhancesys.common.logger
+FINE: [Thread]: 242 [ClassName]: com.enhancesys.integration.services.springCamel.KPIAggregator [LineNumber]:  400  1000 Rows Inserted in daily table..
+May 06, 2020 11:29:58 AM com.enhancesys.common.logger
+FINE: [Thread]: 242 [ClassName]: com.enhancesys.integration.services.springCamel.KPIAggregator [LineNumber]:  400  1000 Rows Inserted in daily table..
+May 06, 2020 11:29:58 AM com.enhancesys.common.logger
+FINE: [Thread]: 242 [ClassName]: com.enhancesys.integration.services.springCamel.KPIAggregator [LineNumber]:  400  1000 Rows Inserted in daily table..
+May 06, 2020 11:29:58 AM com.enhancesys.common.logger
+FINE: [Thread]: 242 [ClassName]: com.enhancesys.integration.services.springCamel.KPIAggregator [LineNumber]:  400  1000 Rows Inserted in daily table..
+May 06, 2020 11:29:58 AM com.enhancesys.common.logger
+FINE: [Thread]: 242 [ClassName]: com.enhancesys.integration.services.springCamel.KPIAggregator [LineNumber]:  400  1000 Rows Inserted in daily table..
+May 06, 2020 11:29:58 AM com.enhancesys.common.logger
+INFO: [Thread]: 242 [ClassName]: com.enhancesys.integration.services.springCamel.KPIAggregator [LineNumber]:  422  Daily Table - Total Insert time :: 989 ms
+May 06, 2020 11:29:58 AM com.enhancesys.common.logger
+INFO: [Thread]: 242 [ClassName]: com.enhancesys.integration.services.springCamel.KPIAggregator [LineNumber]:  423  Daily Table - Total update time :: 0 ms
+May 06, 2020 11:29:58 AM com.enhancesys.common.logger
+FINE: [Thread]: 241 [ClassName]: com.enhancesys.integration.services.springCamel.InterfaceFileReader [LineNumber]:  2166  Sent Data size : 5000
+May 06, 2020 11:29:58 AM com.enhancesys.common.logger
+FINE: [Thread]: 241 [ClassName]: com.enhancesys.integration.services.springCamel.InterfaceFileReader [LineNumber]:  2167  Sent FileDataBean to the next level with batch number :: 4
+May 06, 2020 11:29:58 AM com.enhancesys.common.logger
+FINE: [Thread]: 242 [ClassName]: com.enhancesys.integration.services.springCamel.KPIAggregator [LineNumber]:  400  1000 Rows Inserted in daily table..
+May 06, 2020 11:29:59 AM com.enhancesys.common.logger
+FINE: [Thread]: 242 [ClassName]: com.enhancesys.integration.services.springCamel.KPIAggregator [LineNumber]:  400  1000 Rows Inserted in daily table..
+May 06, 2020 11:29:59 AM com.enhancesys.common.logger
+FINE: [Thread]: 242 [ClassName]: com.enhancesys.integration.services.springCamel.KPIAggregator [LineNumber]:  400  1000 Rows Inserted in daily table..
+May 06, 2020 11:29:59 AM com.enhancesys.common.logger
+FINE: [Thread]: 242 [ClassName]: com.enhancesys.integration.services.springCamel.KPIAggregator [LineNumber]:  400  1000 Rows Inserted in daily table..
+May 06, 2020 11:29:59 AM com.enhancesys.common.logger
+FINE: [Thread]: 242 [ClassName]: com.enhancesys.integration.services.springCamel.KPIAggregator [LineNumber]:  400  1000 Rows Inserted in daily table..
+May 06, 2020 11:29:59 AM com.enhancesys.common.logger
+INFO: [Thread]: 242 [ClassName]: com.enhancesys.integration.services.springCamel.KPIAggregator [LineNumber]:  422  Daily Table - Total Insert time :: 873 ms
+May 06, 2020 11:29:59 AM com.enhancesys.common.logger
+INFO: [Thread]: 242 [ClassName]: com.enhancesys.integration.services.springCamel.KPIAggregator [LineNumber]:  423  Daily Table - Total update time :: 0 ms
+May 06, 2020 11:29:59 AM com.enhancesys.common.logger
+FINE: [Thread]: 241 [ClassName]: com.enhancesys.integration.services.springCamel.InterfaceFileReader [LineNumber]:  2166  Sent Data size : 5000
+May 06, 2020 11:29:59 AM com.enhancesys.common.logger
+FINE: [Thread]: 241 [ClassName]: com.enhancesys.integration.services.springCamel.InterfaceFileReader [LineNumber]:  2167  Sent FileDataBean to the next level with batch number :: 5
+May 06, 2020 11:29:59 AM com.enhancesys.common.logger
+FINE: [Thread]: 242 [ClassName]: com.enhancesys.integration.services.springCamel.KPIAggregator [LineNumber]:  400  1000 Rows Inserted in daily table..
+May 06, 2020 11:30:00 AM com.enhancesys.common.logger
+FINE: [Thread]: 242 [ClassName]: com.enhancesys.integration.services.springCamel.KPIAggregator [LineNumber]:  400  1000 Rows Inserted in daily table..
+May 06, 2020 11:30:00 AM com.enhancesys.common.logger
+FINE: [Thread]: 242 [ClassName]: com.enhancesys.integration.services.springCamel.KPIAggregator [LineNumber]:  400  1000 Rows Inserted in daily table..
+May 06, 2020 11:30:00 AM com.enhancesys.common.logger
+FINE: [Thread]: 242 [ClassName]: com.enhancesys.integration.services.springCamel.KPIAggregator [LineNumber]:  400  1000 Rows Inserted in daily table..
+May 06, 2020 11:30:00 AM com.enhancesys.common.logger
+FINE: [Thread]: 242 [ClassName]: com.enhancesys.integration.services.springCamel.KPIAggregator [LineNumber]:  400  1000 Rows Inserted in daily table..
+May 06, 2020 11:30:00 AM com.enhancesys.common.logger
+INFO: [Thread]: 242 [ClassName]: com.enhancesys.integration.services.springCamel.KPIAggregator [LineNumber]:  422  Daily Table - Total Insert time :: 886 ms
+May 06, 2020 11:30:00 AM com.enhancesys.common.logger
+INFO: [Thread]: 242 [ClassName]: com.enhancesys.integration.services.springCamel.KPIAggregator [LineNumber]:  423  Daily Table - Total update time :: 0 ms
+May 06, 2020 11:30:00 AM com.enhancesys.common.logger
+FINE: [Thread]: 241 [ClassName]: com.enhancesys.integration.services.springCamel.InterfaceFileReader [LineNumber]:  2166  Sent Data size : 5000
+May 06, 2020 11:30:00 AM com.enhancesys.common.logger
+FINE: [Thread]: 241 [ClassName]: com.enhancesys.integration.services.springCamel.InterfaceFileReader [LineNumber]:  2167  Sent FileDataBean to the next level with batch number :: 6
+May 06, 2020 11:30:00 AM com.enhancesys.common.logger
+FINE: [Thread]: 242 [ClassName]: com.enhancesys.integration.services.springCamel.KPIAggregator [LineNumber]:  400  1000 Rows Inserted in daily table..
+May 06, 2020 11:30:01 AM com.enhancesys.common.logger
+FINE: [Thread]: 242 [ClassName]: com.enhancesys.integration.services.springCamel.KPIAggregator [LineNumber]:  400  1000 Rows Inserted in daily table..
+May 06, 2020 11:30:01 AM com.enhancesys.common.logger
+FINE: [Thread]: 242 [ClassName]: com.enhancesys.integration.services.springCamel.KPIAggregator [LineNumber]:  400  1000 Rows Inserted in daily table..
+May 06, 2020 11:30:01 AM com.enhancesys.common.logger
+FINE: [Thread]: 242 [ClassName]: com.enhancesys.integration.services.springCamel.KPIAggregator [LineNumber]:  400  1000 Rows Inserted in daily table..
+May 06, 2020 11:30:01 AM com.enhancesys.common.logger
+FINE: [Thread]: 242 [ClassName]: com.enhancesys.integration.services.springCamel.KPIAggregator [LineNumber]:  400  1000 Rows Inserted in daily table..
+May 06, 2020 11:30:01 AM com.enhancesys.common.logger
+INFO: [Thread]: 242 [ClassName]: com.enhancesys.integration.services.springCamel.KPIAggregator [LineNumber]:  422  Daily Table - Total Insert time :: 922 ms
+May 06, 2020 11:30:01 AM com.enhancesys.common.logger
+INFO: [Thread]: 242 [ClassName]: com.enhancesys.integration.services.springCamel.KPIAggregator [LineNumber]:  423  Daily Table - Total update time :: 0 ms
+May 06, 2020 11:30:01 AM com.enhancesys.common.logger
+FINE: [Thread]: 241 [ClassName]: com.enhancesys.integration.services.springCamel.InterfaceFileReader [LineNumber]:  2166  Sent Data size : 5000
+May 06, 2020 11:30:01 AM com.enhancesys.common.logger
+FINE: [Thread]: 241 [ClassName]: com.enhancesys.integration.services.springCamel.InterfaceFileReader [LineNumber]:  2167  Sent FileDataBean to the next level with batch number :: 7
+May 06, 2020 11:30:01 AM com.enhancesys.common.logger
+FINE: [Thread]: 242 [ClassName]: com.enhancesys.integration.services.springCamel.KPIAggregator [LineNumber]:  400  1000 Rows Inserted in daily table..
+May 06, 2020 11:30:02 AM com.enhancesys.common.logger
+FINE: [Thread]: 242 [ClassName]: com.enhancesys.integration.services.springCamel.KPIAggregator [LineNumber]:  400  1000 Rows Inserted in daily table..
+May 06, 2020 11:30:02 AM com.enhancesys.common.logger
+FINE: [Thread]: 242 [ClassName]: com.enhancesys.integration.services.springCamel.KPIAggregator [LineNumber]:  400  1000 Rows Inserted in daily table..
+May 06, 2020 11:30:02 AM com.enhancesys.common.logger
+FINE: [Thread]: 242 [ClassName]: com.enhancesys.integration.services.springCamel.KPIAggregator [LineNumber]:  400  1000 Rows Inserted in daily table..
+May 06, 2020 11:30:02 AM com.enhancesys.common.logger
+FINE: [Thread]: 242 [ClassName]: com.enhancesys.integration.services.springCamel.KPIAggregator [LineNumber]:  400  1000 Rows Inserted in daily table..
+May 06, 2020 11:30:02 AM com.enhancesys.common.logger
+INFO: [Thread]: 242 [ClassName]: com.enhancesys.integration.services.springCamel.KPIAggregator [LineNumber]:  422  Daily Table - Total Insert time :: 956 ms
+May 06, 2020 11:30:02 AM com.enhancesys.common.logger
+INFO: [Thread]: 242 [ClassName]: com.enhancesys.integration.services.springCamel.KPIAggregator [LineNumber]:  423  Daily Table - Total update time :: 0 ms
+May 06, 2020 11:30:02 AM com.enhancesys.common.logger
+FINE: [Thread]: 241 [ClassName]: com.enhancesys.integration.services.springCamel.InterfaceFileReader [LineNumber]:  2166  Sent Data size : 5000
+May 06, 2020 11:30:02 AM com.enhancesys.common.logger
+FINE: [Thread]: 241 [ClassName]: com.enhancesys.integration.services.springCamel.InterfaceFileReader [LineNumber]:  2167  Sent FileDataBean to the next level with batch number :: 8
+May 06, 2020 11:30:02 AM com.enhancesys.common.logger
+FINE: [Thread]: 242 [ClassName]: com.enhancesys.integration.services.springCamel.KPIAggregator [LineNumber]:  400  1000 Rows Inserted in daily table..
+May 06, 2020 11:30:02 AM com.enhancesys.common.logger
+FINE: [Thread]: 242 [ClassName]: com.enhancesys.integration.services.springCamel.KPIAggregator [LineNumber]:  400  1000 Rows Inserted in daily table..
+May 06, 2020 11:30:03 AM com.enhancesys.common.logger
+FINE: [Thread]: 242 [ClassName]: com.enhancesys.integration.services.springCamel.KPIAggregator [LineNumber]:  400  1000 Rows Inserted in daily table..
+May 06, 2020 11:30:03 AM com.enhancesys.common.logger
+FINE: [Thread]: 242 [ClassName]: com.enhancesys.integration.services.springCamel.KPIAggregator [LineNumber]:  400  1000 Rows Inserted in daily table..
+May 06, 2020 11:30:03 AM com.enhancesys.common.logger
+FINE: [Thread]: 242 [ClassName]: com.enhancesys.integration.services.springCamel.KPIAggregator [LineNumber]:  400  1000 Rows Inserted in daily table..
+May 06, 2020 11:30:03 AM com.enhancesys.common.logger
+INFO: [Thread]: 242 [ClassName]: com.enhancesys.integration.services.springCamel.KPIAggregator [LineNumber]:  422  Daily Table - Total Insert time :: 928 ms
+May 06, 2020 11:30:03 AM com.enhancesys.common.logger
+INFO: [Thread]: 242 [ClassName]: com.enhancesys.integration.services.springCamel.KPIAggregator [LineNumber]:  423  Daily Table - Total update time :: 0 ms
+May 06, 2020 11:30:03 AM com.enhancesys.common.logger
+FINE: [Thread]: 241 [ClassName]: com.enhancesys.integration.services.springCamel.InterfaceFileReader [LineNumber]:  2166  Sent Data size : 5000
+May 06, 2020 11:30:03 AM com.enhancesys.common.logger
+FINE: [Thread]: 241 [ClassName]: com.enhancesys.integration.services.springCamel.InterfaceFileReader [LineNumber]:  2167  Sent FileDataBean to the next level with batch number :: 9
+May 06, 2020 11:30:03 AM com.enhancesys.common.logger
+FINE: [Thread]: 242 [ClassName]: com.enhancesys.integration.services.springCamel.KPIAggregator [LineNumber]:  400  1000 Rows Inserted in daily table..
+May 06, 2020 11:30:03 AM com.enhancesys.common.logger
+FINE: [Thread]: 242 [ClassName]: com.enhancesys.integration.services.springCamel.KPIAggregator [LineNumber]:  400  1000 Rows Inserted in daily table..
+May 06, 2020 11:30:04 AM com.enhancesys.common.logger
+FINE: [Thread]: 242 [ClassName]: com.enhancesys.integration.services.springCamel.KPIAggregator [LineNumber]:  400  1000 Rows Inserted in daily table..
+May 06, 2020 11:30:04 AM com.enhancesys.common.logger
+FINE: [Thread]: 242 [ClassName]: com.enhancesys.integration.services.springCamel.KPIAggregator [LineNumber]:  400  1000 Rows Inserted in daily table..
+May 06, 2020 11:30:04 AM com.enhancesys.common.logger
+FINE: [Thread]: 242 [ClassName]: com.enhancesys.integration.services.springCamel.KPIAggregator [LineNumber]:  400  1000 Rows Inserted in daily table..
+May 06, 2020 11:30:04 AM com.enhancesys.common.logger
+INFO: [Thread]: 242 [ClassName]: com.enhancesys.integration.services.springCamel.KPIAggregator [LineNumber]:  422  Daily Table - Total Insert time :: 940 ms
+May 06, 2020 11:30:04 AM com.enhancesys.common.logger
+INFO: [Thread]: 242 [ClassName]: com.enhancesys.integration.services.springCamel.KPIAggregator [LineNumber]:  423  Daily Table - Total update time :: 0 ms
+May 06, 2020 11:30:04 AM com.enhancesys.common.logger
+FINE: [Thread]: 241 [ClassName]: com.enhancesys.integration.services.springCamel.InterfaceFileReader [LineNumber]:  2166  Sent Data size : 5000
+May 06, 2020 11:30:04 AM com.enhancesys.common.logger
+FINE: [Thread]: 241 [ClassName]: com.enhancesys.integration.services.springCamel.InterfaceFileReader [LineNumber]:  2167  Sent FileDataBean to the next level with batch number :: 10
+May 06, 2020 11:30:04 AM com.enhancesys.common.logger
+FINE: [Thread]: 242 [ClassName]: com.enhancesys.integration.services.springCamel.KPIAggregator [LineNumber]:  400  1000 Rows Inserted in daily table..
+May 06, 2020 11:30:04 AM com.enhancesys.common.logger
+FINE: [Thread]: 242 [ClassName]: com.enhancesys.integration.services.springCamel.KPIAggregator [LineNumber]:  400  1000 Rows Inserted in daily table..
+May 06, 2020 11:30:05 AM com.enhancesys.common.logger
+FINE: [Thread]: 242 [ClassName]: com.enhancesys.integration.services.springCamel.KPIAggregator [LineNumber]:  400  1000 Rows Inserted in daily table..
+May 06, 2020 11:30:05 AM com.enhancesys.common.logger
+FINE: [Thread]: 242 [ClassName]: com.enhancesys.integration.services.springCamel.KPIAggregator [LineNumber]:  400  1000 Rows Inserted in daily table..
+May 06, 2020 11:30:05 AM com.enhancesys.common.logger
+FINE: [Thread]: 242 [ClassName]: com.enhancesys.integration.services.springCamel.KPIAggregator [LineNumber]:  400  1000 Rows Inserted in daily table..
+May 06, 2020 11:30:05 AM com.enhancesys.common.logger
+INFO: [Thread]: 242 [ClassName]: com.enhancesys.integration.services.springCamel.KPIAggregator [LineNumber]:  422  Daily Table - Total Insert time :: 911 ms
+May 06, 2020 11:30:05 AM com.enhancesys.common.logger
+INFO: [Thread]: 242 [ClassName]: com.enhancesys.integration.services.springCamel.KPIAggregator [LineNumber]:  423  Daily Table - Total update time :: 0 ms
+May 06, 2020 11:30:05 AM com.enhancesys.common.logger
+FINE: [Thread]: 241 [ClassName]: com.enhancesys.integration.services.springCamel.InterfaceFileReader [LineNumber]:  2166  Sent Data size : 5000
+May 06, 2020 11:30:05 AM com.enhancesys.common.logger
+FINE: [Thread]: 241 [ClassName]: com.enhancesys.integration.services.springCamel.InterfaceFileReader [LineNumber]:  2167  Sent FileDataBean to the next level with batch number :: 11
+May 06, 2020 11:30:05 AM com.enhancesys.common.logger
+FINE: [Thread]: 242 [ClassName]: com.enhancesys.integration.services.springCamel.KPIAggregator [LineNumber]:  400  1000 Rows Inserted in daily table..
+May 06, 2020 11:30:05 AM com.enhancesys.common.logger
+FINE: [Thread]: 242 [ClassName]: com.enhancesys.integration.services.springCamel.KPIAggregator [LineNumber]:  400  1000 Rows Inserted in daily table..
+May 06, 2020 11:30:05 AM com.enhancesys.common.logger
+FINE: [Thread]: 242 [ClassName]: com.enhancesys.integration.services.springCamel.KPIAggregator [LineNumber]:  400  1000 Rows Inserted in daily table..
+May 06, 2020 11:30:06 AM com.enhancesys.common.logger
+FINE: [Thread]: 242 [ClassName]: com.enhancesys.integration.services.springCamel.KPIAggregator [LineNumber]:  400  1000 Rows Inserted in daily table..
+May 06, 2020 11:30:06 AM com.enhancesys.common.logger
+FINE: [Thread]: 242 [ClassName]: com.enhancesys.integration.services.springCamel.KPIAggregator [LineNumber]:  400  1000 Rows Inserted in daily table..
+May 06, 2020 11:30:06 AM com.enhancesys.common.logger
+INFO: [Thread]: 242 [ClassName]: com.enhancesys.integration.services.springCamel.KPIAggregator [LineNumber]:  422  Daily Table - Total Insert time :: 934 ms
+May 06, 2020 11:30:06 AM com.enhancesys.common.logger
+INFO: [Thread]: 242 [ClassName]: com.enhancesys.integration.services.springCamel.KPIAggregator [LineNumber]:  423  Daily Table - Total update time :: 0 ms
+May 06, 2020 11:30:06 AM com.enhancesys.common.logger
+FINE: [Thread]: 241 [ClassName]: com.enhancesys.integration.services.springCamel.InterfaceFileReader [LineNumber]:  2166  Sent Data size : 5000
+May 06, 2020 11:30:06 AM com.enhancesys.common.logger
+FINE: [Thread]: 241 [ClassName]: com.enhancesys.integration.services.springCamel.InterfaceFileReader [LineNumber]:  2167  Sent FileDataBean to the next level with batch number :: 12
+May 06, 2020 11:30:06 AM com.enhancesys.common.logger
+FINE: [Thread]: 242 [ClassName]: com.enhancesys.integration.services.springCamel.KPIAggregator [LineNumber]:  400  1000 Rows Inserted in daily table..
+May 06, 2020 11:30:06 AM com.enhancesys.common.logger
+FINE: [Thread]: 242 [ClassName]: com.enhancesys.integration.services.springCamel.KPIAggregator [LineNumber]:  400  1000 Rows Inserted in daily table..
+May 06, 2020 11:30:07 AM com.enhancesys.common.logger
+FINE: [Thread]: 242 [ClassName]: com.enhancesys.integration.services.springCamel.KPIAggregator [LineNumber]:  400  1000 Rows Inserted in daily table..
+May 06, 2020 11:30:07 AM com.enhancesys.common.logger
+FINE: [Thread]: 242 [ClassName]: com.enhancesys.integration.services.springCamel.KPIAggregator [LineNumber]:  400  1000 Rows Inserted in daily table..
+May 06, 2020 11:30:07 AM com.enhancesys.common.logger
+FINE: [Thread]: 242 [ClassName]: com.enhancesys.integration.services.springCamel.KPIAggregator [LineNumber]:  400  1000 Rows Inserted in daily table..
+May 06, 2020 11:30:07 AM com.enhancesys.common.logger
+INFO: [Thread]: 242 [ClassName]: com.enhancesys.integration.services.springCamel.KPIAggregator [LineNumber]:  422  Daily Table - Total Insert time :: 1006 ms
+May 06, 2020 11:30:07 AM com.enhancesys.common.logger
+INFO: [Thread]: 242 [ClassName]: com.enhancesys.integration.services.springCamel.KPIAggregator [LineNumber]:  423  Daily Table - Total update time :: 0 ms
+May 06, 2020 11:30:07 AM com.enhancesys.common.logger
+FINE: [Thread]: 241 [ClassName]: com.enhancesys.integration.services.springCamel.InterfaceFileReader [LineNumber]:  2166  Sent Data size : 5000
+May 06, 2020 11:30:07 AM com.enhancesys.common.logger
+FINE: [Thread]: 241 [ClassName]: com.enhancesys.integration.services.springCamel.InterfaceFileReader [LineNumber]:  2167  Sent FileDataBean to the next level with batch number :: 13
+May 06, 2020 11:30:07 AM com.enhancesys.common.logger
+FINE: [Thread]: 242 [ClassName]: com.enhancesys.integration.services.springCamel.KPIAggregator [LineNumber]:  400  1000 Rows Inserted in daily table..
+May 06, 2020 11:30:07 AM com.enhancesys.common.logger
+FINE: [Thread]: 242 [ClassName]: com.enhancesys.integration.services.springCamel.KPIAggregator [LineNumber]:  400  1000 Rows Inserted in daily table..
+May 06, 2020 11:30:07 AM com.enhancesys.common.logger
+FINE: [Thread]: 242 [ClassName]: com.enhancesys.integration.services.springCamel.KPIAggregator [LineNumber]:  400  1000 Rows Inserted in daily table..
+May 06, 2020 11:30:08 AM com.enhancesys.common.logger
+FINE: [Thread]: 242 [ClassName]: com.enhancesys.integration.services.springCamel.KPIAggregator [LineNumber]:  400  1000 Rows Inserted in daily table..
+May 06, 2020 11:30:08 AM com.enhancesys.common.logger
+FINE: [Thread]: 242 [ClassName]: com.enhancesys.integration.services.springCamel.KPIAggregator [LineNumber]:  400  1000 Rows Inserted in daily table..
+May 06, 2020 11:30:08 AM com.enhancesys.common.logger
+INFO: [Thread]: 242 [ClassName]: com.enhancesys.integration.services.springCamel.KPIAggregator [LineNumber]:  422  Daily Table - Total Insert time :: 920 ms
+May 06, 2020 11:30:08 AM com.enhancesys.common.logger
+INFO: [Thread]: 242 [ClassName]: com.enhancesys.integration.services.springCamel.KPIAggregator [LineNumber]:  423  Daily Table - Total update time :: 0 ms
+May 06, 2020 11:30:08 AM com.enhancesys.common.logger
+FINE: [Thread]: 241 [ClassName]: com.enhancesys.integration.services.springCamel.InterfaceFileReader [LineNumber]:  2166  Sent Data size : 5000
+May 06, 2020 11:30:08 AM com.enhancesys.common.logger
+FINE: [Thread]: 241 [ClassName]: com.enhancesys.integration.services.springCamel.InterfaceFileReader [LineNumber]:  2167  Sent FileDataBean to the next level with batch number :: 14
+May 06, 2020 11:30:08 AM com.enhancesys.common.logger
+FINE: [Thread]: 242 [ClassName]: com.enhancesys.integration.services.springCamel.KPIAggregator [LineNumber]:  400  1000 Rows Inserted in daily table..
+May 06, 2020 11:30:08 AM com.enhancesys.common.logger
+FINE: [Thread]: 242 [ClassName]: com.enhancesys.integration.services.springCamel.KPIAggregator [LineNumber]:  400  1000 Rows Inserted in daily table..
+May 06, 2020 11:30:08 AM com.enhancesys.common.logger
+FINE: [Thread]: 242 [ClassName]: com.enhancesys.integration.services.springCamel.KPIAggregator [LineNumber]:  400  1000 Rows Inserted in daily table..
+May 06, 2020 11:30:09 AM com.enhancesys.common.logger
+FINE: [Thread]: 242 [ClassName]: com.enhancesys.integration.services.springCamel.KPIAggregator [LineNumber]:  400  1000 Rows Inserted in daily table..
+May 06, 2020 11:30:09 AM com.enhancesys.common.logger
+FINE: [Thread]: 242 [ClassName]: com.enhancesys.integration.services.springCamel.KPIAggregator [LineNumber]:  400  1000 Rows Inserted in daily table..
+May 06, 2020 11:30:09 AM com.enhancesys.common.logger
+INFO: [Thread]: 242 [ClassName]: com.enhancesys.integration.services.springCamel.KPIAggregator [LineNumber]:  422  Daily Table - Total Insert time :: 935 ms
+May 06, 2020 11:30:09 AM com.enhancesys.common.logger
+INFO: [Thread]: 242 [ClassName]: com.enhancesys.integration.services.springCamel.KPIAggregator [LineNumber]:  423  Daily Table - Total update time :: 0 ms
+May 06, 2020 11:30:09 AM com.enhancesys.common.logger
+FINE: [Thread]: 241 [ClassName]: com.enhancesys.integration.services.springCamel.InterfaceFileReader [LineNumber]:  2166  Sent Data size : 5000
+May 06, 2020 11:30:09 AM com.enhancesys.common.logger
+FINE: [Thread]: 241 [ClassName]: com.enhancesys.integration.services.springCamel.InterfaceFileReader [LineNumber]:  2167  Sent FileDataBean to the next level with batch number :: 15
+May 06, 2020 11:30:09 AM com.enhancesys.common.logger
+FINE: [Thread]: 242 [ClassName]: com.enhancesys.integration.services.springCamel.KPIAggregator [LineNumber]:  400  1000 Rows Inserted in daily table..
+May 06, 2020 11:30:09 AM com.enhancesys.common.logger
+FINE: [Thread]: 242 [ClassName]: com.enhancesys.integration.services.springCamel.KPIAggregator [LineNumber]:  400  1000 Rows Inserted in daily table..
+May 06, 2020 11:30:09 AM com.enhancesys.common.logger
+FINE: [Thread]: 242 [ClassName]: com.enhancesys.integration.services.springCamel.KPIAggregator [LineNumber]:  400  1000 Rows Inserted in daily table..
+May 06, 2020 11:30:10 AM com.enhancesys.common.logger
+FINE: [Thread]: 242 [ClassName]: com.enhancesys.integration.services.springCamel.KPIAggregator [LineNumber]:  400  1000 Rows Inserted in daily table..
+May 06, 2020 11:30:10 AM com.enhancesys.common.logger
+FINE: [Thread]: 242 [ClassName]: com.enhancesys.integration.services.springCamel.KPIAggregator [LineNumber]:  400  1000 Rows Inserted in daily table..
+May 06, 2020 11:30:10 AM com.enhancesys.common.logger
+INFO: [Thread]: 242 [ClassName]: com.enhancesys.integration.services.springCamel.KPIAggregator [LineNumber]:  422  Daily Table - Total Insert time :: 891 ms
+May 06, 2020 11:30:10 AM com.enhancesys.common.logger
+INFO: [Thread]: 242 [ClassName]: com.enhancesys.integration.services.springCamel.KPIAggregator [LineNumber]:  423  Daily Table - Total update time :: 0 ms
+May 06, 2020 11:30:10 AM com.enhancesys.common.logger
+FINE: [Thread]: 241 [ClassName]: com.enhancesys.integration.services.springCamel.InterfaceFileReader [LineNumber]:  2166  Sent Data size : 5000
+May 06, 2020 11:30:10 AM com.enhancesys.common.logger
+FINE: [Thread]: 241 [ClassName]: com.enhancesys.integration.services.springCamel.InterfaceFileReader [LineNumber]:  2167  Sent FileDataBean to the next level with batch number :: 16
+May 06, 2020 11:30:10 AM com.enhancesys.common.logger
+FINE: [Thread]: 242 [ClassName]: com.enhancesys.integration.services.springCamel.KPIAggregator [LineNumber]:  400  1000 Rows Inserted in daily table..
+May 06, 2020 11:30:10 AM com.enhancesys.common.logger
+FINE: [Thread]: 242 [ClassName]: com.enhancesys.integration.services.springCamel.KPIAggregator [LineNumber]:  400  1000 Rows Inserted in daily table..
+May 06, 2020 11:30:10 AM com.enhancesys.common.logger
+FINE: [Thread]: 242 [ClassName]: com.enhancesys.integration.services.springCamel.KPIAggregator [LineNumber]:  400  1000 Rows Inserted in daily table..
+May 06, 2020 11:30:10 AM com.enhancesys.common.logger
+FINE: [Thread]: 242 [ClassName]: com.enhancesys.integration.services.springCamel.KPIAggregator [LineNumber]:  400  1000 Rows Inserted in daily table..
+May 06, 2020 11:30:11 AM com.enhancesys.common.logger
+FINE: [Thread]: 242 [ClassName]: com.enhancesys.integration.services.springCamel.KPIAggregator [LineNumber]:  400  1000 Rows Inserted in daily table..
+May 06, 2020 11:30:11 AM com.enhancesys.common.logger
+INFO: [Thread]: 242 [ClassName]: com.enhancesys.integration.services.springCamel.KPIAggregator [LineNumber]:  422  Daily Table - Total Insert time :: 922 ms
+May 06, 2020 11:30:11 AM com.enhancesys.common.logger
+INFO: [Thread]: 242 [ClassName]: com.enhancesys.integration.services.springCamel.KPIAggregator [LineNumber]:  423  Daily Table - Total update time :: 0 ms
+May 06, 2020 11:30:11 AM com.enhancesys.common.logger
+FINE: [Thread]: 241 [ClassName]: com.enhancesys.integration.services.springCamel.InterfaceFileReader [LineNumber]:  2166  Sent Data size : 5000
+May 06, 2020 11:30:11 AM com.enhancesys.common.logger
+FINE: [Thread]: 241 [ClassName]: com.enhancesys.integration.services.springCamel.InterfaceFileReader [LineNumber]:  2167  Sent FileDataBean to the next level with batch number :: 17
+May 06, 2020 11:30:11 AM com.enhancesys.common.logger
+FINE: [Thread]: 242 [ClassName]: com.enhancesys.integration.services.springCamel.KPIAggregator [LineNumber]:  400  1000 Rows Inserted in daily table..
+May 06, 2020 11:30:11 AM com.enhancesys.common.logger
+FINE: [Thread]: 242 [ClassName]: com.enhancesys.integration.services.springCamel.KPIAggregator [LineNumber]:  400  1000 Rows Inserted in daily table..
+May 06, 2020 11:30:11 AM com.enhancesys.common.logger
+FINE: [Thread]: 242 [ClassName]: com.enhancesys.integration.services.springCamel.KPIAggregator [LineNumber]:  400  1000 Rows Inserted in daily table..
+May 06, 2020 11:30:11 AM com.enhancesys.common.logger
+FINE: [Thread]: 242 [ClassName]: com.enhancesys.integration.services.springCamel.KPIAggregator [LineNumber]:  400  1000 Rows Inserted in daily table..
+May 06, 2020 11:30:12 AM com.enhancesys.common.logger
+FINE: [Thread]: 242 [ClassName]: com.enhancesys.integration.services.springCamel.KPIAggregator [LineNumber]:  400  1000 Rows Inserted in daily table..
+May 06, 2020 11:30:12 AM com.enhancesys.common.logger
+INFO: [Thread]: 242 [ClassName]: com.enhancesys.integration.services.springCamel.KPIAggregator [LineNumber]:  422  Daily Table - Total Insert time :: 903 ms
+May 06, 2020 11:30:12 AM com.enhancesys.common.logger
+INFO: [Thread]: 242 [ClassName]: com.enhancesys.integration.services.springCamel.KPIAggregator [LineNumber]:  423  Daily Table - Total update time :: 0 ms
+May 06, 2020 11:30:12 AM com.enhancesys.common.logger
+FINE: [Thread]: 241 [ClassName]: com.enhancesys.integration.services.springCamel.InterfaceFileReader [LineNumber]:  2166  Sent Data size : 5000
+May 06, 2020 11:30:12 AM com.enhancesys.common.logger
+FINE: [Thread]: 241 [ClassName]: com.enhancesys.integration.services.springCamel.InterfaceFileReader [LineNumber]:  2167  Sent FileDataBean to the next level with batch number :: 18
+May 06, 2020 11:30:12 AM com.enhancesys.common.logger
+FINE: [Thread]: 242 [ClassName]: com.enhancesys.integration.services.springCamel.KPIAggregator [LineNumber]:  400  1000 Rows Inserted in daily table..
+May 06, 2020 11:30:12 AM com.enhancesys.common.logger
+FINE: [Thread]: 242 [ClassName]: com.enhancesys.integration.services.springCamel.KPIAggregator [LineNumber]:  400  1000 Rows Inserted in daily table..
+May 06, 2020 11:30:12 AM com.enhancesys.common.logger
+FINE: [Thread]: 242 [ClassName]: com.enhancesys.integration.services.springCamel.KPIAggregator [LineNumber]:  400  1000 Rows Inserted in daily table..
+May 06, 2020 11:30:12 AM com.enhancesys.common.logger
+FINE: [Thread]: 242 [ClassName]: com.enhancesys.integration.services.springCamel.KPIAggregator [LineNumber]:  400  1000 Rows Inserted in daily table..
+May 06, 2020 11:30:13 AM com.enhancesys.common.logger
+FINE: [Thread]: 242 [ClassName]: com.enhancesys.integration.services.springCamel.KPIAggregator [LineNumber]:  400  1000 Rows Inserted in daily table..
+May 06, 2020 11:30:13 AM com.enhancesys.common.logger
+INFO: [Thread]: 242 [ClassName]: com.enhancesys.integration.services.springCamel.KPIAggregator [LineNumber]:  422  Daily Table - Total Insert time :: 934 ms
+May 06, 2020 11:30:13 AM com.enhancesys.common.logger
+INFO: [Thread]: 242 [ClassName]: com.enhancesys.integration.services.springCamel.KPIAggregator [LineNumber]:  423  Daily Table - Total update time :: 0 ms
+May 06, 2020 11:30:13 AM com.enhancesys.common.logger
+FINE: [Thread]: 241 [ClassName]: com.enhancesys.integration.services.springCamel.InterfaceFileReader [LineNumber]:  2166  Sent Data size : 5000
+May 06, 2020 11:30:13 AM com.enhancesys.common.logger
+FINE: [Thread]: 241 [ClassName]: com.enhancesys.integration.services.springCamel.InterfaceFileReader [LineNumber]:  2167  Sent FileDataBean to the next level with batch number :: 19
+May 06, 2020 11:30:13 AM com.enhancesys.common.logger
+FINE: [Thread]: 242 [ClassName]: com.enhancesys.integration.services.springCamel.KPIAggregator [LineNumber]:  400  1000 Rows Inserted in daily table..
+May 06, 2020 11:30:13 AM com.enhancesys.common.logger
+FINE: [Thread]: 242 [ClassName]: com.enhancesys.integration.services.springCamel.KPIAggregator [LineNumber]:  400  1000 Rows Inserted in daily table..
+May 06, 2020 11:30:13 AM com.enhancesys.common.logger
+FINE: [Thread]: 242 [ClassName]: com.enhancesys.integration.services.springCamel.KPIAggregator [LineNumber]:  400  1000 Rows Inserted in daily table..
+May 06, 2020 11:30:13 AM com.enhancesys.common.logger
+FINE: [Thread]: 242 [ClassName]: com.enhancesys.integration.services.springCamel.KPIAggregator [LineNumber]:  400  1000 Rows Inserted in daily table..
+May 06, 2020 11:30:14 AM com.enhancesys.common.logger
+FINE: [Thread]: 242 [ClassName]: com.enhancesys.integration.services.springCamel.KPIAggregator [LineNumber]:  400  1000 Rows Inserted in daily table..
+May 06, 2020 11:30:14 AM com.enhancesys.common.logger
+INFO: [Thread]: 242 [ClassName]: com.enhancesys.integration.services.springCamel.KPIAggregator [LineNumber]:  422  Daily Table - Total Insert time :: 980 ms
+May 06, 2020 11:30:14 AM com.enhancesys.common.logger
+INFO: [Thread]: 242 [ClassName]: com.enhancesys.integration.services.springCamel.KPIAggregator [LineNumber]:  423  Daily Table - Total update time :: 0 ms
+May 06, 2020 11:30:14 AM com.enhancesys.common.logger
+FINE: [Thread]: 241 [ClassName]: com.enhancesys.integration.services.springCamel.InterfaceFileReader [LineNumber]:  2166  Sent Data size : 5000
+May 06, 2020 11:30:14 AM com.enhancesys.common.logger
+FINE: [Thread]: 241 [ClassName]: com.enhancesys.integration.services.springCamel.InterfaceFileReader [LineNumber]:  2167  Sent FileDataBean to the next level with batch number :: 20
+May 06, 2020 11:30:14 AM com.enhancesys.common.logger
+FINE: [Thread]: 242 [ClassName]: com.enhancesys.integration.services.springCamel.KPIAggregator [LineNumber]:  400  1000 Rows Inserted in daily table..
+May 06, 2020 11:30:14 AM com.enhancesys.common.logger
+FINE: [Thread]: 242 [ClassName]: com.enhancesys.integration.services.springCamel.KPIAggregator [LineNumber]:  400  1000 Rows Inserted in daily table..
+May 06, 2020 11:30:14 AM com.enhancesys.common.logger
+FINE: [Thread]: 242 [ClassName]: com.enhancesys.integration.services.springCamel.KPIAggregator [LineNumber]:  400  1000 Rows Inserted in daily table..
+May 06, 2020 11:30:14 AM com.enhancesys.common.logger
+FINE: [Thread]: 242 [ClassName]: com.enhancesys.integration.services.springCamel.KPIAggregator [LineNumber]:  400  1000 Rows Inserted in daily table..
+May 06, 2020 11:30:15 AM com.enhancesys.common.logger
+FINE: [Thread]: 242 [ClassName]: com.enhancesys.integration.services.springCamel.KPIAggregator [LineNumber]:  400  1000 Rows Inserted in daily table..
+May 06, 2020 11:30:15 AM com.enhancesys.common.logger
+INFO: [Thread]: 242 [ClassName]: com.enhancesys.integration.services.springCamel.KPIAggregator [LineNumber]:  422  Daily Table - Total Insert time :: 968 ms
+May 06, 2020 11:30:15 AM com.enhancesys.common.logger
+INFO: [Thread]: 242 [ClassName]: com.enhancesys.integration.services.springCamel.KPIAggregator [LineNumber]:  423  Daily Table - Total update time :: 0 ms
+May 06, 2020 11:30:15 AM com.enhancesys.common.logger
+FINE: [Thread]: 241 [ClassName]: com.enhancesys.integration.services.springCamel.InterfaceFileReader [LineNumber]:  2166  Sent Data size : 5000
+May 06, 2020 11:30:15 AM com.enhancesys.common.logger
+FINE: [Thread]: 241 [ClassName]: com.enhancesys.integration.services.springCamel.InterfaceFileReader [LineNumber]:  2167  Sent FileDataBean to the next level with batch number :: 21
+May 06, 2020 11:30:15 AM com.enhancesys.common.logger
+FINE: [Thread]: 242 [ClassName]: com.enhancesys.integration.services.springCamel.KPIAggregator [LineNumber]:  400  1000 Rows Inserted in daily table..
+May 06, 2020 11:30:15 AM com.enhancesys.common.logger
+FINE: [Thread]: 242 [ClassName]: com.enhancesys.integration.services.springCamel.KPIAggregator [LineNumber]:  400  1000 Rows Inserted in daily table..
+May 06, 2020 11:30:15 AM com.enhancesys.common.logger
+FINE: [Thread]: 242 [ClassName]: com.enhancesys.integration.services.springCamel.KPIAggregator [LineNumber]:  400  1000 Rows Inserted in daily table..
+May 06, 2020 11:30:15 AM com.enhancesys.common.logger
+FINE: [Thread]: 242 [ClassName]: com.enhancesys.integration.services.springCamel.KPIAggregator [LineNumber]:  400  1000 Rows Inserted in daily table..
+May 06, 2020 11:30:15 AM com.enhancesys.common.logger
+FINE: [Thread]: 242 [ClassName]: com.enhancesys.integration.services.springCamel.KPIAggregator [LineNumber]:  400  1000 Rows Inserted in daily table..
+May 06, 2020 11:30:15 AM com.enhancesys.common.logger
+INFO: [Thread]: 242 [ClassName]: com.enhancesys.integration.services.springCamel.KPIAggregator [LineNumber]:  422  Daily Table - Total Insert time :: 946 ms
+May 06, 2020 11:30:15 AM com.enhancesys.common.logger
+INFO: [Thread]: 242 [ClassName]: com.enhancesys.integration.services.springCamel.KPIAggregator [LineNumber]:  423  Daily Table - Total update time :: 0 ms
+May 06, 2020 11:30:15 AM com.enhancesys.common.logger
+FINE: [Thread]: 241 [ClassName]: com.enhancesys.integration.services.springCamel.InterfaceFileReader [LineNumber]:  2166  Sent Data size : 5000
+May 06, 2020 11:30:15 AM com.enhancesys.common.logger
+FINE: [Thread]: 241 [ClassName]: com.enhancesys.integration.services.springCamel.InterfaceFileReader [LineNumber]:  2167  Sent FileDataBean to the next level with batch number :: 22
+May 06, 2020 11:30:16 AM com.enhancesys.common.logger
+FINE: [Thread]: 242 [ClassName]: com.enhancesys.integration.services.springCamel.KPIAggregator [LineNumber]:  400  1000 Rows Inserted in daily table..
+May 06, 2020 11:30:16 AM com.enhancesys.common.logger
+FINE: [Thread]: 242 [ClassName]: com.enhancesys.integration.services.springCamel.KPIAggregator [LineNumber]:  400  1000 Rows Inserted in daily table..
+May 06, 2020 11:30:16 AM com.enhancesys.common.logger
+FINE: [Thread]: 242 [ClassName]: com.enhancesys.integration.services.springCamel.KPIAggregator [LineNumber]:  400  1000 Rows Inserted in daily table..
+May 06, 2020 11:30:16 AM com.enhancesys.common.logger
+FINE: [Thread]: 242 [ClassName]: com.enhancesys.integration.services.springCamel.KPIAggregator [LineNumber]:  400  1000 Rows Inserted in daily table..
+May 06, 2020 11:30:16 AM com.enhancesys.common.logger
+FINE: [Thread]: 242 [ClassName]: com.enhancesys.integration.services.springCamel.KPIAggregator [LineNumber]:  400  1000 Rows Inserted in daily table..
+May 06, 2020 11:30:16 AM com.enhancesys.common.logger
+INFO: [Thread]: 242 [ClassName]: com.enhancesys.integration.services.springCamel.KPIAggregator [LineNumber]:  422  Daily Table - Total Insert time :: 989 ms
+May 06, 2020 11:30:16 AM com.enhancesys.common.logger
+INFO: [Thread]: 242 [ClassName]: com.enhancesys.integration.services.springCamel.KPIAggregator [LineNumber]:  423  Daily Table - Total update time :: 0 ms
+May 06, 2020 11:30:16 AM com.enhancesys.common.logger
+FINE: [Thread]: 241 [ClassName]: com.enhancesys.integration.services.springCamel.InterfaceFileReader [LineNumber]:  2166  Sent Data size : 5000
+May 06, 2020 11:30:16 AM com.enhancesys.common.logger
+FINE: [Thread]: 241 [ClassName]: com.enhancesys.integration.services.springCamel.InterfaceFileReader [LineNumber]:  2167  Sent FileDataBean to the next level with batch number :: 23
+May 06, 2020 11:30:17 AM com.enhancesys.common.logger
+FINE: [Thread]: 242 [ClassName]: com.enhancesys.integration.services.springCamel.KPIAggregator [LineNumber]:  400  1000 Rows Inserted in daily table..
+May 06, 2020 11:30:17 AM com.enhancesys.common.logger
+FINE: [Thread]: 242 [ClassName]: com.enhancesys.integration.services.springCamel.KPIAggregator [LineNumber]:  400  1000 Rows Inserted in daily table..
+May 06, 2020 11:30:17 AM com.enhancesys.common.logger
+FINE: [Thread]: 242 [ClassName]: com.enhancesys.integration.services.springCamel.KPIAggregator [LineNumber]:  400  1000 Rows Inserted in daily table..
+May 06, 2020 11:30:17 AM com.enhancesys.common.logger
+FINE: [Thread]: 242 [ClassName]: com.enhancesys.integration.services.springCamel.KPIAggregator [LineNumber]:  400  1000 Rows Inserted in daily table..
+May 06, 2020 11:30:17 AM com.enhancesys.common.logger
+FINE: [Thread]: 242 [ClassName]: com.enhancesys.integration.services.springCamel.KPIAggregator [LineNumber]:  400  1000 Rows Inserted in daily table..
+May 06, 2020 11:30:17 AM com.enhancesys.common.logger
+INFO: [Thread]: 242 [ClassName]: com.enhancesys.integration.services.springCamel.KPIAggregator [LineNumber]:  422  Daily Table - Total Insert time :: 974 ms
+May 06, 2020 11:30:17 AM com.enhancesys.common.logger
+INFO: [Thread]: 242 [ClassName]: com.enhancesys.integration.services.springCamel.KPIAggregator [LineNumber]:  423  Daily Table - Total update time :: 0 ms
+May 06, 2020 11:30:17 AM com.enhancesys.common.logger
+FINE: [Thread]: 241 [ClassName]: com.enhancesys.integration.services.springCamel.InterfaceFileReader [LineNumber]:  2166  Sent Data size : 5000
+May 06, 2020 11:30:17 AM com.enhancesys.common.logger
+FINE: [Thread]: 241 [ClassName]: com.enhancesys.integration.services.springCamel.InterfaceFileReader [LineNumber]:  2167  Sent FileDataBean to the next level with batch number :: 24
+May 06, 2020 11:30:18 AM com.enhancesys.common.logger
+FINE: [Thread]: 242 [ClassName]: com.enhancesys.integration.services.springCamel.KPIAggregator [LineNumber]:  400  1000 Rows Inserted in daily table..
+May 06, 2020 11:30:18 AM com.enhancesys.common.logger
+FINE: [Thread]: 242 [ClassName]: com.enhancesys.integration.services.springCamel.KPIAggregator [LineNumber]:  400  1000 Rows Inserted in daily table..
+May 06, 2020 11:30:18 AM com.enhancesys.common.logger
+FINE: [Thread]: 242 [ClassName]: com.enhancesys.integration.services.springCamel.KPIAggregator [LineNumber]:  400  1000 Rows Inserted in daily table..
+May 06, 2020 11:30:18 AM com.enhancesys.common.logger
+FINE: [Thread]: 242 [ClassName]: com.enhancesys.integration.services.springCamel.KPIAggregator [LineNumber]:  400  1000 Rows Inserted in daily table..
+May 06, 2020 11:30:19 AM com.enhancesys.common.logger
+FINE: [Thread]: 242 [ClassName]: com.enhancesys.integration.services.springCamel.KPIAggregator [LineNumber]:  400  1000 Rows Inserted in daily table..
+May 06, 2020 11:30:19 AM com.enhancesys.common.logger
+INFO: [Thread]: 242 [ClassName]: com.enhancesys.integration.services.springCamel.KPIAggregator [LineNumber]:  422  Daily Table - Total Insert time :: 1035 ms
+May 06, 2020 11:30:19 AM com.enhancesys.common.logger
+INFO: [Thread]: 242 [ClassName]: com.enhancesys.integration.services.springCamel.KPIAggregator [LineNumber]:  423  Daily Table - Total update time :: 0 ms
+May 06, 2020 11:30:19 AM com.enhancesys.common.logger
+FINE: [Thread]: 241 [ClassName]: com.enhancesys.integration.services.springCamel.InterfaceFileReader [LineNumber]:  2166  Sent Data size : 5000
+May 06, 2020 11:30:19 AM com.enhancesys.common.logger
+FINE: [Thread]: 241 [ClassName]: com.enhancesys.integration.services.springCamel.InterfaceFileReader [LineNumber]:  2167  Sent FileDataBean to the next level with batch number :: 25
+May 06, 2020 11:30:19 AM com.enhancesys.common.logger
+FINE: [Thread]: 242 [ClassName]: com.enhancesys.integration.services.springCamel.KPIAggregator [LineNumber]:  400  1000 Rows Inserted in daily table..
+May 06, 2020 11:30:19 AM com.enhancesys.common.logger
+FINE: [Thread]: 242 [ClassName]: com.enhancesys.integration.services.springCamel.KPIAggregator [LineNumber]:  400  1000 Rows Inserted in daily table..
+May 06, 2020 11:30:19 AM com.enhancesys.common.logger
+FINE: [Thread]: 242 [ClassName]: com.enhancesys.integration.services.springCamel.KPIAggregator [LineNumber]:  400  1000 Rows Inserted in daily table..
+May 06, 2020 11:30:19 AM com.enhancesys.common.logger
+FINE: [Thread]: 242 [ClassName]: com.enhancesys.integration.services.springCamel.KPIAggregator [LineNumber]:  400  1000 Rows Inserted in daily table..
+May 06, 2020 11:30:20 AM com.enhancesys.common.logger
+FINE: [Thread]: 242 [ClassName]: com.enhancesys.integration.services.springCamel.KPIAggregator [LineNumber]:  400  1000 Rows Inserted in daily table..
+May 06, 2020 11:30:20 AM com.enhancesys.common.logger
+INFO: [Thread]: 242 [ClassName]: com.enhancesys.integration.services.springCamel.KPIAggregator [LineNumber]:  422  Daily Table - Total Insert time :: 968 ms
+May 06, 2020 11:30:20 AM com.enhancesys.common.logger
+INFO: [Thread]: 242 [ClassName]: com.enhancesys.integration.services.springCamel.KPIAggregator [LineNumber]:  423  Daily Table - Total update time :: 0 ms
+May 06, 2020 11:30:20 AM com.enhancesys.common.logger
+FINE: [Thread]: 241 [ClassName]: com.enhancesys.integration.services.springCamel.InterfaceFileReader [LineNumber]:  2166  Sent Data size : 5000
+May 06, 2020 11:30:20 AM com.enhancesys.common.logger
+FINE: [Thread]: 241 [ClassName]: com.enhancesys.integration.services.springCamel.InterfaceFileReader [LineNumber]:  2167  Sent FileDataBean to the next level with batch number :: 26
+May 06, 2020 11:30:20 AM com.enhancesys.common.logger
+FINE: [Thread]: 242 [ClassName]: com.enhancesys.integration.services.springCamel.KPIAggregator [LineNumber]:  400  1000 Rows Inserted in daily table..
+May 06, 2020 11:30:20 AM com.enhancesys.common.logger
+FINE: [Thread]: 242 [ClassName]: com.enhancesys.integration.services.springCamel.KPIAggregator [LineNumber]:  400  1000 Rows Inserted in daily table..
+May 06, 2020 11:30:20 AM com.enhancesys.common.logger
+FINE: [Thread]: 242 [ClassName]: com.enhancesys.integration.services.springCamel.KPIAggregator [LineNumber]:  400  1000 Rows Inserted in daily table..
+May 06, 2020 11:30:20 AM com.enhancesys.common.logger
+FINE: [Thread]: 242 [ClassName]: com.enhancesys.integration.services.springCamel.KPIAggregator [LineNumber]:  400  1000 Rows Inserted in daily table..
+May 06, 2020 11:30:21 AM com.enhancesys.common.logger
+FINE: [Thread]: 242 [ClassName]: com.enhancesys.integration.services.springCamel.KPIAggregator [LineNumber]:  400  1000 Rows Inserted in daily table..
+May 06, 2020 11:30:21 AM com.enhancesys.common.logger
+INFO: [Thread]: 242 [ClassName]: com.enhancesys.integration.services.springCamel.KPIAggregator [LineNumber]:  422  Daily Table - Total Insert time :: 956 ms
+May 06, 2020 11:30:21 AM com.enhancesys.common.logger
+INFO: [Thread]: 242 [ClassName]: com.enhancesys.integration.services.springCamel.KPIAggregator [LineNumber]:  423  Daily Table - Total update time :: 0 ms
+May 06, 2020 11:30:21 AM com.enhancesys.common.logger
+FINE: [Thread]: 241 [ClassName]: com.enhancesys.integration.services.springCamel.InterfaceFileReader [LineNumber]:  2166  Sent Data size : 5000
+May 06, 2020 11:30:21 AM com.enhancesys.common.logger
+FINE: [Thread]: 241 [ClassName]: com.enhancesys.integration.services.springCamel.InterfaceFileReader [LineNumber]:  2167  Sent FileDataBean to the next level with batch number :: 27
+May 06, 2020 11:30:21 AM com.enhancesys.common.logger
+FINE: [Thread]: 242 [ClassName]: com.enhancesys.integration.services.springCamel.KPIAggregator [LineNumber]:  400  1000 Rows Inserted in daily table..
+May 06, 2020 11:30:21 AM com.enhancesys.common.logger
+FINE: [Thread]: 242 [ClassName]: com.enhancesys.integration.services.springCamel.KPIAggregator [LineNumber]:  400  1000 Rows Inserted in daily table..
+May 06, 2020 11:30:21 AM com.enhancesys.common.logger
+FINE: [Thread]: 242 [ClassName]: com.enhancesys.integration.services.springCamel.KPIAggregator [LineNumber]:  400  1000 Rows Inserted in daily table..
+May 06, 2020 11:30:21 AM com.enhancesys.common.logger
+FINE: [Thread]: 242 [ClassName]: com.enhancesys.integration.services.springCamel.KPIAggregator [LineNumber]:  400  1000 Rows Inserted in daily table..
+May 06, 2020 11:30:22 AM com.enhancesys.common.logger
+FINE: [Thread]: 242 [ClassName]: com.enhancesys.integration.services.springCamel.KPIAggregator [LineNumber]:  400  1000 Rows Inserted in daily table..
+May 06, 2020 11:30:22 AM com.enhancesys.common.logger
+INFO: [Thread]: 242 [ClassName]: com.enhancesys.integration.services.springCamel.KPIAggregator [LineNumber]:  422  Daily Table - Total Insert time :: 1005 ms
+May 06, 2020 11:30:22 AM com.enhancesys.common.logger
+INFO: [Thread]: 242 [ClassName]: com.enhancesys.integration.services.springCamel.KPIAggregator [LineNumber]:  423  Daily Table - Total update time :: 0 ms
+May 06, 2020 11:30:22 AM com.enhancesys.common.logger
+FINE: [Thread]: 241 [ClassName]: com.enhancesys.integration.services.springCamel.InterfaceFileReader [LineNumber]:  2166  Sent Data size : 5000
+May 06, 2020 11:30:22 AM com.enhancesys.common.logger
+FINE: [Thread]: 241 [ClassName]: com.enhancesys.integration.services.springCamel.InterfaceFileReader [LineNumber]:  2167  Sent FileDataBean to the next level with batch number :: 28
+May 06, 2020 11:30:22 AM com.enhancesys.common.logger
+FINE: [Thread]: 242 [ClassName]: com.enhancesys.integration.services.springCamel.KPIAggregator [LineNumber]:  400  1000 Rows Inserted in daily table..
+May 06, 2020 11:30:22 AM com.enhancesys.common.logger
+FINE: [Thread]: 242 [ClassName]: com.enhancesys.integration.services.springCamel.KPIAggregator [LineNumber]:  400  1000 Rows Inserted in daily table..
+May 06, 2020 11:30:22 AM com.enhancesys.common.logger
+FINE: [Thread]: 242 [ClassName]: com.enhancesys.integration.services.springCamel.KPIAggregator [LineNumber]:  400  1000 Rows Inserted in daily table..
+May 06, 2020 11:30:22 AM com.enhancesys.common.logger
+FINE: [Thread]: 242 [ClassName]: com.enhancesys.integration.services.springCamel.KPIAggregator [LineNumber]:  400  1000 Rows Inserted in daily table..
+May 06, 2020 11:30:23 AM com.enhancesys.common.logger
+FINE: [Thread]: 242 [ClassName]: com.enhancesys.integration.services.springCamel.KPIAggregator [LineNumber]:  400  1000 Rows Inserted in daily table..
+May 06, 2020 11:30:23 AM com.enhancesys.common.logger
+INFO: [Thread]: 242 [ClassName]: com.enhancesys.integration.services.springCamel.KPIAggregator [LineNumber]:  422  Daily Table - Total Insert time :: 1010 ms
+May 06, 2020 11:30:23 AM com.enhancesys.common.logger
+INFO: [Thread]: 242 [ClassName]: com.enhancesys.integration.services.springCamel.KPIAggregator [LineNumber]:  423  Daily Table - Total update time :: 0 ms
+May 06, 2020 11:30:23 AM com.enhancesys.common.logger
+FINE: [Thread]: 241 [ClassName]: com.enhancesys.integration.services.springCamel.InterfaceFileReader [LineNumber]:  2166  Sent Data size : 5000
+May 06, 2020 11:30:23 AM com.enhancesys.common.logger
+FINE: [Thread]: 241 [ClassName]: com.enhancesys.integration.services.springCamel.InterfaceFileReader [LineNumber]:  2167  Sent FileDataBean to the next level with batch number :: 29
+May 06, 2020 11:30:23 AM com.enhancesys.common.logger
+FINE: [Thread]: 241 [ClassName]: com.enhancesys.integration.services.springCamel.InterfaceFileReader [LineNumber]:  2191  Daily DataCount : 145299
+May 06, 2020 11:30:23 AM com.enhancesys.common.logger
+FINE: [Thread]: 241 [ClassName]: com.enhancesys.integration.services.springCamel.InterfaceFileReader [LineNumber]:  2197  Remaining records..299
+May 06, 2020 11:30:23 AM com.enhancesys.common.logger
+FINE: [Thread]: 242 [ClassName]: com.enhancesys.integration.services.springCamel.KPIAggregator [LineNumber]:  400  1000 Rows Inserted in daily table..
+May 06, 2020 11:30:23 AM com.enhancesys.common.logger
+FINE: [Thread]: 242 [ClassName]: com.enhancesys.integration.services.springCamel.KPIAggregator [LineNumber]:  400  1000 Rows Inserted in daily table..
+May 06, 2020 11:30:23 AM com.enhancesys.common.logger
+FINE: [Thread]: 242 [ClassName]: com.enhancesys.integration.services.springCamel.KPIAggregator [LineNumber]:  400  1000 Rows Inserted in daily table..
+May 06, 2020 11:30:23 AM com.enhancesys.common.logger
+FINE: [Thread]: 242 [ClassName]: com.enhancesys.integration.services.springCamel.KPIAggregator [LineNumber]:  400  1000 Rows Inserted in daily table..
+May 06, 2020 11:30:24 AM com.enhancesys.common.logger
+FINE: [Thread]: 242 [ClassName]: com.enhancesys.integration.services.springCamel.KPIAggregator [LineNumber]:  400  1000 Rows Inserted in daily table..
+May 06, 2020 11:30:24 AM com.enhancesys.common.logger
+INFO: [Thread]: 242 [ClassName]: com.enhancesys.integration.services.springCamel.KPIAggregator [LineNumber]:  422  Daily Table - Total Insert time :: 973 ms
+May 06, 2020 11:30:24 AM com.enhancesys.common.logger
+INFO: [Thread]: 242 [ClassName]: com.enhancesys.integration.services.springCamel.KPIAggregator [LineNumber]:  423  Daily Table - Total update time :: 0 ms
+May 06, 2020 11:30:24 AM com.enhancesys.common.logger
+FINE: [Thread]: 241 [ClassName]: com.enhancesys.integration.services.springCamel.InterfaceFileReader [LineNumber]:  2219  Sent FileDataBean to the next level with batch number :: 30
+May 06, 2020 11:30:24 AM com.enhancesys.common.logger
+FINE: [Thread]: 241 [ClassName]: com.enhancesys.integration.services.springCamel.InterfaceFileReader [LineNumber]:  2238  Daily Aggregation completed..
+May 06, 2020 11:30:24 AM com.enhancesys.common.logger
+FINE: [Thread]: 242 [ClassName]: com.enhancesys.integration.services.springCamel.KPIAggregator [LineNumber]:  400  1000 Rows Inserted in daily table..
+May 06, 2020 11:30:24 AM com.enhancesys.common.logger
+FINE: [Thread]: 242 [ClassName]: com.enhancesys.integration.services.springCamel.KPIAggregator [LineNumber]:  400  1000 Rows Inserted in daily table..
+May 06, 2020 11:30:24 AM com.enhancesys.common.logger
+FINE: [Thread]: 242 [ClassName]: com.enhancesys.integration.services.springCamel.KPIAggregator [LineNumber]:  400  1000 Rows Inserted in daily table..
+May 06, 2020 11:30:24 AM com.enhancesys.common.logger
+FINE: [Thread]: 242 [ClassName]: com.enhancesys.integration.services.springCamel.KPIAggregator [LineNumber]:  400  1000 Rows Inserted in daily table..
+May 06, 2020 11:30:24 AM com.enhancesys.common.logger
+FINE: [Thread]: 242 [ClassName]: com.enhancesys.integration.services.springCamel.KPIAggregator [LineNumber]:  400  1000 Rows Inserted in daily table..
+May 06, 2020 11:30:24 AM com.enhancesys.common.logger
+INFO: [Thread]: 242 [ClassName]: com.enhancesys.integration.services.springCamel.KPIAggregator [LineNumber]:  422  Daily Table - Total Insert time :: 866 ms
+May 06, 2020 11:30:24 AM com.enhancesys.common.logger
+INFO: [Thread]: 242 [ClassName]: com.enhancesys.integration.services.springCamel.KPIAggregator [LineNumber]:  423  Daily Table - Total update time :: 0 ms
+May 06, 2020 11:30:25 AM com.enhancesys.common.logger
+FINE: [Thread]: 242 [ClassName]: com.enhancesys.integration.services.springCamel.KPIAggregator [LineNumber]:  400  1000 Rows Inserted in daily table..
+May 06, 2020 11:30:25 AM com.enhancesys.common.logger
+FINE: [Thread]: 242 [ClassName]: com.enhancesys.integration.services.springCamel.KPIAggregator [LineNumber]:  400  1000 Rows Inserted in daily table..
+May 06, 2020 11:30:25 AM com.enhancesys.common.logger
+FINE: [Thread]: 242 [ClassName]: com.enhancesys.integration.services.springCamel.KPIAggregator [LineNumber]:  400  1000 Rows Inserted in daily table..
+May 06, 2020 11:30:25 AM com.enhancesys.common.logger
+FINE: [Thread]: 242 [ClassName]: com.enhancesys.integration.services.springCamel.KPIAggregator [LineNumber]:  400  1000 Rows Inserted in daily table..
+May 06, 2020 11:30:25 AM com.enhancesys.common.logger
+FINE: [Thread]: 242 [ClassName]: com.enhancesys.integration.services.springCamel.KPIAggregator [LineNumber]:  400  1000 Rows Inserted in daily table..
+May 06, 2020 11:30:25 AM com.enhancesys.common.logger
+INFO: [Thread]: 242 [ClassName]: com.enhancesys.integration.services.springCamel.KPIAggregator [LineNumber]:  422  Daily Table - Total Insert time :: 644 ms
+May 06, 2020 11:30:25 AM com.enhancesys.common.logger
+INFO: [Thread]: 242 [ClassName]: com.enhancesys.integration.services.springCamel.KPIAggregator [LineNumber]:  423  Daily Table - Total update time :: 0 ms
+May 06, 2020 11:30:25 AM com.enhancesys.common.logger
+FINE: [Thread]: 242 [ClassName]: com.enhancesys.integration.services.springCamel.KPIAggregator [LineNumber]:  418  299 Rows Inserted in daily table..
+May 06, 2020 11:30:25 AM com.enhancesys.common.logger
+INFO: [Thread]: 242 [ClassName]: com.enhancesys.integration.services.springCamel.KPIAggregator [LineNumber]:  422  Daily Table - Total Insert time :: 35 ms
+May 06, 2020 11:30:25 AM com.enhancesys.common.logger
+INFO: [Thread]: 242 [ClassName]: com.enhancesys.integration.services.springCamel.KPIAggregator [LineNumber]:  423  Daily Table - Total update time :: 0 ms
+May 06, 2020 11:30:27 AM com.enhancesys.common.logger
+INFO: [Thread]: 241 [ClassName]: com.enhancesys.integration.services.springCamel.InterfaceFileReader [LineNumber]:  2256  Time taken to execute 1153_MONTHLY_JOIN_QUERY_1  :: 2 Seconds
+May 06, 2020 11:30:27 AM com.enhancesys.common.logger
+FINE: [Thread]: 241 [ClassName]: com.enhancesys.integration.services.springCamel.InterfaceFileReader [LineNumber]:  2316  Sent Data size : 5000
+May 06, 2020 11:30:27 AM com.enhancesys.common.logger
+FINE: [Thread]: 241 [ClassName]: com.enhancesys.integration.services.springCamel.InterfaceFileReader [LineNumber]:  2317  Sent FileDataBean to the next level with batch number :: 1
+May 06, 2020 11:30:27 AM com.enhancesys.common.logger
+FINE: [Thread]: 241 [ClassName]: com.enhancesys.integration.services.springCamel.InterfaceFileReader [LineNumber]:  2316  Sent Data size : 5000
+May 06, 2020 11:30:27 AM com.enhancesys.common.logger
+FINE: [Thread]: 241 [ClassName]: com.enhancesys.integration.services.springCamel.InterfaceFileReader [LineNumber]:  2317  Sent FileDataBean to the next level with batch number :: 2
+May 06, 2020 11:30:27 AM com.enhancesys.common.logger
+FINE: [Thread]: 241 [ClassName]: com.enhancesys.integration.services.springCamel.InterfaceFileReader [LineNumber]:  2316  Sent Data size : 5000
+May 06, 2020 11:30:27 AM com.enhancesys.common.logger
+FINE: [Thread]: 241 [ClassName]: com.enhancesys.integration.services.springCamel.InterfaceFileReader [LineNumber]:  2317  Sent FileDataBean to the next level with batch number :: 3
+May 06, 2020 11:30:27 AM com.enhancesys.common.logger
+FINE: [Thread]: 242 [ClassName]: com.enhancesys.integration.services.springCamel.KPIAggregator [LineNumber]:  597  1000 Rows Inserted in monthly table..
+May 06, 2020 11:30:28 AM com.enhancesys.common.logger
+FINE: [Thread]: 242 [ClassName]: com.enhancesys.integration.services.springCamel.KPIAggregator [LineNumber]:  597  1000 Rows Inserted in monthly table..
+May 06, 2020 11:30:28 AM com.enhancesys.common.logger
+FINE: [Thread]: 242 [ClassName]: com.enhancesys.integration.services.springCamel.KPIAggregator [LineNumber]:  597  1000 Rows Inserted in monthly table..
+May 06, 2020 11:30:28 AM com.enhancesys.common.logger
+FINE: [Thread]: 242 [ClassName]: com.enhancesys.integration.services.springCamel.KPIAggregator [LineNumber]:  597  1000 Rows Inserted in monthly table..
+May 06, 2020 11:30:28 AM com.enhancesys.common.logger
+FINE: [Thread]: 242 [ClassName]: com.enhancesys.integration.services.springCamel.KPIAggregator [LineNumber]:  597  1000 Rows Inserted in monthly table..
+May 06, 2020 11:30:28 AM com.enhancesys.common.logger
+INFO: [Thread]: 242 [ClassName]: com.enhancesys.integration.services.springCamel.KPIAggregator [LineNumber]:  619  Monthly Table - Total Insert time :: 876 ms
+May 06, 2020 11:30:28 AM com.enhancesys.common.logger
+INFO: [Thread]: 242 [ClassName]: com.enhancesys.integration.services.springCamel.KPIAggregator [LineNumber]:  620  Monthly Table - Total update time :: 0 ms
+May 06, 2020 11:30:28 AM com.enhancesys.common.logger
+FINE: [Thread]: 241 [ClassName]: com.enhancesys.integration.services.springCamel.InterfaceFileReader [LineNumber]:  2316  Sent Data size : 5000
+May 06, 2020 11:30:28 AM com.enhancesys.common.logger
+FINE: [Thread]: 241 [ClassName]: com.enhancesys.integration.services.springCamel.InterfaceFileReader [LineNumber]:  2317  Sent FileDataBean to the next level with batch number :: 4
+May 06, 2020 11:30:28 AM com.enhancesys.common.logger
+FINE: [Thread]: 242 [ClassName]: com.enhancesys.integration.services.springCamel.KPIAggregator [LineNumber]:  597  1000 Rows Inserted in monthly table..
+May 06, 2020 11:30:28 AM com.enhancesys.common.logger
+FINE: [Thread]: 242 [ClassName]: com.enhancesys.integration.services.springCamel.KPIAggregator [LineNumber]:  597  1000 Rows Inserted in monthly table..
+May 06, 2020 11:30:29 AM com.enhancesys.common.logger
+FINE: [Thread]: 242 [ClassName]: com.enhancesys.integration.services.springCamel.KPIAggregator [LineNumber]:  597  1000 Rows Inserted in monthly table..
+May 06, 2020 11:30:29 AM com.enhancesys.common.logger
+FINE: [Thread]: 242 [ClassName]: com.enhancesys.integration.services.springCamel.KPIAggregator [LineNumber]:  597  1000 Rows Inserted in monthly table..
+May 06, 2020 11:30:29 AM com.enhancesys.common.logger
+FINE: [Thread]: 242 [ClassName]: com.enhancesys.integration.services.springCamel.KPIAggregator [LineNumber]:  597  1000 Rows Inserted in monthly table..
+May 06, 2020 11:30:29 AM com.enhancesys.common.logger
+INFO: [Thread]: 242 [ClassName]: com.enhancesys.integration.services.springCamel.KPIAggregator [LineNumber]:  619  Monthly Table - Total Insert time :: 866 ms
+May 06, 2020 11:30:29 AM com.enhancesys.common.logger
+INFO: [Thread]: 242 [ClassName]: com.enhancesys.integration.services.springCamel.KPIAggregator [LineNumber]:  620  Monthly Table - Total update time :: 0 ms
+May 06, 2020 11:30:29 AM com.enhancesys.common.logger
+FINE: [Thread]: 241 [ClassName]: com.enhancesys.integration.services.springCamel.InterfaceFileReader [LineNumber]:  2316  Sent Data size : 5000
+May 06, 2020 11:30:29 AM com.enhancesys.common.logger
+FINE: [Thread]: 241 [ClassName]: com.enhancesys.integration.services.springCamel.InterfaceFileReader [LineNumber]:  2317  Sent FileDataBean to the next level with batch number :: 5
+May 06, 2020 11:30:29 AM com.enhancesys.common.logger
+FINE: [Thread]: 242 [ClassName]: com.enhancesys.integration.services.springCamel.KPIAggregator [LineNumber]:  597  1000 Rows Inserted in monthly table..
+May 06, 2020 11:30:29 AM com.enhancesys.common.logger
+FINE: [Thread]: 242 [ClassName]: com.enhancesys.integration.services.springCamel.KPIAggregator [LineNumber]:  597  1000 Rows Inserted in monthly table..
+May 06, 2020 11:30:30 AM com.enhancesys.common.logger
+FINE: [Thread]: 242 [ClassName]: com.enhancesys.integration.services.springCamel.KPIAggregator [LineNumber]:  597  1000 Rows Inserted in monthly table..
+May 06, 2020 11:30:30 AM com.enhancesys.common.logger
+FINE: [Thread]: 242 [ClassName]: com.enhancesys.integration.services.springCamel.KPIAggregator [LineNumber]:  597  1000 Rows Inserted in monthly table..
+May 06, 2020 11:30:30 AM com.enhancesys.common.logger
+FINE: [Thread]: 242 [ClassName]: com.enhancesys.integration.services.springCamel.KPIAggregator [LineNumber]:  597  1000 Rows Inserted in monthly table..
+May 06, 2020 11:30:30 AM com.enhancesys.common.logger
+INFO: [Thread]: 242 [ClassName]: com.enhancesys.integration.services.springCamel.KPIAggregator [LineNumber]:  619  Monthly Table - Total Insert time :: 897 ms
+May 06, 2020 11:30:30 AM com.enhancesys.common.logger
+INFO: [Thread]: 242 [ClassName]: com.enhancesys.integration.services.springCamel.KPIAggregator [LineNumber]:  620  Monthly Table - Total update time :: 0 ms
+May 06, 2020 11:30:30 AM com.enhancesys.common.logger
+FINE: [Thread]: 241 [ClassName]: com.enhancesys.integration.services.springCamel.InterfaceFileReader [LineNumber]:  2316  Sent Data size : 5000
+May 06, 2020 11:30:30 AM com.enhancesys.common.logger
+FINE: [Thread]: 241 [ClassName]: com.enhancesys.integration.services.springCamel.InterfaceFileReader [LineNumber]:  2317  Sent FileDataBean to the next level with batch number :: 6
+May 06, 2020 11:30:30 AM com.enhancesys.common.logger
+FINE: [Thread]: 242 [ClassName]: com.enhancesys.integration.services.springCamel.KPIAggregator [LineNumber]:  597  1000 Rows Inserted in monthly table..
+May 06, 2020 11:30:30 AM com.enhancesys.common.logger
+FINE: [Thread]: 242 [ClassName]: com.enhancesys.integration.services.springCamel.KPIAggregator [LineNumber]:  597  1000 Rows Inserted in monthly table..
+May 06, 2020 11:30:31 AM com.enhancesys.common.logger
+FINE: [Thread]: 242 [ClassName]: com.enhancesys.integration.services.springCamel.KPIAggregator [LineNumber]:  597  1000 Rows Inserted in monthly table..
+May 06, 2020 11:30:31 AM com.enhancesys.common.logger
+FINE: [Thread]: 242 [ClassName]: com.enhancesys.integration.services.springCamel.KPIAggregator [LineNumber]:  597  1000 Rows Inserted in monthly table..
+May 06, 2020 11:30:31 AM com.enhancesys.common.logger
+FINE: [Thread]: 242 [ClassName]: com.enhancesys.integration.services.springCamel.KPIAggregator [LineNumber]:  597  1000 Rows Inserted in monthly table..
+May 06, 2020 11:30:31 AM com.enhancesys.common.logger
+INFO: [Thread]: 242 [ClassName]: com.enhancesys.integration.services.springCamel.KPIAggregator [LineNumber]:  619  Monthly Table - Total Insert time :: 967 ms
+May 06, 2020 11:30:31 AM com.enhancesys.common.logger
+INFO: [Thread]: 242 [ClassName]: com.enhancesys.integration.services.springCamel.KPIAggregator [LineNumber]:  620  Monthly Table - Total update time :: 0 ms
+May 06, 2020 11:30:31 AM com.enhancesys.common.logger
+FINE: [Thread]: 241 [ClassName]: com.enhancesys.integration.services.springCamel.InterfaceFileReader [LineNumber]:  2316  Sent Data size : 5000
+May 06, 2020 11:30:31 AM com.enhancesys.common.logger
+FINE: [Thread]: 241 [ClassName]: com.enhancesys.integration.services.springCamel.InterfaceFileReader [LineNumber]:  2317  Sent FileDataBean to the next level with batch number :: 7
+May 06, 2020 11:30:31 AM com.enhancesys.common.logger
+FINE: [Thread]: 242 [ClassName]: com.enhancesys.integration.services.springCamel.KPIAggregator [LineNumber]:  597  1000 Rows Inserted in monthly table..
+May 06, 2020 11:30:31 AM com.enhancesys.common.logger
+FINE: [Thread]: 242 [ClassName]: com.enhancesys.integration.services.springCamel.KPIAggregator [LineNumber]:  597  1000 Rows Inserted in monthly table..
+May 06, 2020 11:30:32 AM com.enhancesys.common.logger
+FINE: [Thread]: 242 [ClassName]: com.enhancesys.integration.services.springCamel.KPIAggregator [LineNumber]:  597  1000 Rows Inserted in monthly table..
+May 06, 2020 11:30:32 AM com.enhancesys.common.logger
+FINE: [Thread]: 242 [ClassName]: com.enhancesys.integration.services.springCamel.KPIAggregator [LineNumber]:  597  1000 Rows Inserted in monthly table..
+May 06, 2020 11:30:32 AM com.enhancesys.common.logger
+FINE: [Thread]: 242 [ClassName]: com.enhancesys.integration.services.springCamel.KPIAggregator [LineNumber]:  597  1000 Rows Inserted in monthly table..
+May 06, 2020 11:30:32 AM com.enhancesys.common.logger
+INFO: [Thread]: 242 [ClassName]: com.enhancesys.integration.services.springCamel.KPIAggregator [LineNumber]:  619  Monthly Table - Total Insert time :: 910 ms
+May 06, 2020 11:30:32 AM com.enhancesys.common.logger
+INFO: [Thread]: 242 [ClassName]: com.enhancesys.integration.services.springCamel.KPIAggregator [LineNumber]:  620  Monthly Table - Total update time :: 0 ms
+May 06, 2020 11:30:32 AM com.enhancesys.common.logger
+FINE: [Thread]: 241 [ClassName]: com.enhancesys.integration.services.springCamel.InterfaceFileReader [LineNumber]:  2316  Sent Data size : 5000
+May 06, 2020 11:30:32 AM com.enhancesys.common.logger
+FINE: [Thread]: 241 [ClassName]: com.enhancesys.integration.services.springCamel.InterfaceFileReader [LineNumber]:  2317  Sent FileDataBean to the next level with batch number :: 8
+May 06, 2020 11:30:32 AM com.enhancesys.common.logger
+FINE: [Thread]: 242 [ClassName]: com.enhancesys.integration.services.springCamel.KPIAggregator [LineNumber]:  597  1000 Rows Inserted in monthly table..
+May 06, 2020 11:30:32 AM com.enhancesys.common.logger
+FINE: [Thread]: 242 [ClassName]: com.enhancesys.integration.services.springCamel.KPIAggregator [LineNumber]:  597  1000 Rows Inserted in monthly table..
+May 06, 2020 11:30:32 AM com.enhancesys.common.logger
+FINE: [Thread]: 242 [ClassName]: com.enhancesys.integration.services.springCamel.KPIAggregator [LineNumber]:  597  1000 Rows Inserted in monthly table..
+May 06, 2020 11:30:33 AM com.enhancesys.common.logger
+FINE: [Thread]: 242 [ClassName]: com.enhancesys.integration.services.springCamel.KPIAggregator [LineNumber]:  597  1000 Rows Inserted in monthly table..
+May 06, 2020 11:30:33 AM com.enhancesys.common.logger
+FINE: [Thread]: 242 [ClassName]: com.enhancesys.integration.services.springCamel.KPIAggregator [LineNumber]:  597  1000 Rows Inserted in monthly table..
+May 06, 2020 11:30:33 AM com.enhancesys.common.logger
+INFO: [Thread]: 242 [ClassName]: com.enhancesys.integration.services.springCamel.KPIAggregator [LineNumber]:  619  Monthly Table - Total Insert time :: 926 ms
+May 06, 2020 11:30:33 AM com.enhancesys.common.logger
+INFO: [Thread]: 242 [ClassName]: com.enhancesys.integration.services.springCamel.KPIAggregator [LineNumber]:  620  Monthly Table - Total update time :: 0 ms
+May 06, 2020 11:30:33 AM com.enhancesys.common.logger
+FINE: [Thread]: 241 [ClassName]: com.enhancesys.integration.services.springCamel.InterfaceFileReader [LineNumber]:  2316  Sent Data size : 5000
+May 06, 2020 11:30:33 AM com.enhancesys.common.logger
+FINE: [Thread]: 241 [ClassName]: com.enhancesys.integration.services.springCamel.InterfaceFileReader [LineNumber]:  2317  Sent FileDataBean to the next level with batch number :: 9
+May 06, 2020 11:30:33 AM com.enhancesys.common.logger
+FINE: [Thread]: 242 [ClassName]: com.enhancesys.integration.services.springCamel.KPIAggregator [LineNumber]:  597  1000 Rows Inserted in monthly table..
+May 06, 2020 11:30:33 AM com.enhancesys.common.logger
+FINE: [Thread]: 242 [ClassName]: com.enhancesys.integration.services.springCamel.KPIAggregator [LineNumber]:  597  1000 Rows Inserted in monthly table..
+May 06, 2020 11:30:33 AM com.enhancesys.common.logger
+FINE: [Thread]: 242 [ClassName]: com.enhancesys.integration.services.springCamel.KPIAggregator [LineNumber]:  597  1000 Rows Inserted in monthly table..
+May 06, 2020 11:30:34 AM com.enhancesys.common.logger
+FINE: [Thread]: 242 [ClassName]: com.enhancesys.integration.services.springCamel.KPIAggregator [LineNumber]:  597  1000 Rows Inserted in monthly table..
+May 06, 2020 11:30:34 AM com.enhancesys.common.logger
+FINE: [Thread]: 242 [ClassName]: com.enhancesys.integration.services.springCamel.KPIAggregator [LineNumber]:  597  1000 Rows Inserted in monthly table..
+May 06, 2020 11:30:34 AM com.enhancesys.common.logger
+INFO: [Thread]: 242 [ClassName]: com.enhancesys.integration.services.springCamel.KPIAggregator [LineNumber]:  619  Monthly Table - Total Insert time :: 1021 ms
+May 06, 2020 11:30:34 AM com.enhancesys.common.logger
+INFO: [Thread]: 242 [ClassName]: com.enhancesys.integration.services.springCamel.KPIAggregator [LineNumber]:  620  Monthly Table - Total update time :: 0 ms
+May 06, 2020 11:30:34 AM com.enhancesys.common.logger
+FINE: [Thread]: 241 [ClassName]: com.enhancesys.integration.services.springCamel.InterfaceFileReader [LineNumber]:  2316  Sent Data size : 5000
+May 06, 2020 11:30:34 AM com.enhancesys.common.logger
+FINE: [Thread]: 241 [ClassName]: com.enhancesys.integration.services.springCamel.InterfaceFileReader [LineNumber]:  2317  Sent FileDataBean to the next level with batch number :: 10
+May 06, 2020 11:30:34 AM com.enhancesys.common.logger
+FINE: [Thread]: 242 [ClassName]: com.enhancesys.integration.services.springCamel.KPIAggregator [LineNumber]:  597  1000 Rows Inserted in monthly table..
+May 06, 2020 11:30:34 AM com.enhancesys.common.logger
+FINE: [Thread]: 242 [ClassName]: com.enhancesys.integration.services.springCamel.KPIAggregator [LineNumber]:  597  1000 Rows Inserted in monthly table..
+May 06, 2020 11:30:34 AM com.enhancesys.common.logger
+FINE: [Thread]: 242 [ClassName]: com.enhancesys.integration.services.springCamel.KPIAggregator [LineNumber]:  597  1000 Rows Inserted in monthly table..
+May 06, 2020 11:30:35 AM com.enhancesys.common.logger
+FINE: [Thread]: 242 [ClassName]: com.enhancesys.integration.services.springCamel.KPIAggregator [LineNumber]:  597  1000 Rows Inserted in monthly table..
+May 06, 2020 11:30:35 AM com.enhancesys.common.logger
+FINE: [Thread]: 242 [ClassName]: com.enhancesys.integration.services.springCamel.KPIAggregator [LineNumber]:  597  1000 Rows Inserted in monthly table..
+May 06, 2020 11:30:35 AM com.enhancesys.common.logger
+INFO: [Thread]: 242 [ClassName]: com.enhancesys.integration.services.springCamel.KPIAggregator [LineNumber]:  619  Monthly Table - Total Insert time :: 938 ms
+May 06, 2020 11:30:35 AM com.enhancesys.common.logger
+INFO: [Thread]: 242 [ClassName]: com.enhancesys.integration.services.springCamel.KPIAggregator [LineNumber]:  620  Monthly Table - Total update time :: 0 ms
+May 06, 2020 11:30:35 AM com.enhancesys.common.logger
+FINE: [Thread]: 241 [ClassName]: com.enhancesys.integration.services.springCamel.InterfaceFileReader [LineNumber]:  2316  Sent Data size : 5000
+May 06, 2020 11:30:35 AM com.enhancesys.common.logger
+FINE: [Thread]: 241 [ClassName]: com.enhancesys.integration.services.springCamel.InterfaceFileReader [LineNumber]:  2317  Sent FileDataBean to the next level with batch number :: 11
+May 06, 2020 11:30:35 AM com.enhancesys.common.logger
+FINE: [Thread]: 242 [ClassName]: com.enhancesys.integration.services.springCamel.KPIAggregator [LineNumber]:  597  1000 Rows Inserted in monthly table..
+May 06, 2020 11:30:35 AM com.enhancesys.common.logger
+FINE: [Thread]: 242 [ClassName]: com.enhancesys.integration.services.springCamel.KPIAggregator [LineNumber]:  597  1000 Rows Inserted in monthly table..
+May 06, 2020 11:30:35 AM com.enhancesys.common.logger
+FINE: [Thread]: 242 [ClassName]: com.enhancesys.integration.services.springCamel.KPIAggregator [LineNumber]:  597  1000 Rows Inserted in monthly table..
+May 06, 2020 11:30:36 AM com.enhancesys.common.logger
+FINE: [Thread]: 242 [ClassName]: com.enhancesys.integration.services.springCamel.KPIAggregator [LineNumber]:  597  1000 Rows Inserted in monthly table..
+May 06, 2020 11:30:36 AM com.enhancesys.common.logger
+FINE: [Thread]: 242 [ClassName]: com.enhancesys.integration.services.springCamel.KPIAggregator [LineNumber]:  597  1000 Rows Inserted in monthly table..
+May 06, 2020 11:30:36 AM com.enhancesys.common.logger
+INFO: [Thread]: 242 [ClassName]: com.enhancesys.integration.services.springCamel.KPIAggregator [LineNumber]:  619  Monthly Table - Total Insert time :: 972 ms
+May 06, 2020 11:30:36 AM com.enhancesys.common.logger
+INFO: [Thread]: 242 [ClassName]: com.enhancesys.integration.services.springCamel.KPIAggregator [LineNumber]:  620  Monthly Table - Total update time :: 0 ms
+May 06, 2020 11:30:36 AM com.enhancesys.common.logger
+FINE: [Thread]: 241 [ClassName]: com.enhancesys.integration.services.springCamel.InterfaceFileReader [LineNumber]:  2316  Sent Data size : 5000
+May 06, 2020 11:30:36 AM com.enhancesys.common.logger
+FINE: [Thread]: 241 [ClassName]: com.enhancesys.integration.services.springCamel.InterfaceFileReader [LineNumber]:  2317  Sent FileDataBean to the next level with batch number :: 12
+May 06, 2020 11:30:36 AM com.enhancesys.common.logger
+FINE: [Thread]: 242 [ClassName]: com.enhancesys.integration.services.springCamel.KPIAggregator [LineNumber]:  597  1000 Rows Inserted in monthly table..
+May 06, 2020 11:30:36 AM com.enhancesys.common.logger
+FINE: [Thread]: 242 [ClassName]: com.enhancesys.integration.services.springCamel.KPIAggregator [LineNumber]:  597  1000 Rows Inserted in monthly table..
+May 06, 2020 11:30:36 AM com.enhancesys.common.logger
+FINE: [Thread]: 242 [ClassName]: com.enhancesys.integration.services.springCamel.KPIAggregator [LineNumber]:  597  1000 Rows Inserted in monthly table..
+May 06, 2020 11:30:37 AM com.enhancesys.common.logger
+FINE: [Thread]: 242 [ClassName]: com.enhancesys.integration.services.springCamel.KPIAggregator [LineNumber]:  597  1000 Rows Inserted in monthly table..
+May 06, 2020 11:30:37 AM com.enhancesys.common.logger
+FINE: [Thread]: 242 [ClassName]: com.enhancesys.integration.services.springCamel.KPIAggregator [LineNumber]:  597  1000 Rows Inserted in monthly table..
+May 06, 2020 11:30:37 AM com.enhancesys.common.logger
+INFO: [Thread]: 242 [ClassName]: com.enhancesys.integration.services.springCamel.KPIAggregator [LineNumber]:  619  Monthly Table - Total Insert time :: 949 ms
+May 06, 2020 11:30:37 AM com.enhancesys.common.logger
+INFO: [Thread]: 242 [ClassName]: com.enhancesys.integration.services.springCamel.KPIAggregator [LineNumber]:  620  Monthly Table - Total update time :: 0 ms
+May 06, 2020 11:30:37 AM com.enhancesys.common.logger
+FINE: [Thread]: 241 [ClassName]: com.enhancesys.integration.services.springCamel.InterfaceFileReader [LineNumber]:  2316  Sent Data size : 5000
+May 06, 2020 11:30:37 AM com.enhancesys.common.logger
+FINE: [Thread]: 241 [ClassName]: com.enhancesys.integration.services.springCamel.InterfaceFileReader [LineNumber]:  2317  Sent FileDataBean to the next level with batch number :: 13
+May 06, 2020 11:30:37 AM com.enhancesys.common.logger
+FINE: [Thread]: 242 [ClassName]: com.enhancesys.integration.services.springCamel.KPIAggregator [LineNumber]:  597  1000 Rows Inserted in monthly table..
+May 06, 2020 11:30:37 AM com.enhancesys.common.logger
+FINE: [Thread]: 242 [ClassName]: com.enhancesys.integration.services.springCamel.KPIAggregator [LineNumber]:  597  1000 Rows Inserted in monthly table..
+May 06, 2020 11:30:37 AM com.enhancesys.common.logger
+FINE: [Thread]: 242 [ClassName]: com.enhancesys.integration.services.springCamel.KPIAggregator [LineNumber]:  597  1000 Rows Inserted in monthly table..
+May 06, 2020 11:30:38 AM com.enhancesys.common.logger
+FINE: [Thread]: 242 [ClassName]: com.enhancesys.integration.services.springCamel.KPIAggregator [LineNumber]:  597  1000 Rows Inserted in monthly table..
+May 06, 2020 11:30:38 AM com.enhancesys.common.logger
+FINE: [Thread]: 242 [ClassName]: com.enhancesys.integration.services.springCamel.KPIAggregator [LineNumber]:  597  1000 Rows Inserted in monthly table..
+May 06, 2020 11:30:38 AM com.enhancesys.common.logger
+INFO: [Thread]: 242 [ClassName]: com.enhancesys.integration.services.springCamel.KPIAggregator [LineNumber]:  619  Monthly Table - Total Insert time :: 958 ms
+May 06, 2020 11:30:38 AM com.enhancesys.common.logger
+INFO: [Thread]: 242 [ClassName]: com.enhancesys.integration.services.springCamel.KPIAggregator [LineNumber]:  620  Monthly Table - Total update time :: 0 ms
+May 06, 2020 11:30:38 AM com.enhancesys.common.logger
+FINE: [Thread]: 241 [ClassName]: com.enhancesys.integration.services.springCamel.InterfaceFileReader [LineNumber]:  2316  Sent Data size : 5000
+May 06, 2020 11:30:38 AM com.enhancesys.common.logger
+FINE: [Thread]: 241 [ClassName]: com.enhancesys.integration.services.springCamel.InterfaceFileReader [LineNumber]:  2317  Sent FileDataBean to the next level with batch number :: 14
+May 06, 2020 11:30:38 AM com.enhancesys.common.logger
+FINE: [Thread]: 242 [ClassName]: com.enhancesys.integration.services.springCamel.KPIAggregator [LineNumber]:  597  1000 Rows Inserted in monthly table..
+May 06, 2020 11:30:38 AM com.enhancesys.common.logger
+FINE: [Thread]: 242 [ClassName]: com.enhancesys.integration.services.springCamel.KPIAggregator [LineNumber]:  597  1000 Rows Inserted in monthly table..
+May 06, 2020 11:30:38 AM com.enhancesys.common.logger
+FINE: [Thread]: 242 [ClassName]: com.enhancesys.integration.services.springCamel.KPIAggregator [LineNumber]:  597  1000 Rows Inserted in monthly table..
+May 06, 2020 11:30:39 AM com.enhancesys.common.logger
+FINE: [Thread]: 242 [ClassName]: com.enhancesys.integration.services.springCamel.KPIAggregator [LineNumber]:  597  1000 Rows Inserted in monthly table..
+May 06, 2020 11:30:39 AM com.enhancesys.common.logger
+FINE: [Thread]: 242 [ClassName]: com.enhancesys.integration.services.springCamel.KPIAggregator [LineNumber]:  597  1000 Rows Inserted in monthly table..
+May 06, 2020 11:30:39 AM com.enhancesys.common.logger
+INFO: [Thread]: 242 [ClassName]: com.enhancesys.integration.services.springCamel.KPIAggregator [LineNumber]:  619  Monthly Table - Total Insert time :: 1011 ms
+May 06, 2020 11:30:39 AM com.enhancesys.common.logger
+INFO: [Thread]: 242 [ClassName]: com.enhancesys.integration.services.springCamel.KPIAggregator [LineNumber]:  620  Monthly Table - Total update time :: 0 ms
+May 06, 2020 11:30:39 AM com.enhancesys.common.logger
+FINE: [Thread]: 241 [ClassName]: com.enhancesys.integration.services.springCamel.InterfaceFileReader [LineNumber]:  2316  Sent Data size : 5000
+May 06, 2020 11:30:39 AM com.enhancesys.common.logger
+FINE: [Thread]: 241 [ClassName]: com.enhancesys.integration.services.springCamel.InterfaceFileReader [LineNumber]:  2317  Sent FileDataBean to the next level with batch number :: 15
+May 06, 2020 11:30:39 AM com.enhancesys.common.logger
+FINE: [Thread]: 242 [ClassName]: com.enhancesys.integration.services.springCamel.KPIAggregator [LineNumber]:  597  1000 Rows Inserted in monthly table..
+May 06, 2020 11:30:39 AM com.enhancesys.common.logger
+FINE: [Thread]: 242 [ClassName]: com.enhancesys.integration.services.springCamel.KPIAggregator [LineNumber]:  597  1000 Rows Inserted in monthly table..
+May 06, 2020 11:30:39 AM com.enhancesys.common.logger
+FINE: [Thread]: 242 [ClassName]: com.enhancesys.integration.services.springCamel.KPIAggregator [LineNumber]:  597  1000 Rows Inserted in monthly table..
+May 06, 2020 11:30:40 AM com.enhancesys.common.logger
+FINE: [Thread]: 242 [ClassName]: com.enhancesys.integration.services.springCamel.KPIAggregator [LineNumber]:  597  1000 Rows Inserted in monthly table..
+May 06, 2020 11:30:40 AM com.enhancesys.common.logger
+FINE: [Thread]: 242 [ClassName]: com.enhancesys.integration.services.springCamel.KPIAggregator [LineNumber]:  597  1000 Rows Inserted in monthly table..
+May 06, 2020 11:30:40 AM com.enhancesys.common.logger
+INFO: [Thread]: 242 [ClassName]: com.enhancesys.integration.services.springCamel.KPIAggregator [LineNumber]:  619  Monthly Table - Total Insert time :: 958 ms
+May 06, 2020 11:30:40 AM com.enhancesys.common.logger
+INFO: [Thread]: 242 [ClassName]: com.enhancesys.integration.services.springCamel.KPIAggregator [LineNumber]:  620  Monthly Table - Total update time :: 0 ms
+May 06, 2020 11:30:40 AM com.enhancesys.common.logger
+FINE: [Thread]: 241 [ClassName]: com.enhancesys.integration.services.springCamel.InterfaceFileReader [LineNumber]:  2316  Sent Data size : 5000
+May 06, 2020 11:30:40 AM com.enhancesys.common.logger
+FINE: [Thread]: 241 [ClassName]: com.enhancesys.integration.services.springCamel.InterfaceFileReader [LineNumber]:  2317  Sent FileDataBean to the next level with batch number :: 16
+May 06, 2020 11:30:40 AM com.enhancesys.common.logger
+FINE: [Thread]: 242 [ClassName]: com.enhancesys.integration.services.springCamel.KPIAggregator [LineNumber]:  597  1000 Rows Inserted in monthly table..
+May 06, 2020 11:30:40 AM com.enhancesys.common.logger
+FINE: [Thread]: 242 [ClassName]: com.enhancesys.integration.services.springCamel.KPIAggregator [LineNumber]:  597  1000 Rows Inserted in monthly table..
+May 06, 2020 11:30:40 AM com.enhancesys.common.logger
+FINE: [Thread]: 242 [ClassName]: com.enhancesys.integration.services.springCamel.KPIAggregator [LineNumber]:  597  1000 Rows Inserted in monthly table..
+May 06, 2020 11:30:41 AM com.enhancesys.common.logger
+FINE: [Thread]: 242 [ClassName]: com.enhancesys.integration.services.springCamel.KPIAggregator [LineNumber]:  597  1000 Rows Inserted in monthly table..
+May 06, 2020 11:30:41 AM com.enhancesys.common.logger
+FINE: [Thread]: 242 [ClassName]: com.enhancesys.integration.services.springCamel.KPIAggregator [LineNumber]:  597  1000 Rows Inserted in monthly table..
+May 06, 2020 11:30:41 AM com.enhancesys.common.logger
+INFO: [Thread]: 242 [ClassName]: com.enhancesys.integration.services.springCamel.KPIAggregator [LineNumber]:  619  Monthly Table - Total Insert time :: 958 ms
+May 06, 2020 11:30:41 AM com.enhancesys.common.logger
+INFO: [Thread]: 242 [ClassName]: com.enhancesys.integration.services.springCamel.KPIAggregator [LineNumber]:  620  Monthly Table - Total update time :: 0 ms
+May 06, 2020 11:30:41 AM com.enhancesys.common.logger
+FINE: [Thread]: 241 [ClassName]: com.enhancesys.integration.services.springCamel.InterfaceFileReader [LineNumber]:  2316  Sent Data size : 5000
+May 06, 2020 11:30:41 AM com.enhancesys.common.logger
+FINE: [Thread]: 241 [ClassName]: com.enhancesys.integration.services.springCamel.InterfaceFileReader [LineNumber]:  2317  Sent FileDataBean to the next level with batch number :: 17
+May 06, 2020 11:30:41 AM com.enhancesys.common.logger
+FINE: [Thread]: 242 [ClassName]: com.enhancesys.integration.services.springCamel.KPIAggregator [LineNumber]:  597  1000 Rows Inserted in monthly table..
+May 06, 2020 11:30:41 AM com.enhancesys.common.logger
+FINE: [Thread]: 242 [ClassName]: com.enhancesys.integration.services.springCamel.KPIAggregator [LineNumber]:  597  1000 Rows Inserted in monthly table..
+May 06, 2020 11:30:41 AM com.enhancesys.common.logger
+FINE: [Thread]: 242 [ClassName]: com.enhancesys.integration.services.springCamel.KPIAggregator [LineNumber]:  597  1000 Rows Inserted in monthly table..
+May 06, 2020 11:30:42 AM com.enhancesys.common.logger
+FINE: [Thread]: 242 [ClassName]: com.enhancesys.integration.services.springCamel.KPIAggregator [LineNumber]:  597  1000 Rows Inserted in monthly table..
+May 06, 2020 11:30:42 AM com.enhancesys.common.logger
+FINE: [Thread]: 242 [ClassName]: com.enhancesys.integration.services.springCamel.KPIAggregator [LineNumber]:  597  1000 Rows Inserted in monthly table..
+May 06, 2020 11:30:42 AM com.enhancesys.common.logger
+INFO: [Thread]: 242 [ClassName]: com.enhancesys.integration.services.springCamel.KPIAggregator [LineNumber]:  619  Monthly Table - Total Insert time :: 987 ms
+May 06, 2020 11:30:42 AM com.enhancesys.common.logger
+INFO: [Thread]: 242 [ClassName]: com.enhancesys.integration.services.springCamel.KPIAggregator [LineNumber]:  620  Monthly Table - Total update time :: 0 ms
+May 06, 2020 11:30:42 AM com.enhancesys.common.logger
+FINE: [Thread]: 241 [ClassName]: com.enhancesys.integration.services.springCamel.InterfaceFileReader [LineNumber]:  2316  Sent Data size : 5000
+May 06, 2020 11:30:42 AM com.enhancesys.common.logger
+FINE: [Thread]: 241 [ClassName]: com.enhancesys.integration.services.springCamel.InterfaceFileReader [LineNumber]:  2317  Sent FileDataBean to the next level with batch number :: 18
+May 06, 2020 11:30:42 AM com.enhancesys.common.logger
+FINE: [Thread]: 242 [ClassName]: com.enhancesys.integration.services.springCamel.KPIAggregator [LineNumber]:  597  1000 Rows Inserted in monthly table..
+May 06, 2020 11:30:42 AM com.enhancesys.common.logger
+FINE: [Thread]: 242 [ClassName]: com.enhancesys.integration.services.springCamel.KPIAggregator [LineNumber]:  597  1000 Rows Inserted in monthly table..
+May 06, 2020 11:30:42 AM com.enhancesys.common.logger
+FINE: [Thread]: 242 [ClassName]: com.enhancesys.integration.services.springCamel.KPIAggregator [LineNumber]:  597  1000 Rows Inserted in monthly table..
+May 06, 2020 11:30:43 AM com.enhancesys.common.logger
+FINE: [Thread]: 242 [ClassName]: com.enhancesys.integration.services.springCamel.KPIAggregator [LineNumber]:  597  1000 Rows Inserted in monthly table..
+May 06, 2020 11:30:43 AM com.enhancesys.common.logger
+FINE: [Thread]: 242 [ClassName]: com.enhancesys.integration.services.springCamel.KPIAggregator [LineNumber]:  597  1000 Rows Inserted in monthly table..
+May 06, 2020 11:30:43 AM com.enhancesys.common.logger
+INFO: [Thread]: 242 [ClassName]: com.enhancesys.integration.services.springCamel.KPIAggregator [LineNumber]:  619  Monthly Table - Total Insert time :: 962 ms
+May 06, 2020 11:30:43 AM com.enhancesys.common.logger
+INFO: [Thread]: 242 [ClassName]: com.enhancesys.integration.services.springCamel.KPIAggregator [LineNumber]:  620  Monthly Table - Total update time :: 0 ms
+May 06, 2020 11:30:43 AM com.enhancesys.common.logger
+FINE: [Thread]: 241 [ClassName]: com.enhancesys.integration.services.springCamel.InterfaceFileReader [LineNumber]:  2316  Sent Data size : 5000
+May 06, 2020 11:30:43 AM com.enhancesys.common.logger
+FINE: [Thread]: 241 [ClassName]: com.enhancesys.integration.services.springCamel.InterfaceFileReader [LineNumber]:  2317  Sent FileDataBean to the next level with batch number :: 19
+May 06, 2020 11:30:43 AM com.enhancesys.common.logger
+FINE: [Thread]: 242 [ClassName]: com.enhancesys.integration.services.springCamel.KPIAggregator [LineNumber]:  597  1000 Rows Inserted in monthly table..
+May 06, 2020 11:30:43 AM com.enhancesys.common.logger
+FINE: [Thread]: 242 [ClassName]: com.enhancesys.integration.services.springCamel.KPIAggregator [LineNumber]:  597  1000 Rows Inserted in monthly table..
+May 06, 2020 11:30:43 AM com.enhancesys.common.logger
+FINE: [Thread]: 242 [ClassName]: com.enhancesys.integration.services.springCamel.KPIAggregator [LineNumber]:  597  1000 Rows Inserted in monthly table..
+May 06, 2020 11:30:43 AM com.enhancesys.common.logger
+FINE: [Thread]: 242 [ClassName]: com.enhancesys.integration.services.springCamel.KPIAggregator [LineNumber]:  597  1000 Rows Inserted in monthly table..
+May 06, 2020 11:30:44 AM com.enhancesys.common.logger
+FINE: [Thread]: 242 [ClassName]: com.enhancesys.integration.services.springCamel.KPIAggregator [LineNumber]:  597  1000 Rows Inserted in monthly table..
+May 06, 2020 11:30:44 AM com.enhancesys.common.logger
+INFO: [Thread]: 242 [ClassName]: com.enhancesys.integration.services.springCamel.KPIAggregator [LineNumber]:  619  Monthly Table - Total Insert time :: 965 ms
+May 06, 2020 11:30:44 AM com.enhancesys.common.logger
+INFO: [Thread]: 242 [ClassName]: com.enhancesys.integration.services.springCamel.KPIAggregator [LineNumber]:  620  Monthly Table - Total update time :: 0 ms
+May 06, 2020 11:30:44 AM com.enhancesys.common.logger
+FINE: [Thread]: 241 [ClassName]: com.enhancesys.integration.services.springCamel.InterfaceFileReader [LineNumber]:  2316  Sent Data size : 5000
+May 06, 2020 11:30:44 AM com.enhancesys.common.logger
+FINE: [Thread]: 241 [ClassName]: com.enhancesys.integration.services.springCamel.InterfaceFileReader [LineNumber]:  2317  Sent FileDataBean to the next level with batch number :: 20
+May 06, 2020 11:30:44 AM com.enhancesys.common.logger
+FINE: [Thread]: 242 [ClassName]: com.enhancesys.integration.services.springCamel.KPIAggregator [LineNumber]:  597  1000 Rows Inserted in monthly table..
+May 06, 2020 11:30:44 AM com.enhancesys.common.logger
+FINE: [Thread]: 242 [ClassName]: com.enhancesys.integration.services.springCamel.KPIAggregator [LineNumber]:  597  1000 Rows Inserted in monthly table..
+May 06, 2020 11:30:44 AM com.enhancesys.common.logger
+FINE: [Thread]: 242 [ClassName]: com.enhancesys.integration.services.springCamel.KPIAggregator [LineNumber]:  597  1000 Rows Inserted in monthly table..
+May 06, 2020 11:30:44 AM com.enhancesys.common.logger
+FINE: [Thread]: 242 [ClassName]: com.enhancesys.integration.services.springCamel.KPIAggregator [LineNumber]:  597  1000 Rows Inserted in monthly table..
+May 06, 2020 11:30:45 AM com.enhancesys.common.logger
+FINE: [Thread]: 242 [ClassName]: com.enhancesys.integration.services.springCamel.KPIAggregator [LineNumber]:  597  1000 Rows Inserted in monthly table..
+May 06, 2020 11:30:45 AM com.enhancesys.common.logger
+INFO: [Thread]: 242 [ClassName]: com.enhancesys.integration.services.springCamel.KPIAggregator [LineNumber]:  619  Monthly Table - Total Insert time :: 927 ms
+May 06, 2020 11:30:45 AM com.enhancesys.common.logger
+INFO: [Thread]: 242 [ClassName]: com.enhancesys.integration.services.springCamel.KPIAggregator [LineNumber]:  620  Monthly Table - Total update time :: 0 ms
+May 06, 2020 11:30:45 AM com.enhancesys.common.logger
+FINE: [Thread]: 241 [ClassName]: com.enhancesys.integration.services.springCamel.InterfaceFileReader [LineNumber]:  2316  Sent Data size : 5000
+May 06, 2020 11:30:45 AM com.enhancesys.common.logger
+FINE: [Thread]: 241 [ClassName]: com.enhancesys.integration.services.springCamel.InterfaceFileReader [LineNumber]:  2317  Sent FileDataBean to the next level with batch number :: 21
+May 06, 2020 11:30:45 AM com.enhancesys.common.logger
+FINE: [Thread]: 242 [ClassName]: com.enhancesys.integration.services.springCamel.KPIAggregator [LineNumber]:  597  1000 Rows Inserted in monthly table..
+May 06, 2020 11:30:45 AM com.enhancesys.common.logger
+FINE: [Thread]: 242 [ClassName]: com.enhancesys.integration.services.springCamel.KPIAggregator [LineNumber]:  597  1000 Rows Inserted in monthly table..
+May 06, 2020 11:30:45 AM com.enhancesys.common.logger
+FINE: [Thread]: 242 [ClassName]: com.enhancesys.integration.services.springCamel.KPIAggregator [LineNumber]:  597  1000 Rows Inserted in monthly table..
+May 06, 2020 11:30:45 AM com.enhancesys.common.logger
+FINE: [Thread]: 242 [ClassName]: com.enhancesys.integration.services.springCamel.KPIAggregator [LineNumber]:  597  1000 Rows Inserted in monthly table..
+May 06, 2020 11:30:46 AM com.enhancesys.common.logger
+FINE: [Thread]: 242 [ClassName]: com.enhancesys.integration.services.springCamel.KPIAggregator [LineNumber]:  597  1000 Rows Inserted in monthly table..
+May 06, 2020 11:30:46 AM com.enhancesys.common.logger
+INFO: [Thread]: 242 [ClassName]: com.enhancesys.integration.services.springCamel.KPIAggregator [LineNumber]:  619  Monthly Table - Total Insert time :: 967 ms
+May 06, 2020 11:30:46 AM com.enhancesys.common.logger
+INFO: [Thread]: 242 [ClassName]: com.enhancesys.integration.services.springCamel.KPIAggregator [LineNumber]:  620  Monthly Table - Total update time :: 0 ms
+May 06, 2020 11:30:46 AM com.enhancesys.common.logger
+FINE: [Thread]: 241 [ClassName]: com.enhancesys.integration.services.springCamel.InterfaceFileReader [LineNumber]:  2316  Sent Data size : 5000
+May 06, 2020 11:30:46 AM com.enhancesys.common.logger
+FINE: [Thread]: 241 [ClassName]: com.enhancesys.integration.services.springCamel.InterfaceFileReader [LineNumber]:  2317  Sent FileDataBean to the next level with batch number :: 22
+May 06, 2020 11:30:46 AM com.enhancesys.common.logger
+FINE: [Thread]: 242 [ClassName]: com.enhancesys.integration.services.springCamel.KPIAggregator [LineNumber]:  597  1000 Rows Inserted in monthly table..
+May 06, 2020 11:30:46 AM com.enhancesys.common.logger
+FINE: [Thread]: 242 [ClassName]: com.enhancesys.integration.services.springCamel.KPIAggregator [LineNumber]:  597  1000 Rows Inserted in monthly table..
+May 06, 2020 11:30:46 AM com.enhancesys.common.logger
+FINE: [Thread]: 242 [ClassName]: com.enhancesys.integration.services.springCamel.KPIAggregator [LineNumber]:  597  1000 Rows Inserted in monthly table..
+May 06, 2020 11:30:46 AM com.enhancesys.common.logger
+FINE: [Thread]: 242 [ClassName]: com.enhancesys.integration.services.springCamel.KPIAggregator [LineNumber]:  597  1000 Rows Inserted in monthly table..
+May 06, 2020 11:30:47 AM com.enhancesys.common.logger
+FINE: [Thread]: 242 [ClassName]: com.enhancesys.integration.services.springCamel.KPIAggregator [LineNumber]:  597  1000 Rows Inserted in monthly table..
+May 06, 2020 11:30:47 AM com.enhancesys.common.logger
+INFO: [Thread]: 242 [ClassName]: com.enhancesys.integration.services.springCamel.KPIAggregator [LineNumber]:  619  Monthly Table - Total Insert time :: 948 ms
+May 06, 2020 11:30:47 AM com.enhancesys.common.logger
+INFO: [Thread]: 242 [ClassName]: com.enhancesys.integration.services.springCamel.KPIAggregator [LineNumber]:  620  Monthly Table - Total update time :: 0 ms
+May 06, 2020 11:30:47 AM com.enhancesys.common.logger
+FINE: [Thread]: 241 [ClassName]: com.enhancesys.integration.services.springCamel.InterfaceFileReader [LineNumber]:  2316  Sent Data size : 5000
+May 06, 2020 11:30:47 AM com.enhancesys.common.logger
+FINE: [Thread]: 241 [ClassName]: com.enhancesys.integration.services.springCamel.InterfaceFileReader [LineNumber]:  2317  Sent FileDataBean to the next level with batch number :: 23
+May 06, 2020 11:30:47 AM com.enhancesys.common.logger
+FINE: [Thread]: 242 [ClassName]: com.enhancesys.integration.services.springCamel.KPIAggregator [LineNumber]:  597  1000 Rows Inserted in monthly table..
+May 06, 2020 11:30:47 AM com.enhancesys.common.logger
+FINE: [Thread]: 242 [ClassName]: com.enhancesys.integration.services.springCamel.KPIAggregator [LineNumber]:  597  1000 Rows Inserted in monthly table..
+May 06, 2020 11:30:47 AM com.enhancesys.common.logger
+FINE: [Thread]: 242 [ClassName]: com.enhancesys.integration.services.springCamel.KPIAggregator [LineNumber]:  597  1000 Rows Inserted in monthly table..
+May 06, 2020 11:30:47 AM com.enhancesys.common.logger
+FINE: [Thread]: 242 [ClassName]: com.enhancesys.integration.services.springCamel.KPIAggregator [LineNumber]:  597  1000 Rows Inserted in monthly table..
+May 06, 2020 11:30:48 AM com.enhancesys.common.logger
+FINE: [Thread]: 242 [ClassName]: com.enhancesys.integration.services.springCamel.KPIAggregator [LineNumber]:  597  1000 Rows Inserted in monthly table..
+May 06, 2020 11:30:48 AM com.enhancesys.common.logger
+INFO: [Thread]: 242 [ClassName]: com.enhancesys.integration.services.springCamel.KPIAggregator [LineNumber]:  619  Monthly Table - Total Insert time :: 1014 ms
+May 06, 2020 11:30:48 AM com.enhancesys.common.logger
+INFO: [Thread]: 242 [ClassName]: com.enhancesys.integration.services.springCamel.KPIAggregator [LineNumber]:  620  Monthly Table - Total update time :: 0 ms
+May 06, 2020 11:30:48 AM com.enhancesys.common.logger
+FINE: [Thread]: 241 [ClassName]: com.enhancesys.integration.services.springCamel.InterfaceFileReader [LineNumber]:  2316  Sent Data size : 5000
+May 06, 2020 11:30:48 AM com.enhancesys.common.logger
+FINE: [Thread]: 241 [ClassName]: com.enhancesys.integration.services.springCamel.InterfaceFileReader [LineNumber]:  2317  Sent FileDataBean to the next level with batch number :: 24
+May 06, 2020 11:30:48 AM com.enhancesys.common.logger
+FINE: [Thread]: 242 [ClassName]: com.enhancesys.integration.services.springCamel.KPIAggregator [LineNumber]:  597  1000 Rows Inserted in monthly table..
+May 06, 2020 11:30:48 AM com.enhancesys.common.logger
+FINE: [Thread]: 242 [ClassName]: com.enhancesys.integration.services.springCamel.KPIAggregator [LineNumber]:  597  1000 Rows Inserted in monthly table..
+May 06, 2020 11:30:48 AM com.enhancesys.common.logger
+FINE: [Thread]: 242 [ClassName]: com.enhancesys.integration.services.springCamel.KPIAggregator [LineNumber]:  597  1000 Rows Inserted in monthly table..
+May 06, 2020 11:30:48 AM com.enhancesys.common.logger
+FINE: [Thread]: 242 [ClassName]: com.enhancesys.integration.services.springCamel.KPIAggregator [LineNumber]:  597  1000 Rows Inserted in monthly table..
+May 06, 2020 11:30:49 AM com.enhancesys.common.logger
+FINE: [Thread]: 242 [ClassName]: com.enhancesys.integration.services.springCamel.KPIAggregator [LineNumber]:  597  1000 Rows Inserted in monthly table..
+May 06, 2020 11:30:49 AM com.enhancesys.common.logger
+INFO: [Thread]: 242 [ClassName]: com.enhancesys.integration.services.springCamel.KPIAggregator [LineNumber]:  619  Monthly Table - Total Insert time :: 1025 ms
+May 06, 2020 11:30:49 AM com.enhancesys.common.logger
+INFO: [Thread]: 242 [ClassName]: com.enhancesys.integration.services.springCamel.KPIAggregator [LineNumber]:  620  Monthly Table - Total update time :: 0 ms
+May 06, 2020 11:30:49 AM com.enhancesys.common.logger
+FINE: [Thread]: 241 [ClassName]: com.enhancesys.integration.services.springCamel.InterfaceFileReader [LineNumber]:  2316  Sent Data size : 5000
+May 06, 2020 11:30:49 AM com.enhancesys.common.logger
+FINE: [Thread]: 241 [ClassName]: com.enhancesys.integration.services.springCamel.InterfaceFileReader [LineNumber]:  2317  Sent FileDataBean to the next level with batch number :: 25
+May 06, 2020 11:30:49 AM com.enhancesys.common.logger
+FINE: [Thread]: 242 [ClassName]: com.enhancesys.integration.services.springCamel.KPIAggregator [LineNumber]:  597  1000 Rows Inserted in monthly table..
+May 06, 2020 11:30:49 AM com.enhancesys.common.logger
+FINE: [Thread]: 242 [ClassName]: com.enhancesys.integration.services.springCamel.KPIAggregator [LineNumber]:  597  1000 Rows Inserted in monthly table..
+May 06, 2020 11:30:49 AM com.enhancesys.common.logger
+FINE: [Thread]: 242 [ClassName]: com.enhancesys.integration.services.springCamel.KPIAggregator [LineNumber]:  597  1000 Rows Inserted in monthly table..
+May 06, 2020 11:30:49 AM com.enhancesys.common.logger
+FINE: [Thread]: 242 [ClassName]: com.enhancesys.integration.services.springCamel.KPIAggregator [LineNumber]:  597  1000 Rows Inserted in monthly table..
+May 06, 2020 11:30:50 AM com.enhancesys.common.logger
+FINE: [Thread]: 242 [ClassName]: com.enhancesys.integration.services.springCamel.KPIAggregator [LineNumber]:  597  1000 Rows Inserted in monthly table..
+May 06, 2020 11:30:50 AM com.enhancesys.common.logger
+INFO: [Thread]: 242 [ClassName]: com.enhancesys.integration.services.springCamel.KPIAggregator [LineNumber]:  619  Monthly Table - Total Insert time :: 941 ms
+May 06, 2020 11:30:50 AM com.enhancesys.common.logger
+INFO: [Thread]: 242 [ClassName]: com.enhancesys.integration.services.springCamel.KPIAggregator [LineNumber]:  620  Monthly Table - Total update time :: 0 ms
+May 06, 2020 11:30:50 AM com.enhancesys.common.logger
+FINE: [Thread]: 241 [ClassName]: com.enhancesys.integration.services.springCamel.InterfaceFileReader [LineNumber]:  2316  Sent Data size : 5000
+May 06, 2020 11:30:50 AM com.enhancesys.common.logger
+FINE: [Thread]: 241 [ClassName]: com.enhancesys.integration.services.springCamel.InterfaceFileReader [LineNumber]:  2317  Sent FileDataBean to the next level with batch number :: 26
+May 06, 2020 11:30:50 AM com.enhancesys.common.logger
+FINE: [Thread]: 242 [ClassName]: com.enhancesys.integration.services.springCamel.KPIAggregator [LineNumber]:  597  1000 Rows Inserted in monthly table..
+May 06, 2020 11:30:50 AM com.enhancesys.common.logger
+FINE: [Thread]: 242 [ClassName]: com.enhancesys.integration.services.springCamel.KPIAggregator [LineNumber]:  597  1000 Rows Inserted in monthly table..
+May 06, 2020 11:30:50 AM com.enhancesys.common.logger
+FINE: [Thread]: 242 [ClassName]: com.enhancesys.integration.services.springCamel.KPIAggregator [LineNumber]:  597  1000 Rows Inserted in monthly table..
+May 06, 2020 11:30:50 AM com.enhancesys.common.logger
+FINE: [Thread]: 242 [ClassName]: com.enhancesys.integration.services.springCamel.KPIAggregator [LineNumber]:  597  1000 Rows Inserted in monthly table..
+May 06, 2020 11:30:51 AM com.enhancesys.common.logger
+FINE: [Thread]: 242 [ClassName]: com.enhancesys.integration.services.springCamel.KPIAggregator [LineNumber]:  597  1000 Rows Inserted in monthly table..
+May 06, 2020 11:30:51 AM com.enhancesys.common.logger
+INFO: [Thread]: 242 [ClassName]: com.enhancesys.integration.services.springCamel.KPIAggregator [LineNumber]:  619  Monthly Table - Total Insert time :: 971 ms
+May 06, 2020 11:30:51 AM com.enhancesys.common.logger
+INFO: [Thread]: 242 [ClassName]: com.enhancesys.integration.services.springCamel.KPIAggregator [LineNumber]:  620  Monthly Table - Total update time :: 0 ms
+May 06, 2020 11:30:51 AM com.enhancesys.common.logger
+FINE: [Thread]: 241 [ClassName]: com.enhancesys.integration.services.springCamel.InterfaceFileReader [LineNumber]:  2316  Sent Data size : 5000
+May 06, 2020 11:30:51 AM com.enhancesys.common.logger
+FINE: [Thread]: 241 [ClassName]: com.enhancesys.integration.services.springCamel.InterfaceFileReader [LineNumber]:  2317  Sent FileDataBean to the next level with batch number :: 27
+May 06, 2020 11:30:51 AM com.enhancesys.common.logger
+FINE: [Thread]: 242 [ClassName]: com.enhancesys.integration.services.springCamel.KPIAggregator [LineNumber]:  597  1000 Rows Inserted in monthly table..
+May 06, 2020 11:30:51 AM com.enhancesys.common.logger
+FINE: [Thread]: 242 [ClassName]: com.enhancesys.integration.services.springCamel.KPIAggregator [LineNumber]:  597  1000 Rows Inserted in monthly table..
+May 06, 2020 11:30:51 AM com.enhancesys.common.logger
+FINE: [Thread]: 242 [ClassName]: com.enhancesys.integration.services.springCamel.KPIAggregator [LineNumber]:  597  1000 Rows Inserted in monthly table..
+May 06, 2020 11:30:51 AM com.enhancesys.common.logger
+FINE: [Thread]: 242 [ClassName]: com.enhancesys.integration.services.springCamel.KPIAggregator [LineNumber]:  597  1000 Rows Inserted in monthly table..
+May 06, 2020 11:30:52 AM com.enhancesys.common.logger
+FINE: [Thread]: 242 [ClassName]: com.enhancesys.integration.services.springCamel.KPIAggregator [LineNumber]:  597  1000 Rows Inserted in monthly table..
+May 06, 2020 11:30:52 AM com.enhancesys.common.logger
+INFO: [Thread]: 242 [ClassName]: com.enhancesys.integration.services.springCamel.KPIAggregator [LineNumber]:  619  Monthly Table - Total Insert time :: 938 ms
+May 06, 2020 11:30:52 AM com.enhancesys.common.logger
+INFO: [Thread]: 242 [ClassName]: com.enhancesys.integration.services.springCamel.KPIAggregator [LineNumber]:  620  Monthly Table - Total update time :: 0 ms
+May 06, 2020 11:30:52 AM com.enhancesys.common.logger
+FINE: [Thread]: 241 [ClassName]: com.enhancesys.integration.services.springCamel.InterfaceFileReader [LineNumber]:  2316  Sent Data size : 5000
+May 06, 2020 11:30:52 AM com.enhancesys.common.logger
+FINE: [Thread]: 241 [ClassName]: com.enhancesys.integration.services.springCamel.InterfaceFileReader [LineNumber]:  2317  Sent FileDataBean to the next level with batch number :: 28
+May 06, 2020 11:30:52 AM com.enhancesys.common.logger
+FINE: [Thread]: 242 [ClassName]: com.enhancesys.integration.services.springCamel.KPIAggregator [LineNumber]:  597  1000 Rows Inserted in monthly table..
+May 06, 2020 11:30:52 AM com.enhancesys.common.logger
+FINE: [Thread]: 242 [ClassName]: com.enhancesys.integration.services.springCamel.KPIAggregator [LineNumber]:  597  1000 Rows Inserted in monthly table..
+May 06, 2020 11:30:52 AM com.enhancesys.common.logger
+FINE: [Thread]: 242 [ClassName]: com.enhancesys.integration.services.springCamel.KPIAggregator [LineNumber]:  597  1000 Rows Inserted in monthly table..
+May 06, 2020 11:30:52 AM com.enhancesys.common.logger
+FINE: [Thread]: 242 [ClassName]: com.enhancesys.integration.services.springCamel.KPIAggregator [LineNumber]:  597  1000 Rows Inserted in monthly table..
+May 06, 2020 11:30:53 AM com.enhancesys.common.logger
+FINE: [Thread]: 242 [ClassName]: com.enhancesys.integration.services.springCamel.KPIAggregator [LineNumber]:  597  1000 Rows Inserted in monthly table..
+May 06, 2020 11:30:53 AM com.enhancesys.common.logger
+INFO: [Thread]: 242 [ClassName]: com.enhancesys.integration.services.springCamel.KPIAggregator [LineNumber]:  619  Monthly Table - Total Insert time :: 954 ms
+May 06, 2020 11:30:53 AM com.enhancesys.common.logger
+INFO: [Thread]: 242 [ClassName]: com.enhancesys.integration.services.springCamel.KPIAggregator [LineNumber]:  620  Monthly Table - Total update time :: 0 ms
+May 06, 2020 11:30:53 AM com.enhancesys.common.logger
+FINE: [Thread]: 241 [ClassName]: com.enhancesys.integration.services.springCamel.InterfaceFileReader [LineNumber]:  2316  Sent Data size : 5000
+May 06, 2020 11:30:53 AM com.enhancesys.common.logger
+FINE: [Thread]: 241 [ClassName]: com.enhancesys.integration.services.springCamel.InterfaceFileReader [LineNumber]:  2317  Sent FileDataBean to the next level with batch number :: 29
+May 06, 2020 11:30:53 AM com.enhancesys.common.logger
+FINE: [Thread]: 241 [ClassName]: com.enhancesys.integration.services.springCamel.InterfaceFileReader [LineNumber]:  2341  Monthly DataCount : 145299
+May 06, 2020 11:30:53 AM com.enhancesys.common.logger
+FINE: [Thread]: 241 [ClassName]: com.enhancesys.integration.services.springCamel.InterfaceFileReader [LineNumber]:  2353  Remaining records..299
+May 06, 2020 11:30:53 AM com.enhancesys.common.logger
+FINE: [Thread]: 242 [ClassName]: com.enhancesys.integration.services.springCamel.KPIAggregator [LineNumber]:  597  1000 Rows Inserted in monthly table..
+May 06, 2020 11:30:53 AM com.enhancesys.common.logger
+FINE: [Thread]: 242 [ClassName]: com.enhancesys.integration.services.springCamel.KPIAggregator [LineNumber]:  597  1000 Rows Inserted in monthly table..
+May 06, 2020 11:30:53 AM com.enhancesys.common.logger
+FINE: [Thread]: 242 [ClassName]: com.enhancesys.integration.services.springCamel.KPIAggregator [LineNumber]:  597  1000 Rows Inserted in monthly table..
+May 06, 2020 11:30:53 AM com.enhancesys.common.logger
+FINE: [Thread]: 242 [ClassName]: com.enhancesys.integration.services.springCamel.KPIAggregator [LineNumber]:  597  1000 Rows Inserted in monthly table..
+May 06, 2020 11:30:54 AM com.enhancesys.common.logger
+FINE: [Thread]: 242 [ClassName]: com.enhancesys.integration.services.springCamel.KPIAggregator [LineNumber]:  597  1000 Rows Inserted in monthly table..
+May 06, 2020 11:30:54 AM com.enhancesys.common.logger
+INFO: [Thread]: 242 [ClassName]: com.enhancesys.integration.services.springCamel.KPIAggregator [LineNumber]:  619  Monthly Table - Total Insert time :: 964 ms
+May 06, 2020 11:30:54 AM com.enhancesys.common.logger
+INFO: [Thread]: 242 [ClassName]: com.enhancesys.integration.services.springCamel.KPIAggregator [LineNumber]:  620  Monthly Table - Total update time :: 0 ms
+May 06, 2020 11:30:54 AM com.enhancesys.common.logger
+FINE: [Thread]: 241 [ClassName]: com.enhancesys.integration.services.springCamel.InterfaceFileReader [LineNumber]:  2375  Sent FileDataBean to the next level with batch number :: 30
+May 06, 2020 11:30:54 AM com.enhancesys.common.logger
+FINE: [Thread]: 241 [ClassName]: com.enhancesys.integration.services.springCamel.InterfaceFileReader [LineNumber]:  2395  Monthly Aggregation completed..
+May 06, 2020 11:30:54 AM com.enhancesys.common.logger
+FINE: [Thread]: 242 [ClassName]: com.enhancesys.integration.services.springCamel.KPIAggregator [LineNumber]:  597  1000 Rows Inserted in monthly table..
+May 06, 2020 11:30:54 AM com.enhancesys.common.logger
+FINE: [Thread]: 242 [ClassName]: com.enhancesys.integration.services.springCamel.KPIAggregator [LineNumber]:  597  1000 Rows Inserted in monthly table..
+May 06, 2020 11:30:54 AM com.enhancesys.common.logger
+FINE: [Thread]: 242 [ClassName]: com.enhancesys.integration.services.springCamel.KPIAggregator [LineNumber]:  597  1000 Rows Inserted in monthly table..
+May 06, 2020 11:30:54 AM com.enhancesys.common.logger
+FINE: [Thread]: 242 [ClassName]: com.enhancesys.integration.services.springCamel.KPIAggregator [LineNumber]:  597  1000 Rows Inserted in monthly table..
+May 06, 2020 11:30:54 AM com.enhancesys.common.logger
+FINE: [Thread]: 242 [ClassName]: com.enhancesys.integration.services.springCamel.KPIAggregator [LineNumber]:  597  1000 Rows Inserted in monthly table..
+May 06, 2020 11:30:54 AM com.enhancesys.common.logger
+INFO: [Thread]: 242 [ClassName]: com.enhancesys.integration.services.springCamel.KPIAggregator [LineNumber]:  619  Monthly Table - Total Insert time :: 935 ms
+May 06, 2020 11:30:54 AM com.enhancesys.common.logger
+INFO: [Thread]: 242 [ClassName]: com.enhancesys.integration.services.springCamel.KPIAggregator [LineNumber]:  620  Monthly Table - Total update time :: 0 ms
+May 06, 2020 11:30:54 AM com.enhancesys.common.logger
+INFO: [Thread]: 241 [ClassName]: com.enhancesys.integration.services.springCamel.InterfaceFileReader [LineNumber]:  3101  Sent empty FileDataBean to the next level
+May 06, 2020 11:30:55 AM com.enhancesys.common.logger
+FINE: [Thread]: 241 [ClassName]: com.enhancesys.integration.services.util.InterfaceServiceUtil [LineNumber]:  926  1 Rows Updated in Interface File Summary..
+May 06, 2020 11:30:55 AM com.enhancesys.common.logger
+FINE: [Thread]: 242 [ClassName]: com.enhancesys.integration.services.springCamel.KPIAggregator [LineNumber]:  597  1000 Rows Inserted in monthly table..
+May 06, 2020 11:30:55 AM com.enhancesys.common.logger
+FINE: [Thread]: 242 [ClassName]: com.enhancesys.integration.services.springCamel.KPIAggregator [LineNumber]:  597  1000 Rows Inserted in monthly table..
+May 06, 2020 11:30:56 AM com.enhancesys.common.logger
+FINE: [Thread]: 241 [ClassName]: com.enhancesys.integration.services.springCamel.InterfaceFileReader [LineNumber]:  2905  Deleted row count from temp table :: 143663
+May 06, 2020 11:30:56 AM com.enhancesys.common.logger
+FINE: [Thread]: 241 [ClassName]: com.enhancesys.integration.services.springCamel.InterfaceFileReader [LineNumber]:  2906  File Reading completed in :1522936
+May 06, 2020 11:30:56 AM com.enhancesys.common.logger
+FINE: [Thread]: 242 [ClassName]: com.enhancesys.integration.services.springCamel.KPIAggregator [LineNumber]:  597  1000 Rows Inserted in monthly table..
+May 06, 2020 11:30:56 AM com.enhancesys.common.logger
+FINE: [Thread]: 242 [ClassName]: com.enhancesys.integration.services.springCamel.KPIAggregator [LineNumber]:  597  1000 Rows Inserted in monthly table..
+May 06, 2020 11:30:56 AM com.enhancesys.common.logger
+FINE: [Thread]: 242 [ClassName]: com.enhancesys.integration.services.springCamel.KPIAggregator [LineNumber]:  597  1000 Rows Inserted in monthly table..
+May 06, 2020 11:30:56 AM com.enhancesys.common.logger
+INFO: [Thread]: 242 [ClassName]: com.enhancesys.integration.services.springCamel.KPIAggregator [LineNumber]:  619  Monthly Table - Total Insert time :: 1651 ms
+May 06, 2020 11:30:56 AM com.enhancesys.common.logger
+INFO: [Thread]: 242 [ClassName]: com.enhancesys.integration.services.springCamel.KPIAggregator [LineNumber]:  620  Monthly Table - Total update time :: 0 ms
+May 06, 2020 11:30:56 AM com.enhancesys.common.logger
+INFO: [Thread]: 241 [ClassName]: com.enhancesys.integration.services.springCamel.InterfaceFileReader [LineNumber]:  3101  Sent empty FileDataBean to the next level
+May 06, 2020 11:30:56 AM com.enhancesys.common.logger
+FINE: [Thread]: 241 [ClassName]: com.enhancesys.integration.services.springCamel.InterfaceFileReader [LineNumber]:  3076  Interface File Reading com.enhancesys.integration.services.springCamel.InterfaceFileReader_1588743333283 completed at Wed May 06 11:30:56 IST 2020, interfaceId : 1153 file Id : 10716 and took 1523352 milli seconds
+May 06, 2020 11:30:56 AM com.enhancesys.common.logger
+FINE: [Thread]: 238 [ClassName]: com.enhancesys.integration.services.springCamel.AbstractFileProcessor [LineNumber]:  191  Exit initiateProcess..1153
+May 06, 2020 11:30:56 AM com.enhancesys.common.logger
+FINE: [Thread]: 242 [ClassName]: com.enhancesys.integration.services.springCamel.KPIAggregator [LineNumber]:  615  299 Rows Inserted in monthly table..
+May 06, 2020 11:30:56 AM com.enhancesys.common.logger
+INFO: [Thread]: 242 [ClassName]: com.enhancesys.integration.services.springCamel.KPIAggregator [LineNumber]:  619  Monthly Table - Total Insert time :: 60 ms
+May 06, 2020 11:30:56 AM com.enhancesys.common.logger
+INFO: [Thread]: 242 [ClassName]: com.enhancesys.integration.services.springCamel.KPIAggregator [LineNumber]:  620  Monthly Table - Total update time :: 0 ms
+May 06, 2020 11:30:56 AM com.enhancesys.common.logger
+INFO: [Thread]: 242 [ClassName]: com.enhancesys.integration.services.springCamel.KPIAggregator [LineNumber]:  719  KPI Aggregation 1153 completed in 1523453 ms
+May 06, 2020 11:30:56 AM com.enhancesys.common.logger
+FINE: [Thread]: 239 [ClassName]: com.enhancesys.integration.services.springCamel.AbstractFileProcessor [LineNumber]:  191  Exit initiateProcess..1153
+May 06, 2020 11:30:56 AM com.enhancesys.common.logger
+FINE: [Thread]: 236 [ClassName]: com.enhancesys.integration.services.springCamel.FileProcessor [LineNumber]:  130  Exit initiateProcess..
+May 06, 2020 11:30:56 AM com.enhancesys.common.logger
+FINE: [Thread]: 236 [ClassName]: com.enhancesys.integration.services.merger.GenericFileProcessor [LineNumber]:  75  GenericFileProcessor completed at Wed May 06 11:30:56 IST 2020, interfaceId : 1153 file Id : 10716 and took 1525600 milli seconds
+May 06, 2020 11:30:56 AM com.enhancesys.common.logger
+FINE: [Thread]: 236 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  3152  Inside ... interfaceFileSummaryDetails.getFileName() :: secondary_mobo_bi_20200605_002.csv
+May 06, 2020 11:30:56 AM com.enhancesys.common.logger
+FINE: [Thread]: 236 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  3153  localServerjsonObject :: {"CtlBkpDir":"\/home\/appuser\/snoc\/interfaces\/S-NOC\/interfaces\/backup\/master_file\/secondary_mobo_bi\/","Dir":"\/home\/appuser\/snoc\/interfaces\/S-NOC\/interfaces\/master_file\/secondary_mobo_bi\/","BkpDir":"\/home\/appuser\/snoc\/interfaces\/S-NOC\/interfaces\/backup\/master_file\/secondary_mobo_bi\/","RejectedDir":"\/home\/appuser\/snoc\/interfaces\/S-NOC\/interfaces\/rejected_file\/secondary_mobo_bi\/","RejectedBkpDir":"\/home\/appuser\/snoc\/interfaces\/S-NOC\/interfaces\/backup\/rejected_file\/secondary_mobo_bi\/","CtlDir":"\/home\/appuser\/snoc\/interfaces\/S-NOC\/interfaces\/master_file\/secondary_mobo_bi\/","RejectedCtlDir":"\/home\/appuser\/snoc\/interfaces\/S-NOC\/interfaces\/rejected_file\/secondary_mobo_bi\/","FilterCtlBkpDir":"\/home\/appuser\/snoc\/interfaces\/S-NOC\/interfaces\/backup\/filter_file\/secondary_mobo_bi\/","RejectedCtlBkpDir":"\/home\/appuser\/snoc\/interfaces\/S-NOC\/interfaces\/backup\/rejected_file\/secondary_mobo_bi\/","FilterBkpDir":"\/home\/appuser\/snoc\/interfaces\/S-NOC\/interfaces\/backup\/filter_file\/secondary_mobo_bi\/"}
+May 06, 2020 11:30:56 AM com.enhancesys.common.logger
+FINE: [Thread]: 236 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  10825  Entry compressGzipFile.. Started at --> Wed May 06 11:30:56 IST 2020
+May 06, 2020 11:30:56 AM com.enhancesys.common.logger
+FINE: [Thread]: 236 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  10835  compressGzipFile service received gzipFile Name-->/home/appuser/snoc/interfaces/S-NOC/interfaces/backup/master_file/secondary_mobo_bi/secondary_mobo_bi_20200605_002.csv.gzfile Name -->/home/appuser/snoc/interfaces/S-NOC/interfaces/backup/master_file/secondary_mobo_bi/secondary_mobo_bi_20200605_002.csv
+May 06, 2020 11:30:57 AM com.enhancesys.common.logger
+FINE: [Thread]: 236 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  10874  Exit compressGzipFile service at -->Wed May 06 11:30:57 IST 2020 --- and took 659 milliseconds
+May 06, 2020 11:30:57 AM com.enhancesys.common.logger
+FINE: [Thread]: 236 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  10825  Entry compressGzipFile.. Started at --> Wed May 06 11:30:57 IST 2020
+May 06, 2020 11:30:57 AM com.enhancesys.common.logger
+FINE: [Thread]: 236 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  10835  compressGzipFile service received gzipFile Name-->/home/appuser/snoc/interfaces/S-NOC/interfaces/backup/master_file/secondary_mobo_bi/secondary_mobo_bi_20200605_002.ctl.gzfile Name -->/home/appuser/snoc/interfaces/S-NOC/interfaces/backup/master_file/secondary_mobo_bi/secondary_mobo_bi_20200605_002.ctl
+May 06, 2020 11:30:57 AM com.enhancesys.common.logger
+FINE: [Thread]: 236 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  10874  Exit compressGzipFile service at -->Wed May 06 11:30:57 IST 2020 --- and took 0 milliseconds
+May 06, 2020 11:30:57 AM com.enhancesys.common.logger
+FINE: [Thread]: 236 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  3208  InterfaceId : 1153 : FileId : 10716 processReceivedFiles method is completed at Wed May 06 11:30:57 IST 2020
+May 06, 2020 11:30:57 AM com.enhancesys.common.logger
+FINE: [Thread]: 236 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  3286  Exit processReceivedFiles service : InterfaceId :: 1153  at --> Wed May 06 11:30:57 IST 2020 and took 1526507 milliseconds
+May 06, 2020 11:31:23 AM com.enhancesys.common.logger
+FINE: [Thread]: 220 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  10584  Entry prepareRejectionFile.. 1153 Started at --> Wed May 06 11:31:23 IST 2020
+May 06, 2020 11:31:23 AM com.enhancesys.common.logger
+INFO: [Thread]: 220 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  10593  prepareRejectionFile service received interface id-->1153
+May 06, 2020 11:31:23 AM com.enhancesys.common.logger
+FINE: [Thread]: 220 [ClassName]: com.enhancesys.integration.services.rejection.DWHRejectionFilePreparation [LineNumber]:  101  Entry DWH prepareRejectionFile.. Start time :: Wed May 06 11:31:23 IST 2020
+May 06, 2020 11:31:23 AM com.enhancesys.common.logger
+FINE: [Thread]: 220 [ClassName]: com.enhancesys.integration.services.rejection.DWHRejectionFilePreparation [LineNumber]:  143  interfaces : 1153
+May 06, 2020 11:31:23 AM com.enhancesys.common.logger
+FINE: [Thread]: 220 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  7748  Entry getInterfaceFileSummaryByInterfaceIdAndStatus.. Started at --> Wed May 06 11:31:23 IST 2020
+May 06, 2020 11:31:23 AM com.enhancesys.common.logger
+FINE: [Thread]: 220 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  7757  getInterfaceFileSummaryByInterfaceIdAndStatus service received interface id-->1153statusId-->1323
+May 06, 2020 11:31:23 AM com.enhancesys.common.logger
+FINE: [Thread]: 220 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  7807  Exit getInterfaceFileSummaryByInterfaceIdAndStatus service at -->Wed May 06 11:31:23 IST 2020 --- and took 14 milliseconds
+May 06, 2020 11:31:23 AM com.enhancesys.common.logger
+FINE: [Thread]: 220 [ClassName]: com.enhancesys.integration.services.rejection.DWHRejectionFilePreparation [LineNumber]:  174  interfaceFileSummaryList size : 1
+May 06, 2020 11:31:23 AM com.enhancesys.common.logger
+FINE: [Thread]: 220 [ClassName]: com.enhancesys.integration.services.rejection.DWHRejectionFilePreparation [LineNumber]:  423  Entry createFileSummaryDetails.. Wed May 06 11:31:23 IST 2020
+May 06, 2020 11:31:23 AM com.enhancesys.common.logger
+FINE: [Thread]: 220 [ClassName]: com.enhancesys.integration.services.rejection.DWHRejectionFilePreparation [LineNumber]:  466  Exit createFileSummaryDetails.. Wed May 06 11:31:23 IST 2020 --- and took 57 milliseconds
+May 06, 2020 11:31:23 AM com.enhancesys.common.logger
+FINE: [Thread]: 220 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  7587  Entry createControlFile.. Started at --> Wed May 06 11:31:23 IST 2020
+May 06, 2020 11:31:23 AM com.enhancesys.common.logger
+FINE: [Thread]: 220 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  7602  createControlFile service received filePath	-->/home/appuser/snoc/interfaces/S-NOC/interfaces/rejected_file/secondary_mobo_bi/secondary_mobo_bi_20200605_002.csvtotalCount-->2154fileName-->secondary_mobo_bi_20200605_002fileFormat-->csvcurrentFileId-->11010contolFileFormat-->ctlcontolFilePath-->/home/appuser/snoc/interfaces/S-NOC/interfaces/rejected_file/secondary_mobo_bi/
+May 06, 2020 11:31:23 AM com.enhancesys.common.logger
+FINE: [Thread]: 220 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  8057  updateInterfaceFileSummaryDetails service received interfaceFileSummaryDetails object for file details id-->11010
+May 06, 2020 11:31:23 AM com.enhancesys.common.logger
+FINE: [Thread]: 220 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  7666  Exit control file creation service at -->Wed May 06 11:31:23 IST 2020 --- and took 48 milliseconds
+May 06, 2020 11:31:23 AM com.enhancesys.common.logger
+FINE: [Thread]: 220 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  11691  Entry getInterfaceFileSummaryDetailsById..
+May 06, 2020 11:31:23 AM com.enhancesys.common.logger
+FINE: [Thread]: 220 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  11731  Exit getInterfaceFileSummaryDetailsById..
+May 06, 2020 11:31:23 AM com.enhancesys.common.logger
+FINE: [Thread]: 220 [ClassName]: com.enhancesys.integration.services.rejection.DWHRejectionFilePreparation [LineNumber]:  261  fileSummaryDetailsList : secondary_mobo_bi_20200605_002.ctl
+May 06, 2020 11:31:23 AM com.enhancesys.common.logger
+FINE: [Thread]: 220 [ClassName]: com.enhancesys.integration.services.util.Utility [LineNumber]:  276  Entry backupFile..
+May 06, 2020 11:31:23 AM com.enhancesys.common.logger
+FINE: [Thread]: 220 [ClassName]: com.enhancesys.integration.services.util.Utility [LineNumber]:  320  Exit backupFile..
+May 06, 2020 11:31:23 AM com.enhancesys.common.logger
+FINE: [Thread]: 220 [ClassName]: com.enhancesys.integration.services.util.Utility [LineNumber]:  437  Entry compressGzipFile.. Started at --> Wed May 06 11:31:23 IST 2020
+May 06, 2020 11:31:23 AM com.enhancesys.common.logger
+FINE: [Thread]: 220 [ClassName]: com.enhancesys.integration.services.util.Utility [LineNumber]:  447  compressGzipFile service received gzipFile Name-->/home/appuser/snoc/interfaces/S-NOC/interfaces/backup/rejected_file/secondary_mobo_bi/secondary_mobo_bi_20200605_002.csv.gzfile Name -->/home/appuser/snoc/interfaces/S-NOC/interfaces/backup/rejected_file/secondary_mobo_bi/secondary_mobo_bi_20200605_002.csv
+May 06, 2020 11:31:23 AM com.enhancesys.common.logger
+FINE: [Thread]: 220 [ClassName]: com.enhancesys.integration.services.util.Utility [LineNumber]:  486  Exit compressGzipFile service at -->Wed May 06 11:31:23 IST 2020 --- and took 15 milliseconds
+May 06, 2020 11:31:23 AM com.enhancesys.common.logger
+FINE: [Thread]: 220 [ClassName]: com.enhancesys.integration.services.util.Utility [LineNumber]:  276  Entry backupFile..
+May 06, 2020 11:31:23 AM com.enhancesys.common.logger
+FINE: [Thread]: 220 [ClassName]: com.enhancesys.integration.services.util.Utility [LineNumber]:  320  Exit backupFile..
+May 06, 2020 11:31:23 AM com.enhancesys.common.logger
+FINE: [Thread]: 220 [ClassName]: com.enhancesys.integration.services.util.Utility [LineNumber]:  437  Entry compressGzipFile.. Started at --> Wed May 06 11:31:23 IST 2020
+May 06, 2020 11:31:23 AM com.enhancesys.common.logger
+FINE: [Thread]: 220 [ClassName]: com.enhancesys.integration.services.util.Utility [LineNumber]:  447  compressGzipFile service received gzipFile Name-->/home/appuser/snoc/interfaces/S-NOC/interfaces/backup/rejected_file/secondary_mobo_bi/secondary_mobo_bi_20200605_002.ctl.gzfile Name -->/home/appuser/snoc/interfaces/S-NOC/interfaces/backup/rejected_file/secondary_mobo_bi/secondary_mobo_bi_20200605_002.ctl
+May 06, 2020 11:31:23 AM com.enhancesys.common.logger
+FINE: [Thread]: 220 [ClassName]: com.enhancesys.integration.services.util.Utility [LineNumber]:  486  Exit compressGzipFile service at -->Wed May 06 11:31:23 IST 2020 --- and took 2 milliseconds
+May 06, 2020 11:31:23 AM com.enhancesys.common.logger
+FINE: [Thread]: 220 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  7942  total count-->145817File ID : 10716
+May 06, 2020 11:31:23 AM com.enhancesys.common.logger
+FINE: [Thread]: 220 [ClassName]: com.enhancesys.integration.services.util.IntegrationUtilManagementImpl [LineNumber]:  203  Entry prepareNotificationJsonData.. Started at --> Wed May 06 11:31:23 IST 2020
+May 06, 2020 11:31:23 AM com.enhancesys.common.logger
+FINE: [Thread]: 220 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  11270  Entry getInterfaceNotificationByInterfaceIdAndScenario.. Started at --> Wed May 06 11:31:23 IST 2020
+May 06, 2020 11:31:23 AM com.enhancesys.common.logger
+FINE: [Thread]: 220 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  11279  getInterfaceNotificationByInterfaceIdAndScenario service received interface id-->1153,scenario-->FILE_REJECTED_PART_0
+May 06, 2020 11:31:23 AM com.enhancesys.common.logger
+FINE: [Thread]: 220 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  11320  Exit GetInterfaceNotificationByInterfaceIdAndScenario service at -->Wed May 06 11:31:23 IST 2020 --- and took 14 milliseconds
+May 06, 2020 11:31:23 AM com.enhancesys.common.logger
+FINE: [Thread]: 220 [ClassName]: com.enhancesys.integration.services.util.IntegrationUtilManagementImpl [LineNumber]:  280  Entry SendActiveMqMsg.. Started at --> Wed May 06 11:31:23 IST 2020
+May 06, 2020 11:31:23 AM com.enhancesys.common.logger
+FINE: [Thread]: 220 [ClassName]: com.enhancesys.integration.services.util.IntegrationUtilManagementImpl [LineNumber]:  293  notification request : {"source":"Interface_FILE_REJECTED_PART_0","sourceRefId":1153,"notifications":[{"subject":"FILE REJECTED PARTIALLY - INTDW024 - Secondary MOBO","templateName":"int_file_rejected_partially","to":"vinay.nagaraj@enhancesys.com","cc":"sreerag.a@enhancesys.com","bcc":"","media":"email","language":"en","data":{"interfaceName":"INTDW024 - Secondary MOBO","fileNames":"secondary_mobo_bi_20200605_002.csv","reason":"Few records shared in files were rejected by system - to know more details please check rejection file","clientId":"0","errorCode":105,"firstName":"Support Team"}}]}
+May 06, 2020 11:31:24 AM com.enhancesys.common.logger
+FINE: [Thread]: 220 [ClassName]: com.enhancesys.integration.services.util.IntegrationUtilManagementImpl [LineNumber]:  356  Exit SendActiveMqMsg service at -->Wed May 06 11:31:24 IST 2020 --- and took 21 milliseconds
+May 06, 2020 11:31:24 AM com.enhancesys.common.logger
+FINE: [Thread]: 220 [ClassName]: com.enhancesys.integration.services.util.IntegrationUtilManagementImpl [LineNumber]:  268  Exit prepareNotificationJsonData service at -->Wed May 06 11:31:24 IST 2020 --- and took 47 milliseconds
+May 06, 2020 11:31:24 AM com.enhancesys.common.logger
+FINE: [Thread]: 220 [ClassName]: com.enhancesys.integration.services.rejection.DWHRejectionFilePreparation [LineNumber]:  400  Exit prepareRejectionFile.. ::Wed May 06 11:31:24 IST 2020 --- and took 341 milliseconds
+May 06, 2020 11:31:24 AM com.enhancesys.common.logger
+FINE: [Thread]: 220 [ClassName]: com.enhancesys.integration.services.IntegrationManagementImpl [LineNumber]:  10651  Exit prepareRejectionFile service : InterfaceId :: 1153  at --> Wed May 06 11:31:24 IST 2020 and took 361 milliseconds

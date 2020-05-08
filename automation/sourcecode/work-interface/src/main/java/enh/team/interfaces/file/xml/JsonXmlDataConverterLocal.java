@@ -184,7 +184,7 @@ public class JsonXmlDataConverterLocal
 					generateXml(templateNode, rootElement, newDoc, (JSONObject)sourceJson.get("payload"), xPath, kycMap);
 				}
 			}
-
+			System.out.println("dfdfdf  :  " + this.documentToString(newDoc));
 			newDoc = validateDocumentProcess(newDoc, VALIDATE_NODE_BY_CHILD_BEFORE_PROCESS, "validateNodeByChildElemet");
 
 			convertedRequestData = this.documentToString(newDoc);
@@ -263,6 +263,8 @@ public class JsonXmlDataConverterLocal
 				if(templateNode.getChildNodes().item(j).getNodeType() == Node.ELEMENT_NODE)
 				{
 					element = (Element) templateNode.getChildNodes().item(j);
+					if(element.toString().equals("[req:QueryOrganizationBalanceRequest: null]"))
+						System.out.println("sjfsjkj");
 					if(TRUE.equalsIgnoreCase(element.getAttribute(IS_MULTIPLE)))
 					{
 						if(element.getAttribute(SOURCE) == null || element.getAttribute(SOURCE).trim().isEmpty())
@@ -1390,7 +1392,6 @@ public class JsonXmlDataConverterLocal
 	public SimpleDateFormat format1 = new SimpleDateFormat("yyyy-MM-dd");
 	private final String VALIDATE_NODE_BY_CHILD_BEFORE_PROCESS = "//Request/Body/CreateChildOrgRequest/SimpleKYCUpdateData!~!req:AddField!~!com:KYCValue!&!//Request/Body/CreateTopOrgRequest/SimpleKYCUpdateData!~!req:AddField!~!com:KYCValue!&!//Request/Body/UpdateOrganizationKYCRequest/SimpleKYCUpdateData!~!req:AddField!~!com:KYCValue!&!//Request/Body/CreateOrgOperatorRequest/SimpleKYCUpdateData!~!req:AddField!~!com:KYCValue!&!//Request/Body/UpdateOrgOperatorKYCRequest/SimpleKYCUpdateData!~!req:AddField!~!com:KYCValue";
 	private final String LTYPE_ENTITY_MAPPING="1";
-	private final String LTYPE_LOOKUP_MAPPING="2";
 	private final String LTYPE_MONGO_MAPPING="3";
 	private final String LTYPE_DATE_MAPPING="4";
 	private final String LTYPE_CONDITION_MAPPING="5";
