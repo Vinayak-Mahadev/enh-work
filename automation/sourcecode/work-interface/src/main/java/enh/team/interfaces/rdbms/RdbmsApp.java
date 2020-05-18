@@ -15,33 +15,49 @@ public class RdbmsApp
 		Connection conn = RDBMS.getDBConnection(PropType.RDBMS_144);
 		
 		
-		opr.prepareFileFor1153(conn, "2020-01-11", "E:/interface/backend/ControlFileGeneration/secondary_mobo_bi_20200210_2001.csv", 0);
-		opr.prepareFileFor1165(conn, "2020-01-11", "E:/interface/backend/ControlFileGeneration/mobii_rgu_ga_injection_bi_20200210_2001.csv", 0);
-		opr.prepareFileFor1166(conn, "2020-01-11", "E:/interface/backend/ControlFileGeneration/mobii_daily_sso_bi_20200210_2001.csv", 0);
-	
-		opr.prepareFileFor1153(conn, "2020-03-15", "E:/interface/backend/ControlFileGeneration/secondary_mobo_bi_20200310_2001.csv", 0);
-		opr.prepareFileFor1165(conn, "2020-03-15", "E:/interface/backend/ControlFileGeneration/mobii_rgu_ga_injection_bi_20200310_2001.csv", 0);
-		opr.prepareFileFor1166(conn, "2020-03-15", "E:/interface/backend/ControlFileGeneration/mobii_daily_sso_bi_20200310_2001.csv", 0);
-	
-		opr.prepareFileFor1153(conn, "2020-04-13", "E:/interface/backend/ControlFileGeneration/secondary_mobo_bi_20200410_2001.csv", 0);
-		opr.prepareFileFor1165(conn, "2020-04-13", "E:/interface/backend/ControlFileGeneration/mobii_rgu_ga_injection_bi_20200410_2001.csv", 0);
-		opr.prepareFileFor1166(conn, "2020-04-13", "E:/interface/backend/ControlFileGeneration/mobii_daily_sso_bi_20200410_2001.csv", 0);
-	
-		opr.prepareFileFor1153(conn, "2020-04-20", "E:/interface/backend/ControlFileGeneration/secondary_mobo_bi_20200410_2002.csv", 0);
-		opr.prepareFileFor1165(conn, "2020-04-20", "E:/interface/backend/ControlFileGeneration/mobii_rgu_ga_injection_bi_20200410_2002.csv", 0);
-		opr.prepareFileFor1166(conn, "2020-04-20", "E:/interface/backend/ControlFileGeneration/mobii_daily_sso_bi_20200410_2002.csv", 0);
-	
-		opr.prepareFileFor1153(conn, "2020-05-01", "E:/interface/backend/ControlFileGeneration/secondary_mobo_bi_20200502_2003.csv", 0);
-		opr.prepareFileFor1165(conn, "2020-05-01", "E:/interface/backend/ControlFileGeneration/mobii_rgu_ga_injection_bi_20200502_2003.csv", 0);
-		opr.prepareFileFor1166(conn, "2020-05-01", "E:/interface/backend/ControlFileGeneration/mobii_daily_sso_bi_20200502_2003.csv", 0);
-	
-		opr.prepareFileFor1153(conn, "2020-05-06", "E:/interface/backend/ControlFileGeneration/secondary_mobo_bi_20200505_2004.csv", 0);
-		opr.prepareFileFor1165(conn, "2020-05-06", "E:/interface/backend/ControlFileGeneration/mobii_rgu_ga_injection_bi_20200505_2004.csv", 0);
-		opr.prepareFileFor1166(conn, "2020-05-06", "E:/interface/backend/ControlFileGeneration/mobii_daily_sso_bi_20200505_2004.csv", 0);
-	
-		opr.prepareFileFor1153(conn, "2020-05-07", "E:/interface/backend/ControlFileGeneration/secondary_mobo_bi_20200505_2005.csv", 0);
-		opr.prepareFileFor1165(conn, "2020-05-07", "E:/interface/backend/ControlFileGeneration/mobii_rgu_ga_injection_bi_20200505_2005.csv", 0);
-		opr.prepareFileFor1166(conn, "2020-05-07", "E:/interface/backend/ControlFileGeneration/mobii_daily_sso_bi_20200505_2005.csv", 0);
+//		opr.prepareFileFor1153(conn, "2020-01-11", "E:/interface/backend/ControlFileGeneration/secondary_mobo_bi_20200111_2001.csv", 1000);
+//		opr.prepareFileFor1165(conn, "2020-01-11", "E:/interface/backend/ControlFileGeneration/mobii_rgu_ga_injection_bi_20200111_2001.csv", 1000);
+//		opr.prepareFileFor1166(conn, "2020-01-11", "E:/interface/backend/ControlFileGeneration/mobii_daily_sso_bi_20200111_2001.csv", 1000);
+//	
+//		opr.prepareFileFor1153(conn, "2020-03-15", "E:/interface/backend/ControlFileGeneration/secondary_mobo_bi_20200315_2001.csv", 1000);
+//		opr.prepareFileFor1165(conn, "2020-03-15", "E:/interface/backend/ControlFileGeneration/mobii_rgu_ga_injection_bi_20200315_2001.csv", 1000);
+//		opr.prepareFileFor1166(conn, "2020-03-15", "E:/interface/backend/ControlFileGeneration/mobii_daily_sso_bi_20200315_2001.csv", 1000);
+//	
+//		opr.prepareFileFor1153(conn, "2020-04-13", "E:/interface/backend/ControlFileGeneration/secondary_mobo_bi_20200413_2001.csv", 1000);
+//		opr.prepareFileFor1165(conn, "2020-04-13", "E:/interface/backend/ControlFileGeneration/mobii_rgu_ga_injection_bi_20200413_2001.csv", 1000);
+//		opr.prepareFileFor1166(conn, "2020-04-13", "E:/interface/backend/ControlFileGeneration/mobii_daily_sso_bi_20200413_2001.csv", 1000);
+//	
+//		opr.prepareFileFor1153(conn, "2020-04-20", "E:/interface/backend/ControlFileGeneration/secondary_mobo_bi_20200420_2001.csv", 1000);
+//		opr.prepareFileFor1165(conn, "2020-04-20", "E:/interface/backend/ControlFileGeneration/mobii_rgu_ga_injection_bi_20200420_2001.csv", 1000);
+//		opr.prepareFileFor1166(conn, "2020-04-20", "E:/interface/backend/ControlFileGeneration/mobii_daily_sso_bi_20200420_2001.csv", 1000);
+//
+//		opr.prepareFileFor1153(conn, "2020-05-01", "E:/interface/backend/ControlFileGeneration/secondary_mobo_bi_20200501_2001.csv", 1000);
+//		opr.prepareFileFor1165(conn, "2020-05-01", "E:/interface/backend/ControlFileGeneration/mobii_rgu_ga_injection_bi_20200501_2001.csv", 1000);
+//		opr.prepareFileFor1166(conn, "2020-05-01", "E:/interface/backend/ControlFileGeneration/mobii_daily_sso_bi_20200501_2001.csv", 1000);
+//
+//		opr.prepareFileFor1153(conn, "2020-05-02", "E:/interface/backend/ControlFileGeneration/secondary_mobo_bi_20200502_2002.csv", 1000);
+//		opr.prepareFileFor1165(conn, "2020-05-02", "E:/interface/backend/ControlFileGeneration/mobii_rgu_ga_injection_bi_20200502_2002.csv", 1000);
+//		opr.prepareFileFor1166(conn, "2020-05-02", "E:/interface/backend/ControlFileGeneration/mobii_daily_sso_bi_20200502_2002.csv", 1000);
+//
+//		opr.prepareFileFor1153(conn, "2020-05-03", "E:/interface/backend/ControlFileGeneration/secondary_mobo_bi_20200503_2003.csv", 1000);
+//		opr.prepareFileFor1165(conn, "2020-05-03", "E:/interface/backend/ControlFileGeneration/mobii_rgu_ga_injection_bi_20200503_2003.csv", 1000);
+//		opr.prepareFileFor1166(conn, "2020-05-03", "E:/interface/backend/ControlFileGeneration/mobii_daily_sso_bi_20200503_2003.csv", 1000);
+//	
+//		opr.prepareFileFor1153(conn, "2020-05-06", "E:/interface/backend/ControlFileGeneration/secondary_mobo_bi_20200506_2004.csv", 1000);
+//		opr.prepareFileFor1165(conn, "2020-05-06", "E:/interface/backend/ControlFileGeneration/mobii_rgu_ga_injection_bi_20200506_2004.csv", 1000);
+//		opr.prepareFileFor1166(conn, "2020-05-06", "E:/interface/backend/ControlFileGeneration/mobii_daily_sso_bi_20200506_2004.csv", 1000);
+//
+//		opr.prepareFileFor1153(conn, "2020-05-07", "E:/interface/backend/ControlFileGeneration/secondary_mobo_bi_20200505_2005.csv", 1000);
+//		opr.prepareFileFor1165(conn, "2020-05-07", "E:/interface/backend/ControlFileGeneration/mobii_rgu_ga_injection_bi_20200505_2005.csv", 1000);
+//		opr.prepareFileFor1166(conn, "2020-05-07", "E:/interface/backend/ControlFileGeneration/mobii_daily_sso_bi_20200505_2005.csv", 1000);
+//		
+//
+//		opr.prepareFileFor1153(conn, "2020-05-08", "E:/interface/backend/ControlFileGeneration/secondary_mobo_bi_20200508_2006.csv", 1000);
+//		opr.prepareFileFor1165(conn, "2020-05-08", "E:/interface/backend/ControlFileGeneration/mobii_rgu_ga_injection_bi_20200508_2006.csv", 1000);
+//		opr.prepareFileFor1166(conn, "2020-05-08", "E:/interface/backend/ControlFileGeneration/mobii_daily_sso_bi_20200508_2006.csv", 1000);
+		
+		opr.prepareFileFor1153(conn, "2020-04-13", "E:/interface/backend/ControlFileGeneration/secondary_mobo_bi_20200413_001.csv", 1000);
+		opr.prepareFileFor1153(conn, "2020-05-13", "E:/interface/backend/ControlFileGeneration/secondary_mobo_bi_20200513_001.csv", 1000);
 		
 		
 	}

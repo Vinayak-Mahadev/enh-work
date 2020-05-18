@@ -1,0 +1,95 @@
+INTHDP001 - Site Mapping
+INTHDP002 - Primary MOBO
+INTHDP003 - Secondary MOBO
+INTHDP004 - Daily SIM Selling Outlet (SSO)
+INTHDP005 - RGU-GA with Injection
+INTHDP006 - Tertiary Sales
+INTHDP007 - Organization MOBO Balance
+INTHDP008 - Prepaid Service Revenue
+INTHDP009 - MOBO Usage Revenue
+INTHDP010 - Acquisition Revenue
+INTHDP011 - Low revenue Sites
+INTHDP012 - Sites with RGU-GA
+INTHDP013 - Cross Selling Cluster Reload
+INTHDP014 - Cross Selling Area Data Package
+INTHDP015 - Outlet Program Achiever
+INTHDP016 - Onetime Allocation Payment
+INTHDP017 - URO 20K
+
+/home/hdpuser/interfaces/HADOOP/master_files/site_mapping/
+/home/hdpuser/interfaces/HADOOP/master_files/primary_mobo/
+/home/hdpuser/interfaces/HADOOP/master_files/secondary_mobo/
+/home/hdpuser/interfaces/HADOOP/master_files/d_sso/
+/home/hdpuser/interfaces/HADOOP/master_files/rgu_injection/
+/home/hdpuser/interfaces/HADOOP/master_files/tertiary/
+/home/hdpuser/interfaces/HADOOP/master_files/org_close_bal/
+/home/hdpuser/interfaces/HADOOP/master_files/total_revenue/
+/home/hdpuser/interfaces/HADOOP/master_files/mobo_revenue/
+/home/hdpuser/interfaces/HADOOP/master_files/acquisition_revenue/
+/home/hdpuser/interfaces/HADOOP/master_files/low_revenue_site/
+/home/hdpuser/interfaces/HADOOP/master_files/site_rgu_ga/
+/home/hdpuser/interfaces/HADOOP/master_files/cross_reload/
+/home/hdpuser/interfaces/HADOOP/master_files/cross_data/
+/home/hdpuser/interfaces/HADOOP/master_files/outlet_program/
+/home/hdpuser/interfaces/HADOOP/master_files/alloc_payment/
+/home/hdpuser/interfaces/HADOOP/master_files/uro20/
+
+
+/home/appuser/interfaces/HADOOP/rejected_file/site_mapping/
+/home/appuser/interfaces/HADOOP/rejected_file/primary_mobo/
+/home/appuser/interfaces/HADOOP/rejected_file/secondary_mobo/
+/home/appuser/interfaces/HADOOP/rejected_file/d_sso/
+/home/appuser/interfaces/HADOOP/rejected_file/rgu_injection/
+/home/appuser/interfaces/HADOOP/rejected_file/tertiary/
+/home/appuser/interfaces/HADOOP/rejected_file/org_close_bal/
+/home/appuser/interfaces/HADOOP/rejected_file/total_revenue/
+/home/appuser/interfaces/HADOOP/rejected_file/mobo_revenue/
+/home/appuser/interfaces/HADOOP/rejected_file/acquisition_revenue/
+/home/appuser/interfaces/HADOOP/rejected_file/low_revenue_site/
+/home/appuser/interfaces/HADOOP/rejected_file/site_rgu_ga/
+/home/appuser/interfaces/HADOOP/rejected_file/cross_reload/
+/home/appuser/interfaces/HADOOP/rejected_file/cross_data/
+/home/appuser/interfaces/HADOOP/rejected_file/outlet_program/
+/home/appuser/interfaces/HADOOP/rejected_file/alloc_payment/
+/home/appuser/interfaces/HADOOP/rejected_file/uro20/
+
+
+
+/home/appuser/interfaces/HADOOP/backup/master_files/site_mapping/
+/home/appuser/interfaces/HADOOP/backup/master_files/primary_mobo/
+/home/appuser/interfaces/HADOOP/backup/master_files/secondary_mobo/
+/home/appuser/interfaces/HADOOP/backup/master_files/d_sso/
+/home/appuser/interfaces/HADOOP/backup/master_files/rgu_injection/
+/home/appuser/interfaces/HADOOP/backup/master_files/tertiary/
+/home/appuser/interfaces/HADOOP/backup/master_files/org_close_bal/
+/home/appuser/interfaces/HADOOP/backup/master_files/total_revenue/
+/home/appuser/interfaces/HADOOP/backup/master_files/mobo_revenue/
+/home/appuser/interfaces/HADOOP/backup/master_files/acquisition_revenue/
+/home/appuser/interfaces/HADOOP/backup/master_files/low_revenue_site/
+/home/appuser/interfaces/HADOOP/backup/master_files/site_rgu_ga/
+/home/appuser/interfaces/HADOOP/backup/master_files/cross_reload/
+/home/appuser/interfaces/HADOOP/backup/master_files/cross_data/
+/home/appuser/interfaces/HADOOP/backup/master_files/outlet_program/
+/home/appuser/interfaces/HADOOP/backup/master_files/alloc_payment/
+/home/appuser/interfaces/HADOOP/backup/master_files/uro20/
+
+
+
+
+INSERT INTO INTERFACE.MS_INTERFACE_ATTR (ATTRIBUTE_ID_N, INTERFACE_ID_N, NAME_V, VALUE_V, LAST_UPDATED_TIME_DT) VALUES (1166009, 1166, 'Remote Dir', '/home/appuser/interfaces/HADOOP/master_files/site_mapping/', now());
+INSERT INTO INTERFACE.MS_INTERFACE_ATTR (ATTRIBUTE_ID_N, INTERFACE_ID_N, NAME_V, VALUE_V, LAST_UPDATED_TIME_DT) VALUES (1166010, 1166, 'Remote control directory', '/home/appuser/interfaces/HADOOP/master_files/site_mapping/', now());
+INSERT INTO INTERFACE.MS_INTERFACE_ATTR (ATTRIBUTE_ID_N, INTERFACE_ID_N, NAME_V, VALUE_V, LAST_UPDATED_TIME_DT) VALUES (1166011, 1166, 'Remote rejected directory', '/home/appuser/interfaces/HADOOP/rejected_file/site_mapping/', now());
+INSERT INTO INTERFACE.MS_INTERFACE_ATTR (ATTRIBUTE_ID_N, INTERFACE_ID_N, NAME_V, VALUE_V, LAST_UPDATED_TIME_DT) VALUES (1166012, 1166, 'Remote rejected control directory', '/home/appuser/interfaces/HADOOP/rejected_file/site_mapping/', now());
+INSERT INTO INTERFACE.MS_INTERFACE_ATTR (ATTRIBUTE_ID_N, INTERFACE_ID_N, NAME_V, VALUE_V, LAST_UPDATED_TIME_DT) VALUES (1166013, 1166, 'Remote backup directory', '/home/appuser/interfaces/HADOOP/backup/master_files/site_mapping/', now());
+INSERT INTO INTERFACE.MS_INTERFACE_ATTR (ATTRIBUTE_ID_N, INTERFACE_ID_N, NAME_V, VALUE_V, LAST_UPDATED_TIME_DT) VALUES (1166014, 1166, 'Remote Control Backup Directory', '/home/appuser/interfaces/HADOOP/backup/master_files/site_mapping/', now());
+INSERT INTO INTERFACE.MS_INTERFACE_ATTR (ATTRIBUTE_ID_N, INTERFACE_ID_N, NAME_V, VALUE_V, LAST_UPDATED_TIME_DT) VALUES (1166015, 1166, 'Local Dir', '/snoc/interfaces/S-NOC/interfaces/master_file/HADOOP/site_mapping/', now());
+INSERT INTO INTERFACE.MS_INTERFACE_ATTR (ATTRIBUTE_ID_N, INTERFACE_ID_N, NAME_V, VALUE_V, LAST_UPDATED_TIME_DT) VALUES (1166016, 1166, 'Local control directory', '/snoc/interfaces/S-NOC/interfaces/master_file/HADOOP/site_mapping/', now());
+INSERT INTO INTERFACE.MS_INTERFACE_ATTR (ATTRIBUTE_ID_N, INTERFACE_ID_N, NAME_V, VALUE_V, LAST_UPDATED_TIME_DT) VALUES (1166017, 1166, 'Local backup directory', '/snoc/interfaces/S-NOC/interfaces/backup/master_file/HADOOP/site_mapping/', now());
+INSERT INTO INTERFACE.MS_INTERFACE_ATTR (ATTRIBUTE_ID_N, INTERFACE_ID_N, NAME_V, VALUE_V, LAST_UPDATED_TIME_DT) VALUES (1166018, 1166, 'Local Control Backup Directory', '/snoc/interfaces/S-NOC/interfaces/backup/master_file/HADOOP/site_mapping/', now());
+INSERT INTO INTERFACE.MS_INTERFACE_ATTR (ATTRIBUTE_ID_N, INTERFACE_ID_N, NAME_V, VALUE_V, LAST_UPDATED_TIME_DT) VALUES (1166019, 1166, 'Local rejected directory', '/snoc/interfaces/S-NOC/interfaces/rejected_file/HADOOP/site_mapping/', now());
+INSERT INTO INTERFACE.MS_INTERFACE_ATTR (ATTRIBUTE_ID_N, INTERFACE_ID_N, NAME_V, VALUE_V, LAST_UPDATED_TIME_DT) VALUES (1166020, 1166, 'Local rejected control directory', '/snoc/interfaces/S-NOC/interfaces/rejected_file/HADOOP/site_mapping/', now());
+INSERT INTO INTERFACE.MS_INTERFACE_ATTR (ATTRIBUTE_ID_N, INTERFACE_ID_N, NAME_V, VALUE_V, LAST_UPDATED_TIME_DT) VALUES (1166021, 1166, 'Local rejected backup directory', '/snoc/interfaces/S-NOC/interfaces/backup/rejected_file/HADOOP/site_mapping/', now());
+INSERT INTO INTERFACE.MS_INTERFACE_ATTR (ATTRIBUTE_ID_N, INTERFACE_ID_N, NAME_V, VALUE_V, LAST_UPDATED_TIME_DT) VALUES (1166022, 1166, 'Local rejected control backup directory', '/snoc/interfaces/S-NOC/interfaces/backup/rejected_file/HADOOP/site_mapping/', now());
+INSERT INTO INTERFACE.MS_INTERFACE_ATTR (ATTRIBUTE_ID_N, INTERFACE_ID_N, NAME_V, VALUE_V, LAST_UPDATED_TIME_DT) VALUES (1166023, 1166, 'Local Filter Backup Directory', '/snoc/interfaces/S-NOC/interfaces/backup/filter_file/HADOOP/site_mapping/', now());
+INSERT INTO INTERFACE.MS_INTERFACE_ATTR (ATTRIBUTE_ID_N, INTERFACE_ID_N, NAME_V, VALUE_V, LAST_UPDATED_TIME_DT) VALUES (1166024, 1166, 'Local Filter Control Backup Directory', '/snoc/interfaces/S-NOC/interfaces/backup/filter_file/HADOOP/site_mapping/', now());
+
