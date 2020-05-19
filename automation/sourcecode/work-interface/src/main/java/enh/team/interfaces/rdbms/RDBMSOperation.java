@@ -9,6 +9,8 @@ import java.sql.SQLException;
 import java.text.DecimalFormat;
 import java.util.ArrayList;
 
+import org.json.JSONObject;
+
 public class RDBMSOperation {
 
 	public void getDatabaseMetaData(Connection conn)
@@ -157,4 +159,27 @@ public class RDBMSOperation {
 		}
 	}
 
+	public JSONObject validateSaleTerritoryObj(Connection connection, JSONObject jsonObject) {
+		// jsonObject contains MICRO_CLUSTER_V, SALES_CLUSTER_V, SALES_AREA_V, AREA_V, REGION_V
+		JSONObject responceObj = null;
+		try 
+		{
+			responceObj = new JSONObject();
+			responceObj.put("status", "success");
+			
+			// need to implement code
+			//if(fail)
+			//responceObj.put("status", "success");
+			//responceObj.put("errorCode", "success");
+			//responceObj.put("errorMsg", "success");
+			
+			// here don't close connection
+		} 
+		catch (Exception e) 
+		{
+			responceObj.put("status", "fail");	
+		}
+		return responceObj;
+	}
+	
 }

@@ -2,6 +2,8 @@ package enh.team.interfaces.rdbms;
 
 import java.sql.Connection;
 
+import org.json.JSONObject;
+
 import com.finevm.enh.util.PropType;
 import com.finevm.enh.util.RDBMS;
 
@@ -56,9 +58,13 @@ public class RdbmsApp
 //		opr.prepareFileFor1165(conn, "2020-05-08", "E:/interface/backend/ControlFileGeneration/mobii_rgu_ga_injection_bi_20200508_2006.csv", 1000);
 //		opr.prepareFileFor1166(conn, "2020-05-08", "E:/interface/backend/ControlFileGeneration/mobii_daily_sso_bi_20200508_2006.csv", 1000);
 		
-		opr.prepareFileFor1153(conn, "2020-04-13", "E:/interface/backend/ControlFileGeneration/secondary_mobo_bi_20200413_001.csv", 1000);
-		opr.prepareFileFor1153(conn, "2020-05-13", "E:/interface/backend/ControlFileGeneration/secondary_mobo_bi_20200513_001.csv", 1000);
+		//opr.prepareFileFor1153(conn, "2020-04-13", "E:/interface/backend/ControlFileGeneration/secondary_mobo_bi_20200413_001.csv", 1000);
+		//opr.prepareFileFor1153(conn, "2020-05-13", "E:/interface/backend/ControlFileGeneration/secondary_mobo_bi_20200513_001.csv", 1000);
 		
+		JSONObject obj = new JSONObject();
+		JSONObject responceObj = new JSONObject();
 		
+		responceObj = opr.validateSaleTerritoryObj(conn, obj);
+		System.out.println(responceObj);
 	}
 }
