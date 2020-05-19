@@ -195,6 +195,42 @@ public class Utility
 							return jsonObject;
 						}
 					}
+					else if(confs.get(2).equalsIgnoreCase("DNF"))
+					{
+						if(!dataList.get(i).matches(confs.get(3)))
+						{
+//							Regular Expression
+							jsonObject.put(STATUS_STR, FAIL_STR);
+							jsonObject.put(ERROR_CODE_STR, INVALID_DATA_ERR_CODE);
+							jsonObject.put(ERROR_MSG_STR, INVALID_DATA_ERR_MSG + confs.get(0) + " = " + dataList.get(i));
+							return jsonObject;
+						}
+						
+//						Date Format Validation
+						simpleDateFormat = new SimpleDateFormat(confs.get(4));
+						simpleDateFormat.setLenient(false);
+						try
+						{
+							simpleDateFormat.parse(dataList.get(i));
+						}
+						catch(Exception e)
+						{
+							jsonObject.put(STATUS_STR, FAIL_STR);
+							jsonObject.put(ERROR_CODE_STR, INVALID_DATA_ERR_CODE);
+							jsonObject.put(ERROR_MSG_STR, INVALID_DATA_ERR_MSG + confs.get(0) + " = " + dataList.get(i));
+							return jsonObject;
+						}
+						
+						Date currentDate = new Date();
+						Date rowDate = simpleDateFormat.parse(dataList.get(i));
+						if(rowDate.after(currentDate))
+						{
+							jsonObject.put(STATUS_STR,  FAIL_STR);
+							jsonObject.put(ERROR_CODE_STR, 50004);
+							jsonObject.put(ERROR_MSG_STR, 50004  + confs.get(0) + " = " + dataList.get(i));							
+							return jsonObject;
+						}
+					}
 				}
 				if((dataList.get(i) == null || dataList.get(i).trim().isEmpty()) && confs.size() > 3)
 				{
