@@ -226,8 +226,8 @@ public class Utility
 						if(rowDate.after(currentDate))
 						{
 							jsonObject.put(STATUS_STR,  FAIL_STR);
-							jsonObject.put(ERROR_CODE_STR, 50004);
-							jsonObject.put(ERROR_MSG_STR, 50004  + confs.get(0) + " = " + dataList.get(i));							
+							jsonObject.put(ERROR_CODE_STR, FUTURE_DT_ERR_CODE);
+							jsonObject.put(ERROR_MSG_STR, FUTURE_DT_ERR_MSG  + confs.get(0) + " = " + dataList.get(i));							
 							return jsonObject;
 						}
 					}
@@ -686,7 +686,8 @@ public class Utility
 			inputStream = null;
 		}
 	}*/
-
+	String FUTURE_DT_ERR_MSG = "FUTURE_DT_ERR_MSG";
+	String FUTURE_DT_ERR_CODE="FUTURE_DT_ERR_CODE";
 	String SUCCESS_STR = "SUCCESS_STR";
 	String LINE_UPDATE_STR = "LINE_UPDATE_STR";
 	String YES_STR = "YES_STR";
