@@ -4,6 +4,7 @@ import java.io.File;
 import java.io.FileOutputStream;
 import java.sql.Connection;
 import java.sql.DatabaseMetaData;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.text.DecimalFormat;
@@ -167,12 +168,37 @@ public class RDBMSOperation {
 			responceObj = new JSONObject();
 			responceObj.put("status", "success");
 			
-			// need to implement code
-			//if(fail)
-			//responceObj.put("status", "success");
-			//responceObj.put("errorCode", "success");
-			//responceObj.put("errorMsg", "success");
-			
+			PreparedStatement preparedStatement = connection.prepareStatement("select related_lookup_id_n, lookup_type_n from kpi.ms_lookup_master where ext_ref_code_v = ?");
+			preparedStatement.setString(1, jsonObject.getString("ref_code"));
+			ResultSet resultSet = preparedStatement.executeQuery();
+			Long relatedLookupId = 0L;		
+			if(resultSet.next())
+			{				
+				relatedLookupId = resultSet.getLong(1);
+				while(true)
+				{
+					PreparedStatement preparedStatement1 = connection.prepareStatement("select related_lookup_id_n, lookup_type_n from kpi.ms_lookup_master where lookup_id_n = ?");
+					preparedStatement1.setLong(1, relatedLookupId);
+					ResultSet resultSet1 = preparedStatement1.executeQuery();
+					if(resultSet1.next())
+					{												
+						if(resultSet1.getLong("lookup_type_n") == 1080)
+							break;
+						relatedLookupId = resultSet1.getLong(1);
+					}
+					else
+					{
+						responceObj = new JSONObject();
+						responceObj.put("status", "fail");
+						break;
+					}
+				}				
+			}
+			else
+			{
+				responceObj = new JSONObject();
+				responceObj.put("status", "fail");
+			}
 			// here don't close connection
 		} 
 		catch (Exception e) 
