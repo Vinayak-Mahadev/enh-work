@@ -9,7 +9,8 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.text.DecimalFormat;
 import java.util.ArrayList;
-
+import java.util.Arrays;
+import java.util.List;
 import org.json.JSONObject;
 
 public class RDBMSOperation {
@@ -139,9 +140,11 @@ public class RDBMSOperation {
 				siteList.add(site.getString(1));
 			}
 
-			out : while (outlet.next()) {
+			out : while (outlet.next()) 
+			{
 
-				for (String siteRef : siteList) {
+				for (String siteRef : siteList) 
+				{
 					fos.write((dateInFile+ "|"+format.format(i+10)+"|"+siteRef+"|"+outlet.getString(1)+"|"+i+"|1"+format.format(i+10)+".05\n").getBytes());
 					i++;
 					if(limit != 0 )
@@ -160,52 +163,152 @@ public class RDBMSOperation {
 		}
 	}
 
-	public JSONObject validateSaleTerritoryObj(Connection connection, JSONObject jsonObject) {
-		// jsonObject contains MICRO_CLUSTER_V, SALES_CLUSTER_V, SALES_AREA_V, AREA_V, REGION_V
+	public JSONObject validateSaleTerritoryObj(Connection connection, JSONObject inputObject) 
+	{
+		PreparedStatement preparedStatement = null;
+		ResultSet resultSet = null;
 		JSONObject responceObj = null;
+		JSONObject territoryObject = null;
 		try 
 		{
+			boolean isMicroclusterPresent = false;
+			boolean isClusterPresent = false;
+			boolean isSalesAreaPresent = false;
+			boolean isArearPresent = false;
+			boolean isRegionPresent = false;
 			responceObj = new JSONObject();
-			responceObj.put("status", "success");
+			responceObj.put("status", "SUCCESS");
+			territoryObject = new JSONObject();
 			
-			PreparedStatement preparedStatement = connection.prepareStatement("select related_lookup_id_n, lookup_type_n from kpi.ms_lookup_master where ext_ref_code_v = ?");
-			preparedStatement.setString(1, jsonObject.getString("ref_code"));
-			ResultSet resultSet = preparedStatement.executeQuery();
-			Long relatedLookupId = 0L;		
-			if(resultSet.next())
+			preparedStatement = connection.prepareStatement("select lookup_master.lookup_id_n, lookup_master.lookup_type_n, lookup_master.ext_ref_code_v, lookup_type_master.ext_lookup_type_n from kpi.ms_lookup_master as lookup_master inner join kpi.ms_lookup_type_master as lookup_type_master on (lookup_master.ext_ref_code_v in (?, ?, ?, ?, ?) and lookup_type_master.ext_lookup_type_n in (84,85,86,87,88,89) and lookup_type_master.lookup_type_n = lookup_master.lookup_type_n) group by lookup_master.lookup_id_n, lookup_master.lookup_type_n, lookup_master.ext_ref_code_v, lookup_type_master.ext_lookup_type_n order by lookup_type_master.ext_lookup_type_n desc");
+			preparedStatement.setString(1, inputObject.getString("MICRO_CLUSTER"));
+			preparedStatement.setString(2, inputObject.getString("SALES_CLUSTER"));
+			preparedStatement.setString(3, inputObject.getString("SALES_AREA"));
+			preparedStatement.setString(4, inputObject.getString("AREA"));
+			preparedStatement.setString(5, inputObject.getString("REGION"));
+			resultSet = preparedStatement.executeQuery();	
+			int count = 0;
+			while(resultSet.next())
 			{				
-				relatedLookupId = resultSet.getLong(1);
-				while(true)
+				if(resultSet.getLong("ext_lookup_type_n") == 89)
 				{
-					PreparedStatement preparedStatement1 = connection.prepareStatement("select related_lookup_id_n, lookup_type_n from kpi.ms_lookup_master where lookup_id_n = ?");
-					preparedStatement1.setLong(1, relatedLookupId);
-					ResultSet resultSet1 = preparedStatement1.executeQuery();
-					if(resultSet1.next())
-					{												
-						if(resultSet1.getLong("lookup_type_n") == 1080)
-							break;
-						relatedLookupId = resultSet1.getLong(1);
-					}
-					else
-					{
-						responceObj = new JSONObject();
-						responceObj.put("status", "fail");
-						break;
-					}
-				}				
-			}
-			else
+					territoryObject.put("MICRO_CLUSTER", resultSet.getLong("lookup_id_n"));
+					isMicroclusterPresent = true;
+				}
+				else if(resultSet.getLong("ext_lookup_type_n") == 88)
+				{
+					territoryObject.put("SALES_CLUSTER", resultSet.getLong("lookup_id_n"));
+					isClusterPresent = true;
+				}
+				else if(resultSet.getLong("ext_lookup_type_n") == 87)
+				{
+					territoryObject.put("SALES_AREA", resultSet.getLong("lookup_id_n"));
+					isSalesAreaPresent = true;
+				}
+				else if(resultSet.getLong("ext_lookup_type_n") == 86)
+				{
+					territoryObject.put("AREA", resultSet.getLong("lookup_id_n"));
+					isArearPresent = true;
+				}
+				else if(resultSet.getLong("ext_lookup_type_n") == 85)
+				{
+					territoryObject.put("REGION", resultSet.getLong("lookup_id_n"));
+					isRegionPresent = true;
+				}
+				count++;
+			}			
+			
+			if(count != 5)
 			{
-				responceObj = new JSONObject();
-				responceObj.put("status", "fail");
+				String errorMessage = "INVALID TERRITORY ID : ";
+				boolean lastCond = false;
+				List<String>headers = Arrays.asList(inputObject.getString("HEADERS").split(inputObject.getString("CSV_DELIMITER"), -1));
+				if(!isMicroclusterPresent)
+				{
+					territoryObject.put("MICRO_CLUSTER", "NOT_AVAILABLE");
+					errorMessage = errorMessage + headers.get(4) + " = " + inputObject.getString("MICRO_CLUSTER") + ", ";
+				}
+				if(!isClusterPresent)
+				{
+					territoryObject.put("SALES_CLUSTER", "NOT_AVAILABLE");
+					errorMessage = errorMessage + headers.get(5) + " = " + inputObject.getString("SALES_CLUSTER") + ", ";
+				}
+				if(!isSalesAreaPresent)
+				{
+					territoryObject.put("SALES_AREA", "NOT_AVAILABLE");
+					errorMessage = errorMessage + headers.get(6) + " = " + inputObject.getString("SALES_AREA") + ", ";
+				}
+				if(!isArearPresent)
+				{
+					territoryObject.put("AREA", "NOT_AVAILABLE");
+					errorMessage = errorMessage + headers.get(7) + " = " + inputObject.getString("AREA") + ", ";
+				}
+				if(!isRegionPresent)
+				{
+					territoryObject.put("REGION", "NOT_AVAILABLE");
+					errorMessage = errorMessage + headers.get(8) + " = " + inputObject.getString("REGION");
+					lastCond = true;
+				}
+
+				if(!lastCond)
+					errorMessage = errorMessage.substring(0, errorMessage.length() - 2);
+				
+				responceObj.put("error_code", "500002");
+				responceObj.put("status", "FAILURE");
+				responceObj.put("error_msg", errorMessage);
 			}
-			// here don't close connection
+
+			responceObj.put("territoryObject", territoryObject);
 		} 
 		catch (Exception e) 
 		{
-			responceObj.put("status", "fail");	
+			responceObj.put("status", "EXCEPTION_OCCURED");	
+		}
+		finally
+		{
+			try
+			{
+				if(preparedStatement != null && !preparedStatement.isClosed())
+					preparedStatement.close();
+				if(resultSet != null && !resultSet.isClosed())
+					resultSet.close();
+			}
+			catch(Exception exception)
+			{
+			}
+			territoryObject = null;
 		}
 		return responceObj;
+	}
+	
+	public void prepareFileForSiteMapping(Connection conn, String dateInFile, String filePath, int start, int limit)
+	{
+		FileOutputStream fos = null;
+		try 
+		{
+			fos = new FileOutputStream(new File(filePath));
+			fos.write("DATE|SITE_ID|LONGITUDE|LATITUDE|MICRO_CLUSTER|SALES_CLUSTER|SALES_AREA|AREA|REGION|JAVA_NONJAVA|SITE_NAME|SITE_POPULATION\n".getBytes());					
+
+			int population = 1;
+			int calcLimit = start + limit;
+			for(int i = start; i < calcLimit; i++)
+			{
+				fos.write((dateInFile + "|Test Site-"+ i +"|19.10|31.23|micro107|100709|59|13|REG5|NON_JAVA|Test Site-"+ i +"|" + population + "\n").getBytes());
+				if(population++ % 100 == 0)
+					population = 1;
+			}
+			
+			fos.close();
+			System.out.println("File generated");
+		}
+		catch(Exception exception)
+		{
+			exception.printStackTrace();
+		}
+		finally
+		{
+			
+		}
 	}
 	
 }

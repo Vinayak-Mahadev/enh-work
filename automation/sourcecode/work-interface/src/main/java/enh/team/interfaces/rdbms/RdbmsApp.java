@@ -1,6 +1,8 @@
 package enh.team.interfaces.rdbms;
 
 import java.sql.Connection;
+import java.util.Arrays;
+import java.util.List;
 
 import org.json.JSONObject;
 
@@ -61,10 +63,21 @@ public class RdbmsApp
 		//opr.prepareFileFor1153(conn, "2020-04-13", "E:/interface/backend/ControlFileGeneration/secondary_mobo_bi_20200413_001.csv", 1000);
 		//opr.prepareFileFor1153(conn, "2020-05-13", "E:/interface/backend/ControlFileGeneration/secondary_mobo_bi_20200513_001.csv", 1000);
 		
-		JSONObject obj = new JSONObject();
-		JSONObject responceObj = new JSONObject();
+		//opr.prepareFileForSiteMapping(conn, "2020-05-20", "D:/TEMP/site_mapping_bi_20200520101010.csv", 1, 110000);
 		
-		responceObj = opr.validateSaleTerritoryObj(conn, obj);
+		//Territory Validation
+		String line = "20200520|TestID2|19.10|31.23|micro110|1007034|60|13|REG5|F1|G1|15";
+		List<String>dataList = Arrays.asList(line.split("\\|", -1));		
+		JSONObject jsonObject = new JSONObject();
+		jsonObject.put("HEADERS", "DATE|SITE_ID|LONGITUDE|LATITUDE|MICRO_CLUSTER|SALES_CLUSTER|SALES_AREA|AREA|REGION|JAVA_NONJAVA|SITE_NAME|SITE_POPULATION");
+		jsonObject.put("CSV_DELIMITER", "\\|");
+		jsonObject.put("MICRO_CLUSTER", dataList.get(4));
+		jsonObject.put("SALES_CLUSTER", dataList.get(5));
+		jsonObject.put("SALES_AREA", dataList.get(6));
+		jsonObject.put("AREA", dataList.get(7));
+		jsonObject.put("REGION", dataList.get(8));		
+		JSONObject responceObj = new JSONObject();		
+		responceObj = opr.validateSaleTerritoryObj(conn, jsonObject);
 		System.out.println(responceObj);
 	}
 }
