@@ -1,0 +1,9 @@
+1166
+{"process_enabled":true,"fields":{"actor_field":"MPC_CODE","metric_field":"","source_field":"","instance_field":""},"error_codes":{"actor_field":"60101","metric_field":"60201","source_field":"60301","instance_field":"60401"},"table_name":"tr_temp_primary_mobo_aggr","lookup_query":"","notexist_lookup":"","no_of_params":{},"daily_table":"tr_daily_primary_mobo_aggr","monthly_table":"tr_monthly_primary_mobo_aggr","no_of_join_query_params":1,"no_of_daily_join_queries":1,"no_of_monthly_join_queries":1,"duplicate_validation_conf":{"field_indexes":[0,1],"schema_name":"kpi","table_name":"tr_validate_primary_mobo_aggr"}}
+
+1167
+{"process_enabled":true,"fields":{"actor_field":"ORGANIZATION_ID","metric_field":"","source_field":"MPC_CODE","instance_field":""},"error_codes":{"actor_field":"60101","metric_field":"60201","source_field":"60301","instance_field":"60401"},"table_name":"tr_temp_secondary_mobo_aggr","lookup_query":"","notexist_lookup":"","no_of_params":{},"daily_table":"tr_daily_secondary_mobo_aggr","monthly_table":"tr_monthly_secondary_mobo_aggr","no_of_join_query_params":1,"no_of_daily_join_queries":1,"no_of_monthly_join_queries":1,"duplicate_validation_conf":{"field_indexes":[0,1,2],"schema_name":"kpi","table_name":"tr_validate_secondary_mobo_aggr"}}
+
+1168 (is populating in temp table)
+{"process_enabled":true,"fields":{"actor_field":{"10":"ID_OUTLET","13":"MICRO"},"metric_field":"","source_field":"SITE_ID","instance_field":""},"error_codes":{"actor_field":"60101","metric_field":"60201","source_field":"60301","instance_field":"60401"},"table_name":"tr_temp_daily_sso_aggr","lookup_query":"","notexist_lookup":"","no_of_params":{},"daily_table":"tr_daily_daily_sso_aggr","monthly_table":"tr_monthly_daily_sso_aggr","no_of_join_query_params":2,"no_of_daily_join_queries":2,"no_of_monthly_join_queries":2}
+
