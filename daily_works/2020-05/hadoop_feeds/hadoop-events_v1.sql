@@ -113,37 +113,37 @@ insert into kpi.mp_event_actor_mapping (event_type_n, configuration_n, actor_key
 insert into kpi.mp_event_actor_mapping (event_type_n, configuration_n, actor_key_v, description_v, actor_type_n, actor_id_n, is_default_bl) values (316, 1, 'MICRO', 'Micro Cluster', 13, null, true);
 
 -- MP_EVENT_METRIC_MAPPING:
-insert into kpi.mp_event_metric_mapping (event_type_n, configuration_n, metric_key_v, description_v, metrics_type_n, metrics_id_n, selection_v, condition_key_v, condition_val_v, data_flag_n, rollup_flag_bl, delimiter_v) values (301, 1, 'Fixed Kpi', 'Overall', 21, array[110], 'Fixed', null, null, 0, true, null);
+insert into kpi.mp_event_metric_mapping (event_type_n, configuration_n, metric_key_v, description_v, metrics_type_n, metrics_id_n, selection_v, condition_key_v, condition_val_v, data_flag_n, rollup_flag_bl, delimiter_v) values (301, 1, 'MPC_CODE', 'Overall', 21, array[110], 'Fixed', null, null, 0, true, null);
 
-insert into kpi.mp_event_metric_mapping (event_type_n, configuration_n, metric_key_v, description_v, metrics_type_n, metrics_id_n, selection_v, condition_key_v, condition_val_v, data_flag_n, rollup_flag_bl, delimiter_v) values (302, 1, 'Fixed Kpi', 'Overall', 21, array[110], 'Fixed', null, null, 0, true, null);
+insert into kpi.mp_event_metric_mapping (event_type_n, configuration_n, metric_key_v, description_v, metrics_type_n, metrics_id_n, selection_v, condition_key_v, condition_val_v, data_flag_n, rollup_flag_bl, delimiter_v) values (302, 1, 'ORGANIZATION_ID', 'Overall', 21, array[110], 'Fixed', null, null, 0, true, null);
 
-insert into kpi.mp_event_metric_mapping (event_type_n, configuration_n, metric_key_v, description_v, metrics_type_n, metrics_id_n, selection_v, condition_key_v, condition_val_v, data_flag_n, rollup_flag_bl, delimiter_v) values (303, 1, 'Fixed Kpi', 'Overall', 21, array[110], 'Fixed', null, null, 0, true, null);
+insert into kpi.mp_event_metric_mapping (event_type_n, configuration_n, metric_key_v, description_v, metrics_type_n, metrics_id_n, selection_v, condition_key_v, condition_val_v, data_flag_n, rollup_flag_bl, delimiter_v) values (303, 1, 'ID_OUTLET', 'Overall', 21, array[110], 'Fixed', null, null, 0, true, null);
 
 insert into kpi.mp_event_metric_mapping (event_type_n, configuration_n, metric_key_v, description_v, metrics_type_n, metrics_id_n, selection_v, condition_key_v, condition_val_v, data_flag_n, rollup_flag_bl, delimiter_v) values (304, 1, 'FLAG_ACM', 'Flag Accuumulation', 24, null, 'Default', null, null, 0, true, null);
 
-insert into kpi.mp_event_metric_mapping (event_type_n, configuration_n, metric_key_v, description_v, metrics_type_n, metrics_id_n, selection_v, condition_key_v, condition_val_v, data_flag_n, rollup_flag_bl, delimiter_v) values (305, 1, 'Fixed Kpi', 'Overall', 21, array[110], 'Fixed', null, null, 0, true, null);
+insert into kpi.mp_event_metric_mapping (event_type_n, configuration_n, metric_key_v, description_v, metrics_type_n, metrics_id_n, selection_v, condition_key_v, condition_val_v, data_flag_n, rollup_flag_bl, delimiter_v) values (305, 1, 'OUTLET', 'Overall', 21, array[110], 'Fixed', null, null, 0, true, null);
 
-insert into kpi.mp_event_metric_mapping (event_type_n, configuration_n, metric_key_v, description_v, metrics_type_n, metrics_id_n, selection_v, condition_key_v, condition_val_v, data_flag_n, rollup_flag_bl, delimiter_v) values (306, 1, 'Fixed Kpi', 'Overall', 21, array[110], 'Fixed', null, null, 0, true, null);
+insert into kpi.mp_event_metric_mapping (event_type_n, configuration_n, metric_key_v, description_v, metrics_type_n, metrics_id_n, selection_v, condition_key_v, condition_val_v, data_flag_n, rollup_flag_bl, delimiter_v) values (306, 1, 'ORG_CODE', 'Overall', 21, array[110], 'Fixed', null, null, 0, true, null);
 
 insert into kpi.mp_event_metric_mapping (event_type_n, configuration_n, metric_key_v, description_v, metrics_type_n, metrics_id_n, selection_v, condition_key_v, condition_val_v, data_flag_n, rollup_flag_bl, delimiter_v) values (307, 1, 'REVENUE_TYPE', 'Revenue Type', 25, null, 'Default', null, null, 0, true, null);
 
-insert into kpi.mp_event_metric_mapping (event_type_n, configuration_n, metric_key_v, description_v, metrics_type_n, metrics_id_n, selection_v, condition_key_v, condition_val_v, data_flag_n, rollup_flag_bl, delimiter_v) values (308, 1, 'Fixed Kpi', 'Overall', 21, array[110], 'Fixed', null, null, 0, true, null);
+insert into kpi.mp_event_metric_mapping (event_type_n, configuration_n, metric_key_v, description_v, metrics_type_n, metrics_id_n, selection_v, condition_key_v, condition_val_v, data_flag_n, rollup_flag_bl, delimiter_v) values (308, 1, 'MICRO', 'Overall', 21, array[110], 'Fixed', null, null, 0, true, null);
 
-insert into kpi.mp_event_metric_mapping (event_type_n, configuration_n, metric_key_v, description_v, metrics_type_n, metrics_id_n, selection_v, condition_key_v, condition_val_v, data_flag_n, rollup_flag_bl, delimiter_v) values (309, 1, 'Fixed Kpi', 'Overall', 21, array[110], 'Fixed', null, null, 0, true, null);
+insert into kpi.mp_event_metric_mapping (event_type_n, configuration_n, metric_key_v, description_v, metrics_type_n, metrics_id_n, selection_v, condition_key_v, condition_val_v, data_flag_n, rollup_flag_bl, delimiter_v) values (309, 1, 'MICRO', 'Overall', 21, array[110], 'Fixed', null, null, 0, true, null);
 
 insert into kpi.mp_event_metric_mapping (event_type_n, configuration_n, metric_key_v, description_v, metrics_type_n, metrics_id_n, selection_v, condition_key_v, condition_val_v, data_flag_n, rollup_flag_bl, delimiter_v) values (310, 1, 'CATEGORY', 'Category', 23, null, 'Default', null, null, 0, true, null);
 
-insert into kpi.mp_event_metric_mapping (event_type_n, configuration_n, metric_key_v, description_v, metrics_type_n, metrics_id_n, selection_v, condition_key_v, condition_val_v, data_flag_n, rollup_flag_bl, delimiter_v) values (311, 1, 'Fixed Kpi', 'Overall', 21, array[110], 'Fixed', null, null, 0, true, null);
+insert into kpi.mp_event_metric_mapping (event_type_n, configuration_n, metric_key_v, description_v, metrics_type_n, metrics_id_n, selection_v, condition_key_v, condition_val_v, data_flag_n, rollup_flag_bl, delimiter_v) values (311, 1, 'MICRO', 'Overall', 21, array[110], 'Fixed', null, null, 0, true, null);
 
 insert into kpi.mp_event_metric_mapping (event_type_n, configuration_n, metric_key_v, description_v, metrics_type_n, metrics_id_n, selection_v, condition_key_v, condition_val_v, data_flag_n, rollup_flag_bl, delimiter_v) values (312, 1, 'CATEGORY', 'Category', 23, null, 'Default', null, null, 0, true, null);
 
-insert into kpi.mp_event_metric_mapping (event_type_n, configuration_n, metric_key_v, description_v, metrics_type_n, metrics_id_n, selection_v, condition_key_v, condition_val_v, data_flag_n, rollup_flag_bl, delimiter_v) values (313, 1, 'Fixed Kpi', 'Overall', 21, array[110], 'Fixed', null, null, 0, true, null);
+insert into kpi.mp_event_metric_mapping (event_type_n, configuration_n, metric_key_v, description_v, metrics_type_n, metrics_id_n, selection_v, condition_key_v, condition_val_v, data_flag_n, rollup_flag_bl, delimiter_v) values (313, 1, 'CLUSTER_ID', 'Overall', 21, array[110], 'Fixed', null, null, 0, true, null);
 
-insert into kpi.mp_event_metric_mapping (event_type_n, configuration_n, metric_key_v, description_v, metrics_type_n, metrics_id_n, selection_v, condition_key_v, condition_val_v, data_flag_n, rollup_flag_bl, delimiter_v) values (314, 1, 'Fixed Kpi', 'Overall', 21, array[110], 'Fixed', null, null, 0, true, null);
+insert into kpi.mp_event_metric_mapping (event_type_n, configuration_n, metric_key_v, description_v, metrics_type_n, metrics_id_n, selection_v, condition_key_v, condition_val_v, data_flag_n, rollup_flag_bl, delimiter_v) values (314, 1, 'ID_OUTLET', 'Overall', 21, array[110], 'Fixed', null, null, 0, true, null);
 
-insert into kpi.mp_event_metric_mapping (event_type_n, configuration_n, metric_key_v, description_v, metrics_type_n, metrics_id_n, selection_v, condition_key_v, condition_val_v, data_flag_n, rollup_flag_bl, delimiter_v) values (315, 1, 'Fixed Kpi', 'Overall', 21, array[110], 'Fixed', null, null, 0, true, null);
+insert into kpi.mp_event_metric_mapping (event_type_n, configuration_n, metric_key_v, description_v, metrics_type_n, metrics_id_n, selection_v, condition_key_v, condition_val_v, data_flag_n, rollup_flag_bl, delimiter_v) values (315, 1, 'MPC_CODE', 'Overall', 21, array[110], 'Fixed', null, null, 0, true, null);
 
-insert into kpi.mp_event_metric_mapping (event_type_n, configuration_n, metric_key_v, description_v, metrics_type_n, metrics_id_n, selection_v, condition_key_v, condition_val_v, data_flag_n, rollup_flag_bl, delimiter_v) values (316, 1, 'Fixed Kpi', 'Overall', 21, array[110], 'Fixed', null, null, 0, true, null);
+insert into kpi.mp_event_metric_mapping (event_type_n, configuration_n, metric_key_v, description_v, metrics_type_n, metrics_id_n, selection_v, condition_key_v, condition_val_v, data_flag_n, rollup_flag_bl, delimiter_v) values (316, 1, 'OUTLET', 'Overall', 21, array[110], 'Fixed', null, null, 0, true, null);
 
 -- MP_EVENT_DIMENSION_MAPPING:
 insert into kpi.mp_event_dimension_mapping (event_type_n, configuration_n, dimension_v, description_v, sequence_n, expression_v, procedure_v, correction_v, is_decimal_bl) values (301, 1, 'AMOUNT', 'Amount', 1, null, null, 'Replace', true);
@@ -2069,12 +2069,12 @@ create table kpi.tr_validate_low_revenue_site_aggr
 );
 
 -- SITES WITH RGU-GA:
-drop table if exists kpi.tr_validate_site_with_rguga_aggr cascade;
-create table kpi.tr_validate_site_with_rguga_aggr
+drop table if exists kpi.tr_validate_site_rguga_aggr cascade;
+create table kpi.tr_validate_site_rguga_aggr
 (
 	validation_str_v 		character varying(50) not null,
 	created_dt 				date not null default now(),
-	constraint tr_validate_site_with_rguga_aggr_pkey primary key (validation_str_v)
+	constraint tr_validate_site_rguga_aggr_pkey primary key (validation_str_v)
 );
 
 -- CROSS SELLING CLUSTER RELOAD:
