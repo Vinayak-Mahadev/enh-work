@@ -136,7 +136,7 @@ public class RDBMSOperation {
 	public void prepareFileFor1168(Connection conn, String dateInFile, String filePath, int limit)
 	{
 		ResultSet outlet = null;
-		ResultSet site = null;
+		ResultSet micro = null;
 
 		FileOutputStream fos = null;
 		DecimalFormat format = new DecimalFormat("0000");
@@ -146,21 +146,21 @@ public class RDBMSOperation {
 			fos.write("DATE|MICRO|SITE_ID|ID_OUTLET|QTY|AMOUNT\n".getBytes());
 
 			outlet = conn.createStatement().executeQuery("select ref_code_v from kpi.ms_org_master where org_type_n = 6   and sub_org_type_n = 66 and status_n = 174 order by 1;");
-			site = conn.createStatement().executeQuery("select ext_ref_code_v from kpi.ms_lookup_master  where lookup_type_n in (select lookup_type_n from kpi.ms_lookup_type_master where ext_lookup_type_n = 115 ) and ext_ref_code_v is not null order by 1;");
+			micro = conn.createStatement().executeQuery("select ext_ref_code_v from kpi.ms_lookup_master where lookup_type_n = (select lookup_type_n from kpi.ms_lookup_type_master where ext_lookup_type_n = 89) order by 1;");
 
 			int i = 1;
 
-			ArrayList<String> siteList = new ArrayList<String>();
-			while (site.next()) {
-				siteList.add(site.getString(1));
+			ArrayList<String> microList = new ArrayList<String>();
+			while (micro.next()) {
+				microList.add(micro.getString(1));
 			}
 
 			out : while (outlet.next()) 
 			{
 
-				for (String siteRef : siteList) 
+				for (String microId : microList) 
 				{
-					fos.write((dateInFile+ "|"+format.format(i+10)+"|"+siteRef+"|"+outlet.getString(1)+"|"+i+"|1"+format.format(i+10)+".05\n").getBytes());
+					fos.write((dateInFile+ "|"+microId+"|Test Site-"+i+ "|"+outlet.getString(1)+"|"+i+"|1"+format.format(i+10)+".05\n").getBytes());
 					i++;
 					if(limit != 0 )
 						if( limit==i)
@@ -181,28 +181,27 @@ public class RDBMSOperation {
 	public void prepareFileFor1169(Connection conn, String dateInFile, String filePath, int limit)
 	{
 		ResultSet outlet = null;
-		ResultSet site = null;
+		ResultSet micro = null;
 
 		FileOutputStream fos = null;
-		DecimalFormat format = new DecimalFormat("0000");
 		try 
 		{
 			fos = new FileOutputStream(new File(filePath));
-			fos.write("DATE|MICRO|SITE ID|ID OUTLET|STATUS INJECTION|QTY\n".getBytes());
+			fos.write("DATE|MICRO|SITE_ID|ID_OUTLET|STATUS_INJECTION|FLAG_ACM|COUNT_MSISDN\n".getBytes());
 			outlet = conn.createStatement().executeQuery("select ref_code_v from kpi.ms_org_master where org_type_n = 6   and sub_org_type_n = 66 and status_n = 174 order by 1;");
-			site = conn.createStatement().executeQuery("select ext_ref_code_v from kpi.ms_lookup_master  where lookup_type_n in (select lookup_type_n from kpi.ms_lookup_type_master where ext_lookup_type_n = 115 ) and ext_ref_code_v is not null order by 1;");
+			micro = conn.createStatement().executeQuery("select ext_ref_code_v from kpi.ms_lookup_master where lookup_type_n = (select lookup_type_n from kpi.ms_lookup_type_master where ext_lookup_type_n = 89) order by 1;");
 
 			int i = 1;
 
-			ArrayList<String> siteList = new ArrayList<String>();
-			while (site.next()) {
-				siteList.add(site.getString(1));
+			ArrayList<String> microList = new ArrayList<String>();
+			while (micro.next()) {
+				microList.add(micro.getString(1));
 			}
 
 			out : while (outlet.next()) {
 
-				for (String siteRef : siteList) {
-					fos.write((dateInFile+"|"+format.format(i+10)+"|"+siteRef+"|"+outlet.getString(1)+"|yes|"+ (i+10) +"\n").getBytes());
+				for (String microId : microList) {
+					fos.write((dateInFile+"|"+microId+"|Test Site-"+i+ "|" +outlet.getString(1)+"|injected|c. >=7k - <10k|"+ (i+10) +"\n").getBytes());
 					i++;
 					if(limit != 0 )
 						if( limit==i)
@@ -226,7 +225,6 @@ public class RDBMSOperation {
 		ResultSet out = null;		
 
 		FileOutputStream fos = null;
-		DecimalFormat format = new DecimalFormat("0000");
 		try 
 		{
 			fos = new FileOutputStream(new File(filePath));
@@ -269,7 +267,6 @@ public class RDBMSOperation {
 	{
 		ResultSet org = null;
 		FileOutputStream fos = null;
-		DecimalFormat format = new DecimalFormat("0000");
 		try 
 		{
 			fos = new FileOutputStream(new File(filePath));
@@ -294,6 +291,336 @@ public class RDBMSOperation {
 			e.printStackTrace();
 		}
 	}
+	
+	public void prepareFileFor1172(Connection conn, String dateInFile, String filePath, int limit)
+	{		
+		ResultSet micro = null;
+
+		FileOutputStream fos = null;
+		try 
+		{
+			fos = new FileOutputStream(new File(filePath));
+			fos.write("DATE|MICRO|SITE_ID|REVENUE_TYPE|REVENUE_TOTAL\n".getBytes());
+			micro = conn.createStatement().executeQuery("select ext_ref_code_v from kpi.ms_lookup_master where lookup_type_n = (select lookup_type_n from kpi.ms_lookup_type_master where ext_lookup_type_n = 89) order by 1;");
+
+			int i = 1;			
+			out : while (micro.next()) 
+			{
+				String revenueType = "";
+				if(i % 3 == 0)
+					revenueType = "voice";
+				else
+					revenueType = "sms";
+				fos.write((dateInFile+"|"+micro.getString(1)+"|Test Site-"+i+"|"+revenueType+"|" + i + ".30\n").getBytes());
+				i++;
+				if(limit != 0 )
+					if( limit==i)
+						break out;
+			}
+
+			fos.close();
+			System.out.println("File generated");
+		}
+		catch (Exception e) 
+		{
+			e.printStackTrace();
+		}
+	}
+	
+	public void prepareFileFor1173_1174(Connection conn, String dateInFile, String filePath, int limit)
+	{		
+		ResultSet micro = null;
+
+		FileOutputStream fos = null;
+		try 
+		{
+			fos = new FileOutputStream(new File(filePath));
+			fos.write("DATE|MICRO|SITE_ID|REVENUE\n".getBytes());
+			micro = conn.createStatement().executeQuery("select ext_ref_code_v from kpi.ms_lookup_master where lookup_type_n = (select lookup_type_n from kpi.ms_lookup_type_master where ext_lookup_type_n = 89) order by 1;");
+
+			int i = 1;			
+			out : while (micro.next()) 
+			{				
+				fos.write((dateInFile+"|"+micro.getString(1)+"|Test Site-"+i+"|" + i + ".40\n").getBytes());
+				i++;
+				if(limit != 0 )
+					if( limit==i)
+						break out;
+			}
+
+			fos.close();
+			System.out.println("File generated");
+		}
+		catch (Exception e) 
+		{
+			e.printStackTrace();
+		}
+	}
+	
+	public void prepareFileFor1175(Connection conn, String dateInFile, String filePath, int limit)
+	{		
+		ResultSet micro = null;
+
+		FileOutputStream fos = null;
+		try 
+		{
+			fos = new FileOutputStream(new File(filePath));
+			fos.write("DATE|MICRO|SITE_ID|CATEGORY|TARGET|REVENUE\n".getBytes());
+			micro = conn.createStatement().executeQuery("select ext_ref_code_v from kpi.ms_lookup_master where lookup_type_n = (select lookup_type_n from kpi.ms_lookup_type_master where ext_lookup_type_n = 89) order by 1;");
+
+			int i = 1;		
+			out : while (micro.next()) 
+			{
+				String category = "";
+				if(i % 4 == 0)
+					category = "Java";
+				else
+					category = "Non Java";
+				fos.write((dateInFile+"|"+micro.getString(1)+"|Test Site-"+i+"|"+category+"|" + i + ".30" + "|" + i + ".70\n").getBytes());
+				i++;
+				if(limit != 0 )
+					if( limit==i)
+						break out;
+			}
+
+			fos.close();
+			System.out.println("File generated");
+		}
+		catch (Exception e) 
+		{
+			e.printStackTrace();
+		}
+	}
+	
+	public void prepareFileFor1176(Connection conn, String dateInFile, String filePath, int limit)
+	{		
+		ResultSet micro = null;
+
+		FileOutputStream fos = null;
+		try 
+		{
+			fos = new FileOutputStream(new File(filePath));
+			fos.write("DATE|MICRO|SITE|QTY\n".getBytes());
+			micro = conn.createStatement().executeQuery("select ext_ref_code_v from kpi.ms_lookup_master where lookup_type_n = (select lookup_type_n from kpi.ms_lookup_type_master where ext_lookup_type_n = 89) order by 1;");
+
+			int i = 1;			
+			out : while (micro.next()) 
+			{				
+				fos.write((dateInFile+"|"+micro.getString(1)+"|Test Site-"+i+"|" + i + ".10\n").getBytes());
+				i++;
+				if(limit != 0 )
+					if( limit==i)
+						break out;
+			}
+
+			fos.close();
+			System.out.println("File generated");
+		}
+		catch (Exception e) 
+		{
+			e.printStackTrace();
+		}
+	}
+	
+	public void prepareFileFor1177(Connection conn, String dateInFile, String filePath, int limit)
+	{		
+		ResultSet cluster = null;
+
+		FileOutputStream fos = null;
+		try 
+		{
+			fos = new FileOutputStream(new File(filePath));
+			fos.write("DATE|CLUSTER_ID|CATEGORY|CLUSTER_TYPE|TOTAL_RELOAD|CROSS_RELOAD\n".getBytes());
+			cluster = conn.createStatement().executeQuery("select ext_ref_code_v from kpi.ms_lookup_master where lookup_type_n = (select lookup_type_n from kpi.ms_lookup_type_master where ext_lookup_type_n = 88) order by 1;");
+
+			int i = 1;		
+			String category = "";
+			String clusterType = "";
+			out : while (cluster.next()) 
+			{				
+				if(i % 4 == 0)
+					category = "Java";
+				else
+					category = "Non Java";
+				if(i % 6 == 0)
+					clusterType = "Inner";
+				else
+					clusterType = "Outer";
+					
+				fos.write((dateInFile+"|"+cluster.getString(1) + "|"+category+"|" + clusterType + "|" + i + ".0" + "|" + i + ".25\n").getBytes());
+				i++;
+				if(limit != 0 )
+					if( limit==i)
+						break out;
+			}
+
+			fos.close();
+			System.out.println("File generated");
+		}
+		catch (Exception e) 
+		{
+			e.printStackTrace();
+		}
+	}
+	
+	public void prepareFileFor1178(Connection conn, String dateInFile, String filePath, int limit)
+	{		
+		ResultSet cluster = null;
+
+		FileOutputStream fos = null;
+		try 
+		{
+			fos = new FileOutputStream(new File(filePath));
+			fos.write("DATE|CLUSTER_ID|TOTAL_DATA|CROSS_DATA\n".getBytes());
+			cluster = conn.createStatement().executeQuery("select ext_ref_code_v from kpi.ms_lookup_master where lookup_type_n = (select lookup_type_n from kpi.ms_lookup_type_master where ext_lookup_type_n = 88) order by 1;");
+
+			int i = 1;			
+			out : while (cluster.next()) 
+			{				
+				fos.write((dateInFile+"|"+cluster.getString(1) + "|" + i + ".45|" + i + ".0\n").getBytes());
+				i++;
+				if(limit != 0 )
+					if( limit==i)
+						break out;
+			}
+
+			fos.close();
+			System.out.println("File generated");
+		}
+		catch (Exception e) 
+		{
+			e.printStackTrace();
+		}
+	}
+	
+	public void prepareFileFor1179(Connection conn, String monthInFile, String filePath, int limit)
+	{
+		ResultSet cluster = null;
+		ResultSet out = null;
+
+		FileOutputStream fos = null;
+		DecimalFormat format = new DecimalFormat("0000");
+		try 
+		{
+			fos = new FileOutputStream(new File(filePath));
+			fos.write("MONTH_ID|CLUSTER|ID_OUTLET|TARGET|ACTUAL\n".getBytes());
+			cluster = conn.createStatement().executeQuery("select ext_ref_code_v from kpi.ms_lookup_master where lookup_type_n = (select lookup_type_n from kpi.ms_lookup_type_master where ext_lookup_type_n = 88) order by 1;");
+			out = conn.createStatement().executeQuery("select ref_code_v from kpi.ms_org_master where org_type_n = 6   and sub_org_type_n = 66 and status_n = 174 order by 1;");
+
+			int i = 1;
+
+			ArrayList<String> outletList = new ArrayList<String>();
+			while (out.next()) {
+				outletList.add(out.getString(1));
+			}
+
+			out : while (cluster.next()) {
+
+				for (String outlet : outletList) {
+					fos.write((monthInFile+"|"+cluster.getString(1)+"|"+outlet+"|1"+format.format(i)+".75|1"+ (format.format(i)+10) +".0\n").getBytes());
+					i++;
+					if(limit != 0 )
+						if( limit==i)
+							break out;
+				}
+
+				fos.flush();
+			}
+
+			fos.close();
+			System.out.println("File generated");
+		}
+		catch (Exception e) 
+		{
+			e.printStackTrace();
+		}
+	}	
+	
+	public void prepareFileFor1180(Connection conn, String monthInFile, String filePath, int limit)
+	{
+		ResultSet cluster = null;
+		ResultSet mpc = null;
+
+		FileOutputStream fos = null;
+		DecimalFormat format = new DecimalFormat("0000");
+		try 
+		{
+			fos = new FileOutputStream(new File(filePath));
+			fos.write("MONTH_ID|CLUSTER|MPC_CODE|PAYMENT_ALLOCATION\n".getBytes());
+			cluster = conn.createStatement().executeQuery("select ext_ref_code_v from kpi.ms_lookup_master where lookup_type_n = (select lookup_type_n from kpi.ms_lookup_type_master where ext_lookup_type_n = 88) order by 1;");
+			mpc = conn.createStatement().executeQuery("select ref_code_v from kpi.ms_org_master where org_type_n = 7 order by 1");
+
+			int i = 1;
+			ArrayList<String> mpcList = new ArrayList<String>();
+			while (mpc.next()) {
+				mpcList.add(mpc.getString(1));
+			}
+
+			out : while (cluster.next()) {
+
+				for (String mpc_code : mpcList)
+				{
+					fos.write((monthInFile+"|"+cluster.getString(1)+"|"+mpc_code+"|1"+format.format(i) + "\n").getBytes());
+					i++;
+					if(limit != 0 )
+						if( limit==i)
+							break out;
+				}
+
+				fos.flush();
+			}
+
+			fos.close();
+			System.out.println("File generated");
+		}
+		catch (Exception e) 
+		{
+			e.printStackTrace();
+		}
+	}	
+	
+	public void prepareFileFor1181(Connection conn, String monthInFile, String filePath, int limit)
+	{
+		ResultSet micro = null;
+		ResultSet out = null;
+
+		FileOutputStream fos = null;
+		DecimalFormat format = new DecimalFormat("0000");
+		try 
+		{
+			fos = new FileOutputStream(new File(filePath));
+			fos.write("DATE|MICRO|SITE_ID|OUTLET|HIT|AMOUNT\n".getBytes());
+			micro = conn.createStatement().executeQuery("select ext_ref_code_v from kpi.ms_lookup_master where lookup_type_n = (select lookup_type_n from kpi.ms_lookup_type_master where ext_lookup_type_n = 89) order by 1;");
+			out = conn.createStatement().executeQuery("select ref_code_v from kpi.ms_org_master where org_type_n = 6   and sub_org_type_n = 66 and status_n = 174 order by 1;");
+
+			int i = 1;			
+			ArrayList<String> outletList = new ArrayList<String>();
+			while (out.next()) {
+				outletList.add(out.getString(1));
+			}
+
+			out : while (micro.next()) {
+
+				for (String outlet : outletList)
+				{
+					fos.write((monthInFile+"|"+micro.getString(1)+"|Test Site-"+i+"|"+outlet+"|1"+format.format(i) +"|1"+format.format(i) + ".0\n").getBytes());
+					i++;
+					if(limit != 0 )
+						if( limit==i)
+							break out;
+				}
+
+				fos.flush();
+			}
+
+			fos.close();
+			System.out.println("File generated");
+		}
+		catch (Exception e) 
+		{
+			e.printStackTrace();
+		}
+	}	
 	
 	public JSONObject validateSaleTerritoryObj(Connection connection, JSONObject inputObject) 
 	{
