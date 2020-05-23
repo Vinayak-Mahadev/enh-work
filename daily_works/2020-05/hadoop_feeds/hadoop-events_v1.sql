@@ -1982,7 +1982,7 @@ create table kpi.tr_temp_uro_20k_aggr
 drop table if exists kpi.tr_validate_primary_mobo_aggr cascade;
 create table kpi.tr_validate_primary_mobo_aggr
 (
-	validation_str_v 		character varying(50) not null,
+	validation_str_v 		character varying(255) not null,
 	created_dt 				date not null default now(),
 	constraint tr_validate_primary_mobo_aggr_pkey primary key (validation_str_v)
 );
@@ -1991,7 +1991,7 @@ create table kpi.tr_validate_primary_mobo_aggr
 drop table if exists kpi.tr_validate_secondary_mobo_aggr cascade;
 create table kpi.tr_validate_secondary_mobo_aggr
 (
-	validation_str_v 		character varying(50) not null,
+	validation_str_v 		character varying(255) not null,
 	created_dt 				date not null default now(),
 	constraint tr_validate_secondary_mobo_aggr_pkey primary key (validation_str_v)
 );
@@ -2000,7 +2000,7 @@ create table kpi.tr_validate_secondary_mobo_aggr
 drop table if exists kpi.tr_validate_daily_sso_aggr cascade;
 create table kpi.tr_validate_daily_sso_aggr
 (
-	validation_str_v 		character varying(50) not null,
+	validation_str_v 		character varying(255) not null,
 	created_dt 				date not null default now(),
 	constraint tr_validate_daily_sso_aggr_pkey primary key (validation_str_v)
 );
@@ -2009,7 +2009,7 @@ create table kpi.tr_validate_daily_sso_aggr
 drop table if exists kpi.tr_validate_rguga_injection_aggr cascade;
 create table kpi.tr_validate_rguga_injection_aggr
 (
-	validation_str_v 		character varying(50) not null,
+	validation_str_v 		character varying(255) not null,
 	created_dt 				date not null default now(),
 	constraint tr_validate_rguga_injection_aggr_pkey primary key (validation_str_v)
 );
@@ -2018,7 +2018,7 @@ create table kpi.tr_validate_rguga_injection_aggr
 drop table if exists kpi.tr_validate_tertiary_sales_aggr cascade;
 create table kpi.tr_validate_tertiary_sales_aggr
 (
-	validation_str_v 		character varying(50) not null,
+	validation_str_v 		character varying(255) not null,
 	created_dt 				date not null default now(),
 	constraint tr_validate_tertiary_sales_aggr_pkey primary key (validation_str_v)
 );
@@ -2027,7 +2027,7 @@ create table kpi.tr_validate_tertiary_sales_aggr
 drop table if exists kpi.tr_validate_closing_balance_aggr cascade;
 create table kpi.tr_validate_closing_balance_aggr
 (
-	validation_str_v 		character varying(50) not null,
+	validation_str_v 		character varying(255) not null,
 	created_dt 				date not null default now(),
 	constraint tr_validate_closing_balance_aggr_pkey primary key (validation_str_v)
 );
@@ -2036,7 +2036,7 @@ create table kpi.tr_validate_closing_balance_aggr
 drop table if exists kpi.tr_validate_total_usage_aggr cascade;
 create table kpi.tr_validate_total_usage_aggr
 (
-	validation_str_v 		character varying(50) not null,
+	validation_str_v 		character varying(255) not null,
 	created_dt 				date not null default now(),
 	constraint tr_validate_total_usage_aggr_pkey primary key (validation_str_v)
 );
@@ -2045,7 +2045,7 @@ create table kpi.tr_validate_total_usage_aggr
 drop table if exists kpi.tr_validate_usage_revenue_aggr cascade;
 create table kpi.tr_validate_usage_revenue_aggr
 (
-	validation_str_v 		character varying(50) not null,
+	validation_str_v 		character varying(255) not null,
 	created_dt 				date not null default now(),
 	constraint tr_validate_usage_revenue_aggr_pkey primary key (validation_str_v)
 );
@@ -2054,7 +2054,7 @@ create table kpi.tr_validate_usage_revenue_aggr
 drop table if exists kpi.tr_validate_total_rguga_aggr cascade;
 create table kpi.tr_validate_total_rguga_aggr
 (
-	validation_str_v 		character varying(50) not null,
+	validation_str_v 		character varying(255) not null,
 	created_dt 				date not null default now(),
 	constraint tr_validate_total_rguga_aggr_pkey primary key (validation_str_v)
 );
@@ -2063,7 +2063,7 @@ create table kpi.tr_validate_total_rguga_aggr
 drop table if exists kpi.tr_validate_low_revenue_site_aggr cascade;
 create table kpi.tr_validate_low_revenue_site_aggr
 (
-	validation_str_v 		character varying(50) not null,
+	validation_str_v 		character varying(255) not null,
 	created_dt 				date not null default now(),
 	constraint tr_validate_low_revenue_site_aggr_pkey primary key (validation_str_v)
 );
@@ -2072,7 +2072,7 @@ create table kpi.tr_validate_low_revenue_site_aggr
 drop table if exists kpi.tr_validate_site_rguga_aggr cascade;
 create table kpi.tr_validate_site_rguga_aggr
 (
-	validation_str_v 		character varying(50) not null,
+	validation_str_v 		character varying(255) not null,
 	created_dt 				date not null default now(),
 	constraint tr_validate_site_rguga_aggr_pkey primary key (validation_str_v)
 );
@@ -2081,7 +2081,7 @@ create table kpi.tr_validate_site_rguga_aggr
 drop table if exists kpi.tr_validate_cross_reload_aggr cascade;
 create table kpi.tr_validate_cross_reload_aggr
 (
-	validation_str_v 		character varying(50) not null,
+	validation_str_v 		character varying(255) not null,
 	created_dt 				date not null default now(),
 	constraint tr_validate_cross_reload_aggr_pkey primary key (validation_str_v)
 );
@@ -2090,7 +2090,7 @@ create table kpi.tr_validate_cross_reload_aggr
 drop table if exists kpi.tr_validate_cross_data_aggr cascade;
 create table kpi.tr_validate_cross_data_aggr
 (
-	validation_str_v 		character varying(50) not null,
+	validation_str_v 		character varying(255) not null,
 	created_dt 				date not null default now(),
 	constraint tr_validate_cross_data_aggr_pkey primary key (validation_str_v)
 );
@@ -2099,7 +2099,7 @@ create table kpi.tr_validate_cross_data_aggr
 drop table if exists kpi.tr_validate_outlet_program_aggr cascade;
 create table kpi.tr_validate_outlet_program_aggr
 (
-	validation_str_v 		character varying(50) not null,
+	validation_str_v 		character varying(255) not null,
 	created_dt 				date not null default now(),
 	constraint tr_validate_outlet_program_aggr_pkey primary key (validation_str_v)
 );
@@ -2108,7 +2108,7 @@ create table kpi.tr_validate_outlet_program_aggr
 drop table if exists kpi.tr_validate_ontime_payment_aggr cascade;
 create table kpi.tr_validate_ontime_payment_aggr
 (
-	validation_str_v 		character varying(50) not null,
+	validation_str_v 		character varying(255) not null,
 	created_dt 				date not null default now(),
 	constraint tr_validate_ontime_payment_aggr_pkey primary key (validation_str_v)
 );
@@ -2117,7 +2117,7 @@ create table kpi.tr_validate_ontime_payment_aggr
 drop table if exists kpi.tr_validate_uro_20k_aggr cascade;
 create table kpi.tr_validate_uro_20k_aggr
 (
-	validation_str_v 		character varying(50) not null,
+	validation_str_v 		character varying(255) not null,
 	created_dt 				date not null default now(),
 	constraint tr_validate_uro_20k_aggr_pkey primary key (validation_str_v)
 );
