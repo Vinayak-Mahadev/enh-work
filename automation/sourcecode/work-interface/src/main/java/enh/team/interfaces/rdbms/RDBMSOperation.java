@@ -83,29 +83,51 @@ public class RDBMSOperation {
 		try 
 		{
 			fos = new FileOutputStream(new File(filePath));
-			fos.write("MPC_CODE|MOBO_DATE|AMOUNT\n".getBytes());
-			mpc = conn.createStatement().executeQuery("select ref_code_v from kpi.ms_org_master where org_type_n = 7 order by 1");
+			fos.write("MPC_CODE|MOBO_DATE|AMOUNT\n".getBytes());			
 			int fileSequence = 1;
 			int calcRowLimit = limit/fileCount; 
 			int i = 0;
 
-			while (mpc.next()) 
+			out : while(i <= limit)
 			{
-				fos.write((mpc.getString(1) + "|" + dateInFile + "|" + i + ".50\n").getBytes());
-				i++;
-				
-				if(i % calcRowLimit == 0 && i != limit)
+				mpc = conn.createStatement().executeQuery("select ref_code_v from kpi.ms_org_master where org_type_n = 7 order by 1");
+				while (mpc.next()) 
 				{
-					System.out.println("Total Rows : " + (i/fileSequence));
-					fos.close();
-					fos = new FileOutputStream(new File(filePath.replace(".csv", "_00" + fileSequence + ".csv")));
-					fos.write("MPC_CODE|MOBO_DATE|AMOUNT\n".getBytes());
-					fileSequence++;
+					fos.write((mpc.getString(1) + "|" + dateInFile + "|" + i + ".50\n").getBytes());
+					i++;
+					
+					if(i % calcRowLimit == 0 && i != limit)
+					{
+						System.out.println("Total Rows : " + (i/fileSequence));
+						fos.close();
+						fos = new FileOutputStream(new File(filePath.replace(".csv", "_00" + fileSequence + ".csv")));
+						fos.write("MPC_CODE|MOBO_DATE|AMOUNT\n".getBytes());
+						fileSequence++;
+					}												
+					
+					if( limit==i)
+						break out;
 				}
-				
-				if( limit==i)
-					break;
-			}
+				Integer date = Integer.valueOf(dateInFile.substring(dateInFile.length() - 2, dateInFile.length()));
+
+				if(date == 1)
+				{
+					int month = Integer.valueOf(dateInFile.substring(4, dateInFile.length() - 2));
+					if(month == 1)
+					{
+						int year = Integer.valueOf(dateInFile.substring(0, dateInFile.length() - 4));
+						dateInFile = (year - 1) + "1229";
+					}
+					else if(month<=10)
+						dateInFile = dateInFile.substring(0, dateInFile.length() - 4) + "0" + (month - 1) + "29";
+					else
+						dateInFile = dateInFile.substring(0, dateInFile.length() - 4) + (month - 1) + "29";
+				}
+				else if(date<=10)
+					dateInFile = dateInFile.substring(0, dateInFile.length() - 2) + "0" + (date - 1);
+				else
+					dateInFile = dateInFile.substring(0, dateInFile.length() - 2) + (date - 1);
+			}			
 
 			System.out.println("Total Rows : " + (i/fileSequence));
 			fos.close();
@@ -163,7 +185,7 @@ public class RDBMSOperation {
 				fos.flush();
 			}
 
-			System.out.println("Total Rows : " + (i/fileSequence));
+			System.out.println("Total Rows : " + (i/fileSequence) + "   1167");
 			fos.close();
 			System.out.println("File generated");
 		}
@@ -220,7 +242,7 @@ public class RDBMSOperation {
 				fos.flush();
 			}
 
-			System.out.println("Total Rows : " + (i/fileSequence));
+			System.out.println("Total Rows : " + (i/fileSequence) + "   1168");
 			fos.close();
 			System.out.println("File generated");
 		}
@@ -274,7 +296,7 @@ public class RDBMSOperation {
 				fos.flush();
 			}
 
-			System.out.println("Total Rows : " + (i/fileSequence));
+			System.out.println("Total Rows : " + (i/fileSequence) + "   1169");
 			fos.close();
 			System.out.println("File generated");
 		}
@@ -331,7 +353,7 @@ public class RDBMSOperation {
 				fos.flush();
 			}
 
-			System.out.println("Total Rows : " + (i/fileSequence));
+			System.out.println("Total Rows : " + (i/fileSequence) + "   1170");
 			fos.close();
 			System.out.println("File generated");
 		}
@@ -348,32 +370,54 @@ public class RDBMSOperation {
 		try 
 		{
 			fos = new FileOutputStream(new File(filePath));
-			fos.write("MOBO_DATE|ORG_CODE|AMOUNT\n".getBytes());
-			org = conn.createStatement().executeQuery("select ref_code_v from kpi.ms_org_master where org_type_n = 7 order by 1");
+			fos.write("MOBO_DATE|ORG_CODE|AMOUNT\n".getBytes());			
 
 			int i = 0;
 			int fileSequence = 1;
 			int calcRowLimit = limit/fileCount; 
 
-			while (org.next()) 
+			out : while(i <= limit)
 			{
-				fos.write((dateInFile + "|" + org.getString(1) + "|" + i + ".50\n").getBytes());
-				i++;
-								
-				if(i % calcRowLimit == 0 && i != limit)
+				org = conn.createStatement().executeQuery("select ref_code_v from kpi.ms_org_master where org_type_n = 7 order by 1");
+				while (org.next()) 
 				{
-					System.out.println("Total Rows : " + (i/fileSequence));
-					fos.close();
-					fos = new FileOutputStream(new File(filePath.replace(".csv", "_00" + fileSequence + ".csv")));
-					fos.write("MOBO_DATE|ORG_CODE|AMOUNT\n".getBytes());
-					fileSequence++;
+					fos.write((dateInFile + "|" + org.getString(1) + "|" + i + ".50\n").getBytes());
+					i++;
+									
+					if(i % calcRowLimit == 0 && i != limit)
+					{
+						System.out.println("Total Rows : " + (i/fileSequence));
+						fos.close();
+						fos = new FileOutputStream(new File(filePath.replace(".csv", "_00" + fileSequence + ".csv")));
+						fos.write("MOBO_DATE|ORG_CODE|AMOUNT\n".getBytes());
+						fileSequence++;
+					}
+					
+					if(limit != 0 && limit==i)
+						break out;
 				}
-				
-				if(limit != 0 && limit==i)
-					break;
+				Integer date = Integer.valueOf(dateInFile.substring(dateInFile.length() - 2, dateInFile.length()));
+
+				if(date == 1)
+				{
+					int month = Integer.valueOf(dateInFile.substring(4, dateInFile.length() - 2));
+					if(month == 1)
+					{
+						int year = Integer.valueOf(dateInFile.substring(0, dateInFile.length() - 4));
+						dateInFile = (year - 1) + "1229";
+					}
+					else if(month<=10)
+						dateInFile = dateInFile.substring(0, dateInFile.length() - 4) + "0" + (month - 1) + "29";
+					else
+						dateInFile = dateInFile.substring(0, dateInFile.length() - 4) + (month - 1) + "29";
+				}
+				else if(date<=10)
+					dateInFile = dateInFile.substring(0, dateInFile.length() - 2) + "0" + (date - 1);
+				else
+					dateInFile = dateInFile.substring(0, dateInFile.length() - 2) + (date - 1);
 			}
 
-			System.out.println("Total Rows : " + (i/fileSequence));
+			System.out.println("Total Rows : " + (i/fileSequence) + "   1171");
 			fos.close();
 			System.out.println("File generated");
 		}
@@ -391,38 +435,60 @@ public class RDBMSOperation {
 		try 
 		{
 			fos = new FileOutputStream(new File(filePath));
-			fos.write("DATE|MICRO|SITE_ID|REVENUE_TYPE|REVENUE_TOTAL\n".getBytes());
-			micro = conn.createStatement().executeQuery("select ext_ref_code_v from kpi.ms_lookup_master where lookup_type_n = (select lookup_type_n from kpi.ms_lookup_type_master where ext_lookup_type_n = 89) order by 1;");
+			fos.write("DATE|MICRO|SITE_ID|REVENUE_TYPE|REVENUE_TOTAL\n".getBytes());			
 
 			int i = 0;
 			int fileSequence = 1;
 			int calcRowLimit = limit/fileCount;
 			
-			out : while (micro.next()) 
+			out : while(i <= limit)
 			{
-				String revenueType = "";
-				if(i % 3 == 0)
-					revenueType = "voice";
-				else
-					revenueType = "sms";
-				fos.write((dateInFile+"|"+micro.getString(1)+"|Test Site-"+i+"|"+revenueType+"|" + i + ".30\n").getBytes());
-				i++;
-								
-				if(i % calcRowLimit == 0 && i != limit)
+				micro = conn.createStatement().executeQuery("select ext_ref_code_v from kpi.ms_lookup_master where lookup_type_n = (select lookup_type_n from kpi.ms_lookup_type_master where ext_lookup_type_n = 89) order by 1;");
+				while (micro.next()) 
 				{
-					System.out.println("Total Rows : " + (i/fileSequence));
-					fos.close();
-					fos = new FileOutputStream(new File(filePath.replace(".csv", "_00" + fileSequence + ".csv")));
-					fos.write("DATE|MICRO|SITE_ID|REVENUE_TYPE|REVENUE_TOTAL\n".getBytes());
-					fileSequence++;
+					String revenueType = "";
+					if(i % 3 == 0)
+						revenueType = "voice";
+					else
+						revenueType = "sms";
+					fos.write((dateInFile+"|"+micro.getString(1)+"|Test Site-"+i+"|"+revenueType+"|" + i + ".30\n").getBytes());
+					i++;
+									
+					if(i % calcRowLimit == 0 && i != limit)
+					{
+						System.out.println("Total Rows : " + (i/fileSequence));
+						fos.close();
+						fos = new FileOutputStream(new File(filePath.replace(".csv", "_00" + fileSequence + ".csv")));
+						fos.write("DATE|MICRO|SITE_ID|REVENUE_TYPE|REVENUE_TOTAL\n".getBytes());
+						fileSequence++;
+					}
+					
+					if(limit != 0 )
+						if( limit==i)
+							break out;
 				}
-				
-				if(limit != 0 )
-					if( limit==i)
-						break out;
-			}
+				Integer date = Integer.valueOf(dateInFile.substring(dateInFile.length() - 2, dateInFile.length()));
 
-			System.out.println("Total Rows : " + (i/fileSequence));
+				if(date == 1)
+				{
+					int month = Integer.valueOf(dateInFile.substring(4, dateInFile.length() - 2));
+					if(month == 1)
+					{
+						int year = Integer.valueOf(dateInFile.substring(0, dateInFile.length() - 4));
+						dateInFile = (year - 1) + "1229";
+					}
+					else if(month<=10)
+						dateInFile = dateInFile.substring(0, dateInFile.length() - 4) + "0" + (month - 1) + "29";
+					else
+						dateInFile = dateInFile.substring(0, dateInFile.length() - 4) + (month - 1) + "29";
+				}
+				else if(date<=10)
+					dateInFile = dateInFile.substring(0, dateInFile.length() - 2) + "0" + (date - 1);
+				else
+					dateInFile = dateInFile.substring(0, dateInFile.length() - 2) + (date - 1);
+			}
+			
+			System.out.println("Total Rows : " + (i/fileSequence) + "   1172");
 			fos.close();
 			System.out.println("File generated");
 		}
@@ -440,33 +506,55 @@ public class RDBMSOperation {
 		try 
 		{
 			fos = new FileOutputStream(new File(filePath));
-			fos.write("DATE|MICRO|SITE_ID|REVENUE\n".getBytes());
-			micro = conn.createStatement().executeQuery("select ext_ref_code_v from kpi.ms_lookup_master where lookup_type_n = (select lookup_type_n from kpi.ms_lookup_type_master where ext_lookup_type_n = 89) order by 1;");
+			fos.write("DATE|MICRO|SITE_ID|REVENUE\n".getBytes());			
 
 			int i = 0;
 			int fileSequence = 1;
 			int calcRowLimit = limit/fileCount; 
 			
-			out : while (micro.next()) 
-			{				
-				fos.write((dateInFile+"|"+micro.getString(1)+"|Test Site-"+i+"|" + i + ".40\n").getBytes());
-				i++;
-								
-				if(i % calcRowLimit == 0 && i != limit)
-				{
-					System.out.println("Total Rows : " + (i/fileSequence));
-					fos.close();
-					fos = new FileOutputStream(new File(filePath.replace(".csv", "_00" + fileSequence + ".csv")));
-					fos.write("DATE|MICRO|SITE_ID|REVENUE\n".getBytes());
-					fileSequence++;
+			out : while(i <= limit)
+			{
+				micro = conn.createStatement().executeQuery("select ext_ref_code_v from kpi.ms_lookup_master where lookup_type_n = (select lookup_type_n from kpi.ms_lookup_type_master where ext_lookup_type_n = 89) order by 1;");
+				while (micro.next()) 
+				{				
+					fos.write((dateInFile+"|"+micro.getString(1)+"|Test Site-"+i+"|" + i + ".40\n").getBytes());
+					i++;
+									
+					if(i % calcRowLimit == 0 && i != limit)
+					{
+						System.out.println("Total Rows : " + (i/fileSequence));
+						fos.close();
+						fos = new FileOutputStream(new File(filePath.replace(".csv", "_00" + fileSequence + ".csv")));
+						fos.write("DATE|MICRO|SITE_ID|REVENUE\n".getBytes());
+						fileSequence++;
+					}
+					
+					if(limit != 0 )
+						if( limit==i)
+							break out;
 				}
-				
-				if(limit != 0 )
-					if( limit==i)
-						break out;
+				Integer date = Integer.valueOf(dateInFile.substring(dateInFile.length() - 2, dateInFile.length()));
+
+				if(date == 1)
+				{
+					int month = Integer.valueOf(dateInFile.substring(4, dateInFile.length() - 2));
+					if(month == 1)
+					{
+						int year = Integer.valueOf(dateInFile.substring(0, dateInFile.length() - 4));
+						dateInFile = (year - 1) + "1229";
+					}
+					else if(month<=10)
+						dateInFile = dateInFile.substring(0, dateInFile.length() - 4) + "0" + (month - 1) + "29";
+					else
+						dateInFile = dateInFile.substring(0, dateInFile.length() - 4) + (month - 1) + "29";
+				}
+				else if(date<=10)
+					dateInFile = dateInFile.substring(0, dateInFile.length() - 2) + "0" + (date - 1);
+				else
+					dateInFile = dateInFile.substring(0, dateInFile.length() - 2) + (date - 1);
 			}
 
-			System.out.println("Total Rows : " + (i/fileSequence));
+			System.out.println("Total Rows : " + (i/fileSequence) + "   1173_1174");
 			fos.close();
 			System.out.println("File generated");
 		}
@@ -484,38 +572,59 @@ public class RDBMSOperation {
 		try 
 		{
 			fos = new FileOutputStream(new File(filePath));
-			fos.write("DATE|MICRO|SITE_ID|CATEGORY|TARGET|REVENUE\n".getBytes());
-			micro = conn.createStatement().executeQuery("select ext_ref_code_v from kpi.ms_lookup_master where lookup_type_n = (select lookup_type_n from kpi.ms_lookup_type_master where ext_lookup_type_n = 89) order by 1;");
+			fos.write("DATE|MICRO|SITE_ID|CATEGORY|TARGET|REVENUE\n".getBytes());			
 
 			int i = 0;
 			int fileSequence = 1;
 			int calcRowLimit = limit/fileCount; 
 			
-			out : while (micro.next()) 
+			out : while(i <= limit)
 			{
-				String category = "";
-				if(i % 4 == 0)
-					category = "Java";
-				else
-					category = "Non Java";
-				fos.write((dateInFile+"|"+micro.getString(1)+"|Test Site-"+i+"|"+category+"|" + i + ".30" + "|" + i + ".70\n").getBytes());
-				i++;
-								
-				if(i % calcRowLimit == 0 && i != limit)
+				micro = conn.createStatement().executeQuery("select ext_ref_code_v from kpi.ms_lookup_master where lookup_type_n = (select lookup_type_n from kpi.ms_lookup_type_master where ext_lookup_type_n = 89) order by 1;");
+				while (micro.next()) 
 				{
-					System.out.println("Total Rows : " + (i/fileSequence));
-					fos.close();
-					fos = new FileOutputStream(new File(filePath.replace(".csv", "_00" + fileSequence + ".csv")));
-					fos.write("DATE|MICRO|SITE_ID|CATEGORY|TARGET|REVENUE\n".getBytes());
-					fileSequence++;
+					String category = "";
+					if(i % 4 == 0)
+						category = "Java";
+					else
+						category = "Non Java";
+					fos.write((dateInFile+"|"+micro.getString(1)+"|Test Site-"+i+"|"+category+"|" + i + ".30" + "|" + i + ".70\n").getBytes());
+					i++;
+									
+					if(i % calcRowLimit == 0 && i != limit)
+					{
+						System.out.println("Total Rows : " + (i/fileSequence));
+						fos.close();
+						fos = new FileOutputStream(new File(filePath.replace(".csv", "_00" + fileSequence + ".csv")));
+						fos.write("DATE|MICRO|SITE_ID|CATEGORY|TARGET|REVENUE\n".getBytes());
+						fileSequence++;
+					}
+					
+					if(limit != 0 )
+						if( limit==i)
+							break out;
 				}
-				
-				if(limit != 0 )
-					if( limit==i)
-						break out;
-			}
+				Integer date = Integer.valueOf(dateInFile.substring(dateInFile.length() - 2, dateInFile.length()));
 
-			System.out.println("Total Rows : " + (i/fileSequence));
+				if(date == 1)
+				{
+					int month = Integer.valueOf(dateInFile.substring(4, dateInFile.length() - 2));
+					if(month == 1)
+					{
+						int year = Integer.valueOf(dateInFile.substring(0, dateInFile.length() - 4));
+						dateInFile = (year - 1) + "1229";
+					}
+					else if(month<=10)
+						dateInFile = dateInFile.substring(0, dateInFile.length() - 4) + "0" + (month - 1) + "29";
+					else
+						dateInFile = dateInFile.substring(0, dateInFile.length() - 4) + (month - 1) + "29";
+				}
+				else if(date<=10)
+					dateInFile = dateInFile.substring(0, dateInFile.length() - 2) + "0" + (date - 1);
+				else
+					dateInFile = dateInFile.substring(0, dateInFile.length() - 2) + (date - 1);
+			}
+			System.out.println("Total Rows : " + (i/fileSequence) + "   1175");
 			fos.close();
 			System.out.println("File generated");
 		}
@@ -533,33 +642,54 @@ public class RDBMSOperation {
 		try 
 		{
 			fos = new FileOutputStream(new File(filePath));
-			fos.write("DATE|MICRO|SITE|QTY\n".getBytes());
-			micro = conn.createStatement().executeQuery("select ext_ref_code_v from kpi.ms_lookup_master where lookup_type_n = (select lookup_type_n from kpi.ms_lookup_type_master where ext_lookup_type_n = 89) order by 1;");
+			fos.write("DATE|MICRO|SITE|QTY\n".getBytes());			
 
 			int i = 0;		
 			int fileSequence = 1;
 			int calcRowLimit = limit/fileCount; 
 			
-			out : while (micro.next()) 
-			{				
-				fos.write((dateInFile+"|"+micro.getString(1)+"|Test Site-"+i+"|" + i + "\n").getBytes());
-				i++;
-								
-				if(i % calcRowLimit == 0 && i != limit)
-				{
-					System.out.println("Total Rows : " + (i/fileSequence));
-					fos.close();
-					fos = new FileOutputStream(new File(filePath.replace(".csv", "_00" + fileSequence + ".csv")));
-					fos.write("DATE|MICRO|SITE|QTY\n".getBytes());
-					fileSequence++;
+			out : while(i <= limit)
+			{
+				micro = conn.createStatement().executeQuery("select ext_ref_code_v from kpi.ms_lookup_master where lookup_type_n = (select lookup_type_n from kpi.ms_lookup_type_master where ext_lookup_type_n = 89) order by 1;");
+				while (micro.next()) 
+				{				
+					fos.write((dateInFile+"|"+micro.getString(1)+"|Test Site-"+i+"|" + i + "\n").getBytes());
+					i++;
+									
+					if(i % calcRowLimit == 0 && i != limit)
+					{
+						System.out.println("Total Rows : " + (i/fileSequence));
+						fos.close();
+						fos = new FileOutputStream(new File(filePath.replace(".csv", "_00" + fileSequence + ".csv")));
+						fos.write("DATE|MICRO|SITE|QTY\n".getBytes());
+						fileSequence++;
+					}
+					
+					if(limit != 0 )
+						if( limit==i)
+							break out;
 				}
-				
-				if(limit != 0 )
-					if( limit==i)
-						break out;
-			}
+				Integer date = Integer.valueOf(dateInFile.substring(dateInFile.length() - 2, dateInFile.length()));
 
-			System.out.println("Total Rows : " + (i/fileSequence));
+				if(date == 1)
+				{
+					int month = Integer.valueOf(dateInFile.substring(4, dateInFile.length() - 2));
+					if(month == 1)
+					{
+						int year = Integer.valueOf(dateInFile.substring(0, dateInFile.length() - 4));
+						dateInFile = (year - 1) + "1229";
+					}
+					else if(month<=10)
+						dateInFile = dateInFile.substring(0, dateInFile.length() - 4) + "0" + (month - 1) + "29";
+					else
+						dateInFile = dateInFile.substring(0, dateInFile.length() - 4) + (month - 1) + "29";
+				}
+				else if(date<=10)
+					dateInFile = dateInFile.substring(0, dateInFile.length() - 2) + "0" + (date - 1);
+				else
+					dateInFile = dateInFile.substring(0, dateInFile.length() - 2) + (date - 1);
+			}
+			System.out.println("Total Rows : " + (i/fileSequence) + "   1176");
 			fos.close();
 			System.out.println("File generated");
 		}
@@ -577,8 +707,7 @@ public class RDBMSOperation {
 		try 
 		{
 			fos = new FileOutputStream(new File(filePath));
-			fos.write("DATE|CLUSTER_ID|CATEGORY|CLUSTER_TYPE|TOTAL_RELOAD|CROSS_RELOAD\n".getBytes());
-			cluster = conn.createStatement().executeQuery("select ext_ref_code_v from kpi.ms_lookup_master where lookup_type_n = (select lookup_type_n from kpi.ms_lookup_type_master where ext_lookup_type_n = 88) order by 1;");
+			fos.write("DATE|CLUSTER_ID|CATEGORY|CLUSTER_TYPE|TOTAL_RELOAD|CROSS_RELOAD\n".getBytes());			
 
 			int i = 0;	
 			int fileSequence = 1;
@@ -586,35 +715,58 @@ public class RDBMSOperation {
 			
 			String category = "";
 			String clusterType = "";
-			out : while (cluster.next()) 
-			{				
-				if(i % 4 == 0)
-					category = "Java";
-				else
-					category = "Non Java";
-				if(i % 6 == 0)
-					clusterType = "Inner";
-				else
-					clusterType = "Outer";
+			out : while(i <= limit)
+			{
+				cluster = conn.createStatement().executeQuery("select ext_ref_code_v from kpi.ms_lookup_master where lookup_type_n = (select lookup_type_n from kpi.ms_lookup_type_master where ext_lookup_type_n = 88) order by 1;");
+				while (cluster.next()) 
+				{				
+					if(i % 4 == 0)
+						category = "Java";
+					else
+						category = "Non Java";
+					if(i % 6 == 0)
+						clusterType = "Inner";
+					else
+						clusterType = "Outer";
+						
+					fos.write((dateInFile+"|"+cluster.getString(1) + "|"+category+"|" + clusterType + "|" + i + ".0" + "|" + i + ".25\n").getBytes());
+					i++;
+									
+					if(i % calcRowLimit == 0 && i != limit)
+					{
+						System.out.println("Total Rows : " + (i/fileSequence));
+						fos.close();
+						fos = new FileOutputStream(new File(filePath.replace(".csv", "_00" + fileSequence + ".csv")));
+						fos.write("DATE|CLUSTER_ID|CATEGORY|CLUSTER_TYPE|TOTAL_RELOAD|CROSS_RELOAD\n".getBytes());
+						fileSequence++;
+					}
 					
-				fos.write((dateInFile+"|"+cluster.getString(1) + "|"+category+"|" + clusterType + "|" + i + ".0" + "|" + i + ".25\n").getBytes());
-				i++;
-								
-				if(i % calcRowLimit == 0 && i != limit)
-				{
-					System.out.println("Total Rows : " + (i/fileSequence));
-					fos.close();
-					fos = new FileOutputStream(new File(filePath.replace(".csv", "_00" + fileSequence + ".csv")));
-					fos.write("DATE|CLUSTER_ID|CATEGORY|CLUSTER_TYPE|TOTAL_RELOAD|CROSS_RELOAD\n".getBytes());
-					fileSequence++;
+					if(limit != 0 )
+						if( limit==i)
+							break out;
 				}
-				
-				if(limit != 0 )
-					if( limit==i)
-						break out;
+				Integer date = Integer.valueOf(dateInFile.substring(dateInFile.length() - 2, dateInFile.length()));
+	
+				if(date == 1)
+				{
+					int month = Integer.valueOf(dateInFile.substring(4, dateInFile.length() - 2));
+					if(month == 1)
+					{
+						int year = Integer.valueOf(dateInFile.substring(0, dateInFile.length() - 4));
+						dateInFile = (year - 1) + "1229";
+					}
+					else if(month<=10)
+						dateInFile = dateInFile.substring(0, dateInFile.length() - 4) + "0" + (month - 1) + "29";
+					else
+						dateInFile = dateInFile.substring(0, dateInFile.length() - 4) + (month - 1) + "29";
+				}
+				else if(date<=10)
+					dateInFile = dateInFile.substring(0, dateInFile.length() - 2) + "0" + (date - 1);
+				else
+					dateInFile = dateInFile.substring(0, dateInFile.length() - 2) + (date - 1);
 			}
 
-			System.out.println("Total Rows : " + (i/fileSequence));
+			System.out.println("Total Rows : " + (i/fileSequence) + "   1177");
 			fos.close();
 			System.out.println("File generated");
 		}
@@ -632,33 +784,54 @@ public class RDBMSOperation {
 		try 
 		{
 			fos = new FileOutputStream(new File(filePath));
-			fos.write("DATE|CLUSTER_ID|TOTAL_DATA|CROSS_DATA\n".getBytes());
-			cluster = conn.createStatement().executeQuery("select ext_ref_code_v from kpi.ms_lookup_master where lookup_type_n = (select lookup_type_n from kpi.ms_lookup_type_master where ext_lookup_type_n = 88) order by 1;");
+			fos.write("DATE|CLUSTER_ID|TOTAL_DATA|CROSS_DATA\n".getBytes());			
 
 			int i = 0;
 			int fileSequence = 1;
 			int calcRowLimit = limit/fileCount; 
 			
-			out : while (cluster.next()) 
-			{				
-				fos.write((dateInFile+"|"+cluster.getString(1) + "|" + i + ".45|" + i + ".0\n").getBytes());
-				i++;
-				
-				if(i % calcRowLimit == 0 && i != limit)
-				{
-					System.out.println("Total Rows : " + (i/fileSequence));
-					fos.close();
-					fos = new FileOutputStream(new File(filePath.replace(".csv", "_00" + fileSequence + ".csv")));
-					fos.write("DATE|CLUSTER_ID|TOTAL_DATA|CROSS_DATA\n".getBytes());
-					fileSequence++;
+			out : while(i <= limit)
+			{
+				cluster = conn.createStatement().executeQuery("select ext_ref_code_v from kpi.ms_lookup_master where lookup_type_n = (select lookup_type_n from kpi.ms_lookup_type_master where ext_lookup_type_n = 88) order by 1;");
+				while (cluster.next()) 
+				{				
+					fos.write((dateInFile+"|"+cluster.getString(1) + "|" + i + ".45|" + i + ".0\n").getBytes());
+					i++;
+					
+					if(i % calcRowLimit == 0 && i != limit)
+					{
+						System.out.println("Total Rows : " + (i/fileSequence));
+						fos.close();
+						fos = new FileOutputStream(new File(filePath.replace(".csv", "_00" + fileSequence + ".csv")));
+						fos.write("DATE|CLUSTER_ID|TOTAL_DATA|CROSS_DATA\n".getBytes());
+						fileSequence++;
+					}
+					
+					if(limit != 0 )
+						if( limit==i)
+							break out;
 				}
+				Integer date = Integer.valueOf(dateInFile.substring(dateInFile.length() - 2, dateInFile.length()));
 				
-				if(limit != 0 )
-					if( limit==i)
-						break out;
+				if(date == 1)
+				{
+					int month = Integer.valueOf(dateInFile.substring(4, dateInFile.length() - 2));
+					if(month == 1)
+					{
+						int year = Integer.valueOf(dateInFile.substring(0, dateInFile.length() - 4));
+						dateInFile = (year - 1) + "1229";
+					}
+					else if(month<=10)
+						dateInFile = dateInFile.substring(0, dateInFile.length() - 4) + "0" + (month - 1) + "29";
+					else
+						dateInFile = dateInFile.substring(0, dateInFile.length() - 4) + (month - 1) + "29";
+				}
+				else if(date<=10)
+					dateInFile = dateInFile.substring(0, dateInFile.length() - 2) + "0" + (date - 1);
+				else
+					dateInFile = dateInFile.substring(0, dateInFile.length() - 2) + (date - 1);
 			}
-
-			System.out.println("Total Rows : " + (i/fileSequence));
+			System.out.println("Total Rows : " + (i/fileSequence) + "   1178");
 			fos.close();
 			System.out.println("File generated");
 		}
@@ -678,43 +851,55 @@ public class RDBMSOperation {
 		try 
 		{
 			fos = new FileOutputStream(new File(filePath));
-			fos.write("MONTH_ID|CLUSTER|ID_OUTLET|TARGET|ACTUAL\n".getBytes());
-			cluster = conn.createStatement().executeQuery("select ext_ref_code_v from kpi.ms_lookup_master where lookup_type_n = (select lookup_type_n from kpi.ms_lookup_type_master where ext_lookup_type_n = 88) order by 1;");
-			out = conn.createStatement().executeQuery("select ref_code_v from kpi.ms_org_master where org_type_n = 6   and sub_org_type_n = 66 and status_n = 174 order by 1;");
+			fos.write("MONTH_ID|CLUSTER|ID_OUTLET|TARGET|ACTUAL\n".getBytes());			
 
 			int i = 0;
 			int fileSequence = 1;
 			int calcRowLimit = limit/fileCount; 
 
+			out = conn.createStatement().executeQuery("select ref_code_v from kpi.ms_org_master where org_type_n = 6   and sub_org_type_n = 66 and status_n = 174 order by 1;");
 			ArrayList<String> outletList = new ArrayList<String>();
-			while (out.next()) {
+			while (out.next()) 
+			{
 				outletList.add(out.getString(1));
 			}
-
-			out : while (cluster.next()) {
-
-				for (String outlet : outletList) {
-					fos.write((monthInFile+"|"+cluster.getString(1)+"|"+outlet+"|1"+format.format(i)+".75|1"+ (format.format(i)+10) +".0\n").getBytes());
-					i++;
-										
-					if(i % calcRowLimit == 0 && i != limit)
+			
+			out : while(i <= limit)
+			{
+				cluster = conn.createStatement().executeQuery("select ext_ref_code_v from kpi.ms_lookup_master where lookup_type_n = (select lookup_type_n from kpi.ms_lookup_type_master where ext_lookup_type_n = 88) order by 1;");				
+				while (cluster.next()) 
+				{
+					for(String outlet : outletList)
 					{
-						System.out.println("Total Rows : " + (i/fileSequence));
-						fos.close();
-						fos = new FileOutputStream(new File(filePath.replace(".csv", "_00" + fileSequence + ".csv")));
-						fos.write("MONTH_ID|CLUSTER|ID_OUTLET|TARGET|ACTUAL\n".getBytes());
-						fileSequence++;
+						fos.write((monthInFile+"|"+cluster.getString(1)+"|"+outlet+"|1"+format.format(i)+".75|1"+ (format.format(i)+10) +".0\n").getBytes());
+						i++;
+											
+						if(i % calcRowLimit == 0 && i != limit)
+						{
+							System.out.println("Total Rows : " + (i/fileSequence));
+							fos.close();
+							fos = new FileOutputStream(new File(filePath.replace(".csv", "_00" + fileSequence + ".csv")));
+							fos.write("MONTH_ID|CLUSTER|ID_OUTLET|TARGET|ACTUAL\n".getBytes());
+							fileSequence++;
+						}
+						
+						if(limit != 0 )
+							if( limit==i)
+								break out;
 					}
-					
-					if(limit != 0 )
-						if( limit==i)
-							break out;
 				}
-
-				fos.flush();
+				int month = Integer.valueOf(monthInFile.substring(4, monthInFile.length()));
+				if(month == 1)
+				{
+					int year = Integer.valueOf(monthInFile.substring(0, monthInFile.length() - 2));
+					monthInFile = (year - 1) + "12";
+				}
+				else if(month<=10)
+					monthInFile = monthInFile.substring(0, monthInFile.length() - 2) + "0" + (month - 1);
+				else
+					monthInFile = monthInFile.substring(0, monthInFile.length() - 2) + (month - 1);				
 			}
-
-			System.out.println("Total Rows : " + (i/fileSequence));
+			System.out.println("Total Rows : " + (i/fileSequence) + "   1179");
 			fos.close();
 			System.out.println("File generated");
 		}
@@ -734,44 +919,55 @@ public class RDBMSOperation {
 		try 
 		{
 			fos = new FileOutputStream(new File(filePath));
-			fos.write("MONTH_ID|CLUSTER|MPC_CODE|PAYMENT_ALLOCATION\n".getBytes());
-			cluster = conn.createStatement().executeQuery("select ext_ref_code_v from kpi.ms_lookup_master where lookup_type_n = (select lookup_type_n from kpi.ms_lookup_type_master where ext_lookup_type_n = 88) order by 1;");
-			mpc = conn.createStatement().executeQuery("select ref_code_v from kpi.ms_org_master where org_type_n = 7 order by 1");
+			fos.write("MONTH_ID|CLUSTER|MPC_CODE|PAYMENT_ALLOCATION\n".getBytes());			
 
 			int i = 0;
 			int fileSequence = 1;
-			int calcRowLimit = limit/fileCount; 
-			
+			int calcRowLimit = limit/fileCount; 			
+
+			mpc = conn.createStatement().executeQuery("select ref_code_v from kpi.ms_org_master where org_type_n = 7 order by 1");
 			ArrayList<String> mpcList = new ArrayList<String>();
-			while (mpc.next()) {
+			while (mpc.next()) 
+			{
 				mpcList.add(mpc.getString(1));
 			}
-
-			out : while (cluster.next()) {
-
-				for (String mpc_code : mpcList)
+			
+			out : while(i <= limit)
+			{
+				cluster = conn.createStatement().executeQuery("select ext_ref_code_v from kpi.ms_lookup_master where lookup_type_n = (select lookup_type_n from kpi.ms_lookup_type_master where ext_lookup_type_n = 88) order by 1;");				
+				while (cluster.next()) 
 				{
-					fos.write((monthInFile+"|"+cluster.getString(1)+"|"+mpc_code+"|1"+format.format(i) + "\n").getBytes());
-					i++;
-										
-					if(i % calcRowLimit == 0 && i != limit)
+					for(String mpcCode : mpcList)
 					{
-						System.out.println("Total Rows : " + (i/fileSequence));
-						fos.close();
-						fos = new FileOutputStream(new File(filePath.replace(".csv", "_00" + fileSequence + ".csv")));
-						fos.write("MONTH_ID|CLUSTER|MPC_CODE|PAYMENT_ALLOCATION\n".getBytes());
-						fileSequence++;
+						fos.write((monthInFile+"|"+cluster.getString(1)+"|"+mpcCode+"|1"+format.format(i) + "\n").getBytes());
+						i++;
+											
+						if(i % calcRowLimit == 0 && i != limit)
+						{
+							System.out.println("Total Rows : " + (i/fileSequence));
+							fos.close();
+							fos = new FileOutputStream(new File(filePath.replace(".csv", "_00" + fileSequence + ".csv")));
+							fos.write("MONTH_ID|CLUSTER|MPC_CODE|PAYMENT_ALLOCATION\n".getBytes());
+							fileSequence++;
+						}
+						
+						if(limit != 0 )
+							if( limit==i)
+								break out;
 					}
-					
-					if(limit != 0 )
-						if( limit==i)
-							break out;
 				}
-
-				fos.flush();
+				int month = Integer.valueOf(monthInFile.substring(4, monthInFile.length()));
+				if(month == 1)
+				{
+					int year = Integer.valueOf(monthInFile.substring(0, monthInFile.length() - 2));
+					monthInFile = (year - 1) + "12";
+				}
+				else if(month<=10)
+					monthInFile = monthInFile.substring(0, monthInFile.length() - 2) + "0" + (month - 1);
+				else
+					monthInFile = monthInFile.substring(0, monthInFile.length() - 2) + (month - 1);
 			}
-
-			System.out.println("Total Rows : " + (i/fileSequence));
+			System.out.println("Total Rows : " + (i/fileSequence) + "   1180");
 			fos.close();
 			System.out.println("File generated");
 		}
@@ -828,7 +1024,7 @@ public class RDBMSOperation {
 				fos.flush();
 			}
 
-			System.out.println("Total Rows : " + (i/fileSequence));
+			System.out.println("Total Rows : " + (i/fileSequence) + "   1181");
 			fos.close();
 			System.out.println("File generated");
 		}
