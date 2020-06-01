@@ -51,6 +51,7 @@
 			<groupId>org.hibernate.javax.persistence</groupId>
 			<artifactId>hibernate-jpa-2.0-api</artifactId>
 			<version>${hibernate.javax.persistence}</version>
+			<scope>provided</scope>
 		</dependency>
 
 		<dependency>
