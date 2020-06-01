@@ -1,0 +1,81 @@
+{
+	"Sample-feed": {
+		"definition": [
+			"Reader",
+			"Queue1",
+			"Transformer",
+			"Queue2",
+			"Writer"
+		],
+		"Reader": {
+			"type": "PipeLine",
+			"class": "jobPipeLine",
+			"instance": 1,
+			"processors": [
+				{
+					"class": "mongoDBDataFetcher",
+					"job_count": 5,
+					"sleep_time": 500,
+					"processors": [
+						{
+							"class": "mongoDBPrimaryDataFetcher",
+							"job_count": 5,
+							"sleep_time": 500
+						},
+						{
+							"class": "mongoDBSecondaryDataFetcher",
+							"job_count": 5,
+							"sleep_time": 500
+						}
+					]
+				}
+			]
+		},
+		"Queue1": {
+			"type": "Queue",
+			"class": "inMemoryQueue",
+			"config": {
+				"size": 2,
+				"poll_wait_time": 5,
+				"push_wait_time": 5,
+				"poll_sleep_time": 500,
+				"push_sleep_time": 500,
+				"max_wait_time": 10000
+			}
+		},
+		"Transformer": {
+			"type": "PipeLine",
+			"class": "jobPipeLine",
+			"instance": 1,
+			"processors": [
+				{
+					"class": "sampleProcessor",
+					"sleep_time": 500
+				}
+			]
+		},
+		"Queue2": {
+			"type": "Queue",
+			"class": "inMemoryQueue",
+			"config": {
+				"size": 2,
+				"poll_wait_time": 5,
+				"push_wait_time": 5,
+				"poll_sleep_time": 500,
+				"push_sleep_time": 500,
+				"max_wait_time": 10000
+			}
+		},
+		"Writer": {
+			"type": "PipeLine",
+			"class": "jobPipeLine",
+			"instance": 1,
+			"processors": [
+				{
+					"class": "sampleProcessor",
+					"sleep_time": 500
+				}
+			]
+		}
+	}
+}

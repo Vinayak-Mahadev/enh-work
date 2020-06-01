@@ -1,0 +1,364 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:jaxrs="http://cxf.apache.org/jaxrs"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:jee="http://www.springframework.org/schema/jee"
+	xmlns:http-conf="http://cxf.apache.org/transports/http/configuration"
+	xmlns:mongo="http://www.springframework.org/schema/data/mongo"
+	xmlns:tx="http://www.springframework.org/schema/tx"
+	xmlns:jms="http://www.springframework.org/schema/jms"
+	xmlns:camel="http://camel.apache.org/schema/spring"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:task="http://www.springframework.org/schema/task"
+	default-lazy-init="true"
+	xmlns:jdbc="http://www.springframework.org/schema/jdbc"
+	xsi:schemaLocation="
+        http://www.springframework.org/schema/beans 
+        http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/jms 
+        http://www.springframework.org/schema/jms/spring-jms.xsd
+        http://cxf.apache.org/jaxrs 
+        http://cxf.apache.org/schemas/jaxrs.xsd
+        http://cxf.apache.org/core 
+        http://cxf.apache.org/schemas/core.xsd
+  		http://www.springframework.org/schema/context         
+  		http://www.springframework.org/schema/context/spring-context-3.0.xsd
+  		http://www.springframework.org/schema/data/mongo 
+  		http://www.springframework.org/schema/data/mongo/spring-mongo.xsd
+  		http://camel.apache.org/schema/spring http://camel.apache.org/schema/spring/camel-spring.xsd
+        http://camel.apache.org/schema/cxf http://camel.apache.org/schema/cxf/camel-cxf.xsd
+        http://www.springframework.org/schema/task http://www.springframework.org/schema/task/spring-task-3.0.xsd
+        http://www.springframework.org/schema/jee http://www.springframework.org/schema/jee/spring-jee-3.1.xsd
+        http://www.springframework.org/schema/jdbc http://www.springframework.org/schema/jdbc/spring-jdbc-3.1.xsd
+        http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-4.0.xsd">
+
+
+	<import resource="classpath:META-INF/cxf/cxf.xml" />
+	<import resource="classpath:META-INF/cxf/cxf-servlet.xml" />
+
+	<!-- Spring Annotation Configurations Starts Here -->
+
+	<context:component-scan
+		base-package="com.enhancesys.jobengine.*" />
+	<context:annotation-config />
+
+	<!-- Spring Annotation Configurations Ends Here -->
+
+	<!-- Spring Beans Configuration Starts Here -->
+
+	<bean id="jobConsumerServicesActivator"
+		class="com.enhancesys.jobengine.consumer.controller.JobConsumerServicesActivator" />
+	<!-- <bean id="downloadProcessor" class="com.enhancesys.interfaces.snoc.services.InterfaceServicesDownloadProcessor" 
+		/> <bean id="uploadProcessor" class="com.enhancesys.interfaces.snoc.services.InterfaceServicesUploadProcessor" 
+		/> -->
+
+	<!-- Spring Beans Configuration Ends Here -->
+
+	<!-- JAX-RS Configurations Starts Here -->
+
+	<jaxrs:server id="restContainer" address="/">
+		<jaxrs:serviceBeans>
+			<!-- This is where we tell which beans CXF should expose as Web-Services -->
+			<ref bean="jobConsumerServicesActivator" />
+		</jaxrs:serviceBeans>
+
+		<jaxrs:extensionMappings>
+			<entry key="xml" value="application/xml" />
+			<entry key="json" value="application/json" />
+		</jaxrs:extensionMappings>
+
+		<jaxrs:providers>
+			<bean class="org.apache.cxf.jaxrs.provider.json.JSONProvider">
+				<property name="dropRootElement" value="true" />
+				<property name="supportUnwrapped" value="true" />
+			</bean>
+		</jaxrs:providers>
+	</jaxrs:server>
+
+	<!-- JAX-RS Configurations Ends Here -->
+
+
+	<!-- <bean id="oracleDataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource" 
+		destroy-method="close" > <property name="url" value="jdbc:oracle:thin:@localhost:1521:xe" 
+		/> <property name="driverClassName" value="oracle.jdbc.driver.OracleDriver" 
+		/> <property name="username" value="snd" /> <property name="password" value="oracle" 
+		/> </bean> -->
+
+	<!-- PostgresSQL Configurations starts Here <bean id="postgresDataSource" 
+		class="com.enhancesys.interfaces.snoc.util.JDBCDataSource" > <constructor-arg 
+		name="url" value="${INTERFACE_JDBC_URL}" /> <constructor-arg name="driverClassName" 
+		value="org.postgresql.Driver" /> <constructor-arg name="username" value="${INTERFACE_JDBC_USER}" 
+		/> <constructor-arg name="password" value="${INTERFACE_JDBC_PASS}" /> </bean> 
+		<bean id="jdbcTemplate" class="org.springframework.jdbc.core.JdbcTemplate"> 
+		<property name="dataSource" ref="postgresDataSource"></property> </bean> -->
+
+
+	<!-- PostgresSQL Configurations ends Here <bean id="namedParameterJdbcTemplate" 
+		class="org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate"> 
+		<constructor-arg ref="postgresDataSource"/> </bean> -->
+	<!-- PropertyPlaceholder Configurations Starts Here <bean id="bridgePropertyPlaceholder" 
+		class="org.apache.camel.spring.spi.BridgePropertyPlaceholderConfigurer"> 
+		<property name="location" value="file:${INTERFACE_CONF_PATH}" /> </bean> -->
+	<!-- PropertyPlaceholder Configurations Ends Here -->
+
+	<bean id="testUtilities"
+		class="com.enhancesys.jobengine.consumer.util.Utilities" />
+
+	<!-- Configure the transaction manager bean -->
+
+	<bean id="customEntitymanagerFactory"
+		class="com.enhancesys.jobengine.consumer.config.CustomEntitymanagerFactory" />
+
+	<bean id="transactionManager"
+		class="org.springframework.orm.jpa.JpaTransactionManager">
+		<property name="entityManagerFactory"
+			ref="customEntitymanagerFactory" />
+	</bean>
+
+	<bean id="failureQueue"
+		class="java.util.concurrent.ArrayBlockingQueue">
+		<constructor-arg type="int">
+			<value>2</value>
+		</constructor-arg>
+	</bean>
+
+	<bean id="propertiesLoader"
+		class="com.enhancesys.jobengine.services.util.PropertiesLoader" />
+
+	<bean id="inMemoryQueue"
+		class="com.enhancesys.jobengine.services.queue.InMemoryQueue"
+		factory-method="createBean" scope="prototype">
+		<constructor-arg name="configData" value="" />
+	</bean>
+
+	<bean id="activeMQueue"
+		class="com.enhancesys.jobengine.services.queue.ActiveMQueue"
+		factory-method="createBean" scope="prototype">
+		<constructor-arg name="configData" value="" />
+	</bean>
+
+	<bean id="jobConfigurationReader"
+		class="com.enhancesys.jobengine.services.job.JobConfigurationReader" />
+
+	<bean id="jobEngine"
+		class="com.enhancesys.jobengine.services.job.JobEngine" />
+
+	<bean id="jobPipeLine"
+		class="com.enhancesys.jobengine.services.job.JobPipeLine"
+		scope="prototype" />
+
+	<bean id="sampleProcessor"
+		class="com.enhancesys.jobengine.services.processor.SampleProcessor"
+		scope="prototype" />
+
+	<!-- bean id="sampleDataProcessor" class="com.enhancesys.jobengine.services.processor.SampleDataProcessor" 
+		scope="prototype"/ -->
+
+	<bean id="dataTransformer"
+		class="com.enhancesys.jobengine.services.processor.DataTransformer"
+		scope="prototype" />
+
+	<bean id="fileDataProcessor"
+		class="com.enhancesys.jobengine.services.processor.FileDataProcessor"
+		scope="prototype" />
+
+	<bean id="mongoDataWriter"
+		class="com.enhancesys.jobengine.services.processor.MongoDataWriter"
+		scope="prototype" />
+
+	<bean id="activeMQDataPublisher"
+		class="com.enhancesys.jobengine.services.processor.ActiveMQDataPublisher"
+		scope="prototype" />
+
+	<bean id="postgresDataWriter"
+		class="com.enhancesys.jobengine.services.processor.PostgresDataWriter"
+		scope="prototype" />
+
+	<bean id="csvDataWriter"
+		class="com.enhancesys.jobengine.services.processor.CSVDataWriter"
+		scope="prototype" />
+
+	<bean id="csvDataListWriter"
+		class="com.enhancesys.jobengine.services.processor.CSVDataListWriter"
+		scope="prototype" />
+
+	<bean id="excelDataWriter"
+		class="com.enhancesys.jobengine.services.processor.ExcelDataWriter"
+		scope="prototype" />
+
+	<bean id="pdfDataWriter"
+		class="com.enhancesys.jobengine.services.processor.PDFDataWriter"
+		scope="prototype" />
+
+	<bean id="mongoDBDataFetcher"
+		class="com.enhancesys.jobengine.services.processor.MongoDBDataFetcher"
+		scope="prototype" />
+
+	<bean id="mongoDBPrimaryDataFetcher"
+		class="com.enhancesys.jobengine.services.mongo.processor.MongoDBPrimaryDataFetcher"
+		scope="prototype" />
+
+	<bean id="mongoDBSecondaryDataFetcher"
+		class="com.enhancesys.jobengine.services.mongo.processor.MongoDBSecondaryDataFetcher"
+		scope="prototype" />
+
+	<bean id="mongoDBPrimaryDataSortProcessor"
+		class="com.enhancesys.jobengine.services.mongo.processor.MongoDBPrimaryDataSortProcessor"
+		scope="prototype" />
+
+	<bean id="mongoDBSencodaryDataSortProcessor"
+		class="com.enhancesys.jobengine.services.mongo.processor.MongoDBSencodaryDataSortProcessor"
+		scope="prototype" />
+
+	<bean id="mongoDBPrimaryAggregateDataSortProcessor"
+		class="com.enhancesys.jobengine.services.mongo.processor.MongoDBPrimaryAggregateDataSortProcessor"
+		scope="prototype" />
+
+	<bean id="mongoDataUtil"
+		class="com.enhancesys.jobengine.services.mongo.util.MongoDataUtil" />
+
+	<bean id="mongoConnectionUtil"
+		class="com.enhancesys.jobengine.services.mongo.util.MongoConnectionUtil" />
+
+	<bean id="jdbcUtility"
+		class="com.enhancesys.jobengine.services.pg.util.JdbcUtility" />
+
+	<bean id="postgresDBPrimaryDataFetcher"
+		class="com.enhancesys.jobengine.services.pg.processor.PostgresDBPrimaryDataFetcher"
+		scope="prototype" />
+
+	<bean id="postgresDBSecondaryDataFetcher"
+		class="com.enhancesys.jobengine.services.pg.processor.PostgresDBSecondaryDataFetcher"
+		scope="prototype" />
+
+	<bean id="postgresDBPrimaryDataSortProcessor"
+		class="com.enhancesys.jobengine.services.pg.processor.PostgresDBPrimaryDataSortProcessor"
+		scope="prototype" />
+
+	<bean id="postgresDBSecondaryDataStrFetcher"
+		class="com.enhancesys.jobengine.services.pg.processor.PostgresDBSecondaryDataStrFetcher"
+		scope="prototype" />
+
+	<bean id="postgresDBSecondaryDataSortProcessor"
+		class="com.enhancesys.jobengine.services.pg.processor.PostgresDBSecondaryDataSortProcessor"
+		scope="prototype" />
+
+	<bean id="postgresDBPrimaryCartesianDataProcessor"
+		class="com.enhancesys.jobengine.services.pg.processor.PostgresDBPrimaryCartesianDataProcessor"
+		scope="prototype" />
+
+	<bean id="postgresDBPrimaryDataListFetcher"
+		class="com.enhancesys.jobengine.services.pg.processor.PostgresDBPrimaryDataListFetcher"
+		scope="prototype" />
+
+	<bean id="postgresDBSecondaryDataListFetcher"
+		class="com.enhancesys.jobengine.services.pg.processor.PostgresDBSecondaryDataListFetcher"
+		scope="prototype" />
+
+	<bean id="postgresDBPrimaryCartesianDataListProcessor"
+		class="com.enhancesys.jobengine.services.pg.processor.PostgresDBPrimaryCartesianDataListProcessor"
+		scope="prototype" />
+
+	<bean id="jsonDataWriter"
+		class="com.enhancesys.jobengine.services.processor.JSONDataWriter"
+		scope="prototype" />
+
+	<bean id="util"
+		class="com.enhancesys.jobengine.services.util.Util" />
+
+	<bean id="jdbcConnectionUtil"
+		class="com.enhancesys.jobengine.services.pg.util.JdbcConnectionUtil">
+		<constructor-arg name="driverClassName"
+			value="${POSTGRES_JDBC_DRIVER}" />
+		<constructor-arg name="url"
+			value="${POSTGRES_JDBC_URL}" />
+		<constructor-arg name="username"
+			value="${POSTGRES_JDBC_USER}" />
+		<constructor-arg name="password"
+			value="${POSTGRES_JDBC_PASS}" />
+		<constructor-arg name="socketTimeout"
+			value="${POSTGRES_JDBC_SOCKET_TIMEOUT}" />
+	</bean>
+
+	<!-- Mongo Template bean declaration.. Start -->
+	<bean id="snoc-r1"
+		class="com.enhancesys.jobengine.services.mongo.util.MongoTemplate">
+		<constructor-arg name="userName"
+			value="${MONGO_DB_USER}" />
+		<constructor-arg name="password"
+			value="${MONGO_DB_PASSWORD}" />
+		<constructor-arg name="schemaName"
+			value="${MONGO_DB_DATABASE}" />
+		<constructor-arg name="maxConnection"
+			value="${MONGO_CONNECTIONS_MAX}" />
+		<constructor-arg name="connectionTimeOut"
+			value="${MONGO_CONNECTION_TIMEOUT_MAX}" />
+		<constructor-arg name="replicas"
+			value="${MONGO_DB_IP1}:${MONGO_DB_PORT1}, ${MONGO_DB_IP2}:${MONGO_DB_PORT2}, ${MONGO_DB_IP3}:${MONGO_DB_PORT3}" />
+	</bean>
+
+	<bean id="snoc-r4"
+		class="com.enhancesys.jobengine.services.mongo.util.MongoTemplate">
+		<constructor-arg name="userName"
+			value="${MONGO_DB_R4_USER}" />
+		<constructor-arg name="password"
+			value="${MONGO_DB_R4_PASSWORD}" />
+		<constructor-arg name="schemaName"
+			value="${MONGO_DB_R4_DATABASE}" />
+		<constructor-arg name="maxConnection"
+			value="${MONGO_CONNECTIONS_MAX}" />
+		<constructor-arg name="connectionTimeOut"
+			value="${MONGO_CONNECTION_TIMEOUT_MAX}" />
+		<constructor-arg name="replicas"
+			value="${MONGO_DB_IP4}:${MONGO_DB_PORT4}" />
+	</bean>
+
+	<bean id="snoc-r5"
+		class="com.enhancesys.jobengine.services.mongo.util.MongoTemplate">
+		<constructor-arg name="userName"
+			value="${MONGO_DB_STANDALONE_USER}" />
+		<constructor-arg name="password"
+			value="${MONGO_DB_STANDALONE_PASSWORD}" />
+		<constructor-arg name="schemaName"
+			value="${MONGO_DB_STANDALONE_DATABASE}" />
+		<constructor-arg name="maxConnection"
+			value="${MONGO_CONNECTIONS_MAX}" />
+		<constructor-arg name="connectionTimeOut"
+			value="${MONGO_CONNECTION_TIMEOUT_MAX}" />
+		<constructor-arg name="replicas"
+			value="${MONGO_DB_IP5}:${MONGO_DB_PORT5}" />
+	</bean>
+	<!-- Mongo Template bean declaration.. End -->
+
+	<!-- Postgres Template bean declaration.. Start -->
+	<bean id="dataSource"
+		class="com.enhancesys.jobengine.services.pg.util.JDBCDataSource">
+		<constructor-arg name="driverClassName"
+			value="${POSTGRES_JDBC_DRIVER}" />
+		<constructor-arg name="url"
+			value="${POSTGRES_JDBC_URL}" />
+		<constructor-arg name="username"
+			value="${POSTGRES_JDBC_USER}" />
+		<constructor-arg name="password"
+			value="${POSTGRES_JDBC_PASS}" />
+		<constructor-arg name="socketTimeout"
+			value="${POSTGRES_JDBC_SOCKET_TIMEOUT}" />
+	</bean>
+
+	<bean id="jdbcTemplate"
+		class="org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate">
+		<constructor-arg name="dataSource" ref="dataSource" />
+	</bean>
+	<!-- Postgres Template bean decleartion.. End -->
+
+	<bean id="bridgePropertyPlaceholder"
+		class="org.apache.camel.spring.spi.BridgePropertyPlaceholderConfigurer">
+		<property name="locations">
+			<list>
+				<value>classpath:/jobengine/jobConfiguration.properties</value>
+			</list>
+		</property>
+	</bean>
+
+</beans>
