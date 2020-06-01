@@ -29,8 +29,31 @@
 
 	<context:component-scan
 		base-package="com.enhancesys.jobengine.*" />
+	<mvc:resources mapping="/resources/**" location="/resources/" />
+	<mvc:annotation-driven/>
 
-
+	<bean id="freemarkerConfig" class="org.springframework.web.servlet.view.freemarker.FreeMarkerConfigurer">
+	  <property name="templateLoaderPath" value="/WEB-INF/ftl/"/>
+	  <property name="freemarkerSettings">
+			<props>
+				<prop key="output_encoding">UTF-8</prop>
+				<prop key="default_encoding">UTF-8</prop>
+				<prop key="url_escaping_charset">UTF-8</prop>
+			</props>
+		</property>
+	</bean>		
+	
+	<!-- 
+	  View resolvers can also be configured with ResourceBundles or XML files. If you need
+	  different view resolving based on Locale, you have to use the resource bundle resolver.
+	-->
+	<bean id="viewResolver" class="org.springframework.web.servlet.view.freemarker.FreeMarkerViewResolver">
+	  <property name="cache" value="true"/>
+	  <property name="prefix" value=""/>
+	  <property name="suffix" value=".ftl"/>
+	  <property name="contentType" value="text/html;charset=UTF-8" />
+	</bean>
+	
 	<bean id="testUtilities"
 		class="com.enhancesys.jobengine.consumer.util.Utilities" />
 
