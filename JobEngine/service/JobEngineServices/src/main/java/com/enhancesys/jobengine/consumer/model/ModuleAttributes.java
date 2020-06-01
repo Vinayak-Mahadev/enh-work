@@ -9,21 +9,18 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
-import com.enhancesys.common.Constants;
-import com.fasterxml.jackson.annotation.JsonProperty;
-
-@Entity(name = "com.enhancesys.jobengine.consumer.model.Item")
-@Table(name="MS_ITEMS",schema = "BIZ")
+@Entity(name = "com.enhancesys.jobengine.consumer.model.ModuleAttributes")
+@Table(name="MS_MODULE_ATTR",schema = "BIZ")
 //@JsonProperty(Constants.ITEM_ITEM_for_JSON)
-public class Item {
+public class ModuleAttributes {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.SEQUENCE)
-	@Column(name = "ITEM_ID_N")
-	protected Long _itemId;
+	@Column(name = "ATTRIBUTE_ID_N")
+	protected Long _attributeId;
 
-	@Column(name = "SHOP_ID_N")
-	protected Long _shopId;
+	@Column(name = "MODULE_ID_N")
+	protected Long _moduleId;
 
 	@Column(name = "NAME_V")
 	protected String _name;
@@ -35,37 +32,32 @@ public class Item {
 	protected Date _updatedDate;
 
 	
-	@JsonProperty(Constants.ITEM_ITEM_ID_N_for_JSON)
-	public Long get_itemId() {
-		return _itemId;
+	public Long get_attributeId() {
+		return _attributeId;
 	}
 
-	@JsonProperty(Constants.ITEM_SHOP_ID_N_for_JSON)
-	public Long get_shopId() {
-		return _shopId;
+	public Long get_moduleId() {
+		return _moduleId;
 	}
 
-	@JsonProperty(Constants.ITEM_NAME_V_for_JSON)
 	public String get_name() {
 		return _name;
 	}
 
-	@JsonProperty(Constants.ITEM_VALUE_V_for_JSON)
 	public String get_desc() {
 		return _desc;
 	}
 
-	@JsonProperty(Constants.ITEM_LAST_UPDATED_TIME_DT_for_JSON)
 	public Date get_updatedDate() {
 		return _updatedDate;
 	}
 
-	public void set_itemId(Long _itemId) {
-		this._itemId = _itemId;
+	public void set_attributeId(Long _attributeId) {
+		this._attributeId = _attributeId;
 	}
 
-	public void set_shopId(Long _shopId) {
-		this._shopId = _shopId;
+	public void set_moduleId(Long _moduleId) {
+		this._moduleId = _moduleId;
 	}
 
 	public void set_name(String _name) {
@@ -80,7 +72,6 @@ public class Item {
 		this._updatedDate = _updatedDate;
 	}
 
-	
 	
 	
 //

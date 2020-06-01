@@ -6,29 +6,22 @@ import javax.persistence.Access;
 import javax.persistence.AccessType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
-import com.enhancesys.common.Constants;
-import com.fasterxml.jackson.annotation.JsonProperty;
-
-@Entity(name = "com.enhancesys.jobengine.consumer.model.Shop")
-@Table(name="MS_SHOPS",schema = "BIZ")
+@Entity(name = "com.enhancesys.jobengine.consumer.model.ModuleSummary")
+@Table(name="TR_MODULE_SUMMAY",schema = "BIZ")
 @Access(AccessType.FIELD)
-public class Shop {
+public class ModuleSummary {
 
 	@Id
-	@Column(name = "SHOP_ID_N")
+	@Column(name = "SUMMAY_ID_N")
 	protected Long _shopId;
 
-	@GeneratedValue(strategy = GenerationType.SEQUENCE)
-	@Column(name = "ORG_ID_N")
+	@Column(name = "MODULE_ID_N")
 	protected Long _orgId;
 
-	@GeneratedValue(strategy = GenerationType.SEQUENCE)
-	@Column(name = "SHOP_TYPE_N")
+	@Column(name = "STATUS_N")
 	protected Long _shopType;
 
 	@Column(name = "NAME_V")
@@ -37,53 +30,43 @@ public class Shop {
 	@Column(name = "VALUE_V")
 	protected String _desc;
 
-	@Column(name = "LAST_UPDATED_TIME_DT")
-	protected Date _updatedDate;
-
 	@Column(name = "CREATED_TIME_DT")
 	protected Date _createdDate;
+
+	@Column(name = "LAST_UPDATED_TIME_DT")
+	protected Date _updatedDate;
 
 	@Column(name = "CLOSED_TIME_DT")
 	protected Date _closedDate;
 
-
-
-	@JsonProperty(Constants.SHOP_SHOP_ID_N_for_JSON)
 	public Long get_shopId() {
 		return _shopId;
 	}
 
-	@JsonProperty(Constants.SHOP_ORG_ID_N_for_JSON)
 	public Long get_orgId() {
 		return _orgId;
 	}
 
-	@JsonProperty(Constants.SHOP_SHOP_TYPE_N_for_JSON)
 	public Long get_shopType() {
 		return _shopType;
 	}
 
-	@JsonProperty(Constants.SHOP_NAME_V_for_JSON)
 	public String get_name() {
 		return _name;
 	}
 
-	@JsonProperty(Constants.SHOP_VALUE_V_for_JSON)
 	public String get_desc() {
 		return _desc;
 	}
 
-	@JsonProperty(Constants.SHOP_LAST_UPDATED_TIME_DT_for_JSON)
-	public Date get_updatedDate() {
-		return _updatedDate;
-	}
-
-	@JsonProperty(Constants.SHOP_CREATED_TIME_DT_for_JSON)
 	public Date get_createdDate() {
 		return _createdDate;
 	}
 
-	@JsonProperty(Constants.SHOP_CLOSED_TIME_DT_for_JSON)
+	public Date get_updatedDate() {
+		return _updatedDate;
+	}
+
 	public Date get_closedDate() {
 		return _closedDate;
 	}
@@ -108,17 +91,18 @@ public class Shop {
 		this._desc = _desc;
 	}
 
-	public void set_updatedDate(Date _updatedDate) {
-		this._updatedDate = _updatedDate;
-	}
-
 	public void set_createdDate(Date _createdDate) {
 		this._createdDate = _createdDate;
+	}
+
+	public void set_updatedDate(Date _updatedDate) {
+		this._updatedDate = _updatedDate;
 	}
 
 	public void set_closedDate(Date _closedDate) {
 		this._closedDate = _closedDate;
 	}
+
 
 
 
