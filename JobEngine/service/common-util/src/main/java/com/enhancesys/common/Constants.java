@@ -50,7 +50,7 @@ public interface Constants
 	public static final String _PREFIX_FOR_JOB_CONSUMER = "jobengine.consumer.service.";
 	public static final String _SET_PACKAGES_TO_SCAN_FOR_JOB_CONSUMER_2 = "com.enhancesys.jobengine.consumer.entities";
 	public static final String _SET_PACKAGES_TO_SCAN_FOR_JOB_CONSUMER_1 = "com.enhancesys.jobengine.consumer.model";
-	public static final String _JOB_CONSUMER_SERVICE_DATASOURCE_CONFIG_LOC = Env.PROJECT_LOC+"common/HibernateConfiguration.properties";
+	public static final String _JOB_CONSUMER_SERVICE_DATASOURCE_CONFIG_LOC = Env.PROJECT_LOC+"common/jobengine/HibernateConfiguration.properties";
 	public static final String _JOB_CONSUMER_SERVICE_RESPONCE_TEMP = "{\"payload\":null,\"status-code\":null,\"status-msg\":null,\"responce-date\":null}";
 	public static final String _JOB_CONSUMER_SERVICE_LOG4J_CONFIGURATION_FILE = Env.PROJECT_LOC+"logs/ztestLog4j.properties";
 	public static final String _JOB_CONSUMER_SERVICE_LOG4J_INTERVAL= "300000";

@@ -32,6 +32,7 @@ public class JobEngine
 	
 	public void init(JSONObject jobParameters)
 	{
+		
 		log.info("Entry init..");
 		
 		JSONObject templateConfigData = null;
@@ -45,6 +46,11 @@ public class JobEngine
 		
 		try
 		{
+			if(jobParameters == null) {
+				System.out.println("control here");
+				return;
+			}
+			
 			pipeLines = new ArrayList<Thread>();
 			jobConfigurationReader.readConfiguration(jobParameters.get("template-id").toString(), jobParameters.get("job-id").toString(), jobParameters.get("job-data"));
 			templateConfigData = jobConfigurationReader.getTemplateConfigData(null);
