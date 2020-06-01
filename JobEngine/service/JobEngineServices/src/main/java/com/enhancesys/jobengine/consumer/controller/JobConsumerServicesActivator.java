@@ -12,9 +12,15 @@ public class JobConsumerServicesActivator implements JobConsumerServices
 	@Autowired
 	JobEngine jobEngine;
 	
+	public  JobConsumerServicesActivator() 
+	{
+		System.out.println("JobConsumer Services Activator");
+	}
+	
 	@Override
 	public JSONObject goHome(String String) {
 		JSONObject response = null;
+		System.out.println("Control in goHome");
 		try 
 		{
 			response = 	new JSONObject();
@@ -25,6 +31,7 @@ public class JobConsumerServicesActivator implements JobConsumerServices
 		catch (Exception e) {
 			e.printStackTrace();
 		}
+		System.out.println("Control out goHome");
 		return response;
 	}
 
