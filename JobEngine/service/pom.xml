@@ -18,9 +18,8 @@
 
 	<modules>
 		<module>common-util</module>
-		<!--<module>jobengine-consumer</module>-->
-		<module>JobEngineServices</module>
-		
+		<module>job-engine</module>
+		<module>job-consumer</module>
 	</modules>
 	
 	<build>
