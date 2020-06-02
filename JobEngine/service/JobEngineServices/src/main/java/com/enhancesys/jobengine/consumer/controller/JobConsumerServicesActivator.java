@@ -9,8 +9,8 @@ import com.enhancesys.jobengine.services.job.JobEngine;
 public class JobConsumerServicesActivator implements JobConsumerServices
 {
 
-	@Autowired
-	JobEngine jobEngine;
+	/*@Autowired
+	JobEngine jobEngine;*/
 	
 	public  JobConsumerServicesActivator() 
 	{
@@ -18,21 +18,21 @@ public class JobConsumerServicesActivator implements JobConsumerServices
 	}
 	
 	@Override
-	public JSONObject goHome(String String) {
+	public String goHome(String String) {
 		JSONObject response = null;
 		System.out.println("Control in goHome");
 		try 
 		{
 			response = 	new JSONObject();
 			response.put("msg", "Welcome to JobConsumer Service");
-			jobEngine.init(null);
+			/*jobEngine.init(null);*/
 			
 		}
 		catch (Exception e) {
 			e.printStackTrace();
 		}
 		System.out.println("Control out goHome");
-		return response;
+		return response.toString();
 	}
 
 }

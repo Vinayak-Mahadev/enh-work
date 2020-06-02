@@ -5,17 +5,17 @@ import javax.ws.rs.Path;
 import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 
-import org.json.JSONObject;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.ResponseBody;
 
-@Path("/consumer")
-@Produces ({MediaType.APPLICATION_JSON})
+@Path("/consumer/")
+@Produces({MediaType.APPLICATION_JSON})
 public interface JobConsumerServices 
 {	
 	@GET
-	@Path("/home")
-	public JSONObject goHome(@RequestBody String String);
-	
+	@Path("home")
+	@ResponseBody
+	public String goHome(@RequestBody String reqString);
 	
 }
 
