@@ -11,8 +11,8 @@ public class RdbmsApp
 		//new RDBMSOperation().getDatabaseMetaData(RDBMS.getDBConnection(PropType.RDBMS_144));
 		
 		RDBMSOperation opr = new RDBMSOperation();
-		Connection conn = RDBMS.getDBConnection(PropType.RDBMS_144);
-
+		Connection conn = RDBMS.getDBConnection(PropType.RDBMS_LOCALHOST);
+/*
 		opr.prepareFileFor1165(conn, "20200529", "D:/TEMP/site_mapping_bi_20200529090000.csv", 100000, 1);
 		opr.prepareFileFor1166(conn, "20200529", "D:/TEMP/primary_mobo_bi_20200529090000.csv", 100000, 1);
 		opr.prepareFileFor1167(conn, "20200529", "D:/TEMP/secondary_mobo_bi_20200529090000.csv", 100000, 1);
@@ -30,7 +30,7 @@ public class RdbmsApp
 		opr.prepareFileFor1179(conn, "202005", "D:/TEMP/outlet_program_achiever_bi_20200529090000.csv", 100000, 1);
 		opr.prepareFileFor1180(conn, "202005", "D:/TEMP/ontime_alloc_payment_bi_20200529090000.csv", 100000, 1);
 		opr.prepareFileFor1181(conn, "20200529", "D:/TEMP/uro_20k_bi_20200529090000.csv", 100000, 1);
-
+*/
 		//Territory Validation
 		/*String line = "20200520|TestID2|19.10|31.23|micro110|1007034|60|13|REG5|F1|G1|15";
 		List<String>dataList = Arrays.asList(line.split("\\|", -1));		
@@ -45,5 +45,10 @@ public class RdbmsApp
 		JSONObject responceObj = new JSONObject();		
 		responceObj = opr.validateSaleTerritoryObj(conn, jsonObject);
 		System.out.println(responceObj);*/
+		
+		String sql = "SELECT inter.interface_id_n,inter.name_v, attr.value_v FROM interface.ms_interface_attr attr INNER JOIN interface.ms_interface inter ON inter.interface_id_n=attr.interface_id_n where attr.name_v ='Field Lookup Conf' and inter.interface_id_n between 1165 and 1181 order by inter.interface_id_n ;";
+		
+		opr.printFieldLookupConf(conn, sql);
+		
 	}
 }

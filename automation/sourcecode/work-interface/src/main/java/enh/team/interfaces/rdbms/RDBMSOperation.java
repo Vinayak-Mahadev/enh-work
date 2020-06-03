@@ -48,7 +48,7 @@ public class RDBMSOperation {
 				fos.write((dateInFile + "|Test Site-"+ i +"|19.10|31.23|micro107|100709|59|13|REG5|NON_JAVA|Test Site-"+ i +"|" + population + "\n").getBytes());
 				if(population++ % 100 == 0)
 					population = 5;
-				
+
 				if(i % calcRowLimit == 0 && i != limit)
 				{
 					System.out.println("Total Rows : " + (i/fileSequence));
@@ -57,10 +57,10 @@ public class RDBMSOperation {
 					fileSequence++;
 					fos.write("DATE|SITE_ID|LONGITUDE|LATITUDE|MICRO_CLUSTER|SALES_CLUSTER|SALES_AREA|AREA|REGION|JAVA_NONJAVA|SITE_NAME|SITE_POPULATION\n".getBytes());					
 				}
-				
+
 				lastFileRowCount = i;
 			}
-			
+
 			System.out.println("Total Rows : " + (lastFileRowCount/fileSequence));
 			fos.close();
 			System.out.println("File generated");
@@ -71,10 +71,10 @@ public class RDBMSOperation {
 		}
 		finally
 		{
-			
+
 		}
 	}
-	
+
 	public void prepareFileFor1166(Connection conn, String dateInFile, String filePath, int limit, int fileCount)
 	{
 		ResultSet mpc = null;
@@ -95,7 +95,7 @@ public class RDBMSOperation {
 				{
 					fos.write((mpc.getString(1) + "|" + dateInFile + "|" + i + ".50\n").getBytes());
 					i++;
-					
+
 					if(i % calcRowLimit == 0 && i != limit)
 					{
 						System.out.println("Total Rows : " + (i/fileSequence));
@@ -104,7 +104,7 @@ public class RDBMSOperation {
 						fos.write("MPC_CODE|MOBO_DATE|AMOUNT\n".getBytes());
 						fileSequence++;
 					}												
-					
+
 					if( limit==i)
 						break out;
 				}
@@ -138,7 +138,7 @@ public class RDBMSOperation {
 			e.printStackTrace();
 		}
 	}
-	
+
 	public void prepareFileFor1167(Connection conn, String dateInFile, String filePath, int limit, int fileCount)
 	{
 		ResultSet org = null;
@@ -168,7 +168,7 @@ public class RDBMSOperation {
 				{
 					fos.write((mpcRef+"|"+dateInFile+"|"+org.getString(1)+"|1"+format.format(i)+"|1"+ (format.format(i)+10) +".50\n").getBytes());
 					i++;
-										
+
 					if(i % calcRowLimit == 0 && i != limit)
 					{
 						System.out.println("Total Rows : " + (i/fileSequence));
@@ -177,7 +177,7 @@ public class RDBMSOperation {
 						fos.write("MPC_CODE|DATE|ORGANIZATION_ID|DEALER_MSISDN|AMOUNT\n".getBytes());
 						fileSequence++;
 					}
-					
+
 					if(limit != 0 && limit==i)
 						break out;
 				}
@@ -213,7 +213,7 @@ public class RDBMSOperation {
 			int i = 0;
 			int fileSequence = 1;
 			int calcRowLimit = limit/fileCount; 
-			
+
 			ArrayList<String> microList = new ArrayList<String>();
 			while (micro.next()) {
 				microList.add(micro.getString(1));
@@ -226,7 +226,7 @@ public class RDBMSOperation {
 				{
 					fos.write((dateInFile+ "|"+microId+"|Test Site-"+i+ "|"+outlet.getString(1)+"|"+i+"|1"+format.format(i+10)+".05\n").getBytes());
 					i++;
-										
+
 					if(i % calcRowLimit == 0 && i != limit)
 					{
 						System.out.println("Total Rows : " + (i/fileSequence));
@@ -235,9 +235,9 @@ public class RDBMSOperation {
 						fos.write("DATE|MICRO|SITE_ID|ID_OUTLET|QTY|AMOUNT\n".getBytes());
 						fileSequence++;
 					}
-					
-						if(limit != 0 && limit==i)
-							break out;
+
+					if(limit != 0 && limit==i)
+						break out;
 				}
 				fos.flush();
 			}
@@ -279,7 +279,7 @@ public class RDBMSOperation {
 				for (String microId : microList) {
 					fos.write((dateInFile+"|"+microId+"|Test Site-"+i+ "|" +outlet.getString(1)+"|injected|c. >=7k - <10k|"+ (i+10) +"\n").getBytes());
 					i++;
-										
+
 					if(i % calcRowLimit == 0 && i != limit)
 					{
 						System.out.println("Total Rows : " + (i/fileSequence));
@@ -288,7 +288,7 @@ public class RDBMSOperation {
 						fos.write("DATE|MICRO|SITE_ID|ID_OUTLET|STATUS_INJECTION|FLAG_ACM|COUNT_MSISDN\n".getBytes());
 						fileSequence++;
 					}
-					
+
 					if(limit != 0 )
 						if( limit==i)
 							break out;
@@ -305,7 +305,7 @@ public class RDBMSOperation {
 			e.printStackTrace();
 		}
 	}
-	
+
 	public void prepareFileFor1170(Connection conn, String dateInFile, String filePath, int limit, int fileCount)
 	{
 		ResultSet micro = null;
@@ -335,7 +335,7 @@ public class RDBMSOperation {
 				{
 					fos.write((dateInFile+"|"+micro.getString(1)+"|Test Site-"+i+"|"+ outlet + "|" + i + ".50\n").getBytes());
 					i++;
-										
+
 					if(i % calcRowLimit == 0 && i != limit)
 					{
 						System.out.println("Total Rows : " + (i/fileSequence));
@@ -344,7 +344,7 @@ public class RDBMSOperation {
 						fos.write("DATE|MICRO|SITE_ID|OUTLET|AMOUNT\n".getBytes());
 						fileSequence++;
 					}
-					
+
 					if(limit != 0 )
 						if( limit==i)
 							break out;
@@ -362,7 +362,7 @@ public class RDBMSOperation {
 			e.printStackTrace();
 		}
 	}	
-	
+
 	public void prepareFileFor1171(Connection conn, String dateInFile, String filePath, int limit, int fileCount)
 	{
 		ResultSet org = null;
@@ -383,7 +383,7 @@ public class RDBMSOperation {
 				{
 					fos.write((dateInFile + "|" + org.getString(1) + "|" + i + ".50\n").getBytes());
 					i++;
-									
+
 					if(i % calcRowLimit == 0 && i != limit)
 					{
 						System.out.println("Total Rows : " + (i/fileSequence));
@@ -392,7 +392,7 @@ public class RDBMSOperation {
 						fos.write("MOBO_DATE|ORG_CODE|AMOUNT\n".getBytes());
 						fileSequence++;
 					}
-					
+
 					if(limit != 0 && limit==i)
 						break out;
 				}
@@ -426,7 +426,7 @@ public class RDBMSOperation {
 			e.printStackTrace();
 		}
 	}
-	
+
 	public void prepareFileFor1172(Connection conn, String dateInFile, String filePath, int limit, int fileCount)
 	{		
 		ResultSet micro = null;
@@ -440,7 +440,7 @@ public class RDBMSOperation {
 			int i = 0;
 			int fileSequence = 1;
 			int calcRowLimit = limit/fileCount;
-			
+
 			out : while(i <= limit)
 			{
 				micro = conn.createStatement().executeQuery("select ext_ref_code_v from kpi.ms_lookup_master where lookup_type_n = (select lookup_type_n from kpi.ms_lookup_type_master where ext_lookup_type_n = 89) order by 1;");
@@ -453,7 +453,7 @@ public class RDBMSOperation {
 						revenueType = "sms";
 					fos.write((dateInFile+"|"+micro.getString(1)+"|Test Site-"+i+"|"+revenueType+"|" + i + ".30\n").getBytes());
 					i++;
-									
+
 					if(i % calcRowLimit == 0 && i != limit)
 					{
 						System.out.println("Total Rows : " + (i/fileSequence));
@@ -462,7 +462,7 @@ public class RDBMSOperation {
 						fos.write("DATE|MICRO|SITE_ID|REVENUE_TYPE|REVENUE_TOTAL\n".getBytes());
 						fileSequence++;
 					}
-					
+
 					if(limit != 0 )
 						if( limit==i)
 							break out;
@@ -487,7 +487,7 @@ public class RDBMSOperation {
 				else
 					dateInFile = dateInFile.substring(0, dateInFile.length() - 2) + (date - 1);
 			}
-			
+
 			System.out.println("Total Rows : " + (i/fileSequence) + "   1172");
 			fos.close();
 			System.out.println("File generated");
@@ -497,7 +497,7 @@ public class RDBMSOperation {
 			e.printStackTrace();
 		}
 	}
-	
+
 	public void prepareFileFor1173_1174(Connection conn, String dateInFile, String filePath, int limit, int fileCount)
 	{		
 		ResultSet micro = null;
@@ -511,7 +511,7 @@ public class RDBMSOperation {
 			int i = 0;
 			int fileSequence = 1;
 			int calcRowLimit = limit/fileCount; 
-			
+
 			out : while(i <= limit)
 			{
 				micro = conn.createStatement().executeQuery("select ext_ref_code_v from kpi.ms_lookup_master where lookup_type_n = (select lookup_type_n from kpi.ms_lookup_type_master where ext_lookup_type_n = 89) order by 1;");
@@ -519,7 +519,7 @@ public class RDBMSOperation {
 				{				
 					fos.write((dateInFile+"|"+micro.getString(1)+"|Test Site-"+i+"|" + i + ".40\n").getBytes());
 					i++;
-									
+
 					if(i % calcRowLimit == 0 && i != limit)
 					{
 						System.out.println("Total Rows : " + (i/fileSequence));
@@ -528,7 +528,7 @@ public class RDBMSOperation {
 						fos.write("DATE|MICRO|SITE_ID|REVENUE\n".getBytes());
 						fileSequence++;
 					}
-					
+
 					if(limit != 0 )
 						if( limit==i)
 							break out;
@@ -563,7 +563,7 @@ public class RDBMSOperation {
 			e.printStackTrace();
 		}
 	}
-	
+
 	public void prepareFileFor1175(Connection conn, String dateInFile, String filePath, int limit, int fileCount)
 	{		
 		ResultSet micro = null;
@@ -577,7 +577,7 @@ public class RDBMSOperation {
 			int i = 0;
 			int fileSequence = 1;
 			int calcRowLimit = limit/fileCount; 
-			
+
 			out : while(i <= limit)
 			{
 				micro = conn.createStatement().executeQuery("select ext_ref_code_v from kpi.ms_lookup_master where lookup_type_n = (select lookup_type_n from kpi.ms_lookup_type_master where ext_lookup_type_n = 89) order by 1;");
@@ -590,7 +590,7 @@ public class RDBMSOperation {
 						category = "Non Java";
 					fos.write((dateInFile+"|"+micro.getString(1)+"|Test Site-"+i+"|"+category+"|" + i + ".30" + "|" + i + ".70\n").getBytes());
 					i++;
-									
+
 					if(i % calcRowLimit == 0 && i != limit)
 					{
 						System.out.println("Total Rows : " + (i/fileSequence));
@@ -599,7 +599,7 @@ public class RDBMSOperation {
 						fos.write("DATE|MICRO|SITE_ID|CATEGORY|TARGET|REVENUE\n".getBytes());
 						fileSequence++;
 					}
-					
+
 					if(limit != 0 )
 						if( limit==i)
 							break out;
@@ -633,7 +633,7 @@ public class RDBMSOperation {
 			e.printStackTrace();
 		}
 	}
-	
+
 	public void prepareFileFor1176(Connection conn, String dateInFile, String filePath, int limit, int fileCount)
 	{		
 		ResultSet micro = null;
@@ -647,7 +647,7 @@ public class RDBMSOperation {
 			int i = 0;		
 			int fileSequence = 1;
 			int calcRowLimit = limit/fileCount; 
-			
+
 			out : while(i <= limit)
 			{
 				micro = conn.createStatement().executeQuery("select ext_ref_code_v from kpi.ms_lookup_master where lookup_type_n = (select lookup_type_n from kpi.ms_lookup_type_master where ext_lookup_type_n = 89) order by 1;");
@@ -655,7 +655,7 @@ public class RDBMSOperation {
 				{				
 					fos.write((dateInFile+"|"+micro.getString(1)+"|Test Site-"+i+"|" + i + "\n").getBytes());
 					i++;
-									
+
 					if(i % calcRowLimit == 0 && i != limit)
 					{
 						System.out.println("Total Rows : " + (i/fileSequence));
@@ -664,7 +664,7 @@ public class RDBMSOperation {
 						fos.write("DATE|MICRO|SITE|QTY\n".getBytes());
 						fileSequence++;
 					}
-					
+
 					if(limit != 0 )
 						if( limit==i)
 							break out;
@@ -698,7 +698,7 @@ public class RDBMSOperation {
 			e.printStackTrace();
 		}
 	}
-	
+
 	public void prepareFileFor1177(Connection conn, String dateInFile, String filePath, int limit, int fileCount)
 	{		
 		ResultSet cluster = null;
@@ -712,7 +712,7 @@ public class RDBMSOperation {
 			int i = 0;	
 			int fileSequence = 1;
 			int calcRowLimit = limit/fileCount; 
-			
+
 			String category = "";
 			String clusterType = "";
 			out : while(i <= limit)
@@ -728,10 +728,10 @@ public class RDBMSOperation {
 						clusterType = "Inner";
 					else
 						clusterType = "Outer";
-						
+
 					fos.write((dateInFile+"|"+cluster.getString(1) + "|"+category+"|" + clusterType + "|" + i + ".0" + "|" + i + ".25\n").getBytes());
 					i++;
-									
+
 					if(i % calcRowLimit == 0 && i != limit)
 					{
 						System.out.println("Total Rows : " + (i/fileSequence));
@@ -740,13 +740,13 @@ public class RDBMSOperation {
 						fos.write("DATE|CLUSTER_ID|CATEGORY|CLUSTER_TYPE|TOTAL_RELOAD|CROSS_RELOAD\n".getBytes());
 						fileSequence++;
 					}
-					
+
 					if(limit != 0 )
 						if( limit==i)
 							break out;
 				}
 				Integer date = Integer.valueOf(dateInFile.substring(dateInFile.length() - 2, dateInFile.length()));
-	
+
 				if(date == 1)
 				{
 					int month = Integer.valueOf(dateInFile.substring(4, dateInFile.length() - 2));
@@ -775,7 +775,7 @@ public class RDBMSOperation {
 			e.printStackTrace();
 		}
 	}
-	
+
 	public void prepareFileFor1178(Connection conn, String dateInFile, String filePath, int limit, int fileCount)
 	{		
 		ResultSet cluster = null;
@@ -789,7 +789,7 @@ public class RDBMSOperation {
 			int i = 0;
 			int fileSequence = 1;
 			int calcRowLimit = limit/fileCount; 
-			
+
 			out : while(i <= limit)
 			{
 				cluster = conn.createStatement().executeQuery("select ext_ref_code_v from kpi.ms_lookup_master where lookup_type_n = (select lookup_type_n from kpi.ms_lookup_type_master where ext_lookup_type_n = 88) order by 1;");
@@ -797,7 +797,7 @@ public class RDBMSOperation {
 				{				
 					fos.write((dateInFile+"|"+cluster.getString(1) + "|" + i + ".45|" + i + ".0\n").getBytes());
 					i++;
-					
+
 					if(i % calcRowLimit == 0 && i != limit)
 					{
 						System.out.println("Total Rows : " + (i/fileSequence));
@@ -806,13 +806,13 @@ public class RDBMSOperation {
 						fos.write("DATE|CLUSTER_ID|TOTAL_DATA|CROSS_DATA\n".getBytes());
 						fileSequence++;
 					}
-					
+
 					if(limit != 0 )
 						if( limit==i)
 							break out;
 				}
 				Integer date = Integer.valueOf(dateInFile.substring(dateInFile.length() - 2, dateInFile.length()));
-				
+
 				if(date == 1)
 				{
 					int month = Integer.valueOf(dateInFile.substring(4, dateInFile.length() - 2));
@@ -840,7 +840,7 @@ public class RDBMSOperation {
 			e.printStackTrace();
 		}
 	}
-	
+
 	public void prepareFileFor1179(Connection conn, String monthInFile, String filePath, int limit, int fileCount)
 	{
 		ResultSet cluster = null;
@@ -863,7 +863,7 @@ public class RDBMSOperation {
 			{
 				outletList.add(out.getString(1));
 			}
-			
+
 			out : while(i <= limit)
 			{
 				cluster = conn.createStatement().executeQuery("select ext_ref_code_v from kpi.ms_lookup_master where lookup_type_n = (select lookup_type_n from kpi.ms_lookup_type_master where ext_lookup_type_n = 88) order by 1;");				
@@ -873,7 +873,7 @@ public class RDBMSOperation {
 					{
 						fos.write((monthInFile+"|"+cluster.getString(1)+"|"+outlet+"|1"+format.format(i)+".75|1"+ (format.format(i)+10) +".0\n").getBytes());
 						i++;
-											
+
 						if(i % calcRowLimit == 0 && i != limit)
 						{
 							System.out.println("Total Rows : " + (i/fileSequence));
@@ -882,7 +882,7 @@ public class RDBMSOperation {
 							fos.write("MONTH_ID|CLUSTER|ID_OUTLET|TARGET|ACTUAL\n".getBytes());
 							fileSequence++;
 						}
-						
+
 						if(limit != 0 )
 							if( limit==i)
 								break out;
@@ -908,7 +908,7 @@ public class RDBMSOperation {
 			e.printStackTrace();
 		}
 	}	
-	
+
 	public void prepareFileFor1180(Connection conn, String monthInFile, String filePath, int limit, int fileCount)
 	{
 		ResultSet cluster = null;
@@ -931,7 +931,7 @@ public class RDBMSOperation {
 			{
 				mpcList.add(mpc.getString(1));
 			}
-			
+
 			out : while(i <= limit)
 			{
 				cluster = conn.createStatement().executeQuery("select ext_ref_code_v from kpi.ms_lookup_master where lookup_type_n = (select lookup_type_n from kpi.ms_lookup_type_master where ext_lookup_type_n = 88) order by 1;");				
@@ -941,7 +941,7 @@ public class RDBMSOperation {
 					{
 						fos.write((monthInFile+"|"+cluster.getString(1)+"|"+mpcCode+"|1"+format.format(i) + "\n").getBytes());
 						i++;
-											
+
 						if(i % calcRowLimit == 0 && i != limit)
 						{
 							System.out.println("Total Rows : " + (i/fileSequence));
@@ -950,7 +950,7 @@ public class RDBMSOperation {
 							fos.write("MONTH_ID|CLUSTER|MPC_CODE|PAYMENT_ALLOCATION\n".getBytes());
 							fileSequence++;
 						}
-						
+
 						if(limit != 0 )
 							if( limit==i)
 								break out;
@@ -976,7 +976,7 @@ public class RDBMSOperation {
 			e.printStackTrace();
 		}
 	}	
-	
+
 	public void prepareFileFor1181(Connection conn, String monthInFile, String filePath, int limit, int fileCount)
 	{
 		ResultSet micro = null;
@@ -994,7 +994,7 @@ public class RDBMSOperation {
 			int i = 0;			
 			int fileSequence = 1;
 			int calcRowLimit = limit/fileCount; 
-			
+
 			ArrayList<String> outletList = new ArrayList<String>();
 			while (out.next()) {
 				outletList.add(out.getString(1));
@@ -1006,7 +1006,7 @@ public class RDBMSOperation {
 				{
 					fos.write((monthInFile+"|"+micro.getString(1)+"|Test Site-"+i+"|"+outlet+"|1"+format.format(i) +"|1"+format.format(i) + ".0\n").getBytes());
 					i++;
-										
+
 					if(i % calcRowLimit == 0 && i != limit)
 					{
 						System.out.println("Total Rows : " + (i/fileSequence));
@@ -1015,7 +1015,7 @@ public class RDBMSOperation {
 						fos.write("DATE|MICRO|SITE_ID|OUTLET|HIT|AMOUNT\n".getBytes());
 						fileSequence++;
 					}
-					
+
 					if(limit != 0 )
 						if( limit==i)
 							break out;
@@ -1033,7 +1033,7 @@ public class RDBMSOperation {
 			e.printStackTrace();
 		}
 	}	
-	
+
 	public JSONObject validateSaleTerritoryObj(Connection connection, JSONObject inputObject) 
 	{
 		PreparedStatement preparedStatement = null;
@@ -1050,7 +1050,7 @@ public class RDBMSOperation {
 			responceObj = new JSONObject();
 			responceObj.put("status", "SUCCESS");
 			territoryObject = new JSONObject();
-			
+
 			preparedStatement = connection.prepareStatement("select lookup_master.lookup_id_n, lookup_master.lookup_type_n, lookup_master.ext_ref_code_v, lookup_type_master.ext_lookup_type_n from kpi.ms_lookup_master as lookup_master inner join kpi.ms_lookup_type_master as lookup_type_master on (lookup_master.ext_ref_code_v in (?, ?, ?, ?, ?) and lookup_type_master.ext_lookup_type_n in (84,85,86,87,88,89) and lookup_type_master.lookup_type_n = lookup_master.lookup_type_n) group by lookup_master.lookup_id_n, lookup_master.lookup_type_n, lookup_master.ext_ref_code_v, lookup_type_master.ext_lookup_type_n order by lookup_type_master.ext_lookup_type_n desc");
 			preparedStatement.setString(1, inputObject.getString("MICRO_CLUSTER"));
 			preparedStatement.setString(2, inputObject.getString("SALES_CLUSTER"));
@@ -1088,7 +1088,7 @@ public class RDBMSOperation {
 				}
 				count++;
 			}			
-			
+
 			if(count != 5)
 			{
 				String errorMessage = "INVALID TERRITORY ID : ";
@@ -1123,7 +1123,7 @@ public class RDBMSOperation {
 
 				if(!lastCond)
 					errorMessage = errorMessage.substring(0, errorMessage.length() - 2);
-				
+
 				responceObj.put("error_code", "500002");
 				responceObj.put("status", "FAILURE");
 				responceObj.put("error_msg", errorMessage);
@@ -1151,7 +1151,48 @@ public class RDBMSOperation {
 		}
 		return responceObj;
 	}
-	
-	
-	
+
+
+	public void printFieldLookupConf(Connection conn, String sql)
+	{
+		ResultSet resultSet = null;
+		JSONObject jsonObject = null;
+		JSONObject fields = null;
+		JSONObject duplicate_validation_conf = null;
+
+		try 
+		{
+			resultSet = conn.createStatement().executeQuery(sql);
+
+			while(resultSet.next()) 
+			{
+				System.out.println("INTERFACE ID	" + resultSet.getString(1));
+				System.out.println("INTERFACE NAME	" + resultSet.getString(2));
+				System.out.println();
+				jsonObject = new JSONObject(resultSet.getString(3));
+				//System.out.println(jsonObject);
+				fields = jsonObject.getJSONObject("fields");
+				System.out.print( "ACTOR"+ "	" + fields.get("actor_field")+ "	" );
+				System.out.println( "DAILY TABLE"+ "	kpi." + jsonObject.get("daily_table").toString().toLowerCase());
+				System.out.print( "METRIC"+ "	" + fields.get("metric_field")+ "	" );
+				System.out.println( "MONTHLY TABLE"+ "	kpi." + jsonObject.get("monthly_table").toString().toLowerCase());
+				System.out.print( "SOURCE"+ "	" + fields.get("source_field")+ "	" );
+
+				System.out.println("FAILURE TABLE" + "	kpi.TR_TEMP_HADOOP_FAILURE_AGGR".toLowerCase());
+
+				if(jsonObject.get("duplicate_validation_conf") != null) 
+				{
+					duplicate_validation_conf = jsonObject.getJSONObject("duplicate_validation_conf");
+					System.out.print( "INSTANCE"+ "	" + fields.get("instance_field")+ "	" );
+					System.out.println( "VALIDATION TABLE"+ "	kpi." + duplicate_validation_conf.get("table_name").toString().toLowerCase());
+				}
+				System.out.println("\n\n\n");
+			}
+
+		}
+		catch (Exception e) 
+		{
+			e.printStackTrace();
+		}
+	}	
 }
