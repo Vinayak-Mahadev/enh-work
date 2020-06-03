@@ -1,0 +1,5 @@
+Problem Identified : 
+	1. Special character was considered as a invalid data for fields of string type
+		  Solution applied : 
+		  Removed the reg_pattern expression for fields of string type( As of now only for 1165 interface)
+
