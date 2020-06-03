@@ -1,0 +1,321 @@
+{
+	"Primary": [
+		{
+			"connection-id": "snoc-r4",
+			"schema-name": "snoc_report",
+			"collection-name": "org_addnl_params",
+			"map-key": {
+				"key": "org_id",
+				"type": "Long",
+				"local-key": "org_id"
+			},
+			"projection": {
+				"org_id": 1,
+				"chnl_ctgr_desc": 1,
+				"org_category_desc": 1,
+				"org_classification_desc": 1,
+				"dealer_code": 1,
+				"dompetku_no": 1
+			},
+			"sort-by": 
+			{
+				"org_id": 1
+			},
+			"batch-size": 100
+		},
+		{
+			"connection-id": "snoc-r4",
+			"schema-name": "snoc_report",
+			"collection-name": "org_user_node_acc",
+			"projection": {
+				"regional_desc": 1,
+				"area_desc": 1,
+				"sales_area_desc": 1,
+				"cluster_desc": 1,
+				"micro_cluster_desc": 1,
+				"sale_territory_desc": 1,
+				"org_territory_id_ref_code": 1,
+				"parent_org_id": 1,
+				"org_id": 1,
+				"org_ref_code": 1,
+				"org_desc": 1,
+				"org_type_desc": 1,
+				"saldomobo_msisdn_no": 1,
+				"mobile_no": 1,
+				"org_city_desc": 1,
+				"org_district_desc": 1,
+				"org_adrs_1": 1,
+				"org_adrs_2": 1,
+				"org_status_desc": 1,
+				"org_crtd_dt": 1,
+				"org_crtd_by_desc": 1,
+				"appr_at": 1,
+				"appr_by_optr_id": 1,
+				"appr_by_optr_nm": 1
+			},
+			"parent-key" : 
+			{
+				"org_id" : "org_id"
+			},
+			"sort-by": 
+			{
+				"org_id": 1
+			},
+			"batch-size": 100,
+			"merge-type": "include_parent"
+		}
+	],
+	"Lookup": {
+		"org_user_node_acc": {
+			"connection-id": "snoc-r4",
+			"schema-name": "snoc_report",
+			"collection-name": "org_user_node_acc"
+		}
+	},
+	"Configuration": {
+		"channel": {
+			"field": "chnl_ctgr_desc"
+		},
+		"regional": {
+			"field": "regional_desc"
+		},
+		"area": {
+			"field": "area_desc"
+		},
+		"sales_area": {
+			"field": "sales_area_desc"
+		},
+		"cluster": {
+			"field": "cluster_desc"
+		},
+		"micro_cluster": {
+			"field": "micro_cluster_desc"
+		},
+		"sale_territory_desc": {
+			"field": "sale_territory_desc"
+		},
+		"territory_id": {
+			"field": "org_territory_id_ref_code"
+		},
+		"parent_org_id": {
+			"field": "parent_org_id"
+		},
+		"parent_org_desc": {
+			"field": "parent_org_id",
+			"lookup": [
+				{
+					"name": "org_user_node_acc",
+					"mapping-field": "org_id",
+					"lookup-field": "org_desc"
+				}
+			]
+		},
+		"parent_org_ref_code": {
+			"field": "parent_org_id",
+			"lookup": [
+				{
+					"name": "org_user_node_acc",
+					"mapping-field": "org_id",
+					"lookup-field": "org_ref_code"
+				}
+			]
+		},
+		"org_id": {
+			"field": "org_id"
+		},
+		"org_ref_code": {
+			"field": "org_ref_code"
+		},
+		"org_name": {
+			"field": "org_desc"
+		},
+		"org_type_desc": {
+			"field": "org_type_desc"
+		},
+		"org_category_desc": {
+			"field": "org_category_desc"
+		},
+		"org_classification_desc": {
+			"field": "org_classification_desc"
+		},
+		"dealer_code": {
+			"field": "dealer_code"
+		},
+		"dompetku_no": {
+			"field": "dompetku_no"
+		},
+		"saldomobo_msisdn_no": {
+			"field": "saldomobo_msisdn_no"
+		},
+		"mobile_no": {
+			"field": "mobile_no"
+		},
+		"org_city_desc": {
+			"field": "org_city_desc"
+		},
+		"org_district_desc": {
+			"field": "org_district_desc"
+		},
+		"org_adrs_1": {
+			"field": "org_adrs_1"
+		},
+		"org_adrs_2": {
+			"field": "org_adrs_2"
+		},
+		"org_status_desc": {
+			"field": "org_status_desc"
+		},
+		"org_crtd_dt": {
+			"field": "org_crtd_dt",
+			"date-format": "dd-MMM-yyyy HH:mm:ss"
+		},
+		"org_crtd_by_desc": {
+			"field": "org_crtd_by_desc"
+		},
+		"appr_at": {
+			"field": "appr_at",
+			"date-format": "dd-MMM-yyyy HH:mm:ss"
+		},
+		"appr_by_optr_id": {
+			"field": "appr_by_optr_id"
+		},
+		"appr_by_optr_nm": {
+			"field": "appr_by_optr_nm"
+		}
+	},
+	"OutputConf": {
+		"type": "file",
+		"extension": "xls",
+		"file-path": "/home/appuser/file_job/job",
+		"file-name": "OrgDetailReport",
+		"file-name-pattern": "yyyyMMdd",
+		"file-headers": "CHANNEL,REGION,AREA,SALES AREA,CLUSTER,MICRO CLUSTER,ADDITIONAL TERRITORY,TERRITORY ID,PARENT ORGANIZATION ID,SALDOMOBO_PARENT ORGANIZATION ID,PARENT ORGANIZATION NAME,ORGANIZATION ID,SALDO_MOBO_ORGANIZATION_ID,ORGANIZATION NAME,ORGANIZATION TYPE,ORGANIZATION CATEGORY,ORGANIZATION CLASSIFICATION,DEALER CODE,DOMPETKU MSISDN,SALDOMOB MSISDN NO.,CONTACT NUMBER,PERMANENTADDRES_CITY/DISTRICT,PERMANENTADDRES_DISTRICTS,PERMANENTADDRES_STREET ADDRESS,PERMANENTADDRES_ADDITIONAL ADDRESS,STATUS,REGISTER DATETIME,REGISTER USER NAME,REGISTER OPERATOR ID,REGISTER OPERATOR NAME,APPROVAL DATETIME,APPROVAL OPERATOR ID ,APPROVAL OPERATOR NAME",
+		"field-delimiter": ",",
+		"field-conf": [
+			{
+				"path": "channel",
+				"type": "String"
+			},
+			{
+				"path": "regional",
+				"type": "String"
+			},
+			{
+				"path": "area",
+				"type": "String"
+			},
+			{
+				"path": "sales_area",
+				"type": "String"
+			},
+			{
+				"path": "cluster",
+				"type": "String"
+			},
+			{
+				"path": "micro_cluster",
+				"type": "String"
+			},
+			{
+				"path": "sale_territory_desc",
+				"type": "String"
+			},
+			{
+				"path": "territory_id",
+				"type": "String"
+			},
+			{
+				"path": "parent_org_id",
+				"type": "String"
+			},
+			{
+				"path": "parent_org_desc",
+				"type": "String"
+			},
+			{
+				"path": "parent_org_ref_code",
+				"type": "String"
+			},
+			{
+				"path": "org_id",
+				"type": "String"
+			},
+			{
+				"path": "org_ref_code",
+				"type": "String"
+			},
+			{
+				"path": "org_name",
+				"type": "String"
+			},
+			{
+				"path": "org_type_desc",
+				"type": "String"
+			},
+			{
+				"path": "org_category_desc",
+				"type": "String"
+			},
+			{
+				"path": "org_classification_desc",
+				"type": "String"
+			},
+			{
+				"path": "dealer_code",
+				"type": "String"
+			},
+			{
+				"path": "dompetku_no",
+				"type": "String"
+			},
+			{
+				"path": "saldomobo_msisdn_no",
+				"type": "String"
+			},
+			{
+				"path": "mobile_no",
+				"type": "String"
+			},
+			{
+				"path": "org_city_desc",
+				"type": "String"
+			},
+			{
+				"path": "org_district_desc",
+				"type": "String"
+			},
+			{
+				"path": "org_adrs_1",
+				"type": "String"
+			},
+			{
+				"path": "org_adrs_2",
+				"type": "String"
+			},
+			{
+				"path": "org_status_desc",
+				"type": "String"
+			},
+			{
+				"path": "org_crtd_dt",
+				"type": "String"
+			},
+			{
+				"path": "appr_at",
+				"type": "String"
+			},
+			{
+				"path": "appr_by_optr_nm",
+				"type": "String"
+			}
+		]
+	},
+	"SortConf": {
+		"extension": "csv",
+		"file-name-pattern": "yyyyMMddHHmmssSSS",
+		"file-path": "/home/appuser/file_job/sort/",
+		"field-delimiter": "|",
+		"sort-filepath_0": "/home/appuser/file_job/sort/collection1.sh",
+		"sort-filepath_1": "/home/appuser/file_job/sort/collection1.sh"
+	}
+}

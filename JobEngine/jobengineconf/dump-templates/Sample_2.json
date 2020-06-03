@@ -1,0 +1,92 @@
+{
+	"Primary" : 
+	[
+		{
+			"connection-id": "snoc-r1",
+			"schema-name": "snoc",
+			"collection-name": "organization",
+			
+			"map-key" : "org_id",
+			"projection": 
+			{
+				"_id": 1,
+				"org_id" : 1,
+				"org_type_desc" : 1,
+				"desc" : 1,
+				"crtd_dt" : 1,
+				"ref_code" : 1,
+				"status" : 1,
+				"sub_org_type_des" : 1
+			},
+			"parameters": 
+			[
+				{
+					"param-name": "sub_org_type",
+					"param-value": 66
+				},
+				{
+					"param-name": "status",
+					"param-value": 174
+				}
+			],
+			"sort-by": 
+			{
+				"_id": 1
+			},
+			"limit" : 10
+		},
+		{
+			"connection-id": "snoc-r1",
+			"schema-name": "snoc",
+			"collection-name": "user_copy",
+			
+			"projection": 
+			{
+				"_id": 1,
+				"owner_name" : 1,
+				"first_name" : 1,
+				"crtd_dt" : 1,
+				"ref_code" : 1,
+				"status" : 1,
+				"uname" : 1,
+				"saldomobo_msisdn_no" : 1,
+				"operator_id" : 1,
+				"operator_name" : 1,
+				"org_id" : 1,
+				"user_id" : 1,
+				"org_type" : 1
+			},
+			"parameters": 
+			[
+				{
+					"param-name": "org_type",
+					"param-value": [6,7]
+				}
+			],
+			"alias" :
+			{
+				"_id" : "user_coll_id"
+			},
+			"sort-by": 
+			{
+				"org_id": 1
+			},
+			"batch-size" : 100,
+			"merge-type" : "include_parent",
+			"merge-to" : "test.users"
+		}
+	],
+	"Configuration" : 
+	{
+		"field-1" : 
+		{
+			"field" : "F1",
+			"default-value" : "xxx",
+			"date-format" : "yyyy-MM-dd HH:mm:ss"
+		},
+		"field-2" :
+		{
+			"field": "F2"
+		}
+	}
+}

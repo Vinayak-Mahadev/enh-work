@@ -1,0 +1,230 @@
+{
+	"Primary" : 
+	[
+		{
+			"connection-id": "snoc-r1",
+			"schema-name": "test",
+			"collection-name": "organization",
+			
+			"map-key" : 
+			{
+				"key" : "org_id",
+				"type" : "Long"
+			},
+			"projection": 
+			{
+				"_id": 1,
+				"org_id" : 1,
+				"ref_code" : 1,
+				"name" : 1,
+				"org_type" : 1,
+				"status" : 1
+			},
+			"parameters": 
+			[
+				{
+					"param-name": "org_type",
+					"param-value": 6
+				},
+				{
+					"param-name": "status",
+					"param-value": 171
+				}
+			],
+			"sort-by": 
+			{
+				"_id": 1
+			},
+			"limit" : 10
+		},
+		{
+			"connection-id": "snoc-r1",
+			"schema-name": "test",
+			"collection-name": "node",
+			
+			"projection": 
+			{
+				"_id": 1,
+				"node_id" : 1,
+				"org_id" : 1,
+				"status" : 1,
+				"name" : 1,
+				"org_type" : 1
+			},
+			"map-key" : 
+			{
+				"key" : ["org_id", "node_id"],
+				"type" : "Long"
+			},
+			"parameters": 
+			[
+				{
+					"param-name": "org_type",
+					"param-value": [6,7]
+				},
+				{
+					"param-name": "status",
+					"param-value": 171
+				}
+
+			],
+			"alias" :
+			{
+				"_id" : "node_coll_id",
+				"name" : "node_name"
+			},
+			"sort-by": 
+			{
+				"org_id": 1
+			},
+			"batch-size" : 100,
+			"merge-type" : "include_parent",
+			"merge-to" : "nodes"
+		},
+		{
+			"connection-id": "snoc-r1",
+			"schema-name": "test",
+			"collection-name": "user_trans",
+			
+			"projection": 
+			{
+				"_id": 1,
+				"user_id" : 1,
+				"org_id" : 1,
+				"node_id" : 1,
+				"status" : 1,
+				"name" : 1,
+				"org_type" : 1
+			},
+			"parameters": 
+			[
+				{
+					"param-name": "org_type",
+					"param-value": [6,7]
+				},
+				{
+					"param-name": "status",
+					"param-value": 171
+				}
+			],
+			"alias" :
+			{
+				"_id" : "user_coll_id",
+				"name" : "user_name"
+			},
+			"sort-by": 
+			{
+				"org_id": 1,
+				"node_id" : 1
+			},
+			"batch-size" : 100,
+			"merge-type" : "include_parent",
+			"merge-to" : "nodes.users"
+		}
+	],
+	"Lookup": 
+	{
+    		"user": 
+		{
+      			"connection-id": "snoc-r1",
+		       "schema-name": "test",
+      			"collection-name": "user"
+    		}
+	},
+	"Configuration" : 
+	{
+		"org_id" : 
+		{
+			"field" : "org_id"
+		},
+		"org_ref_code" :
+		{
+			"field": "ref_code"
+		},
+		"org_name" :
+		{
+			"field" : "name"
+		},
+		"org_type" :
+		{
+			"field" : "org_type"
+		},
+		"node_id" : 
+		{
+			"field" : "node_id"
+		},
+		"node_name" :
+		{
+			"field" : "node_name"
+		},
+		"user_id" : 
+		{
+			"field" : "user_id"
+		},
+		"user_name" : 
+		{
+			"field" : "user_name"
+		},
+		"login_id" :
+		{
+			"field" : "user_id",
+			"lookup": 
+			[
+        			{
+          				"name": "user",
+          				"mapping-field": "user_id",
+          				"lookup-field": "uname"
+        			}
+      			]
+		},
+		"operator_id" :
+		{
+			"field" : "user_id",
+			"lookup": 
+			[
+        			{
+          				"name": "user",
+          				"mapping-field": "user_id",
+          				"lookup-field": "operator_id"
+        			}
+      			]
+		},
+		"status" : 
+		{
+			"field" : "status"
+		}
+	},
+	"OutputConf" :
+	{
+		"type" : "file",
+		"extension": "xls",
+		"file-path": "/home/appuser/file_job",
+		"file-name" : "ExcelOutputData",
+		"file-name-pattern" : "yyyyMMdd",
+		"file-headers" : "ORG_OD,NODE_ID,USER_ID,USER_NAME",
+		"field-delimiter" : ",",
+		"field-conf" : 
+		[
+			{
+				"path" : "org_id",
+				"type" : "Long"
+			},
+			{
+				"path" : "node_id",
+				"type" : "Long"
+			},
+			{
+				"path" : "user_id",
+				"type" : "Long"
+			},
+			{
+				"path" : "user_name",
+				"type" : "String"
+			}
+		],	
+		"exclude_fields": 
+		[
+			"org_type"
+		]
+	}
+}

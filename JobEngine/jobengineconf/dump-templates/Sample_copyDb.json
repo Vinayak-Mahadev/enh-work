@@ -1,0 +1,20 @@
+{
+	"Primary" : 
+	[
+		{
+			"connection-id": "snoc-r1",
+			"schema-name": "snoc",
+			"collection-name": 
+			[
+				"organization",
+				"user",
+				"node"
+			]			
+		}
+	],
+	"OutputConf" :
+	{
+		"type" : "mongo",
+		"server" : ""
+	}
+}

@@ -1,0 +1,266 @@
+{
+	"Primary" : 
+	[
+		{
+			"connection-id": "snoc-r4",
+			"schema-name": "snoc_report",
+			"collection-name": "org_addnl_params",
+			
+			"map-key" : 
+			{
+				"key" : "org_id",
+				"type" : "Long",
+				"local-key" : "org_id"
+			},
+			"projection": 
+			{
+				"org_id" : 1,
+				"chnl_ctgr" : 1
+			},
+			"parameters": 
+			[				
+				{
+					"param-name": "chnl_ctgr",
+					"param-value": "$chnl_ctgr"
+				}
+			],
+			"sort-by": 
+			{
+				"org_id": 1
+			}
+		},
+		{
+			"connection-id": "snoc-r4",
+			"schema-name": "snoc_report",
+			"collection-name": "org_user_node_acc",
+			
+			"projection": 
+			{
+				"org_id": 1,
+				"first_name" : 1,
+				"last_name" : 1,
+				"org_ref_code" : 1
+			},
+			"map-key" : 
+			{
+				"key" : ["data.org_id"],
+				"type" : "Long",
+				"local-key" : ["org_id"]
+			},
+			"parameters": 
+			[
+				{
+					"param-name": "nasional",
+					"param-value": "$nasional"
+				},
+				{
+					"param-name": "regional",
+					"param-value": "$regional",
+					"mandatory" : "false"
+				},
+				{
+					"param-name": "area",
+					"param-value": "$area",
+					"mandatory" : "false"
+				},
+				{
+					"param-name": "sales_area",
+					"param-value": "$sales_area",
+					"mandatory" : "false"
+				},
+				{
+					"param-name": "cluster",
+					"param-value": "$cluster",
+					"mandatory" : "false"
+				},
+				{
+					"param-name": "micro_cluster",
+					"param-value": "$micro_cluster",
+					"mandatory" : "false"
+				}
+
+			],
+			"sort-by": 
+			{
+				"org_id": 1
+			},
+			"merge-type" : "include_parent"
+		},
+		{
+			"connection-id": "snoc-r1",
+			"schema-name": "order",
+			"collection-name": "inventory_orders",
+			
+			"projection": 
+			{
+				"data.org_id" : 1,
+				"ord_delivery_dt" : 1,
+				"ord_id" : 1,
+				"ord_master_id" : 1,
+				"status" : 1,
+				"data.ord_items" : 1
+			},
+			"parameters": 
+			[
+				{
+					"param-name" : "status",
+					"param-value" : "$status",
+					"param-type" : "Long"
+				},
+				{
+					"param-name" : "ord_creatd_dt",
+					"param-value" : [
+						"$start_date",
+						"$end-date"
+					],
+					"param-type" : "date",
+					"from-date-format" : "yyyy-MM-dd HH:mm:ss.SSS",
+					"to-date-format" : "yyyy-MM-dd'T'HH:mm:ss.SSS'Z'"
+				}
+			],
+			"sort-by": 
+			{
+				"data.org_id": 1
+			},
+			"merge-type" : "include_parent"
+		},
+		{
+			"connection-id": "snoc-r1",
+			"schema-name": "order",
+			"collection-name": "order_master",
+			
+			"projection": 
+			{
+				"do_id": 1,
+				"org_master_id" : 1,
+				"org_id" : 1,
+				"node_id" : 1,
+				"status" : 1,
+				"name" : 1,
+				"org_type" : 1
+			},
+			"parameters": 
+			[
+				{
+					"param-name": "data.envelope.payload.orders.order.addnl_param.do_id",
+					"param-value": ""
+				}
+			],
+			"alias" :
+			{
+				"_id" : "user_coll_id",
+				"name" : "user_name"
+			},
+			"sort-by": 
+			{
+				"org_id": 1,
+				"node_id" : 1
+			},
+			"batch-size" : 100,
+			"merge-type" : "include_parent"
+		}
+	],
+	"Configuration" : 
+	{
+		"org_id" : 
+		{
+			"field" : "org_id"
+		},
+		"chnl_ctgr" : 
+		{
+			"field" : "chnl_ctgr"
+		},
+		"first_name" :
+		{
+			"field" : "first_name"
+		},
+		"last_name" :
+		{
+			"field" : "last_name"
+		},
+		"org_ref_code" :
+		{
+			"field" : "org_ref_code"
+		},
+		"do_id" : 
+		{
+			"field" : "do_id"
+		},
+		"ord_delivery_dt" :	
+		{
+			"field" : "ord_delivery_dt"
+		},
+		"ord_id" :
+		{
+			"field" : "ord_id"
+		},
+		"prd_id" :
+		{
+			"field" : "data.ord_items.prd_id"
+		},
+		"skuCode" :
+		{
+			"field" : "data.ord_items.skuCode"
+		}
+	},
+	"OutputConf" :
+	{
+		"type" : "file",
+		"extension": "csv",
+		"file-path": "/home/appuser/file_job",
+		"file-name" : "TestReport",
+		"file-name-pattern" : "yyyyMMdd",
+		"file-headers" : "ORG_OD|CHNL_CTGR|ORG_NAME|ORG_REF_CODE|DO_ID|ORD_DELIVERY_DATE|ORD_ID|PRD_ID|SKU_CODE",
+		"field-delimiter" : "|",
+		"field-conf" : 
+		[
+			{
+				"path" : "org_id",
+				"type" : "Long"
+			},
+			{
+				"path" : "chnl_ctgr",
+				"type" : "String"
+			},
+			{
+				"path" : "first_name,last_name",
+				"type" : "String",
+				"operation" : "concat"
+			},
+			{
+				"path" : "org_ref_code",
+				"type" : "String"
+			},
+			{
+				"path" : "do_id",
+				"type" : "String"
+			},
+			{
+				"path" : "ord_delivery_dt",
+				"type" : "String"
+			},
+			{
+				"path" : "ord_id",
+				"type" : "Long"
+			},
+			{
+				"path" : "prd_id",
+				"type" : "Long"
+			},
+			{
+				"path" : "skuCode",
+				"type" : "String"
+			}
+		]
+	},
+	"SortConf" : 
+	{
+		"extension" : "csv",
+		"file-name-pattern" : "yyyyMMddHHmmssSSS",
+		"file-path" : "/home/appuser/file_job/sort/",
+		"field-delimiter" : "|",
+		"sort-filepath_0" : "/home/appuser/file_job/sort/collection1.sh"
+		"sort-filepath_1" : "/home/appuser/file_job/sort/collection1.sh"
+		"sort-filepath_2" : "/home/appuser/file_job/sort/collection1.sh"
+	}
+}

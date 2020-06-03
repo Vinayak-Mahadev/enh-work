@@ -23,7 +23,7 @@
         http://cxf.apache.org/core 
         http://cxf.apache.org/schemas/core.xsd
   		http://www.springframework.org/schema/context         
-  		http://www.springframework.org/schema/context/spring-context-3.0.xsd
+  		http://www.springframework.org/schema/context/spring-context.xsd
   		http://www.springframework.org/schema/data/mongo 
   		http://www.springframework.org/schema/data/mongo/spring-mongo.xsd
   		http://camel.apache.org/schema/spring http://camel.apache.org/schema/spring/camel-spring.xsd
@@ -42,7 +42,7 @@
 
 	<context:component-scan
 		base-package="com.enhancesys.jobengine.consumer.*" />
-	<context:annotation-config />
+	<!-- <context:annotation-config /> -->
 
 	<!-- Spring Annotation Configurations Ends Here -->
 
@@ -51,12 +51,12 @@
 	<bean id="testUtilities"
 		class="com.enhancesys.jobengine.consumer.util.Utilities" />
 
+	<bean id="jobEngineServices"
+		class="com.enhancesys.jobengine.consumer.services.JobEngineServices" />
 
 	<bean id="jobConsumerServicesActivator"
 		class="com.enhancesys.jobengine.consumer.controller.JobConsumerServicesActivator" />
 
-	<bean id="jobEngineServices"
-		class="com.enhancesys.jobengine.consumer.services.JobEngineServices" />
 
 	<!-- Spring Beans Configuration Ends Here -->
 

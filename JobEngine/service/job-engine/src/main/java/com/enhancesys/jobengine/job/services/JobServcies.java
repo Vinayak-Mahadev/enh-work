@@ -10,6 +10,7 @@ import org.json.simple.parser.JSONParser;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.FileSystemXmlApplicationContext;
 
+import com.enhancesys.jobcommon.Constants;
 import com.enhancesys.jobengine.job.services.job.JobEngine;
 
 public class JobServcies 
@@ -32,7 +33,7 @@ public class JobServcies
 		try
 		{
 			
-			context = new FileSystemXmlApplicationContext(System.getenv("APPSERVER_CONF_PATH") + "/jobengineconf/common/spring-config.xml");
+			context = new FileSystemXmlApplicationContext(Constants._JOB_CONF_PATH + "beans/spring-config.xml");
 			
 			System.out.println("jobParameters : " + jobParameters);
 			System.out.println("Spring App Context : " + context);
@@ -46,7 +47,7 @@ public class JobServcies
 			
 			if(jobParameters == null)
 			{
-				file = new File(System.getenv("APPSERVER_CONF_PATH") + "/jobengineconf/common/dumps.json");
+				file = new File(Constants._JOB_CONFIG_PATH + "dumps.json");
 				inputStream = new FileInputStream(file);
 				buffer = new StringBuffer();
 				int s = 0;

@@ -1,0 +1,151 @@
+{
+	"Primary" : 
+	[
+		{			
+			"query" : 
+			[
+				"select report_org_master.aggregation_id_n as aggregation_id_n from kpi.ms_report_org_link_hierarchy as org_link_hierarchy inner join kpi.ms_report_org_master as report_org_master on (org_link_hierarchy.parent_org_id_n = 20 and report_org_master.org_id_n = org_link_hierarchy.child_org_id_n and report_org_master.org_type_n = 6) order by aggregation_id_n",
+				"select report_product_master.product_id_n as product_id_n from kpi.ms_report_product_master as report_product_master where report_product_master.product_type_n = 13 order by product_id_n",
+				"select report_day_master.day_id_n as day_id_n from kpi.ms_report_day_master as report_day_master where report_day_master.day_id_n between (select to_number(to_char(coalesce('2019-04-04'::date,null),'yyyymmdd'),'99999999')) and (select to_number(to_char(coalesce('2019-04-04'::date,null),'yyyymmdd'),'99999999')) order by day_id_n desc"
+			],
+			"map-key" : 
+			{
+				"key" : ["source_id_n", "metrics_id_n", "day_id_n"],
+				"local-key" : ["aggregation_id_n", "product_id_n", "day_id_n"]
+			}
+		},
+		{
+			"query" : "select saldomobo_metrics_aggr.day_id_n as day_id_n, saldomobo_metrics_aggr.source_id_n as source_id_n, saldomobo_metrics_aggr.metrics_id_n as metrics_id_n, round(sum((saldomobo_metrics_aggr.dimension_1_n)/100),0) as saldomobototalunits, round(sum((saldomobo_metrics_aggr.dimension_2_n)/100),2) as saldomobototalvalue from kpi.tr_daily_upload_metrics_aggr as saldomobo_metrics_aggr where saldomobo_metrics_aggr.day_id_n between (select to_number(to_char(coalesce('2019-04-04'::date,null),'yyyymmdd'),'99999999')) and (select to_number(to_char(coalesce('2019-04-04'::date,null),'yyyymmdd'),'99999999')) and saldomobo_metrics_aggr.event_type_n = 116 and saldomobo_metrics_aggr.metrics_type_n = 13 and saldomobo_metrics_aggr.data_flag_n = 13 group by day_id_n, source_id_n, metrics_id_n order by day_id_n desc, source_id_n, metrics_id_n",
+			"map-key" : 
+			{
+				"key" : ["source_id_n", "metrics_id_n", "day_id_n"],
+				"local-key" : ["aggregation_id_n", "product_id_n", "day_id_n"]
+			},
+			"parent-key" : 
+			{
+				"source_id_n" : "aggregation_id_n",
+				"metrics_id_n" : "product_id_n",
+				"day_id_n" : "day_id_n"
+			},
+			"merge-type" : "include_parent"
+		},
+		{
+			"query" : "select revenue_metrics_aggr.day_id_n as day_id_n, revenue_metrics_aggr.source_id_n as source_id_n, revenue_metrics_aggr.metrics_id_n as metrics_id_n, round(sum((revenue_metrics_aggr.dimension_1_n)/100),0) as revenutotalunits, round(sum((revenue_metrics_aggr.dimension_2_n)/100),2) as revenutotalvalue from kpi.tr_daily_upload_metrics_aggr as revenue_metrics_aggr where revenue_metrics_aggr.day_id_n between (select to_number(to_char(coalesce('2019-04-04'::date,null),'yyyymmdd'),'99999999')) and (select to_number(to_char(coalesce('2019-04-04'::date,null),'yyyymmdd'),'99999999')) and revenue_metrics_aggr.event_type_n = 101 and revenue_metrics_aggr.metrics_type_n = 13 group by day_id_n, source_id_n, metrics_id_n order by day_id_n desc, source_id_n, metrics_id_n",
+			"map-key" : 
+			{
+				"key" : ["source_id_n", "metrics_id_n", "day_id_n"],
+				"local-key" : ["aggregation_id_n", "product_id_n", "day_id_n"]
+			},
+			"parent-key" : 
+			{
+				"source_id_n" : "aggregation_id_n",
+				"metrics_id_n" : "product_id_n",
+				"day_id_n" : "day_id_n"
+			},
+			"merge-type" : "include_parent"
+		},
+		{
+			"query" : "select package_metrics_aggr.day_id_n as day_id_n, package_metrics_aggr.source_id_n as source_id_n, package_metrics_aggr.metrics_id_n as metrics_id_n, round(sum((package_metrics_aggr.dimension_1_n)/100),0) as packagetotalunits, round(sum((package_metrics_aggr.dimension_2_n)/100),2) as packagetotalvalue from kpi.tr_daily_upload_metrics_aggr as package_metrics_aggr where package_metrics_aggr.day_id_n between (select to_number(to_char(coalesce('2019-04-04'::date,null),'yyyymmdd'),'99999999')) and (select to_number(to_char(coalesce('2019-04-04'::date,null),'yyyymmdd'),'99999999')) and package_metrics_aggr.event_type_n = 104 and package_metrics_aggr.metrics_type_n = 13 group by day_id_n, source_id_n, metrics_id_n order by day_id_n desc, source_id_n, metrics_id_n",
+			"map-key" : 
+			{
+				"key" : ["source_id_n", "metrics_id_n", "day_id_n"],
+				"local-key" : ["aggregation_id_n", "product_id_n", "day_id_n"]
+			},
+			"parent-key" : 
+			{
+				"source_id_n" : "aggregation_id_n",
+				"metrics_id_n" : "product_id_n",
+				"day_id_n" : "day_id_n"
+			},
+			"merge-type" : "include_parent"
+		},
+		{
+			"query" : "select reload_metrics_aggr.day_id_n as day_id_n, reload_metrics_aggr.source_id_n as source_id_n, reload_metrics_aggr.metrics_id_n as metrics_id_n, round(sum((reload_metrics_aggr.dimension_1_n)/100),0) as reloadtotalunits, round(sum((reload_metrics_aggr.dimension_2_n)/100),2) as reloadtotalvalue from kpi.tr_daily_upload_metrics_aggr as reload_metrics_aggr where reload_metrics_aggr.day_id_n between (select to_number(to_char(coalesce('2019-04-04'::date,null),'yyyymmdd'),'99999999')) and (select to_number(to_char(coalesce('2019-04-04'::date,null),'yyyymmdd'),'99999999')) and reload_metrics_aggr.event_type_n = 107 and reload_metrics_aggr.metrics_type_n = 13 group by day_id_n, source_id_n, metrics_id_n order by day_id_n desc, source_id_n, metrics_id_n",
+			"parent-key" : 
+			{
+				"source_id_n" : "aggregation_id_n",
+				"metrics_id_n" : "product_id_n",
+				"day_id_n" : "day_id_n"
+			},
+			"merge-type" : "include_parent"
+		}
+	],
+	"skip-on-not-exist" : "false",
+	"secondary-match" : "false",
+	"Configuration" : 
+	{
+		"aggregation_id_n" : 
+		{
+			"field" : "aggregation_id_n"
+		},
+		"product_id_n" : 
+		{
+			"field" : "product_id_n"
+		},
+		"day_id_n" : 
+		{
+			"field" : "day_id_n"
+		},
+		"revenutotalunits" :
+		{
+			"field" : "revenutotalunits"
+		},
+		"revenutotalvalue" :
+		{
+			"field" : "revenutotalvalue"
+		},
+		"packagetotalunits" :
+		{
+			"field" : "packagetotalunits"
+		},
+		"packagetotalvalue" :
+		{
+			"field" : "packagetotalvalue"
+		},
+		"reloadtotalunits" :
+		{
+			"field" : "reloadtotalunits"
+		},
+		"reloadtotalvalue" :
+		{
+			"field" : "reloadtotalvalue"
+		},
+		"saldomobototalunits" :
+		{
+			"field" : "saldomobototalunits"
+		},
+		"saldomobototalvalue" :
+		{
+			"field" : "saldomobototalvalue"
+		}
+	},
+	"OutputConf" :
+	{
+		"type" : "file",
+		"extension": "csv",
+		"file-path": "/home/appuser/file_job/job",
+		"file-name" : "Productive Outlet",
+		"file-name-pattern" : "yyyyMMdd",
+		"file-headers" : "AGGREGATION_ID|PRODUCT_ID|DAY_ID|REVENUE_TOTAL_UNITS|REVENUE_TOTAL_VALUE|PACKAGE_TOTAL_UNITS|PACKAGE_TOTAL_VALUE|RELOAD_TOTAL_UNITS|RELOAD_TOTAL_VALUE|SALDOMOBO_TOTAL_UNITS|SALDOMOBO_TOTAL_VALUE",
+		"field-delimiter" : "|",
+		"field-conf" : 
+		[
+			{
+				"path" : "aggregation_id_n",
+				"type" : "String"
+			},
+			{
+				"path" : "product_id_n",
+				"type" : "String"
+			},
+			{
+				"path" : "day_id_n",
+				"type" : "String"
+			},
+			{
+				"path" : "dataStr",
+				"type" : "String"
+			}
+		]
+	}
+}

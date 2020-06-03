@@ -4,6 +4,12 @@ package com.enhancesys.jobcommon;
 public interface Constants 
 {
 
+	public static final String _PROJECT_LOC = Env.PROJECT_LOC;
+	public static final String _JOB_CONF_PATH = Env.PROJECT_LOC;
+	public static final String _TEMPLATE_CONFIG_PATH = Env.PROJECT_LOC + "/JobTemplateConfig.json";
+	public static final String _JOB_CONFIG_PATH = Env.PROJECT_LOC + "common/";
+	public static final String _JOB_DUMP_TEMPLATE = Env.PROJECT_LOC + "dump-templates/";
+	
 	public static final  String TEST_PRO_ID_N_for_JSON = "proId";
 	public static final  String TEST_F_NAME_V_for_JSON = "fName";
 	public static final  String TEST_L_NAME_V_for_JSON = "lName";

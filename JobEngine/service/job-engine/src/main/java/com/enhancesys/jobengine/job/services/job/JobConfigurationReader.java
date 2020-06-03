@@ -18,15 +18,15 @@ public class JobConfigurationReader
 {
 	@Autowired
 	PropertiesLoader propertiesLoader;
-	
+
 	private JSONObject templateConfig = null;
 	private JSONObject jobConfig = null;
 	private static Logger log = Logger.getLogger(JobConfigurationReader.class);
-	
+
 	public void readConfiguration(String templateId, String jobId, Object requestJson)
 	{
 		log.info("Entry readConfiguration..");
-		
+
 		JSONObject config = null;
 		File file = null;
 		FileInputStream inputStream = null;
@@ -37,30 +37,32 @@ public class JobConfigurationReader
 		JSONObject reqObject = null;
 		String string = null;
 		String line = null;
-		
+
 		try
 		{
 			if("File".equalsIgnoreCase(propertiesLoader.getValueFor("TEMPLATE_SOURCE")))
 			{
+
 				if(propertiesLoader.getValueFor("TEMPLATE_CONFIG_PATH") == null || propertiesLoader.getValueFor("TEMPLATE_CONFIG_PATH").trim().isEmpty())
 				{
 					log.error("Please configure Template Path..");
 					log.error("Please configure Template Path..");
 					throw new GenericProcessorException("Please configure Template Path..");
 				}
-				
 				file = new File(propertiesLoader.getValueFor("TEMPLATE_CONFIG_PATH"));
+				//file = new File(Constants._TEMPLATE_CONFIG_PATH);
+				
 				inputStream = new FileInputStream(file);
 				inputStreamReader = new InputStreamReader(inputStream, "UTF-8");
 				bufferedReader = new BufferedReader(inputStreamReader);
-				
+
 				buffer = new StringBuffer();
 				line = null;
 				while ((line= bufferedReader.readLine()) != null)
 				{
 					buffer.append(line);
 				}
-				
+
 				inputStream.close();
 				inputStreamReader.close();
 				bufferedReader.close();
@@ -70,7 +72,7 @@ public class JobConfigurationReader
 					log.error("Please configure Template Configuration..");
 					throw new GenericProcessorException("Please configure Template Configuration..");
 				}
-				
+
 				parser = new JSONParser();
 				config = (JSONObject) parser.parse(buffer.toString());
 				templateConfig = (JSONObject) config.get(templateId);
@@ -81,28 +83,29 @@ public class JobConfigurationReader
 					throw new GenericProcessorException("Please configure Template for : " + templateId);
 				}
 			}
-			
+
 			if("File".equalsIgnoreCase(propertiesLoader.getValueFor("JOB_SOURCE")))
 			{
-				if(propertiesLoader.getValueFor("JOB_CONFIG_PATH") == null || propertiesLoader.getValueFor("JOB_CONFIG_PATH").trim().isEmpty())
+				if(propertiesLoader.getValueFor("JOB_DUMP_TEMPLATE") == null || propertiesLoader.getValueFor("JOB_DUMP_TEMPLATE").trim().isEmpty())
 				{
 					log.error("Please configure Template Path..");
 					log.error("Please configure Template Path..");
 					throw new GenericProcessorException("Please configure Template Path..");
 				}
-				
-				file = new File(propertiesLoader.getValueFor("JOB_CONFIG_PATH") + jobId + ".json");
+				log.info("jobId :: " + jobId);
+				file = new File(propertiesLoader.getValueFor("JOB_DUMP_TEMPLATE") + jobId + ".json");
+				//file = new File(Constants._JOB_CONFIG_PATH + jobId + ".json");
 				inputStream = new FileInputStream(file);
 				inputStreamReader = new InputStreamReader(inputStream, "UTF-8");
 				bufferedReader = new BufferedReader(inputStreamReader);
-				
+
 				buffer = new StringBuffer();
 				line = null;
 				while ((line= bufferedReader.readLine()) != null)
 				{
 					buffer.append(line);
 				}
-				
+
 				inputStream.close();
 				inputStreamReader.close();
 				bufferedReader.close();
@@ -152,16 +155,16 @@ public class JobConfigurationReader
 			buffer = null;
 			parser = null;
 			line = null;
-			
+
 			log.info("Exit readConfiguration..");
 		}
 	}
-	
+
 	public JSONObject getTemplateConfigData(String contextPath)
 	{
 		return templateConfig;
 	}
-	
+
 	public JSONObject getJobConfigData(String keyValue)
 	{
 		if(keyValue != null)

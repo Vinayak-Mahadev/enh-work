@@ -1,0 +1,454 @@
+{
+	"Primary" : 
+	[
+		{			
+			"query" : 
+			[
+				"select cdebit.account_id_n , ocrdtamount , odbtAmount , ccrdtamount ,cdbtAmount , odbtAmount - ocrdtamount start_debt , cdbtAmount - ccrdtamount end_debt from (select account_id_n ,sum(acct_currency_amt_n) cdbtAmount from snd.fn_account_receivables dbt where account_id_n in (5055529) and credit_debit_flag_v = 'DR' and transaction_date_dt <= '2016-03-01 00:00:00.000+02' group by account_id_n) cdebit inner join ( select account_id_n ,sum(acct_currency_amt_n) ccrdtamount from snd.fn_account_receivables crdt where account_id_n in (5055529) and credit_debit_flag_v = 'CR' and transaction_date_dt <= '2016-03-01 00:00:00.000+02' group by account_id_n) ccredit on (cdebit.account_id_n = ccredit.account_id_n) left outer join (select account_id_n ,sum(acct_currency_amt_n) odbtAmount from snd.fn_account_receivables dbt where account_id_n in (5055529) and credit_debit_flag_v = 'DR' and transaction_date_dt <= '2019-12-25 00:00:00.000+02' group by account_id_n) odebit on (cdebit.account_id_n = odebit.account_id_n) left outer join ( select account_id_n ,sum(acct_currency_amt_n) ocrdtamount from snd.fn_account_receivables crdt where account_id_n in (5055529) and credit_debit_flag_v = 'CR' and transaction_date_dt <= '2019-12-25 00:00:00.000+02' group by account_id_n) ocredit on (cdebit.account_id_n = ocredit.account_id_n ) order by 1 asc"
+			]
+		}
+	],
+	"Lookup": {
+		"org_user_node_acc": {
+			"connection-id": "snoc-r4",
+			"schema-name": "snoc_report",
+			"collection-name": "org_user_node_acc"
+		},
+		"fn_acc_relation" : {
+			"connection-id": "snoc-r1",
+			"schema-name": "snoc",
+			"collection-name": "fn_acc_relation"
+		},
+		"org_links": {
+			"connection-id": "snoc-r1",
+			"schema-name": "snoc",
+			"collection-name": "org_links"
+		}
+	},
+	"Configuration": {
+		"fromOrgId": {
+			"field": "account_id_n",
+			"lookup": [
+				{
+					"name": "fn_acc_relation",
+					"mapping-field": "src_account_id",
+					"lookup-field": "src_org_id"
+				}
+			]
+		},
+		"fromOrgName": {
+			"field": "account_id_n",
+			"lookup": [
+				{
+					"name": "fn_acc_relation",
+					"mapping-field": "src_account_id",
+					"lookup-field": "src_org_id"
+				},
+				{
+					"name": "org_user_node_acc",
+					"mapping-field": "org_id",
+					"lookup-field": "org_desc"
+				}
+			]
+		},
+		"fromNodeId": {
+			"field": "account_id_n",
+			"lookup": [
+				{
+					"name": "fn_acc_relation",
+					"mapping-field": "src_account_id",
+					"lookup-field": [
+						"src_org_id",
+						"dest_org_id"
+					]
+				},
+				{
+					"name": "org_links",
+					"mapping-field":[ 
+						"src_org_id",
+						"dest_org_id"
+					]
+					"lookup-field": "src_node_id"
+				}
+			]
+		},
+		"fromPosition": {
+			"field": "account_id_n",
+			"lookup": [
+				{
+					"name": "fn_acc_relation",
+					"mapping-field": "src_account_id",
+					"lookup-field": [
+						"src_org_id",
+						"dest_org_id"
+					]
+				},
+				{
+					"name": "org_links",
+					"mapping-field":[ 
+						"src_org_id",
+						"dest_org_id"
+					]
+					"lookup-field": "src_node_id"
+				},
+				{
+					"name": "org_user_node_acc",
+					"mapping-field": "node_id",
+					"lookup-field": [
+						"position",
+						"first_name",
+						"last_name"
+					],
+					"delimiter" : "-"
+				}
+			]
+		},
+		"toOrgId": {
+			"field": "account_id_n",
+			"lookup": [
+				{
+					"name": "fn_acc_relation",
+					"mapping-field": "src_account_id",
+					"lookup-field": "dest_org_id"
+				}
+			]
+		},
+		"toOrgName": {
+			"field": "account_id_n",
+			"lookup": [
+				{
+					"name": "fn_acc_relation",
+					"mapping-field": "src_account_id",
+					"lookup-field": "dest_org_id"
+				},
+				{
+					"name": "org_user_node_acc",
+					"mapping-field": "org_id",
+					"lookup-field": "org_desc"
+				}
+			]
+		},
+		"toNodeId": {
+			"field": "account_id_n",
+			"lookup": [
+				{
+					"name": "fn_acc_relation",
+					"mapping-field": "src_account_id",
+					"lookup-field": [
+						"src_org_id",
+						"dest_org_id"
+					]
+				},
+				{
+					"name": "org_links",
+					"mapping-field":[ 
+						"src_org_id",
+						"dest_org_id"
+					]
+					"lookup-field": "dest_node_id"
+				}
+			]
+		},
+		"posLegalName": {
+			"field": "account_id_n",
+			"lookup": [
+				{
+					"name": "fn_acc_relation",
+					"mapping-field": "src_account_id",
+					"lookup-field": "dest_org_id"
+				},
+				{
+					"name": "org_user_node_acc",
+					"mapping-field": "org_id",
+					"lookup-field": "legal_form_desc"
+				}
+			]
+		},
+		"cluster": {
+			"field": "account_id_n",
+			"lookup": [
+				{
+					"name": "fn_acc_relation",
+					"mapping-field": "src_account_id",
+					"lookup-field": "dest_org_id"
+				},
+				{
+					"name": "org_user_node_acc",
+					"mapping-field": "org_id",
+					"lookup-field": "clust_id_desc"
+				}
+			]
+		},
+		"sector": {
+			"field": "account_id_n",
+			"lookup": [
+				{
+					"name": "fn_acc_relation",
+					"mapping-field": "src_account_id",
+					"lookup-field": "dest_org_id"
+				},
+				{
+					"name": "org_user_node_acc",
+					"mapping-field": "org_id",
+					"lookup-field": "sect_id_desc"
+				}
+			]
+		},
+		"territory": {
+			"field": "account_id_n",
+			"lookup": [
+				{
+					"name": "fn_acc_relation",
+					"mapping-field": "src_account_id",
+					"lookup-field": "dest_org_id"
+				},
+				{
+					"name": "org_user_node_acc",
+					"mapping-field": "org_id",
+					"lookup-field": "terr_id_desc"
+				}
+			]
+		},
+		"posCategory": {
+			"field": "account_id_n",
+			"lookup": [
+				{
+					"name": "fn_acc_relation",
+					"mapping-field": "src_account_id",
+					"lookup-field": "dest_org_id"
+				},
+				{
+					"name": "org_user_node_acc",
+					"mapping-field": "org_id",
+					"lookup-field": "pos_category_desc"
+				}
+			]
+		},
+		"posType": {
+			"field": "account_id_n",
+			"lookup": [
+				{
+					"name": "fn_acc_relation",
+					"mapping-field": "src_account_id",
+					"lookup-field": "dest_org_id"
+				},
+				{
+					"name": "org_user_node_acc",
+					"mapping-field": "org_id",
+					"lookup-field": "pos_type_desc"
+				}
+			]
+		},
+		"posSpecialization": {
+			"field": "account_id_n",
+			"lookup": [
+				{
+					"name": "fn_acc_relation",
+					"mapping-field": "src_account_id",
+					"lookup-field": "dest_org_id"
+				},
+				{
+					"name": "org_user_node_acc",
+					"mapping-field": "org_id",
+					"lookup-field": "pos_spec_desc"
+				}
+			]
+		},
+		"orgTerritory": {
+			"field": "account_id_n",
+			"lookup": [
+				{
+					"name": "fn_acc_relation",
+					"mapping-field": "src_account_id",
+					"lookup-field": "dest_org_id"
+				},
+				{
+					"name": "org_user_node_acc",
+					"mapping-field": "org_id",
+					"lookup-field": "org_terr_id_desc"
+				}
+			]
+		},
+		"address": {
+			"field": "account_id_n",
+			"lookup": [
+				{
+					"name": "fn_acc_relation",
+					"mapping-field": "src_account_id",
+					"lookup-field": "dest_org_id"
+				},
+				{
+					"name": "org_user_node_acc",
+					"mapping-field": "org_id",
+					"lookup-field": [
+						"org_adrs_1",
+						"org_adrs_2",
+						"org_adrs_3_desc",
+						"org_adrs_4"
+					],
+					"delimiter" : ", "
+				}
+			]
+		},
+		"city": {
+			"field": "account_id_n",
+			"lookup": [
+				{
+					"name": "fn_acc_relation",
+					"mapping-field": "src_account_id",
+					"lookup-field": "dest_org_id"
+				},
+				{
+					"name": "org_user_node_acc",
+					"mapping-field": "org_id",
+					"lookup-field": "org_city_desc"
+				}
+			]
+		},
+		"district": {
+			"field": "account_id_n",
+			"lookup": [
+				{
+					"name": "fn_acc_relation",
+					"mapping-field": "src_account_id",
+					"lookup-field": "dest_org_id"
+				},
+				{
+					"name": "org_user_node_acc",
+					"mapping-field": "org_id",
+					"lookup-field": "org_district_desc"
+				}
+			]
+		},
+		"region": {
+			"field": "account_id_n",
+			"lookup": [
+				{
+					"name": "fn_acc_relation",
+					"mapping-field": "src_account_id",
+					"lookup-field": "dest_org_id"
+				},
+				{
+					"name": "org_user_node_acc",
+					"mapping-field": "org_id",
+					"lookup-field": "org_region_desc"
+				}
+			]
+		},
+		"startDebt": {
+			"field": "start_debt"
+		},
+		"totalSecondSalesAmt": {
+			"field": ""
+		},
+		"cashCollection": {
+			"field": ""
+		},
+		"endDebt": {
+			"field": "end_debt"
+		}
+	},
+	"OutputConf": {
+		"type": "file",
+		"extension": "xls",
+		"file-path": "/home/appuser/file_job/job",
+		"file-name": "Detailed Debit Report",
+		"file-name-pattern": "dd-MMM-yyyy",
+		"file-headers": "FROM ORG ID,FROM ORG NAME,FROM NODE ID,FROM POSITION,TO ORAGANIZATION ID,TO ORG NAME,TO NODE ID,POS LEGAL NAME,CLUSTER,SECTOR(MULTI),TERRITORY,POS CATEGORY,POS TYPE,POS SPECIALIZATION,ORGANIZATION TERRITORY,ADRESS,CITY,DISTRICT,REGION,START DEBT,TOTAL SECONDARY SALES AMOUNT,CASH COLLECTION,END DEBT",
+		"field-delimiter": ",",
+		"field-conf": [
+			{
+				"path": "fromOrgId",
+				"type": "String"
+			},
+			{
+				"path": "fromOrgName",
+				"type": "String"
+			},
+			{
+				"path": "fromNodeId",
+				"type": "String"
+			},
+			{
+				"path": "fromPosition",
+				"type": "String"
+			},
+			{
+				"path": "toOrgId",
+				"type": "String"
+			},
+			{
+				"path": "toOrgName",
+				"type": "String"
+			},
+			{
+				"path": "toNodeId",
+				"type": "String"
+			},
+			{
+				"path": "posLegalName",
+				"type": "String"
+			},
+			{
+				"path": "cluster",
+				"type": "String"
+			},
+			{
+				"path": "sector",
+				"type": "String"
+			},
+			{
+				"path": "territory",
+				"type": "String"
+			},
+			{
+				"path": "posCategory",
+				"type": "String"
+			},
+			{
+				"path": "posType",
+				"type": "String"
+			},
+			{
+				"path": "posSpecialization",
+				"type": "String"
+			},
+			{
+				"path": "orgTerritory",
+				"type": "String"
+			},
+			{
+				"path": "address",
+				"type": "String"
+			},
+			{
+				"path": "city",
+				"type": "String"
+			},
+			{
+				"path": "district",
+				"type": "String"
+			},
+			{
+				"path": "region",
+				"type": "String"
+			},
+			{
+				"path": "startDebt",
+				"type": "Double"
+			},
+			{
+				"path": "totalSecondSalesAmt",
+				"type": "Double"
+			},
+			{
+				"path": "cashCollection",
+				"type": "Double"
+			},
+			{
+				"path": "endDebt",
+				"type": "Double"
+			}
+		]
+	}
+}

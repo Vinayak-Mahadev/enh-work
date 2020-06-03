@@ -1,0 +1,453 @@
+{
+	"Primary" : 
+	[
+		{
+			"connection-id": "snoc-r1",
+			"schema-name": "order",
+			"collection-name": "inventory_orders",
+			
+			"projection": 
+			{
+				"data.org_id" : 1,
+				"ord_delivery_dt" : 1,
+				"ord_id" : 1,
+				"ord_master_id" : 1,
+				"status" : 1,
+				"data.ord_items" : 1,
+				"ord_creatd_dt" : 1
+			},
+			"map-key" : 
+			{
+				"key" : ["ord_master_id"],
+				"type" : "Long",
+				"local-key" : ["ord_master_id"]
+			},
+			"parameters": 
+			[
+				{
+					"param-name" : "status",
+					"param-value" : [170,173],
+					"param-type" : "Long"
+				},
+				{
+					"param-name" : "src_system",
+					"param-value" : "FOSS"
+				},
+				{
+					"param-name" : "ord_creatd_dt",
+					"param-value" : [
+						"$start_date",
+						"$end-date"
+					],
+					"param-type" : "date",
+					"from-date-format" : "dd-MMM-yyyy",
+					"to-date-format" : "yyyy-MM-dd'T'HH:mm:ss.SSS'Z'"
+				}
+			],
+			"sort-by": 
+			{
+				"ord_master_id" : 1
+			},
+			"batch-size" : 100
+		},
+		{
+			"connection-id": "snoc-r1",
+			"schema-name": "order",
+			"collection-name": "order_master",
+			
+			"projection": 
+			{
+				"ord_master_id" : 1,
+				"data" : 1
+			},
+			"parent-key" : 
+			{
+				"ord_master_id" : "ord_master_id"
+			},
+			"parameters": 
+			[
+				{
+					"param-name": "data.envelope.payload.orders.order.addnl_param.do_id",
+					"param-value": "$do_id",
+					"mandatory" : "false"
+				}
+			],
+			"alias" :
+			{
+				"data" : "master_data"
+			},
+			"sort-by": 
+			{
+				"ord_master_id" : 1
+			},
+			"batch-size" : 100,
+			"merge-type" : "include_parent"
+		}		
+	],
+	"Lookup": 
+	{
+		"invoice_orders": 
+		{
+			"connection-id": "snoc-r4",
+			"schema-name": "snoc_report",
+			"collection-name": "invoice_orders"
+		},
+		"product_properties" : 
+		{
+			"connection-id": "snoc-r1",
+			"schema-name": "product",
+			"collection-name": "product_properties"		
+		},
+		"org_addnl_params" : 
+		{
+			"connection-id": "snoc-r4",
+			"schema-name": "snoc_report",
+			"collection-name": "org_addnl_params",
+			"parameters": 
+			[				
+				{
+					"param-name": "chnl_ctgr",
+					"param-value": "$chnl_ctgr",
+					"mandatory" : "false"
+				}
+			]
+		},
+		"org_user_node_acc" : 
+		{
+			"connection-id": "snoc-r4",
+			"schema-name": "snoc_report",
+			"collection-name": "org_user_node_acc",
+			"parameters": 
+			[
+				{
+					"param-name": "nasional",
+					"param-value": "$nasional"
+				},
+				{
+					"param-name": "regional",
+					"param-value": "$regional",
+					"mandatory" : "false"
+				},
+				{
+					"param-name": "area",
+					"param-value": "$area",
+					"mandatory" : "false"
+				},
+				{
+					"param-name": "sales_area",
+					"param-value": "$sales_area",
+					"mandatory" : "false"
+				},
+				{
+					"param-name": "cluster",
+					"param-value": "$cluster",
+					"mandatory" : "false"
+				},
+				{
+					"param-name": "micro_cluster",
+					"param-value": "$micro_cluster",
+					"mandatory" : "false"
+				}
+			]
+		}
+	},
+	"Configuration" : 
+	{
+		"ord_id" : 
+		{
+			"field" : "ord_id"
+		},
+		"org_id" : 
+		{
+			"field" : "data.org_id"
+		},
+		"do_id" : 
+		{
+			"field" : "master_data.envelope.payload.orders.order.addnl_param.do_id"
+		},
+		"ord_delivery_dt" :	
+		{
+			"field" : "ord_creatd_dt",
+			"date-format": "dd-MMM-yyyy"
+		},
+		"org_ref_code" :
+		{
+			"field" : "data.org_id",
+			"lookup" : 
+			[
+				{
+					"name": "org_addnl_params",
+					"mapping-field": "org_id",
+					"mapping-field-type" : "Long",
+					"lookup-field": "org_id"
+				},
+				{
+					"name": "org_user_node_acc",
+					"mapping-field": "org_id",
+					"mapping-field-type" : "Long",
+					"lookup-field": "org_ref_code"
+				}
+			]
+		},
+		"org_name" :
+		{
+			"field" : "data.ord_items.to_org_nm",
+		},
+		"prd_ctgr_nm" :
+		{
+			"field" : "data.ord_items.prd_ctgr_nm"
+		},
+		"skuCode" :
+		{
+			"field" : "data.ord_items.prd_id",
+			"lookup": 
+			[
+				{
+					"name": "product_properties",
+					"mapping-field": "prd_id",
+					"mapping-field-type" : "Long",
+					"lookup-field": "skuCode"
+				}
+			]
+		},
+		"prd_nm" : 
+		{
+			"field" : "data.ord_items.prd_id",
+			"lookup": 
+			[
+				{
+					"name": "product_properties",
+					"mapping-field": "prd_id",
+					"mapping-field-type" : "Long",
+					"lookup-field": "description"
+				}
+			]
+		},
+		"exp_date" : 
+		{
+			"field" : "master_data.envelope.payload.orders.order.ord_items.batch_dtls.exp_date"
+		},
+		"exp_qty" : 
+		{
+			"field" : "data.ord_items.prd_qty",
+			"connection-id": "snoc-r1",
+			"schema-name": "order",
+			"collection-name": "interface_prd_sl",
+			"query-fields" : 
+			[
+				{
+					"param-name": "ord_master_id",
+					"path": "ord_master_id",
+					"type" : "Long"
+				},
+				{
+					"param-name": "prd_id",
+					"path": "data.ord_items.prd_id",
+					"type" : "Long"
+				}
+			],
+			"projection" : 
+			{
+				"prd_slnos.sl_exp_dt_no" : 1
+			},
+			"query-opertaion" : 
+			{
+				"field" : "prd_slnos",
+				"condition" : 
+				[
+					{
+						"cond-field" : "sl_exp_dt_no",
+						"type" : "date-num",
+						"date-format" : "yyyyMMdd",
+						"cond-operation" : "less-than"
+					}
+				],
+				"operation" : "count"
+			}
+		},
+		"non_exp_qty" : 
+		{
+			"field" : "data.ord_items.prd_qty",
+			"connection-id": "snoc-r1",
+			"schema-name": "order",
+			"collection-name": "interface_prd_sl",
+			"query-fields" : 
+			[
+				{
+					"param-name": "ord_master_id",
+					"path": "ord_master_id",
+					"type" : "Long"
+				},
+				{
+					"param-name": "prd_id",
+					"path": "data.ord_items.prd_id",
+					"type" : "Long"
+				}
+			],
+			"projection" : 
+			{
+				"prd_slnos.sl_exp_dt_no" : 1
+			},
+			"query-opertaion" : 
+			{
+				"field" : "prd_slnos",
+				"condition" : 
+				[
+					{
+						"cond-field" : "sl_exp_dt_no",
+						"type" : "date-num",
+						"date-format" : "yyyyMMdd",
+						"cond-operation" : "less-than"
+					}
+				],
+				"operation" : "count"
+			},
+			"operation" : 
+			{
+				"operation-fields" : 
+				[
+					"data.ord_items.prd_qty",
+					"$value"
+				],
+				"operation-type" : "minus"
+			}
+		},
+		"status" :
+		{
+			"field" : "status",
+			"properties": 
+			{
+				"170" : "Not Confirmed",
+				"173" : "Confirmed"
+			}
+		},
+		"approval_date_time" : 
+		{
+			"field" : "ord_id",
+			"lookup": 
+			[
+				{
+					"name": "invoice_orders",
+					"mapping-field": "ord_id",
+					"lookup-field": "appr_at"
+				}
+			],
+			"date-format": "dd-MMM-yyyy HH:mm:ss"
+		},
+		"approval_user_name" : 
+		{
+			"field" : "ord_id",
+			"lookup": 
+			[
+				{
+					"name": "invoice_orders",
+					"mapping-field": "ord_id",
+					"lookup-field": "appr_by"
+				}
+			]
+		},
+		"approval_operator_name" :
+		{
+			"field" : "ord_id",
+			"lookup": 
+			[
+				{
+					"name": "invoice_orders",
+					"mapping-field": "ord_id",
+					"lookup-field": "appr_by_optr_nm"
+				}
+			]
+		}		
+	},
+	"OutputConf" :
+	{
+		"type" : "file",
+		"extension": "xls",
+		"file-path": "/home/appuser/file_job/job",
+		"file-name" : "FOSSApprovalMonitoringReport",
+		"file-name-pattern" : "yyyyMMdd",
+		"file-headers" : "DO_ID,DELIVERY DATE,SALDOMOBOSHORTCODE,ORGANIZATION NAME,PRODUCT CATEGORY,PRODUCT CODE,PRODUCT NAME,EXPIRED DATE,TOTAL EXPIRED QTY,TOTAL NON EXPIRED QTY,STATUS,APPROVALDATETIME,APPROVAL USER NAME,APPROVAL FULL OPERATOR NAME",
+		"field-delimiter" : ",",
+		"field-conf" : 
+		[
+			{
+				"path" : "do_id",
+				"type" : "String"
+			},
+			{
+				"path" : "ord_delivery_dt",
+				"type" : "String"
+			},
+			{
+				"path" : "org_ref_code",
+				"type" : "String"
+			},
+			{
+				"path" : "org_name",
+				"type" : "String"
+			},
+			{
+				"path" : "prd_ctgr_nm",
+				"type" : "String"
+			},
+			{
+				"path" : "skuCode",
+				"type" : "String"
+			},
+			{
+				"path" : "prd_nm",
+				"type" : "String"
+			},
+			{
+				"path" : "exp_date",
+				"type" : "String"
+			},
+			{
+				"path" : "exp_qty",
+				"type" : "String"
+			},
+			{
+				"path" : "non_exp_qty",
+				"type" : "String"
+			},
+			{
+				"path" : "status",
+				"type" : "String"
+			},
+			{
+				"path" : "approval_date_time",
+				"type" : "String"
+			},
+			{
+				"path" : "approval_user_name",
+				"type" : "String"
+			},
+			{
+				"path" : "approval_operator_name",
+				"type" : "String"
+			}
+		],
+		"mandatory-fields" :
+		[
+			"do_id",
+			"org_ref_code",
+			"org_name",
+			"prd_ctgr_nm",
+			"skuCode",
+			"prd_nm",
+			"status"
+		]
+	},
+	"SortConf" : 
+	{
+		"extension" : "csv",
+		"file-name-pattern" : "yyyyMMddHHmmssSSS",
+		"file-path" : "/home/appuser/file_job/sort/",
+		"field-delimiter" : "|",
+		"sort-filepath_0" : "/home/appuser/file_job/sort/collection1.sh",
+		"sort-filepath_1" : "/home/appuser/file_job/sort/collection1.sh",
+		"sort-filepath_2" : "/home/appuser/file_job/sort/collection2.sh",
+		"sort-filepath_3" : "/home/appuser/file_job/sort/collection1.sh"
+
+	}
+}

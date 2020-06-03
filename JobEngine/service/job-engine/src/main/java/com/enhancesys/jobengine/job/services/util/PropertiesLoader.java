@@ -59,8 +59,8 @@ public class PropertiesLoader
 			{
 				envPath = System.getenv("APPSERVER_CONF_PATH");
 				configurationPath = envPath + File.separator + "jobengineconf/common/jobConfiguration.properties";
-				if(envPath.trim().endsWith("/"))
-					configurationPath = envPath + "reports/jobConfiguration.properties";
+//				if(envPath.trim().endsWith("/"))
+//					configurationPath = envPath + "reports/jobConfiguration.properties";
 
 				file = new File(configurationPath);
 				if(!file.exists())
