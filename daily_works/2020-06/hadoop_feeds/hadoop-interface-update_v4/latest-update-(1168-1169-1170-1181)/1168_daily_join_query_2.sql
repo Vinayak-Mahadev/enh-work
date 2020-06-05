@@ -91,7 +91,7 @@ from
 			left join kpi.ms_lookup_master micro on micro.lookup_type_n = (select lookup_type_n from kpi.ms_lookup_type_master where ext_lookup_type_n = 89) and temp.source_key_v = micro.ext_ref_code_v
 		where 
 			temp.file_id_n = ?
-			and temp.actor_type_n = 13
+			and temp.actor_type_n = 12
 		) result
 	where 
 		result.id_flag = 1

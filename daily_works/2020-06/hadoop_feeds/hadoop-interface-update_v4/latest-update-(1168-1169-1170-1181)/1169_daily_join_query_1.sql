@@ -72,7 +72,7 @@ from
 			temp.no_of_events_n,
 			temp.source_key_v,
 			coalesce((select reference_type_n from kpi.ms_actor_lookup_master where actor_type_n = temp.source_type_n), temp.source_type_n) as source_type_n,
-			coalesce(site.site_id_n, 0) as source_id_n,
+			coalesce(micro.lookup_id_n, 0) as source_id_n,
 			temp.data_flag_n,
 			temp.instance_key_v,
 			0 as instance_type_n,
@@ -83,7 +83,7 @@ from
 				then kpi.update_analytics_failed_row('tr_temp_rguga_injection_aggr', temp.temp_id_n, 'actor_field%Actor mapping not found for actor_field : ' || temp.actor_key_v)
 				when temp.metrics_key_v is not null and coalesce(met.metrics_id_n, 0) = 0 
 				then kpi.update_analytics_failed_row('tr_temp_rguga_injection_aggr', temp.temp_id_n, 'metric_field%Metric mapping not found for metric_field : ' || temp.metrics_key_v)
-				when temp.source_key_v is not null and coalesce(site.site_id_n, 0) = 0 
+				when temp.source_key_v is not null and coalesce(micro.lookup_id_n, 0) = 0 
 				then kpi.update_analytics_failed_row('tr_temp_rguga_injection_aggr', temp.temp_id_n, 'source_field%Source mapping not found for source_field : ' || temp.source_key_v)
 			else 1
 			end as id_flag
@@ -91,7 +91,7 @@ from
 			kpi.tr_temp_rguga_injection_aggr temp
 			left join kpi.ms_org_master org on temp.actor_key_v = org.ref_code_v 
 			left join kpi.ms_metrics_master met on temp.metrics_key_v = met.ext_reference_id_v and met.metrics_type_n = 24
-			left join kpi.ms_site_master site on temp.source_key_v = site.ref_code_v
+			left join kpi.ms_lookup_master micro on micro.lookup_type_n = (select lookup_type_n from kpi.ms_lookup_type_master where ext_lookup_type_n = 89) and temp.source_key_v = micro.ext_ref_code_v
 		where 
 			temp.file_id_n = ?
 			and temp.actor_type_n = 10

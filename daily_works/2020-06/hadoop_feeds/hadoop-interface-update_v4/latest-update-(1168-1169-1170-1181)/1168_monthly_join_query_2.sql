@@ -79,20 +79,20 @@ from
 			0 as instance_id_n,
 			temp.file_id_n,
 			case
-				when temp.actor_key_v is not null and coalesce(micro.lookup_id_n, 0) = 0 
-				then kpi.update_analytics_failed_row('tr_temp_daily_sso_aggr', temp.temp_id_n, 'source_field%Actor mapping not found for source_field : ' || temp.source_key_v)
 				when temp.source_key_v is not null and coalesce(site.site_id_n, 0) = 0 
 				then kpi.update_analytics_failed_row('tr_temp_daily_sso_aggr', temp.temp_id_n, 'actor_field%Source mapping not found for actor_field : ' || temp.actor_key_v)
+				when temp.actor_key_v is not null and coalesce(micro.lookup_id_n, 0) = 0 
+				then kpi.update_analytics_failed_row('tr_temp_daily_sso_aggr', temp.temp_id_n, 'source_field%Actor mapping not found for source_field : ' || temp.source_key_v)
 			else 1
 			end as id_flag
 		from 
 			kpi.tr_temp_daily_sso_aggr temp
-			left join kpi.ms_lookup_master micro on micro.lookup_type_n = (select lookup_type_n from kpi.ms_lookup_type_master where ext_lookup_type_n = 89) and temp.actor_key_v = micro.ext_ref_code_v
-			left join kpi.ms_site_master site on temp.source_key_v = site.ref_code_v
+			left join kpi.ms_site_master site on temp.actor_key_v = site.ref_code_v
+			left join kpi.ms_lookup_master micro on micro.lookup_type_n = (select lookup_type_n from kpi.ms_lookup_type_master where ext_lookup_type_n = 89) and temp.source_key_v = micro.ext_ref_code_v
 			inner join kpi.ms_day_master as day_master on temp.id_n = day_master.day_id_n
 		where 
 			temp.file_id_n = ? 
-			and temp.actor_type_n = 13
+			and temp.actor_type_n = 12
 			and temp.status_flag_n = 0
 		) result
 	where 
