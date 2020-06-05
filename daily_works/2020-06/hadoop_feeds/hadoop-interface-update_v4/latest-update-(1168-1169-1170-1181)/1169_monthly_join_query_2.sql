@@ -83,7 +83,7 @@ from
 				then kpi.update_analytics_failed_row('tr_temp_rguga_injection_aggr', temp.temp_id_n, 'actor_field%Actor mapping not found for actor_field : ' || temp.actor_key_v)
 				when temp.metrics_key_v is not null and coalesce(met.metrics_id_n, 0) = 0 
 				then kpi.update_analytics_failed_row('tr_temp_rguga_injection_aggr', temp.temp_id_n, 'metric_field%Metric mapping not found for metric_field : ' || temp.metrics_key_v)
-				when temp.source_key_v is not null and coalesce(micro.lookup_id_n_n, 0) = 0 
+				when temp.source_key_v is not null and coalesce(micro.lookup_id_n, 0) = 0 
 				then kpi.update_analytics_failed_row('tr_temp_rguga_injection_aggr', temp.temp_id_n, 'source_field%Source mapping not found for source_field : ' || temp.source_key_v)
 			else 1
 			end as id_flag
