@@ -13,25 +13,6 @@
 	<name>job-engine</name>
 	<packaging>jar</packaging>
 
-	<properties>
-		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-		<spring.version>4.1.0.RELEASE</spring.version>
-		<org.apache.camel>2.12.3</org.apache.camel>
-		<com.jayway.jsonpath>1.2.0</com.jayway.jsonpath>
-		<log4j.version>1.2.17</log4j.version>
-		<slf4j.api.version>1.7.7</slf4j.api.version>
-		<googlecode.json.simple>1.1</googlecode.json.simple>
-		<org.codehaus.jackson>1.9.13</org.codehaus.jackson>
-		<mongo.java.driver>2.12.1</mongo.java.driver>
-		<postgresql.java.driver>9.0-801.jdbc4</postgresql.java.driver>
-		<apache.commons.io>1.4</apache.commons.io>
-		<javax.jms.api>2.0</javax.jms.api>
-		<org.apache.activemq>4.1.1</org.apache.activemq>
-		<org.apache.poi>3.11</org.apache.poi>
-		<joda.time>2.0</joda.time>
-		<com.lowagie.itext>2.1.4</com.lowagie.itext>
-		<org.apache.xmlbeans>2.3.0</org.apache.xmlbeans>
-	</properties>
 
 	<dependencies>
 
@@ -258,9 +239,10 @@
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-compiler-plugin</artifactId>
+				<version>3.2</version>
 				<configuration>
-					<source>1.7</source>
-					<target>1.7</target>
+					<source>${java.version}</source>
+					<target>${java.version}</target>
 				</configuration>
 			</plugin>
 		</plugins>
