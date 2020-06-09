@@ -4,3 +4,5 @@ UPDATE INTERFACE.MS_INTERFACE_ATTR SET VALUE_V = '{"process_enabled":true,"field
 
 
 
+--1166
+UPDATE INTERFACE.MS_INTERFACE_ATTR SET VALUE_V = '{"process_enabled":true,"fields":{"actor_field":"MPC_CODE","metric_field":"","source_field":"","instance_field":""},"error_codes":{"actor_field":"60101","metric_field":"60201","source_field":"60301","instance_field":"60401"},"pre_aggregation_conf":{"1":"monthly","2":"daily","3":"cleanup"},"table_name":"tr_temp_primary_mobo_aggr","lookup_query":"","notexist_lookup":"","no_of_params":{},"daily_table":"tr_daily_primary_mobo_aggr","monthly_table":"tr_monthly_primary_mobo_aggr","no_of_join_query_params":1,"no_of_daily_join_queries":1,"no_of_monthly_join_queries":1,"duplicate_validation_conf":{"field_indexes":[0,1],"schema_name":"kpi","table_name":"tr_validate_primary_mobo_aggr","include-fileId":true},"data_filter":[]}' WHERE ATTRIBUTE_ID_N = 1166037;
