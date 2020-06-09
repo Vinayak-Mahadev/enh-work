@@ -37,6 +37,7 @@ public class RDBMSOperation {
 		try 
 		{
 			int fileSequence = 1;
+			limit = limit * fileCount;
 			int calcRowLimit = limit/fileCount; 
 			fos = new FileOutputStream(new File(filePath));
 			fos.write("DATE|SITE_ID|LONGITUDE|LATITUDE|MICRO_CLUSTER|SALES_CLUSTER|SALES_AREA|AREA|REGION|JAVA_NONJAVA|SITE_NAME|SITE_POPULATION\n".getBytes());					
@@ -83,8 +84,10 @@ public class RDBMSOperation {
 		try 
 		{
 			fos = new FileOutputStream(new File(filePath));
-			fos.write("MPC_CODE|MOBO_DATE|AMOUNT\n".getBytes());			
-			int fileSequence = 1;
+			fos.write("MPC_CODE|MOBO_DATE|AMOUNT\n".getBytes());
+			
+			limit = limit * fileCount;
+			int fileSequence = 1;			
 			int calcRowLimit = limit/fileCount; 
 			int i = 0;
 
@@ -153,6 +156,7 @@ public class RDBMSOperation {
 			org = conn.createStatement().executeQuery("select ref_code_v from kpi.ms_org_master where org_type_n = 6 order by 1");
 			mpc = conn.createStatement().executeQuery("select ref_code_v from kpi.ms_org_master where org_type_n = 7 order by 1");
 
+			limit = limit * fileCount;
 			int fileSequence = 1;
 			int calcRowLimit = limit/fileCount; 
 			int i = 0;
@@ -210,6 +214,7 @@ public class RDBMSOperation {
 			outlet = conn.createStatement().executeQuery("select ref_code_v from kpi.ms_org_master where org_type_n = 6   and sub_org_type_n = 66 and status_n = 174 order by 1;");
 			micro = conn.createStatement().executeQuery("select ext_ref_code_v from kpi.ms_lookup_master where lookup_type_n = (select lookup_type_n from kpi.ms_lookup_type_master where ext_lookup_type_n = 89) order by 1;");
 
+			limit = limit * fileCount;
 			int i = 0;
 			int fileSequence = 1;
 			int calcRowLimit = limit/fileCount; 
@@ -265,6 +270,7 @@ public class RDBMSOperation {
 			outlet = conn.createStatement().executeQuery("select ref_code_v from kpi.ms_org_master where org_type_n = 6   and sub_org_type_n = 66 and status_n = 174 order by 1;");
 			micro = conn.createStatement().executeQuery("select ext_ref_code_v from kpi.ms_lookup_master where lookup_type_n = (select lookup_type_n from kpi.ms_lookup_type_master where ext_lookup_type_n = 89) order by 1;");
 
+			limit = limit * fileCount;
 			int i = 0;
 			int fileSequence = 1;
 			int calcRowLimit = limit/fileCount; 
@@ -319,6 +325,7 @@ public class RDBMSOperation {
 			micro = conn.createStatement().executeQuery("select ext_ref_code_v from kpi.ms_lookup_master where lookup_type_n = (select lookup_type_n from kpi.ms_lookup_type_master where ext_lookup_type_n = 89) order by 1;");
 			out = conn.createStatement().executeQuery("select ref_code_v from kpi.ms_org_master where org_type_n = 6 order by 1");
 
+			limit = limit * fileCount;
 			int i = 0;
 			int fileSequence = 1;
 			int calcRowLimit = limit/fileCount;
@@ -372,6 +379,7 @@ public class RDBMSOperation {
 			fos = new FileOutputStream(new File(filePath));
 			fos.write("MOBO_DATE|ORG_CODE|AMOUNT\n".getBytes());			
 
+			limit = limit * fileCount;
 			int i = 0;
 			int fileSequence = 1;
 			int calcRowLimit = limit/fileCount; 
@@ -437,6 +445,7 @@ public class RDBMSOperation {
 			fos = new FileOutputStream(new File(filePath));
 			fos.write("DATE|MICRO|SITE_ID|REVENUE_TYPE|REVENUE_TOTAL\n".getBytes());			
 
+			limit = limit * fileCount;
 			int i = 0;
 			int fileSequence = 1;
 			int calcRowLimit = limit/fileCount;
@@ -508,6 +517,7 @@ public class RDBMSOperation {
 			fos = new FileOutputStream(new File(filePath));
 			fos.write("DATE|MICRO|SITE_ID|REVENUE\n".getBytes());			
 
+			limit = limit * fileCount;
 			int i = 0;
 			int fileSequence = 1;
 			int calcRowLimit = limit/fileCount; 
@@ -574,6 +584,7 @@ public class RDBMSOperation {
 			fos = new FileOutputStream(new File(filePath));
 			fos.write("DATE|MICRO|SITE_ID|CATEGORY|TARGET|REVENUE\n".getBytes());			
 
+			limit = limit * fileCount;
 			int i = 0;
 			int fileSequence = 1;
 			int calcRowLimit = limit/fileCount; 
@@ -644,6 +655,7 @@ public class RDBMSOperation {
 			fos = new FileOutputStream(new File(filePath));
 			fos.write("DATE|MICRO|SITE|QTY\n".getBytes());			
 
+			limit = limit * fileCount;
 			int i = 0;		
 			int fileSequence = 1;
 			int calcRowLimit = limit/fileCount; 
@@ -709,6 +721,7 @@ public class RDBMSOperation {
 			fos = new FileOutputStream(new File(filePath));
 			fos.write("DATE|CLUSTER_ID|CATEGORY|CLUSTER_TYPE|TOTAL_RELOAD|CROSS_RELOAD\n".getBytes());			
 
+			limit = limit * fileCount;
 			int i = 0;	
 			int fileSequence = 1;
 			int calcRowLimit = limit/fileCount; 
@@ -786,6 +799,7 @@ public class RDBMSOperation {
 			fos = new FileOutputStream(new File(filePath));
 			fos.write("DATE|CLUSTER_ID|TOTAL_DATA|CROSS_DATA\n".getBytes());			
 
+			limit = limit * fileCount;
 			int i = 0;
 			int fileSequence = 1;
 			int calcRowLimit = limit/fileCount; 
@@ -853,6 +867,7 @@ public class RDBMSOperation {
 			fos = new FileOutputStream(new File(filePath));
 			fos.write("MONTH_ID|CLUSTER|ID_OUTLET|TARGET|ACTUAL\n".getBytes());			
 
+			limit = limit * fileCount;
 			int i = 0;
 			int fileSequence = 1;
 			int calcRowLimit = limit/fileCount; 
@@ -921,6 +936,7 @@ public class RDBMSOperation {
 			fos = new FileOutputStream(new File(filePath));
 			fos.write("MONTH_ID|CLUSTER|MPC_CODE|PAYMENT_ALLOCATION\n".getBytes());			
 
+			limit = limit * fileCount;
 			int i = 0;
 			int fileSequence = 1;
 			int calcRowLimit = limit/fileCount; 			
@@ -991,6 +1007,7 @@ public class RDBMSOperation {
 			micro = conn.createStatement().executeQuery("select ext_ref_code_v from kpi.ms_lookup_master where lookup_type_n = (select lookup_type_n from kpi.ms_lookup_type_master where ext_lookup_type_n = 89) order by 1;");
 			out = conn.createStatement().executeQuery("select ref_code_v from kpi.ms_org_master where org_type_n = 6   and sub_org_type_n = 66 and status_n = 174 order by 1;");
 
+			limit = limit * fileCount;
 			int i = 0;			
 			int fileSequence = 1;
 			int calcRowLimit = limit/fileCount; 
