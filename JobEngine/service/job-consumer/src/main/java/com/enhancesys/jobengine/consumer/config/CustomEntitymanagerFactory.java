@@ -12,7 +12,8 @@ import org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean;
 import com.enhancesys.jobcommon.Constants;
 import com.enhancesys.jobcommon.PropertyLoader;
 
-public class CustomEntitymanagerFactory extends LocalContainerEntityManagerFactoryBean{
+public class CustomEntitymanagerFactory extends LocalContainerEntityManagerFactoryBean
+{
 
 	private static final Map<String, String> PROPERTY = PropertyLoader.loadProperties(Constants._JOB_CONSUMER_SERVICE_DATASOURCE_CONFIG_LOC);	
 

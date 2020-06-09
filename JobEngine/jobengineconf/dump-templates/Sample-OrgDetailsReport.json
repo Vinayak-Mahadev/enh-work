@@ -186,7 +186,7 @@
 	"OutputConf": {
 		"type": "file",
 		"extension": "xls",
-		"file-path": "/home/appuser/file_job/job",
+		"file-path": "E:/interface/work/raw",
 		"file-name": "OrgDetailReport",
 		"file-name-pattern": "yyyyMMdd",
 		"file-headers": "CHANNEL,REGION,AREA,SALES AREA,CLUSTER,MICRO CLUSTER,ADDITIONAL TERRITORY,TERRITORY ID,PARENT ORGANIZATION ID,SALDOMOBO_PARENT ORGANIZATION ID,PARENT ORGANIZATION NAME,ORGANIZATION ID,SALDO_MOBO_ORGANIZATION_ID,ORGANIZATION NAME,ORGANIZATION TYPE,ORGANIZATION CATEGORY,ORGANIZATION CLASSIFICATION,DEALER CODE,DOMPETKU MSISDN,SALDOMOB MSISDN NO.,CONTACT NUMBER,PERMANENTADDRES_CITY/DISTRICT,PERMANENTADDRES_DISTRICTS,PERMANENTADDRES_STREET ADDRESS,PERMANENTADDRES_ADDITIONAL ADDRESS,STATUS,REGISTER DATETIME,REGISTER USER NAME,REGISTER OPERATOR ID,REGISTER OPERATOR NAME,APPROVAL DATETIME,APPROVAL OPERATOR ID ,APPROVAL OPERATOR NAME",
@@ -313,9 +313,9 @@
 	"SortConf": {
 		"extension": "csv",
 		"file-name-pattern": "yyyyMMddHHmmssSSS",
-		"file-path": "/home/appuser/file_job/sort/",
+		"file-path": "E:/interface/work/enh-work/JobEngine/jobengineconf/sorting-scripts/",
 		"field-delimiter": "|",
-		"sort-filepath_0": "/home/appuser/file_job/sort/collection1.sh",
-		"sort-filepath_1": "/home/appuser/file_job/sort/collection1.sh"
+		"sort-filepath_0": "E:/interface/work/enh-work/JobEngine/jobengineconf/sorting-scripts/collection1.sh",
+		"sort-filepath_1": "E:/interface/work/enh-work/JobEngine/jobengineconf/sorting-scripts/collection1.sh"
 	}
 }

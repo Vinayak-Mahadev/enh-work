@@ -1,10 +1,12 @@
 package com.enhancesys.jobengine.consumer;
 
 import javax.ws.rs.GET;
+import javax.ws.rs.POST;
 import javax.ws.rs.Path;
 import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 
+import org.json.JSONObject;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.ResponseBody;
 
@@ -16,6 +18,12 @@ public interface JobConsumerServices
 	@Path("home")
 	@ResponseBody
 	public String goHome(@RequestBody String reqString);
-	
+
+	@POST
+	@Path("processModule")
+	@ResponseBody
+	public JSONObject processModule(Long moduleId);
+
+
 }
 

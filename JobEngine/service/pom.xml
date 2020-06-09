@@ -43,6 +43,7 @@
 		<cxf.common.utilities>2.5.11</cxf.common.utilities>
 		<cxf.rt-transports.common>2.5.11</cxf.rt-transports.common>
 		<cxf.bundle.jaxrs>2.6.14</cxf.bundle.jaxrs>
+		<org.quartz-scheduler>2.1.6</org.quartz-scheduler>
 		<!-- Job Engine properties ends -->
 
 	</properties>

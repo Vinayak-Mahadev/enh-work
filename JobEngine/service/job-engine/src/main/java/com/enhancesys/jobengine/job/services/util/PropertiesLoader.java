@@ -34,33 +34,33 @@ public class PropertiesLoader
 {
 	private static Properties properties = null;
 	private static Logger log = Logger.getLogger(PropertiesLoader.class);
-	
+
 	public PropertiesLoader()
 	{
 		if(properties == null)
 			loadProperties();
 	}
 
-	private void loadProperties()
+	private static void loadProperties()
 	{
 		log.info("Entry loadProperties..");
-		
+
 		File file = null;
 		String configurationPath = null;
 		String envPath = null;
-		
+
 		try 
 		{
 			properties = new Properties();
-			
+
 			configurationPath = System.getProperty("user.dir") + File.separator + "jobConfiguration.properties";
 			file = new File(configurationPath);
 			if(!file.exists())
 			{
 				envPath = System.getenv("APPSERVER_CONF_PATH");
 				configurationPath = envPath + File.separator + "jobengineconf/common/jobConfiguration.properties";
-//				if(envPath.trim().endsWith("/"))
-//					configurationPath = envPath + "reports/jobConfiguration.properties";
+				//				if(envPath.trim().endsWith("/"))
+				//					configurationPath = envPath + "reports/jobConfiguration.properties";
 
 				file = new File(configurationPath);
 				if(!file.exists())
@@ -69,9 +69,9 @@ public class PropertiesLoader
 					System.exit(0);
 				}
 			}
-			
-//			configurationPath = "E:/Documents/Team/Docs/Yugi/Reliance/2018-10/Amjath/Data Engine/jobConfiguration.properties";
-			
+
+			//			configurationPath = "E:/Documents/Team/Docs/Yugi/Reliance/2018-10/Amjath/Data Engine/jobConfiguration.properties";
+
 			log.info("Configuration Path : " + configurationPath);
 			properties.load(new FileInputStream(file));
 		}
@@ -87,15 +87,15 @@ public class PropertiesLoader
 			log.info("Exit loadProperties..");
 		}
 	}
-	
-	public String getValueFor(String key)
+
+	public static String getValueFor(String key)
 	{
 		try
 		{
 			if(properties == null)
 				loadProperties();
-
-			return (String) properties.get(key);
+			if(properties.get(key) != null && !properties.get(key).toString().isEmpty())
+				return  properties.get(key).toString().trim();
 		}
 		catch(Exception exception)
 		{

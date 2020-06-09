@@ -2,9 +2,12 @@ package com.enhancesys.jobengine.consumer.services;
 
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
+import org.springframework.stereotype.Service;
 
+import com.enhancesys.jobengine.consumer.model.Module;
 import com.enhancesys.jobengine.job.services.JobServcies;
 
+@Service
 public class JobEngineServices 
 {
 
@@ -30,5 +33,18 @@ public class JobEngineServices
 		{
 			System.out.println("JobTestMain");
 		}
+	}
+
+	public JSONObject processModule(Module module) 
+	{
+		try 
+		{
+			System.out.println("Need to implement code...");
+		}
+		catch (Exception e)
+		{
+			e.printStackTrace();
+		}
+		return null;
 	}
 }
