@@ -17,12 +17,12 @@ public interface JobConsumerServices
 	@GET
 	@Path("home")
 	@ResponseBody
-	public String goHome(@RequestBody String reqString);
+	public String goHome(@RequestBody String request);
 
 	@POST
 	@Path("processModule")
 	@ResponseBody
-	public JSONObject processModule(Long moduleId);
+	public JSONObject processModule(@RequestBody String request);
 
 
 }
