@@ -1,0 +1,6 @@
+
+--1075 escape(\\) character added
+UPDATE INTERFACE.MS_INTERFACE_ATTR SET VALUE_V = '{"process_enabled":true,"fields":{"actor_field":"SMORGShortcode","metric_field":{"43":"TransactionType,ProductName","46":"TransactionType,ProductGroup"},"source_field":"SMORGShortcode","instance_field":"TransactionType"},"error_codes":{"actor_field":"60101","metric_field":"60201","source_field":"60301","instance_field":"60401"},"table_name":"tr_temp_upload_metrics_trans_aggr","lookup_query":"select * from kpi.update_aggregate_lookup_trans_master(?, ?);","notexist-lookup-flag":true,"default_conf":{"field":"ProductGroup","default_value":"Default Package Type"},"metric_delimiter":"\\|","no_of_join_query_params":1,"no_of_daily_join_queries":1,"no_of_monthly_join_queries":1,"cs_daily_table":"tr_daily_mobo_crosselling_aggr","cs_monthly_table":"tr_monthly_mobo_crosselling_aggr","daily_table":"tr_daily_mobo_transaction_aggr","monthly_table":"tr_monthly_mobo_transaction_aggr","cross_sell_lacci_config":{"B#CIID":"B#LACID~B#CIID","A#CIID":"A#LACID~A#CIID"},"data_filter":[{"operation":"in","values":["Purchase Data Package","Indosat Reload","Voucher card injection"],"field_index":2}]}' WHERE ATTRIBUTE_ID_N = 1075040;
+
+
+
