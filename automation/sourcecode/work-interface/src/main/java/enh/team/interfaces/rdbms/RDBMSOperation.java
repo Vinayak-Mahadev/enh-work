@@ -2,6 +2,7 @@ package enh.team.interfaces.rdbms;
 
 import java.io.File;
 import java.io.FileOutputStream;
+import java.io.FileWriter;
 import java.sql.Connection;
 import java.sql.DatabaseMetaData;
 import java.sql.PreparedStatement;
@@ -85,7 +86,7 @@ public class RDBMSOperation {
 		{
 			fos = new FileOutputStream(new File(filePath));
 			fos.write("MPC_CODE|MOBO_DATE|AMOUNT\n".getBytes());
-			
+
 			limit = limit * fileCount;
 			int fileSequence = 1;			
 			int calcRowLimit = limit/fileCount; 
@@ -1185,7 +1186,7 @@ public class RDBMSOperation {
 			{
 				System.out.println("INTERFACE ID	" + resultSet.getString(1));
 				System.out.println("INTERFACE NAME	" + resultSet.getString(2));
-				System.out.println();
+				//System.out.println(resultSet.getString(3));
 				jsonObject = new JSONObject(resultSet.getString(3));
 				//System.out.println(jsonObject);
 				fields = jsonObject.getJSONObject("fields");
@@ -1195,15 +1196,27 @@ public class RDBMSOperation {
 				System.out.println( "MONTHLY TABLE"+ "	kpi." + jsonObject.get("monthly_table").toString().toLowerCase());
 				System.out.print( "SOURCE"+ "	" + fields.get("source_field")+ "	" );
 
-				System.out.println("FAILURE TABLE" + "	kpi.TR_TEMP_HADOOP_FAILURE_AGGR".toLowerCase());
+				//System.out.println("FAILURE TABLE" + "	kpi.TR_TEMP_HADOOP_FAILURE_AGGR".toLowerCase());
 
-				if(jsonObject.get("duplicate_validation_conf") != null) 
+				if(jsonObject.has("duplicate_validation_conf") && jsonObject.get("duplicate_validation_conf") != null) 
 				{
 					duplicate_validation_conf = jsonObject.getJSONObject("duplicate_validation_conf");
 					System.out.print( "INSTANCE"+ "	" + fields.get("instance_field")+ "	" );
-					System.out.println( "VALIDATION TABLE"+ "	kpi." + duplicate_validation_conf.get("table_name").toString().toLowerCase());
+					System.out.println( "VALIDATION TABLE"+ "	kpi." + duplicate_validation_conf.get("table_name").toString().toLowerCase() + "\n");
+					System.out.println("select * from kpi." + duplicate_validation_conf.get("table_name").toString().toLowerCase()+";");
 				}
-				System.out.println("\n\n\n");
+				System.out.println("select * from kpi." + jsonObject.get("daily_table").toString().toLowerCase()+";");
+				System.out.println("select * from kpi." + jsonObject.get("monthly_table").toString().toLowerCase()+";");
+				System.out.println("select * from kpi." + jsonObject.get("daily_table").toString().toLowerCase()+";");
+
+				if(jsonObject.has("duplicate_validation_conf") && jsonObject.get("duplicate_validation_conf") != null) 
+					System.out.println("delete from kpi." + duplicate_validation_conf.get("table_name").toString().toLowerCase()+";");
+				System.out.println("delete from kpi." + jsonObject.get("daily_table").toString().toLowerCase()+";");
+				System.out.println("delete from kpi." + jsonObject.get("monthly_table").toString().toLowerCase()+";");
+				System.out.println("delete from kpi." + jsonObject.get("daily_table").toString().toLowerCase()+";");
+
+
+				System.out.println("\n\n\n----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------\n\n\n");
 			}
 
 		}
@@ -1211,5 +1224,56 @@ public class RDBMSOperation {
 		{
 			e.printStackTrace();
 		}
-	}	
+	}
+
+	public void writeFileWithKpiDailyAndMonthlyData(Connection connection, String seq, String kpiTableName, String fileName) throws Exception {
+
+		PreparedStatement preparedStatement = null;
+		String query = null;
+		String header = null;
+		ResultSet resultSet = null;
+		FileWriter fileWriter = null;
+		try 
+		{
+			if(seq.equals("daily"))
+			{
+				header = "day_id_n|actor_type_n|actor_id_n|event_type_n|metrics_id_n|dimension_1_n|no_of_events_n|source_type_n|source_id_n|data_flag_n|instance_type_n|instance_id_n|status_flag_n|data_string_v|system_type_v|last_updated_time_dt".toUpperCase();
+				query = "select concat(day_id_n, '|', actor_type_n, '|', actor_id_n, '|', event_type_n, '|', metrics_id_n, '|', dimension_1_n, '|', no_of_events_n, '|', source_type_n, '|', source_id_n, '|', data_flag_n, '|', instance_type_n, '|', instance_id_n, '|', status_flag_n, '|', data_string_v, '|', system_type_v, '|', last_updated_time_dt) as msg from TABLE_NAME  order by last_updated_time_dt;".replaceAll("TABLE_NAME", kpiTableName) ;
+				preparedStatement = connection.prepareStatement(query);
+			}
+			else if(seq.equals("monthly"))
+			{
+				header = "month_id_n|actor_type_n|actor_id_n|event_type_n|metrics_id_n|dimension_1_n|no_of_events_n|source_type_n|source_id_n|data_flag_n|instance_type_n|instance_id_n|status_flag_n|data_string_v|system_type_v|last_updated_time_dt".toUpperCase();
+				query = "select concat(month_id_n, '|', actor_type_n, '|', actor_id_n, '|', event_type_n, '|', metrics_id_n, '|', dimension_1_n, '|', no_of_events_n, '|', source_type_n, '|', source_id_n, '|', data_flag_n, '|', instance_type_n, '|', instance_id_n, '|', status_flag_n, '|', data_string_v, '|', system_type_v, '|', last_updated_time_dt) as msg from TABLE_NAME  order by last_updated_time_dt;".replaceAll("TABLE_NAME", kpiTableName) ;
+				preparedStatement = connection.prepareStatement(query);
+			}
+			System.out.println(query);
+			fileWriter = new FileWriter(fileName);
+			resultSet = preparedStatement.executeQuery();
+			fileWriter.write(header + "\n"); 
+			while(resultSet.next()) 
+			{
+				fileWriter.write(resultSet.getString(1) + "\n");
+			}
+			fileWriter.close();
+		} 
+		catch (Exception e) 
+		{
+			e.printStackTrace();
+		}
+		finally 
+		{
+			if(resultSet != null)
+				resultSet.close();
+			if(preparedStatement != null)
+				preparedStatement.close();
+			if(fileWriter != null)
+				fileWriter.close();
+			query = null;
+			fileWriter = null;
+			resultSet = null;
+			preparedStatement = null;
+			System.out.println("Generated :: " + fileName);
+		}
+	}
 }

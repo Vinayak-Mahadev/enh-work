@@ -129,8 +129,8 @@ class AppDate {
 		
 		
 		
-		
-		
+		System.out.println("format :  yyyyMMdd      date :   20200610");
+		dateOpration.calenderOpr("yyyyMMdd", "20200610");
 		
 		
 	}

@@ -1,6 +1,9 @@
 package enh.team.interfaces.dates;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.List;
 
 import org.joda.time.Days;
@@ -33,5 +36,15 @@ public class DateOpration {
 		}
 		dates.add(date);
 		return dates;
+	}
+	
+	public void calenderOpr(String format, String date) throws ParseException {
+		Calendar calendar = Calendar.getInstance();
+		SimpleDateFormat simpleDateformat = new SimpleDateFormat(format);
+		calendar.setTime(simpleDateformat.parse(date));
+		//System.out.println(calendar.getTime());
+		calendar.add(Calendar.DATE, 1);
+		System.out.println(calendar.getTime());
+		
 	}
 }
