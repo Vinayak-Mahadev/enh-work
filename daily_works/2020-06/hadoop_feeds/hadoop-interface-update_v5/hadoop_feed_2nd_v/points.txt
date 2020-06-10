@@ -1,6 +1,6 @@
 * 'Remote File' modifed for hadoop feeds
 * Basic 'regx' validation modifed for hadoop feeds (INTHDP001 - INTHDP017)
-* INTHDP005 Manatory fields modified for ID_OUTLET as non-manatory
-* INTHDP006 Manatory fields modified for MICRO,SITE_ID as non-manatory
-* INTHDP008 Manatory fields modified for MICRO,SITE_ID as non-manatory
+* INTHDP005 mandatory fields modified for ID_OUTLET as non-mandatory
+* INTHDP006 mandatory fields modified for MICRO,SITE_ID as non-mandatory
+* INTHDP008 mandatory fields modified for MICRO,SITE_ID as non-mandatory
 * INTHDP001-INTHDP017 Pre-aggregation queries added from kpi
