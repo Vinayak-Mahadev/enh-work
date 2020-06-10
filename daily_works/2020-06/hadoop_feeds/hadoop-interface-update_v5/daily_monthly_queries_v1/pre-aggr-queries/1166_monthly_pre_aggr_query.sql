@@ -32,7 +32,7 @@ from
 	from 
 		kpi.tr_daily_primary_mobo_aggr
 	where 
-		day_id_n in (select id_n from kpi.tr_temp_primary_mobo_aggr where file_id_n = ?)
+		day_id_n in (select distinct(id_n) from kpi.tr_temp_primary_mobo_aggr where file_id_n = ?)
 	group by 
 		month_id_n, actor_type_n, actor_id_n, event_type_n, event_type_n, metrics_type_n, metrics_id_n, source_type_n, source_id_n, data_flag_n, instance_type_n, instance_id_n
 	) as daily 
