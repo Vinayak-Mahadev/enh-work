@@ -47,7 +47,7 @@ public class RDBMSOperation {
 			int lastFileRowCount = 0;
 			for(int i = 1; i <= limit; i++)
 			{
-				fos.write((dateInFile + "|Test Site-"+ i +"|19.10|31.23|micro107|100709|59|13|REG5|NON_JAVA|Test Site-"+ i +"|" + population + "\n").getBytes());
+				fos.write((dateInFile + "|Test Site-"+ i +"|19.10|31.23|MC-KOBAR-LAMANDAU|KS-KAL-WEST KALTENG|SAMPIT|SUMATERA BARAT|KaliSumapa|NON_JAVA|Test Site-"+ i +"|" + population + "\n").getBytes());
 				if(population++ % 100 == 0)
 					population = 5;
 
@@ -1069,7 +1069,7 @@ public class RDBMSOperation {
 			responceObj.put("status", "SUCCESS");
 			territoryObject = new JSONObject();
 
-			preparedStatement = connection.prepareStatement("select lookup_master.lookup_id_n, lookup_master.lookup_type_n, lookup_master.ext_ref_code_v, lookup_type_master.ext_lookup_type_n from kpi.ms_lookup_master as lookup_master inner join kpi.ms_lookup_type_master as lookup_type_master on (lookup_master.ext_ref_code_v in (?, ?, ?, ?, ?) and lookup_type_master.ext_lookup_type_n in (84,85,86,87,88,89) and lookup_type_master.lookup_type_n = lookup_master.lookup_type_n) group by lookup_master.lookup_id_n, lookup_master.lookup_type_n, lookup_master.ext_ref_code_v, lookup_type_master.ext_lookup_type_n order by lookup_type_master.ext_lookup_type_n desc");
+			preparedStatement = connection.prepareStatement("select lookup_master.lookup_id_n, lookup_master.lookup_type_n, lookup_master.lookup_name_v, lookup_type_master.ext_lookup_type_n from kpi.ms_lookup_master as lookup_master inner join kpi.ms_lookup_type_master as lookup_type_master on (lookup_master.lookup_name_v in (?, ?, ?, ?, ?) and lookup_type_master.ext_lookup_type_n in (84,85,86,87,88,89) and lookup_type_master.lookup_type_n = lookup_master.lookup_type_n) group by lookup_master.lookup_id_n, lookup_master.lookup_type_n, lookup_master.lookup_name_v, lookup_type_master.ext_lookup_type_n order by lookup_type_master.ext_lookup_type_n desc");
 			preparedStatement.setString(1, inputObject.getString("MICRO_CLUSTER"));
 			preparedStatement.setString(2, inputObject.getString("SALES_CLUSTER"));
 			preparedStatement.setString(3, inputObject.getString("SALES_AREA"));
