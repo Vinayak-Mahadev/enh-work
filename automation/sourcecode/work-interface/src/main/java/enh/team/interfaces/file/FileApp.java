@@ -25,8 +25,9 @@ public class FileApp
 		//fileOperation.printDecimalFormatNumber(50);
 		
 		
-		fileOperation.writeFile("E:\\interface\\work\\enh-work\\daily_works\\2020-06\\hadoop_feeds\\hadoop-interface-update_v5\\hadoop_feed_2nd_v\\hadoop-interface_v3\\pre-aggregate-queries_v3", "E:\\interface\\work\\enh-work\\daily_works\\2020-06\\hadoop_feeds\\hadoop-interface-update_v5\\hadoop_feed_2nd_v\\hadoop-interface_v3\\test1.properties");
-		
+		fileOperation.writeFile("E:\\interface\\work\\enh-work\\daily_works\\2020-06\\hadoop_feeds\\hadoop-interface-update_v5\\hadoop_feed_2nd_v\\hadoop-interface_v3\\daily-monthly-queries_v3", "E:\\interface\\work\\enh-work\\daily_works\\2020-06\\hadoop_feeds\\hadoop-interface-update_v5\\hadoop_feed_2nd_v\\hadoop-interface_v3\\test1.properties");
+		fileOperation.writeFile("E:\\interface\\work\\enh-work\\daily_works\\2020-06\\hadoop_feeds\\hadoop-interface-update_v5\\hadoop_feed_2nd_v\\hadoop-interface_v3\\pre-aggregate-queries_v3", "E:\\interface\\work\\enh-work\\daily_works\\2020-06\\hadoop_feeds\\hadoop-interface-update_v5\\hadoop_feed_2nd_v\\hadoop-interface_v3\\test2.properties");
+		System.out.println("done");
 	}
 
 	
