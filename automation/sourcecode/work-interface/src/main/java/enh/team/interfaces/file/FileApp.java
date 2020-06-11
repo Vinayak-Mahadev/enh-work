@@ -22,9 +22,14 @@ public class FileApp
 		//System.out.println("123||abc".split("\\|").length);
 		//System.out.println("123|vinay||".split("\\|", -1).length);
 		
-		fileOperation.printDecimalFormatNumber(50);
+		//fileOperation.printDecimalFormatNumber(50);
+		
+		
+		fileOperation.writeFile("E:\\interface\\work\\enh-work\\daily_works\\2020-06\\hadoop_feeds\\hadoop-interface-update_v5\\hadoop_feed_2nd_v\\hadoop-interface_v3\\pre-aggregate-queries_v3", "E:\\interface\\work\\enh-work\\daily_works\\2020-06\\hadoop_feeds\\hadoop-interface-update_v5\\hadoop_feed_2nd_v\\hadoop-interface_v3\\test1.properties");
+		
 	}
 
+	
 
 	void checkCsvColumnDataIfValueNotEmptyWriteInFileWithLineNumberOfFile() throws Exception{
 

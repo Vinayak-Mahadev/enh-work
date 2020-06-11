@@ -11,7 +11,7 @@ public class RdbmsApp
 		//new RDBMSOperation().getDatabaseMetaData(RDBMS.getDBConnection(PropType.RDBMS_144));
 		
 		RDBMSOperation opr = new RDBMSOperation();
-		Connection conn = RDBMS.getDBConnection(PropType.RDBMS_144);
+		Connection conn = RDBMS.getDBConnection(PropType.RDBMS_LOCALHOST);
 /*
 		opr.prepareFileFor1165(conn, "20200529", "D:/TEMP/site_mapping_bi_20200529090000.csv", 100000, 1);
 		opr.prepareFileFor1166(conn, "20200529", "D:/TEMP/primary_mobo_bi_20200529090000.csv", 100000, 1);
@@ -49,14 +49,13 @@ public class RdbmsApp
 		
 		
 		
-		/*
 		String sql = "SELECT inter.interface_id_n,inter.name_v, attr.value_v FROM interface.ms_interface_attr attr INNER JOIN interface.ms_interface inter ON inter.interface_id_n=attr.interface_id_n where attr.name_v ='Field Lookup Conf' and inter.interface_id_n between 1166 and 1181 order by inter.interface_id_n ;";
 		
 		opr.printFieldLookupConf(conn, sql);
-		*/
 		
-		opr.writeFileWithKpiDailyAndMonthlyData(conn, "daily", "kpi.tr_daily_primary_mobo_aggr",    "E:\\interface\\work\\enh-work\\daily_works\\2020-06\\backup_hadoop_feeds\\1166_DailyFile_001.csv");
-		opr.writeFileWithKpiDailyAndMonthlyData(conn, "monthly", "kpi.tr_monthly_primary_mobo_aggr",  "E:\\interface\\work\\enh-work\\daily_works\\2020-06\\backup_hadoop_feeds\\1166_MonthlyFile_001.csv");
+		
+		//opr.writeFileWithKpiDailyAndMonthlyData(conn, "daily", "kpi.tr_daily_primary_mobo_aggr",    "E:\\interface\\work\\enh-work\\daily_works\\2020-06\\backup_hadoop_feeds\\1166_DailyFile_001.csv");
+		//opr.writeFileWithKpiDailyAndMonthlyData(conn, "monthly", "kpi.tr_monthly_primary_mobo_aggr",  "E:\\interface\\work\\enh-work\\daily_works\\2020-06\\backup_hadoop_feeds\\1166_MonthlyFile_001.csv");
 		
 	}
 }

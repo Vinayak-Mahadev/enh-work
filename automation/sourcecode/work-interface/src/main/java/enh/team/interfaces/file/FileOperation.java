@@ -360,7 +360,7 @@ public class FileOperation
 		try {
 			reader =new BufferedReader( new FileReader(file));
 			while ((line = reader.readLine()) != null) 
-				responce=responce+line;
+				responce=responce+line+" ";
 		} catch (IOException e) {
 			responce = null;
 			e.printStackTrace();
@@ -379,10 +379,10 @@ public class FileOperation
 		return responce;
 	} 
 
-	
+
 	public void printDecimalFormatNumber(int count) {
 		DecimalFormat format = new DecimalFormat("00000");
-		
+
 		for (int i = 0; i < count; i++) 
 		{
 			System.out.println("100");
@@ -390,16 +390,46 @@ public class FileOperation
 			System.out.println("300");
 			System.out.println("400");
 			System.out.println("500");
-			
+
 			System.out.println("600");
 			System.out.println("700");
 			System.out.println("800");
 			System.out.println("900");
 			System.out.println("1000");
 			//System.out.println(format.format(i));
-			
+
 		}
-		
+
 	}
-	
+
+	void writeFile(String filesLocation, String writeFile) throws IOException 
+	{
+		FileWriter fileWriter = null;
+		File fileLoc = null;
+		
+		try 
+		{
+			fileLoc = new File(filesLocation);
+			if(fileLoc.isDirectory())
+			{
+				fileWriter = new FileWriter(writeFile);
+				for(File file  :fileLoc.listFiles()) 
+				{
+					fileWriter.write(readFileWithoutNewLine(file) + "\n");
+				}
+			}
+			
+			
+		} 
+		catch (Exception e)
+		{
+			e.printStackTrace();
+		}
+		finally 
+		{
+			if(fileWriter != null)
+				fileWriter.close();
+		}
+	}
+
 }
