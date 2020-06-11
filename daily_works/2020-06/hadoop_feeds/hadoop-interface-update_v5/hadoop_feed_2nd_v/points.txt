@@ -3,4 +3,10 @@
 * INTHDP005 mandatory fields modified for ID_OUTLET as non-mandatory
 * INTHDP006 mandatory fields modified for MICRO,SITE_ID as non-mandatory
 * INTHDP008 mandatory fields modified for MICRO,SITE_ID as non-mandatory
+* INTHDP008 1172 - Atrribute 'Field Lookup Conf' changed (actor_field:SITE_ID, source_field:MICRO)
+* INTHDP009 1173 - Atrribute 'Field Lookup Conf' changed (actor_field:SITE_ID, source_field:MICRO)
+* INTHDP010 1174 - Atrribute 'Field Lookup Conf' changed (actor_field:SITE_ID, source_field:MICRO)
+* INTHDP011 1175 - Atrribute 'Field Lookup Conf' changed (actor_field:SITE_ID, source_field:MICRO)
+* INTHDP012 1176 - Atrribute 'Field Lookup Conf' changed (actor_field:SITE, source_field:MICRO)
+* INTHDP016 1180 - Atrribute 'Field Lookup Conf' changed (Kpi table changed)
 * INTHDP001-INTHDP017 Pre-aggregation queries added from kpi
