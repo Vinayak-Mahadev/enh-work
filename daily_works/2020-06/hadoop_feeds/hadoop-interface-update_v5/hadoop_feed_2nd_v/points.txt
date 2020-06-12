@@ -12,3 +12,5 @@
 * INTHDP001-INTHDP017 Pre-aggregation queries added from kpi
 * actor_type_n = 12 added in NOT_EXIST_QUERY's ACTOR for INTHDP001-INTHDP017
 * INTHDP005 With Injection, Without Injection
+* 1179_MONTHLY_PRE_AGGR_QUERY modifed [distinct(id_n) => distinct(to_char(to_date(id_n::text,'yyyymmdd'),'yyyymm')::numeric) ]
+* 1180_MONTHLY_PRE_AGGR_QUERY modifed [distinct(id_n) => distinct(to_char(to_date(id_n::text,'yyyymmdd'),'yyyymm')::numeric) ]

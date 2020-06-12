@@ -1186,7 +1186,6 @@ public class RDBMSOperation {
 			{
 				System.out.println("INTERFACE ID	" + resultSet.getString(1));
 				System.out.println("INTERFACE NAME	" + resultSet.getString(2));
-				//System.out.println(resultSet.getString(3));
 				jsonObject = new JSONObject(resultSet.getString(3));
 				//System.out.println(jsonObject);
 				fields = jsonObject.getJSONObject("fields");
@@ -1203,6 +1202,7 @@ public class RDBMSOperation {
 					duplicate_validation_conf = jsonObject.getJSONObject("duplicate_validation_conf");
 					System.out.print( "INSTANCE"+ "	" + fields.get("instance_field")+ "	" );
 					System.out.println( "VALIDATION TABLE"+ "	kpi." + duplicate_validation_conf.get("table_name").toString().toLowerCase() + "\n");
+					System.out.println("select * interface.ms_interface_attr where interface_id_n = " + resultSet.getString(1)+";");
 					System.out.println("select * from kpi." + duplicate_validation_conf.get("table_name").toString().toLowerCase()+";");
 				}
 				System.out.println("select * from kpi." + jsonObject.get("daily_table").toString().toLowerCase()+";");
