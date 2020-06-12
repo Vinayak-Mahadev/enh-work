@@ -14,3 +14,6 @@
 * INTHDP005 With Injection, Without Injection
 * 1179_MONTHLY_PRE_AGGR_QUERY modifed [distinct(id_n) => distinct(to_char(to_date(id_n::text,'yyyymmdd'),'yyyymm')::numeric) ]
 * 1180_MONTHLY_PRE_AGGR_QUERY modifed [distinct(id_n) => distinct(to_char(to_date(id_n::text,'yyyymmdd'),'yyyymm')::numeric) ]
+* Source always micro
+* not exist query will not insert empty data into table
+* 1169 is pending for daily and monthly

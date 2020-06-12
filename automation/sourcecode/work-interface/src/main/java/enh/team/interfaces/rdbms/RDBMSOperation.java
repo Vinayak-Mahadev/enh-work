@@ -1202,7 +1202,7 @@ public class RDBMSOperation {
 					duplicate_validation_conf = jsonObject.getJSONObject("duplicate_validation_conf");
 					System.out.print( "INSTANCE"+ "	" + fields.get("instance_field")+ "	" );
 					System.out.println( "VALIDATION TABLE"+ "	kpi." + duplicate_validation_conf.get("table_name").toString().toLowerCase() + "\n");
-					System.out.println("select * interface.ms_interface_attr where interface_id_n = " + resultSet.getString(1)+";");
+					System.out.println("select * from interface.ms_interface_attr where interface_id_n = " + resultSet.getString(1)+" order by 1;");
 					System.out.println("select * from kpi." + duplicate_validation_conf.get("table_name").toString().toLowerCase()+";");
 				}
 				System.out.println("select * from kpi." + jsonObject.get("daily_table").toString().toLowerCase()+";");
