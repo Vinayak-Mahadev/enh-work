@@ -16,4 +16,7 @@
 * 1180_MONTHLY_PRE_AGGR_QUERY modifed [distinct(id_n) => distinct(to_char(to_date(id_n::text,'yyyymmdd'),'yyyymm')::numeric) ]
 * Source always micro
 * not exist query will not insert empty data into table
-* 1169 is pending for daily and monthly
+* 1169 is pending for daily and monthly (done)
+* Empty string storing as null in temp table
+
+
