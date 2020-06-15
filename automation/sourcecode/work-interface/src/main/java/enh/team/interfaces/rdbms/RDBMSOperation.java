@@ -16,7 +16,7 @@ import org.json.JSONObject;
 
 public class RDBMSOperation {
 
-	public void getDatabaseMetaData(Connection conn)
+	public void getDatabaseMetaData(Connection conn) throws SQLException
 	{
 		try {
 
@@ -28,11 +28,11 @@ public class RDBMSOperation {
 			}
 		} 
 		catch (SQLException e) {
-			e.printStackTrace();
+			throw e;
 		}
 	}
 
-	public void prepareFileFor1165(Connection conn, String dateInFile, String filePath, int limit, int fileCount)
+	public void prepareFileFor1165(Connection conn, String dateInFile, String filePath, int limit, int fileCount) throws Exception
 	{
 		FileOutputStream fos = null;
 		try 
@@ -47,7 +47,7 @@ public class RDBMSOperation {
 			int lastFileRowCount = 0;
 			for(int i = 1; i <= limit; i++)
 			{
-				fos.write((dateInFile + "|Test Site-"+ i +"|19.10|31.23|MC-KOBAR-LAMANDAU|KS-KAL-WEST KALTENG|SAMPIT|SUMATERA BARAT|KaliSumapa|NON_JAVA|Test Site-"+ i +"|" + population + "\n").getBytes());
+				fos.write((dateInFile + "|Test Site-"+ i +"|19.10|31.23|MC-KOBAR-LAMANDAU|KS-KAL-WEST KALTENG|SAMPIT|KALIMANTAN|KaliSumapa|NON_JAVA|Test Site-"+ i +"|" + population + "\n").getBytes());
 				if(population++ % 100 == 0)
 					population = 5;
 
@@ -63,13 +63,13 @@ public class RDBMSOperation {
 				lastFileRowCount = i;
 			}
 
-			System.out.println("Total Rows : " + (lastFileRowCount/fileSequence));
 			fos.close();
-			System.out.println("File generated");
+			System.out.print("File generated       ");
+			System.out.println("Total Rows : " + (lastFileRowCount/fileSequence) + "   1165");
 		}
 		catch(Exception exception)
 		{
-			exception.printStackTrace();
+			throw exception;
 		}
 		finally
 		{
@@ -77,7 +77,7 @@ public class RDBMSOperation {
 		}
 	}
 
-	public void prepareFileFor1166(Connection conn, String dateInFile, String filePath, int limit, int fileCount)
+	public void prepareFileFor1166(Connection conn, String dateInFile, String filePath, int limit, int fileCount) throws Exception
 	{
 		ResultSet mpc = null;
 		FileOutputStream fos = null;
@@ -133,17 +133,17 @@ public class RDBMSOperation {
 					dateInFile = dateInFile.substring(0, dateInFile.length() - 2) + (date - 1);
 			}			
 
-			System.out.println("Total Rows : " + (i/fileSequence));
 			fos.close();
-			System.out.println("File generated");
+			System.out.print("File generated       ");
+			System.out.println("Total Rows : " + (i/fileSequence) + "   1166");
 		}
 		catch (Exception e) 
 		{
-			e.printStackTrace();
+			throw e;
 		}
 	}
 
-	public void prepareFileFor1167(Connection conn, String dateInFile, String filePath, int limit, int fileCount)
+	public void prepareFileFor1167(Connection conn, String dateInFile, String filePath, int limit, int fileCount) throws Exception
 	{
 		ResultSet org = null;
 		ResultSet mpc = null;
@@ -190,17 +190,17 @@ public class RDBMSOperation {
 				fos.flush();
 			}
 
-			System.out.println("Total Rows : " + (i/fileSequence) + "   1167");
 			fos.close();
-			System.out.println("File generated");
+			System.out.print("File generated       ");
+			System.out.println("Total Rows : " + (i/fileSequence) + "   1167");
 		}
 		catch (Exception e) 
 		{
-			e.printStackTrace();
+			throw e;
 		}
 	}	
 
-	public void prepareFileFor1168(Connection conn, String dateInFile, String filePath, int limit, int fileCount)
+	public void prepareFileFor1168(Connection conn, String dateInFile, String filePath, int limit, int fileCount) throws Exception
 	{
 		ResultSet outlet = null;
 		ResultSet micro = null;
@@ -248,17 +248,17 @@ public class RDBMSOperation {
 				fos.flush();
 			}
 
-			System.out.println("Total Rows : " + (i/fileSequence) + "   1168");
 			fos.close();
-			System.out.println("File generated");
+			System.out.print("File generated       ");
+			System.out.println("Total Rows : " + (i/fileSequence) + "   1168");
 		}
 		catch (Exception e) 
 		{
-			e.printStackTrace();
+			throw e;
 		}
 	}
 
-	public void prepareFileFor1169(Connection conn, String dateInFile, String filePath, int limit, int fileCount)
+	public void prepareFileFor1169(Connection conn, String dateInFile, String filePath, int limit, int fileCount) throws Exception
 	{
 		ResultSet outlet = null;
 		ResultSet micro = null;
@@ -303,17 +303,17 @@ public class RDBMSOperation {
 				fos.flush();
 			}
 
-			System.out.println("Total Rows : " + (i/fileSequence) + "   1169");
 			fos.close();
-			System.out.println("File generated");
+			System.out.print("File generated       ");
+			System.out.println("Total Rows : " + (i/fileSequence) + "   1169");
 		}
 		catch (Exception e) 
 		{
-			e.printStackTrace();
+			throw e;
 		}
 	}
 
-	public void prepareFileFor1170(Connection conn, String dateInFile, String filePath, int limit, int fileCount)
+	public void prepareFileFor1170(Connection conn, String dateInFile, String filePath, int limit, int fileCount) throws Exception
 	{
 		ResultSet micro = null;
 		ResultSet out = null;		
@@ -361,17 +361,17 @@ public class RDBMSOperation {
 				fos.flush();
 			}
 
-			System.out.println("Total Rows : " + (i/fileSequence) + "   1170");
 			fos.close();
-			System.out.println("File generated");
+			System.out.print("File generated       ");
+			System.out.println("Total Rows : " + (i/fileSequence) + "   1170");
 		}
 		catch (Exception e) 
 		{
-			e.printStackTrace();
+			throw e;
 		}
 	}	
 
-	public void prepareFileFor1171(Connection conn, String dateInFile, String filePath, int limit, int fileCount)
+	public void prepareFileFor1171(Connection conn, String dateInFile, String filePath, int limit, int fileCount) throws Exception
 	{
 		ResultSet org = null;
 		FileOutputStream fos = null;
@@ -426,17 +426,17 @@ public class RDBMSOperation {
 					dateInFile = dateInFile.substring(0, dateInFile.length() - 2) + (date - 1);
 			}
 
-			System.out.println("Total Rows : " + (i/fileSequence) + "   1171");
 			fos.close();
-			System.out.println("File generated");
+			System.out.print("File generated       ");
+			System.out.println("Total Rows : " + (i/fileSequence) + "   1171");
 		}
 		catch (Exception e) 
 		{
-			e.printStackTrace();
+			throw e;
 		}
 	}
 
-	public void prepareFileFor1172(Connection conn, String dateInFile, String filePath, int limit, int fileCount)
+	public void prepareFileFor1172(Connection conn, String dateInFile, String filePath, int limit, int fileCount) throws Exception
 	{		
 		ResultSet micro = null;
 
@@ -498,17 +498,17 @@ public class RDBMSOperation {
 					dateInFile = dateInFile.substring(0, dateInFile.length() - 2) + (date - 1);
 			}
 
-			System.out.println("Total Rows : " + (i/fileSequence) + "   1172");
 			fos.close();
-			System.out.println("File generated");
+			System.out.print("File generated       ");
+			System.out.println("Total Rows : " + (i/fileSequence) + "   1172");
 		}
 		catch (Exception e) 
 		{
-			e.printStackTrace();
+			throw e;
 		}
 	}
 
-	public void prepareFileFor1173_1174(Connection conn, String dateInFile, String filePath, int limit, int fileCount)
+	public void prepareFileFor1173(Connection conn, String dateInFile, String filePath, int limit, int fileCount) throws Exception
 	{		
 		ResultSet micro = null;
 
@@ -565,17 +565,84 @@ public class RDBMSOperation {
 					dateInFile = dateInFile.substring(0, dateInFile.length() - 2) + (date - 1);
 			}
 
-			System.out.println("Total Rows : " + (i/fileSequence) + "   1173_1174");
 			fos.close();
-			System.out.println("File generated");
+			System.out.print("File generated       ");
+			System.out.println("Total Rows : " + (i/fileSequence) + "   1173");
 		}
 		catch (Exception e) 
 		{
-			e.printStackTrace();
+			throw e;
+		}
+	}
+	
+	public void prepareFileFor1174(Connection conn, String dateInFile, String filePath, int limit, int fileCount) throws Exception
+	{		
+		ResultSet micro = null;
+
+		FileOutputStream fos = null;
+		try 
+		{
+			fos = new FileOutputStream(new File(filePath));
+			fos.write("DATE|MICRO|SITE_ID|REVENUE\n".getBytes());			
+
+			limit = limit * fileCount;
+			int i = 0;
+			int fileSequence = 1;
+			int calcRowLimit = limit/fileCount; 
+
+			out : while(i <= limit)
+			{
+				micro = conn.createStatement().executeQuery("select lookup_name_v from kpi.ms_lookup_master where lookup_type_n = (select lookup_type_n from kpi.ms_lookup_type_master where ext_lookup_type_n = 89) order by 1;");
+				while (micro.next()) 
+				{				
+					fos.write((dateInFile+"|"+micro.getString(1)+"|Test Site-"+i+"|" + i + ".40\n").getBytes());
+					i++;
+
+					if(i % calcRowLimit == 0 && i != limit)
+					{
+						System.out.println("Total Rows : " + (i/fileSequence));
+						fos.close();
+						fos = new FileOutputStream(new File(filePath.replace(".csv", "_00" + fileSequence + ".csv")));
+						fos.write("DATE|MICRO|SITE_ID|REVENUE\n".getBytes());
+						fileSequence++;
+					}
+
+					if(limit != 0 )
+						if( limit==i)
+							break out;
+				}
+				Integer date = Integer.valueOf(dateInFile.substring(dateInFile.length() - 2, dateInFile.length()));
+
+				if(date == 1)
+				{
+					int month = Integer.valueOf(dateInFile.substring(4, dateInFile.length() - 2));
+					if(month == 1)
+					{
+						int year = Integer.valueOf(dateInFile.substring(0, dateInFile.length() - 4));
+						dateInFile = (year - 1) + "1229";
+					}
+					else if(month<=10)
+						dateInFile = dateInFile.substring(0, dateInFile.length() - 4) + "0" + (month - 1) + "29";
+					else
+						dateInFile = dateInFile.substring(0, dateInFile.length() - 4) + (month - 1) + "29";
+				}
+				else if(date<=10)
+					dateInFile = dateInFile.substring(0, dateInFile.length() - 2) + "0" + (date - 1);
+				else
+					dateInFile = dateInFile.substring(0, dateInFile.length() - 2) + (date - 1);
+			}
+
+			fos.close();
+			System.out.print("File generated       ");
+			System.out.println("Total Rows : " + (i/fileSequence) + "   1174");
+		}
+		catch (Exception e) 
+		{
+			throw e;
 		}
 	}
 
-	public void prepareFileFor1175(Connection conn, String dateInFile, String filePath, int limit, int fileCount)
+	public void prepareFileFor1175(Connection conn, String dateInFile, String filePath, int limit, int fileCount) throws Exception
 	{		
 		ResultSet micro = null;
 
@@ -636,17 +703,17 @@ public class RDBMSOperation {
 				else
 					dateInFile = dateInFile.substring(0, dateInFile.length() - 2) + (date - 1);
 			}
-			System.out.println("Total Rows : " + (i/fileSequence) + "   1175");
 			fos.close();
-			System.out.println("File generated");
+			System.out.print("File generated       ");
+			System.out.println("Total Rows : " + (i/fileSequence) + "   1175");
 		}
 		catch (Exception e) 
 		{
-			e.printStackTrace();
+			throw e;
 		}
 	}
 
-	public void prepareFileFor1176(Connection conn, String dateInFile, String filePath, int limit, int fileCount)
+	public void prepareFileFor1176(Connection conn, String dateInFile, String filePath, int limit, int fileCount) throws Exception
 	{		
 		ResultSet micro = null;
 
@@ -702,17 +769,17 @@ public class RDBMSOperation {
 				else
 					dateInFile = dateInFile.substring(0, dateInFile.length() - 2) + (date - 1);
 			}
-			System.out.println("Total Rows : " + (i/fileSequence) + "   1176");
 			fos.close();
-			System.out.println("File generated");
+			System.out.print("File generated       ");
+			System.out.println("Total Rows : " + (i/fileSequence) + "   1176");
 		}
 		catch (Exception e) 
 		{
-			e.printStackTrace();
+			throw e;
 		}
 	}
 
-	public void prepareFileFor1177(Connection conn, String dateInFile, String filePath, int limit, int fileCount)
+	public void prepareFileFor1177(Connection conn, String dateInFile, String filePath, int limit, int fileCount) throws Exception
 	{		
 		ResultSet cluster = null;
 
@@ -780,17 +847,17 @@ public class RDBMSOperation {
 					dateInFile = dateInFile.substring(0, dateInFile.length() - 2) + (date - 1);
 			}
 
-			System.out.println("Total Rows : " + (i/fileSequence) + "   1177");
 			fos.close();
-			System.out.println("File generated");
+			System.out.print("File generated       ");
+			System.out.println("Total Rows : " + (i/fileSequence) + "   1177");
 		}
 		catch (Exception e) 
 		{
-			e.printStackTrace();
+			throw e;
 		}
 	}
 
-	public void prepareFileFor1178(Connection conn, String dateInFile, String filePath, int limit, int fileCount)
+	public void prepareFileFor1178(Connection conn, String dateInFile, String filePath, int limit, int fileCount) throws Exception
 	{		
 		ResultSet cluster = null;
 
@@ -846,17 +913,17 @@ public class RDBMSOperation {
 				else
 					dateInFile = dateInFile.substring(0, dateInFile.length() - 2) + (date - 1);
 			}
-			System.out.println("Total Rows : " + (i/fileSequence) + "   1178");
 			fos.close();
-			System.out.println("File generated");
+			System.out.print("File generated       ");
+			System.out.println("Total Rows : " + (i/fileSequence) + "   1178");
 		}
 		catch (Exception e) 
 		{
-			e.printStackTrace();
+			throw e;
 		}
 	}
 
-	public void prepareFileFor1179(Connection conn, String monthInFile, String filePath, int limit, int fileCount)
+	public void prepareFileFor1179(Connection conn, String monthInFile, String filePath, int limit, int fileCount) throws Exception
 	{
 		ResultSet cluster = null;
 		ResultSet out = null;
@@ -915,17 +982,17 @@ public class RDBMSOperation {
 				else
 					monthInFile = monthInFile.substring(0, monthInFile.length() - 2) + (month - 1);				
 			}
-			System.out.println("Total Rows : " + (i/fileSequence) + "   1179");
 			fos.close();
-			System.out.println("File generated");
+			System.out.print("File generated       ");
+			System.out.println("Total Rows : " + (i/fileSequence) + "   1179");
 		}
 		catch (Exception e) 
 		{
-			e.printStackTrace();
+			throw e;
 		}
 	}	
 
-	public void prepareFileFor1180(Connection conn, String monthInFile, String filePath, int limit, int fileCount)
+	public void prepareFileFor1180(Connection conn, String monthInFile, String filePath, int limit, int fileCount) throws Exception
 	{
 		ResultSet cluster = null;
 		ResultSet mpc = null;
@@ -984,17 +1051,17 @@ public class RDBMSOperation {
 				else
 					monthInFile = monthInFile.substring(0, monthInFile.length() - 2) + (month - 1);
 			}
-			System.out.println("Total Rows : " + (i/fileSequence) + "   1180");
 			fos.close();
-			System.out.println("File generated");
+			System.out.print("File generated       ");
+			System.out.println("Total Rows : " + (i/fileSequence) + "   1180");
 		}
 		catch (Exception e) 
 		{
-			e.printStackTrace();
+			throw e;
 		}
 	}	
 
-	public void prepareFileFor1181(Connection conn, String monthInFile, String filePath, int limit, int fileCount)
+	public void prepareFileFor1181(Connection conn, String monthInFile, String filePath, int limit, int fileCount) throws Exception
 	{
 		ResultSet micro = null;
 		ResultSet out = null;
@@ -1042,13 +1109,13 @@ public class RDBMSOperation {
 				fos.flush();
 			}
 
-			System.out.println("Total Rows : " + (i/fileSequence) + "   1181");
 			fos.close();
-			System.out.println("File generated");
+			System.out.print("File generated       ");
+			System.out.println("Total Rows : " + (i/fileSequence) + "   1181");
 		}
 		catch (Exception e) 
 		{
-			e.printStackTrace();
+			throw e;
 		}
 	}	
 
@@ -1171,7 +1238,7 @@ public class RDBMSOperation {
 	}
 
 
-	public void printFieldLookupConf(Connection conn, String sql)
+	public void printFieldLookupConf(Connection conn, String sql) throws Exception
 	{
 		ResultSet resultSet = null;
 		JSONObject jsonObject = null;
@@ -1222,7 +1289,7 @@ public class RDBMSOperation {
 		}
 		catch (Exception e) 
 		{
-			e.printStackTrace();
+			throw e;
 		}
 	}
 
@@ -1259,7 +1326,7 @@ public class RDBMSOperation {
 		} 
 		catch (Exception e) 
 		{
-			e.printStackTrace();
+			throw e;
 		}
 		finally 
 		{

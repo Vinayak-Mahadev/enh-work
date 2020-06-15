@@ -15,6 +15,12 @@ public class SndIntegrationSoupService {
 		return (testSoapRequest.invokeService(wsdlUrl, template, userName, password, interfaceID));
 	}
 	
+	public ResponseBean prepareRejectionFile(Long interfaceID){
+		String template = Template.prepareRejectionFile.replaceAll("INTERFACE_ID", interfaceID.toString());
+		
+		return (testSoapRequest.invokeService(wsdlUrl, template, userName, password, interfaceID));
+	}
+	
 	public ResponseBean processFile(Long interfaceID){
 		String template = Template.processFile.replaceAll("INTERFACE_ID", interfaceID.toString());
 		

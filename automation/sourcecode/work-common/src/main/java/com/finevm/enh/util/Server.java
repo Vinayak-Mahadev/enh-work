@@ -16,6 +16,7 @@ public class Server {
 	private String hostName;
 	private String username;
 	private String password;
+	private String passPath;
 	private Integer portNum;
 	private Integer timeOut;
 
@@ -41,6 +42,8 @@ public class Server {
 			password = server.getString("password");
 			portNum  = server.getInt("portNum");
 			timeOut  = server.getInt("timeOut");
+			if(server.keySet().contains("passPath"))
+				passPath = server.getString("passPath");
 		}
 	}
 
@@ -102,11 +105,20 @@ public class Server {
 		this.timeOut = timeOut;
 	}
 
+	public String getPassPath() {
+		return passPath;
+	}
+
+	public void setPassPath(String passPath) {
+		this.passPath = passPath;
+	}
+
 	@Override
 	public String toString() {
-		return "Server [id=" + id + ", hostName=" + hostName + ", username=" + username + ", password=" + "*******"
-				+ ", portNum=" + portNum + "]";
+		return "Server [id=" + id + ", hostName=" + hostName + ", username=" + username + ", password=" + password
+				+ ", passPath=" + passPath + ", portNum=" + portNum + ", timeOut=" + timeOut + "]";
 	}
+
 
 
 

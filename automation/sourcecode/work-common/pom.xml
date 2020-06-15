@@ -39,11 +39,11 @@
 		</dependency>
 
 		<!-- https://mvnrepository.com/artifact/javax.mail/mail -->
-		<dependency>
+		<!--<dependency>
 			<groupId>javax.mail</groupId>
 			<artifactId>mail</artifactId>
 			<version>1.4.1</version>
-		</dependency>
+		</dependency>-->
 
 		<dependency>
 			<groupId>org.mongodb</groupId>
@@ -75,13 +75,14 @@
 			<version>1.0.1.Final</version>
 		</dependency>
 
-		<dependency>
+		<!-- <dependency>
 			<groupId>javax.transaction</groupId>
 			<artifactId>jta</artifactId>
 			<version>${javax.transaction.jpa}</version>
-		</dependency>
+			<scope>provided</scope>
+		</dependency> -->
 
-<dependency>
+		<dependency>
 			<groupId>org.hibernate</groupId>
 			<artifactId>hibernate-envers</artifactId>
 			<version>4.1.0.Final</version>

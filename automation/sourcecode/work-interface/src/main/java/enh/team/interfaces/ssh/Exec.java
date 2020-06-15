@@ -92,7 +92,7 @@ public class Exec{
 
 	private void run() 
 	{
-		Server server = new Server (PropType.Server_143_);
+		Server server = new Server (PropType.Server_143);
 		System.out.println(server);
 		final String scriptFileName = "ps -ef";
 		String childScriptFileName = "ps -ef";

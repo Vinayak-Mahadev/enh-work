@@ -30,6 +30,12 @@
 		</dependency>
 
 		<dependency>
+			<groupId>org.apache.camel</groupId>
+			<artifactId>camel-core</artifactId>
+			<version>2.12.3</version>
+		</dependency>
+		
+		<dependency>
 			<groupId>${parent.groupId}</groupId>
 			<artifactId>work-common</artifactId>
 			<version>${parent.version}</version>
@@ -125,14 +131,6 @@
             <version>1.0.1.Final</version>
         </dependency>
         
-		<dependency>
-			<groupId>javax.transaction</groupId>
-			<artifactId>jta</artifactId>
-			<version>1.1</version>
-		</dependency>
-
-
-
 	</dependencies>
 
 

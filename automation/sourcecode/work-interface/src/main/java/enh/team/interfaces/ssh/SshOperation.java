@@ -37,7 +37,8 @@ public class SshOperation
 	private String  hostName;
 	private Integer portNum;
 	private Integer timeOut;
-
+	private String passPath;
+	
 	private JSch jsch;
 	private Session session;
 	private Channel channel;
@@ -52,6 +53,7 @@ public class SshOperation
 		password = server.getPassword();
 		hostName = server.getHostName();
 		portNum  = server.getPortNum();
+		passPath = server.getPassPath();
 		timeOut = server.getTimeOut();
 		session = getSession();
 	}
@@ -77,6 +79,8 @@ public class SshOperation
 				System.out.println("connecting..."+hostName);
 
 				jsch = new JSch();
+				if(passPath != null)
+					jsch.addIdentity(passPath);
 				session = jsch.getSession(username, hostName,portNum);
 				session.setConfig("StrictHostKeyChecking", "no");
 				session.setPassword(password);

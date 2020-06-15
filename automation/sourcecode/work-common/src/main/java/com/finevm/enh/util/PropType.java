@@ -4,7 +4,7 @@ public enum PropType {
 	
 
 	
-	Server_143_, Server_144_, Server_251_,
+	Server_143, Server_144, Server_251, Server_251_PPK,
 	
 	
 	
