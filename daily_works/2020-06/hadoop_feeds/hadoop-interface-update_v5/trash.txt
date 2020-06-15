@@ -4,6 +4,7 @@ ACTOR	MPC_CODE	DAILY TABLE	kpi.tr_daily_primary_mobo_aggr
 METRIC		MONTHLY TABLE	kpi.tr_monthly_primary_mobo_aggr
 SOURCE		INSTANCE		VALIDATION TABLE	kpi.tr_validate_primary_mobo_aggr
 
+select * from interface.ms_interface_attr where interface_id_n = 1166 order by 1;
 select * from kpi.tr_validate_primary_mobo_aggr;
 select * from kpi.tr_daily_primary_mobo_aggr;
 select * from kpi.tr_monthly_primary_mobo_aggr;
@@ -25,6 +26,7 @@ ACTOR	ORGANIZATION_ID	DAILY TABLE	kpi.tr_daily_secondary_mobo_aggr
 METRIC		MONTHLY TABLE	kpi.tr_monthly_secondary_mobo_aggr
 SOURCE	MPC_CODE	INSTANCE		VALIDATION TABLE	kpi.tr_validate_secondary_mobo_aggr
 
+select * from interface.ms_interface_attr where interface_id_n = 1167 order by 1;
 select * from kpi.tr_validate_secondary_mobo_aggr;
 select * from kpi.tr_daily_secondary_mobo_aggr;
 select * from kpi.tr_monthly_secondary_mobo_aggr;
@@ -42,10 +44,11 @@ delete from kpi.tr_daily_secondary_mobo_aggr;
 
 INTERFACE ID	1168
 INTERFACE NAME	INTHDP004 - Daily SIM Selling Outlet (SSO)
-ACTOR	{"10":"ID_OUTLET","13":"MICRO"}	DAILY TABLE	kpi.tr_daily_daily_sso_aggr
+ACTOR	{"10":"ID_OUTLET","12":"SITE_ID"}	DAILY TABLE	kpi.tr_daily_daily_sso_aggr
 METRIC		MONTHLY TABLE	kpi.tr_monthly_daily_sso_aggr
-SOURCE	SITE_ID	INSTANCE		VALIDATION TABLE	kpi.tr_validate_daily_sso_aggr
+SOURCE	MICRO	INSTANCE		VALIDATION TABLE	kpi.tr_validate_daily_sso_aggr
 
+select * from interface.ms_interface_attr where interface_id_n = 1168 order by 1;
 select * from kpi.tr_validate_daily_sso_aggr;
 select * from kpi.tr_daily_daily_sso_aggr;
 select * from kpi.tr_monthly_daily_sso_aggr;
@@ -63,10 +66,11 @@ delete from kpi.tr_daily_daily_sso_aggr;
 
 INTERFACE ID	1169
 INTERFACE NAME	INTHDP005 - RGU-GA with Injection
-ACTOR	{"10":"ID_OUTLET","13":"MICRO"}	DAILY TABLE	kpi.tr_daily_rguga_injection_aggr
+ACTOR	{"10":"ID_OUTLET","12":"SITE_ID"}	DAILY TABLE	kpi.tr_daily_rguga_injection_aggr
 METRIC	FLAG_ACM	MONTHLY TABLE	kpi.tr_monthly_rguga_injection_aggr
-SOURCE	SITE_ID	INSTANCE		VALIDATION TABLE	kpi.tr_validate_rguga_injection_aggr
+SOURCE	MICRO	INSTANCE		VALIDATION TABLE	kpi.tr_validate_rguga_injection_aggr
 
+select * from interface.ms_interface_attr where interface_id_n = 1169 order by 1;
 select * from kpi.tr_validate_rguga_injection_aggr;
 select * from kpi.tr_daily_rguga_injection_aggr;
 select * from kpi.tr_monthly_rguga_injection_aggr;
@@ -84,10 +88,11 @@ delete from kpi.tr_daily_rguga_injection_aggr;
 
 INTERFACE ID	1170
 INTERFACE NAME	INTHDP006 - Tertiary Sales
-ACTOR	{"10":"OUTLET","13":"MICRO"}	DAILY TABLE	kpi.tr_daily_tertiary_sales_aggr
+ACTOR	{"10":"OUTLET","12":"SITE_ID"}	DAILY TABLE	kpi.tr_daily_tertiary_sales_aggr
 METRIC		MONTHLY TABLE	kpi.tr_monthly_tertiary_sales_aggr
-SOURCE	SITE_ID	INSTANCE		VALIDATION TABLE	kpi.tr_validate_tertiary_sales_aggr
+SOURCE	MICRO	INSTANCE		VALIDATION TABLE	kpi.tr_validate_tertiary_sales_aggr
 
+select * from interface.ms_interface_attr where interface_id_n = 1170 order by 1;
 select * from kpi.tr_validate_tertiary_sales_aggr;
 select * from kpi.tr_daily_tertiary_sales_aggr;
 select * from kpi.tr_monthly_tertiary_sales_aggr;
@@ -109,6 +114,7 @@ ACTOR	ORG_CODE	DAILY TABLE	kpi.tr_daily_closing_balance_aggr
 METRIC		MONTHLY TABLE	kpi.tr_monthly_closing_balance_aggr
 SOURCE		INSTANCE		VALIDATION TABLE	kpi.tr_validate_closing_balance_aggr
 
+select * from interface.ms_interface_attr where interface_id_n = 1171 order by 1;
 select * from kpi.tr_validate_closing_balance_aggr;
 select * from kpi.tr_daily_closing_balance_aggr;
 select * from kpi.tr_monthly_closing_balance_aggr;
@@ -130,6 +136,7 @@ ACTOR	SITE_ID	DAILY TABLE	kpi.tr_daily_total_revenue_aggr
 METRIC	REVENUE_TYPE	MONTHLY TABLE	kpi.tr_monthly_total_revenue_aggr
 SOURCE	MICRO	INSTANCE		VALIDATION TABLE	kpi.tr_validate_total_revenue_aggr
 
+select * from interface.ms_interface_attr where interface_id_n = 1172 order by 1;
 select * from kpi.tr_validate_total_revenue_aggr;
 select * from kpi.tr_daily_total_revenue_aggr;
 select * from kpi.tr_monthly_total_revenue_aggr;
@@ -151,6 +158,7 @@ ACTOR	SITE_ID	DAILY TABLE	kpi.tr_daily_mobo_revenue_aggr
 METRIC		MONTHLY TABLE	kpi.tr_monthly_mobo_revenue_aggr
 SOURCE	MICRO	INSTANCE		VALIDATION TABLE	kpi.tr_validate_mobo_revenue_aggr
 
+select * from interface.ms_interface_attr where interface_id_n = 1173 order by 1;
 select * from kpi.tr_validate_mobo_revenue_aggr;
 select * from kpi.tr_daily_mobo_revenue_aggr;
 select * from kpi.tr_monthly_mobo_revenue_aggr;
@@ -172,6 +180,7 @@ ACTOR	SITE_ID	DAILY TABLE	kpi.tr_daily_aquisition_revenue_aggr
 METRIC		MONTHLY TABLE	kpi.tr_monthly_aquisition_revenue_aggr
 SOURCE	MICRO	INSTANCE		VALIDATION TABLE	kpi.tr_validate_aquisition_revenue_aggr
 
+select * from interface.ms_interface_attr where interface_id_n = 1174 order by 1;
 select * from kpi.tr_validate_aquisition_revenue_aggr;
 select * from kpi.tr_daily_aquisition_revenue_aggr;
 select * from kpi.tr_monthly_aquisition_revenue_aggr;
@@ -193,6 +202,7 @@ ACTOR	SITE_ID	DAILY TABLE	kpi.tr_daily_low_revenue_site_aggr
 METRIC	CATEGORY	MONTHLY TABLE	kpi.tr_monthly_low_revenue_site_aggr
 SOURCE	MICRO	INSTANCE		VALIDATION TABLE	kpi.tr_validate_low_revenue_site_aggr
 
+select * from interface.ms_interface_attr where interface_id_n = 1175 order by 1;
 select * from kpi.tr_validate_low_revenue_site_aggr;
 select * from kpi.tr_daily_low_revenue_site_aggr;
 select * from kpi.tr_monthly_low_revenue_site_aggr;
@@ -214,6 +224,7 @@ ACTOR	SITE	DAILY TABLE	kpi.tr_daily_site_rguga_aggr
 METRIC		MONTHLY TABLE	kpi.tr_monthly_site_rguga_aggr
 SOURCE	MICRO	INSTANCE		VALIDATION TABLE	kpi.tr_validate_site_rguga_aggr
 
+select * from interface.ms_interface_attr where interface_id_n = 1176 order by 1;
 select * from kpi.tr_validate_site_rguga_aggr;
 select * from kpi.tr_daily_site_rguga_aggr;
 select * from kpi.tr_monthly_site_rguga_aggr;
@@ -235,6 +246,7 @@ ACTOR	CLUSTER_ID	DAILY TABLE	kpi.tr_daily_cross_reload_aggr
 METRIC	CATEGORY	MONTHLY TABLE	kpi.tr_monthly_cross_reload_aggr
 SOURCE		INSTANCE	CLUSTER_TYPE	VALIDATION TABLE	kpi.tr_validate_cross_reload_aggr
 
+select * from interface.ms_interface_attr where interface_id_n = 1177 order by 1;
 select * from kpi.tr_validate_cross_reload_aggr;
 select * from kpi.tr_daily_cross_reload_aggr;
 select * from kpi.tr_monthly_cross_reload_aggr;
@@ -256,6 +268,7 @@ ACTOR	CLUSTER_ID	DAILY TABLE	kpi.tr_daily_cross_data_aggr
 METRIC		MONTHLY TABLE	kpi.tr_monthly_cross_data_aggr
 SOURCE		INSTANCE		VALIDATION TABLE	kpi.tr_validate_cross_data_aggr
 
+select * from interface.ms_interface_attr where interface_id_n = 1178 order by 1;
 select * from kpi.tr_validate_cross_data_aggr;
 select * from kpi.tr_daily_cross_data_aggr;
 select * from kpi.tr_monthly_cross_data_aggr;
@@ -277,6 +290,7 @@ ACTOR	ID_OUTLET	DAILY TABLE	kpi.
 METRIC		MONTHLY TABLE	kpi.tr_monthly_outlet_program_aggr
 SOURCE	CLUSTER	INSTANCE		VALIDATION TABLE	kpi.tr_validate_outlet_program_aggr
 
+select * from interface.ms_interface_attr where interface_id_n = 1179 order by 1;
 select * from kpi.tr_validate_outlet_program_aggr;
 select * from kpi.;
 select * from kpi.tr_monthly_outlet_program_aggr;
@@ -298,6 +312,7 @@ ACTOR	MPC_CODE	DAILY TABLE	kpi.
 METRIC		MONTHLY TABLE	kpi.tr_monthly_alloc_payment_aggr
 SOURCE	CLUSTER	INSTANCE		VALIDATION TABLE	kpi.tr_validate_alloc_payment_aggr
 
+select * from interface.ms_interface_attr where interface_id_n = 1180 order by 1;
 select * from kpi.tr_validate_alloc_payment_aggr;
 select * from kpi.;
 select * from kpi.tr_monthly_alloc_payment_aggr;
@@ -315,10 +330,11 @@ delete from kpi.;
 
 INTERFACE ID	1181
 INTERFACE NAME	INTHDP017 - URO 20K
-ACTOR	{"10":"OUTLET","13":"MICRO"}	DAILY TABLE	kpi.tr_daily_uro_20k_aggr
+ACTOR	{"10":"OUTLET","12":"SITE_ID"}	DAILY TABLE	kpi.tr_daily_uro_20k_aggr
 METRIC		MONTHLY TABLE	kpi.tr_monthly_uro_20k_aggr
-SOURCE	SITE_ID	INSTANCE		VALIDATION TABLE	kpi.tr_validate_uro_20k_aggr
+SOURCE	MICRO	INSTANCE		VALIDATION TABLE	kpi.tr_validate_uro_20k_aggr
 
+select * from interface.ms_interface_attr where interface_id_n = 1181 order by 1;
 select * from kpi.tr_validate_uro_20k_aggr;
 select * from kpi.tr_daily_uro_20k_aggr;
 select * from kpi.tr_monthly_uro_20k_aggr;

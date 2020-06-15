@@ -1,5 +1,6 @@
 * 'Remote File' modifed for hadoop feeds
 * Basic 'regx' validation modifed for hadoop feeds (INTHDP001 - INTHDP017)
+* INTHDP005 With Injection, Without Injection
 * INTHDP005 mandatory fields modified for ID_OUTLET as non-mandatory
 * INTHDP006 mandatory fields modified for MICRO,SITE_ID as non-mandatory
 * INTHDP008 mandatory fields modified for MICRO,SITE_ID as non-mandatory
@@ -11,4 +12,11 @@
 * INTHDP016 1180 - Atrribute 'Field Lookup Conf' changed (Kpi table changed)
 * INTHDP001-INTHDP017 Pre-aggregation queries added from kpi
 * actor_type_n = 12 added in NOT_EXIST_QUERY's ACTOR for INTHDP001-INTHDP017
-* INTHDP005 With Injection, Without Injection
+* 1179_MONTHLY_PRE_AGGR_QUERY modifed [distinct(id_n) => distinct(to_char(to_date(id_n::text,'yyyymmdd'),'yyyymm')::numeric) ]
+* 1180_MONTHLY_PRE_AGGR_QUERY modifed [distinct(id_n) => distinct(to_char(to_date(id_n::text,'yyyymmdd'),'yyyymm')::numeric) ]
+* Source always micro
+* not exist query will not insert empty data into table
+* 1169 is pending for daily and monthly (done)
+* Empty string storing as null in temp table
+
+
