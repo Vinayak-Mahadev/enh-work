@@ -9,10 +9,10 @@ public class RdbmsApp
 	public static void main(String[] args) throws Exception
 	{
 		//new RDBMSOperation().getDatabaseMetaData(RDBMS.getDBConnection(PropType.RDBMS_144));
-
 		RDBMSOperation opr = new RDBMSOperation();
 		Connection conn = RDBMS.getDBConnection(PropType.RDBMS_144);
 
+		/*
 		opr.prepareFileFor1165(conn, "20200614", "E:/interface/backend/ControlFileGeneration/site_mapping_20200614090000.csv", 1000, 1);
 		opr.prepareFileFor1166(conn, "20200614", "E:/interface/backend/ControlFileGeneration/primary_mobo_20200614090000.csv", 1000, 1);
 		opr.prepareFileFor1167(conn, "20200614", "E:/interface/backend/ControlFileGeneration/secondary_mobo_20200614090000.csv", 1000, 1);

@@ -12,8 +12,6 @@ import com.finevm.enh.util.Server;
 
 import enh.team.interfaces.rdbms.RDBMSOperation;
 import enh.team.interfaces.soapservice.PrepareCTL;
-import enh.team.interfaces.soapservice.ResponseBean;
-import enh.team.interfaces.soapservice.SndIntegrationSoupService;
 import enh.team.interfaces.ssh.SshOperation;
 
 public class HadoopInterfaceTest {
@@ -44,24 +42,44 @@ public class HadoopInterfaceTest {
 	{
 
 		RDBMSOperation opr = new RDBMSOperation();
+		String dir = "E:/interface/backend/ControlFileGeneration/";
+		opr.prepareFileFor1165(conn, "20200613", dir + "site_mapping"        +   "_20200614090001.csv",    10000,   2);
+		opr.prepareFileFor1166(conn, "20200613", dir + "primary_mobo"        +   "_20200614090001.csv",    10000,   2);
+		opr.prepareFileFor1167(conn, "20200613", dir + "secondary_mobo"      +   "_20200614090001.csv",    10000,   2);
+		opr.prepareFileFor1168(conn, "20200613", dir + "d_sso"               +   "_20200614090001.csv",    10000,   2);
+		opr.prepareFileFor1169(conn, "20200613", dir + "rgu_injection"       +   "_20200614090001.csv",    10000,   2);
+		opr.prepareFileFor1170(conn, "20200613", dir + "tertiary"            +   "_20200614090001.csv",    10000,   2);
+		opr.prepareFileFor1171(conn, "20200613", dir + "org_close_bal"       +   "_20200614090001.csv",    10000,   2);
+		opr.prepareFileFor1172(conn, "20200613", dir + "total_revenue"       +   "_20200614090001.csv",    10000,   2);
+		opr.prepareFileFor1173(conn, "20200613", dir + "mobo_revenue"        +   "_20200614090001.csv",    10000,   2);
+		opr.prepareFileFor1174(conn, "20200613", dir + "acquisition_revenue" +   "_20200614090001.csv",    10000,   2);
+		opr.prepareFileFor1175(conn, "20200613", dir + "low_revenue_site"    +   "_20200614090001.csv",    10000,   2);
+		opr.prepareFileFor1176(conn, "20200613", dir + "site_rgu_ga"         +   "_20200614090001.csv",    10000,   2);
+		opr.prepareFileFor1177(conn, "20200613", dir + "cross_reload"        +   "_20200614090001.csv",    10000,   2);
+		opr.prepareFileFor1178(conn, "20200613", dir + "cross_data"          +   "_20200614090001.csv",    10000,   2);
+		opr.prepareFileFor1179(conn, "202006",   dir + "outlet_program"      +   "_20200614090001.csv",    10000,   2);
+		opr.prepareFileFor1180(conn, "202006",   dir + "alloc_payment"       +   "_20200614090001.csv",    10000,   2);
+		opr.prepareFileFor1181(conn, "20200615", dir + "uro_20"              +   "_20200614090001.csv",    10000,   2);
+		
+		
 
-		opr.prepareFileFor1165(conn, "20200614", "E:/interface/backend/ControlFileGeneration/site_mapping_20200614090001.csv", 1000, 1);
-		opr.prepareFileFor1166(conn, "20200614", "E:/interface/backend/ControlFileGeneration/primary_mobo_20200614090001.csv", 1000, 1);
-		opr.prepareFileFor1167(conn, "20200614", "E:/interface/backend/ControlFileGeneration/secondary_mobo_20200614090001.csv", 1000, 1);
-		opr.prepareFileFor1168(conn, "20200614", "E:/interface/backend/ControlFileGeneration/daily_sso_20200614090001.csv", 1000, 1);
-		opr.prepareFileFor1169(conn, "20200614", "E:/interface/backend/ControlFileGeneration/rgu_injection_20200614090001.csv", 1000, 1);
-		opr.prepareFileFor1170(conn, "20200614", "E:/interface/backend/ControlFileGeneration/tertiary_20200614090001.csv", 1000, 1);
-		opr.prepareFileFor1171(conn, "20200614", "E:/interface/backend/ControlFileGeneration/org_close_bal_20200614090001.csv", 1000, 1);
-		opr.prepareFileFor1172(conn, "20200614", "E:/interface/backend/ControlFileGeneration/total_revenue_20200614090001.csv", 1000, 1);
-		opr.prepareFileFor1173(conn, "20200614", "E:/interface/backend/ControlFileGeneration/mobo_revenue_20200614090001.csv", 1000, 1);
-		opr.prepareFileFor1174(conn, "20200614", "E:/interface/backend/ControlFileGeneration/acquisition_revenue_20200614090001.csv", 1000, 1);
-		opr.prepareFileFor1175(conn, "20200614", "E:/interface/backend/ControlFileGeneration/low_revenue_site_20200614090001.csv", 1000, 1);
-		opr.prepareFileFor1176(conn, "20200614", "E:/interface/backend/ControlFileGeneration/site_rgu_ga_20200614090001.csv", 1000, 1);
-		opr.prepareFileFor1177(conn, "20200614", "E:/interface/backend/ControlFileGeneration/cross_reload_20200614090001.csv", 1000, 1);
-		opr.prepareFileFor1178(conn, "20200614", "E:/interface/backend/ControlFileGeneration/cross_data_20200614090001.csv", 1000, 1);
-		opr.prepareFileFor1179(conn, "202006", "E:/interface/backend/ControlFileGeneration/outlet_program_20200614090001.csv", 1000, 1);
-		opr.prepareFileFor1180(conn, "202006", "E:/interface/backend/ControlFileGeneration/alloc_payment_20200614090001.csv", 1000, 1);
-		opr.prepareFileFor1181(conn, "20200614", "E:/interface/backend/ControlFileGeneration/uro_20_20200614090001.csv", 1000, 1);
+		opr.prepareFileFor1165(conn, "20200614", dir + "site_mapping"        +   "_20200614090002.csv",    10000,   2);
+		opr.prepareFileFor1166(conn, "20200614", dir + "primary_mobo"        +   "_20200614090002.csv",    10000,   2);
+		opr.prepareFileFor1167(conn, "20200614", dir + "secondary_mobo"      +   "_20200614090002.csv",    10000,   2);
+		opr.prepareFileFor1168(conn, "20200614", dir + "d_sso"               +   "_20200614090002.csv",    10000,   2);
+		opr.prepareFileFor1169(conn, "20200614", dir + "rgu_injection"       +   "_20200614090002.csv",    10000,   2);
+		opr.prepareFileFor1170(conn, "20200614", dir + "tertiary"            +   "_20200614090002.csv",    10000,   2);
+		opr.prepareFileFor1171(conn, "20200614", dir + "org_close_bal"       +   "_20200614090002.csv",    10000,   2);
+		opr.prepareFileFor1172(conn, "20200614", dir + "total_revenue"       +   "_20200614090002.csv",    10000,   2);
+		opr.prepareFileFor1173(conn, "20200614", dir + "mobo_revenue"        +   "_20200614090002.csv",    10000,   2);
+		opr.prepareFileFor1174(conn, "20200614", dir + "acquisition_revenue" +   "_20200614090002.csv",    10000,   2);
+		opr.prepareFileFor1175(conn, "20200614", dir + "low_revenue_site"    +   "_20200614090002.csv",    10000,   2);
+		opr.prepareFileFor1176(conn, "20200614", dir + "site_rgu_ga"         +   "_20200614090002.csv",    10000,   2);
+		opr.prepareFileFor1177(conn, "20200614", dir + "cross_reload"        +   "_20200614090002.csv",    10000,   2);
+		opr.prepareFileFor1178(conn, "20200614", dir + "cross_data"          +   "_20200614090002.csv",    10000,   2);
+		opr.prepareFileFor1179(conn, "202006",   dir + "outlet_program"      +   "_20200614090002.csv",    10000,   2);
+		opr.prepareFileFor1180(conn, "202006",   dir + "alloc_payment"       +   "_20200614090002.csv",    10000,   2);
+		opr.prepareFileFor1181(conn, "20200614", dir + "uro_20"              +   "_20200614090002.csv",    10000,   2);
 
 
 	}
@@ -113,19 +131,27 @@ public class HadoopInterfaceTest {
 	public void callApi() throws Exception 
 	{
 
-		SndIntegrationSoupService service = new SndIntegrationSoupService();
-		ResponseBean responseBean = null;
 		for (long i = 1165; i <= 1181; i++) 
 		{
-			responseBean = service.processFile(i);
+			ThreadUtil.processFile(i);
 			Thread.sleep(1 * 5 * 1000);
-			responseBean = service.processReceivedFiles(i);
-			Thread.sleep(1 * 10 * 1000);
-			responseBean = service.prepareRejectionFile(i);
-			Thread.sleep(1 * 10 * 1000);
-			System.out.println("Service call :: " + i  + "    status  :: " + responseBean.getStatus());
+			System.out.println("processFile service call :: " + i  + "    status  :: " );
 		}
-
+		ThreadUtil.threadsJoin();
+		for (long i = 1165; i <= 1181; i++) 
+		{
+			ThreadUtil.processReceivedFiles(i);
+			Thread.sleep(1 * 10 * 1000);
+			System.out.println("processReceivedFiles service call :: " + i  + "    status  :: " );
+		}
+		ThreadUtil.threadsJoin();
+		for (long i = 1165; i <= 1181; i++) 
+		{
+			ThreadUtil.prepareRejectionFile(i);
+			Thread.sleep(1 * 10 * 1000);
+			System.out.println("prepareRejectionFile service call :: " + i  + "    status  :: " );
+		}
+		ThreadUtil.threadsJoin();
 
 	}
 
