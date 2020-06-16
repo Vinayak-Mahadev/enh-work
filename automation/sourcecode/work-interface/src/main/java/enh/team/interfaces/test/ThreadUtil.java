@@ -21,6 +21,10 @@ public class ThreadUtil implements Runnable
 
 			if(methodName.equals("prepareRejectionFile"))
 				sndIntegrationSoupService.prepareRejectionFile(interfaceId);
+
+			if(methodName.equals("pullDataToFile"))
+				sndIntegrationSoupService.pullDataToFile(interfaceId);
+
 		}
 		catch (Exception e) {
 			e.printStackTrace();
@@ -87,6 +91,26 @@ public class ThreadUtil implements Runnable
 	}
 
 
+	public static void pullDataToFile(long interfaceId)
+	{
+
+		ThreadUtil threadUtil = null;
+		try 
+		{
+			threadUtil = new ThreadUtil();
+			threadUtil.setMethodName(interfaceId);
+			threadUtil.setMethodName("pullDataToFile");
+			Thread thread = new Thread(threadUtil);
+			thread.start();
+			threads.add(thread);
+		} 
+		catch (Exception e)
+		{
+			e.printStackTrace();
+		}	
+
+	}
+
 	private void setMethodName(long interfaceId) 
 	{
 		this.interfaceId = interfaceId;
@@ -99,14 +123,32 @@ public class ThreadUtil implements Runnable
 	public static void threadsJoin() {
 		try
 		{
-			for (Thread thread : threads)
+			for (Thread thread : threads) {
 				thread.join();
+			}
+			threads.clear();
 		} 
 		catch (Exception e) 
 		{
 			e.printStackTrace();
 		}
 	}
+
+	@SuppressWarnings("deprecation")
+	public static void threadsKill() {
+		try
+		{
+			for (Thread thread : threads) {
+				thread.destroy();
+			}
+
+		} 
+		catch (Exception e) 
+		{
+			e.printStackTrace();
+		}
+	}
+
 
 	private ThreadUtil() {
 		super();

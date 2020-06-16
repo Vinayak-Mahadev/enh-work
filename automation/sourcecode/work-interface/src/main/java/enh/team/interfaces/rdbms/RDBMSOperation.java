@@ -47,7 +47,7 @@ public class RDBMSOperation {
 			int lastFileRowCount = 0;
 			for(int i = 1; i <= limit; i++)
 			{
-				fos.write((dateInFile + "|Test Site-"+ i +"|19.10|31.23|MC-KOBAR-LAMANDAU|KS-KAL-WEST KALTENG|SAMPIT|KALIMANTAN|KaliSumapa|NON_JAVA|Test Site-"+ i +"|" + population + "\n").getBytes());
+				fos.write((dateInFile + "|Test Site "+""+" - "+ i +"|19.10|31.23|MC-KOBAR-LAMANDAU|KS-KAL-WEST KALTENG|SAMPIT|KALIMANTAN|KaliSumapa|NON_JAVA|Test Site-"+ i +"|" + population + "\n").getBytes());
 				if(population++ % 100 == 0)
 					population = 5;
 
@@ -574,7 +574,7 @@ public class RDBMSOperation {
 			throw e;
 		}
 	}
-	
+
 	public void prepareFileFor1174(Connection conn, String dateInFile, String filePath, int limit, int fileCount) throws Exception
 	{		
 		ResultSet micro = null;
@@ -595,7 +595,7 @@ public class RDBMSOperation {
 				micro = conn.createStatement().executeQuery("select lookup_name_v from kpi.ms_lookup_master where lookup_type_n = (select lookup_type_n from kpi.ms_lookup_type_master where ext_lookup_type_n = 89) order by 1;");
 				while (micro.next()) 
 				{				
-					fos.write((dateInFile+"|"+micro.getString(1)+"|Test Site-"+i+"|" + i + ".40\n").getBytes());
+					fos.write((dateInFile+"|"+micro.getString(1)+"|Test Site - "+""+" - "+(i*3)+"|" + (i*2) + ".40\n").getBytes());
 					i++;
 
 					if(i % calcRowLimit == 0 && i != limit)
@@ -1275,7 +1275,10 @@ public class RDBMSOperation {
 				System.out.println("select * from kpi." + jsonObject.get("daily_table").toString().toLowerCase()+";");
 				System.out.println("select * from kpi." + jsonObject.get("monthly_table").toString().toLowerCase()+";");
 				System.out.println("select * from kpi." + jsonObject.get("daily_table").toString().toLowerCase()+";");
-
+				System.out.println("\n");
+				System.out.println("delete from kpi.tr_temp_hadoop_failure_aggr where file_id_n in (select file_id_n from interface.tr_interface_file_summary_details where file_id_n in (select file_id_n from interface.tr_interface_file_summary where interface_id_n in ("+resultSet.getString(1)+")));");
+				System.out.println("delete from interface.tr_interface_file_summary_details where file_id_n in (select file_id_n from interface.tr_interface_file_summary where interface_id_n in ("+resultSet.getString(1)+"));");
+				System.out.println("delete from interface.tr_interface_file_summary where interface_id_n in ("+resultSet.getString(1)+");");
 				if(jsonObject.has("duplicate_validation_conf") && jsonObject.get("duplicate_validation_conf") != null) 
 					System.out.println("delete from kpi." + duplicate_validation_conf.get("table_name").toString().toLowerCase()+";");
 				System.out.println("delete from kpi." + jsonObject.get("daily_table").toString().toLowerCase()+";");

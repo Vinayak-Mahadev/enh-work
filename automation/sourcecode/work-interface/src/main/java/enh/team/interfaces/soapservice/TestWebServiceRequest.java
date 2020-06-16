@@ -150,7 +150,7 @@ public class TestWebServiceRequest{
 		}
 		catch(Exception exception)
 		{
-			exception.printStackTrace();
+//			exception.printStackTrace();
 			throw exception;
 		}
 		finally

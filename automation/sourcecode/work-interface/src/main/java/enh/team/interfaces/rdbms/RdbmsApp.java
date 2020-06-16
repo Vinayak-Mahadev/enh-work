@@ -10,7 +10,7 @@ public class RdbmsApp
 	{
 		//new RDBMSOperation().getDatabaseMetaData(RDBMS.getDBConnection(PropType.RDBMS_144));
 		RDBMSOperation opr = new RDBMSOperation();
-		Connection conn = RDBMS.getDBConnection(PropType.RDBMS_144);
+		Connection conn = RDBMS.getDBConnection(PropType.RDBMS_LOCALHOST);
 
 		/*
 		opr.prepareFileFor1165(conn, "20200614", "E:/interface/backend/ControlFileGeneration/site_mapping_20200614090000.csv", 1000, 1);
