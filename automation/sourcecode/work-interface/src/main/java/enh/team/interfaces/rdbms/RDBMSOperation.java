@@ -1270,21 +1270,20 @@ public class RDBMSOperation {
 					System.out.print( "INSTANCE"+ "	" + fields.get("instance_field")+ "	" );
 					System.out.println( "VALIDATION TABLE"+ "	kpi." + duplicate_validation_conf.get("table_name").toString().toLowerCase() + "\n");
 					System.out.println("select * from interface.ms_interface_attr where interface_id_n = " + resultSet.getString(1)+" order by 1;");
+					System.out.println("select * from interface.tr_interface_file_summary where interface_id_n = " + resultSet.getString(1)+" order by 1;");
 					System.out.println("select * from kpi." + duplicate_validation_conf.get("table_name").toString().toLowerCase()+";");
 				}
 				System.out.println("select * from kpi." + jsonObject.get("daily_table").toString().toLowerCase()+";");
 				System.out.println("select * from kpi." + jsonObject.get("monthly_table").toString().toLowerCase()+";");
-				System.out.println("select * from kpi." + jsonObject.get("daily_table").toString().toLowerCase()+";");
 				System.out.println("\n");
 				System.out.println("delete from kpi.tr_temp_hadoop_failure_aggr where file_id_n in (select file_id_n from interface.tr_interface_file_summary_details where file_id_n in (select file_id_n from interface.tr_interface_file_summary where interface_id_n in ("+resultSet.getString(1)+")));");
 				System.out.println("delete from interface.tr_interface_file_summary_details where file_id_n in (select file_id_n from interface.tr_interface_file_summary where interface_id_n in ("+resultSet.getString(1)+"));");
 				System.out.println("delete from interface.tr_interface_file_summary where interface_id_n in ("+resultSet.getString(1)+");");
 				if(jsonObject.has("duplicate_validation_conf") && jsonObject.get("duplicate_validation_conf") != null) 
 					System.out.println("delete from kpi." + duplicate_validation_conf.get("table_name").toString().toLowerCase()+";");
-				System.out.println("delete from kpi." + jsonObject.get("daily_table").toString().toLowerCase()+";");
+				System.out.println("\ndelete from kpi." + jsonObject.get("daily_table").toString().toLowerCase()+";");
 				System.out.println("delete from kpi." + jsonObject.get("monthly_table").toString().toLowerCase()+";");
-				System.out.println("delete from kpi." + jsonObject.get("daily_table").toString().toLowerCase()+";");
-
+				
 
 				System.out.println("\n\n\n----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------\n\n\n");
 			}

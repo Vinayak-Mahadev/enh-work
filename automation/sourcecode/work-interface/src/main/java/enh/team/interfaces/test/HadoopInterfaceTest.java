@@ -17,6 +17,7 @@ import enh.team.interfaces.ssh.SshOperation;
 public class HadoopInterfaceTest {
 
 	EntityOperations entityOperations; 
+	RDBMSOperation opr = new RDBMSOperation();
 
 	boolean filePresent = false;
 
@@ -26,13 +27,14 @@ public class HadoopInterfaceTest {
 		{
 
 			HadoopInterfaceTest hadoopInterfaceTest = new HadoopInterfaceTest();
+
 			//
 			Connection conn = RDBMS.getDBConnection(PropType.RDBMS_144);
-			Server server = new Server(PropType.Server_251_PPK);
+			//			Server server = new Server(PropType.Server_251_PPK);
 			hadoopInterfaceTest.generateFile(conn);
 			hadoopInterfaceTest.prepareCtl();
-			hadoopInterfaceTest.uploadFiles(server, "E:/interface/backend/ControlFileGeneration/raw/");
-			hadoopInterfaceTest.callApi();
+			//			hadoopInterfaceTest.uploadFiles(server, "E:/interface/backend/ControlFileGeneration/raw/");
+			//			hadoopInterfaceTest.callApi();
 
 		} 
 		catch (Exception e) {
@@ -45,8 +47,9 @@ public class HadoopInterfaceTest {
 	public void generateFile(Connection conn) throws Exception
 	{
 
-		//RDBMSOperation opr = new RDBMSOperation();
-		//String dir = "E:/interface/backend/ControlFileGeneration/";
+		String dir = "E:/interface/backend/ControlFileGeneration/";
+		String sql = "SELECT inter.interface_id_n,inter.name_v, attr.value_v FROM interface.ms_interface_attr attr INNER JOIN interface.ms_interface inter ON inter.interface_id_n=attr.interface_id_n where attr.name_v ='Field Lookup Conf' and inter.interface_id_n between 1166 and 1181 order by inter.interface_id_n ;";
+		opr.printFieldLookupConf(conn, sql);
 		//		opr.prepareFileFor1165(conn, "20200515", dir + "site_mapping"        +   "_20200615090004_001.csv",    10000,   1);
 		//		opr.prepareFileFor1166(conn, "20200531", dir + "primary_mobo"        +   "_20200615090004_001.csv",    10000,   1);
 		//		opr.prepareFileFor1167(conn, "20200531", dir + "secondary_mobo"      +   "_20200615090004_001.csv",    10000,   1);
@@ -56,7 +59,11 @@ public class HadoopInterfaceTest {
 		//		opr.prepareFileFor1171(conn, "20200531", dir + "org_close_bal"       +   "_20200615090004_001.csv",    10000,   1);
 		//		opr.prepareFileFor1172(conn, "20200531", dir + "total_revenue"       +   "_20200615090004_001.csv",    10000,   1);
 		//		opr.prepareFileFor1173(conn, "20200531", dir + "mobo_revenue"        +   "_20200615090004_001.csv",    10000,   1);
-		//		opr.prepareFileFor1174(conn, "20200531", dir + "acquisition_revenue" +   "_20200615090004_001.csv",    10000,   1);
+		opr.prepareFileFor1174(conn, "20200413", dir + "acquisition_revenue" +   "_20200615090004_001.csv",    2,   1);
+		opr.prepareFileFor1174(conn, "20200513", dir + "acquisition_revenue" +   "_20200615090004_002.csv",    2,   1);
+		opr.prepareFileFor1174(conn, "20200531", dir + "acquisition_revenue" +   "_20200615090004_003.csv",    2,   1);
+		opr.prepareFileFor1174(conn, "20200601", dir + "acquisition_revenue" +   "_20200615090004_004.csv",    2,   1);
+		opr.prepareFileFor1174(conn, "20200616", dir + "acquisition_revenue" +   "_20200615090004_005.csv",    2,   1);
 		//		opr.prepareFileFor1175(conn, "20200531", dir + "low_revenue_site"    +   "_20200615090004_001.csv",    10000,   1);
 		//		opr.prepareFileFor1176(conn, "20200531", dir + "site_rgu_ga"         +   "_20200615090004_001.csv",    10000,   1);
 		//		opr.prepareFileFor1177(conn, "20200531", dir + "cross_reload"        +   "_20200615090004_001.csv",    10000,   1);
@@ -122,27 +129,27 @@ public class HadoopInterfaceTest {
 	public void callApi() throws Exception 
 	{
 
-		//		for (long i = 1165; i <= 1181; i++) 
-		//		{
-		//			ThreadUtil.processFile(i);
-		//			Thread.sleep(1 * 10 * 1000);
-		//			System.out.println("processFile service call :: " + i  + "    status  :: " );
-		//		}
-		//		ThreadUtil.threadsJoin();
-		//		for (long i = 1165; i <= 1181; i++) 
-		//		{
-		//			ThreadUtil.processReceivedFiles(i);
-		//			System.out.println("processReceivedFiles service call :: " + i  );
-		//			Thread.sleep(1 * 20 * 1000);
-		//		}
-		//		ThreadUtil.threadsJoin();
-		//		for (long i = 1165; i <= 1181; i++) 
-		//		{
-		//			ThreadUtil.prepareRejectionFile(i);
-		//			Thread.sleep(1 * 20 * 1000);
-		//			System.out.println("prepareRejectionFile service call :: " + i  + "    status  :: " );
-		//		}
-		//		ThreadUtil.threadsJoin();
+		for (long i = 1174; i <= 1174; i++) 
+		{
+			ThreadUtil.processFile(i);
+			Thread.sleep(1 * 10 * 1000);
+			System.out.println("processFile service call :: " + i  + "    status  :: " );
+		}
+		ThreadUtil.threadsJoin();
+		for (long i = 1174; i <= 1174; i++) 
+		{
+			ThreadUtil.processReceivedFiles(i);
+			System.out.println("processReceivedFiles service call :: " + i  );
+			Thread.sleep(1 * 20 * 1000);
+		}
+		ThreadUtil.threadsJoin();
+		for (long i = 1174; i <= 1174; i++) 
+		{
+			ThreadUtil.prepareRejectionFile(i);
+			Thread.sleep(1 * 20 * 1000);
+			System.out.println("prepareRejectionFile service call :: " + i  + "    status  :: " );
+		}
+		ThreadUtil.threadsJoin();
 		//		for (long i = 1152; i <= 1152; i++) 
 		//		{
 		//			ThreadUtil.pullDataToFile(i);
