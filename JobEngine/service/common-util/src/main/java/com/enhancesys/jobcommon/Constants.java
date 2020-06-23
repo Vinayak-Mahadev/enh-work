@@ -6,6 +6,7 @@ public interface Constants
 
 	public static final String _PROJECT_LOC = Env.PROJECT_LOC;
 	public static final String _JOB_CONF_PATH = Env.PROJECT_LOC;
+	public static final String _JOB_CONF_SPRING_BEANS_PATH = "/home/appuser/snoc/snocconf/jobengineconf/beans/spring-config.xml";
 	public static final String _TEMPLATE_CONFIG_PATH = Env.PROJECT_LOC + "/JobTemplateConfig.json";
 	public static final String _JOB_CONFIG_PATH = Env.PROJECT_LOC + "common/";
 	public static final String _JOB_DUMP_TEMPLATE = Env.PROJECT_LOC + "dump-templates/";

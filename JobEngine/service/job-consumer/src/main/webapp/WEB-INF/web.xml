@@ -7,7 +7,7 @@
 	version="3.0">
 
 	<display-name>JobEngine</display-name>
-	<!-- WEB-INF/application-security-config.xml-->
+	<!-- WEB-INF/application-security-config.xml -->
 	<context-param>
 		<param-name>contextConfigLocation</param-name>
 		<param-value>
@@ -15,7 +15,7 @@
 		            WEB-INF/application-security-config.xml
 		</param-value>
 	</context-param>
-	
+
 	<context-param>
 		<param-name>log4jConfigLocation</param-name>
 		<param-value>file:${APPSERVER_CONF_PATH}/jobengineconf/common/log4j.properties</param-value>

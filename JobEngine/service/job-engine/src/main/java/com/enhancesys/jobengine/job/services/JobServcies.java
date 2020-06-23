@@ -8,6 +8,7 @@ import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
 import org.springframework.context.support.FileSystemXmlApplicationContext;
 
 import com.enhancesys.jobcommon.Constants;
@@ -33,8 +34,15 @@ public class JobServcies
 		try
 		{
 			
-			context = new FileSystemXmlApplicationContext(Constants._JOB_CONF_PATH + "beans/spring-config.xml");
-			
+			context = new FileSystemXmlApplicationContext(Constants._JOB_CONF_SPRING_BEANS_PATH		);
+			try 
+			{
+				context = new ClassPathXmlApplicationContext("spring-config.xml");
+			}
+			catch (Exception e) 
+			{
+				e.printStackTrace();
+			}			
 			System.out.println("jobParameters : " + jobParameters);
 			System.out.println("Spring App Context : " + context);
 			

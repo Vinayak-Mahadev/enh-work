@@ -53,7 +53,7 @@
 	<modules>
 		<module>common-util</module>
 		<module>job-engine</module>
-		<module>job-consumer</module>
+		<module>jobEngineServices</module>
 	</modules>
 
 	<build>

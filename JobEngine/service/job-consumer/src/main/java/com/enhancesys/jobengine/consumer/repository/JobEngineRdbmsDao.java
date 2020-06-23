@@ -22,7 +22,7 @@ import com.enhancesys.jobengine.consumer.model.User;
 public class JobEngineRdbmsDao implements JobEngineRepository {
 
 
-	@Autowired
+	//@Autowired
 	private JpaTransactionManager transactionManager;
 	private EntityManagerFactory entityManagerFactory;
 	private EntityManager entityManager;
