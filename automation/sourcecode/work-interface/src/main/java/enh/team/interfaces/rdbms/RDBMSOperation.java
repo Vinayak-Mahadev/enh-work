@@ -664,9 +664,9 @@ public class RDBMSOperation {
 				{
 					String category = "";
 					if(i % 4 == 0)
-						category = "JAVA";
+						category = "Java";
 					else
-						category = "NON JAVA";
+						category = "Non Java";
 					fos.write((dateInFile+"|"+micro.getString(1)+"|Test Site-"+i+"|"+category+"|-" + i + ".30" + "|-" + i + ".70\n").getBytes());
 					i++;
 
@@ -802,9 +802,9 @@ public class RDBMSOperation {
 				while (cluster.next()) 
 				{				
 					if(i % 4 == 0)
-						category = "JAVA";
+						category = "Java";
 					else
-						category = "NON JAVA";
+						category = "Non Java";
 					if(i % 6 == 0)
 						clusterType = "Inner";
 					else

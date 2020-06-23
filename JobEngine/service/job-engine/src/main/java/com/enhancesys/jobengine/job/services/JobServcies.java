@@ -9,7 +9,6 @@ import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
-import org.springframework.context.support.FileSystemXmlApplicationContext;
 
 import com.enhancesys.jobcommon.Constants;
 import com.enhancesys.jobengine.job.services.job.JobEngine;
@@ -25,19 +24,14 @@ public class JobServcies
 		ApplicationContext context = null;
 		JobEngine jobEngine = null;
 		File file = null;
-		File springFile  = null;
 		FileInputStream inputStream = null;
 		JSONArray jobsArray = null;
 		StringBuffer buffer = null;
 		try
 		{
-			springFile = new File(Constants._JOB_CONF_SPRING_BEANS_PATH);
 			try 
 			{
-				if(springFile.isFile())
-					context = new FileSystemXmlApplicationContext(springFile.getAbsolutePath());
-				else
-					context = new ClassPathXmlApplicationContext("spring-config.xml");
+				context = new ClassPathXmlApplicationContext("spring-config.xml");
 			}
 			catch (Exception e) 
 			{

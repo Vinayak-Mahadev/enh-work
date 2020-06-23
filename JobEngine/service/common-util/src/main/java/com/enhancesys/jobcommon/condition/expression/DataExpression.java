@@ -148,6 +148,7 @@ public class DataExpression extends AbstractExpression
 	 * @throws EvaluationFailedException 
 	 * @since 1.0
 	 */
+	@SuppressWarnings("unchecked")
 	public boolean processExpression(Map<String, Object> dataToEvaluate) throws EvaluationFailedException
 	{
 		//TLogger.info("Process expression of spool data expression");

@@ -40,16 +40,15 @@ public class JobConfigurationReader
 
 		try
 		{
-			if("File".equalsIgnoreCase(propertiesLoader.getValueFor("TEMPLATE_SOURCE")))
+			if("File".equalsIgnoreCase(PropertiesLoader.getValueFor("TEMPLATE_SOURCE")))
 			{
 
-				if(propertiesLoader.getValueFor("TEMPLATE_CONFIG_PATH") == null || propertiesLoader.getValueFor("TEMPLATE_CONFIG_PATH").trim().isEmpty())
+				if(PropertiesLoader.getValueFor("TEMPLATE_CONFIG_PATH") == null || PropertiesLoader.getValueFor("TEMPLATE_CONFIG_PATH").trim().isEmpty())
 				{
-					log.error("Please configure Template Path..");
 					log.error("Please configure Template Path..");
 					throw new GenericProcessorException("Please configure Template Path..");
 				}
-				file = new File(propertiesLoader.getValueFor("TEMPLATE_CONFIG_PATH"));
+				file = new File(PropertiesLoader.getValueFor("TEMPLATE_CONFIG_PATH"));
 				//file = new File(Constants._TEMPLATE_CONFIG_PATH);
 				
 				inputStream = new FileInputStream(file);
@@ -84,16 +83,16 @@ public class JobConfigurationReader
 				}
 			}
 
-			if("File".equalsIgnoreCase(propertiesLoader.getValueFor("JOB_SOURCE")))
+			if("File".equalsIgnoreCase(PropertiesLoader.getValueFor("JOB_SOURCE")))
 			{
-				if(propertiesLoader.getValueFor("JOB_DUMP_TEMPLATE") == null || propertiesLoader.getValueFor("JOB_DUMP_TEMPLATE").trim().isEmpty())
+				if(PropertiesLoader.getValueFor("JOB_DUMP_TEMPLATE") == null || PropertiesLoader.getValueFor("JOB_DUMP_TEMPLATE").trim().isEmpty())
 				{
 					log.error("Please configure Template Path..");
 					log.error("Please configure Template Path..");
 					throw new GenericProcessorException("Please configure Template Path..");
 				}
 				log.info("jobId :: " + jobId);
-				file = new File(propertiesLoader.getValueFor("JOB_DUMP_TEMPLATE") + jobId + ".json");
+				file = new File(PropertiesLoader.getValueFor("JOB_DUMP_TEMPLATE") + jobId + ".json");
 				//file = new File(Constants._JOB_CONFIG_PATH + jobId + ".json");
 				inputStream = new FileInputStream(file);
 				inputStreamReader = new InputStreamReader(inputStream, "UTF-8");
@@ -118,7 +117,6 @@ public class JobConfigurationReader
 						string = string.replace("$" + key.toString(), reqObject.get(key).toString());
 					}
 				}
-				log.error("String : " + string);
 				if(string.trim().isEmpty())
 				{
 					log.error(jobId + ".json File does not contain the Configuration Data..");

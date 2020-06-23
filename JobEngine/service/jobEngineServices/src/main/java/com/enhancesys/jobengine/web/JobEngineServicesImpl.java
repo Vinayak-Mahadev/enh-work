@@ -1,4 +1,4 @@
-package com.enhancesys.integration.response.services;
+package com.enhancesys.jobengine.web;
 
 import javax.ejb.Remote;
 import javax.ejb.Stateless;
@@ -9,14 +9,12 @@ import javax.ejb.TransactionManagementType;
 import javax.jws.WebService;
 
 import org.apache.log4j.Logger;
-import org.json.JSONObject;
 
-import com.enhancesys.integration.response.services.jobengine.JobEngineServices;
-import com.enhancesys.integration.response.util.InterfaceDBUtil;
+import com.enhancesys.jobengine.serviceslayer.JobEngineServicesHelper;
 
 /**
  * <b>Purpose:</b><br>
- * 		Implementation of IntegrationManagement interface static resonse operations..<br>
+ * 		JobEngine invoker implementation<br>
  * <br>
  * 
  * <b>DesignReference:</b><br>
@@ -24,7 +22,7 @@ import com.enhancesys.integration.response.util.InterfaceDBUtil;
  * <br>
  * 
  * <b>CopyRights:</b><br>
- * 		Enhancesys Innovations 2019<br>
+ * 		Enhancesys Innovations 2020<br>
  * <br>
  * 
  * <b>RevisionHistory:</b>
@@ -33,7 +31,7 @@ import com.enhancesys.integration.response.util.InterfaceDBUtil;
  * <b>
  * Sl No   Modified Date        Author</b>
  * ==============================================
- * 1        23-08-2019		   Suresh Upparu
+ * 1        10-05-2010		   Vinayak Mahadev (vinay.nagaraj@enhancesys.com)
  * 	-- Base Release 
  * </pre>
  * 
@@ -43,23 +41,46 @@ import com.enhancesys.integration.response.util.InterfaceDBUtil;
 @Stateless
 @TransactionAttribute(TransactionAttributeType.REQUIRED)
 @TransactionManagement(TransactionManagementType.CONTAINER)
-@WebService(endpointInterface = "com.enhancesys.integration.response.services.jobengine.JobEngineServices", name = "JobEngineServices")
+@WebService(endpointInterface = "com.enhancesys.jobengine.web.JobEngineServices", name = "JobEngineServices")
 @Remote({ JobEngineServices.class })
-public class InterfaceResponseServicesImpl 
+public class JobEngineServicesImpl 
 {
-	private static Logger log = Logger.getLogger(InterfaceResponseServicesImpl.class);
+	private static Logger log = Logger.getLogger(JobEngineServicesImpl.class);
 
-	private InterfaceDBUtil dbUtil = new InterfaceDBUtil();
-	private JobEngineServicesUtil jobEngineServices = new JobEngineServicesUtil();
+	private JobEngineServicesHelper jobEngineServices = new JobEngineServicesHelper();
 	
-	public String getStaticResponse(final Long moduleId,final String requestData) throws Exception
+
+	public String getResponse(final Long moduleId, final String requestData) throws Exception
 	{
 		String staticResponse = null;
 		try
 		{
 			log.info("moduleId :: " + moduleId + ", Request  :: " + requestData);
-			staticResponse = "Welcome to InterfaceResponseServices";
-			jobEngineServices.processModule(moduleId.toString());
+			staticResponse = "Welcome to JobEngineServices...";
+			return staticResponse;
+		}
+		catch(Exception exception)
+		{
+			log.error("Unhandled Exception : " + exception.getMessage(), exception);
+		}
+		finally
+		{
+
+		}
+		return staticResponse;
+	}
+
+	
+	
+	
+	public String processModule(final Long moduleId, final String requestData) throws Exception
+	{
+		String staticResponse = null;
+		try
+		{
+			log.info("moduleId :: " + moduleId + ", Request  :: " + requestData);
+			staticResponse = "Welcome to JobEngineServices...";
+			jobEngineServices.processModule(moduleId);
 			
 			return staticResponse;
 		}
@@ -74,10 +95,6 @@ public class InterfaceResponseServicesImpl
 		return staticResponse;
 	}
 
-	private static String getStaticResponse(Long moduleId, JSONObject staticResConf, String requestData, String staticResponse, String responseType)
-	{
-		return null;
-	}
 
 	/**
 	 * <pre> This method returns element's value.. If given tagname is not there in xml it returns empty value...   </pre>
@@ -86,7 +103,7 @@ public class InterfaceResponseServicesImpl
 	 * @return
 	 * @author Vinayak Mahadev
 	 */
-	private static String getXmlElementValue(final String xml, String tagName)
+	 static String getXmlElementValue(final String xml, String tagName)
 	{
 		String data = null;
 		try
