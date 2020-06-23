@@ -20,39 +20,45 @@ public class JobServcies
 
 	public static void proceeRequest(JSONObject jobParameters) 
 	{
-		System.out.println("Entry processRequest.." + jobParameters);
+		log.info("Entry processRequest.." + jobParameters);
 
 		ApplicationContext context = null;
 		JobEngine jobEngine = null;
 		File file = null;
+		File springFile  = null;
 		FileInputStream inputStream = null;
 		JSONArray jobsArray = null;
 		StringBuffer buffer = null;
-		//		String configurationPath = null;
-		//		String envPath = null;
-
 		try
 		{
-			
-			context = new FileSystemXmlApplicationContext(Constants._JOB_CONF_SPRING_BEANS_PATH		);
+			springFile = new File(Constants._JOB_CONF_SPRING_BEANS_PATH);
 			try 
 			{
-				context = new ClassPathXmlApplicationContext("spring-config.xml");
+				if(springFile.isFile())
+					context = new FileSystemXmlApplicationContext(springFile.getAbsolutePath());
+				else
+					context = new ClassPathXmlApplicationContext("spring-config.xml");
 			}
 			catch (Exception e) 
 			{
-				e.printStackTrace();
+				log.error(e.getMessage(), e);
+				try 
+				{
+					context = new ClassPathXmlApplicationContext("spring-config.xml");
+				} 
+				catch (Exception e2) 
+				{
+					log.error(e2.getMessage(), e2);
+				}
 			}			
-			System.out.println("jobParameters : " + jobParameters);
-			System.out.println("Spring App Context : " + context);
-			
+
 			log.info("jobParameters : " + jobParameters);
 			log.info("Spring App Context : " + context);
-			
+
 			jobEngine = (JobEngine) context.getBean("jobEngine");
 
-			System.out.println("jobEngine :: " + jobEngine);
-			
+			log.info("jobEngine :: " + jobEngine);
+
 			if(jobParameters == null)
 			{
 				file = new File(Constants._JOB_CONFIG_PATH + "dumps.json");
@@ -65,7 +71,7 @@ public class JobServcies
 				}
 				inputStream.close();
 				jobsArray = (JSONArray) new JSONParser().parse(buffer.toString());
-				System.out.println("No. of Jobs configured : " + jobsArray.size());
+				log.info("No. of Jobs configured : " + jobsArray.size());
 				for(Object jobObj : jobsArray)
 				{
 					jobParameters = (JSONObject) jobObj;
@@ -74,13 +80,12 @@ public class JobServcies
 			}
 			else
 				jobEngine.init(jobParameters);
-			//			System.out.println("Done..");
 			jobEngine.stop();
-			System.out.println("Job Done..");
+			log.info("Job Done..");
 		}
 		catch(Exception exception)
 		{
-			System.out.println("Unhandled Exception : " + exception.getMessage() + exception);
+			log.error("Unhandled Exception : " + exception.getMessage() , exception);
 		}
 		finally
 		{
@@ -100,10 +105,8 @@ public class JobServcies
 			inputStream = null;
 			jobsArray = null;
 			buffer = null;
-			//			configurationPath = null;
-			//			envPath = null;
 
-			System.out.println("Exit processRequest..");
+			log.info("Exit processRequest..");
 		}
 	}
 }
