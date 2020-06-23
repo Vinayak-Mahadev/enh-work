@@ -1,0 +1,424 @@
+{
+	"Primary": [
+		{
+			"connection-id": "snoc-r1",
+			"schema-name": "snoc",
+			"collection-name": "organization",
+			"projection": {
+				"chnl_ctgr": 1,
+				"sale_territory.regional": 1,
+				"sale_territory.area": 1,
+				"sale_territory.sales_area": 1,
+				"sale_territory.cluster": 1,
+				"sale_territory.micro_cluster": 1,
+				"sale_territory_desc": 1,
+				"territory_id": 1,
+				"org_id": 1,
+				"ref_code": 1,
+				"desc": 1
+			},
+			"parameters": [
+				{
+					"param-name": "org_type",
+					"param-value": 6,
+					"param-type": "Long"
+				},
+				{
+					"param-name": "sub_org_type",
+					"param-value": 66,
+					"param-type": "Long"
+				}
+			],
+			"map-key": {
+				"key": "org_id",
+				"type": "Long",
+				"local-key": "org_id"
+			},
+			"sort-by": {
+				"_id": 1
+			}
+		},
+		{
+			"connection-id": "snoc-r1",
+			"schema-name": "product",
+			"collection-name": "product_reorder_derived",
+			"parameters": [
+				{
+					"param-name": "derived_dt_n",
+					"param-value": "$current_date",
+					"param-type": "Long"
+				}
+			],
+			"projection": {
+				"org_id": 1,
+				"prd_ctgr_id": 1,
+				"prd_ctgr_desc": 1,
+				"threshold_value": 1,
+				"stock_value": 1,
+				"stock_days": 1,
+				"stock_percentage": 1,
+				"sales_flag": 1,
+				"prev_month_sales": 1,
+				"prev_month_days": 1,
+				"inc_by_per": 1,
+				"pjp_status": 1
+			},
+			"merge-type": "include_parent",
+			"sort-by": {
+				"dest_org_id": 1
+			}
+		}
+	],
+	"Lookup": {
+		"organization_lookup": {
+			"connection-id": "snoc-r1",
+			"schema-name": "snoc",
+			"collection-name": "organization"
+		},
+		"transitionValueCollection_lookup": {
+			"connection-id": "snoc-r1",
+			"schema-name": "snoc",
+			"collection-name": "transitionValueCollection"
+		},
+		"user_org_mapping_lookup": {
+			"connection-id": "snoc-r1",
+			"schema-name": "snoc",
+			"collection-name": "user_org_mapping"
+		},
+		"user_lookup": {
+			"connection-id": "snoc-r1",
+			"schema-name": "snoc",
+			"collection-name": "user"
+		}
+	},
+	"Configuration": {
+		"channel_category": {
+			"field": "chnl_ctgr"
+		},
+		"regional": {
+			"field": "sale_territory.regional"
+		},
+		"area": {
+			"field": "sale_territory.area"
+		},
+		"sales_area": {
+			"field": "sale_territory.sales_area"
+		},
+		"cluster": {
+			"field": "sale_territory.cluster"
+		},
+		"micro_cluster": {
+			"field": "sale_territory.micro_cluster"
+		},
+		"sale_territory": {
+			"field": "sale_territory_desc"
+		},
+		"territory_id": {
+			"field": "territory_id",
+			"lookup": [
+				{
+					"name": "transitionValueCollection_lookup",
+					"mapping-field": "_id",
+					"mapping-field-type": "String",
+					"lookup-field": "description"
+				}
+			]
+		},
+		"outlet_id": {
+			"field": "_id"
+		},
+		"outlet_ref_code": {
+			"field": "ref_code"
+		},
+		"outlet_name": {
+			"field": "desc"
+		},
+		"cso_name": {
+			"field": "_id",
+			"lookup": [
+				{
+					"name": "user_org_mapping_lookup",
+					"mapping-field": "dest_org_id",
+					"mapping-field-type": "Long",
+					"lookup-field": "user_id"
+				},
+				{
+					"name": "user_lookup",
+					"mapping-field": "_id",
+					"mapping-field-type": "Long",
+					"lookup-field": "uname"
+				}
+			]
+		},
+		"cso_operator_id": {
+			"field": "_id",
+			"lookup": [
+				{
+					"name": "user_org_mapping_lookup",
+					"mapping-field": "dest_org_id",
+					"mapping-field-type": "Long",
+					"lookup-field": "user_id"
+				},
+				{
+					"name": "user_lookup",
+					"mapping-field": "_id",
+					"mapping-field-type": "Long",
+					"lookup-field": "operator_id"
+				}
+			]
+		},
+		"cso_org_id": {
+			"field": "_id",
+			"lookup": [
+				{
+					"name": "user_org_mapping_lookup",
+					"mapping-field": "dest_org_id",
+					"mapping-field-type": "Long",
+					"lookup-field": "user_id"
+				},
+				{
+					"name": "user_lookup",
+					"mapping-field": "_id",
+					"mapping-field-type": "Long",
+					"lookup-field": "org_id"
+				}
+			]
+		},
+		"cso_org_ref_code": {
+			"field": "_id",
+			"lookup": [
+				{
+					"name": "user_org_mapping_lookup",
+					"mapping-field": "dest_org_id",
+					"mapping-field-type": "Long",
+					"lookup-field": "user_id"
+				},
+				{
+					"name": "user_lookup",
+					"mapping-field": "_id",
+					"mapping-field-type": "Long",
+					"lookup-field": "org_id"
+				},
+				{
+					"name": "organization_lookup",
+					"mapping-field": "_id",
+					"mapping-field-type": "Long",
+					"lookup-field": "ref_code"
+				}
+			]
+		},
+		"cso_org_name": {
+			"field": "_id",
+			"lookup": [
+				{
+					"name": "user_org_mapping_lookup",
+					"mapping-field": "dest_org_id",
+					"mapping-field-type": "Long",
+					"lookup-field": "user_id"
+				},
+				{
+					"name": "user_lookup",
+					"mapping-field": "_id",
+					"mapping-field-type": "Long",
+					"lookup-field": "org_id"
+				},
+				{
+					"name": "organization_lookup",
+					"mapping-field": "_id",
+					"mapping-field-type": "Long",
+					"lookup-field": "desc"
+				}
+			]
+		},
+		"product_category_id": {
+			"field": "prd_ctgr_id"
+		},
+		"product_category_name": {
+			"field": "prd_ctgr_desc"
+		},
+		"threshold_value": {
+			"field": "threshold_value"
+		},
+		"available_stock": {
+			"field": "stock_value"
+		},
+		"stock_days": {
+			"field": "stock_days"
+		},
+		"stock_percentage": {
+			"field": "_id"
+		},
+		"prev_month_sales": {
+			"field": "_id"
+		},
+		"prev_month_sales_value": {
+			"field": "_id"
+		},
+		"prev_month_transaction_days": {
+			"field": "prev_month_days"
+		},
+		"increase_by_percentage": {
+			"field": "inc_by_per"
+		},
+		"prev_day_sell_in": {
+			"field": "-"
+		},
+		"prev_day_suggestion": {
+			"field": "-"
+		},
+		"remaining_suggestion": {
+			"field": "-"
+		},
+		"actual_suggestion": {
+			"field": "-"
+		},
+		"today_pjp": {
+			"field": "pjp_status"
+		}
+	},
+	"OutputConf": {
+		"type": "file",
+		"extension": "csv",
+		"file-path": "/home/appuser/snoc/snocconf/jobengineconf/files",
+		"file-name": "stockReorderLevelReport_csv",
+		"file-name-pattern": "yyyyMMdd",
+		"mandatory-fields": [],
+		"file-headers": "CHANNEL CATEGORY,REGIONAL,AREA,SALES AREA,CLUSTER,MICRO CLUSTER,SALE TERRITORY,TERRITORY ID,OUTLET ID,OUTLET REF CODE,OUTLET NAME,CSO NAME,CSO OPERATOR ID,CSO ORG ID,CSO ORG REF CODE,CSO ORG NAME,PRODUCT CATEGORY ID,PRODUCT CATEGORY NAME,THRESHOLD VALUE,AVAILABLE STOCK,STOCK DAYS,STOCK PERCENTAGE (%),PREV MONTH SALES,PREV MONTH SALES VALUE,PREV MONTH TRANSACTION DAYS,INCREASE BY PERCENTAGE,PREV DAY SELL-IN,PREV DAY SUGGESTION,REMAINING SUGGESTION,ACTUAL SUGGESTION,TODAY PJP",
+		"field-delimiter": ",",
+		"field-conf": [
+			{
+				"path": "channel_category",
+				"type": "String"
+			},
+			{
+				"path": "regional",
+				"type": "String"
+			},
+			{
+				"path": "area",
+				"type": "String"
+			},
+			{
+				"path": "sales_area",
+				"type": "String"
+			},
+			{
+				"path": "cluster",
+				"type": "String"
+			},
+			{
+				"path": "micro_cluster",
+				"type": "String"
+			},
+			{
+				"path": "sale_territory",
+				"type": "String"
+			},
+			{
+				"path": "territory_id",
+				"type": "String"
+			},
+			{
+				"path": "outlet_id",
+				"type": "String"
+			},
+			{
+				"path": "outlet_ref_code",
+				"type": "String"
+			},
+			{
+				"path": "outlet_name",
+				"type": "String"
+			},
+			{
+				"path": "cso_name",
+				"type": "String"
+			},
+			{
+				"path": "cso_operator_id",
+				"type": "String"
+			},
+			{
+				"path": "cso_org_ref_code",
+				"type": "String"
+			},
+			{
+				"path": "cso_org_name",
+				"type": "String"
+			},
+			{
+				"path": "product_category_id",
+				"type": "String"
+			},
+			{
+				"path": "product_category_name",
+				"type": "String"
+			},
+			{
+				"path": "threshold_value",
+				"type": "String"
+			},
+			{
+				"path": "available_stock",
+				"type": "String"
+			},
+			{
+				"path": "stock_days",
+				"type": "String"
+			},
+			{
+				"path": "stock_percentage",
+				"type": "String"
+			},
+			{
+				"path": "prev_month_sales",
+				"type": "String"
+			},
+			{
+				"path": "prev_month_sales_value",
+				"type": "String"
+			},
+			{
+				"path": "prev_month_transaction_days",
+				"type": "String"
+			},
+			{
+				"path": "increase_by_percentage",
+				"type": "String"
+			},
+			{
+				"path": "prev_day_sell_in",
+				"type": "String"
+			},
+			{
+				"path": "prev_day_suggestion",
+				"type": "String"
+			},
+			{
+				"path": "remaining_suggestion",
+				"type": "String"
+			},
+			{
+				"path": "actual_suggestion",
+				"type": "String"
+			},
+			{
+				"path": "today_pjp",
+				"type": "String"
+			}
+		]
+	},
+	"RequestUpdateConf": {
+		"connection-id": "snoc-r1",
+		"schema-name": "snoc",
+		"collection-name": "notification",
+		"field": "trans_id"
+	},
+	"SortConf": {
+		"extension": "csv",
+		"file-name-pattern": "yyyyMMddHHmmssSSS",
+		"file-path": "/home/appuser/snoc/snocconf/jobengineconf/sorting-scripts/",
+		"field-delimiter": "|",
+		"sort-filepath_0": "/home/appuser/snoc/snocconf/jobengineconf/sorting-scripts/collection1.sh"
+	}
+}
