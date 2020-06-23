@@ -1,0 +1,17 @@
+update interface.ms_interface_attr set value_v = 'DATE;M;DNF;[0-9]*;yyyyMMdd%SITE_ID;M;R;%LONGITUDE;M;R;^-?\d+(\.\d{1,15})?$%LATITUDE;M;R;^-?\d+(\.\d{1,15})?$%MICRO_CLUSTER;M;R;%SALES_CLUSTER;M;R;%SALES_AREA;M;R;%AREA;M;R;%REGION;M;R;%JAVA_NONJAVA;M;R;%SITE_NAME;M;R;%SITE_POPULATION;M;R;[0-9]*' where attribute_id_n=1165032;
+update interface.ms_interface_attr set value_v = 'MPC_CODE;M;R;%MOBO_DATE;M;DNF;[0-9]*;yyyyMMdd%AMOUNT;M;R;^-?([0-9]\d*(\.\d{1,2}+)?)$' where attribute_id_n=1166032;
+update interface.ms_interface_attr set value_v = 'MPC_CODE;M;R;%DATE;M;D;yyyyMMdd%ORGANIZATION_ID;M;R;%DEALER_MSISDN;N;R;%AMOUNT;M;R;^-?([0-9]\d*(\.\d{1,2}+)?)$' where attribute_id_n=1167032;
+update interface.ms_interface_attr set value_v = 'DATE;M;D;yyyyMMdd%MICRO;M;R;%SITE_ID;M;R;%ID_OUTLET;M;R;%QTY;M;R;[0-9]*+%AMOUNT;M;R;^-?([0-9]\d*(\.\d{1,2}+)?)$' where attribute_id_n=1168032;
+update interface.ms_interface_attr set value_v = 'DATE;M;RD;[0-9]*;yyyyMMdd%MICRO;M;R;%SITE_ID;M;R;%ID_OUTLET;N;R;%STATUS_INJECTION;M;R;%FLAG_ACM;M;R;%COUNT_MSISDN;M;R;[0-9]*' where attribute_id_n=1169032;
+update interface.ms_interface_attr set value_v = 'DATE;M;RD;[0-9]*;yyyyMMdd%MICRO;N;R;%SITE_ID;N;R;%OUTLET;M;R;%AMOUNT;M;R;^-?([0-9]\d*(\.\d{1,2}+)?)$' where attribute_id_n=1170032;
+update interface.ms_interface_attr set value_v = 'DATE;M;RD;[0-9]*;yyyyMMdd%ORG_CODE;M;R;%AMOUNT;M;R;^-?([0-9]\d*(\.\d{1,2}+)?)$' where attribute_id_n=1171032;
+update interface.ms_interface_attr set value_v = 'DATE;M;RD;[0-9]*;yyyyMMdd%MICRO;N;R;%SITE_ID;N;R;%REVENUE_TYPE;M;R;%REVENUE_TOTAL;M;R;^-?([0-9]\d*(\.\d{1,2}+)?)$' where attribute_id_n=1172032;
+update interface.ms_interface_attr set value_v = 'DATE;M;RD;[0-9]*;yyyyMMdd%MICRO;N;R;%SITE_ID;N;R;%REVENUE;M;R;^-?([0-9]\d*(\.\d{1,2}+)?)$' where attribute_id_n=1173032;
+update interface.ms_interface_attr set value_v = 'DATE;M;RD;[0-9]*;yyyyMMdd%MICRO;N;R;%SITE_ID;N;R;%REVENUE;M;R;^-?([0-9]\d*(\.\d{1,2}+)?)$' where attribute_id_n=1174032;
+update interface.ms_interface_attr set value_v = 'DATE;M;RD;[0-9]*;yyyyMMdd%MICRO;M;R;%SITE_ID;M;R;%CATEGORY;M;R;%TARGET;N;R;^-?([0-9]\d*(\.\d{1,2}+)?)$%REVENUE;M;R;^-?([0-9]\d*(\.\d{1,2}+)?)$' where attribute_id_n=1175032;
+update interface.ms_interface_attr set value_v = 'DATE;M;RD;[0-9]*;yyyyMMdd%MICRO;M;R;%SITE_ID;M;R;%QTY;M;R;[0-9]*' where attribute_id_n=1176032;
+update interface.ms_interface_attr set value_v = 'DATE;M;RD;[0-9]*;yyyyMMdd%CLUSTER_ID;M;R;%CATEGORY;M;R;%CLUSTER_TYPE;M;R;%TOTAL_RELOAD;M;R;^-?([0-9]\d*(\.\d{1,2}+)?)$%CROSS_RELOAD;M;R;^-?([0-9]\d*(\.\d{1,2}+)?)$' where attribute_id_n=1177032;
+update interface.ms_interface_attr set value_v = 'DATE;M;RD;[0-9]*;yyyyMMdd%CLUSTER_ID;M;R;%TOTAL_DATA;M;R;^-?([0-9]\d*(\.\d{1,2}+)?)$%CROSS_DATA;M;R;^-?([0-9]\d*(\.\d{1,2}+)?)$' where attribute_id_n=1178032;
+update interface.ms_interface_attr set value_v = 'MONTH_ID;M;RD;[0-9]*;yyyyMM%CLUSTER;M;R;%ID_OUTLET;M;R;%TARGET;M;R;^-?([0-9]\d*(\.\d{1,2}+)?)$%ACTUAL;M;R;^-?([0-9]\d*(\.\d{1,2}+)?)$' where attribute_id_n=1179032;
+update interface.ms_interface_attr set value_v = 'MONTH_ID;M;RD;[0-9]*;yyyyMM%CLUSTER;M;R;%MPC_CODE;M;R;%PAYMENT_ALLOCATION;M;R;[0-9]+' where attribute_id_n=1180032;
+update interface.ms_interface_attr set value_v = 'DATE;M;RD;[0-9]*;yyyyMMdd%MICRO;M;R;%SITE_ID;M;R;%OUTLET;M;R;%HIT;M;R;[0-9]+%AMOUNT;M;R;^-?([0-9]\d*(\.\d{1,2}+)?)$' where attribute_id_n=1181032;

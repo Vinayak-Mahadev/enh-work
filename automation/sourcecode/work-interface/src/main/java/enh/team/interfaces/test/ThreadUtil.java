@@ -120,12 +120,9 @@ public class ThreadUtil implements Runnable
 		this.methodName = methodName;
 	}
 
-	public static void threadsJoin() {
+	public static void threadsClear() {
 		try
 		{
-			for (Thread thread : threads) {
-				thread.join();
-			}
 			threads.clear();
 		} 
 		catch (Exception e) 
@@ -134,14 +131,10 @@ public class ThreadUtil implements Runnable
 		}
 	}
 
-	@SuppressWarnings("deprecation")
 	public static void threadsKill() {
 		try
 		{
-			for (Thread thread : threads) {
-				thread.destroy();
-			}
-
+			threads.clear();
 		} 
 		catch (Exception e) 
 		{

@@ -97,7 +97,7 @@ public class RDBMSOperation {
 				mpc = conn.createStatement().executeQuery("select ref_code_v from kpi.ms_org_master where org_type_n = 7 order by 1");
 				while (mpc.next()) 
 				{
-					fos.write((mpc.getString(1) + "|" + dateInFile + "|" + i + ".50\n").getBytes());
+					fos.write((mpc.getString(1) + "|" + dateInFile + "|-" + i + ".50\n").getBytes());
 					i++;
 
 					if(i % calcRowLimit == 0 && i != limit)
@@ -171,7 +171,7 @@ public class RDBMSOperation {
 			{
 				for (String mpcRef : mpcList)
 				{
-					fos.write((mpcRef+"|"+dateInFile+"|"+org.getString(1)+"|1"+format.format(i)+"|1"+ (format.format(i)+10) +".50\n").getBytes());
+					fos.write((mpcRef+"|"+dateInFile+"|"+org.getString(1)+"|1"+format.format(i)+"|-1"+ (format.format(i)+10) +".50\n").getBytes());
 					i++;
 
 					if(i % calcRowLimit == 0 && i != limit)
@@ -230,7 +230,7 @@ public class RDBMSOperation {
 
 				for (String microId : microList) 
 				{
-					fos.write((dateInFile+ "|"+microId+"|Test Site-"+i+ "|"+outlet.getString(1)+"|"+i+"|1"+format.format(i+10)+".05\n").getBytes());
+					fos.write((dateInFile+ "|"+microId+"|Test Site-"+i+ "|"+outlet.getString(1)+"|"+i+"|-1"+format.format(i+10)+".05\n").getBytes());
 					i++;
 
 					if(i % calcRowLimit == 0 && i != limit)
@@ -341,7 +341,7 @@ public class RDBMSOperation {
 			{
 				for (String outlet : outletList) 
 				{
-					fos.write((dateInFile+"|"+micro.getString(1)+"|Test Site-"+i+"|"+ outlet + "|" + i + ".50\n").getBytes());
+					fos.write((dateInFile+"|"+micro.getString(1)+"|Test Site-"+i+"|"+ outlet + "|-" + i + ".50\n").getBytes());
 					i++;
 
 					if(i % calcRowLimit == 0 && i != limit)
@@ -390,7 +390,7 @@ public class RDBMSOperation {
 				org = conn.createStatement().executeQuery("select ref_code_v from kpi.ms_org_master where org_type_n = 7 order by 1");
 				while (org.next()) 
 				{
-					fos.write((dateInFile + "|" + org.getString(1) + "|" + i + ".50\n").getBytes());
+					fos.write((dateInFile + "|" + org.getString(1) + "|-" + i + ".50\n").getBytes());
 					i++;
 
 					if(i % calcRowLimit == 0 && i != limit)
@@ -461,7 +461,7 @@ public class RDBMSOperation {
 						revenueType = "voice";
 					else
 						revenueType = "sms";
-					fos.write((dateInFile+"|"+micro.getString(1)+"|Test Site-"+i+"|"+revenueType+"|" + i + ".30\n").getBytes());
+					fos.write((dateInFile+"|"+micro.getString(1)+"|Test Site-"+i+"|"+revenueType+"|-" + i + ".30\n").getBytes());
 					i++;
 
 					if(i % calcRowLimit == 0 && i != limit)
@@ -528,7 +528,7 @@ public class RDBMSOperation {
 				micro = conn.createStatement().executeQuery("select lookup_name_v from kpi.ms_lookup_master where lookup_type_n = (select lookup_type_n from kpi.ms_lookup_type_master where ext_lookup_type_n = 89) order by 1;");
 				while (micro.next()) 
 				{				
-					fos.write((dateInFile+"|"+micro.getString(1)+"|Test Site-"+i+"|" + i + ".40\n").getBytes());
+					fos.write((dateInFile+"|"+micro.getString(1)+"|Test Site-"+i+"|-" + i + ".40\n").getBytes());
 					i++;
 
 					if(i % calcRowLimit == 0 && i != limit)
@@ -595,7 +595,7 @@ public class RDBMSOperation {
 				micro = conn.createStatement().executeQuery("select lookup_name_v from kpi.ms_lookup_master where lookup_type_n = (select lookup_type_n from kpi.ms_lookup_type_master where ext_lookup_type_n = 89) order by 1;");
 				while (micro.next()) 
 				{				
-					fos.write((dateInFile+"|"+micro.getString(1)+"|Test Site - "+""+" - "+(i*3)+"|" + (i*2) + ".40\n").getBytes());
+					fos.write((dateInFile+"|"+micro.getString(1)+"|Test Site - "+""+" - "+(i*3)+"|-" + (i*2) + ".40\n").getBytes());
 					i++;
 
 					if(i % calcRowLimit == 0 && i != limit)
@@ -664,10 +664,10 @@ public class RDBMSOperation {
 				{
 					String category = "";
 					if(i % 4 == 0)
-						category = "Java";
+						category = "JAVA";
 					else
-						category = "Non Java";
-					fos.write((dateInFile+"|"+micro.getString(1)+"|Test Site-"+i+"|"+category+"|" + i + ".30" + "|" + i + ".70\n").getBytes());
+						category = "NON JAVA";
+					fos.write((dateInFile+"|"+micro.getString(1)+"|Test Site-"+i+"|"+category+"|-" + i + ".30" + "|-" + i + ".70\n").getBytes());
 					i++;
 
 					if(i % calcRowLimit == 0 && i != limit)
@@ -802,15 +802,15 @@ public class RDBMSOperation {
 				while (cluster.next()) 
 				{				
 					if(i % 4 == 0)
-						category = "Java";
+						category = "JAVA";
 					else
-						category = "Non Java";
+						category = "NON JAVA";
 					if(i % 6 == 0)
 						clusterType = "Inner";
 					else
 						clusterType = "Outer";
 
-					fos.write((dateInFile+"|"+cluster.getString(1) + "|"+category+"|" + clusterType + "|" + i + ".0" + "|" + i + ".25\n").getBytes());
+					fos.write((dateInFile+"|"+cluster.getString(1) + "|"+category+"|" + clusterType + "|-" + i + ".0" + "|-" + i + ".25\n").getBytes());
 					i++;
 
 					if(i % calcRowLimit == 0 && i != limit)
@@ -877,7 +877,7 @@ public class RDBMSOperation {
 				cluster = conn.createStatement().executeQuery("select lookup_name_v from kpi.ms_lookup_master where lookup_type_n = (select lookup_type_n from kpi.ms_lookup_type_master where ext_lookup_type_n = 88) order by 1;");
 				while (cluster.next()) 
 				{				
-					fos.write((dateInFile+"|"+cluster.getString(1) + "|" + i + ".45|" + i + ".0\n").getBytes());
+					fos.write((dateInFile+"|"+cluster.getString(1) + "|-" + i + ".45|-" + i + ".0\n").getBytes());
 					i++;
 
 					if(i % calcRowLimit == 0 && i != limit)
@@ -954,7 +954,7 @@ public class RDBMSOperation {
 				{
 					for(String outlet : outletList)
 					{
-						fos.write((monthInFile+"|"+cluster.getString(1)+"|"+outlet+"|1"+format.format(i)+".75|1"+ (format.format(i)+10) +".0\n").getBytes());
+						fos.write((monthInFile+"|"+cluster.getString(1)+"|"+outlet+"|-1"+format.format(i)+".75|-1"+ (format.format(i)+10) +".0\n").getBytes());
 						i++;
 
 						if(i % calcRowLimit == 0 && i != limit)
@@ -1089,7 +1089,7 @@ public class RDBMSOperation {
 
 				for (String outlet : outletList)
 				{
-					fos.write((monthInFile+"|"+micro.getString(1)+"|Test Site-"+i+"|"+outlet+"|1"+format.format(i) +"|1"+format.format(i) + ".0\n").getBytes());
+					fos.write((monthInFile+"|"+micro.getString(1)+"|Test Site-"+i+"|"+outlet+"|1"+format.format(i) +"|-1"+format.format(i) + ".0\n").getBytes());
 					i++;
 
 					if(i % calcRowLimit == 0 && i != limit)
@@ -1238,7 +1238,7 @@ public class RDBMSOperation {
 	}
 
 
-	public void printFieldLookupConf(Connection conn, String sql) throws Exception
+	public void printFieldLookupConf(Connection conn, String sql, String choice, String interfaceid) throws Exception
 	{
 		ResultSet resultSet = null;
 		JSONObject jsonObject = null;
@@ -1247,43 +1247,65 @@ public class RDBMSOperation {
 
 		try 
 		{
+			if(interfaceid != null && interfaceid.equalsIgnoreCase("1165"))
+			{
+				System.out.println(""
+						+ "delete from interface.tr_temp_site_mapping;\r\n"
+						+ "delete from kpi.tr_temp_hadoop_failure_aggr where file_id_n in (select file_id_n from interface.tr_interface_file_summary_details where file_id_n in (select file_id_n from interface.tr_interface_file_summary where interface_id_n in (1165)));\r\n"
+						+ "delete from interface.tr_interface_file_summary_details where file_id_n in (select file_id_n from interface.tr_interface_file_summary where interface_id_n in (1165));\r\n"
+						+ "delete from interface.tr_interface_file_summary where interface_id_n in (1165);\r\n" + 
+						"");
+			}
 			resultSet = conn.createStatement().executeQuery(sql);
 
 			while(resultSet.next()) 
 			{
-				System.out.println("INTERFACE ID	" + resultSet.getString(1));
-				System.out.println("INTERFACE NAME	" + resultSet.getString(2));
 				jsonObject = new JSONObject(resultSet.getString(3));
-				//System.out.println(jsonObject);
 				fields = jsonObject.getJSONObject("fields");
-				System.out.print( "ACTOR"+ "	" + fields.get("actor_field")+ "	" );
-				System.out.println( "DAILY TABLE"+ "	kpi." + jsonObject.get("daily_table").toString().toLowerCase());
-				System.out.print( "METRIC"+ "	" + fields.get("metric_field")+ "	" );
-				System.out.println( "MONTHLY TABLE"+ "	kpi." + jsonObject.get("monthly_table").toString().toLowerCase());
-				System.out.print( "SOURCE"+ "	" + fields.get("source_field")+ "	" );
-
-				//System.out.println("FAILURE TABLE" + "	kpi.TR_TEMP_HADOOP_FAILURE_AGGR".toLowerCase());
-
 				if(jsonObject.has("duplicate_validation_conf") && jsonObject.get("duplicate_validation_conf") != null) 
 				{
 					duplicate_validation_conf = jsonObject.getJSONObject("duplicate_validation_conf");
-					System.out.print( "INSTANCE"+ "	" + fields.get("instance_field")+ "	" );
-					System.out.println( "VALIDATION TABLE"+ "	kpi." + duplicate_validation_conf.get("table_name").toString().toLowerCase() + "\n");
-					System.out.println("select * from interface.ms_interface_attr where interface_id_n = " + resultSet.getString(1)+" order by 1;");
-					System.out.println("select * from interface.tr_interface_file_summary where interface_id_n = " + resultSet.getString(1)+" order by 1;");
-					System.out.println("select * from kpi." + duplicate_validation_conf.get("table_name").toString().toLowerCase()+";");
 				}
-				System.out.println("select * from kpi." + jsonObject.get("daily_table").toString().toLowerCase()+";");
-				System.out.println("select * from kpi." + jsonObject.get("monthly_table").toString().toLowerCase()+";");
-				System.out.println("\n");
-				System.out.println("delete from kpi.tr_temp_hadoop_failure_aggr where file_id_n in (select file_id_n from interface.tr_interface_file_summary_details where file_id_n in (select file_id_n from interface.tr_interface_file_summary where interface_id_n in ("+resultSet.getString(1)+")));");
-				System.out.println("delete from interface.tr_interface_file_summary_details where file_id_n in (select file_id_n from interface.tr_interface_file_summary where interface_id_n in ("+resultSet.getString(1)+"));");
-				System.out.println("delete from interface.tr_interface_file_summary where interface_id_n in ("+resultSet.getString(1)+");");
-				if(jsonObject.has("duplicate_validation_conf") && jsonObject.get("duplicate_validation_conf") != null) 
-					System.out.println("delete from kpi." + duplicate_validation_conf.get("table_name").toString().toLowerCase()+";");
-				System.out.println("\ndelete from kpi." + jsonObject.get("daily_table").toString().toLowerCase()+";");
-				System.out.println("delete from kpi." + jsonObject.get("monthly_table").toString().toLowerCase()+";");
-				
+				if(choice.equalsIgnoreCase("all"))
+				{
+					System.out.println("-- INTERFACE ID	" + resultSet.getString(1));
+					System.out.println("-- INTERFACE NAME	" + resultSet.getString(2));
+					System.out.print( "-- ACTOR"+ "	" + fields.get("actor_field")+ "	" );
+					System.out.println( "-- DAILY TABLE"+ "	kpi." + jsonObject.get("daily_table").toString().toLowerCase());
+					System.out.print( "-- METRIC"+ "	" + fields.get("metric_field")+ "	" );
+					System.out.println( "-- MONTHLY TABLE"+ "	kpi." + jsonObject.get("monthly_table").toString().toLowerCase());
+					System.out.print( "-- SOURCE"+ "	" + fields.get("source_field")+ "	" );
+				}
+				//System.out.println("FAILURE TABLE" + "	kpi.TR_TEMP_HADOOP_FAILURE_AGGR".toLowerCase());
+
+				if(choice.equalsIgnoreCase("all") || choice.equalsIgnoreCase("select")) 
+				{
+					if(duplicate_validation_conf != null) 
+					{
+						System.out.print( "--INSTANCE"+ "	" + fields.get("instance_field")+ "	" );
+						System.out.println( "--VALIDATION TABLE"+ "	kpi." + duplicate_validation_conf.get("table_name").toString().toLowerCase() + "\n");
+						System.out.println("select * from interface.ms_interface_attr where interface_id_n = " + resultSet.getString(1)+" order by 1;");
+						System.out.println("-- update interface.ms_interface_attr set value_v = '' where attribute_id_n = ? ;");
+						System.out.println("select * from interface.tr_interface_file_summary where interface_id_n = " + resultSet.getString(1)+" order by 1;");
+						System.out.println("select * from kpi." + duplicate_validation_conf.get("table_name").toString().toLowerCase()+";");
+					}
+					System.out.println("select * from kpi." + jsonObject.get("daily_table").toString().toLowerCase()+";");
+					System.out.println("select * from kpi." + jsonObject.get("monthly_table").toString().toLowerCase()+";\n");
+
+				}
+
+				if(choice.equalsIgnoreCase("all") || choice.equalsIgnoreCase("delete")) 
+				{
+					System.out.println("delete from kpi.tr_temp_hadoop_failure_aggr where file_id_n in (select file_id_n from interface.tr_interface_file_summary_details where file_id_n in (select file_id_n from interface.tr_interface_file_summary where interface_id_n in ("+resultSet.getString(1)+")));");
+					System.out.println("delete from interface.tr_interface_file_summary_details where file_id_n in (select file_id_n from interface.tr_interface_file_summary where interface_id_n in ("+resultSet.getString(1)+"));");
+					System.out.println("delete from interface.tr_interface_file_summary where interface_id_n in ("+resultSet.getString(1)+");");
+					if(jsonObject.has("duplicate_validation_conf") && jsonObject.get("duplicate_validation_conf") != null) 
+						System.out.println("delete from kpi." + duplicate_validation_conf.get("table_name").toString().toLowerCase()+";");
+					System.out.println("delete from kpi." + jsonObject.get("daily_table").toString().toLowerCase()+";");
+					System.out.println("delete from kpi." + jsonObject.get("monthly_table").toString().toLowerCase()+";");
+
+				}
+
 
 				System.out.println("\n\n\n----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------\n\n\n");
 			}

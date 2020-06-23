@@ -22,29 +22,7 @@
 			<version>${parent.version}</version>
 			<scope>provided</scope>
 		</dependency>
-		<dependency>
-			<groupId>com.jayway.jsonpath</groupId>
-			<artifactId>json-path</artifactId>
-			<version>${com.jayway.jsonpath}</version>
-			<scope>provided</scope>
-		</dependency>
 
-		<!-- Log dependency starts -->
-
-		<dependency>
-			<groupId>log4j</groupId>
-			<artifactId>log4j</artifactId>
-			<version>${log4j.version}</version>
-			<scope>provided</scope>
-		</dependency>
-		<dependency>
-			<groupId>org.slf4j</groupId>
-			<artifactId>slf4j-api</artifactId>
-			<version>${slf4j.api.version}</version>
-			<scope>provided</scope>
-		</dependency>
-
-		<!-- Log dependency ends -->
 
 		<!-- Database dependency ends -->
 
@@ -171,12 +149,7 @@
 			<scope>provided</scope>
 		</dependency>
 
-		<dependency>
-			<groupId>com.googlecode.json-simple</groupId>
-			<artifactId>json-simple</artifactId>
-			<version>${googlecode.json.simple}</version>
-			<scope>provided</scope>
-		</dependency>
+		
 		<dependency>
 			<groupId>org.codehaus.jackson</groupId>
 			<artifactId>jackson-core-asl</artifactId>

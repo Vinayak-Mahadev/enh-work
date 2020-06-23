@@ -51,7 +51,7 @@ public class RdbmsApp
 
 		String sql = "SELECT inter.interface_id_n,inter.name_v, attr.value_v FROM interface.ms_interface_attr attr INNER JOIN interface.ms_interface inter ON inter.interface_id_n=attr.interface_id_n where attr.name_v ='Field Lookup Conf' and inter.interface_id_n between 1166 and 1181 order by inter.interface_id_n ;";
 
-		opr.printFieldLookupConf(conn, sql);
+		opr.printFieldLookupConf(conn, sql, "all", "1165");
 
 
 		//opr.writeFileWithKpiDailyAndMonthlyData(conn, "daily", "kpi.tr_daily_primary_mobo_aggr",    "E:\\interface\\work\\enh-work\\daily_works\\2020-06\\backup_hadoop_feeds\\1166_DailyFile_001.csv");

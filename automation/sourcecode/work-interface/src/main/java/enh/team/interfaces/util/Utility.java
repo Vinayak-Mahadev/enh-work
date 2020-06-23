@@ -1,5 +1,6 @@
 package enh.team.interfaces.util;
 
+
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
@@ -21,20 +22,18 @@ import java.util.Set;
 import java.util.zip.GZIPInputStream;
 import java.util.zip.GZIPOutputStream;
 
-
 import org.joda.time.DateTime;
 import org.joda.time.DateTimeZone;
 import org.json.simple.JSONObject;
-
 
 public class Utility 
 {
 	/**
 	 * @param args
 	 */
-	public  Date getStartOfTheDay(Object  object) throws Exception 
+	public static Date getStartOfTheDay(Object  object) throws Exception 
 	{
-		System.out.println("getStartOfTheDay:: Parsing Object : "+object);
+		//System.out.println("getStartOfTheDay:: Parsing Object : "+object);
 		Date date = null;
 
 		try
@@ -54,13 +53,13 @@ public class Utility
 			System.err.println("getStartOfTheDay:: Exception is: >>"+exception.getMessage());
 			throw exception;
 		}
-		System.out.println("getStartOfTheDay:: Returning Object : "+date);
+		//System.out.println("getStartOfTheDay:: Returning Object : "+date);
 		return date;
 	}
 
-	public  Date getEndOfTheDay(Object  object) throws Exception 
+	public static Date getEndOfTheDay(Object  object) throws Exception 
 	{
-		System.out.println("getEndOfTheDay:: Parsing Object : "+object);
+		//System.out.println("getEndOfTheDay:: Parsing Object : "+object);
 		Date date = null;
 
 		try
@@ -80,11 +79,11 @@ public class Utility
 			System.err.println("getEndOfTheDay:: Exception is: >>"+exception.getMessage());
 			throw exception;
 		}
-		System.out.println("getEndOfTheDay:: Returning Object : "+date);
+		//System.out.println("getEndOfTheDay:: Returning Object : "+date);
 		return date;
 	}
 
-	public  Long getDateWithNumberFormat(Date date) throws Exception 
+	public static Long getDateWithNumberFormat(Date date) throws Exception 
 	{
 		//		System.out.println("getDateWithNumberFormat:: Parsing Object : "+date);
 		SimpleDateFormat sfd = new SimpleDateFormat("yyyyMMdd");
@@ -110,7 +109,7 @@ public class Utility
 	 * @return JSONObject
 	 */
 	@SuppressWarnings("unchecked")
-	public  JSONObject basicValidation(List<String> validationConfList, List<String> dataList, String line) 
+	public static JSONObject basicValidation(List<String> validationConfList, List<String> dataList, String line) 
 	{
 		//		System.out.println("Entry basicValidation..");
 		JSONObject jsonObject = null;
@@ -197,16 +196,17 @@ public class Utility
 					}
 					else if(confs.get(2).equalsIgnoreCase("DNF"))
 					{
+
 						if(!dataList.get(i).matches(confs.get(3)))
 						{
-//							Regular Expression
+							//							Regular Expression
 							jsonObject.put(STATUS_STR, FAIL_STR);
 							jsonObject.put(ERROR_CODE_STR, INVALID_DATA_ERR_CODE);
 							jsonObject.put(ERROR_MSG_STR, INVALID_DATA_ERR_MSG + confs.get(0) + " = " + dataList.get(i));
 							return jsonObject;
 						}
-						
-//						Date Format Validation
+
+						//						Date Format Validation
 						simpleDateFormat = new SimpleDateFormat(confs.get(4));
 						simpleDateFormat.setLenient(false);
 						try
@@ -220,7 +220,7 @@ public class Utility
 							jsonObject.put(ERROR_MSG_STR, INVALID_DATA_ERR_MSG + confs.get(0) + " = " + dataList.get(i));
 							return jsonObject;
 						}
-						
+
 						Date currentDate = new Date();
 						Date rowDate = simpleDateFormat.parse(dataList.get(i));
 						if(rowDate.after(currentDate))
@@ -230,6 +230,7 @@ public class Utility
 							jsonObject.put(ERROR_MSG_STR, FUTURE_DT_ERR_MSG  + confs.get(0) + " = " + dataList.get(i));							
 							return jsonObject;
 						}
+
 					}
 				}
 				if((dataList.get(i) == null || dataList.get(i).trim().isEmpty()) && confs.size() > 3)
@@ -247,7 +248,7 @@ public class Utility
 		}
 		catch(Exception exception)
 		{
-			System.err.println("Unhandled/Unknown Exception :: " + exception.getMessage()+ exception);
+			exception.printStackTrace();
 			jsonObject.put(STATUS_STR, FAIL_STR);
 			jsonObject.put(ERROR_CODE_STR, BASIC_VALIDATION_ERR_CODE);
 			jsonObject.put(ERROR_MSG_STR, BASIC_VALIDATION_ERR_MSG + exception.getMessage());
@@ -272,7 +273,7 @@ public class Utility
 	 * @return String
 	 * @throws Exception
 	 */
-	public  String prepareLine(List<String> dataList, String delimiter) throws Exception
+	public static String prepareLine(List<String> dataList, String delimiter) throws Exception
 	{
 		StringBuffer buffer = null;
 
@@ -303,9 +304,8 @@ public class Utility
 	 * @param destFile
 	 * @return boolean
 	 */
-	public  boolean backupFile(File srcFile, File destFile) 
+	public static boolean backupFile(File srcFile, File destFile) 
 	{
-
 		System.out.println("Entry backupFile..");
 
 		InputStream inputStream = null;
@@ -338,7 +338,7 @@ public class Utility
 		} 
 		catch (IOException ioException) 
 		{
-			System.err.println("Unhandled exception :: " + ioException.getMessage()+	ioException);
+			ioException.printStackTrace();
 			return false;
 		} 
 		finally 
@@ -350,7 +350,7 @@ public class Utility
 			System.out.println("Exit backupFile..");
 		}
 	}
-	public  String actualSerial(String operatorCode, String serial, String checkSum)
+	public static String actualSerial(String operatorCode, String serial, String checkSum)
 	{
 		String actualSerial = null;
 		int actuaLength = ACTUAL_SERIAL_LENGTH;
@@ -366,7 +366,7 @@ public class Utility
 		actualSerial = operatorCode+serial+checkSum;
 		return actualSerial;
 	}
-	public  Map<String,List<List<Long>>> groupNumericLongSerials(List<String> inputList)
+	public static Map<String,List<List<Long>>> groupNumericLongSerials(List<String> inputList)
 	{
 		Map<String,Set<Long>> map = new HashMap<String,Set<Long>>();
 		Map<String,List<List<Long>>> resultMap = new HashMap<String,List<List<Long>>>();
@@ -423,7 +423,7 @@ public class Utility
 		return resultMap;
 	}
 
-	public   List<List<Long>> groupNumericShortSerials(List<Long> inputList)
+	public static  List<List<Long>> groupNumericShortSerials(List<Long> inputList)
 	{
 		List<Long> list = new ArrayList<Long>();
 		List<List<Long>> lList = new ArrayList<List<Long>>();
@@ -458,7 +458,7 @@ public class Utility
 		return message.length() > TEMP_TABLES_ERROR_MSG_LENGTH ? message.substring(0, TEMP_TABLES_ERROR_MSG_LENGTH) : message;
 	}
 
-	public  void compressGzipFile(String file, String gzipFile) 
+	public static void compressGzipFile(String file, String gzipFile) 
 	{
 		Long startTime = System.currentTimeMillis();
 		System.out.println("Entry compressGzipFile.. Started at --> "+ new Date());
@@ -484,7 +484,7 @@ public class Utility
 		}
 		catch (IOException e) 
 		{
-			System.err.println("Unhandled Exception -->"+ e);
+			e.printStackTrace();
 		}
 		finally
 		{
@@ -500,7 +500,7 @@ public class Utility
 			}
 			catch (IOException e)
 			{
-				System.err.println("Unhandled Exception -->"+ e);
+				e.printStackTrace();
 			}
 
 			gzipFile = null;
@@ -512,7 +512,7 @@ public class Utility
 		}
 	}
 
-	public  void decompressGzipFile(String gzipFile, String newFile) throws Exception
+	public static void decompressGzipFile(String gzipFile, String newFile) throws Exception
 	{
 		Long startTime = System.currentTimeMillis();
 		System.out.println("Entry decompressGzipFile.. Started at --> "+ new Date());
@@ -537,12 +537,12 @@ public class Utility
 		} 
 		catch (IOException ioException) 
 		{
-			System.err.println("Unhandled Exception decompressGzipFile-->"+ ioException);
+			ioException.printStackTrace();
 			throw new Exception(ioException.getMessage(), ioException);
 		}
 		catch(Exception exception)
 		{
-			System.err.println("Unhandled Exception in decompressGzipFile  -->"+ exception);
+			exception.printStackTrace();
 			throw new Exception(exception.getMessage(), exception);
 		}
 		finally
@@ -559,7 +559,7 @@ public class Utility
 			} 
 			catch (IOException e) 
 			{
-				System.err.println("Unhandled Exception -->"+ e);
+				e.printStackTrace();
 			}
 
 			gis = null;
@@ -567,7 +567,6 @@ public class Utility
 			fis = null;
 
 			System.out.println("Exit decompressGzipFile service at -->"+new Date()+" --- and took "+(System.currentTimeMillis()-startTime)+" milliseconds");
-
 			startTime = null;
 		}
 	}
@@ -584,7 +583,7 @@ public class Utility
 	 * @throws Exception
 	 */
 	@SuppressWarnings("unchecked")
-	public  JSONObject convertToJSON(ResultSet resultSet, ResultSetMetaData metaData) throws Exception
+	public static JSONObject convertToJSON(ResultSet resultSet, ResultSetMetaData metaData) throws Exception
 	{
 		JSONObject jsonObject = null;
 		String columnName = null;
@@ -613,7 +612,7 @@ public class Utility
 		}
 		catch(Exception exception)
 		{
-			System.err.println(exception.getMessage()+" "+ exception);
+			System.err.println(exception.getMessage() + exception);
 			throw new Exception(exception.getMessage(), exception);
 		}
 		finally
@@ -686,24 +685,24 @@ public class Utility
 			inputStream = null;
 		}
 	}*/
-	String FUTURE_DT_ERR_MSG = "FUTURE_DT_ERR_MSG : ";
-	String FUTURE_DT_ERR_CODE="FUTURE_DT_ERR_CODE";
-	String SUCCESS_STR = "SUCCESS_STR";
-	String LINE_UPDATE_STR = "LINE_UPDATE_STR";
-	String YES_STR = "YES_STR";
-	String INVALID_DATA_ERR_MSG = "INVALID_DATA_ERR_MSG : ";
-	String INVALID_DATA_ERR_CODE = "INVALID_DATA_ERR_CODE";
-	String MANDATE_FIELD_MISSING_ERR_CODE = "MANDATE_FIELD_MISSING_ERR_CODE";
-	String MANDATE_FIELD_MISSING_ERR_MSG = "MANDATE_FIELD_MISSING_ERR_MSG : ";
-	String COLUMNS_MISMATCH_ERR_CODE = "COLUMNS_MISMATCH_ERR_CODE";
-	String COLUMNS_MISMATCH_ERR_MSG = "COLUMNS_MISMATCH_ERR_MSG : ";
-	String STATUS_STR = "STATUS_STR";
-	String FAIL_STR = "FAIL_STR";
-	String ERROR_CODE_STR = "ERROR_CODE_STR";
-	String BASIC_VALIDATION_ERR_CODE = "BASIC_VALIDATION_ERR_CODE";
-	String ERROR_MSG_STR = "ERROR_MSG_STR";
-	String BASIC_VALIDATION_ERR_MSG = "BASIC_VALIDATION_ERR_MSG : ";
-	int TEMP_TABLES_ERROR_MSG_LENGTH=255;
-	int ACTUAL_SERIAL_LENGTH=15;
+	static String FUTURE_DT_ERR_MSG = "FUTURE_DT_ERR_MSG : ";
+	static String FUTURE_DT_ERR_CODE="FUTURE_DT_ERR_CODE";
+	static String SUCCESS_STR = "SUCCESS_STR";
+	static String LINE_UPDATE_STR = "LINE_UPDATE_STR";
+	static String YES_STR = "YES_STR";
+	static String INVALID_DATA_ERR_MSG = "INVALID_DATA_ERR_MSG : ";
+	static String INVALID_DATA_ERR_CODE = "INVALID_DATA_ERR_CODE";
+	static String MANDATE_FIELD_MISSING_ERR_CODE = "MANDATE_FIELD_MISSING_ERR_CODE";
+	static String MANDATE_FIELD_MISSING_ERR_MSG = "MANDATE_FIELD_MISSING_ERR_MSG : ";
+	static String COLUMNS_MISMATCH_ERR_CODE = "COLUMNS_MISMATCH_ERR_CODE";
+	static String COLUMNS_MISMATCH_ERR_MSG = "COLUMNS_MISMATCH_ERR_MSG : ";
+	static String STATUS_STR = "STATUS_STR";
+	static String FAIL_STR = "FAIL_STR";
+	static String ERROR_CODE_STR = "ERROR_CODE_STR";
+	static String BASIC_VALIDATION_ERR_CODE = "BASIC_VALIDATION_ERR_CODE";
+	static String ERROR_MSG_STR = "ERROR_MSG_STR";
+	static String BASIC_VALIDATION_ERR_MSG = "BASIC_VALIDATION_ERR_MSG : ";
+	static int TEMP_TABLES_ERROR_MSG_LENGTH=255;
+	static int ACTUAL_SERIAL_LENGTH=15;
 
 }

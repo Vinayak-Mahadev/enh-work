@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<parent>
@@ -13,7 +14,7 @@
 
 	<!-- SNOC Integration Project Jars Configuration -->
 	<dependencies>
-	
+
 		<dependency>
 			<groupId>com.enhancesys</groupId>
 			<artifactId>common-util</artifactId>
@@ -32,32 +33,17 @@
 			<version>1.0.2.Final</version>
 			<scope>provided</scope>
 		</dependency>
-		<dependency>
-			<groupId>log4j</groupId>
-			<artifactId>log4j</artifactId>
-			<version>1.2.17</version>
-		</dependency>
-		<dependency>
-			<groupId>org.json</groupId>
-			<artifactId>json</artifactId>
-			<version>20171018</version>
-		</dependency>
 
 		<dependency>
 			<groupId>org.jboss.client</groupId>
 			<artifactId>jboss-client</artifactId>
 			<version>7.1.1</version>
-			</dependency>
-			<dependency>
-				<groupId>com.enhancesys.commons</groupId>
-				<artifactId>key-generator</artifactId>
-				<version>1.0-SNAPSHOT</version>
-				<scope>provided</scope>
-			</dependency>
+		</dependency>
 		<dependency>
-			<groupId>com.googlecode.json-simple</groupId>
-			<artifactId>json-simple</artifactId>
-			<version>${googlecode.json.simple}</version>
+			<groupId>com.enhancesys.commons</groupId>
+			<artifactId>key-generator</artifactId>
+			<version>1.0-SNAPSHOT</version>
+			<scope>provided</scope>
 		</dependency>
 	</dependencies>
 	<build>
