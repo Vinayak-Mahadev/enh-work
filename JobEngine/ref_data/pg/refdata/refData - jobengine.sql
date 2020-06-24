@@ -11,6 +11,7 @@ INSERT INTO JOBENGINE.MS_MODULE(MODULE_ID_N, REF_ID_N, NAME_V, DESCRIPTION_V, CR
 INSERT INTO JOBENGINE.MS_MODULE(MODULE_ID_N, REF_ID_N, NAME_V, DESCRIPTION_V, CREATED_TIME_DT, LAST_UPDATED_TIME_DT, CLOSED_TIME_DT) VALUES (1005, 101, 'Test Module 5', 'Test purpose', now(), now(), null);
 INSERT INTO JOBENGINE.MS_MODULE(MODULE_ID_N, REF_ID_N, NAME_V, DESCRIPTION_V, CREATED_TIME_DT, LAST_UPDATED_TIME_DT, CLOSED_TIME_DT) VALUES (1006, 101, 'Test Module 6', 'Test purpose', now(), now(), null);
 INSERT INTO JOBENGINE.MS_MODULE(MODULE_ID_N, REF_ID_N, NAME_V, DESCRIPTION_V, CREATED_TIME_DT, LAST_UPDATED_TIME_DT, CLOSED_TIME_DT) VALUES (1007, 101, 'Test Module 7', 'Test purpose', now(), now(), null);
+INSERT INTO JOBENGINE.MS_MODULE(MODULE_ID_N, REF_ID_N, NAME_V, DESCRIPTION_V, CREATED_TIME_DT, LAST_UPDATED_TIME_DT, CLOSED_TIME_DT) VALUES (1008, 101, 'Test Module 8', 'Test purpose', now(), now(), null);
 
 -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
@@ -47,6 +48,10 @@ INSERT INTO JOBENGINE.MS_MODULE_ATTR(ATTRIBUTE_ID_N, MODULE_ID_N, NAME_V, VALUE_
 -- module(1007)
 INSERT INTO JOBENGINE.MS_MODULE_ATTR(ATTRIBUTE_ID_N, MODULE_ID_N, NAME_V, VALUE_V, LAST_UPDATED_TIME_DT) VALUES (1007001, 1007, 'job-id', 'stockReorderLevelReport_csv', now());
 INSERT INTO JOBENGINE.MS_MODULE_ATTR(ATTRIBUTE_ID_N, MODULE_ID_N, NAME_V, VALUE_V, LAST_UPDATED_TIME_DT) VALUES (1007002, 1007, 'template-id', 'Sample-report-feed', now());
+
+-- module(1008)
+INSERT INTO JOBENGINE.MS_MODULE_ATTR(ATTRIBUTE_ID_N, MODULE_ID_N, NAME_V, VALUE_V, LAST_UPDATED_TIME_DT) VALUES (1008001, 1008, 'job-id', 'stockReorderLevelReport_csv', now());
+INSERT INTO JOBENGINE.MS_MODULE_ATTR(ATTRIBUTE_ID_N, MODULE_ID_N, NAME_V, VALUE_V, LAST_UPDATED_TIME_DT) VALUES (1008002, 1008, 'template-id', 'Sample-feed-mongo', now());
 
 
 
