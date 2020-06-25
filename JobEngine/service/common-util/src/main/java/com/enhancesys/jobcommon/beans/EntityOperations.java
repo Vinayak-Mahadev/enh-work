@@ -47,7 +47,7 @@ public class EntityOperations
 		try 
 		{
 			if(persistenceUnitName == null)
-				persistenceUnitName = "com.enhancesys.jobengine.beans";
+				persistenceUnitName = "com.enhancesys.jobcommon.beans";
 			if(entityManagerMap.get(persistenceUnitName) == null) 
 			{
 				entitymanagerFactory = Persistence.createEntityManagerFactory(persistenceUnitName);
