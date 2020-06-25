@@ -1,30 +1,31 @@
 package com.enhancesys.jobengine.repo;
 
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
+
+import javax.persistence.EntityManager;
 
 import org.apache.log4j.Logger;
 import org.json.simple.JSONObject;
 
-import com.enhancesys.jobcommon.JobEngineDatabaseManager;
-import com.enhancesys.jobcommon.QueryConstants;
+import com.enhancesys.jobcommon.beans.EntityOperations;
 import com.enhancesys.jobcommon.beans.Module;
 import com.enhancesys.jobcommon.beans.ModuleAttribute;
 
-public class JobEngineJDBCRepository implements JobEngineServiceRepository
+public class JobEngineEntityManagerRepository implements JobEngineServiceRepository
 {
 
-	private static Logger log = Logger.getLogger(JobEngineJDBCRepository.class);
+	private static Logger log = Logger.getLogger(JobEngineEntityManagerRepository.class);
 
+	private EntityManager entityManager;
 
-	public JobEngineJDBCRepository() 
+	public JobEngineEntityManagerRepository() 
 	{
-		log.info("You are using JobEngineJDBCRepository");
+		entityManager = EntityOperations.getEntityManager(null);
+		log.info("You are using JobEngineEntityManagerRepository");
 	}
-
 
 	@Override
 	public Module getModule(Long moduleId) throws Exception 
@@ -32,45 +33,57 @@ public class JobEngineJDBCRepository implements JobEngineServiceRepository
 		Module module = null;
 		try
 		{
-			module = new Module();
-			module.setName("test module");
-			module.setModuleId(moduleId);
+			module =  entityManager.find(Module.class, moduleId);
 		} 
 		catch (Exception e) 
 		{
 			log.error(e.getMessage(), e);
 		}
-		return null;
+		return module;
 	}
-
 
 	@Override
 	public ModuleAttribute getModuleAttribute(Long attributeId) throws Exception 
 	{
-		// TODO Auto-generated method stub
-		return null;
+		ModuleAttribute moduleAttr = null;
+		try
+		{
+			moduleAttr =  entityManager.find(ModuleAttribute.class, attributeId);
+		} 
+		catch (Exception e) 
+		{
+			log.error(e.getMessage(), e);
+		}
+		return moduleAttr;
 	}
 
+	public  List<ModuleAttribute> getModuleAttribute(long moduleId) 
+	{
+		List<ModuleAttribute> moduleAttribute = null;
+		try 
+		{
+			moduleAttribute = new ArrayList<ModuleAttribute>(getModule(moduleId).getAttributes());
+		}
+		catch (Exception e)
+		{
+			e.printStackTrace();
+		}
+		return moduleAttribute;
+	}
 
 	@Override
 	public Map<String, String> getModuleAttributesNameValue(Long moduleId) throws Exception 
 	{
-		Connection connection = null;
-		PreparedStatement statement = null;
-		ResultSet resultSet = null;
 		Map<String, String> attributeValues = new HashMap<String, String>();
+		List<ModuleAttribute> moduleAttribute = null;
 		try
 		{
-			connection = JobEngineDatabaseManager.getConnection();
-			statement = connection.prepareStatement(QueryConstants.getModuleAttrValQry);
-			statement.setLong(1, moduleId);
+			moduleAttribute = getModuleAttribute(moduleId.longValue());
 
-			resultSet = statement.executeQuery();
-			while(resultSet.next())
+			for (ModuleAttribute moduleAttr : moduleAttribute)
 			{
-				attributeValues.put(resultSet.getString("name_v"), resultSet.getString("value_v"));
+				attributeValues.put(moduleAttr.getName(), moduleAttr.getValue());
 			}
-			return attributeValues;
 
 		}
 		catch(Exception exception)
@@ -80,20 +93,10 @@ public class JobEngineJDBCRepository implements JobEngineServiceRepository
 		}
 		finally
 		{
-			try
-			{
-				if(resultSet != null)
-					resultSet.close();
-				if(statement != null)
-					statement.close();
-			}
-			catch(Exception exception)
-			{
-				log.error(exception.getMessage(), exception);
-			}
+			moduleAttribute = null;
 		}
+		return attributeValues;
 	}
-
 
 	@SuppressWarnings("unchecked")
 	@Override
@@ -121,6 +124,5 @@ public class JobEngineJDBCRepository implements JobEngineServiceRepository
 		}
 		return jobParameter;
 	}
-
 
 }

@@ -3,9 +3,9 @@ package com.enhancesys.jobengine.serviceslayer;
 import org.apache.log4j.Logger;
 import org.json.simple.JSONObject;
 
-import com.enhancesys.jobengine.beans.Module;
+import com.enhancesys.jobcommon.beans.Module;
 import com.enhancesys.jobengine.job.services.JobServcies;
-import com.enhancesys.jobengine.repo.JobEngineJDBCRepository;
+import com.enhancesys.jobengine.repo.JobEngineEntityManagerRepository;
 import com.enhancesys.jobengine.repo.JobEngineMongoRepository;
 import com.enhancesys.jobengine.repo.JobEngineServiceRepository;
 
@@ -39,20 +39,22 @@ public class JobEngineServicesHelper
 {
 	private static Logger log = Logger.getLogger(JobEngineMongoRepository.class);
 
-	private final JobEngineServiceRepository repository = new JobEngineJDBCRepository();
+	private final JobEngineServiceRepository repository = new JobEngineEntityManagerRepository();
+
 
 	public JSONObject processModule(long moduleId) 
 	{
 		Module module = null;
 		JSONObject jobParameter = null;
+		log.debug("Entry in processModule moduleId :: " + moduleId);
 		try 
 		{
 			module = repository.getModule(moduleId);
-			jobParameter = repository.getJobParameter(moduleId);
+	
+			jobParameter = repository.getJobParameter(module.getModuleId());
 
-			log.info("Module :: " + module);
 			log.info("JobParameter :: " + jobParameter);
-			
+
 			JobServcies.proceeRequest(jobParameter);
 
 		}
@@ -60,6 +62,8 @@ public class JobEngineServicesHelper
 		{
 			log.error(e.getMessage(), e);
 		}
+		log.debug("Exit in processModule moduleId :: " + moduleId);
 		return null;
+
 	}
 }

@@ -1,0 +1,7 @@
+psql -U postgres --dbname=snoc2 --file="E:/interface/work/enh-work/JobEngine/ref_data/pg/sequence/sequence.sql"
+psql -U postgres --dbname=snoc2 --file="E:/interface/work/enh-work/JobEngine/ref_data/pg/tablescripts/integration.sql"
+psql -U postgres --dbname=snoc2 --file="E:/interface/work/enh-work/JobEngine/ref_data/pg/tablescripts/integration_audit.sql"
+psql -U postgres --dbname=snoc2 --file="E:/interface/work/enh-work/JobEngine/ref_data/pg/tablescripts/integration-validation.sql"
+psql -U postgres --dbname=snoc2 --file="E:/interface/work/enh-work/JobEngine/ref_data/pg/indexes/index.sql"
+REM psql -U postgres --dbname=snoc2 --file="E:/interface/work/enh-work/JobEngine/ref_data/pg/refdata/refData - jobengine.sql"
+psql -U postgres --dbname=snoc2 --file="E:/interface/work/enh-work/JobEngine/ref_data/pg/triggers/trigger.sql"

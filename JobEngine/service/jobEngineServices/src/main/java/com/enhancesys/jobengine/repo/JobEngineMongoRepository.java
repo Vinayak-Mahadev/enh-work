@@ -5,8 +5,8 @@ import java.util.Map;
 import org.apache.log4j.Logger;
 import org.json.simple.JSONObject;
 
-import com.enhancesys.jobengine.beans.Module;
-import com.enhancesys.jobengine.beans.ModuleAttributes;
+import com.enhancesys.jobcommon.beans.Module;
+import com.enhancesys.jobcommon.beans.ModuleAttribute;
 
 public class JobEngineMongoRepository implements JobEngineServiceRepository{
 
@@ -23,7 +23,7 @@ public class JobEngineMongoRepository implements JobEngineServiceRepository{
 	}
 
 	@Override
-	public ModuleAttributes getModuleAttribute(Long attributeId) throws Exception {
+	public ModuleAttribute getModuleAttribute(Long attributeId) throws Exception {
 		// TODO Auto-generated method stub
 		return null;
 	}

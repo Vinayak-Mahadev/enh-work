@@ -1,0 +1,6 @@
+/opt/PostgreSQL/9.4/bin/psql -U postgres snoc2 -U postgres --dbname=snoc2 --file="home/appuser/vinay/pg/sequence/sequence.sql"
+/opt/PostgreSQL/9.4/bin/psql -U postgres snoc2 -U postgres --dbname=snoc2 --file="home/appuser/vinay/pg/tablescripts/integration.sql"
+/opt/PostgreSQL/9.4/bin/psql -U postgres snoc2 -U postgres --dbname=snoc2 --file="home/appuser/vinay/pg/tablescripts/integration_audit.sql"
+/opt/PostgreSQL/9.4/bin/psql -U postgres snoc2 -U postgres --dbname=snoc2 --file="home/appuser/vinay/pg/tablescripts/integration-validation.sql"
+/opt/PostgreSQL/9.4/bin/psql -U postgres snoc2 -U postgres --dbname=snoc2 --file="home/appuser/vinay/pg/indexes/index.sql"
+/opt/PostgreSQL/9.4/bin/psql -U postgres snoc2 -U postgres --dbname=snoc2 --file="home/appuser/vinay/pg/triggers/trigger.sql"

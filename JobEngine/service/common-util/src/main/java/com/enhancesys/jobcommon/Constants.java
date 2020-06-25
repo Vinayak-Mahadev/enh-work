@@ -29,4 +29,6 @@ public interface Constants
 	public static final String _RDBMS   = "RDBMS";
 	public static final String _MongoDB   = "MongoDB";
 	
+	public static final String _jobengineSchema   = "jobengine";
+	
 }
