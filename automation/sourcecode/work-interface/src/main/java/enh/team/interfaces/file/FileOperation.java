@@ -432,4 +432,47 @@ public class FileOperation
 		}
 	}
 
+	
+	public void readFileCountData(String fileAbPath, String csv,String header, int column) {
+		BufferedReader reader = null;
+		String line;
+		String[] array = null;
+		String temp = null;
+		Double value = 0.0;
+		Long parse = 0l;
+		try 
+		{
+			reader = new BufferedReader(new FileReader(new File(fileAbPath)));
+			while ((line = reader.readLine()) != null) 
+			{
+				if(header.equalsIgnoreCase(line))
+					continue;
+				array = line.split(csv, 0);
+				temp = array[4];
+				value = value + Double.valueOf((Double.valueOf(temp) * 100));
+				parse = parse + Double.valueOf((Double.parseDouble(temp) * 100)).longValue();
+				
+			}
+	
+			System.out.println( "valueOf  "+ value.longValue());
+			System.out.println( "parseDouble  "+ parse.longValue());
+			
+		} 
+		catch (IOException e) 
+		{
+			e.printStackTrace();
+		} 
+		finally {
+			if(reader!=null)
+				try {
+					reader.close();
+				} catch (IOException e) {
+
+					e.printStackTrace();
+				}
+			reader = null;
+		}
+	} 
+
+	
 }

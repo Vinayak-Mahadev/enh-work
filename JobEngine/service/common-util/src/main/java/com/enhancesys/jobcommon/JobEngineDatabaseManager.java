@@ -6,6 +6,31 @@ import java.sql.SQLException;
 
 import org.apache.log4j.Logger;
 
+/**
+ * <b>Purpose:</b><br>
+ * 		Datadbase singleton connection<br>
+ * <br>
+ * 
+ * <b>DesignReference:</b><br>
+ * <br>
+ * <br>
+ * 
+ * <b>CopyRights:</b><br>
+ * 		Enhancesys Innovations 2020<br>
+ * <br>
+ * 
+ * <b>RevisionHistory:</b>
+ * 
+ * <pre>
+ * <b>
+ * Sl No   Modified Date        Author</b>
+ * ==============================================
+ * 1        10-05-2010		   Vinayak Mahadev (vinay.nagaraj@enhancesys.com)
+ * 	-- Base Release 
+ * </pre>
+ * 
+ * <br>
+ */
 
 public class JobEngineDatabaseManager 
 {

@@ -20,13 +20,12 @@ public class HadoopInterfaceTest {
 	RDBMSOperation opr = new RDBMSOperation();
 
 	boolean filePresent = false;
-	long from = 1165l;
-	long to   = 1181l;
+	long from = 1172l;
+	long to   = 1172l;
 
 	public static void main(String[] args) 
 	{
 		HadoopInterfaceTest hitest = null;
-
 		Connection conn = null;
 		Server server = null;
 
@@ -43,6 +42,7 @@ public class HadoopInterfaceTest {
 			hitest.uploadFiles(server, "E:/interface/backend/ControlFileGeneration/raw/");
 			hitest.callApi();
 
+
 		} 
 		catch (Exception e) {
 			e.printStackTrace();
@@ -53,8 +53,8 @@ public class HadoopInterfaceTest {
 	public void generateFile(Connection conn, String dir) throws Exception
 	{
 
-		//String sql = "SELECT inter.interface_id_n,inter.name_v, attr.value_v FROM interface.ms_interface_attr attr INNER JOIN interface.ms_interface inter ON inter.interface_id_n=attr.interface_id_n where attr.name_v ='Field Lookup Conf' and inter.interface_id_n between "+ from +" and "+ to +" order by inter.interface_id_n ;";
-		//opr.printFieldLookupConf(conn, sql, "delete", "1165");
+		String sql = "SELECT inter.interface_id_n,inter.name_v, attr.value_v FROM interface.ms_interface_attr attr INNER JOIN interface.ms_interface inter ON inter.interface_id_n=attr.interface_id_n where attr.name_v ='Field Lookup Conf' and inter.interface_id_n between "+ from +" and "+ to +" order by inter.interface_id_n ;";
+		opr.printFieldLookupConf(conn, sql, "all", "1165");
 
 		//
 		//		opr.prepareFileFor1165(conn, "20200510", dir + "site_mapping"        +   "_20200615090004_001.csv",    10,   1);
@@ -132,27 +132,29 @@ public class HadoopInterfaceTest {
 		//		opr.prepareFileFor1181(conn, "20200510", dir + "uro20"               +   "_20200615090004_004.csv",    10,   1);
 		//
 		//
-				opr.prepareFileFor1165(conn, "20200510", dir + "site_mapping"        +   "_20200615090004_005.csv",    10,   1);
-				opr.prepareFileFor1166(conn, "20200510", dir + "primary_mobo"        +   "_20200615090004_005.csv",    10,   1);
-				opr.prepareFileFor1167(conn, "20200510", dir + "secondary_mobo"      +   "_20200615090004_005.csv",    10,   1);
-				opr.prepareFileFor1168(conn, "20200510", dir + "d_sso"               +   "_20200615090004_005.csv",    10,   1);
-				opr.prepareFileFor1169(conn, "20200410", dir + "rgu_injection"       +   "_20200617090004_005.csv",    10,   1);
-				opr.prepareFileFor1170(conn, "20200510", dir + "tertiary"            +   "_20200615090004_005.csv",    10,   1);
-				opr.prepareFileFor1171(conn, "20200510", dir + "org_close_bal"       +   "_20200615090004_005.csv",    10,   1);
-				opr.prepareFileFor1172(conn, "20200510", dir + "total_revenue"       +   "_20200615090004_005.csv",    10,   1);
-				opr.prepareFileFor1173(conn, "20200510", dir + "mobo_revenue"        +   "_20200615090004_005.csv",    10,   1);
-				opr.prepareFileFor1174(conn, "20200410", dir + "acquisition_revenue" +   "_20200615090004_005.csv",    10,   1);
-				opr.prepareFileFor1175(conn, "20200510", dir + "low_revenue_site"    +   "_20200615090004_005.csv",    10,   1);
-				opr.prepareFileFor1176(conn, "20200510", dir + "site_rgu_ga"         +   "_20200615090004_005.csv",    10,   1);
-				opr.prepareFileFor1177(conn, "20200510", dir + "cross_reload"        +   "_20200615090004_005.csv",    10,   1);
-				opr.prepareFileFor1178(conn, "20200510", dir + "cross_data"          +   "_20200615090004_005.csv",    10,   1);
-				opr.prepareFileFor1179(conn, "202005"  , dir + "outlet_program"      +   "_20200615090004_005.csv",    10,   1);
-				opr.prepareFileFor1180(conn, "202005"  , dir + "alloc_payment"       +   "_20200615090004_005.csv",    10,   1);
-				opr.prepareFileFor1181(conn, "20200510", dir + "uro20"               +   "_20200615090004_005.csv",    10,   1);
+		//		opr.prepareFileFor1165(conn, "20200510", dir + "site_mapping"        +   "_20200615090004_005.csv",    10,   1);
+		//		opr.prepareFileFor1166(conn, "20200510", dir + "primary_mobo"        +   "_20200615090004_005.csv",    10,   1);
+		//		opr.prepareFileFor1167(conn, "20200510", dir + "secondary_mobo"      +   "_20200615090004_005.csv",    10,   1);
+		//		opr.prepareFileFor1168(conn, "20200510", dir + "d_sso"               +   "_20200615090004_005.csv",    10,   1);
+		//		opr.prepareFileFor1169(conn, "20200410", dir + "rgu_injection"       +   "_20200617090004_005.csv",    10,   1);
+		//		opr.prepareFileFor1170(conn, "20200510", dir + "tertiary"            +   "_20200615090004_005.csv",    10,   1);
+		//		opr.prepareFileFor1171(conn, "20200510", dir + "org_close_bal"       +   "_20200615090004_005.csv",    10,   1);
+		//		opr.prepareFileFor1172(conn, "20200510", dir + "total_revenue"       +   "_20200615090004_005.csv",    10,   1);
+		//		opr.prepareFileFor1173(conn, "20200510", dir + "mobo_revenue"        +   "_20200615090004_005.csv",    10,   1);
+		//		opr.prepareFileFor1174(conn, "20200410", dir + "acquisition_revenue" +   "_20200615090004_005.csv",    10,   1);
+		//		opr.prepareFileFor1175(conn, "20200510", dir + "low_revenue_site"    +   "_20200615090004_005.csv",    10,   1);
+		//		opr.prepareFileFor1176(conn, "20200510", dir + "site_rgu_ga"         +   "_20200615090004_005.csv",    10,   1);
+		//		opr.prepareFileFor1177(conn, "20200510", dir + "cross_reload"        +   "_20200615090004_005.csv",    10,   1);
+		//		opr.prepareFileFor1178(conn, "20200510", dir + "cross_data"          +   "_20200615090004_005.csv",    10,   1);
+		//		opr.prepareFileFor1179(conn, "202005"  , dir + "outlet_program"      +   "_20200615090004_005.csv",    10,   1);
+		//		opr.prepareFileFor1180(conn, "202005"  , dir + "alloc_payment"       +   "_20200615090004_005.csv",    10,   1);
+		//		opr.prepareFileFor1181(conn, "20200510", dir + "uro20"               +   "_20200615090004_005.csv",    10,   1);
 
-		//opr.prepareFileFor1179(conn, "202005"  , dir + "outlet_program"      +   "_20200621090022_001.csv",    10,   1);
-		//opr.prepareFileFor1180(conn, "202005"  , dir + "alloc_payment"       +   "_20200621090022_001.csv",    10,   1);
-        
+
+		//opr.prepareFileFor1173(conn, "20200510", dir + "mobo_revenue"        +   "_20200510090004_001.csv",    10,   1);
+		//opr.prepareFileFor1173(conn, "20200520", dir + "mobo_revenue"        +   "_20200520090004_001.csv",    10,   1);
+		//opr.prepareFileFor1173(conn, "20200525", dir + "mobo_revenue"        +   "_20200525090004_001.csv",    10,   1);
+		opr.prepareFileFor1172(conn, "20200510", dir + "total_revenue"       +   "_202006090004_005.csv",    100000,   3);
 
 	}
 

@@ -528,7 +528,7 @@ public class RDBMSOperation {
 				micro = conn.createStatement().executeQuery("select lookup_name_v from kpi.ms_lookup_master where lookup_type_n = (select lookup_type_n from kpi.ms_lookup_type_master where ext_lookup_type_n = 89) order by 1;");
 				while (micro.next()) 
 				{				
-					fos.write((dateInFile+"|"+micro.getString(1)+"|Test Site-"+i+"|-" + i + ".40\n").getBytes());
+					fos.write((dateInFile+"|"+micro.getString(1)+"|Test Site-"+i+"|-" + i + ".25\n").getBytes());
 					i++;
 
 					if(i % calcRowLimit == 0 && i != limit)
@@ -595,7 +595,7 @@ public class RDBMSOperation {
 				micro = conn.createStatement().executeQuery("select lookup_name_v from kpi.ms_lookup_master where lookup_type_n = (select lookup_type_n from kpi.ms_lookup_type_master where ext_lookup_type_n = 89) order by 1;");
 				while (micro.next()) 
 				{				
-					fos.write((dateInFile+"|"+micro.getString(1)+"|Test Site - "+""+" - "+(i*3)+"|-" + (i*2) + ".40\n").getBytes());
+					fos.write((dateInFile+"|"+micro.getString(1)+"|Test Site"+ "-" + (i) +"|" + (i) + ".40\n").getBytes());
 					i++;
 
 					if(i % calcRowLimit == 0 && i != limit)
@@ -667,7 +667,7 @@ public class RDBMSOperation {
 						category = "Java";
 					else
 						category = "Non Java";
-					fos.write((dateInFile+"|"+micro.getString(1)+"|Test Site-"+i+"|"+category+"|-" + i + ".30" + "|-" + i + ".70\n").getBytes());
+					fos.write((dateInFile+"|"+micro.getString(1)+"|Test Site-"+i+"|"+category+"|" + i + ".15" + "|" + i + ".25\n").getBytes());
 					i++;
 
 					if(i % calcRowLimit == 0 && i != limit)

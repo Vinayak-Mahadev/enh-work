@@ -9,6 +9,7 @@ import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
+import org.springframework.context.support.FileSystemXmlApplicationContext;
 
 import com.enhancesys.jobcommon.Constants;
 import com.enhancesys.jobengine.job.services.job.JobEngine;
@@ -27,11 +28,19 @@ public class JobServcies
 		FileInputStream inputStream = null;
 		JSONArray jobsArray = null;
 		StringBuffer buffer = null;
+		String configurationPath = null;
 		try
 		{
 			try 
 			{
-				context = new ClassPathXmlApplicationContext("spring-config.xml");
+				configurationPath = Constants._JOB_CONF_SPRING_BEANS_PATH;
+				file = new File(configurationPath);
+				if(file.exists())
+				{
+					context = new FileSystemXmlApplicationContext("file:" + configurationPath);
+					log.info("Spring conf inited with FileSystemXmlApplicationContext :  configurationPath :: " + configurationPath);	
+				}
+
 			}
 			catch (Exception e) 
 			{
@@ -39,6 +48,7 @@ public class JobServcies
 				try 
 				{
 					context = new ClassPathXmlApplicationContext("spring-config.xml");
+					log.info("Spring conf inited with ClassPathXmlApplicationContext :  configurationPath :: " + configurationPath);
 				} 
 				catch (Exception e2) 
 				{

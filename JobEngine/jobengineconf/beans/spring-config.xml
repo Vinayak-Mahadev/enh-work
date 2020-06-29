@@ -126,11 +126,5 @@
 	</bean>	
 	<!-- Postgres Template bean decleartion.. End -->
 
-	<bean id="bridgePropertyPlaceholder" class="org.apache.camel.spring.spi.BridgePropertyPlaceholderConfigurer">
-		<property name="locations">
-			<list>
-				<value>file:${APPSERVER_CONF_PATH}/jobengineconf/common/jobConfiguration.properties</value>
-			</list>
-		</property>
-	</bean>	
+	<bean id="myBridgePropertyPlaceholder" class="com.enhancesys.jobengine.job.services.util.MyBridgePropertyPlaceholderConfigurer" />
 </beans>
