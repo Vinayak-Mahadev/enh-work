@@ -146,12 +146,41 @@ public class RDBMS {
 		} 
 		catch (Exception e) 
 		{
+			try 
+			{
+
+				if(serverAttr != null){
+
+					username     = serverAttr.getString("username");
+					password     = serverAttr.getString("password");
+					url          = serverAttr.getString("url");
+					classForName = serverAttr.getString("driverName");
+
+				}
+				if(username == null && password == null && url == null && classForName == null)
+				{
+					System.out.println("Making Connection problem because wrong url,username,password");
+					return null;
+				}
+				else
+				{
+					Class.forName(classForName);
+					System.out.println("=> DATABASE Authentication <=\n	URL : "+url+"\n	USERNAME : "+username+"\n	PASSWORD : "+password+"\n");
+					con = DriverManager.getConnection(url, username, password);
+					if(con == null)
+						System.out.println("<==   Failed to connect RDBMS Connection  ==> ");
+					else
+						System.out.println("<==   RDBMS Connection made    ==> ");
+				}
+
+			} 
+			catch (Exception e2) 
+			{
+				e.printStackTrace();
+			}
 			System.out.println("Making RDBMS Connection problem because wrong url,username,password");
-			e.printStackTrace();
-			return null;
+			return con;
 		}
-
-
 		return con;
 	}
 

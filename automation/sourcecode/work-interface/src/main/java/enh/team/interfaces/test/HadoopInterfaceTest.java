@@ -42,15 +42,18 @@ public class HadoopInterfaceTest {
 
 
 			dateInFile = "20200410";
-			fileName   = "_20200415090004_01.csv";
+			fileName   = "_20200415090001_101.csv";
+			conn = RDBMS.getDBConnection(PropType.RDBMS_144);
 			hitest.start(conn, dateInFile, dir, fileName, uploadFileLoc);
 
 			dateInFile = "20200510";
-			fileName   = "_20200515090005_02.csv";
+			fileName   = "_20200515090002_102.csv";
+			conn = RDBMS.getDBConnection(PropType.RDBMS_144);
 			hitest.start(conn, dateInFile, dir, fileName, uploadFileLoc);
 
 			dateInFile = "20200610";
-			fileName   = "_20200615090006_03.csv";
+			fileName   = "_20200615090002_103.csv";
+			conn = RDBMS.getDBConnection(PropType.RDBMS_144);
 			hitest.start(conn, dateInFile, dir, fileName, uploadFileLoc);
 			//hitest.callApi();
 		} 

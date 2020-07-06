@@ -1363,11 +1363,12 @@ public class RDBMSOperation {
 				}
 
 				if(deleteQueryCmdFlag)
-					System.out.println("*/\n");
+					System.out.println("*/\n\n\n");
 
-				System.out.println("\n\n\n----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------\n\n\n");
+				System.out.println("select * from kpi.tr_temp_hadoop_failure_aggr where file_id_n in (0);");
+				System.out.println("select inter.interface_id_n,inter.name_v, summ.file_id_n, summ.file_name_v, summ.total_count_n, summ.success_count_n, summ.error_count_n, summ.filter_count_n, summ.status_n, summ.message_v FROM interface.tr_interface_file_summary summ INNER JOIN interface.ms_interface inter ON inter.interface_id_n=summ.interface_id_n where  inter.interface_id_n between 1165 and 1182 order by inter.interface_id_n ;");
+				System.out.println("\n\n----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------\n\n\n");
 			}
-
 		}
 		catch (Exception e) 
 		{
