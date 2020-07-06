@@ -84,6 +84,9 @@ public class HadoopInterfaceTest {
 			prepareCtl();
 			uploadFiles(new Server(PropType.Server_251_PPK), uploadFileLoc);
 			callApi();
+			
+			if(conn != null)
+				conn.close();
 		} 
 		catch (Exception e) 
 		{

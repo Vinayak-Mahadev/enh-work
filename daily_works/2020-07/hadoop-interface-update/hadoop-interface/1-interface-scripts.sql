@@ -2,6 +2,13 @@
 -- Scripts to configure interface aggregation for analytics events: 
 -- Update for hadoop confiuration
 
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+-- Update for INTHDP005 - RGU-GA with Injection (1169)
+
+update interface.ms_interface_attr set value_v = '{"process_enabled":true,"fields":{"actor_field":{"10":"ID_OUTLET","12":"SITE_ID"},"metric_field":"FLAG_ACM","source_field":"MICRO","instance_field":""},"error_codes":{"actor_field":"60101","metric_field":"60201","source_field":"60301","instance_field":"60401"},"pre_aggregation_conf":{"1":"monthly","2":"daily"},"table_name":"tr_temp_rguga_injection_aggr","lookup_query":"","notexist-lookup-flag":true,"daily_table":"tr_daily_rguga_injection_aggr","monthly_table":"tr_monthly_rguga_injection_aggr","no_of_join_query_params":1,"no_of_daily_join_queries":2,"no_of_monthly_join_queries":2,"duplicate_validation_conf":{"schema_name":"kpi","table_name":"tr_validate_rguga_injection_aggr","field_indexes":[0,1,2,3,4,5],"include-fileId":true}}' where attribute_id_n = 1169037 ;
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
 
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 -- DELETE HADOOP FEED IF ANY EXISTING CONFIGURATION
@@ -74,3 +81,6 @@ INSERT INTO INTERFACE.MS_INTERFACE_NOTIFICATION (INTERFACE_NOTIFICATION_ID_N, IN
 INSERT INTO INTERFACE.MS_INTERFACE_NOTIFICATION (INTERFACE_NOTIFICATION_ID_N, INTERFACE_ID_N, SCENARIO_V, MEDIA_V, TEMPLATE_NAME_V, SUBJECT_V, TO_FIRST_NAME_V, TO_ADDRESS_V, TO_CC_V, TO_BCC_V, STATUS_N, LAST_UPDATED_TIME_DT,LANGUAGE_V) VALUES (1182004, 1182, 'FILE_REJECTED_FULL_0', 'email', 'int_file_rejected_fully', 'FILE REJECTED FULLY - INTHDP017 - URO 20K', 'Support Team', '', '', '', 1, NOW(),'en');
 INSERT INTO INTERFACE.MS_INTERFACE_NOTIFICATION (INTERFACE_NOTIFICATION_ID_N, INTERFACE_ID_N, SCENARIO_V, MEDIA_V, TEMPLATE_NAME_V, SUBJECT_V, TO_FIRST_NAME_V, TO_ADDRESS_V, TO_CC_V, TO_BCC_V, STATUS_N, LAST_UPDATED_TIME_DT,LANGUAGE_V) VALUES (1182005, 1182, 'FILE_SUCCESS_0', 'email', 'int_file_processed_sucessfully', 'FILE SUCCESSFULLY PROCESSED - INTHDP017 - URO 20K', 'Support Team', '', '', '', 2, NOW(),'en');
 INSERT INTO INTERFACE.MS_INTERFACE_NOTIFICATION (INTERFACE_NOTIFICATION_ID_N, INTERFACE_ID_N, SCENARIO_V, MEDIA_V, TEMPLATE_NAME_V, SUBJECT_V, TO_FIRST_NAME_V, TO_ADDRESS_V, TO_CC_V, TO_BCC_V, STATUS_N, LAST_UPDATED_TIME_DT,LANGUAGE_V) VALUES (1182006, 1182, 'CONNECTION_REFUSED_0', 'email', 'int_connection_refused', 'CONNECTION REFUSED - INTHDP017 - URO 20K', 'Support Team', '', '', '', 1, NOW(),'en');
+
+
+-- Update Query 
