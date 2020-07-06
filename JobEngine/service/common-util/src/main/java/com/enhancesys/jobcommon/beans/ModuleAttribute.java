@@ -126,6 +126,11 @@ public class ModuleAttribute implements java.io.Serializable
         return this.lastUpdatedTime;
     }
     
+    public void setLastUpdatedTime(Date lastUpdatedTime)
+    {
+         this.lastUpdatedTime = lastUpdatedTime;
+    }
+    
     @Audited
     @javax.validation.constraints.NotNull
     

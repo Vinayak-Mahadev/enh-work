@@ -29,6 +29,11 @@ package com.enhancesys.jobcommon;
 public interface QueryConstants 
 {
 
-	public static final String getModuleAttrValQry = "select NAME_V, VALUE_V from JOBENGINE.MS_MODULE_ATTR where MODULE_ID_N = ?";
+	public static final String getStatusQry = "select * from jobengine.sd_status where status_n = ?";
+	public static final String getStatusByNameQry = "select * from jobengine.sd_status where name_v = ?";
+	public static final String getModuleQry = "select * from jobengine.ms_module where module_id_n = ?";
+	public static final String getModuleByNameQry = "select * from jobengine.ms_module where name_v = ?";
+	public static final String getModuleAttrQry = "select * from jobengine.ms_module_attr where attribute_id_n = ?";
+	public static final String getModuleAttrValQry = "select name_v, value_v from jobengine.ms_module_attr where module_id_n = ?";
 
 }

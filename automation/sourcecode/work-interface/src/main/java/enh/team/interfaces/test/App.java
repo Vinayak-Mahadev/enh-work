@@ -1,13 +1,78 @@
 package enh.team.interfaces.test;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.HashSet;
+import java.util.Set;
+
 public class App {
 
 	public static void main(String[] args) 
 	{
-		//tester();
+		SimpleDateFormat simpleDateFormat = null;
+		try 
+		{
+			simpleDateFormat = new SimpleDateFormat("yyyyMMddHHmmss");
 
+
+			System.out.println(simpleDateFormat.parse("20200626000002"));
+			System.out.println(simpleDateFormat.parse("20200626000002_10"));
+			System.out.println(simpleDateFormat.parse("20200626000002_08"));
+			
+		} 
+		catch (Exception e) 
+		{
+
+		}
 	}
 
+	 void sample()
+	{
+
+		//tester();
+		Set<String> fileNameList = new HashSet<String>();
+		Set<String> successList = new HashSet<String>();
+		Set<String> failList = new HashSet<String>();
+
+		String orgFileName = "total_revenue";
+		String name  = null;
+		String temp  = null;
+		//Date date = null;
+		SimpleDateFormat simpleDateFormat = null;
+
+		fileNameList.add("total_revenue_20200626000002.ctl.gz");
+		fileNameList.add("total_revenue_20200626000002_10.ctl.gz");
+		fileNameList.add("total_revenue_20200626000002_08.ctl.gz");
+		fileNameList.add("total_revenue_20200626000002_04.ctl.gz");
+		fileNameList.add("total_revenue_20200626000002_03.ctl.gz");
+		fileNameList.add("total_revenue_20200626000002_05a.ctl.gz");
+		fileNameList.add("total_revenue_20200626000002_09.ctl.gz");
+		fileNameList.add("total_revenue_20200626000002_07.ctl.gz");
+		fileNameList.add("total_revenue_bi_20200626000002_06.ctl.gz");
+
+		for (String fileName : fileNameList) 
+		{
+			simpleDateFormat = new SimpleDateFormat("yyyyMMddHHmmss");
+			try 
+			{
+				name = fileName;
+				temp = name.replaceAll(orgFileName + "_", "");
+				temp = temp.replaceAll("." + "ctl" + "." + "gz", "");
+	//			System.out.println(fileName + "   :::   "+ temp);
+				simpleDateFormat.parse(temp);
+	//			System.out.println(fileName + "   :::   "+ date);
+				successList.add(fileName);
+			} 
+			catch (ParseException e) 
+			{
+				failList.add(fileName);
+			}
+		}
+
+		System.out.println(successList);
+		System.out.println(failList);
+
+	}
 	static void tester() 
 	{
 

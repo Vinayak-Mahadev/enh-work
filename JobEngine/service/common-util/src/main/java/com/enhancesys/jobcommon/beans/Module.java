@@ -185,6 +185,12 @@ public class Module implements java.io.Serializable
         return this.lastUpdatedTime;
     }
     
+    public void setLastUpdatedTime(Date lastUpdatedTime)
+    {
+        this.lastUpdatedTime = lastUpdatedTime;
+    }
+    
+    
     public java.util.Set<com.enhancesys.jobcommon.beans.ModuleAttribute> getAttributes()
     {
         this.attributes.size();

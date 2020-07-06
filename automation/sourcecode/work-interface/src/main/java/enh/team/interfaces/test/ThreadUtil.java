@@ -1,8 +1,5 @@
 package enh.team.interfaces.test;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import enh.team.interfaces.soapservice.SndIntegrationSoupService;
 
 public class ThreadUtil implements Runnable
@@ -42,7 +39,7 @@ public class ThreadUtil implements Runnable
 			threadUtil.setMethodName("processFile");
 			Thread thread = new Thread(threadUtil);
 			thread.start();
-			threads.add(thread);
+
 		} 
 		catch (Exception e)
 		{
@@ -61,7 +58,7 @@ public class ThreadUtil implements Runnable
 			threadUtil.setMethodName("processReceivedFiles");
 			Thread thread = new Thread(threadUtil);
 			thread.start();
-			threads.add(thread);
+
 		} 
 		catch (Exception e)
 		{
@@ -81,7 +78,7 @@ public class ThreadUtil implements Runnable
 			threadUtil.setMethodName("prepareRejectionFile");
 			Thread thread = new Thread(threadUtil);
 			thread.start();
-			threads.add(thread);
+
 		} 
 		catch (Exception e)
 		{
@@ -102,7 +99,7 @@ public class ThreadUtil implements Runnable
 			threadUtil.setMethodName("pullDataToFile");
 			Thread thread = new Thread(threadUtil);
 			thread.start();
-			threads.add(thread);
+
 		} 
 		catch (Exception e)
 		{
@@ -120,27 +117,6 @@ public class ThreadUtil implements Runnable
 		this.methodName = methodName;
 	}
 
-	public static void threadsClear() {
-		try
-		{
-			threads.clear();
-		} 
-		catch (Exception e) 
-		{
-			e.printStackTrace();
-		}
-	}
-
-	public static void threadsKill() {
-		try
-		{
-			threads.clear();
-		} 
-		catch (Exception e) 
-		{
-			e.printStackTrace();
-		}
-	}
 
 
 	private ThreadUtil() {
@@ -151,6 +127,5 @@ public class ThreadUtil implements Runnable
 	private long interfaceId = 0l;
 	private String methodName;
 
-	private final static List<Thread> threads = new ArrayList<Thread>();
 
 }
