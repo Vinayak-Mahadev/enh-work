@@ -14,15 +14,16 @@ import enh.team.interfaces.rdbms.RDBMSOperation;
 import enh.team.interfaces.soapservice.PrepareCTL;
 import enh.team.interfaces.ssh.SshOperation;
 
-public class HadoopInterfaceTest {
+public class HadoopInterfaceTest 
+{
 
-	EntityOperations entityOperations; 
-	RDBMSOperation opr = new RDBMSOperation();
+	private EntityOperations entityOperations; 
+	private RDBMSOperation opr = new RDBMSOperation();
 	private static HadoopInterfaceTest hitest = new HadoopInterfaceTest();;
 
 	boolean filePresent = false;
-	long from = 1165l;
-	long to   = 1182l;
+	private long from = 1165l;
+	private long to   = 1182l;
 
 	public static void main(String[] args)
 	{
