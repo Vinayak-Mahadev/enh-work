@@ -25,15 +25,15 @@ public class FileApp
 		//fileOperation.printDecimalFormatNumber(50);
 		
 		
-		fileOperation.readFileCountData("E:\\interface\\backend\\ControlFileGeneration\\total_revenue_20200626000002.csv", "\\|", "DATE|MICRO|SITE_ID|REVENUE_TYPE|REVENUE_TOTAL", 4);
+		//fileOperation.readFileCountData("E:\\interface\\backend\\ControlFileGeneration\\total_revenue_20200626000002.csv", "\\|", "DATE|MICRO|SITE_ID|REVENUE_TYPE|REVENUE_TOTAL", 4);
 		
 		
-		
+		checkCsvColumnDataIfValueNotEmptyWriteInFileWithLineNumberOfFile();
 	}
 
 	
 
-	void checkCsvColumnDataIfValueNotEmptyWriteInFileWithLineNumberOfFile() throws Exception{
+	static void checkCsvColumnDataIfValueNotEmptyWriteInFileWithLineNumberOfFile() throws Exception{
 
 
 
@@ -48,11 +48,11 @@ public class FileApp
 
 
 
-		String csvFileAbPath =  "E:\\interface\\work\\enh-work\\daily_works\\2020-02\\17\\Pjp_Planned_Calls_20200217001.csv";
-		String outputFileAbPath = "E:\\interface\\work\\enh-work\\daily_works\\2020-02\\17\\Pjp_Planned_Calls_20200217001.log";
+		String csvFileAbPath =  "C:\\Users\\vinayak\\Downloads\\hierarchy_master_02_20200708_002.csv";
+		String outputFileAbPath = "C:\\Users\\vinayak\\Downloads\\hierarchy_master_02_20200708_002.csv.log";
 		String csvDelimiter = "\\|";
-		String header = "Region|Area|Sales Area|Cluster|Micro Cluster|MPC Code|SPV Code|SPV Name|CSO Code|CSO Name|PJP Plan Id|PJP Plan name|PJP start date|PJP end date|PJP created by|PJP creation date|PJP Frequency|PJP Modify Date|PJP Status|Outlet Code|Plan Date|Plan Day";
-		String columnName = "SPV Name";
+		String header = "node_id|node_name|org_id|parent_node_id|status|account_id|account_type|Organization Type|Territory|Organization Territory|Entity Type|Country|Region|Position|City|Sales Networks|District|Cluster|Sector|Level|feature1|feature2|feature3|supervisor_mono|additional_region";
+		String columnName = "additional_region";
 
 		fileOperation.checkCsvColumnDataIfValueNotEmptyWriteInFileWithLineNumberOfFile(header, columnName, csvFileAbPath, outputFileAbPath, csvDelimiter);
 
