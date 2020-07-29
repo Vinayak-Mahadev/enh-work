@@ -33,30 +33,29 @@ public class HadoopInterfaceTest
 		String dir   = "E:/interface/backend/ControlFileGeneration/";
 		String fileName   = "_20200615090004_02.csv";
 		String uploadFileLoc = "E:/interface/backend/ControlFileGeneration/raw/";
-		Connection	conn = RDBMS.getDBConnection(PropType.RDBMS_144);
+		Connection	conn = RDBMS.getDBConnection(PropType.RDBMS_LOCALHOST);
 
 		try
 		{ 
 			String sql = "SELECT inter.interface_id_n,inter.name_v, attr.value_v FROM interface.ms_interface_attr attr INNER JOIN interface.ms_interface inter ON inter.interface_id_n=attr.interface_id_n where attr.name_v ='Field Lookup Conf' and inter.interface_id_n between "+ hitest.from +" and "+ hitest.to +" order by inter.interface_id_n ;\n\n";
 			System.out.println(sql);
-			hitest.opr.printFieldLookupConf(conn, sql, "all", "1165", true);
-
-
-			dateInFile = "20200410";
-			fileName   = "_20200415090001_101.csv";
-			conn = RDBMS.getDBConnection(PropType.RDBMS_144);
-			hitest.start(conn, dateInFile, dir, fileName, uploadFileLoc);
-
-			dateInFile = "20200510";
-			fileName   = "_20200515090002_102.csv";
-			conn = RDBMS.getDBConnection(PropType.RDBMS_144);
-			hitest.start(conn, dateInFile, dir, fileName, uploadFileLoc);
-
-			dateInFile = "20200610";
-			fileName   = "_20200615090002_103.csv";
-			conn = RDBMS.getDBConnection(PropType.RDBMS_144);
-			hitest.start(conn, dateInFile, dir, fileName, uploadFileLoc);
-			//hitest.callApi();
+			hitest.opr.printFieldLookupConf(conn, sql, "select", "1165", false);
+        //
+        //
+		//	//dateInFile = "20200415";
+		//	//fileName   = "_20200415090001_101.csv";
+		//	//conn = RDBMS.getDBConnection(PropType.RDBMS_144);
+		//	//hitest.start(conn, dateInFile, dir, fileName, uploadFileLoc, false);
+		//	//
+		//	//dateInFile = "20200515";
+		//	//fileName   = "_20200515090001_102.csv";
+		//	//conn = RDBMS.getDBConnection(PropType.RDBMS_144);
+		//	//hitest.start(conn, dateInFile, dir, fileName, uploadFileLoc, false);
+		//	//
+		//	dateInFile = "20200615";
+		//	fileName   = "_20200615090001_103.csv";
+		//	conn = RDBMS.getDBConnection(PropType.RDBMS_144);
+		//	hitest.start(conn, dateInFile, dir, fileName, uploadFileLoc, true);
 		} 
 		catch (Exception e) 
 		{
@@ -77,15 +76,17 @@ public class HadoopInterfaceTest
 		}
 	}
 
-	public void start(Connection conn, String dateInFile, String dir, String fileName, String uploadFileLoc) throws Exception 
+	public void start(Connection conn, String dateInFile, String dir, String fileName, String uploadFileLoc, boolean startup) throws Exception 
 	{
 		try
 		{
 			generateFile(conn, dateInFile, dir,  fileName );
-			prepareCtl();
-			uploadFiles(new Server(PropType.Server_251_PPK), uploadFileLoc);
-			callApi();
-			
+			if(startup)
+			{
+				prepareCtl();
+				uploadFiles(new Server(PropType.Server_251_PPK), uploadFileLoc);
+				callApi();
+			}
 			if(conn != null)
 				conn.close();
 		} 
@@ -172,27 +173,27 @@ public class HadoopInterfaceTest
 
 	public void callApi() throws Exception 
 	{
-
+		long second = 5l;
 
 		for (long i = from; i <= to; i++) 
 		{
 			System.out.println("processFile service call :: " + i  );
 			ThreadUtil.processFile(i);
-			Thread.sleep(1 * 10 * 1000);
+			Thread.sleep(1 * second * 1000);
 		}
 
 		for (long i = from; i <= to; i++) 
 		{
 			System.out.println("processReceivedFiles service call :: " + i );
 			ThreadUtil.processReceivedFiles(i);
-			Thread.sleep(1 * 10 * 1000);
+			Thread.sleep(1 * second * 1000);
 		}
 		Thread.sleep(1 * 10 * 1000);
 		for (long i = from; i <= to; i++) 
 		{
 			System.out.println("prepareRejectionFile service call :: " + i );
 			ThreadUtil.prepareRejectionFile(i);
-			Thread.sleep(1 * 10 * 1000);
+			Thread.sleep(1 * second * 1000);
 		}
 
 		//		for (long i = from; i <= to; i++) 

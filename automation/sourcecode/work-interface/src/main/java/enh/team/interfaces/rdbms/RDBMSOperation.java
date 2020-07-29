@@ -97,7 +97,10 @@ public class RDBMSOperation {
 				mpc = conn.createStatement().executeQuery("select ref_code_v from kpi.ms_org_master where org_type_n = 7 order by 1");
 				while (mpc.next()) 
 				{
-					fos.write((mpc.getString(1) + "|" + dateInFile + "|-" + i + ".50\n").getBytes());
+					if(i%2 == 0)
+						fos.write((mpc.getString(1) + "|" + dateInFile + "|" + (i*900356) + ".23\n").getBytes());
+					else
+						fos.write((mpc.getString(1) + "|" + dateInFile + "|" + (i*90228) + ".59\n").getBytes());
 					i++;
 
 					if(i % calcRowLimit == 0 && i != limit)
@@ -171,7 +174,10 @@ public class RDBMSOperation {
 			{
 				for (String mpcRef : mpcList)
 				{
-					fos.write((mpcRef+"|"+dateInFile+"|"+org.getString(1)+"|1"+format.format(i)+"|1"+ (format.format(i)+10) +".50\n").getBytes());
+					if(i%2 == 0)
+						fos.write((mpcRef+"|"+dateInFile+"|"+org.getString(1)+"|1"+format.format(i)+"|133"+ (format.format(i)+10) +".52\n").getBytes());
+					else
+						fos.write((mpcRef+"|"+dateInFile+"|"+org.getString(1)+"|1"+format.format(i)+"|233"+ (format.format(i)+10) +".53\n").getBytes());
 					i++;
 
 					if(i % calcRowLimit == 0 && i != limit)
@@ -230,7 +236,10 @@ public class RDBMSOperation {
 
 				for (String microId : microList) 
 				{
-					fos.write((dateInFile+ "|"+microId+"|Test Site-"+i+ "|"+outlet.getString(1)+"|"+i+"|1"+format.format(i+10)+".05\n").getBytes());
+					if(i%2 == 0)
+						fos.write((dateInFile+ "|"+microId+"|Test Site-"+i+ "|"+outlet.getString(1)+"|"+i+"|8579"+format.format(i+10)+".32\n").getBytes());
+					else
+						fos.write((dateInFile+ "|"+microId+"|Test Site-"+i+ "|"+outlet.getString(1)+"|"+i+"|1579"+format.format(i+10)+".13\n").getBytes());
 					i++;
 
 					if(i % calcRowLimit == 0 && i != limit)
@@ -284,9 +293,10 @@ public class RDBMSOperation {
 			out : while (outlet.next()) {
 
 				for (String microId : microList) {
-					fos.write((dateInFile+"|"+microId+"|Test Site-"+i+ "|" +outlet.getString(1)+"|No Injection|c. >=7k - <10k|"+ (i+10) +"\n").getBytes());
 					if(i%2 == 0)
 						fos.write((dateInFile+"|"+microId+"|Test Site-"+i+ "|" +outlet.getString(1)+"|WithOut Injection|c. >=7k - <10k|"+ (i+10) +"\n").getBytes());
+					else
+						fos.write((dateInFile+"|"+microId+"|Test Site-"+i+ "|" +outlet.getString(1)+"|No Injection|c. >=7k - <10k|"+ (i+10) +"\n").getBytes());
 					i++;
 
 					if(i % calcRowLimit == 0 && i != limit)
@@ -343,7 +353,10 @@ public class RDBMSOperation {
 			{
 				for (String outlet : outletList) 
 				{
-					fos.write((dateInFile+"|"+micro.getString(1)+"|Test Site-"+i+"|"+ outlet + "|" + i + ".50\n").getBytes());
+					if(i%2 == 0)
+						fos.write((dateInFile+"|"+micro.getString(1)+"|Test Site-"+i+"|"+ outlet + "|" + (i*926915) + ".29\n").getBytes());
+					else
+						fos.write((dateInFile+"|"+micro.getString(1)+"|Test Site-"+i+"|"+ outlet + "|" + (i*926915) + ".53\n").getBytes());
 					i++;
 
 					if(i % calcRowLimit == 0 && i != limit)
@@ -392,7 +405,10 @@ public class RDBMSOperation {
 				org = conn.createStatement().executeQuery("select ref_code_v from kpi.ms_org_master where org_type_n = 7 order by 1");
 				while (org.next()) 
 				{
-					fos.write((dateInFile + "|" + org.getString(1) + "|-" + i + ".50\n").getBytes());
+					if(i%2 == 0)
+						fos.write((dateInFile + "|" + org.getString(1) + "|-" + (i*902531) + ".16\n").getBytes());
+					else
+						fos.write((dateInFile + "|" + org.getString(1) + "|-" + (i*902531) + ".52\n").getBytes());
 					i++;
 
 					if(i % calcRowLimit == 0 && i != limit)
@@ -463,7 +479,10 @@ public class RDBMSOperation {
 						revenueType = "voice";
 					else
 						revenueType = "sms";
-					fos.write((dateInFile+"|"+micro.getString(1)+"|Test Site-"+i+"|"+revenueType+"|" + i + ".30\n").getBytes());
+					if(i%2 == 0)
+						fos.write((dateInFile+"|"+micro.getString(1)+"|Test Site-"+i+"|"+revenueType+"|" + (i*936791) + ".32\n").getBytes());
+					else
+						fos.write((dateInFile+"|"+micro.getString(1)+"|Test Site-"+i+"|"+revenueType+"|" + (i*936791) + ".13\n").getBytes());
 					i++;
 
 					if(i % calcRowLimit == 0 && i != limit)
@@ -530,7 +549,10 @@ public class RDBMSOperation {
 				micro = conn.createStatement().executeQuery("select lookup_name_v from kpi.ms_lookup_master where lookup_type_n = (select lookup_type_n from kpi.ms_lookup_type_master where ext_lookup_type_n = 89) order by 1;");
 				while (micro.next()) 
 				{				
-					fos.write((dateInFile+"|"+micro.getString(1)+"|Test Site-"+i+"|" + i + ".25\n").getBytes());
+					if(i%2 == 0)
+						fos.write((dateInFile+"|"+micro.getString(1)+"|Test Site-"+i+"|" + (i*686131) + ".23\n").getBytes());
+					else
+						fos.write((dateInFile+"|"+micro.getString(1)+"|Test Site-"+i+"|" + (i*986131) + ".22\n").getBytes());
 					i++;
 
 					if(i % calcRowLimit == 0 && i != limit)
@@ -597,7 +619,9 @@ public class RDBMSOperation {
 				micro = conn.createStatement().executeQuery("select lookup_name_v from kpi.ms_lookup_master where lookup_type_n = (select lookup_type_n from kpi.ms_lookup_type_master where ext_lookup_type_n = 89) order by 1;");
 				while (micro.next()) 
 				{				
-					fos.write((dateInFile+"|"+micro.getString(1)+"|Test Site"+ "-" + (i) +"|" + (i) + ".40\n").getBytes());
+					fos.write((dateInFile+"|"+micro.getString(1)+"|Test Site"+ "-" + (i) +"|" + (i*73951) + ".43\n").getBytes());
+					if(i%2 == 0)
+						fos.write((dateInFile+"|"+micro.getString(1)+"|Test Site"+ "-" + (i) +"|" + (i*53187) + ".14\n").getBytes());
 					i++;
 
 					if(i % calcRowLimit == 0 && i != limit)
@@ -669,7 +693,11 @@ public class RDBMSOperation {
 						category = "Java";
 					else
 						category = "Non Java";
-					fos.write((dateInFile+"|"+micro.getString(1)+"|Test Site-"+i+"|"+category+"|" + i + ".15" + "|" + i + ".25\n").getBytes());
+
+					if(i%2 == 0)
+						fos.write((dateInFile+"|"+micro.getString(1)+"|Test Site-"+i+"|"+category+"|" + i*98131 + ".14" + "|" + i*906721 + ".11\n").getBytes());
+					else
+						fos.write((dateInFile+"|"+micro.getString(1)+"|Test Site-"+i+"|"+category+"|" + i*198131 + ".19" + "|" + i*906721 + ".76\n").getBytes());
 					i++;
 
 					if(i % calcRowLimit == 0 && i != limit)
@@ -931,7 +959,7 @@ public class RDBMSOperation {
 		ResultSet out = null;
 
 		FileOutputStream fos = null;
-		DecimalFormat format = new DecimalFormat("0000");
+		DecimalFormat format = new DecimalFormat("00000");
 		try 
 		{
 			fos = new FileOutputStream(new File(filePath));
@@ -956,7 +984,10 @@ public class RDBMSOperation {
 				{
 					for(String outlet : outletList)
 					{
-						fos.write((monthInFile+"|"+cluster.getString(1)+"|"+outlet+"|1"+format.format(i)+".75|1"+ (format.format(i)+10) +".0\n").getBytes());
+						if(i%2 == 0)
+							fos.write((monthInFile+"|"+cluster.getString(1)+"|"+outlet+"|17"+format.format(i*1)+".71|13"+ (format.format(i)+10) +".12\n").getBytes());
+						else 
+							fos.write((monthInFile+"|"+cluster.getString(1)+"|"+outlet+"|49"+format.format(i*1)+".72|41"+ (format.format(i)+10) +".11\n").getBytes());
 						i++;
 
 						if(i % calcRowLimit == 0 && i != limit)
@@ -1069,7 +1100,7 @@ public class RDBMSOperation {
 		ResultSet out = null;
 
 		FileOutputStream fos = null;
-		DecimalFormat format = new DecimalFormat("0000");
+		DecimalFormat format = new DecimalFormat("00000");
 		try 
 		{
 			fos = new FileOutputStream(new File(filePath));
@@ -1091,7 +1122,10 @@ public class RDBMSOperation {
 
 				for (String outlet : outletList)
 				{
-					fos.write((monthInFile+"|"+micro.getString(1)+"|Test Site-"+i+"|"+outlet+"|1"+format.format(i) +"|1"+format.format(i) + ".0\n").getBytes());
+					if(i%2 == 0)
+						fos.write((monthInFile+"|"+micro.getString(1)+"|Test Site-"+i+"|"+outlet+"|1"+format.format(i) +"|136"+format.format(i) + ".11\n").getBytes());
+					else
+						fos.write((monthInFile+"|"+micro.getString(1)+"|Test Site-"+i+"|"+outlet+"|1"+format.format(i) +"|931"+format.format(i) + ".22\n").getBytes());
 					i++;
 
 					if(i % calcRowLimit == 0 && i != limit)
@@ -1298,12 +1332,16 @@ public class RDBMSOperation {
 		{
 			if(interfaceid != null && interfaceid.equalsIgnoreCase("1165"))
 			{
-				System.out.println(""
-						+ "delete from interface.tr_temp_site_mapping;\r\n"
-						+ "delete from kpi.tr_temp_hadoop_failure_aggr where file_id_n in (select file_id_n from interface.tr_interface_file_summary_details where file_id_n in (select file_id_n from interface.tr_interface_file_summary where interface_id_n in (1165)));\r\n"
-						+ "delete from interface.tr_interface_file_summary_details where file_id_n in (select file_id_n from interface.tr_interface_file_summary where interface_id_n in (1165));\r\n"
-						+ "delete from interface.tr_interface_file_summary where interface_id_n in (1165);\r\n" + 
-						"");
+
+				if(deleteQueryCmdFlag) 
+				{
+					System.out.println(""
+							+ "delete from interface.tr_temp_site_mapping;\r\n"
+							+ "delete from kpi.tr_temp_hadoop_failure_aggr where file_id_n in (select file_id_n from interface.tr_interface_file_summary_details where file_id_n in (select file_id_n from interface.tr_interface_file_summary where interface_id_n in (1165)));\r\n"
+							+ "delete from interface.tr_interface_file_summary_details where file_id_n in (select file_id_n from interface.tr_interface_file_summary where interface_id_n in (1165));\r\n"
+							+ "delete from interface.tr_interface_file_summary where interface_id_n in (1165);\r\n" + 
+							"");
+				}
 			}
 			resultSet = conn.createStatement().executeQuery(sql);
 

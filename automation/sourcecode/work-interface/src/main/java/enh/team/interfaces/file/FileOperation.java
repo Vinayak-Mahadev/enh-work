@@ -396,7 +396,7 @@ public class FileOperation
 			System.out.println("800");
 			System.out.println("900");
 			System.out.println("1000");
-			//System.out.println(format.format(i));
+			System.out.println(format.format(i));
 
 		}
 
@@ -448,7 +448,7 @@ public class FileOperation
 				if(header.equalsIgnoreCase(line))
 					continue;
 				array = line.split(csv, 0);
-				temp = array[4];
+				temp = array[column];
 				value = value + Double.valueOf((Double.valueOf(temp) * 100));
 				parse = parse + Double.valueOf((Double.parseDouble(temp) * 100)).longValue();
 				
@@ -474,5 +474,28 @@ public class FileOperation
 		}
 	} 
 
-	
+	public void fileNamingWithSequence(String dir, String renameDir, String prefix, String fileExtension)
+	{
+		File filesDir  = null;
+		int i = 0;
+		try 
+		{
+			filesDir = new File(dir);
+			if(!filesDir.isDirectory()) 
+			{
+				System.out.println("filesDir is not dir  :: " + dir);
+				return;
+			}
+
+			for (File file : filesDir.listFiles()) 
+			{
+				if(file.isFile())
+					file.renameTo(new File(renameDir + prefix + (++i) + fileExtension));
+			}
+		} 
+		catch (Exception e)
+		{
+			e.printStackTrace();
+		}
+	}
 }

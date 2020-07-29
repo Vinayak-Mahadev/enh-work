@@ -1,0 +1,339 @@
+{
+	"Primary": [
+		{
+			"connection-id": "snoc-r1",
+			"schema-name": "order",
+			"collection-name": "purchase_orders",
+			"projection": {
+				"crtd_by": 1,
+				"crtd_dt": 1,
+				"updtd_dt": 1,
+				"ord_id": 1,
+				"ord_trans_ref": 1,
+				"data.to_org_id": 1,
+				"data.ord_items": 1,
+				"status": 1
+			},
+			"batch-size": 100,
+			"merge-type": "include_parent",
+			"parameters": [
+				{
+					"param-name": "ord_id",
+					"param-value": "295174",
+					"param-type": "Long",
+					"mandatory": false
+				},
+				{
+					"param-name": "status",
+					"param-value": [
+						170,
+						189
+					],
+					"param-type": "Long",
+					"mandatory": false
+				}
+			],
+			"sort-by": {
+				"crtd_dt": 1
+			}
+		}
+	],
+	"Lookup": {
+		"org_user_node_acc": {
+			"connection-id": "snoc-r4",
+			"schema-name": "snoc_report",
+			"collection-name": "org_user_node_acc"
+		},
+		"org_user_node_acc_main": {
+			"connection-id": "snoc-r4",
+			"schema-name": "snoc_report",
+			"collection-name": "org_user_node_acc",
+			"parameters": [
+				{
+					"param-name": "regional",
+					"param-value": "57682",
+					"param-type": "String",
+					"mandatory": false
+				},
+				{
+					"param-name": "area",
+					"param-value": "57689",
+					"param-type": "String",
+					"mandatory": false
+				},
+				{
+					"param-name": "sales_area",
+					"param-value": "57739",
+					"param-type": "String",
+					"mandatory": false
+				},
+				{
+					"param-name": "cluster",
+					"param-value": "60011",
+					"param-type": "String",
+					"mandatory": false
+				},
+				{
+					"param-name": "micro_cluster",
+					"param-value": "60050",
+					"param-type": "String",
+					"mandatory": false
+				}
+			]
+		},
+		"genericMasterValueCollection": {
+			"connection-id": "snoc-r1",
+			"schema-name": "snoc",
+			"collection-name": "genericMasterValueCollection"
+		}
+	},
+	"Configuration": {
+		"to_org_id": {
+			"field": "data.to_org_id"
+		},
+		"created_date": {
+			"field": "crtd_dt",
+			"date-format": "dd-MM-yyyy HH:mm:ss.SSS",
+			"time-flag": true
+		},
+		"completion_date": {
+			"field": "updtd_dt",
+			"date-format": "dd-MM-yyyy HH:mm:ss.SSS",
+			"time-flag": true
+		},
+		"reference_no": {
+			"field": "ord_id"
+		},
+		"so_id": {
+			"field": "ord_trans_ref"
+		},
+		"region": {
+			"field": "data.to_org_id",
+			"lookup": [
+				{
+					"name": "org_user_node_acc_main",
+					"mapping-field": "org_id",
+					"mapping-field-type": "Long",
+					"lookup-field": "regional_desc"
+				}
+			]
+		},
+		"area": {
+			"field": "data.to_org_id",
+			"lookup": [
+				{
+					"name": "org_user_node_acc_main",
+					"mapping-field": "org_id",
+					"mapping-field-type": "Long",
+					"lookup-field": "area_desc"
+				}
+			]
+		},
+		"sales_area": {
+			"field": "data.to_org_id",
+			"lookup": [
+				{
+					"name": "org_user_node_acc_main",
+					"mapping-field": "org_id",
+					"mapping-field-type": "Long",
+					"lookup-field": "sales_area_desc"
+				}
+			]
+		},
+		"cluster": {
+			"field": "data.to_org_id",
+			"lookup": [
+				{
+					"name": "org_user_node_acc_main",
+					"mapping-field": "org_id",
+					"mapping-field-type": "Long",
+					"lookup-field": "cluster_desc"
+				}
+			]
+		},
+		"micro_cluster": {
+			"field": "data.to_org_id",
+			"lookup": [
+				{
+					"name": "org_user_node_acc_main",
+					"mapping-field": "org_id",
+					"mapping-field-type": "Long",
+					"lookup-field": "micro_cluster_desc"
+				}
+			]
+		},
+		"organization_name": {
+			"field": "data.to_org_id",
+			"lookup": [
+				{
+					"name": "org_user_node_acc_main",
+					"mapping-field": "org_id",
+					"mapping-field-type": "Long",
+					"lookup-field": "org_desc"
+				}
+			]
+		},
+		"product_category": {
+			"field": "",
+			"multiple-row-conf": {
+				"name": "item-values",
+				"lookup-field": "prd_ctgr_nm"
+			}
+		},
+		"product_name": {
+			"field": "",
+			"multiple-row-conf": {
+				"name": "item-values",
+				"lookup-field": "prd_nm"
+			}
+		},
+		"price": {
+			"field": "",
+			"multiple-row-conf": {
+				"name": "item-values",
+				"lookup-field": "prd_total"
+			}
+		},
+		"qty": {
+			"field": "",
+			"multiple-row-conf": {
+				"name": "item-values",
+				"lookup-field": "prd_qty"
+			}
+		},
+		"account": {
+			"field": "",
+			"multiple-row-conf": {
+				"name": "item-values",
+				"lookup-field": "to_acc_nm"
+			}
+		},
+		"created_by": {
+			"field": "crtd_by",
+			"lookup": [
+				{
+					"name": "org_user_node_acc",
+					"mapping-field": "user_id",
+					"lookup-field": "user_name"
+				}
+			]
+		},
+		"status": {
+			"field": "status",
+			"lookup": [
+				{
+					"name": "genericMasterValueCollection",
+					"mapping-field": "s_id",
+					"lookup-field": "description"
+				}
+			]
+		}
+	},
+	"multiple-row-conf": {
+		"item-values": {
+			"field": "data.ord_items",
+			"field-conf": [
+				"product_category",
+				"product_name",
+				"qty",
+				"price",
+				"account"
+			]
+		}
+	},
+	"OutputConf": {
+		"type": "file",
+		"extension": "csv",
+		"file-path": "/home/appuser/snoc/snocconf/jobengineconf/files",
+		"file-name": "purchaseOrderReport",
+		"file-name-pattern": "yyyyMMdd",
+		"mandatory-fields": [
+			"reference_no"
+		],
+		"file-headers": "CREATED_DATE,COMPLETION_DATE,REFERENCE_NO,SO_ID,REGION,AREA,SALES AREA,CLUSTER,ORGANIZATION_NAME,PRODUCT_CATEGORY,PRODUCT_NAME,QTY,PRICE,ACCOUNT,CREATED_BY,STATUS",
+		"field-delimiter": ",",
+		"field-conf": [
+			{
+				"path": "created_date",
+				"type": "String"
+			},
+			{
+				"path": "completion_date",
+				"type": "String"
+			},
+			{
+				"path": "reference_no",
+				"type": "String"
+			},
+			{
+				"path": "so_id",
+				"type": "String"
+			},
+			{
+				"path": "region",
+				"type": "String"
+			},
+			{
+				"path": "area",
+				"type": "String"
+			},
+			{
+				"path": "sales_area",
+				"type": "String"
+			},
+			{
+				"path": "cluster",
+				"type": "String"
+			},
+			{
+				"path": "organization_name",
+				"type": "String"
+			},
+			{
+				"path": "product_category",
+				"type": "String"
+			},
+			{
+				"path": "product_name",
+				"type": "String"
+			},
+			{
+				"path": "qty",
+				"type": "String"
+			},
+			{
+				"path": "price",
+				"type": "String"
+			},
+			{
+				"path": "account",
+				"type": "String"
+			},
+			{
+				"path": "created_by",
+				"type": "String"
+			},
+			{
+				"path": "status",
+				"type": "String"
+			}
+		],
+		"store-file-conf": {
+			"connection-id": "snoc-r4",
+			"schema-name": "snoc_report"
+		}
+	},
+	"RequestUpdateConf": {
+		"connection-id": "snoc-r1",
+		"schema-name": "snoc",
+		"collection-name": "notification",
+		"field": "trans_id"
+	},
+	"SortConf": {
+		"extension": "csv",
+		"file-name-pattern": "yyyyMMddHHmmssSSS",
+		"file-path": "/home/appuser/snoc/snocconf/jobengineconf/sorting-scripts/files/",
+		"field-delimiter": "|",
+		"sort-filepath_0": "/home/appuser/snoc/snocconf/jobengineconf/sorting-scripts/collection1.sh"
+	}
+}

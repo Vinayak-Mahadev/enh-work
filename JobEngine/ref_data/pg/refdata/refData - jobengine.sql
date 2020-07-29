@@ -33,6 +33,7 @@ insert into jobengine.ms_module(module_id_n, name_v, module_type_n, trans_type_n
 insert into jobengine.ms_module(module_id_n, name_v, module_type_n, trans_type_n, seq_n, converter_v, publisher_v, response_processor_v, last_updated_time_dt) values (1006, 'Test Module 6', 1, 1, 1, '', '', null, now());
 insert into jobengine.ms_module(module_id_n, name_v, module_type_n, trans_type_n, seq_n, converter_v, publisher_v, response_processor_v, last_updated_time_dt) values (1007, 'Test Module 7', 1, 1, 1, '', '', null, now());
 insert into jobengine.ms_module(module_id_n, name_v, module_type_n, trans_type_n, seq_n, converter_v, publisher_v, response_processor_v, last_updated_time_dt) values (1008, 'Test Module 8', 1, 1, 1, '', '', null, now());
+insert into jobengine.ms_module(module_id_n, name_v, module_type_n, trans_type_n, seq_n, converter_v, publisher_v, response_processor_v, last_updated_time_dt) values (1009, 'Test Module 9', 1, 1, 1, '', '', null, now());
 
 -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
@@ -73,6 +74,10 @@ insert into jobengine.ms_module_attr(attribute_id_n, module_id_n, name_v, value_
 -- module(1008)
 insert into jobengine.ms_module_attr(attribute_id_n, module_id_n, name_v, value_v, last_updated_time_dt) values (1008001, 1008, 'job-id', 'stockReorderLevelReport_csv', now());
 insert into jobengine.ms_module_attr(attribute_id_n, module_id_n, name_v, value_v, last_updated_time_dt) values (1008002, 1008, 'template-id', 'Sample-feed-mongo', now());
+
+-- module(1009)
+insert into jobengine.ms_module_attr(attribute_id_n, module_id_n, name_v, value_v, last_updated_time_dt) values (1009001, 1009, 'job-id', 'purchaseOrderTracking', now());
+insert into jobengine.ms_module_attr(attribute_id_n, module_id_n, name_v, value_v, last_updated_time_dt) values (1009002, 1009, 'template-id', 'purchaseOrderTracking', now());
 
 
 

@@ -25,10 +25,12 @@ public class FileApp
 		//fileOperation.printDecimalFormatNumber(50);
 		
 		
-		//fileOperation.readFileCountData("E:\\interface\\backend\\ControlFileGeneration\\total_revenue_20200626000002.csv", "\\|", "DATE|MICRO|SITE_ID|REVENUE_TYPE|REVENUE_TOTAL", 4);
+		fileOperation.readFileCountData("E:\\interface\\backend\\ControlFileGeneration\\bkp\\total_revenue_20200615090001_103.csv", "\\|", "DATE|MICRO|SITE_ID|REVENUE_TYPE|REVENUE_TOTAL", 4);
 		
 		
-		checkCsvColumnDataIfValueNotEmptyWriteInFileWithLineNumberOfFile();
+		//checkCsvColumnDataIfValueNotEmptyWriteInFileWithLineNumberOfFile();
+		
+		//fileOperation.fileNamingWithSequence("C:\\Users\\vinayak\\Downloads\\ppdt\\ThematicApperceptionTest\\", "C:\\Users\\vinayak\\Downloads\\ppdt\\ThematicApperceptionTest\\bkp\\", "TAT-", ".jpg");
 	}
 
 	
@@ -134,12 +136,4 @@ public class FileApp
 
 		new FileOperation().loadKeys(keyLocation, ifNeedAsAFile);
 	}
-
-	void test() throws Exception
-	{
-
-	}
-
-
-
 }

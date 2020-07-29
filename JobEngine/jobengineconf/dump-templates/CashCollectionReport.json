@@ -1,0 +1,389 @@
+{
+	"Primary" : 
+	[
+		{			
+			"query" : "select * from ((select account_id_n ,sum(acct_currency_amt_n)/100 saleamount from snd.fn_account_receivables dbt  where account_id_n in ($accountIds) and credit_debit_flag_v = 'DR'  and transaction_date_dt between '$startDate' and  '$endDate' group by account_id_n) cdebit full outer join (select account_id_n ,sum(acct_currency_amt_n)/100 cashamount from snd.fn_account_receivables crdt where account_id_n in ($accountIds) and credit_debit_flag_v = 'CR' and transaction_date_dt  between '$startDate' and  '$endDate' group by account_id_n) ccredit on (cdebit.account_id_n = ccredit.account_id_n)) order by 1",
+			"map-key" : 
+			{
+				"key" : "src_account_id",
+				"type" : "Long",
+				"local-key" : "account_id_n"
+			}
+		},
+		{
+			"connection-id": "snoc-r1",
+			"schema-name": "snoc",
+			"collection-name": "fn_acc_relation",
+			"parent-key" : 
+			{
+				"account_id_n" : "src_account_id"
+			},
+			"projection": 
+			{
+				"src_org_id" : 1,
+				"dest_org_id" : 1,
+				"src_account_id" : 1
+			},
+			"parameters": 
+			[
+				{
+					"param-name": "src_account_id",
+					"param-value": [$accountIds],
+					"param-type" : "Long"
+				}
+			],
+			"sort-by": 
+			{
+				"src_account_id": 1
+			},
+			"batch-size" : 100,
+			"merge-type" : "include_parent"
+		}
+	],
+	"Lookup": {
+		"org_user_node_acc": {
+			"connection-id": "snoc-r4",
+			"schema-name": "snoc_report",
+			"collection-name": "org_user_node_acc"
+		},
+		"org_links": {
+			"connection-id": "snoc-r1",
+			"schema-name": "snoc",
+			"collection-name": "org_links"
+		}
+	},
+	"Configuration": {
+		"fromOrgId": {
+			"field": "dest_org_id"
+		},
+		"fromOrgName": {
+			"field": "dest_org_id",
+			"lookup": [
+				{
+					"name": "org_user_node_acc",
+					"mapping-field": "org_id",
+					"lookup-field": "org_desc"
+				}
+			]
+		},
+		"fromNodeId": {
+			"field": [
+				"src_org_id",
+				"dest_org_id"
+			],
+			"lookup": [
+				{
+					"name": "org_links",
+					"mapping-field":[ 
+						"src_org_id",
+						"dest_org_id"
+					],
+					"lookup-field": "dest_node_id"
+				}
+			]
+		},
+		"fromPosition": {
+			"field": [
+				"src_org_id",
+				"dest_org_id"
+			],
+			"lookup": [
+				{
+					"name": "org_links",
+					"mapping-field":[ 
+						"src_org_id",
+						"dest_org_id"
+					],
+					"lookup-field": "dest_node_id"
+				},
+				{
+					"name": "org_user_node_acc",
+					"mapping-field": "node_id",
+					"lookup-field": [
+						"position",
+						"first_name",
+						"last_name"
+					],
+					"field-delimiter" : "-"
+				}
+			]
+		},
+		"toOrgId": {
+			"field": "src_org_id"
+		},
+		"toOrgName": {
+			"field": "src_org_id",
+			"lookup": [
+				{
+					"name": "org_user_node_acc",
+					"mapping-field": "org_id",
+					"lookup-field": "org_desc"
+				}
+			]
+		},
+		"toNodeId": {
+			"field": [
+				"src_org_id",
+				"dest_org_id"
+			],
+			"lookup": [
+				{
+					"name": "org_links",
+					"mapping-field":[ 
+						"src_org_id",
+						"dest_org_id"
+					],
+					"lookup-field": "src_node_id"
+				}
+			]
+		},
+		"posLegalName": {
+			"field": "src_org_id",
+			"lookup": [
+				{
+					"name": "org_user_node_acc",
+					"mapping-field": "org_id",
+					"lookup-field": "legal_form_desc"
+				}
+			]
+		},
+		"cluster": {
+			"field": "src_org_id",
+			"lookup": [
+				{
+					"name": "org_user_node_acc",
+					"mapping-field": "org_id",
+					"lookup-field": "clust_id_desc"
+				}
+			]
+		},
+		"sector": {
+			"field": "src_org_id",
+			"lookup": [
+				{
+					"name": "org_user_node_acc",
+					"mapping-field": "org_id",
+					"lookup-field": "sect_id_desc"
+				}
+			]
+		},
+		"territory": {
+			"field": "src_org_id",
+			"lookup": [
+				{
+					"name": "org_user_node_acc",
+					"mapping-field": "org_id",
+					"lookup-field": "terr_id_desc"
+				}
+			]
+		},
+		"posCategory": {
+			"field": "src_org_id",
+			"lookup": [
+				{
+					"name": "org_user_node_acc",
+					"mapping-field": "org_id",
+					"lookup-field": "pos_category_desc"
+				}
+			]
+		},
+		"posType": {
+			"field": "src_org_id",
+			"lookup": [
+				{
+					"name": "org_user_node_acc",
+					"mapping-field": "org_id",
+					"lookup-field": "pos_type_desc"
+				}
+			]
+		},
+		"posSpecialization": {
+			"field": "src_org_id",
+			"lookup": [
+				{
+					"name": "org_user_node_acc",
+					"mapping-field": "org_id",
+					"lookup-field": "pos_spec_desc"
+				}
+			]
+		},
+		"orgTerritory": {
+			"field": "src_org_id",
+			"lookup": [
+				{
+					"name": "org_user_node_acc",
+					"mapping-field": "org_id",
+					"lookup-field": "org_terr_id_desc"
+				}
+			]
+		},
+		"address": {
+			"field": "src_org_id",
+			"lookup": [
+				{
+					"name": "org_user_node_acc",
+					"mapping-field": "org_id",
+					"lookup-field": [
+						"org_adrs_1",
+						"org_adrs_2",
+						"org_adrs_3_desc",
+						"org_adrs_4"
+					],
+					"field-delimiter" : ", "
+				}
+			]
+		},
+		"city": {
+			"field": "src_org_id",
+			"lookup": [
+				{
+					"name": "org_user_node_acc",
+					"mapping-field": "org_id",
+					"lookup-field": "org_city_desc"
+				}
+			]
+		},
+		"district": {
+			"field": "src_org_id",
+			"lookup": [
+				{
+					"name": "org_user_node_acc",
+					"mapping-field": "org_id",
+					"lookup-field": "org_district_desc"
+				}
+			]
+		},
+		"region": {
+			"field": "src_org_id",
+			"lookup": [
+				{
+					"name": "org_user_node_acc",
+					"mapping-field": "org_id",
+					"lookup-field": "org_region_desc"
+				}
+			]
+		},
+		"totalSecondSalesAmt": {
+			"field": "saleamount"
+		},
+		"cashCollection": {
+			"field": "cashamount"
+		}
+	},
+	"OutputConf": {
+		"type": "file",
+		"extension": "xls",
+		"file-path": "/home/appuser/snoc/snocconf/reports",
+		"file-name": "Cash Collection POS Report",
+		"file-name-pattern": "dd-MMM-yyyy HH:mm:ss",
+		"file-headers": "FROM ORG ID,FROM ORG NAME,FROM NODE ID,FROM POSITION,TO ORAGANIZATION ID,TO ORG NAME,TO NODE ID,POS LEGAL NAME,CLUSTER,SECTOR(MULTI),TERRITORY,POS CATEGORY,POS TYPE,POS SPECIALIZATION,ORGANIZATION TERRITORY,ADDRESS,CITY,DISTRICT,REGION,TOTAL SECONDARY SALES AMOUNT,CASH COLLECTION",
+		"uk-file-headers" : "КОД ПАРТНЕРУ,НАЗВА ПАРТНЕРУ ,NODE_ID,ПОЗИЦІЯ,КОД ТОЧКИ,НАЗВА ТОЧКИ,NODE ID ТОЧКИ,ЮРИДИЧНА НАЗВА,CLUSTER,SECTOR(MULTI),TERRITORY,КАТЕГОРІЯ ТОЧКИ,ТИП ТОЧКИ ,СПЕЦІАЛІЗАЦІЯ ТОЧКИ,ORGANIZATION_TERRITORY,АДРЕСА,МІСТО,РАЙОН,ОБЛАСТЬ,ЗАГАЛЬНА СУМА ПРОДАЖІВ,ЗІБРАНА ГОТІВКА",
+		"field-delimiter": ",",
+		"field-conf": [
+			{
+				"path": "fromOrgId",
+				"type": "String"
+			},
+			{
+				"path": "fromOrgName",
+				"type": "String"
+			},
+			{
+				"path": "fromNodeId",
+				"type": "String"
+			},
+			{
+				"path": "fromPosition",
+				"type": "String"
+			},
+			{
+				"path": "toOrgId",
+				"type": "String"
+			},
+			{
+				"path": "toOrgName",
+				"type": "String"
+			},
+			{
+				"path": "toNodeId",
+				"type": "String"
+			},
+			{
+				"path": "posLegalName",
+				"type": "String"
+			},
+			{
+				"path": "cluster",
+				"type": "String"
+			},
+			{
+				"path": "sector",
+				"type": "String"
+			},
+			{
+				"path": "territory",
+				"type": "String"
+			},
+			{
+				"path": "posCategory",
+				"type": "String"
+			},
+			{
+				"path": "posType",
+				"type": "String"
+			},
+			{
+				"path": "posSpecialization",
+				"type": "String"
+			},
+			{
+				"path": "orgTerritory",
+				"type": "String"
+			},
+			{
+				"path": "address",
+				"type": "String"
+			},
+			{
+				"path": "city",
+				"type": "String"
+			},
+			{
+				"path": "district",
+				"type": "String"
+			},
+			{
+				"path": "region",
+				"type": "String"
+			},
+			{
+				"path": "totalSecondSalesAmt",
+				"type": "Double"
+			},
+			{
+				"path": "cashCollection",
+				"type": "Double"
+			}
+		],
+		"store-file-conf" : {
+			"connection-id": "snoc-r4",
+			"schema-name": "snoc_report"
+		},
+		"pre-header" : "PERIOD,$reportStartDate,$reportEndDate"
+	},
+	"RequestUpdateConf" :
+	{
+		"connection-id": "snoc-r1",
+		"schema-name": "snoc",
+		"collection-name": "notification",
+		"field" : "trans_id"
+	},
+	"SortConf" : 
+	{
+		"extension" : "csv",
+		"file-name-pattern" : "yyyyMMddHHmmssSSS",
+		"file-path" : "/home/appuser/snoc/snocconf/reports/sort/",
+		"field-delimiter" : "|",
+		"sort-filepath_1" : "/home/appuser/snoc/snocconf/reports/sort/collection1.sh"
+	}
+}
