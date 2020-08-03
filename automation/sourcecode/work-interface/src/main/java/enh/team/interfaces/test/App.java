@@ -7,11 +7,15 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
+import com.mongodb.BasicDBObject;
+import com.mongodb.DBObject;
+
 public class App {
 
 	public static void main(String[] args) 
 	{
-
+		DBObject record = new BasicDBObject();
+		StringBuffer reqRecord = new StringBuffer();
 		try 
 		{
 			//SimpleDateFormat simpleDateFormat = null;
@@ -24,20 +28,27 @@ public class App {
 			//			List<String> validationConfList = Arrays.asList(validationConf.split("#"));
 			//			System.out.println("validationConfList :: " + validationConfList.size());
 
-			String data = "1001,1003,1005,1009,1011,1013,1015,1017,1007,1024,1025,1027,1029,1018,1019,1021,1020,1022,1023,1030,1031,1040,1045,1050,1049,1051,1053,1061,1062,1064,1065,1066,1067,1068,1069,1070,1071,1072,1075,1076,1077,1078,1079,1080,1081,1082,1090,1092,1136,1138,1143,1145,1146,1148,1152,1156,1157,1158,1159,1161,1162,1165,1166,1167,1168,1169,1170,1171,1172,1173,1174,1175,1176,1177,1178,1179,1180,1181,1182";
+			//			String data = "1001,1003,1005,1009,1011,1013,1015,1017,1007,1024,1025,1027,1029,1018,1019,1021,1020,1022,1023,1030,1031,1040,1045,1050,1049,1051,1053,1061,1062,1064,1065,1066,1067,1068,1069,1070,1071,1072,1075,1076,1077,1078,1079,1080,1081,1082,1090,1092,1136,1138,1143,1145,1146,1148,1152,1156,1157,1158,1159,1161,1162,1165,1166,1167,1168,1169,1170,1171,1172,1173,1174,1175,1176,1177,1178,1179,1180,1181,1182";
+			//
+			//			String flag = "1066,1067,1068,1069,1070,1071,1076,1077,1078,1079,1080,1081";
+			//
+			//			List<String> dataList = Arrays.asList(data.split(","));
+			//			System.out.println("dataList :: " + dataList);
+			//			System.out.println("dataList size :: " + dataList.size());
+			//
+			//			System.out.println(flag.contains("1066"));
+			//			for (String sid : dataList) 
+			//			{
+			//				if(!flag.contains(sid))
+			//					System.out.print(sid + ",");	
+			//			}
 
-			String flag = "1066,1067,1068,1069,1070,1071,1076,1077,1078,1079,1080,1081";
+			reqRecord.append((record.containsField("org_mail") && record.get("org_mail") != null) ? (record.get("org_mail").toString()) : "");
+			System.out.println(reqRecord);
+			record.put("org_mail", "vinayak");
 
-			List<String> dataList = Arrays.asList(data.split(","));
-			System.out.println("dataList :: " + dataList);
-			System.out.println("dataList size :: " + dataList.size());
-
-			System.out.println(flag.contains("1066"));
-			for (String sid : dataList) 
-			{
-				if(!flag.contains(sid))
-					System.out.print(sid + ",");	
-			}
+			reqRecord.append((record.containsField("org_mail") && record.get("org_mail") != null) ? (record.get("org_mail").toString()) : "");
+			System.out.println(reqRecord);
 		} 
 		catch (Exception e) 
 		{
