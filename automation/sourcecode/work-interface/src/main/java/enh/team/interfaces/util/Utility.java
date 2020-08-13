@@ -188,6 +188,7 @@ public class Utility
 						}
 						catch(Exception e)
 						{
+							e.printStackTrace();
 							jsonObject.put(STATUS_STR, FAIL_STR);
 							jsonObject.put(ERROR_CODE_STR, INVALID_DATA_ERR_CODE);
 							jsonObject.put(ERROR_MSG_STR, INVALID_DATA_ERR_MSG + confs.get(0) + " = " + dataList.get(i));

@@ -14,8 +14,6 @@ public class App {
 
 	public static void main(String[] args) 
 	{
-		DBObject record = new BasicDBObject();
-		StringBuffer reqRecord = new StringBuffer();
 		try 
 		{
 			//SimpleDateFormat simpleDateFormat = null;
@@ -43,12 +41,10 @@ public class App {
 			//					System.out.print(sid + ",");	
 			//			}
 
-			reqRecord.append((record.containsField("org_mail") && record.get("org_mail") != null) ? (record.get("org_mail").toString()) : "");
-			System.out.println(reqRecord);
-			record.put("org_mail", "vinayak");
-
-			reqRecord.append((record.containsField("org_mail") && record.get("org_mail") != null) ? (record.get("org_mail").toString()) : "");
-			System.out.println(reqRecord);
+			String data = "2025-10-30";
+			SimpleDateFormat foss = new SimpleDateFormat("yyyy-MM-dd");
+			SimpleDateFormat tnm = new SimpleDateFormat("yyyyMMdd");
+			System.out.println(foss.parse(data));
 		} 
 		catch (Exception e) 
 		{

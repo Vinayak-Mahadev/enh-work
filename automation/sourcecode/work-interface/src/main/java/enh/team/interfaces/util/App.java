@@ -15,12 +15,12 @@ public class App {
 
 
 		//fieldConf = "DATE;M;DNF;[0-9]*;yyyyMMdd%SITE_ID;M;R;[a-zA-Z0-9 -]*$+%LONGITUDE;M;R;^\\d+(\\.\\d{1,15})?$%LATITUDE;M;R;^\\d+(\\.\\d{1,15})?$%MICRO_CLUSTER;M;R;[a-zA-Z0-9 -]*$+%SALES_CLUSTER;M;R;[a-zA-Z0-9 -]*$+%SALES_AREA;M;R;[a-zA-Z0-9 -]*$+%AREA;M;R;[a-zA-Z0-9 -]*$+%REGION;M;R;[a-zA-Z0-9 -]*$+%JAVA_NONJAVA;M;R;[a-zA-Z0-9 _-]*$+%SITE_NAME;M;R;[a-zA-Z0-9 _-]*$+%SITE_POPULATION;M;R;[0-9]*";
-		fieldConf = "DATE;M;RD;[0-9]*;yyyyMMdd%MICRO;M;R;%SITE_ID;M;R;%CATEGORY;M;R;%TARGET;N;R;^\\d+(\\.\\d{1,2})?$%REVENUE;M;R;^-?([0-9]\\d*(\\.\\d{1,2}+)?)$";
-		validationConfList = Arrays.asList(fieldConf.split("%"));
+		fieldConf = "SERIAL_NUMBER_SIM;M;R;[0-9]+|NEW_PRODUCT_CODE;M|NEW_EXPIRY_DATE;M;RD;[0-9]{8};yyyyMMdd";
+		validationConfList = Arrays.asList(fieldConf.split("\\|"));
 
 		
 //1
-		line = "20200510|CLUSTER-TEST-MC|Test Site-1|Non Java|-1.30|-1.70";
+		line = "89620027081972666602|SISP|20200805";
 		dataList = Arrays.asList(line.split("\\|"));;
 		System.out.println(Utility.basicValidation(validationConfList, dataList, line));
 //2

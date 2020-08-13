@@ -1,5 +1,6 @@
 package enh.team.interfaces.reference;
 
+import java.io.BufferedInputStream;
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileInputStream;
@@ -249,6 +250,7 @@ public class GenerateFile {
 		File file = null;
 		File newFile = null;
 		FileInputStream inputStream = null;
+		BufferedInputStream bufferedInputStream = null;
 		FileOutputStream outputStream = null;
 		XSSFWorkbook workbook = null;
 		XSSFSheet sheet = null;
@@ -271,10 +273,11 @@ public class GenerateFile {
 			file = new File(xlsxFileLoc);
 			newFile = new File(newxlsxFileName);
 			inputStream = new FileInputStream(file);
+			bufferedInputStream = new BufferedInputStream(inputStream, 1024);
 			outputStream = new FileOutputStream(newFile);
 			preparedStatement = pgConnection.prepareStatement(config.getString("ATTR_VALUE_QUERY"));
 			//Get the workbook instance for XLS file 
-			workbook = new XSSFWorkbook(inputStream);
+			workbook = new XSSFWorkbook(bufferedInputStream);
 
 			//Get first sheet from the workbook
 			sheet = workbook.getSheet(sheetName);
@@ -614,10 +617,13 @@ public class GenerateFile {
 
 			try 
 			{
+				if(bufferedInputStream != null)
+					bufferedInputStream.close();
 				if(inputStream != null)
 					inputStream.close();
 				if(outputStream != null)
 					outputStream.close();
+				
 			}
 			catch (IOException e)
 			{
@@ -627,6 +633,7 @@ public class GenerateFile {
 
 			file = null;
 			newFile = null;
+			bufferedInputStream = null;
 			inputStream = null;
 			outputStream = null;
 			workbook = null;
