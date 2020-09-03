@@ -13,7 +13,7 @@ public class FindDuplicateRows
 {
 	public static void main(String[] args) throws Exception 
 	{
-		File file = new File("C:\\Users\\vinayak\\Downloads\\uro20_20200713154617_1.csv");
+		File file = new File("E:\\interface\\work\\enh-work\\daily_works\\2020-09\\interface_related_tables_list.txt");
 		FileReader fileReader = new FileReader(file);
 		BufferedReader bufferedReader = new BufferedReader(fileReader);
 		String dataLine = null;

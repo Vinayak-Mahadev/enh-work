@@ -4,6 +4,11 @@ public class App {
 
 	public static void main(String[] args)
 	{
+		generate();
+
+	}
+
+	static void generate() {
 		GenerateFile generateFile = null;
 		try 
 		{
@@ -18,7 +23,5 @@ public class App {
 		{
 			generateFile = null;	
 		}
-
 	}
-
 }

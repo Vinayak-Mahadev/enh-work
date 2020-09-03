@@ -11,7 +11,12 @@ import java.sql.SQLException;
 import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collections;
+import java.util.HashSet;
+import java.util.LinkedHashSet;
 import java.util.List;
+import java.util.Set;
+
 import org.json.JSONObject;
 
 public class RDBMSOperation {
@@ -1320,7 +1325,6 @@ public class RDBMSOperation {
 		}
 	}
 
-
 	public void printFieldLookupConf(Connection conn, String sql, String choice, String interfaceid, boolean deleteQueryCmdFlag) throws Exception
 	{
 		ResultSet resultSet = null;
@@ -1355,13 +1359,13 @@ public class RDBMSOperation {
 				}
 				if(choice.equalsIgnoreCase("all"))
 				{
-					System.out.println("-- INTERFACE ID	" + resultSet.getString(1));
-					System.out.println("-- INTERFACE NAME	" + resultSet.getString(2));
-					System.out.print( "-- ACTOR"+ "	" + fields.get("actor_field")+ "	" );
+					System.out.println("-- INTERFACE ID\t" + resultSet.getString(1));
+					System.out.println("-- INTERFACE NAME\t" + resultSet.getString(2));
+					System.out.print( "-- ACTOR"+ "\t" + fields.get("actor_field")+ "\t" );
 					System.out.println( "-- DAILY TABLE"+ "	kpi." + jsonObject.get("daily_table").toString().toLowerCase());
-					System.out.print( "-- METRIC"+ "	" + fields.get("metric_field")+ "	" );
+					System.out.print( "-- METRIC"+ "\t" + fields.get("metric_field")+ "\t" );
 					System.out.println( "-- MONTHLY TABLE"+ "	kpi." + jsonObject.get("monthly_table").toString().toLowerCase());
-					System.out.print( "-- SOURCE"+ "	" + fields.get("source_field")+ "	" );
+					System.out.print( "-- SOURCE"+ "\t" + fields.get("source_field")+ "\t" );
 				}
 				//System.out.println("FAILURE TABLE" + "	kpi.TR_TEMP_HADOOP_FAILURE_AGGR".toLowerCase());
 
@@ -1369,7 +1373,7 @@ public class RDBMSOperation {
 				{
 					if(duplicate_validation_conf != null) 
 					{
-						System.out.print( "--INSTANCE"+ "	" + fields.get("instance_field")+ "	" );
+						System.out.print( "--INSTANCE"+ "\t" + fields.get("instance_field")+ "\t" );
 						System.out.println( "--VALIDATION TABLE"+ "	kpi." + duplicate_validation_conf.get("table_name").toString().toLowerCase() + "\n");
 						System.out.println("select * from interface.ms_interface_attr where interface_id_n = " + resultSet.getString(1)+" order by 1;");
 						System.out.println("-- update interface.ms_interface_attr set value_v = '' where attribute_id_n = ? ;");
@@ -1406,6 +1410,7 @@ public class RDBMSOperation {
 				System.out.println("select * from kpi.tr_temp_hadoop_failure_aggr where file_id_n in (0);");
 				System.out.println("select inter.interface_id_n,inter.name_v, summ.file_id_n, summ.file_name_v, summ.total_count_n, summ.success_count_n, summ.error_count_n, summ.filter_count_n, summ.status_n, summ.message_v FROM interface.tr_interface_file_summary summ INNER JOIN interface.ms_interface inter ON inter.interface_id_n=summ.interface_id_n where  inter.interface_id_n between 1165 and 1182 order by inter.interface_id_n ;");
 				System.out.println("\n\n----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------\n\n\n");
+				duplicate_validation_conf = null;
 			}
 		}
 		catch (Exception e) 
@@ -1413,6 +1418,157 @@ public class RDBMSOperation {
 			throw e;
 		}
 	}
+
+	public JSONObject getTableDtlsForFieldLookupConf(Connection conn, String sql) throws Exception
+	{
+		ResultSet resultSet = null;
+		JSONObject jsonObject = null;
+		JSONObject childObj = null;
+		JSONObject responseObj = new JSONObject();
+		try
+		{
+			resultSet = conn.createStatement().executeQuery(sql);
+
+			while(resultSet.next()){
+
+				childObj = new JSONObject();
+				jsonObject = new JSONObject(resultSet.getString(3));
+				JSONObject duplicate_validation_conf = null;
+
+				if(jsonObject.has("duplicate_validation_conf") && jsonObject.get("duplicate_validation_conf") != null) 
+					duplicate_validation_conf = jsonObject.getJSONObject("duplicate_validation_conf");
+
+				if(resultSet.getString(1).equalsIgnoreCase("1166")) {
+					childObj.put("id", "1165");
+					childObj.put("name", "INTHDP001 - Site Mapping");
+					childObj.put("type", "HDP");
+					childObj.put("temporary", "interface.tr_temp_site_mapping");
+					childObj.put("validation", "interface.tr_temp_site_mapping");
+					childObj.put("daily", "");
+					childObj.put("monthly", "");
+					childObj.put("failure", "interface.tr_temp_site_mapping");
+
+					responseObj.put("1165", childObj);
+				} 
+
+				childObj = new JSONObject();
+				childObj.put("id", resultSet.getString(1));
+				childObj.put("name", resultSet.getString(2));
+
+				if(resultSet.getString(2).contains("INTSM"))
+					childObj.put("type", "SM");
+				if(resultSet.getString(2).contains("INTDW"))
+					childObj.put("type", "DWH");
+				if(resultSet.getString(2).contains("INTHDP"))
+					childObj.put("type", "HDP");
+
+
+				childObj.put("temporary", (jsonObject.get("table_name") != null && !jsonObject.getString("table_name").trim().isEmpty() ? "kpi." + jsonObject.get("table_name").toString().toLowerCase() : ""));
+				childObj.put("validation", (((duplicate_validation_conf  != null && duplicate_validation_conf.get("table_name") != null && !duplicate_validation_conf.getString("table_name").trim().isEmpty()) ) ?  "kpi." + duplicate_validation_conf.get("table_name").toString().toLowerCase() : ""));
+				childObj.put("daily", ((jsonObject.get("daily_table") != null && !jsonObject.getString("daily_table").trim().isEmpty()) ?  "kpi." + jsonObject.get("daily_table").toString().toLowerCase() : ""));
+				childObj.put("monthly", ((jsonObject.get("monthly_table") != null && !jsonObject.getString("monthly_table").trim().isEmpty()) ?  "kpi." + jsonObject.get("monthly_table").toString().toLowerCase() : ""));
+
+				if(resultSet.getInt(1) >= 1166 && resultSet.getInt(1) <= 1182)
+					childObj.put("failure", "kpi.tr_temp_hadoop_failure_aggr");
+				else
+					childObj.put("failure", "kpi.tr_temp_upload_aggr_failure");
+				responseObj.put(resultSet.getString(1), childObj);
+
+			}
+		}
+		catch (Exception e){
+			throw e;
+		}
+		resultSet.close();
+		return responseObj;
+	}
+
+	public void printFieldLookupConfWithoutQuery(Boolean printFlag, JSONObject jsonObject, int from, int to, boolean needAsFile, String filepath, String header) throws Exception
+	{
+		String temp = null;
+		FileWriter fileWriter = null;
+
+		if(needAsFile) { fileWriter = new FileWriter(new File(filepath)); fileWriter.write(header + "\n");}
+
+		for (int i = from; i <= to; i++) 
+		{
+			if(!jsonObject.isNull(i+"") && jsonObject.get(i+"") != null) {
+				temp = (
+						jsonObject.getJSONObject(i+"").getString("id") + "\t"
+								+ jsonObject.getJSONObject(i+"").getString("name") + "\t"
+								+ jsonObject.getJSONObject(i+"").getString("type") + "\t"
+								+ jsonObject.getJSONObject(i+"").getString("temporary") + "\t"
+								+ jsonObject.getJSONObject(i+"").getString("validation") + "\t"
+								+ jsonObject.getJSONObject(i+"").getString("daily") + "\t"
+								+ jsonObject.getJSONObject(i+"").getString("monthly") + "\t"
+								+ jsonObject.getJSONObject(i+"").getString("failure")
+						).trim();
+				if(printFlag) System.out.println(temp);
+				if(needAsFile)fileWriter.write((temp + "\n"));
+			}
+			if(needAsFile)fileWriter.flush();
+		}
+
+		if(needAsFile)fileWriter.close();
+//		System.out.println("printFieldLookupConfWithoutQuery  :: done");
+		jsonObject = null;
+	}
+
+	public List<String> getAllTablesFromKPI(JSONObject jsonObject) 
+	{
+		Set<String> set = new HashSet<String>();
+		List<String> list = null;
+		for (String str: jsonObject.keySet())
+		{
+			set.add(jsonObject.getJSONObject(str).getString("temporary"));
+			set.add(jsonObject.getJSONObject(str).getString("validation"));
+			set.add(jsonObject.getJSONObject(str).getString("daily"));
+			set.add(jsonObject.getJSONObject(str).getString("monthly"));
+			set.add(jsonObject.getJSONObject(str).getString("failure"));
+//		
+//			set.add(jsonObject.getJSONObject(str).getString("type") + "|" + jsonObject.getJSONObject(str).getString("temporary"));
+//			set.add(jsonObject.getJSONObject(str).getString("type") + "|" + jsonObject.getJSONObject(str).getString("validation"));
+//			set.add(jsonObject.getJSONObject(str).getString("type") + "|" + jsonObject.getJSONObject(str).getString("daily"));
+//			set.add(jsonObject.getJSONObject(str).getString("type") + "|" + jsonObject.getJSONObject(str).getString("monthly"));
+//			set.add(jsonObject.getJSONObject(str).getString("type") + "|" + jsonObject.getJSONObject(str).getString("failure"));
+		
+		}
+		set.remove("");
+		list = new ArrayList<String>(set);
+
+		Collections.sort(list);
+		set.clear();
+		return list;
+	}
+
+	public Set<String> dataFrom(Connection conn, String sql, int columnCount, String loadORprint) throws Exception
+	{
+		ResultSet resultSet = null;
+		Set<String> set = new LinkedHashSet<String>();
+		try
+		{
+			resultSet = conn.createStatement().executeQuery(sql);
+
+			while(resultSet.next())
+			{
+				set.add(resultSet.getString(1));
+				if(loadORprint != null && "print".equals(loadORprint))
+				{
+					for (int i = 1; i <= columnCount; i++) 
+					{
+						System.out.print(resultSet.getString(i)+"\t");
+					}
+					System.out.println();
+				}
+			}
+		}
+		catch (Exception e){
+			throw e;
+		}
+		return set;
+	}
+
+
 
 	public void writeFileWithKpiDailyAndMonthlyData(Connection connection, String seq, String kpiTableName, String fileName) throws Exception {
 

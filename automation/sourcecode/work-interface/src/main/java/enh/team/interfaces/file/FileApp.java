@@ -1,5 +1,7 @@
 package enh.team.interfaces.file;
 
+import java.util.List;
+
 import org.json.JSONArray;
 import org.json.JSONObject;
 
@@ -16,24 +18,28 @@ public class FileApp
 		//new FileApp().startFileSearch();
 		//new FileApp().checkCsvColumnDataIfValueNotEmptyWriteInFileWithLineNumberOfFile();
 		//System.out.println("delete from interface.sp_alloc_dump where file_id = ?::character varying".split("#").length);
-	
+
 
 		//System.out.println("123|vinay|abc".split("\\|").length);
 		//System.out.println("123||abc".split("\\|").length);
 		//System.out.println("123|vinay||".split("\\|", -1).length);
-		
+
 		//fileOperation.printDecimalFormatNumber(50);
-		
-		
-		fileOperation.readFileCountData("E:\\interface\\backend\\ControlFileGeneration\\bkp\\total_revenue_20200615090001_103.csv", "\\|", "DATE|MICRO|SITE_ID|REVENUE_TYPE|REVENUE_TOTAL", 4);
-		
+
+
+		//fileOperation.readFileCountData("E:\\interface\\backend\\ControlFileGeneration\\bkp\\total_revenue_20200615090001_103.csv", "\\|", "DATE|MICRO|SITE_ID|REVENUE_TYPE|REVENUE_TOTAL", 4);
+
 		
 		//checkCsvColumnDataIfValueNotEmptyWriteInFileWithLineNumberOfFile();
-		
+
 		//fileOperation.fileNamingWithSequence("C:\\Users\\vinayak\\Downloads\\ppdt\\ThematicApperceptionTest\\", "C:\\Users\\vinayak\\Downloads\\ppdt\\ThematicApperceptionTest\\bkp\\", "TAT-", ".jpg");
+
+
+		/**/
+	
 	}
 
-	
+
 
 	static void checkCsvColumnDataIfValueNotEmptyWriteInFileWithLineNumberOfFile() throws Exception{
 

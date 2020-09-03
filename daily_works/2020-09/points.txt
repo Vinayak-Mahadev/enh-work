@@ -1,0 +1,27 @@
+1. reProcessFileBasedOrders(Long interfaceId, Long fileId)
+ If file's upload date from interface file summary is more than 30 days
+	then
+		It will delete the 30 days before data from kpi.tr_temp_upload_aggr_failure table
+	otherwise
+		File will be ready for re-process
+
+Need to handle for Hadoop Feed
+
+	1. Need to implement for KPI site mapping interface reprocess
+	2. kpi.tr_temp_hadoop_failure_aggr table data also should be delete
+	
+
+
+2. REPROCESS_FILE (interfaceId)  for KPI ONLY currently now (1066,1068,1069,1070,1076,1077)
+
+	In Field Lookup Config - reprocess field should be there...
+		field reprocess have (event_type,event_code)
+		Get files from kpi.tr_temp_upload_aggr_failure with (event_type,error_code)
+			then
+				Files : reProcessFilesBasedOnErrorCode (interfaceid, fileId, error_code)
+					If KPI_LACCI_FEED_ERROR_CODE_LIST have error_code then stop re-process;
+					If no RETRY_COUNT_ATTR then stop re-process
+					Only KPI_LACCI_FEED_INTERFACE_LIST can start re-process
+
+
+

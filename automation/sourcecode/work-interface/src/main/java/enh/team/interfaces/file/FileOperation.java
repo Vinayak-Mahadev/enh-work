@@ -12,8 +12,10 @@ import java.io.PrintWriter;
 import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.LinkedHashSet;
 import java.util.List;
 import java.util.Properties;
+import java.util.Set;
 
 import org.json.JSONArray;
 import org.json.JSONObject;
@@ -327,6 +329,139 @@ public class FileOperation
 		}
 	} 
 
+	public List<String> readDataInFile(String fileAbPath) 
+	{
+		BufferedReader reader = null;
+		String line;
+		List<String> list = new ArrayList<String>();
+		try 
+		{
+			reader = new BufferedReader(new FileReader(new File(fileAbPath)));
+			while ((line = reader.readLine()) != null) 
+				list.add(line);
+		} 
+		catch (IOException e) 
+		{
+			e.printStackTrace();
+		} 
+		finally {
+			if(reader!=null)
+				try {
+					reader.close();
+				} catch (IOException e) {
+
+					e.printStackTrace();
+				}
+			reader = null;
+		}
+		return list;
+	} 
+
+	public List<String> readCSVDataByColumn(String fileAbPath, String delimiter, int columnIndex, boolean skipHeader) 
+	{
+		BufferedReader reader = null;
+		String line;
+		List<String> list = new ArrayList<String>();
+		try 
+		{
+			int i = 0;
+			reader = new BufferedReader(new FileReader(new File(fileAbPath)));
+			while ((line = reader.readLine()) != null) 
+			{
+				if(skipHeader)
+					if(i++ == 0)continue;
+
+				if(line.split(delimiter, -1).length-1 >= columnIndex) 
+					list.add(line.split(delimiter, -1)[columnIndex].trim());
+			} 
+		} 
+		catch (IOException e) 
+		{
+			e.printStackTrace();
+		} 
+		finally {
+			if(reader!=null)
+				try {
+					reader.close();
+				} catch (IOException e) {
+
+					e.printStackTrace();
+				}
+			reader = null;
+		}
+		return list;
+	} 
+
+	public void writeData(String filePath, List<String> list, boolean withoutDuplicate, boolean doSort) {
+		Set<String> set = null;
+		FileWriter fileWriter = null;
+		try 
+		{
+			if(doSort)
+				Collections.sort(list);
+
+			fileWriter = new FileWriter(new File(filePath));
+			if(withoutDuplicate) 
+			{
+				set = new LinkedHashSet<String>(list);
+				for (String str : set) {
+					fileWriter.write(str.trim() + "\n");
+				}
+			}
+			else
+			{
+				for (String str : list) {
+					fileWriter.write(str.trim() + "\n");
+				}
+			}
+			fileWriter.close();
+		}
+		catch (Exception e) 
+		{
+			e.printStackTrace();
+		}
+	}
+
+	public void writeFile1DataLine_contains_in_File2DataLine_then_generate_File3(String file1, String file2, String file3, boolean writeFile1Header, boolean replaceOption, String fromRegx, String toRegx) 
+	{
+		FileWriter fileWriter = null;
+		try 
+		{
+			fileWriter = new FileWriter(new File(file3));
+
+
+			if(writeFile1Header) 
+			{
+				if(replaceOption)
+					fileWriter.write(readFirstLineInFile(file1).replaceAll(fromRegx, toRegx) + "\n");
+				else
+					fileWriter.write(readFirstLineInFile(file1) + "\n");
+			}
+
+			for (String data : readDataInFile(file2)) 
+			{
+				BufferedReader reader = null;
+				String line;
+
+				reader = new BufferedReader(new FileReader(new File(file1)));
+				while ((line = reader.readLine()) != null) 
+				{
+					if(line.contains(data))
+						if(replaceOption)
+							fileWriter.write(line.replaceAll(fromRegx, toRegx) + "\n");
+						else
+							fileWriter.write(line.trim() + "\n");
+				} 
+				reader.close();
+			}
+			fileWriter.close();
+
+		}
+		catch (Exception e) {
+			e.printStackTrace();
+		}
+	}	
+
 	public String readFirstLineInFile(String fileAbPath) {
 		BufferedReader reader = null;
 		String line = null;
@@ -406,7 +541,7 @@ public class FileOperation
 	{
 		FileWriter fileWriter = null;
 		File fileLoc = null;
-		
+
 		try 
 		{
 			fileLoc = new File(filesLocation);
@@ -418,8 +553,8 @@ public class FileOperation
 					fileWriter.write(readFileWithoutNewLine(file) + "\n");
 				}
 			}
-			
-			
+
+
 		} 
 		catch (Exception e)
 		{
@@ -432,7 +567,7 @@ public class FileOperation
 		}
 	}
 
-	
+
 	public void readFileCountData(String fileAbPath, String csv,String header, int column) {
 		BufferedReader reader = null;
 		String line;
@@ -451,12 +586,12 @@ public class FileOperation
 				temp = array[column];
 				value = value + Double.valueOf((Double.valueOf(temp) * 100));
 				parse = parse + Double.valueOf((Double.parseDouble(temp) * 100)).longValue();
-				
+
 			}
-	
+
 			System.out.println( "valueOf  "+ value.longValue());
 			System.out.println( "parseDouble  "+ parse.longValue());
-			
+
 		} 
 		catch (IOException e) 
 		{

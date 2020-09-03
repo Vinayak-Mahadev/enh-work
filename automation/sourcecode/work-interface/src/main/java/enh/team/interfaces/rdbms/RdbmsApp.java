@@ -1,6 +1,9 @@
 package enh.team.interfaces.rdbms;
 
 import java.sql.Connection;
+
+import org.json.JSONObject;
+
 import com.finevm.enh.util.PropType;
 import com.finevm.enh.util.RDBMS;
 
@@ -10,7 +13,8 @@ public class RdbmsApp
 	{
 		//new RDBMSOperation().getDatabaseMetaData(RDBMS.getDBConnection(PropType.RDBMS_144));
 		RDBMSOperation opr = new RDBMSOperation();
-		Connection conn = RDBMS.getDBConnection(PropType.RDBMS_LOCALHOST);
+		Connection conn = null;
+		conn = RDBMS.getDBConnection(PropType.RDBMS_LOCALHOST);
 
 		/*
 		opr.prepareFileFor1165(conn, "20200614", "E:/interface/backend/ControlFileGeneration/site_mapping_20200614090000.csv", 1000, 1);
@@ -47,11 +51,17 @@ public class RdbmsApp
 		System.out.println(responceObj);*/
 
 
+		//		conn = RDBMS.getDBConnection("org.postgresql.Driver", "jdbc:postgresql://52.6.190.165:5432/snoc2", "postgres", "postgres");
+		//		String sql = "SELECT inter.interface_id_n,inter.name_v, attr.value_v FROM interface.ms_interface_attr attr INNER JOIN interface.ms_interface inter ON inter.interface_id_n=attr.interface_id_n where attr.name_v ='Field Lookup Conf' and inter.interface_id_n between 1001 and 1181 order by inter.interface_id_n ;";
+
+		String sql = "SELECT inter.interface_id_n,inter.name_v, attr.value_v FROM interface.ms_interface_attr attr INNER JOIN interface.ms_interface inter ON inter.interface_id_n=attr.interface_id_n where attr.name_v ='Field Lookup Conf'  order by inter.interface_id_n ;";
+		//opr.printFieldLookupConf(conn, sql, "all", "1165", true);
+		JSONObject jsonObject = opr.getTableDtlsForFieldLookupConf(conn, sql);
+		opr.printFieldLookupConfWithoutQuery(true, jsonObject, 1001, 1200, false, null, null);
+		System.out.println(opr.getAllTablesFromKPI(jsonObject));
+		conn.close();
 
 
-		String sql = "SELECT inter.interface_id_n,inter.name_v, attr.value_v FROM interface.ms_interface_attr attr INNER JOIN interface.ms_interface inter ON inter.interface_id_n=attr.interface_id_n where attr.name_v ='Field Lookup Conf' and inter.interface_id_n between 1166 and 1181 order by inter.interface_id_n ;";
-
-		opr.printFieldLookupConf(conn, sql, "all", "1165", true);
 
 
 		//opr.writeFileWithKpiDailyAndMonthlyData(conn, "daily", "kpi.tr_daily_primary_mobo_aggr",    "E:\\interface\\work\\enh-work\\daily_works\\2020-06\\backup_hadoop_feeds\\1166_DailyFile_001.csv");

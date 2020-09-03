@@ -2,13 +2,10 @@ package enh.team.interfaces.test;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
-import java.util.Arrays;
 import java.util.HashSet;
-import java.util.List;
 import java.util.Set;
 
 import com.mongodb.BasicDBObject;
-import com.mongodb.DBObject;
 
 public class App {
 
@@ -41,10 +38,15 @@ public class App {
 			//					System.out.print(sid + ",");	
 			//			}
 
-			String data = "2025-10-30";
+			/*String data = "2025-10-30";
 			SimpleDateFormat foss = new SimpleDateFormat("yyyy-MM-dd");
 			SimpleDateFormat tnm = new SimpleDateFormat("yyyyMMdd");
-			System.out.println(foss.parse(data));
+			System.out.println(foss.parse(data));*/
+			
+			
+			//interfaceModule_uploadFiles_validation(null, null, null);
+			interfaceModule_uploadFiles_validation("total_revenue", "yyyyMMddHHmmss", "total_revenue_20200626000000");
+
 		} 
 		catch (Exception e) 
 		{
@@ -185,4 +187,51 @@ public class App {
 		return status;
 	}
 
+
+	public static void interfaceModule_uploadFiles_validation(String remoteFile, String remoteFileFormat, String fileName) 
+	{
+		BasicDBObject attrData = new BasicDBObject();
+		BasicDBObject interfaceObj = new BasicDBObject();
+		boolean isInValidfile = false;
+
+		attrData.put("Remote File", remoteFile);
+		attrData.put("Remote FileName Format", remoteFileFormat);
+
+		interfaceObj.put("file_name", fileName);
+
+		if(interfaceObj.get("file_name") != null && !interfaceObj.getString("file_name").isEmpty()
+				&& attrData.get("Remote File") != null
+				&& !attrData.getString("Remote File").isEmpty() 
+				&& attrData.get("Remote FileName Format") != null
+				&& !attrData.getString("Remote FileName Format").isEmpty()){
+
+			String temp = null;
+			SimpleDateFormat simpleDateFormat = null;
+			try 
+			{
+				simpleDateFormat = new SimpleDateFormat(attrData.getString("Remote FileName Format"));
+				temp = interfaceObj.get("file_name").toString().replaceFirst(attrData.getString("Remote File") + "_", "").split("_", -1)[0];
+				simpleDateFormat.parse(temp);
+			} 
+			catch (Exception e) 
+			{
+				System.err.println("Skipping file  fileName :: " + interfaceObj.get("file_name").toString() + "     parse name :: " + temp + e);
+				isInValidfile = true;
+			}
+			finally
+			{
+				simpleDateFormat = null;
+				temp  = null;
+			}				
+		}
+		else
+		{
+			isInValidfile = true;
+		}
+
+		if(isInValidfile)
+			System.out.println("File is in-valid");
+		else
+			System.out.println("File is valid");
+	}
 }

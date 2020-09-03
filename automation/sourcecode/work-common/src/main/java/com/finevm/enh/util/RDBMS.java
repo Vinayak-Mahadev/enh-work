@@ -184,7 +184,22 @@ public class RDBMS {
 		return con;
 	}
 
+	public static Connection getDBConnection(String driver, String url, String user, String password) {
+		Connection connection = null;
+		try 
+		{
+			Class.forName(driver);
+			connection = DriverManager.getConnection(url, user, password);
+			if(con == null)
+				System.out.println("<==   Failed to connect RDBMS Connection  ==> ");
+			else
+				System.out.println("<==   RDBMS Connection made    ==> ");
+		} catch (Exception e) {
+			System.err.println("Problem in DB connection" + e);
+		}
+		return connection;
 
+	}
 
 	public static void closeSingleDBConnection() {
 
