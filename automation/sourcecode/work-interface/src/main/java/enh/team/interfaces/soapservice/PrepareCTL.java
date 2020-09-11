@@ -22,16 +22,21 @@ public class PrepareCTL
 {
 
 
-	public static void main(String[] args)
-			throws Exception
-	{
-	/*  PrepareCTL prepareCTL = new PrepareCTL();
-		String inputFileFolder = "E:\\interface\\backend\\ControlFileGeneration\\";
-		String outputFileFolder = "E:\\interface\\backend\\ControlFileGeneration\\raw\\";
-		String moveOrgnlFiles = "E:\\interface\\backend\\ControlFileGeneration\\bkp\\";
-		prepareCTL.prepareCTL(inputFileFolder, outputFileFolder, moveOrgnlFiles);
-	*/
-	}
+//	public static void main(String[] args)
+//			throws Exception
+//	{
+//	 
+//		try {
+//			 PrepareCTL prepareCTL = new PrepareCTL();
+//				String inputFileFolder = "E:\\interface\\backend\\ControlFileGeneration\\";
+//				String outputFileFolder = "E:\\interface\\backend\\ControlFileGeneration\\raw\\";
+//				String moveOrgnlFiles = "E:\\interface\\backend\\ControlFileGeneration\\bkp\\";
+//				prepareCTL.prepareCTL(inputFileFolder, outputFileFolder, moveOrgnlFiles);
+//			System.out.println("done");
+//		} catch (Exception e) {
+//			e.printStackTrace();
+//		}
+//	}
 
 	public  void prepareCTL( String inputFilesFolder, String outputFilesFolder, String moveOrgnlFilesFolder) throws Exception
 	{

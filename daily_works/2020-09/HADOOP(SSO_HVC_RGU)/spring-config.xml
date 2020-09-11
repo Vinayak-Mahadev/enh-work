@@ -1,0 +1,487 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:jaxrs="http://cxf.apache.org/jaxrs"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:jee="http://www.springframework.org/schema/jee" xmlns:http-conf="http://cxf.apache.org/transports/http/configuration"
+	xmlns:mongo="http://www.springframework.org/schema/data/mongo"
+	xmlns:tx="http://www.springframework.org/schema/tx" xmlns:jms="http://www.springframework.org/schema/jms"
+	xmlns:camel="http://camel.apache.org/schema/spring" xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:task="http://www.springframework.org/schema/task"
+	xmlns:util="http://www.springframework.org/schema/util"
+	default-lazy-init="true" xmlns:jdbc="http://www.springframework.org/schema/jdbc"
+	xsi:schemaLocation="
+        http://www.springframework.org/schema/beans 
+        http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+        http://www.springframework.org/schema/jms 
+        http://www.springframework.org/schema/jms/spring-jms.xsd
+        http://cxf.apache.org/jaxrs 
+        http://cxf.apache.org/schemas/jaxrs.xsd
+        http://cxf.apache.org/core 
+        http://cxf.apache.org/schemas/core.xsd
+  		http://www.springframework.org/schema/context         
+  		http://www.springframework.org/schema/context/spring-context.xsd
+  		http://www.springframework.org/schema/data/mongo 
+  		http://www.springframework.org/schema/data/mongo/spring-mongo.xsd
+  		http://camel.apache.org/schema/spring http://camel.apache.org/schema/spring/camel-spring.xsd
+        http://camel.apache.org/schema/cxf http://camel.apache.org/schema/cxf/camel-cxf.xsd
+        http://www.springframework.org/schema/task http://www.springframework.org/schema/task/spring-task-3.0.xsd
+        http://www.springframework.org/schema/jee http://www.springframework.org/schema/jee/spring-jee-3.1.xsd
+        http://www.springframework.org/schema/jdbc http://www.springframework.org/schema/jdbc/spring-jdbc-3.1.xsd
+        http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-4.0.xsd
+		http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util-3.0.xsd">
+
+	<context:component-scan base-package="com.enhancesys.integration.services.*" />
+	<context:annotation-config />
+	
+	<!-- <camel:camelContext xmlns="http://camel.apache.org/schema/spring" id="interfaceCamelContext" >
+        <camel:route id="springCamelTest">
+        	<camel:from uri="direct:myTestSpringCamel"/>
+        	<camel:to uri="bean:filePreProcessor?method=process"/>
+        </camel:route>
+    </camel:camelContext> -->
+    
+    <camel:camelContext xmlns="http://camel.apache.org/schema/spring" id="interfaceCamelContext" >
+	<!-- Handling root level exceptions -->
+		<camel:onException useOriginalMessage="true" >
+			<camel:exception>java.lang.Exception</camel:exception>
+			<camel:exception>com.enhancesys.integration.services.springCamel.util.GenericProcessorException</camel:exception>
+			<camel:handled>
+				<camel:constant>true</camel:constant>
+			</camel:handled>
+			<camel:to uri="bean:exceptionHandler?method=handleException" />
+		</camel:onException>
+				
+		<camel:route id="fileProcessor">
+			<camel:from uri="direct:generic_file_processor"/>
+			<camel:pipeline>
+				<camel:to uri="bean:filePreProcessor"/>
+				<camel:choice>
+		            <camel:when>
+						<camel:simple>
+							${property.interfaceId} == 1064 ||
+							${property.interfaceId} == 1065 ||
+							${property.interfaceId} == 1066 ||
+							${property.interfaceId} == 1067 ||
+							${property.interfaceId} == 1068 ||
+							${property.interfaceId} == 1069 ||
+							${property.interfaceId} == 1070 ||
+							${property.interfaceId} == 1071 ||
+							${property.interfaceId} == 1075 ||
+							${property.interfaceId} == 1076 ||
+							${property.interfaceId} == 1077 ||
+							${property.interfaceId} == 1078 ||
+							${property.interfaceId} == 1079 ||
+							${property.interfaceId} == 1080 ||
+							${property.interfaceId} == 1081 ||
+							${property.interfaceId} == 1082 ||
+							${property.interfaceId} == 1138 ||
+							${property.interfaceId} == 1143 ||
+							${property.interfaceId} == 1152 ||
+							${property.interfaceId} == 1153 ||
+							${property.interfaceId} == 1154 ||
+							${property.interfaceId} == 1155 ||
+							${property.interfaceId} == 1166 ||
+							${property.interfaceId} == 1167 ||
+							${property.interfaceId} == 1168 ||
+							${property.interfaceId} == 1169 ||
+							${property.interfaceId} == 1170 ||
+							${property.interfaceId} == 1171 ||
+							${property.interfaceId} == 1172 ||
+							${property.interfaceId} == 1173 ||
+							${property.interfaceId} == 1174 ||
+							${property.interfaceId} == 1175 ||
+							${property.interfaceId} == 1176 ||
+							${property.interfaceId} == 1177 ||
+							${property.interfaceId} == 1178 ||
+							${property.interfaceId} == 1179 ||
+							${property.interfaceId} == 1180 ||
+							${property.interfaceId} == 1181 ||
+							${property.interfaceId} == 1182 ||
+							${property.interfaceId} == 1183
+							
+						</camel:simple>
+						<camel:multicast parallelProcessing="true">
+							<camel:pipeline>
+								<camel:setProperty propertyName="THREAD_COUNT">
+									<camel:simple>1</camel:simple><!-- Value should be always 1. Don't change the value to otherthan 1. -->
+								</camel:setProperty>
+								<camel:setProperty propertyName="OUTPUT_QUEUE">
+									<camel:simple>ref:fileReaderOutputQueue</camel:simple>
+								</camel:setProperty>
+								<camel:to uri="direct:FILE_READER" />
+							</camel:pipeline>
+							<camel:pipeline>
+								<camel:setProperty propertyName="THREAD_COUNT">
+									<camel:simple>1</camel:simple>
+								</camel:setProperty>
+								<camel:setProperty propertyName="INPUT_QUEUE">
+									<camel:simple>ref:fileReaderOutputQueue</camel:simple>
+								</camel:setProperty>
+								<!--camel:setProperty propertyName="OUTPUT_QUEUE">
+									<camel:simple>ref:fileProcessorOutputQueue</camel:simple>
+								</camel:setProperty-->
+								<camel:to uri="direct:FILE_PROCESSOR" />
+							</camel:pipeline>
+							<!--camel:pipeline>
+								<camel:setProperty propertyName="THREAD_COUNT">
+									<camel:simple>1</camel:simple>
+								</camel:setProperty>
+								<camel:setProperty propertyName="INPUT_QUEUE">
+									<camel:simple>ref:fileProcessorOutputQueue</camel:simple>
+								</camel:setProperty>
+								<camel:to uri="direct:INTERFACE_SUMMARY_PROCESSOR" />
+							</camel:pipeline-->
+						</camel:multicast>
+                    </camel:when>
+					<camel:when>
+						<camel:simple>
+							${property.interfaceId} == 1150
+						</camel:simple>
+						<camel:multicast parallelProcessing="true">
+							<camel:pipeline>
+								<camel:setProperty propertyName="THREAD_COUNT">
+									<camel:simple>1</camel:simple><!-- Value should be always 1. Don't change the value to otherthan 1. -->
+								</camel:setProperty>
+								<camel:setProperty propertyName="OUTPUT_QUEUE">
+									<camel:simple>ref:uploadOrderOutputQueue</camel:simple>
+								</camel:setProperty>
+								<camel:to uri="direct:ORDER_FILE_READER" />
+							</camel:pipeline>
+							<camel:pipeline>
+								<camel:setProperty propertyName="THREAD_COUNT">
+									<camel:simple>5</camel:simple>
+								</camel:setProperty>
+								<camel:setProperty propertyName="INPUT_QUEUE">
+									<camel:simple>ref:uploadOrderOutputQueue</camel:simple>
+								</camel:setProperty>
+								<camel:to uri="direct:ORDER_FILE_PROCESSOR" />
+							</camel:pipeline>
+						</camel:multicast>
+					</camel:when>
+                    <camel:otherwise>
+                		<camel:to uri="stream:out"/>
+            		</camel:otherwise>
+				</camel:choice>
+				<!-- <camel:to uri="bean:responseDataReceiver" /> -->			
+			</camel:pipeline>
+		</camel:route> 
+		
+		<!-- File Process Interface routes -->
+		<camel:route id="ROUTE_FILE_READER">
+			<camel:from uri="direct:FILE_READER" />
+			<camel:to uri="bean:interfaceFileReader?method=initiateProcess"/>
+		</camel:route>
+		<camel:route id="ROUTE_DB_PROCESSOR">
+			<camel:from uri="direct:DB_PROCESSOR" />
+			<camel:to uri="bean:interfaceDBProcessor?method=initiateProcess"/>
+		</camel:route>
+		<camel:route id="ROUTE_INTERFACE_SUMMARY_PROCESSOR">
+			<camel:from uri="direct:INTERFACE_SUMMARY_PROCESSOR" />
+			<camel:to uri="bean:interfaceSummaryProcessor?method=initiateProcess"/>
+		</camel:route>
+		<camel:route id="ROUTE_FILE_PROCESSOR">
+			<camel:from uri="direct:FILE_PROCESSOR" />
+			<camel:to uri="bean:kpiAggregator?method=initiateProcess" />
+		</camel:route>
+		
+		<camel:route id="ROUTE_ORDER_FILE_READER">
+			<camel:from uri="direct:ORDER_FILE_READER" />
+			<camel:to uri="bean:orderFileReader?method=initiateProcess"/>
+		</camel:route>
+		<camel:route id="ROUTE_ORDER_FILE_PROCESSOR">
+			<camel:from uri="direct:ORDER_FILE_PROCESSOR" />
+			<camel:to uri="bean:orderFileProcessor?method=initiateProcess" />
+		</camel:route>
+
+		<camel:route id="dataEngineProcessor">
+			<camel:from uri="direct:generic_data_processor"/>
+			<camel:pipeline>
+				<camel:to uri="bean:dataPreProcessor"/>
+				<camel:choice>
+					<camel:when>
+						<camel:simple>
+							${property.processName} == "Sales_Promo_Program_Daily_Dump"
+							|| ${property.processName} == "Sales_Event_Daily_Dump" 
+							|| ${property.processName} == "Quiz_Detail" 
+							|| ${property.processName} == "Quiz_Sum_Detail" 
+							|| ${property.processName} == "Complaint_Detail" 
+							|| ${property.processName} == "Network_Survey_Detail_Dump" 
+							|| ${property.processName} == "Rating_Detail_Dump" 
+							|| ${property.processName} == "Create_POI_Object" 
+							|| ${property.processName} == "Close_POI_Object" 
+							|| ${property.processName} == "POI_Detail" 
+							|| ${property.processName} == "Deactivation_Dump" 
+							|| ${property.processName} == "Detail_Usage_Report" 
+							|| ${property.processName} == "SP_Act_Deact_Baseon_SO_Detail" 
+							|| ${property.processName} == "Map_Object_Detail" 
+							|| ${property.processName} == "SI_Dompetku" 
+							|| ${property.processName} == "Sellout_Reload" 
+							|| ${property.processName} == "Sellout_Addon" 
+							|| ${property.processName} == "Sellout_Usage" 
+							|| ${property.processName} == "CS_Reload_Physical_Report_SN" 
+							|| ${property.processName} == "Detail_SP_CS_Act_MSISDN" 
+							|| ${property.processName} == "Identity_Management_Log"
+							|| ${property.processName} == "Configuration_Management_Log"
+							|| ${property.processName} == "KPI_and_Incentive_Management_Log"
+							|| ${property.processName} == "Incentive_Detail"
+							|| ${property.processName} == "Visit_Organization_Detail"
+							|| ${property.processName} == "Detail_HVC"
+							|| ${property.processName} == "Stock_Taking_Dump"
+						</camel:simple>
+						<camel:multicast parallelProcessing="true">
+							<camel:pipeline>
+								<camel:setProperty propertyName="THREAD_COUNT">
+									<camel:simple>1</camel:simple><!-- Value should be always 1. Don't change the value to otherthan 1. -->
+								</camel:setProperty>
+								<camel:setProperty propertyName="SIBLINGS">
+									<camel:simple>ref:basicDataBeans</camel:simple>
+								</camel:setProperty>
+								<camel:to uri="direct:BASIC_DATA_PROCESSOR" />
+							</camel:pipeline>
+							<camel:pipeline>
+								<camel:setProperty propertyName="THREAD_COUNT">
+									<camel:simple>1</camel:simple>
+								</camel:setProperty>
+								<camel:setProperty propertyName="INPUT_QUEUE">
+									<camel:simple>ref:basicDataOutputQueue</camel:simple>
+								</camel:setProperty>
+								<camel:setProperty propertyName="SIBLINGS">
+									<camel:simple>ref:lookupDataBeans</camel:simple>
+								</camel:setProperty>
+								<camel:to uri="direct:LOOKUP_DATA_PROCESSOR" />
+							</camel:pipeline>
+							<camel:pipeline>
+								<camel:setProperty propertyName="THREAD_COUNT">
+									<camel:simple>1</camel:simple>
+								</camel:setProperty>
+								<camel:setProperty propertyName="INPUT_QUEUE">
+									<camel:simple>ref:lookupDataOutputQueue</camel:simple>
+								</camel:setProperty>
+								<camel:to uri="direct:FILE_DATA_WRITER" />
+							</camel:pipeline>
+						</camel:multicast>
+					</camel:when>
+					<camel:when>
+						<camel:simple>
+							${property.processName} == "Sales_Event_Detail_Msisdn"
+						</camel:simple>
+						<camel:multicast parallelProcessing="true">
+							<camel:pipeline>
+								<camel:setProperty propertyName="THREAD_COUNT">
+									<camel:simple>1</camel:simple><!-- Value should be always 1. Don't change the value to otherthan 1. -->
+								</camel:setProperty>
+								<camel:setProperty propertyName="SIBLINGS">
+									<camel:simple>ref:basicDataBeans</camel:simple>
+								</camel:setProperty>
+								<camel:to uri="direct:BASIC_DATA_PROCESSOR" />
+							</camel:pipeline>
+							<camel:pipeline>
+								<camel:setProperty propertyName="THREAD_COUNT">
+									<camel:simple>1</camel:simple>
+								</camel:setProperty>
+								<camel:setProperty propertyName="INPUT_QUEUE">
+									<camel:simple>ref:basicDataOutputQueue</camel:simple>
+								</camel:setProperty>
+								<camel:setProperty propertyName="SIBLINGS">
+									<camel:simple>ref:lookupDataBeans</camel:simple>
+								</camel:setProperty>
+								<camel:to uri="direct:LOOKUP_DATA_PROCESSOR" />
+							</camel:pipeline>
+							<camel:pipeline>
+								<camel:setProperty propertyName="THREAD_COUNT">
+									<camel:simple>1</camel:simple>
+								</camel:setProperty>
+								<camel:setProperty propertyName="INPUT_QUEUE">
+									<camel:simple>ref:lookupDataOutputQueue</camel:simple>
+								</camel:setProperty>
+								<camel:to uri="direct:MONGO_DATA_WRITER" />
+							</camel:pipeline>
+						</camel:multicast>
+					</camel:when>
+					<camel:otherwise>
+						<camel:to uri="stream:out"/>
+					</camel:otherwise>
+				</camel:choice>
+			</camel:pipeline>
+			<camel:when>
+				<camel:simple>
+					${property.processName} == "Sales_Event_Detail_Msisdn"
+				</camel:simple>
+				<camel:to uri="bean:generateDumpProcessor?method=processRequest"/>
+			</camel:when>
+		</camel:route>
+		
+		<camel:route id="ROUTE_BASIC_DATA_PROCESSOR">
+			<camel:from uri="direct:BASIC_DATA_PROCESSOR" />
+			<camel:to uri="bean:basicDataProcessor?method=initiateProcess"/>
+		</camel:route>
+		<camel:route id="ROUTE_LOOKUP_DATA_PROCESSOR">
+			<camel:from uri="direct:LOOKUP_DATA_PROCESSOR" />
+			<camel:to uri="bean:lookupDataProcessor?method=initiateProcess"/>
+		</camel:route>
+		<camel:route id="FILE_DATA_WRITER">
+			<camel:from uri="direct:FILE_DATA_WRITER" />
+			<camel:to uri="bean:fileDataWriter?method=initiateProcess"/>
+		</camel:route>
+		<camel:route id="MONGO_DATA_WRITER">
+			<camel:from uri="direct:MONGO_DATA_WRITER" />
+			<camel:to uri="bean:mongoDataWriter?method=initiateProcess"/>
+		</camel:route>
+	</camel:camelContext>
+	 
+	<bean id="propertiesFileLoader" class="com.enhancesys.common.configuration.PropertiesLoader"/>
+	<bean id="fileDataBean" class="com.enhancesys.integration.services.interfaces.FileDataBean"/>
+	<bean id="interfaceServiceUtil" class="com.enhancesys.integration.services.util.InterfaceServiceUtil"/>
+	<bean id="filePreProcessor" class="com.enhancesys.integration.services.springCamel.processor.FilePreProcessor"/>
+	<bean id="exceptionHandler" class="com.enhancesys.integration.services.springCamel.util.ExceptionHandler"/>
+	<bean id="dataPreProcessor" class="com.enhancesys.integration.services.springCamel.dataEngine.processor.DataPreProcessor"/>
+	<bean id="jdbcUtility" class="com.enhancesys.integration.services.util.JdbcUtility"/>
+	<bean id="mongoFileProcessor" class="com.enhancesys.integration.services.springCamel.processor.MongoFileProcessor" />
+	<bean id="mongoUtil" class="com.enhancesys.integration.services.util.MongoUtil"/>
+
+	<!-- Blocked Queue beans declaration.. Start -->
+	<bean id="fileReaderOutputQueue" class="java.util.concurrent.ArrayBlockingQueue">
+		<constructor-arg type="int">
+			<value>2</value>
+		</constructor-arg>
+	</bean>
+	<bean id="dbProcessorOutputQueue" class="java.util.concurrent.ArrayBlockingQueue">
+		<constructor-arg type="int">
+			<value>2</value>
+		</constructor-arg>
+	</bean>
+	<bean id="fileProcessorOutputQueue" class="java.util.concurrent.ArrayBlockingQueue">
+		<constructor-arg type="int">
+			<value>2</value>
+		</constructor-arg>
+	</bean>
+	<bean id="processFailureQueue" class="java.util.concurrent.ArrayBlockingQueue">
+		<constructor-arg type="int">
+			<value>1</value>
+		</constructor-arg>
+	</bean>
+	
+	<bean id="basicDataOutputQueue" class="java.util.concurrent.ArrayBlockingQueue">
+		<constructor-arg type="int">
+			<value>2</value>
+		</constructor-arg>
+	</bean>
+	<bean id="lookupDataOutputQueue" class="java.util.concurrent.ArrayBlockingQueue">
+		<constructor-arg type="int">
+			<value>2</value>
+		</constructor-arg>
+	</bean>
+
+	<bean id="uploadOrderOutputQueue" class="java.util.concurrent.ArrayBlockingQueue">
+		<constructor-arg type="int">
+			<value>2</value>
+		</constructor-arg>
+	</bean>
+
+	<!-- Blocked Queue beans declaration.. End -->
+
+	<!-- Mongo Template bean declaration.. Start -->
+	<bean id="snoc-r1" class="com.enhancesys.integration.services.springCamel.util.MongoTemplate">
+		<constructor-arg name="userName" value="${MONGO_DB_USER}" />
+		<constructor-arg name="password" value="${MONGO_DB_PASSWORD}" />
+		<constructor-arg name="schemaName" value="${MONGO_DB_DATABASE}" />
+		<constructor-arg name="maxConnection" value="${MONGO_CONNECTIONS_MAX}" />
+		<constructor-arg name="connectionTimeOut" value="${MONGO_CONNECTION_TIMEOUT_MAX}" />
+		<constructor-arg name="replicas" value="${MONGO_DB_IP1}:${MONGO_DB_PORT1}, ${MONGO_DB_IP2}:${MONGO_DB_PORT2}, ${MONGO_DB_IP3}:${MONGO_DB_PORT3}" />
+	</bean>
+	<bean id="snoc-r4" class="com.enhancesys.integration.services.springCamel.util.MongoTemplate">
+		<constructor-arg name="userName" value="${MONGO_DB_R4_USER}" />
+		<constructor-arg name="password" value="${MONGO_DB_R4_PASSWORD}" />
+		<constructor-arg name="schemaName" value="${MONGO_DB_R4_DATABASE}" />
+		<constructor-arg name="maxConnection" value="${MONGO_CONNECTIONS_MAX}" />
+		<constructor-arg name="connectionTimeOut" value="${MONGO_CONNECTION_TIMEOUT_MAX}" />
+		<constructor-arg name="replicas" value="${MONGO_DB_IP4}:${MONGO_DB_PORT4}" />
+	</bean>
+	<bean id="snoc-r5" class="com.enhancesys.integration.services.springCamel.util.MongoTemplate">
+		<constructor-arg name="userName" value="${MONGO_DB_STANDALONE_USER}" />
+		<constructor-arg name="password" value="${MONGO_DB_STANDALONE_PASSWORD}" />
+		<constructor-arg name="schemaName"	value="${MONGO_DB_STANDALONE_DATABASE}" />
+		<constructor-arg name="maxConnection" value="${MONGO_CONNECTIONS_MAX}" />
+		<constructor-arg name="connectionTimeOut" value="${MONGO_CONNECTION_TIMEOUT_MAX}" />
+		<constructor-arg name="replicas" value="${MONGO_DB_IP5}:${MONGO_DB_PORT5}" />
+	</bean>
+
+	<!-- Mongo Template bean declaration.. End -->
+	
+	<bean id="interfaceFileReader" class="com.enhancesys.integration.services.springCamel.InterfaceFileReader">
+		<property name="failureQueue" ref="processFailureQueue"/>
+	</bean>
+	<bean id="interfaceDBProcessor" class="com.enhancesys.integration.services.springCamel.InterfaceDBProcessor">
+		<property name="failureQueue" ref="processFailureQueue"/>
+	</bean>
+	<bean id="interfaceSummaryProcessor" class="com.enhancesys.integration.services.springCamel.processor.InterfaceSummaryProcessor">
+		<property name="failureQueue" ref="processFailureQueue"/>
+	</bean>
+	
+	<bean id="basicDataProcessor" class="com.enhancesys.integration.services.springCamel.dataEngine.BasicDataProcessor">
+		<property name="failureQueue" ref="processFailureQueue"/>
+	</bean>
+	<bean id="lookupDataProcessor" class="com.enhancesys.integration.services.springCamel.dataEngine.LookupDataProcessor">
+		<property name="failureQueue" ref="processFailureQueue"/>
+	</bean>
+	<bean id="mongoDataWriter" class="com.enhancesys.integration.services.springCamel.dataEngine.MongoDataWriter">
+		<property name="failureQueue" ref="processFailureQueue"/>
+	</bean>
+	<bean id="fileDataWriter" class="com.enhancesys.integration.services.springCamel.dataEngine.FileDataWriter">
+		<property name="failureQueue" ref="processFailureQueue"/>
+	</bean>
+	<bean id="kpiAggregator" class="com.enhancesys.integration.services.springCamel.KPIAggregator">
+		<property name="failureQueue" ref="processFailureQueue"/>
+	</bean>
+
+	<bean id="orderFileReader" class="com.enhancesys.integration.services.springCamel.OrderFileReader">
+		<property name="failureQueue" ref="processFailureQueue"/>
+	</bean>
+	<bean id="orderFileProcessor" class="com.enhancesys.integration.services.springCamel.OrderFileProcessor">
+		<property name="failureQueue" ref="processFailureQueue"/>
+	</bean>
+
+	<bean id="generateDumpProcessor" class="com.enhancesys.integration.services.springCamel.dataEngine.GenerateDumpProcessor"/>
+
+	<bean id="dataSource" class="com.enhancesys.integration.services.springCamel.util.JDBCDataSource">
+		<constructor-arg name="driverClassName" value="${INTERFACE_JDBC_DRIVER}"/>
+		<constructor-arg name="url" value="${INTERFACE_JDBC_URL}"/>
+		<constructor-arg name="username" value="${INTERFACE_JDBC_USER}"/>
+		<constructor-arg name="password" value="${INTERFACE_JDBC_PASS}"/>
+	</bean>
+	<bean id="jdbcTemplate" class="org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate">
+		<constructor-arg name="dataSource" ref="dataSource"/>
+	</bean>
+
+	<bean id="basicDataCursor" class="com.enhancesys.integration.services.springCamel.dataEngine.BasicDataCursor">
+		<property name="outputQueue" ref="basicDataOutputQueue"/>
+		<property name="failureQueue" ref="processFailureQueue"/>
+	</bean>
+	<bean id="basicDataMeger" class="com.enhancesys.integration.services.springCamel.dataEngine.DataMerger">
+		<property name="outputQueue" ref="basicDataOutputQueue"/>
+		<property name="failureQueue" ref="processFailureQueue"/>
+	</bean>
+	<bean id="conditionProcessor" class="com.enhancesys.integration.services.springCamel.dataEngine.ConditionProcessor">
+		<property name="outputQueue" ref="lookupDataOutputQueue"/>
+		<property name="failureQueue" ref="processFailureQueue"/>
+	</bean>
+
+	<bean id="dataUtil" class="com.enhancesys.integration.services.springCamel.dataEngine.utiil.DataUtil"/>
+
+	<util:list id="basicDataBeans" value-type="java.lang.Object">
+		<ref bean="basicDataCursor"/>
+		<ref bean="basicDataMeger"/>
+	</util:list>
+
+	<util:list id="lookupDataBeans" value-type="java.lang.Object">
+		<ref bean="conditionProcessor"/>
+	</util:list>
+
+	<bean id="bridgePropertyPlaceholder" class="org.apache.camel.spring.spi.BridgePropertyPlaceholderConfigurer">
+		<property name="locations">
+			<list>
+				<value>file:${INTERFACE_CONF_PATH}</value>
+			</list>
+		</property>
+	</bean>
+</beans>

@@ -12,11 +12,14 @@ import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
+import java.util.HashMap;
 import java.util.HashSet;
 import java.util.LinkedHashSet;
 import java.util.List;
+import java.util.Map;
 import java.util.Set;
 
+import org.json.JSONArray;
 import org.json.JSONObject;
 
 public class RDBMSOperation {
@@ -35,6 +38,69 @@ public class RDBMSOperation {
 		catch (SQLException e) {
 			throw e;
 		}
+	}
+
+	public void prepareFileForInterfaces(List<Long> interfaceIds, Connection conn, String dateInFile, final String filePath, String fileName, int limit, int fileCount) throws Exception
+	{
+		Map<Long, String> map = null;
+		String tempPath = null;
+		try 
+		{
+			map = getInterfaceAttrValue(conn, "Remote File", interfaceIds);
+
+			for (long id : map.keySet()) 
+			{
+				tempPath = filePath + map.get(id) +fileName;
+				System.out.println("prepareFileForInterface : " + id);
+				//System.out.println("filePath : " + filePath);
+
+				if(id == 1165l)
+					prepareFileFor1165(conn, dateInFile, tempPath, limit, fileCount);
+				if(id == 1166l)
+					prepareFileFor1166(conn, dateInFile, tempPath, limit, fileCount);
+				if(id == 1167l)
+					prepareFileFor1167(conn, dateInFile, tempPath, limit, fileCount);
+				if(id == 1168l)
+					prepareFileFor1168(conn, dateInFile, tempPath, limit, fileCount);
+				if(id == 1169l)
+					prepareFileFor1169(conn, dateInFile, tempPath, limit, fileCount);
+				if(id == 1170l)
+					prepareFileFor1170(conn, dateInFile, tempPath, limit, fileCount);
+				if(id == 1171l)
+					prepareFileFor1171(conn, dateInFile, tempPath, limit, fileCount);
+				if(id == 1172l)
+					prepareFileFor1172(conn, dateInFile, tempPath, limit, fileCount);
+				if(id == 1173l)
+					prepareFileFor1173(conn, dateInFile, tempPath, limit, fileCount);
+				if(id == 1174l)
+					prepareFileFor1174(conn, dateInFile, tempPath, limit, fileCount);
+				if(id == 1175l)
+					prepareFileFor1175(conn, dateInFile, tempPath, limit, fileCount);
+				if(id == 1176l)
+					prepareFileFor1176(conn, dateInFile, tempPath, limit, fileCount);
+				if(id == 1177l)
+					prepareFileFor1177(conn, dateInFile, tempPath, limit, fileCount);
+				if(id == 1178l)
+					prepareFileFor1178(conn, dateInFile, tempPath, limit, fileCount);
+				if(id == 1179l)
+					prepareFileFor1179(conn, dateInFile, tempPath, limit, fileCount);
+				if(id == 1180l)
+					prepareFileFor1180(conn, dateInFile, tempPath, limit, fileCount);
+				if(id == 1181l)
+					prepareFileFor1181(conn, dateInFile, tempPath, limit, fileCount);
+				if(id == 1182l)
+					prepareFileFor1182(conn, dateInFile, tempPath, limit, fileCount);
+				if(id == 1183l)
+					prepareFileFor1183(conn, dateInFile, tempPath, limit, fileCount);
+
+
+			}
+		} 
+		catch (Exception e) {
+			e.printStackTrace();
+		} 
+
+
 	}
 
 	public void prepareFileFor1165(Connection conn, String dateInFile, String filePath, int limit, int fileCount) throws Exception
@@ -276,46 +342,57 @@ public class RDBMSOperation {
 	{
 		ResultSet outlet = null;
 		ResultSet micro = null;
-
+		ResultSet cluster = null;
 		FileOutputStream fos = null;
 		try 
 		{
 			fos = new FileOutputStream(new File(filePath));
-			fos.write("DATE|MICRO|SITE_ID|ID_OUTLET|STATUS_INJECTION|FLAG_ACM|COUNT_MSISDN\n".getBytes());
+			fos.write("DATE|CLUSTER|MICRO|SITE_ID|ID_OUTLET|STATUS_INJECTION|FLAG_ACM|COUNT_MSISDN\n".getBytes());
 			outlet = conn.createStatement().executeQuery("select ref_code_v from kpi.ms_org_master where org_type_n = 6   and sub_org_type_n = 66 and status_n = 174 order by 1;");
-			micro = conn.createStatement().executeQuery("select lookup_name_v from kpi.ms_lookup_master where lookup_type_n = (select lookup_type_n from kpi.ms_lookup_type_master where ext_lookup_type_n = 89) order by 1;");
+			micro = conn.createStatement().executeQuery("select lookup_name_v from kpi.ms_lookup_master where lookup_type_n = (select lookup_type_n from kpi.ms_lookup_type_master where ext_lookup_type_n = 89) order by 1 limit 20;");
+			cluster = conn.createStatement().executeQuery("select lookup_name_v from kpi.ms_lookup_master where lookup_type_n = (select lookup_type_n from kpi.ms_lookup_type_master where ext_lookup_type_n = 88) order by 1 limit 20;");
 
 			limit = limit * fileCount;
 			int i = 0;
 			int fileSequence = 1;
 			int calcRowLimit = limit/fileCount; 
 
-			ArrayList<String> microList = new ArrayList<String>();
+			Set<String> microList = new HashSet<String>();
+			ArrayList<String> clusterList = new ArrayList<String>();
 			while (micro.next()) {
 				microList.add(micro.getString(1));
+			}
+
+			while (cluster.next()) {
+				clusterList.add(cluster.getString(1));
 			}
 
 			out : while (outlet.next()) {
 
 				for (String microId : microList) {
-					if(i%2 == 0)
-						fos.write((dateInFile+"|"+microId+"|Test Site-"+i+ "|" +outlet.getString(1)+"|WithOut Injection|c. >=7k - <10k|"+ (i+10) +"\n").getBytes());
-					else
-						fos.write((dateInFile+"|"+microId+"|Test Site-"+i+ "|" +outlet.getString(1)+"|No Injection|c. >=7k - <10k|"+ (i+10) +"\n").getBytes());
-					i++;
+					for (String clusterid : clusterList) {
 
-					if(i % calcRowLimit == 0 && i != limit)
-					{
-						System.out.println("Total Rows : " + (i/fileSequence));
-						fos.close();
-						fos = new FileOutputStream(new File(filePath.replace(".csv", "_00" + fileSequence + ".csv")));
-						fos.write("DATE|MICRO|SITE_ID|ID_OUTLET|STATUS_INJECTION|FLAG_ACM|COUNT_MSISDN\n".getBytes());
-						fileSequence++;
+						if(i%2 == 0)
+							fos.write((dateInFile+"|"+clusterid+"|"+microId+"|Test Site-"+i+ "|" +outlet.getString(1)+"|WithOut Injection|c. >=7k - <10k|"+ (i+10) +"\n").getBytes());
+						else
+							fos.write((dateInFile+"|"+clusterid+"|"+microId+"|Test Site-"+i+ "|" +outlet.getString(1)+"|No Injection|c. >=7k - <10k|"+ (i+10) +"\n").getBytes());
+						i++;
+
+						if(i % calcRowLimit == 0 && i != limit)
+						{
+							System.out.println("Total Rows : " + (i/fileSequence));
+							fos.close();
+							fos = new FileOutputStream(new File(filePath.replace(".csv", "_00" + fileSequence + ".csv")));
+							fos.write("DATE|CLUSTER|MICRO|SITE_ID|ID_OUTLET|STATUS_INJECTION|FLAG_ACM|COUNT_MSISDN\n".getBytes());
+							fileSequence++;
+						}
+
+						if(limit != 0 )
+							if( limit==i)
+								break out;
 					}
 
-					if(limit != 0 )
-						if( limit==i)
-							break out;
+
 				}
 				fos.flush();
 			}
@@ -1160,6 +1237,104 @@ public class RDBMSOperation {
 		}
 	}	
 
+	public void prepareFileFor1182(Connection conn, String dateInFile, String filePath, int limit, int fileCount) throws Exception
+	{
+		ResultSet outlet = null;
+
+		FileOutputStream fos = null;
+		try 
+		{
+			fos = new FileOutputStream(new File(filePath));
+			fos.write("DATE|OUTLET_ID|SP_TAG_QTY\n".getBytes());
+			outlet = conn.createStatement().executeQuery("select ref_code_v from kpi.ms_org_master where org_type_n = 6   and sub_org_type_n = 66 and status_n = 174;");
+
+			limit = limit * fileCount;
+			int i = 0;
+			int fileSequence = 1;
+			int calcRowLimit = limit/fileCount; 
+
+
+			out : while (outlet.next()) {
+
+				fos.write((dateInFile+"|" +outlet.getString(1)+"|"+ (i+10) +"\n").getBytes());
+				i++;
+
+				if(i % calcRowLimit == 0 && i != limit)
+				{
+					System.out.println("Total Rows : " + (i/fileSequence));
+					fos.close();
+					fos = new FileOutputStream(new File(filePath.replace(".csv", "_00" + fileSequence + ".csv")));
+					fos.write("DATE|OUTLET_ID|SP_TAG_QTY\n".getBytes());
+					fileSequence++;
+				}
+
+				if(limit != 0 )
+					if( limit==i)
+						break out;
+				fos.flush();
+			}
+
+			fos.close();
+			System.out.print("File generated       ");
+			System.out.println("Total Rows : " + (i/fileSequence) + "   1182");
+		}
+		catch (Exception e) 
+		{
+			throw e;
+		}
+	}
+
+	public void prepareFileFor1183(Connection conn, String dateInFile, String filePath, int limit, int fileCount) throws Exception
+	{
+		ResultSet outlet = null;
+
+		FileOutputStream fos = null;
+		Set<String> ouletid = null;
+		try 
+		{
+			fos = new FileOutputStream(new File(filePath));
+			fos.write("DATE|OUTLET_ID|SAME_MC_RGU_QTY|SAME_CL_RGU_QTY|ALL_CL_RGU_QTY\n".getBytes());
+			outlet = conn.createStatement().executeQuery("select ref_code_v from kpi.ms_org_master where org_type_n = 6   and sub_org_type_n = 66 and status_n = 174 limit " + limit+";");
+
+			limit = limit * fileCount;
+			int i = 0;
+			int fileSequence = 1;
+			int calcRowLimit = limit/fileCount; 
+
+			ouletid = new HashSet<String>();
+			while (outlet.next())
+				ouletid.add(outlet.getString(1));
+
+			out : for (String id : ouletid) 
+			{
+				fos.write((dateInFile+"|" +id+"|"+ (i+1)+"|"+ (i+10)+"|"+ (i+100) +"\n").getBytes());
+				i++;
+				if(i % calcRowLimit == 0 && i != limit)
+				{
+					System.out.println("Total Rows : " + (i/fileSequence));
+					fos.close();
+					fos = new FileOutputStream(new File(filePath.replace(".csv", "_00" + fileSequence + ".csv")));
+					fos.write("DATE|OUTLET_ID|SAME_MC_RGU_QTY|SAME_CL_RGU_QTY|ALL_CL_RGU_QTY\n".getBytes());
+					fileSequence++;
+				}
+
+				if(limit != 0 )
+					if( limit==i)
+						break out;
+				fos.flush();
+
+			}
+
+			fos.close();
+			System.out.print("File generated       ");
+			System.out.println("Total Rows : " + (i/fileSequence) + "   1183");
+		}
+		catch (Exception e) 
+		{
+			throw e;
+		}
+	}
+
 	public JSONObject validateSaleTerritoryObj(Connection connection, JSONObject inputObject) 
 	{
 		PreparedStatement preparedStatement = null;
@@ -1278,51 +1453,77 @@ public class RDBMSOperation {
 		return responceObj;
 	}
 
-	public void prepareFileFor1182(Connection conn, String dateInFile, String filePath, int limit, int fileCount) throws Exception
+	public JSONArray preareCleanUpWithFieldLookupConf(Connection conn, String sql, boolean flagFor1165) throws Exception
 	{
-		ResultSet outlet = null;
 
-		FileOutputStream fos = null;
-		try 
+		JSONObject jsonObject = getTableDtlsForFieldLookupConf(conn, sql);
+		JSONArray jsonArray = new JSONArray();
+		JSONObject childJson = null;
+		JSONObject conf = null;
+		String temDelQuery = null;
+		String delimiter = "#";
+		int retension = 100;
+		String isEnabled = "false";
+		String sel = "select file_id_n from interface.tr_interface_file_summary where interface_id_n = REPLACE_ID and uploaded_on_dt  < current_date - REPLACE_RETENSION";
+		String cnt = "select count(1) from interface.tr_interface_file_summary where interface_id_n = REPLACE_ID and uploaded_on_dt  < current_date - REPLACE_RETENSION";
+		String del = "";
+
+		String valDel = "delete from TABLE where created_dt  < current_date - REPLACE_RETENSION;"; 
+		String tempDel = "delete from TABLE where file_id_n = ?;"; 
+		String failDel = "delete from TABLE where file_id_n = ?;"; 
+
+		String inFileSumDtls = "delete from interface.tr_interface_file_summary_details where file_id_n = ?;";
+		String inFileSum = "delete from interface.tr_interface_file_summary where interface_id_n = REPLACE_ID and uploaded_on_dt  < current_date - REPLACE_RETENSION";
+		int interface_id_n = 0;
+		for (String key : jsonObject.keySet())
 		{
-			fos = new FileOutputStream(new File(filePath));
-			fos.write("DATE|OUTLET_ID|SP_TAG_QTY\n".getBytes());
-			outlet = conn.createStatement().executeQuery("select ref_code_v from kpi.ms_org_master where org_type_n = 6   and sub_org_type_n = 66 and status_n = 174;");
 
-			limit = limit * fileCount;
-			int i = 0;
-			int fileSequence = 1;
-			int calcRowLimit = limit/fileCount; 
+			temDelQuery = "";
+			childJson = jsonObject.getJSONObject(key);
+			interface_id_n = childJson.getInt("id");
+			conf = new JSONObject();
+			conf.put("id", interface_id_n);
+			conf.put("name", childJson.getString("name"));
+			conf.put("retension", retension);
+			conf.put("isEnabled", isEnabled);
 
 
-			out : while (outlet.next()) {
+			conf.put("sel_query", sel.replaceAll("REPLACE_ID", interface_id_n+""));
+			conf.put("cnt_query", cnt.replaceAll("REPLACE_ID", interface_id_n+""));
 
-				fos.write((dateInFile+"|" +outlet.getString(1)+"|"+ (i+10) +"\n").getBytes());
-				i++;
-
-				if(i % calcRowLimit == 0 && i != limit)
+			if(childJson.getInt("id") == 1165)
+			{
+				temDelQuery = "delete from interface.tr_temp_site_mapping where file_id_n = ?;#delete from kpi.tr_temp_hadoop_failure_aggr where file_id_n = ?;#delete from interface.tr_interface_file_summary_details where file_id_n = ?;#delete from interface.tr_interface_file_summary where interface_id_n = 1165 and uploaded_on_dt  < current_date - REPLACE_RETENSION;";	
+			}				
+			else
+			{
+				if(!childJson.getString("validation").trim().isEmpty()) 
 				{
-					System.out.println("Total Rows : " + (i/fileSequence));
-					fos.close();
-					fos = new FileOutputStream(new File(filePath.replace(".csv", "_00" + fileSequence + ".csv")));
-					fos.write("DATE|OUTLET_ID|SP_TAG_QTY\n".getBytes());
-					fileSequence++;
+					temDelQuery = temDelQuery + valDel.replaceAll("TABLE", childJson.getString("validation")) + delimiter;
+				}
+				if(!childJson.getString("temporary").trim().isEmpty()) 
+				{
+					temDelQuery = temDelQuery + tempDel.replaceAll("TABLE", childJson.getString("temporary")) + delimiter;
+				}
+				if(!childJson.getString("failure").trim().isEmpty()) 
+				{
+					temDelQuery = temDelQuery + failDel.replaceAll("TABLE", childJson.getString("failure")) + delimiter;
 				}
 
-				if(limit != 0 )
-					if( limit==i)
-						break out;
-				fos.flush();
-			}
 
-			fos.close();
-			System.out.print("File generated       ");
-			System.out.println("Total Rows : " + (i/fileSequence) + "   1182");
+			}
+			temDelQuery = temDelQuery + inFileSumDtls + delimiter;
+			temDelQuery = temDelQuery + inFileSum.replaceAll("REPLACE_ID", interface_id_n + "");
+
+			del = temDelQuery;
+
+			conf.put("del_query", del);
+
+
+			jsonArray.put(conf);
 		}
-		catch (Exception e) 
-		{
-			throw e;
-		}
+		return jsonArray;
+
 	}
 
 	public void printFieldLookupConf(Connection conn, String sql, String choice, String interfaceid, boolean deleteQueryCmdFlag) throws Exception
@@ -1510,7 +1711,7 @@ public class RDBMSOperation {
 		}
 
 		if(needAsFile)fileWriter.close();
-//		System.out.println("printFieldLookupConfWithoutQuery  :: done");
+		//		System.out.println("printFieldLookupConfWithoutQuery  :: done");
 		jsonObject = null;
 	}
 
@@ -1525,13 +1726,13 @@ public class RDBMSOperation {
 			set.add(jsonObject.getJSONObject(str).getString("daily"));
 			set.add(jsonObject.getJSONObject(str).getString("monthly"));
 			set.add(jsonObject.getJSONObject(str).getString("failure"));
-//		
-//			set.add(jsonObject.getJSONObject(str).getString("type") + "|" + jsonObject.getJSONObject(str).getString("temporary"));
-//			set.add(jsonObject.getJSONObject(str).getString("type") + "|" + jsonObject.getJSONObject(str).getString("validation"));
-//			set.add(jsonObject.getJSONObject(str).getString("type") + "|" + jsonObject.getJSONObject(str).getString("daily"));
-//			set.add(jsonObject.getJSONObject(str).getString("type") + "|" + jsonObject.getJSONObject(str).getString("monthly"));
-//			set.add(jsonObject.getJSONObject(str).getString("type") + "|" + jsonObject.getJSONObject(str).getString("failure"));
-		
+			//		
+			//			set.add(jsonObject.getJSONObject(str).getString("type") + "|" + jsonObject.getJSONObject(str).getString("temporary"));
+			//			set.add(jsonObject.getJSONObject(str).getString("type") + "|" + jsonObject.getJSONObject(str).getString("validation"));
+			//			set.add(jsonObject.getJSONObject(str).getString("type") + "|" + jsonObject.getJSONObject(str).getString("daily"));
+			//			set.add(jsonObject.getJSONObject(str).getString("type") + "|" + jsonObject.getJSONObject(str).getString("monthly"));
+			//			set.add(jsonObject.getJSONObject(str).getString("type") + "|" + jsonObject.getJSONObject(str).getString("failure"));
+
 		}
 		set.remove("");
 		list = new ArrayList<String>(set);
@@ -1567,8 +1768,6 @@ public class RDBMSOperation {
 		}
 		return set;
 	}
-
-
 
 	public void writeFileWithKpiDailyAndMonthlyData(Connection connection, String seq, String kpiTableName, String fileName) throws Exception {
 
@@ -1619,5 +1818,38 @@ public class RDBMSOperation {
 			preparedStatement = null;
 			System.out.println("Generated :: " + fileName);
 		}
+	}
+
+
+	public Map<Long,String> getInterfaceAttrValue(Connection connection, String attributeName, List<Long> interfaceIdList) throws SQLException {
+		Map<Long , String> response = null;
+		ResultSet resultSet = null;
+		PreparedStatement statement = null;
+		String sql = "select interface_id_n, value_v from interface.ms_interface_attr where name_v = ? and  interface_id_n in ";
+		try 
+		{
+			if(interfaceIdList == null)
+				return null;
+
+			sql = sql + interfaceIdList.toString().replace("[", "(").replace("]", ")");
+			response = new HashMap<Long, String>();
+			statement = connection.prepareStatement(sql);
+			statement.setString(1, attributeName);
+			resultSet = statement.executeQuery();
+			while (resultSet.next()) 
+				response.put(resultSet.getLong(1), resultSet.getString(2));
+			return response;
+		} 
+		catch (Exception e) 
+		{
+
+		}
+		finally {
+			if(resultSet != null)
+				resultSet.close();
+			if(statement != null)
+				statement.close();
+		}
+		return response;
 	}
 }

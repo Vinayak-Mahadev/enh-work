@@ -56,9 +56,11 @@ public class RdbmsApp
 
 		String sql = "SELECT inter.interface_id_n,inter.name_v, attr.value_v FROM interface.ms_interface_attr attr INNER JOIN interface.ms_interface inter ON inter.interface_id_n=attr.interface_id_n where attr.name_v ='Field Lookup Conf'  order by inter.interface_id_n ;";
 		//opr.printFieldLookupConf(conn, sql, "all", "1165", true);
-		JSONObject jsonObject = opr.getTableDtlsForFieldLookupConf(conn, sql);
-		opr.printFieldLookupConfWithoutQuery(true, jsonObject, 1001, 1200, false, null, null);
-		System.out.println(opr.getAllTablesFromKPI(jsonObject));
+//		JSONObject jsonObject = opr.getTableDtlsForFieldLookupConf(conn, sql);
+//		opr.printFieldLookupConfWithoutQuery(true, jsonObject, 1001, 1200, false, null, null);
+//		System.out.println(opr.getAllTablesFromKPI(jsonObject));
+		
+		System.out.println(opr.preareCleanUpWithFieldLookupConf(conn, sql, true));
 		conn.close();
 
 

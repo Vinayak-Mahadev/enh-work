@@ -2,6 +2,10 @@ package enh.team.interfaces.test;
 
 import java.io.File;
 import java.sql.Connection;
+import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collections;
 import java.util.List;
 
 import com.finevm.enh.interfaces.entities.EntityOperations;
@@ -18,118 +22,141 @@ public class HadoopInterfaceTest
 {
 
 	private EntityOperations entityOperations; 
-	private RDBMSOperation opr = new RDBMSOperation();
-	private static HadoopInterfaceTest hitest = new HadoopInterfaceTest();;
+	private RDBMSOperation rdbmsOperation = null;
+	private Connection  connection = null;
 
-	boolean filePresent = false;
-	private long from = 1165l;
-	private long to   = 1182l;
+	boolean genearteFileFlag = false;
 
-	public static void main(String[] args)
+	private List<Long> interfaceIdList = null;
+	private List<String> idList = null;
+
+	private String outputFileFolderControlFileGeneration = null;
+	private String inputFileFolderControlFileGeneration = null;
+	private String moveOrgnlFilesControlFileGeneration = null;
+	private String interfaceFieldLookupConfQuery = null;
+	private String uploadFileLoc = null;
+	long apiWaitInSecond = 0l;
+
+	public static void main(String[] args) throws Exception
 	{
 
 
-		String dateInFile = "20200510";
-		String dir   = "E:/interface/backend/ControlFileGeneration/";
-		String fileName   = "_20200615090004_02.csv";
-		String uploadFileLoc = "E:/interface/backend/ControlFileGeneration/raw/";
-		Connection	conn = RDBMS.getDBConnection(PropType.RDBMS_LOCALHOST);
+		String interfaceIdStr = "1165 ,1166 ,1167 ,1168 ,1169 ,1170 ,1171 ,1172 ,1173 ,1174 ,1175 ,1176 ,1177 ,1178 ,1179 ,1180 ,1181 ,1182 ,1183";
 
+		interfaceIdStr = "1169, 1183";
+
+		HadoopInterfaceTest hitest = new HadoopInterfaceTest(interfaceIdStr);;
+
+		String dateInFile = null;
+
+		String fileName   = null;
+
+		hitest.rdbmsOperation.printFieldLookupConf(hitest.connection, hitest.interfaceFieldLookupConfQuery, "all", "", true);
+
+
+		dateInFile = "20200620";
+		fileName   = "_20200601090020_401.csv";
+		hitest.start(dateInFile, fileName);
+
+		dateInFile = "20200720";
+		fileName   = "_20200701090001_402.csv";
+		hitest.start(dateInFile, fileName);
+
+		dateInFile = "20200820";
+		fileName   = "_20200801090020_403.csv";
+		hitest.start( dateInFile, fileName);
+		
+		
+
+
+		dateInFile = "20200620";
+		fileName   = "_20200601090020_501.csv";
+		hitest.start(dateInFile, fileName);
+
+		dateInFile = "20200720";
+		fileName   = "_20200701090020_502.csv";
+		hitest.start(dateInFile, fileName);
+
+		dateInFile = "20200820";
+		fileName   = "_20200801090020_503.csv";
+		hitest.start( dateInFile, fileName);
+		
+
+
+		dateInFile = "20200620";
+		fileName   = "_20200601090020_601.csv";
+		hitest.start(dateInFile, fileName);
+
+		dateInFile = "20200720";
+		fileName   = "_20200701090020_602.csv";
+		hitest.start(dateInFile, fileName);
+
+		dateInFile = "20200820";
+		fileName   = "_20200801090020_603.csv";
+		hitest.start( dateInFile, fileName);
+
+		hitest.end();
+	}
+
+	public HadoopInterfaceTest(String interfaceIdStr) 
+	{
+		apiWaitInSecond = 20l;
+		entityOperations = EntityOperations.getInstance();
+
+		interfaceIdStr = interfaceIdStr.replace(" ", "").replace("\t", "");
+		genearteFileFlag = true;
+
+
+		idList = Arrays.asList(interfaceIdStr.split(",", -1));;
+		interfaceIdList = new ArrayList<Long>();
+		for (String string : idList) {
+			if(!string.trim().isEmpty())
+				interfaceIdList.add(Long.parseLong(string.trim()));
+		}
+		Collections.sort(interfaceIdList);
+
+		inputFileFolderControlFileGeneration = "E:\\interface\\backend\\ControlFileGeneration\\";
+		outputFileFolderControlFileGeneration = "E:\\interface\\backend\\ControlFileGeneration\\raw\\";
+		moveOrgnlFilesControlFileGeneration = "E:\\interface\\backend\\ControlFileGeneration\\bkp\\";
+		uploadFileLoc = "E:/interface/backend/ControlFileGeneration/raw/";
+
+		interfaceFieldLookupConfQuery = "SELECT inter.interface_id_n,inter.name_v, attr.value_v FROM interface.ms_interface_attr attr INNER JOIN interface.ms_interface inter ON inter.interface_id_n=attr.interface_id_n where attr.name_v ='Field Lookup Conf' and inter.interface_id_n in ("+ interfaceIdStr +") order by inter.interface_id_n ;\n\n";
+		connection = RDBMS.getDBConnection(PropType.RDBMS_144);
+		rdbmsOperation = new RDBMSOperation();
+	}
+
+
+	public void start(String dateInFile, String fileName) throws Exception 
+	{
 		try
-		{ 
-			String sql = "SELECT inter.interface_id_n,inter.name_v, attr.value_v FROM interface.ms_interface_attr attr INNER JOIN interface.ms_interface inter ON inter.interface_id_n=attr.interface_id_n where attr.name_v ='Field Lookup Conf' and inter.interface_id_n between "+ hitest.from +" and "+ hitest.to +" order by inter.interface_id_n ;\n\n";
-			System.out.println(sql);
-			hitest.opr.printFieldLookupConf(conn, sql, "select", "1165", false);
-        //
-        //
-		//	//dateInFile = "20200415";
-		//	//fileName   = "_20200415090001_101.csv";
-		//	//conn = RDBMS.getDBConnection(PropType.RDBMS_144);
-		//	//hitest.start(conn, dateInFile, dir, fileName, uploadFileLoc, false);
-		//	//
-		//	//dateInFile = "20200515";
-		//	//fileName   = "_20200515090001_102.csv";
-		//	//conn = RDBMS.getDBConnection(PropType.RDBMS_144);
-		//	//hitest.start(conn, dateInFile, dir, fileName, uploadFileLoc, false);
-		//	//
-		//	dateInFile = "20200615";
-		//	fileName   = "_20200615090001_103.csv";
-		//	conn = RDBMS.getDBConnection(PropType.RDBMS_144);
-		//	hitest.start(conn, dateInFile, dir, fileName, uploadFileLoc, true);
+		{
+//			if(genearteFileFlag)
+//				generateFile(interfaceIdList, connection, dateInFile, inputFileFolderControlFileGeneration,  fileName );
+//			prepareCtl();
+//			uploadFiles(new Server(PropType.Server_251_PPK), uploadFileLoc);
+			callApi();
 		} 
 		catch (Exception e) 
 		{
 			e.printStackTrace();
 		}
-		finally 
-		{
-			try 
-			{
-				if(conn != null)
-					conn.close();
-				EntityOperations.closeInstance();
-			}
-			catch (Exception e2) 
-			{
-				e2.printStackTrace();
-			}
-		}
+
 	}
 
-	public void start(Connection conn, String dateInFile, String dir, String fileName, String uploadFileLoc, boolean startup) throws Exception 
-	{
-		try
-		{
-			generateFile(conn, dateInFile, dir,  fileName );
-			if(startup)
-			{
-				prepareCtl();
-				uploadFiles(new Server(PropType.Server_251_PPK), uploadFileLoc);
-				callApi();
-			}
-			if(conn != null)
-				conn.close();
-		} 
-		catch (Exception e) 
-		{
-			e.printStackTrace();
-		}
-		finally 
-		{
-			conn.close();
-		}
+	public void end() throws SQLException {
+		if(connection != null)
+			connection.close();
+		EntityOperations.closeInstance();
 	}
-	public void generateFile(Connection conn, String dateInFile, String dir, String fileName) throws Exception
+	public void generateFile(List<Long> interfaceIds, Connection conn, String dateInFile, String dir, String fileName) throws Exception
 	{
-
-		opr.prepareFileFor1165(conn, dateInFile,                 dir + "site_mapping"        +  fileName ,    100,   1);
-		opr.prepareFileFor1166(conn, dateInFile,                 dir + "primary_mobo"        +  fileName ,    100,   1);
-		opr.prepareFileFor1167(conn, dateInFile,                 dir + "secondary_mobo"      +  fileName ,    100,   1);
-		opr.prepareFileFor1168(conn, dateInFile,                 dir + "d_sso"               +  fileName ,    100,   1);
-		opr.prepareFileFor1169(conn, dateInFile,                 dir + "rgu_injection"       +  fileName ,    100,   1);
-		opr.prepareFileFor1170(conn, dateInFile,                 dir + "tertiary"            +  fileName ,    100,   1);
-		opr.prepareFileFor1171(conn, dateInFile,                 dir + "org_close_bal"       +  fileName ,    100,   1);
-		opr.prepareFileFor1172(conn, dateInFile,                 dir + "total_revenue"       +  fileName ,    100,   1);
-		opr.prepareFileFor1173(conn, dateInFile,                 dir + "mobo_revenue"        +  fileName ,    100,   1);
-		opr.prepareFileFor1174(conn, dateInFile,                 dir + "acquisition_revenue" +  fileName ,    100,   1);
-		opr.prepareFileFor1175(conn, dateInFile,                 dir + "low_revenue_site"    +  fileName ,    100,   1);
-		opr.prepareFileFor1176(conn, dateInFile,                 dir + "site_rgu_ga"         +  fileName ,    100,   1);
-		opr.prepareFileFor1177(conn, dateInFile,                 dir + "cross_reload"        +  fileName ,    100,   1);
-		opr.prepareFileFor1178(conn, dateInFile,                 dir + "cross_data"          +  fileName ,    100,   1);
-		opr.prepareFileFor1179(conn, dateInFile.substring(0, 6), dir + "outlet_program"      +  fileName ,    100,   1);
-		opr.prepareFileFor1180(conn, dateInFile.substring(0, 6), dir + "alloc_payment"       +  fileName ,    100,   1);
-		opr.prepareFileFor1181(conn, dateInFile,                 dir + "uro20"               +  fileName ,    100,   1);
-		opr.prepareFileFor1182(conn, dateInFile,                 dir + "outlet_sp_tagging"   +  fileName ,    100,   1);
+		rdbmsOperation.prepareFileForInterfaces(interfaceIds, conn, dateInFile, dir, fileName, 100, 1);
 	}
 
 	public void prepareCtl() throws Exception 
 	{
 		PrepareCTL prepareCTL = new PrepareCTL();
-		String inputFileFolder = "E:\\interface\\backend\\ControlFileGeneration\\";
-		String outputFileFolder = "E:\\interface\\backend\\ControlFileGeneration\\raw\\";
-		String moveOrgnlFiles = "E:\\interface\\backend\\ControlFileGeneration\\bkp\\";
-		prepareCTL.prepareCTL(inputFileFolder, outputFileFolder, moveOrgnlFiles);
-
+		prepareCTL.prepareCTL(inputFileFolderControlFileGeneration, outputFileFolderControlFileGeneration, moveOrgnlFilesControlFileGeneration);
 	}
 
 	public void uploadFiles(Server server, String uploadFilesPath) throws Exception
@@ -139,72 +166,75 @@ public class HadoopInterfaceTest
 		File filepath = null;
 
 		filepath = new File(uploadFilesPath);
-		if(!filepath.isDirectory() )
+		if(!filepath.isDirectory() ) {
+			System.out.println("uploadFilesPath files empty  :: " + uploadFilesPath);
 			return;
+		}
+		else
+		{
+			//			for(String str : filepath.list())
+			//				System.out.println(str);
+		}
 
 		if(filepath.listFiles().length != 0)
 		{
-			entityOperations = EntityOperations.getInstance();
 			sshOperation = new SshOperation(server);
-
 		}
-		for (long i = from; i <= to; i++) 
+
+		for (Long id : interfaceIdList)
 		{
-			interfaceAttributes = entityOperations.getInterfaceAttribute(i);
+			interfaceAttributes = entityOperations.getInterfaceAttribute(id);
 
 			for (File file : filepath.listFiles()) 
 			{
-				if(file.getName().startsWith(getInterfaceAttributeValue(interfaceAttributes, "Remote File"))){
-					System.out.println(file.getName());
-
+				if(file.getName().startsWith(getInterfaceAttributeValue(interfaceAttributes, "Remote File")))
+				{
 					sshOperation.upload(file.getName(), getInterfaceAttributeValue(interfaceAttributes, "Remote Dir"), uploadFilesPath);
 					file.delete();
-					filePresent = true;
 				}
 			}
 		}
-
 		if(sshOperation != null)
 			sshOperation.disconnect();
-
-		if(entityOperations != null)
-			EntityOperations.closeInstance();
+		sshOperation = null;
 	}
 
 	public void callApi() throws Exception 
 	{
-		long second = 5l;
+		
 
-		for (long i = from; i <= to; i++) 
+		for (String id : idList)
 		{
+			long i = Long.parseLong(id);
+
 			System.out.println("processFile service call :: " + i  );
 			ThreadUtil.processFile(i);
-			Thread.sleep(1 * second * 1000);
-		}
+			Thread.sleep(1 * apiWaitInSecond * 1000);
 
-		for (long i = from; i <= to; i++) 
-		{
 			System.out.println("processReceivedFiles service call :: " + i );
 			ThreadUtil.processReceivedFiles(i);
-			Thread.sleep(1 * second * 1000);
-		}
-		Thread.sleep(1 * 10 * 1000);
-		for (long i = from; i <= to; i++) 
-		{
-			System.out.println("prepareRejectionFile service call :: " + i );
-			ThreadUtil.prepareRejectionFile(i);
-			Thread.sleep(1 * second * 1000);
+			Thread.sleep(1 * apiWaitInSecond * 1000);
+
+			Thread.sleep(1 * 10 * 1000);
+			//			for (long i = from; i <= to; i++) 
+			//			{
+			//				System.out.println("prepareRejectionFile service call :: " + i );
+			//				ThreadUtil.prepareRejectionFile(i);
+			//				Thread.sleep(1 * second * 1000);
+			//			}
+
+
+			//		for (long i = from; i <= to; i++) 
+			//		{
+			//			System.out.println("pullDataToFile service call :: " + i );
+			//			ThreadUtil.pullDataToFile(i);
+			//			Thread.sleep(1 * 20 * 1000);
+			//		}
 		}
 
-		//		for (long i = from; i <= to; i++) 
-		//		{
-		//			System.out.println("pullDataToFile service call :: " + i );
-		//			ThreadUtil.pullDataToFile(i);
-		//			Thread.sleep(1 * 20 * 1000);
-		//		}
+
 
 	}
-
 
 	private String getInterfaceAttributeValue(List<InterfaceAttribute> attributes, String name) {
 

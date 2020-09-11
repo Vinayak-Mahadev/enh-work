@@ -1,0 +1,85 @@
+08.09.2020 17:31:02.946  INFO (InterfaceServicesActivator.java:460) - [InterfaceServicesActivator - getOnlineInterfaceListWrapper] - Request : [ {"envelope":{"payload":{"interface":{"org_id":20,"org_type":5,"interface_type":3,"ext_system":["Saldomobo","IDM"]}},"header":{"uid":30001,"pwd":"KpR8Vp8SMRWPncdaBwMLwnsWh2E1JfoPnTE1rozmc3s=","tz":"20200908173102","chnl":"Web","orgid":20,"uname":"HPRIMARYHQ001","locale":"en","rqst":"Create","src":"i","utype":1,"nodeid":20}}} ]
+08.09.2020 17:31:02.955  INFO (InterfaceServicesActivator.java:490) - getOnlineInterfaceListWrapper :: Response >> { "req_id" : 2009080531029476008 , "res_code" : 100 , "res_msg" : "Request process successfully..." , "payload" : [ { "id" : 1018 , "name" : "INTSM001 - Organization Creation" , "upload" : false} , { "id" : 1019 , "name" : "INTSM002 - Organization Status Change" , "upload" : false} , { "id" : 1020 , "name" : "INTSM003 - Organization Modification" , "upload" : false} , { "id" : 1021 , "name" : "INTSM004 - User Creation" , "upload" : false} , { "id" : 1022 , "name" : "INTSM005 - User Status Change" , "upload" : false} , { "id" : 1023 , "name" : "INTSM006 - User Modification" , "upload" : false} , { "id" : 1136 , "name" : "INTSM026 - Transfer Balance" , "upload" : false} , { "id" : 2001 , "name" : "INTSM007 - Stock Summary" , "upload" : false} , { "id" : 2002 , "name" : "INTSM008 - Stock Summary Details" , "upload" : false} , { "id" : 2003 , "name" : "INTSM009 - Voucher Ownership Details" , "upload" : false} , { "id" : 2004 , "name" : "INTSM010 - Handshake Query OTP" , "upload" : false} , { "id" : 2005 , "name" : "INTSM011 - Tertiary Sales" , "upload" : false} , { "id" : 2006 , "name" : "INTSM012 - Secondary Sales" , "upload" : false} , { "id" : 2007 , "name" : "INTSM013 - Purchase Requisition" , "upload" : false} , { "id" : 2008 , "name" : "INTSM014 - Sales Return" , "upload" : false} , { "id" : 2009 , "name" : "INTID001 - Create User" , "upload" : false} , { "id" : 2010 , "name" : "INTID002 - Assign User Role" , "upload" : false} , { "id" : 2011 , "name" : "INTID003 - Retire User" , "upload" : false} , { "id" : 2012 , "name" : "INTID004 - Revoke User Role" , "upload" : false} , { "id" : 2013 , "name" : "INTID005 - Reset User Password" , "upload" : false} , { "id" : 2014 , "name" : "INTSM022 - User Rating" , "upload" : false}]}
+
+
+
+
+
+
+
+08.09.2020 17:31:22.779  INFO (GenericServicesActivator.java:244) - getByQuery:: Request[2009080531227790685] Object is: >>{"envelope":{"payload":{"generic":{"query":{"_id":{"$in":["193","351","173"]}},"key":"snoc.genericMasterValueCollection"}},"header":{"uid":30001,"pwd":"KpR8Vp8SMRWPncdaBwMLwnsWh2E1JfoPnTE1rozmc3s=","tz":"20200908173122","chnl":"Web","orgid":20,"uname":"HPRIMARYHQ001","locale":"en","rqst":"Create","src":"i","utype":1,"nodeid":20}}}
+08.09.2020 17:31:22.781  INFO (GenericServicesActivator.java:271) - getByQuery:: Returning Response..
+08.09.2020 17:31:23.338  INFO (InterfaceServicesActivator.java:374) - [InterfaceServicesActivator - getOnlineInterfaceSummaries] - Request : [ { "envelope" : { "header" : { "uid" : 30001 , "pwd" : "KpR8Vp8SMRWPncdaBwMLwnsWh2E1JfoPnTE1rozmc3s=" , "tz" : "20200908173123" , "chnl" : "Web" , "orgid" : 20 , "uname" : "HPRIMARYHQ001" , "locale" : "en" , "rqst" : "Create" , "src" : "i" , "utype" : 1 , "nodeid" : 20} , "payload" : { "interface" : { "interface_id" : 1136 , "start_date_time" : "01-Sep-2020 00:00:00.000" , "end_date_time" : "02-Sep-2020 23:59:59.999" , "transaction_id" : 42442}}}} ]
+08.09.2020 17:31:23.344  INFO (InterfaceServicesActivator.java:404) - getOnlineInterfaceSummaries :: Response >> { "req_id" : 2009080531233386009 , "res_code" : 100 , "res_msg" : "Request process successfully..." , "payload" : [ ]}
+
+
+
+[
+	{
+		"envelope": {
+			"payload": {
+				"interface": {
+					"org_id": 20,
+					"org_type": 5,
+					"interface_type": 3,
+					"ext_system": [
+						"Saldomobo",
+						"IDM"
+					]
+				}
+			},
+			"header": {
+				"uid": 30001,
+				"pwd": "KpR8Vp8SMRWPncdaBwMLwnsWh2E1JfoPnTE1rozmc3s=",
+				"tz": "20200908173102",
+				"chnl": "Web",
+				"orgid": 20,
+				"uname": "HPRIMARYHQ001",
+				"locale": "en",
+				"rqst": "Create",
+				"src": "i",
+				"utype": 1,
+				"nodeid": 20
+			}
+		}
+	}
+]
+
+
+
+
+
+
+
+[
+	{
+		"envelope": {
+			"header": {
+				"uid": 30001,
+				"pwd": "KpR8Vp8SMRWPncdaBwMLwnsWh2E1JfoPnTE1rozmc3s=",
+				"tz": "20200908173123",
+				"chnl": "Web",
+				"orgid": 20,
+				"uname": "HPRIMARYHQ001",
+				"locale": "en",
+				"rqst": "Create",
+				"src": "i",
+				"utype": 1,
+				"nodeid": 20
+			},
+			"payload": {
+				"interface": {
+					"interface_id": 1136,
+					"start_date_time": "01-Sep-2020 00:00:00.000",
+					"end_date_time": "02-Sep-2020 23:59:59.999",
+					"transaction_id": 42442
+				}
+			}
+		}
+	}
+]
+
+
+SELECT summary.trans_id_n , summary.interface_id_n , summary.ref_data1_v , summary.ref_data5_v , summary.retry_count_n , TO_CHAR(summary.request_time_dt,'yyyy-MM-dd HH24:MI:SS') AS request_time_dt , TO_CHAR(summary.response_time_dt,'yyyy-MM-dd HH24:MI:SS') AS response_time_dt, summary.status_n , summary.ref_data4_n,  status.name_v AS status_desc , CASE WHEN summary.ref_data4_n = 0 THEN 'Success' WHEN summary.ref_data4_n = 1 THEN 'Failure' ELSE '' END AS ext_sys_status , CASE WHEN summary.ref_data3_n IS NULL THEN CASE WHEN summary.status_n IN (1304 , 1305) THEN 1 ELSE 0 END ELSE 0 END AS re_process FROM interface.tr_interface_summary summary, interface.sd_status status WHERE summary.interface_id_n = 1136 AND summary.status_n = status.status_n and summary.request_time_dt >= to_timestamp('01-Sep-2020 00:00:00.000','dd-Mon-yyyy HH24:mi:sec.SSS')  and summary.request_time_dt >= to_timestamp('02-Sep-2020 23:59:59.999','dd-Mon-yyyy HH24:mi:sec.SSS')
+
+

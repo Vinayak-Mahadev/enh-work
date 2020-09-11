@@ -1,0 +1,140 @@
+	<entity class="CleanUpSummary">
+		<java-annotations>
+			<java-annotation>@XmlAccessorType(XmlAccessType.NONE)</java-annotation>
+			<java-annotation>@XmlType(name="cleanUpSummary")</java-annotation>
+			<java-annotation>@XmlRootElement(name="cleanUpSummary")</java-annotation>
+		</java-annotations>
+		<table name="tr_clean_up_summary"/>
+		<attributes>
+			<id name="cleanupId">
+				<java-annotations>
+					<java-annotation>@Audited</java-annotation>
+					<java-annotation>@javax.validation.constraints.NotNull</java-annotation>
+				</java-annotations>
+				<java-attributes type="Long" scope="protected">
+					<setter/>
+					<getter scope="public">
+						<java-annotations>
+							<java-annotation>@XmlElement(name="cleanupId")</java-annotation>
+						</java-annotations>
+					</getter>
+				</java-attributes>
+				<column name="cleanup_id_n"/>
+				<generated-value generator="tr_clean_up_summary_seq" strategy="SEQUENCE"/>
+				<sequence-generator name="tr_clean_up_summary_seq" sequence-name="tr_clean_up_summary_seq" allocation-size="1" initial-value="1"/>
+			</id>
+
+			<many-to-one name="interfaces" optional="false" fetch="EAGER">
+				<java-annotations>
+					<java-annotation>@javax.validation.constraints.NotNull</java-annotation>
+					<java-annotation>@Audited(targetAuditMode=RelationTargetAuditMode.NOT_AUDITED)</java-annotation>
+				</java-annotations>
+				<java-attributes type="Interfaces" scope="protected">
+					<getter>
+						<java-annotations>
+							<java-annotation>@XmlJavaTypeAdapter(value=Interfaces.IDAdapter.class)</java-annotation>
+							<java-annotation>@XmlElement(name="interfaces", required=true)</java-annotation>
+						</java-annotations>
+					</getter>
+					<setter scope="public"/>
+				</java-attributes>
+				<join-column name="interface_id_n" nullable="false"/>
+			</many-to-one>
+			
+			<basic name="userId">
+				<java-annotations>
+					<!--<java-annotation>@Audited</java-annotation>-->
+					<java-annotation>@javax.validation.constraints.NotNull</java-annotation>
+				</java-annotations>
+				<java-attributes type="String" scope="protected">
+					<getter>
+						<java-annotations>
+							<java-annotation>@XmlElement(name="userId", required=true)</java-annotation>
+						</java-annotations>
+					</getter>
+					<setter/>
+				</java-attributes>
+				<column name="user_id_v" nullable="false"/>
+			</basic>
+
+			<basic name="actvityName">
+				<java-annotations>
+					<!--<java-annotation>@Audited</java-annotation>-->
+					<java-annotation>@javax.validation.constraints.NotNull</java-annotation>
+				</java-annotations>
+				<java-attributes type="String" scope="protected">
+					<getter>
+						<java-annotations>
+							<java-annotation>@XmlElement(name="actvityName", required=true)</java-annotation>
+						</java-annotations>
+					</getter>
+					<setter/>
+				</java-attributes>
+				<column name="actvity_name_v" nullable="false"/>
+			</basic>
+
+			<basic name="message">
+				<java-annotations>
+					<!--<java-annotation>@Audited</java-annotation>-->
+					<java-annotation>@javax.validation.constraints.NotNull</java-annotation>
+				</java-annotations>
+				<java-attributes type="String" scope="protected">
+					<getter>
+						<java-annotations>
+							<java-annotation>@XmlElement(name="message", required=true)</java-annotation>
+						</java-annotations>
+					</getter>
+					<setter/>
+				</java-attributes>
+				<column name="message_v" nullable="true"/>
+			</basic>
+			
+			<basic name="status">
+				<java-annotations>
+					<java-annotation>@Audited</java-annotation>
+				</java-annotations>
+				<java-attributes type="Long" scope="protected">
+					<getter>
+						<java-annotations>
+							<java-annotation>@XmlElement(name="status", required=false)</java-annotation>
+						</java-annotations>
+					</getter>
+					<setter/>
+				</java-attributes>
+				<column name="status_n" nullable="false"/>
+			</basic>
+
+			<basic name="initiatedDate">
+				<java-annotations>
+					<java-annotation>@Audited</java-annotation>
+					<java-annotation>@javax.validation.constraints.NotNull</java-annotation>
+				</java-annotations>
+				<java-attributes type="Date" scope="protected">	
+					<getter>
+						<java-annotations>
+							<java-annotation>@XmlElement(name="initiatedDate", required=true)</java-annotation>
+						</java-annotations>
+					</getter>
+					<setter scope="public"/>
+				</java-attributes>
+				<column name="initiated_date_dt" nullable="false"/>
+				<temporal>TIMESTAMP</temporal>
+			</basic>
+
+			<version name="lastUpdatedTime">
+				<java-annotations>
+					<java-annotation>@Audited</java-annotation>
+					<java-annotation>@javax.validation.constraints.NotNull</java-annotation>
+				</java-annotations>
+				<java-attributes type="Date" scope="protected">
+					<getter>
+						<java-annotations>
+							<java-annotation>@XmlTransient</java-annotation>
+						</java-annotations>
+					</getter>
+				</java-attributes>
+				<column name="last_updated_time_dt" nullable="false"/>
+				<temporal>TIMESTAMP</temporal>
+			</version>
+		</attributes>
+	</entity>

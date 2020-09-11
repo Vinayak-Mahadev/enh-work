@@ -314,7 +314,7 @@ public class SshOperation
 			sftpChannel.put(fis, file.getName());
 
 			fis.close();
-			System.out.println("File uploaded successfully ");
+			System.out.println(remoteFileName + " File uploaded successfully on " + remoteFileLocation);
 			setUploadStatus(true);
 			//			channel.disconnect();
 		} 

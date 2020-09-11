@@ -41,7 +41,10 @@ public class EntityOperations
 
 		try 
 		{
-
+			if( (manager != null && !manager.isOpen()))
+				manager = DataSourceConfig.getEntityManager("com.finevm.enh.interfaces.entities");
+			if(manager == null)
+				manager = DataSourceConfig.getEntityManager("com.finevm.enh.interfaces.entities");
 			interfaceAttribute = manager.createQuery("from " + InterfaceAttribute.class.getCanonicalName()+" where interface_id_n = "+interfaceid+" order by 1").getResultList();
 
 		}
