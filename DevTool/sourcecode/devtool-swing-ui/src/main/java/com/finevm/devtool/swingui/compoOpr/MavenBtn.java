@@ -126,7 +126,7 @@ public class MavenBtn extends JButton{
 						synchronized (process) {
 							process.waitFor();
 						}
-						TextAreaLogs.getTextAreaLogs().log("Success...");
+						TextAreaLogs.getTextAreaLogs().log("Success : "+ mvncmd +"\n " + readyJson);
 					}
 				} 
 				catch (org.json.JSONException e) {

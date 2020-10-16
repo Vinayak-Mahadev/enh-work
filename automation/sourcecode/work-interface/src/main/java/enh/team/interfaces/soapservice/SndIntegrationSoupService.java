@@ -4,11 +4,22 @@ import com.finevm.enh.util.PropType;
 
 public class SndIntegrationSoupService {
 
-	private final String wsdlUrl   = "http://192.168.2.143:8080/IntegrationServices/IntegrationManagement?wsdl";
-	private final String userName  = "admin";
-	private final String password  = "admin";
+	private  String wsdlUrl;
+	private  String userName;
+	private  String password;
 	private TestWebServiceRequest testSoapRequest = TestWebServiceRequest.getTestSoapRequest(PropType.SOAP);
 	
+	public  SndIntegrationSoupService() 
+	{
+		wsdlUrl   = "http://192.168.2.143:8080/IntegrationServices/IntegrationManagement?wsdl";  
+		userName  = "admin";                                                                     
+		password  = "admin";                                                                     	
+	}
+	public SndIntegrationSoupService(String wsdlUrl, String userName, String password) {
+		this.wsdlUrl   = wsdlUrl  ;
+		this.userName  = userName ;
+		this.password  = password ;
+	}
 	public ResponseBean processReceivedFiles(Long interfaceID){
 		String template = Template.processReceivedFiles.replaceAll("INTERFACE_ID", interfaceID.toString());
 		

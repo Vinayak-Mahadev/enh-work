@@ -109,7 +109,8 @@ public class PuttyBtn extends JButton
 					else 
 					{
 						puttyOpr.init(json);
-						puttyOpr.launch();	
+						puttyOpr.launch();
+						TextAreaLogs.getTextAreaLogs().log("Putty launched with :: " + json.getString("hostName") +":"+ json.getString("username"));
 					}
 				} 
 				catch (IOException e1)
@@ -134,7 +135,6 @@ public class PuttyBtn extends JButton
 				}
 				finally
 				{
-
 					json  = null;
 					DevtoolComponents.enableAllButton();
 				}

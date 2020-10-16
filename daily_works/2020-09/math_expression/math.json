@@ -1,0 +1,155 @@
+[
+	{
+		"expression": "(orderQuantity*unitPrice)",
+		"output": 10084.162,
+		"data_input": {
+			"unitPrice": 100.54,
+			"orderQuantity": 100.3,
+			"discount": 12.43
+		}
+	},
+	{
+		"expression": "((round)(orderQuantity*unitPrice))",
+		"output": 10084.0,
+		"data_input": {
+			"unitPrice": 100.54,
+			"orderQuantity": 100.3,
+			"discount": 12.43
+		}
+	},
+	{
+		"expression": "(orderQuantity*(unitPrice+2))",
+		"output": 10284.762,
+		"data_input": {
+			"unitPrice": 100.54,
+			"orderQuantity": 100.3,
+			"discount": 12.43
+		}
+	},
+	{
+		"expression": "((floor)(orderQuantity*(unitPrice+2)))",
+		"output": 10284.0,
+		"data_input": {
+			"unitPrice": 100.54,
+			"orderQuantity": 100.3,
+			"discount": 12.43
+		}
+	},
+	{
+		"expression": "((orderQuantity*unitPrice)+2)",
+		"output": 10086.162,
+		"data_input": {
+			"unitPrice": 100.54,
+			"orderQuantity": 100.3,
+			"discount": 12.43
+		}
+	},
+	{
+		"expression": "(2+(orderQuantity*unitPrice))",
+		"output": 10086.162,
+		"data_input": {
+			"unitPrice": 100.54,
+			"orderQuantity": 100.3,
+			"discount": 12.43
+		}
+	},
+	{
+		"expression": "((ceil)(2+(orderQuantity*unitPrice)))",
+		"output": 10087.0,
+		"data_input": {
+			"unitPrice": 100.54,
+			"orderQuantity": 100.3,
+			"discount": 12.43
+		}
+	},
+	{
+		"expression": "((ceil)((orderQuantity*unitPrice)+2))",
+		"output": 10087.0,
+		"data_input": {
+			"unitPrice": 100.54,
+			"orderQuantity": 100.3,
+			"discount": 12.43
+		}
+	},
+	{
+		"expression": "((orderQuantity*1)*(unitPrice*1.5))",
+		"output": 15126.243,
+		"data_input": {
+			"unitPrice": 100.54,
+			"orderQuantity": 100.3,
+			"discount": 12.43
+		}
+	},
+	{
+		"expression": "((round)((orderQuantity*1)*(unitPrice*1.5)))",
+		"output": 15126.0,
+		"data_input": {
+			"unitPrice": 100.54,
+			"orderQuantity": 100.3,
+			"discount": 12.43
+		}
+	},
+	{
+		"expression": "((200-198)*((floor)(orderQuantity/unitPrice)))",
+		"output": 0.0,
+		"data_input": {
+			"unitPrice": 100.54,
+			"orderQuantity": 100.3,
+			"discount": 12.43
+		}
+	},
+	{
+		"expression": "(((round)(orderQuantity*unitPrice))/(200-198))",
+		"output": 5042.0,
+		"data_input": {
+			"unitPrice": 100.54,
+			"orderQuantity": 100.3,
+			"discount": 12.43
+		}
+	},
+	{
+		"expression": "(((round)(orderQuantity*unitPrice))/(2%2))",
+		"output": null,
+		"data_input": {
+			"unitPrice": 100.54,
+			"orderQuantity": 100.3,
+			"discount": 12.43
+		}
+	},
+	{
+		"expression": "((200-198.2)/((round)(orderQuantity*unitPrice)))",
+		"output": 0.00017850059500198448,
+		"data_input": {
+			"unitPrice": 100.54,
+			"orderQuantity": 100.3,
+			"discount": 12.43
+		}
+	},
+	{
+		"expression": "((round)(((round)(orderQuantity*unitPrice))/(200-198.2)))",
+		"output": 5602.0,
+		"data_input": {
+			"unitPrice": 100.54,
+			"orderQuantity": 100.3,
+			"discount": 12.43
+		}
+	},
+	{
+		"expression": "(((round)(orderQuantity*unitPrice))/(0))",
+		"output": null,
+		"data_input": {
+			"unitPrice": 100.54,
+			"orderQuantity": 100.3,
+			"discount": 12.43
+		}
+	},
+	{
+		"expression": "((((((round)(orderQuantity*unitPrice))*((discount-12.43)/100))))+((round)(orderQuantity*unitPrice)))",
+		"output": 10084.0,
+		"data_input": {
+			"unitPrice": 100.54,
+			"orderQuantity": 100.3,
+			"discount": 12.43
+		}
+	}
+]

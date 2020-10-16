@@ -1,5 +1,9 @@
 package enh.team.interfaces.test;
 
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileReader;
+import java.io.IOException;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.HashSet;
@@ -45,8 +49,11 @@ public class App {
 			
 			
 			//interfaceModule_uploadFiles_validation(null, null, null);
-			interfaceModule_uploadFiles_validation("total_revenue", "yyyyMMddHHmmss", "total_revenue_20200626000000");
-
+			//interfaceModule_uploadFiles_validation("total_revenue", "yyyyMMddHHmmss", "total_revenue_20200626000000");
+//			String monthInFile = "12345455";
+//			monthInFile = monthInFile.substring(0, 6);
+//			System.out.println(monthInFile);
+			runtimeTest();
 		} 
 		catch (Exception e) 
 		{
@@ -54,6 +61,53 @@ public class App {
 		}
 	}
 
+	public static void runtimeTest() {
+		//String cmd = "C:/Program Files/Git/git-bash.exe E:/interface/backend/script.sh";
+		 String[] command = new String[]{"C:/Program Files/Git/git-bash.exe", "E:/interface/backend/script.sh"};
+		Process process = null;
+		try 
+		{
+			process = Runtime.getRuntime().exec(command);
+//			process.wait(5000);
+		} 
+		catch (Exception e) {
+		e.printStackTrace();
+		}
+		
+	}
+	static void test()
+	{
+		final String query = "INSERT INTO INTERFACE.MS_INTERFACE_ATTR (ATTRIBUTE_ID_N, INTERFACE_ID_N, NAME_V, VALUE_V, LAST_UPDATED_TIME_DT) VALUES (#ATTRIBUTE_ID_N#, #INTERFACE_ID_N#, '#NAME_V#', '#VALUE_V#', now());";
+		BufferedReader reader = null;
+		String line = null;
+		String fileAbPath = "C:\\Users\\vinayak\\Downloads\\3Query - Copy.txt";
+		String[] attr = null;
+		
+		try 
+		{
+			reader = new BufferedReader(new FileReader(new File(fileAbPath)));
+			while ((line = reader.readLine()) != null)
+			{
+				attr = line.replace("fossuser", "appuser").split("VINAY", -1);
+				System.out.println(query.replace("#ATTRIBUTE_ID_N#", attr[0]).replace("#INTERFACE_ID_N#", attr[1]).replace("#NAME_V#", attr[2]).replace("#VALUE_V#", attr[3]));
+			}
+		} 
+		catch (IOException e) 
+		{
+			e.printStackTrace();
+		} 
+		finally {
+			if(reader!=null)
+				try {
+					reader.close();
+				} catch (Exception e) {
+
+					e.printStackTrace();
+				}
+			reader = null;
+		}
+	}
+	
 	void sample()
 	{
 

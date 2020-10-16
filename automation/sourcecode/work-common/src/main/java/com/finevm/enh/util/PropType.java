@@ -4,11 +4,11 @@ public enum PropType {
 	
 
 	
-	Server_143, Server_144, Server_251, Server_251_PPK,
+	Server_143, Server_144, Server_251, Server_251_PPK, Server_KPI_INTERFACE_CLOUD,
 	
 	
 	
-	RDBMS_LOCALHOST, RDBMS_144, RDBMS_251,
+	RDBMS_LOCALHOST, RDBMS_144, RDBMS_251,RDBMS_KPI_INTERFACE_CLOUD,
 	
 	
 	

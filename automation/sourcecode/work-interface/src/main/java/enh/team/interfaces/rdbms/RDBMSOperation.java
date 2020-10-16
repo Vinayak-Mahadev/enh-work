@@ -50,7 +50,7 @@ public class RDBMSOperation {
 
 			for (long id : map.keySet()) 
 			{
-				tempPath = filePath + map.get(id) +fileName;
+				tempPath = filePath + map.get(id) +"_"+fileName;
 				System.out.println("prepareFileForInterface : " + id);
 				//System.out.println("filePath : " + filePath);
 
@@ -713,11 +713,11 @@ public class RDBMSOperation {
 						fos = new FileOutputStream(new File(filePath.replace(".csv", "_00" + fileSequence + ".csv")));
 						fos.write("DATE|MICRO|SITE_ID|REVENUE\n".getBytes());
 						fileSequence++;
-					}
 
-					if(limit != 0 )
-						if( limit==i)
-							break out;
+						if(limit != 0 )
+							if( limit==i)
+								break out;
+					}
 				}
 				Integer date = Integer.valueOf(dateInFile.substring(dateInFile.length() - 2, dateInFile.length()));
 
@@ -1039,7 +1039,7 @@ public class RDBMSOperation {
 	{
 		ResultSet cluster = null;
 		ResultSet out = null;
-
+		monthInFile = monthInFile.substring(0, 6);
 		FileOutputStream fos = null;
 		DecimalFormat format = new DecimalFormat("00000");
 		try 
@@ -1111,7 +1111,7 @@ public class RDBMSOperation {
 	{
 		ResultSet cluster = null;
 		ResultSet mpc = null;
-
+		monthInFile = monthInFile.substring(0, 6);
 		FileOutputStream fos = null;
 		DecimalFormat format = new DecimalFormat("0000");
 		try 
@@ -1526,29 +1526,44 @@ public class RDBMSOperation {
 
 	}
 
-	public void printFieldLookupConf(Connection conn, String sql, String choice, String interfaceid, boolean deleteQueryCmdFlag) throws Exception
+	public void printFieldLookupConf(Connection conn, String interfaceIdStr, String choice, boolean deleteQueryCmdFlag) throws Exception
 	{
 		ResultSet resultSet = null;
 		JSONObject jsonObject = null;
 		JSONObject fields = null;
 		JSONObject duplicate_validation_conf = null;
-
+		String interfaceFieldLookupConfQuery = "SELECT inter.interface_id_n,inter.name_v, attr.value_v FROM interface.ms_interface_attr attr INNER JOIN interface.ms_interface inter ON inter.interface_id_n=attr.interface_id_n where attr.name_v ='Field Lookup Conf' and inter.interface_id_n in ("+ interfaceIdStr +") order by inter.interface_id_n ;\n\n";
+		String summaryDetails = ("select inter.interface_id_n,inter.name_v, summ.file_id_n, summ.file_name_v, summ.total_count_n, summ.success_count_n, summ.error_count_n, summ.filter_count_n, summ.status_n, summ.message_v FROM interface.tr_interface_file_summary summ INNER JOIN interface.ms_interface inter ON inter.interface_id_n=summ.interface_id_n where  inter.interface_id_n in ("+ interfaceIdStr +")  order by inter.interface_id_n ;");
+		String lineBreak = ("\n\n----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------\n\n\n");
 		try 
 		{
-			if(interfaceid != null && interfaceid.equalsIgnoreCase("1165"))
-			{
 
-				if(deleteQueryCmdFlag) 
+			if(interfaceIdStr != null && interfaceIdStr.contains("1165"))
+			{
+				System.out.println(lineBreak);
+				if(choice.equalsIgnoreCase("all") || choice.equalsIgnoreCase("select")) 
 				{
-					System.out.println(""
-							+ "delete from interface.tr_temp_site_mapping;\r\n"
-							+ "delete from kpi.tr_temp_hadoop_failure_aggr where file_id_n in (select file_id_n from interface.tr_interface_file_summary_details where file_id_n in (select file_id_n from interface.tr_interface_file_summary where interface_id_n in (1165)));\r\n"
-							+ "delete from interface.tr_interface_file_summary_details where file_id_n in (select file_id_n from interface.tr_interface_file_summary where interface_id_n in (1165));\r\n"
-							+ "delete from interface.tr_interface_file_summary where interface_id_n in (1165);\r\n" + 
-							"");
+					System.out.println("select * from interface.ms_interface_attr where interface_id_n = 1165 order by 1;");
+					System.out.println("-- update interface.ms_interface_attr set value_v = '' where attribute_id_n = ? ;");
+					System.out.println("select * from interface.tr_interface_file_summary where interface_id_n = 1165 order by 1 desc;");
+					System.out.println("select * from interface.tr_temp_site_mapping where file_id_n in (0) order by 1;");
+
 				}
+				if(deleteQueryCmdFlag)
+					System.out.println("\n/*");
+				if(choice.equalsIgnoreCase("all") || choice.equalsIgnoreCase("delete")) 
+				{
+
+					System.out.println( "delete from interface.tr_temp_site_mapping;\n"
+							+ "delete from kpi.tr_temp_hadoop_failure_aggr where file_id_n in (select file_id_n from interface.tr_interface_file_summary_details where file_id_n in (select file_id_n from interface.tr_interface_file_summary where interface_id_n in (1165)));\n"
+							+ "delete from interface.tr_interface_file_summary_details where file_id_n in (select file_id_n from interface.tr_interface_file_summary where interface_id_n in (1165));\n"
+							+ "delete from interface.tr_interface_file_summary where interface_id_n in (1165);");
+				}					
+				if(deleteQueryCmdFlag)
+					System.out.println("*/\n\n\n");
+				System.out.println(lineBreak);
 			}
-			resultSet = conn.createStatement().executeQuery(sql);
+			resultSet = conn.createStatement().executeQuery(interfaceFieldLookupConfQuery);
 
 			while(resultSet.next()) 
 			{
@@ -1609,10 +1624,10 @@ public class RDBMSOperation {
 					System.out.println("*/\n\n\n");
 
 				System.out.println("select * from kpi.tr_temp_hadoop_failure_aggr where file_id_n in (0);");
-				System.out.println("select inter.interface_id_n,inter.name_v, summ.file_id_n, summ.file_name_v, summ.total_count_n, summ.success_count_n, summ.error_count_n, summ.filter_count_n, summ.status_n, summ.message_v FROM interface.tr_interface_file_summary summ INNER JOIN interface.ms_interface inter ON inter.interface_id_n=summ.interface_id_n where  inter.interface_id_n between 1165 and 1182 order by inter.interface_id_n ;");
-				System.out.println("\n\n----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------\n\n\n");
+				System.out.println(lineBreak);
 				duplicate_validation_conf = null;
 			}
+			System.out.println(summaryDetails);
 		}
 		catch (Exception e) 
 		{
@@ -1837,7 +1852,7 @@ public class RDBMSOperation {
 			statement.setString(1, attributeName);
 			resultSet = statement.executeQuery();
 			while (resultSet.next()) 
-				response.put(resultSet.getLong(1), resultSet.getString(2));
+				response.put(resultSet.getLong(1), resultSet.getString(2)!= null ? resultSet.getString(2).trim() : resultSet.getString(2));
 			return response;
 		} 
 		catch (Exception e) 

@@ -114,7 +114,7 @@ public class ServerProcessBtn extends JButton
 						else if(runOpr.equals("2")) 
 						{
 							TextAreaLogs.getTextAreaLogs().log("Please wait script is running..");
-							TextAreaLogs.getTextAreaLogs().log(puttyOpr.plinkSeeProcess(processName));
+							TextAreaLogs.getTextAreaLogs().log("Process Name:: " + processName + "\n"+ puttyOpr.plinkSeeProcess(processName));
 							//TextAreaLogs.getTextAreaLogs().log("Script running process done..");
 							//TextAreaLogs.getTextAreaLogs().log("Disabled");
 							return;
@@ -123,7 +123,7 @@ public class ServerProcessBtn extends JButton
 						{
 							TextAreaLogs.getTextAreaLogs().log("Please wait script is running..");
 							puttyOpr.plinkKillProcess(processName);
-							TextAreaLogs.getTextAreaLogs().log("Script running process done..");
+							TextAreaLogs.getTextAreaLogs().log("Process Name:: " + processName + "\nKill process done..");
 							return;
 						}
 						else 

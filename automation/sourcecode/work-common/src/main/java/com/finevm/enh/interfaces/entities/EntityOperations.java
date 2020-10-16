@@ -17,9 +17,23 @@ public class EntityOperations
 			manager = DataSourceConfig.getEntityManager("com.finevm.enh.interfaces.entities");
 	}
 
+	public EntityOperations(String persistance) {
+		super();
+		if(manager == null)
+			manager = DataSourceConfig.getEntityManager(persistance);
+	}
+
 	public static EntityOperations getInstance() {
 		if(entityOperations == null)
 			entityOperations = new EntityOperations();
+		return entityOperations;
+	}
+	
+	public static EntityOperations getInstance(String persistance) {
+		if(persistance == null)
+			entityOperations = new EntityOperations();
+	else	
+		entityOperations = new EntityOperations(persistance);
 		return entityOperations;
 	}
 

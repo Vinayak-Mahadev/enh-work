@@ -137,7 +137,7 @@ public class DevToolAutoMaven {
 
 				cmdData = cmdData + DRIVE_ID;
 				cmdData = cmdData + " && cd ";
-				cmdData = cmdData + " "+childPath+" ";
+				cmdData = cmdData + "/d \""+childPath.trim()+"\" ";
 				cmdData = cmdData + " && "+mvncmd + " && ";
 				cmdData = cmdData + end;
 

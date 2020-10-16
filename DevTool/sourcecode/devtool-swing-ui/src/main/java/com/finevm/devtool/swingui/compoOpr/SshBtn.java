@@ -236,7 +236,7 @@ public class SshBtn extends JButton{
 							}
 						}
 					}
-					TextAreaLogs.getTextAreaLogs().log(log);
+					TextAreaLogs.getTextAreaLogs().log("Server : " + uploadServerJson.getString("hostName") + "\n" + log);
 					logger.info("LaunchSshBtn operation done..");
 				} 
 				catch (org.json.JSONException e)

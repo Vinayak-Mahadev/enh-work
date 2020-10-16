@@ -123,9 +123,12 @@ public class ThreadUtil implements Runnable
 		super();
 	}
 
-	private final SndIntegrationSoupService sndIntegrationSoupService = new SndIntegrationSoupService();
+	private static  SndIntegrationSoupService sndIntegrationSoupService = new SndIntegrationSoupService();
 	private long interfaceId = 0l;
 	private String methodName;
-
+	
+	public static void setProperties(String wsdlUrl, String userName, String password) {
+		sndIntegrationSoupService = new SndIntegrationSoupService(wsdlUrl, userName, password);
+	}
 
 }

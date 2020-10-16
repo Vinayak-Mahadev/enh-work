@@ -1,0 +1,336 @@
+{
+	"Primary": [
+		{
+			"connection-id": "snoc-r4",
+			"schema-name": "snoc_report",
+			"collection-name": "crs_trk_summary",
+			"projection": {
+				"course_id": 1,
+				"course_name": 1,
+				"course_type": 1,
+				"org_id": 1,
+				"user_id": 1,
+				"node_id": 1,
+				"status": 1,
+				"overall_rewards": 1,
+				"payout_idr": 1,
+				"points_unit": 1
+			},
+			"batch-size": 100,
+			"merge-type": "include_parent",
+			"parameters": [
+				{
+					"param-name": "course_id",
+					"param-value": "$course_id",
+					"param-type": "Long",
+					"mandatory": false
+				},
+				{
+					"param-name": "user_id",
+					"param-value": "$user_id",
+					"param-type": "Long",
+					"mandatory": false
+				}
+			],
+			"sort-by": {
+				"_id": 1
+			}
+		}
+	],
+	"Lookup": {
+		"org_user_node_acc": {
+			"connection-id": "snoc-r4",
+			"schema-name": "snoc_report",
+			"collection-name": "org_user_node_acc",
+			"parameters": [
+				{
+					"param-name": "user_id",
+					"param-value": "$user_id",
+					"param-type": "Long",
+					"mandatory": false
+				}
+			]
+		},
+		"org_user_node_acc_main": {
+			"connection-id": "snoc-r4",
+			"schema-name": "snoc_report",
+			"collection-name": "org_user_node_acc",
+			"parameters": [
+				{
+					"param-name": "regional",
+					"param-value": "$regional",
+					"param-type": "String",
+					"mandatory": false
+				},
+				{
+					"param-name": "area",
+					"param-value": "$area",
+					"param-type": "String",
+					"mandatory": false
+				},
+				{
+					"param-name": "sales_area",
+					"param-value": "$sales_area",
+					"param-type": "String",
+					"mandatory": false
+				},
+				{
+					"param-name": "cluster",
+					"param-value": "$cluster",
+					"param-type": "String",
+					"mandatory": false
+				},
+				{
+					"param-name": "micro_cluster",
+					"param-value": "$micro_cluster",
+					"param-type": "String",
+					"mandatory": false
+				}
+			]
+		},
+		"transitionValueCollection": {
+			"connection-id": "snoc-r1",
+			"schema-name": "snoc",
+			"collection-name": "transitionValueCollection"
+		},
+		"genericMasterValueCollection": {
+			"connection-id": "snoc-r1",
+			"schema-name": "snoc",
+			"collection-name": "genericMasterValueCollection"
+		}
+	},
+	"Configuration": {
+		"region": {
+			"field": "user_id",
+			"lookup": [
+				{
+					"name": "org_user_node_acc_main",
+					"mapping-field": "user_id",
+					"mapping-field-type": "Long",
+					"lookup-field": "regional_desc"
+				}
+			]
+		},
+		"area": {
+			"field": "user_id",
+			"lookup": [
+				{
+					"name": "org_user_node_acc_main",
+					"mapping-field": "user_id",
+					"mapping-field-type": "Long",
+					"lookup-field": "area_desc"
+				}
+			]
+		},
+		"sales_area": {
+			"field": "user_id",
+			"lookup": [
+				{
+					"name": "org_user_node_acc_main",
+					"mapping-field": "user_id",
+					"mapping-field-type": "Long",
+					"lookup-field": "sales_area_desc"
+				}
+			]
+		},
+		"cluster": {
+			"field": "user_id",
+			"lookup": [
+				{
+					"name": "org_user_node_acc_main",
+					"mapping-field": "user_id",
+					"mapping-field-type": "Long",
+					"lookup-field": "cluster_desc"
+				}
+			]
+		},
+		"micro_cluster": {
+			"field": "user_id",
+			"lookup": [
+				{
+					"name": "org_user_node_acc_main",
+					"mapping-field": "user_id",
+					"mapping-field-type": "Long",
+					"lookup-field": "micro_cluster_desc"
+				}
+			]
+		},
+		"territory_id": {
+			"field": "territory_id"
+		},
+		"org_type_desc": {
+			"field": "org_type_desc"
+		},
+		"org_name": {
+			"field": "org_id",
+			"lookup": [
+				{
+					"name": "org_user_node_acc",
+					"mapping-field": "org_id",
+					"mapping-field-type": "Long",
+					"lookup-field": "org_desc"
+				}
+			]
+		},
+		"node_id": {
+			"field": "node_id"
+		},
+		"node_name": {
+			"field": "node_id",
+			"lookup": [
+				{
+					"name": "org_user_node_acc",
+					"mapping-field": "node_id",
+					"mapping-field-type": "Long",
+					"lookup-field": "node_name"
+				}
+			]
+		},
+		"position": {
+			"field": "node_id",
+			"lookup": [
+				{
+					"name": "org_user_node_acc",
+					"mapping-field": "node_id",
+					"mapping-field-type": "Long",
+					"lookup-field": "position"
+				}
+			]
+		},
+		"user": {
+			"field": "user_id",
+			"lookup": [
+				{
+					"name": "org_user_node_acc",
+					"mapping-field": "user_id",
+					"lookup-field": "user_name"
+				}
+			]
+		},
+		"course_name": {
+			"field": "course_name"
+		},
+		"course_type": {
+			"field": "course_type",
+			"lookup": [
+				{
+					"name": "transitionValueCollection",
+					"mapping-field": "s_id",
+					"lookup-field": "description"
+				}
+			]
+		},
+		"payout_idr": {
+			"field": "payout_idr"
+		},
+		"points_unit": {
+			"field": "points_unit"
+		},
+		"overall_rewards": {
+			"field": "overall_rewards"
+		},
+		"status": {
+			"field": "status",
+			"lookup": [
+				{
+					"name": "genericMasterValueCollection",
+					"mapping-field": "s_id",
+					"lookup-field": "description"
+				}
+			]
+		}
+	},
+	"multiple-row-conf": {},
+	"OutputConf": {
+		"type": "file",
+		"extension": "$file_type",
+		"file-path": "/home/appuser/jobengine/outputfiles/$fileExtension",
+		"file-name": "courseRwrdSummaryReport",
+		"file-name-pattern": "yyyyMMdd",
+		"file-headers": "REGION,AREA,SALES AREA,CLUSTER,MICRO CLUSTER,ORGANIZATION NAME,NODE ID,NODE NAME,POSITION, USER NAME,COURSE NAME,COURSE TYPE,PAYOUT(IDR),POINTS(UNIT),REWARD POINTS,STATUS",
+		"field-delimiter": ",",
+		"field-conf": [
+			{
+				"path": "region",
+				"type": "String"
+			},
+			{
+				"path": "area",
+				"type": "String"
+			},
+			{
+				"path": "sales_area",
+				"type": "String"
+			},
+			{
+				"path": "cluster",
+				"type": "String"
+			},
+			{
+				"path": "micro_cluster",
+				"type": "String"
+			},
+			{
+				"path": "org_name",
+				"type": "String"
+			},
+			{
+				"path": "node_id",
+				"type": "String"
+			},
+			{
+				"path": "node_name",
+				"type": "String"
+			},
+			{
+				"path": "position",
+				"type": "String"
+			},
+			{
+				"path": "user",
+				"type": "String"
+			},
+			{
+				"path": "course_name",
+				"type": "String"
+			},
+			{
+				"path": "course_type",
+				"type": "String"
+			},
+			{
+				"path": "payout_idr",
+				"type": "String"
+			},
+			{
+				"path": "points_unit",
+				"type": "String"
+			},
+			{
+				"path": "overall_rewards",
+				"type": "String"
+			},
+			{
+				"path": "status",
+				"type": "String"
+			}
+		],
+		"store-file-conf": {
+			"connection-id": "snoc-r4",
+			"schema-name": "snoc_report"
+		}
+	},
+	"RequestUpdateConf": {
+		"connection-id": "snoc-r1",
+		"schema-name": "snoc",
+		"collection-name": "notification",
+		"field": "trans_id"
+	},
+	"SortConf": {
+		"extension": "csv",
+		"file-name-pattern": "yyyyMMddHHmmssSSS",
+		"file-path": "/home/appuser/snoc/snocconf/jobengineconf/sorting-scripts/files/",
+		"field-delimiter": "|",
+		"sort-filepath_0": "/home/appuser/snoc/snocconf/jobengineconf/sorting-scripts/collection1.sh"
+	}
+}

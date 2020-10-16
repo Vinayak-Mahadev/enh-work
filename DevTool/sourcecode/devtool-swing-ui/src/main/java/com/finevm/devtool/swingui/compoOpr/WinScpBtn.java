@@ -69,8 +69,7 @@ public class WinScpBtn extends JButton
 					{
 						winScp.init(json,winscpPath,winscpConType);
 						winScp.launch();
-						TextAreaLogs.getTextAreaLogs().log("LaunchWinScpBtn winscp  launched....");
-						logger.info("LaunchWinScpBtn winscp  launched....");
+						TextAreaLogs.getTextAreaLogs().log("WinSCP launched with :: " + json.getString("hostName") +":"+ json.getString("username"));
 					}
 				} 
 				catch (IOException e1)
