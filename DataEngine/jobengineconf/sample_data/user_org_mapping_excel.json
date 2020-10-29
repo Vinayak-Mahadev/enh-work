@@ -1,0 +1,20 @@
+{
+	"job-data": {
+		"user_org_mapping_status": "174",
+		"status_node": "174",
+		"status_user": "174",
+		"output_file_type": "xls",
+		"output_file_name": "USER_ORG_MAPPING_DETAILS",
+		"output_file_date_patten": "yyyyMMddHHmm",
+		"output_file_path":"/home/appuser/jobengine/outputfiles/xls/"
+	},
+	"job-id": "JOB_ID_user_org_mapping",
+	"template-id": "user_org_mapping-xls",
+	"template-name": "JOB_TEMPLATE_user_org_mapping",
+	"StoreFileConf": {
+		"connection-id": "snoc-r4",
+		"schema-name": "snoc_jobengine_reports",
+		"delete-file-local": false,
+		"is-enable": false
+	}
+}

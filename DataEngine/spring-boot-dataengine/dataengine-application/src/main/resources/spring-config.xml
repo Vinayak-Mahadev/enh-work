@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:jaxrs="http://cxf.apache.org/jaxrs"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:jee="http://www.springframework.org/schema/jee" xmlns:http-conf="http://cxf.apache.org/transports/http/configuration"
+	xmlns:mongo="http://www.springframework.org/schema/data/mongo"
+	xmlns:tx="http://www.springframework.org/schema/tx" xmlns:jms="http://www.springframework.org/schema/jms"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:task="http://www.springframework.org/schema/task"
+	default-lazy-init="true" xmlns:jdbc="http://www.springframework.org/schema/jdbc"
+	xsi:schemaLocation="
+        http://www.springframework.org/schema/beans 
+        http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+        http://www.springframework.org/schema/jms 
+        http://www.springframework.org/schema/jms/spring-jms.xsd
+        http://cxf.apache.org/jaxrs 
+        http://cxf.apache.org/schemas/jaxrs.xsd
+        http://cxf.apache.org/core 
+        http://cxf.apache.org/schemas/core.xsd
+  		http://www.springframework.org/schema/context         
+  		http://www.springframework.org/schema/context/spring-context-3.0.xsd
+  		http://www.springframework.org/schema/data/mongo 
+  		http://www.springframework.org/schema/data/mongo/spring-mongo.xsd
+        http://www.springframework.org/schema/task http://www.springframework.org/schema/task/spring-task-3.0.xsd
+        http://www.springframework.org/schema/jee http://www.springframework.org/schema/jee/spring-jee-3.1.xsd
+        http://www.springframework.org/schema/jdbc http://www.springframework.org/schema/jdbc/spring-jdbc-3.1.xsd
+        http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-4.0.xsd">
+
+
+	<context:component-scan base-package="com.enhancesys.integration.services.dataengine.*" />
+	<context:annotation-config />
+	
+	<bean id="jobConfiguration" class="com.enhancesys.integration.services.dataengine.job.JobConfiguration"/>
+	<bean id="jobEngine" class="com.enhancesys.integration.services.dataengine.job.JobEngine"/>
+	<bean id="jobPipeLine" class="com.enhancesys.integration.services.dataengine.job.JobPipeLine" scope="prototype"/>
+	<bean id="failureQueue" class="java.util.concurrent.ArrayBlockingQueue">
+		<constructor-arg type="int">
+			<value>2</value>
+		</constructor-arg>
+	</bean>
+
+	<!-- Connectors start -->
+	<bean id="inMemoryQueue"
+		class="com.enhancesys.integration.services.dataengine.job.connector.queue.InMemoryQueue"
+		factory-method="createBean" scope="prototype">
+		<constructor-arg name="configData" value="" />
+	</bean>
+	
+	<bean id="activeMQueue"
+		class="com.enhancesys.integration.services.dataengine.job.connector.queue.ActiveMQueue"
+		factory-method="createBean" scope="prototype">
+		<constructor-arg name="configData" value="" />
+	</bean>
+	<!-- Connectors end -->
+
+	<!-- Transformer -->	
+	<bean id="genericDataTransformer" class="com.enhancesys.integration.services.dataengine.job.transformer.common.GenericDataTransformer" scope="prototype"/>
+
+
+	<!-- Reader start -->
+    <bean id="genericDataFetcher" class="com.enhancesys.integration.services.dataengine.job.reader.GenericDataFetcher" scope="prototype"/>
+    
+    <bean id="mongoDBDataFetcher" class="com.enhancesys.integration.services.dataengine.job.reader.MongoDBDataFetcher" scope="prototype"/>
+    <!-- <bean id="mongoDBDataSyncReader" class="enhancesys.integration.job.services.reader.MongoDBDataSyncReader" scope="prototype"/> -->
+	
+	<!-- mongo implementation for DBProcessor -->
+	<bean id="mongoDBPrimaryDataFetcher" class="com.enhancesys.integration.services.dataengine.job.reader.mongo.MongoDBPrimaryDataFetcher" scope="prototype"/>
+	<bean id="mongoDBSecondaryDataFetcher" class="com.enhancesys.integration.services.dataengine.job.reader.mongo.MongoDBSecondaryDataFetcher" scope="prototype"/>
+	<bean id="mongoDBPrimaryDataSortProcessor" class="com.enhancesys.integration.services.dataengine.job.reader.mongo.MongoDBPrimaryDataSortProcessor" scope="prototype"/>
+	<bean id="mongoDBSencodaryDataSortProcessor" class="com.enhancesys.integration.services.dataengine.job.reader.mongo.MongoDBSencodaryDataSortProcessor" scope="prototype"/>
+	<bean id="mongoDBPrimaryAggregateDataSortProcessor" class="com.enhancesys.integration.services.dataengine.job.reader.mongo.MongoDBPrimaryAggregateDataSortProcessor" scope="prototype"/>
+
+	<!-- pg implementation for DBProcessor -->
+	<bean id="postgresDBPrimaryDataFetcher" class="com.enhancesys.integration.services.dataengine.job.reader.pg.PostgresDBPrimaryDataFetcher" scope="prototype"/>
+	<bean id="postgresDBSecondaryDataFetcher" class="com.enhancesys.integration.services.dataengine.job.reader.pg.PostgresDBSecondaryDataFetcher" scope="prototype"/>
+	<bean id="postgresDBPrimaryDataSortProcessor" class="com.enhancesys.integration.services.dataengine.job.reader.pg.PostgresDBPrimaryDataSortProcessor" scope="prototype"/>
+	<bean id="postgresDBSecondaryDataStrFetcher" class="com.enhancesys.integration.services.dataengine.job.reader.pg.PostgresDBSecondaryDataStrFetcher" scope="prototype"/>
+	<bean id="postgresDBSecondaryDataSortProcessor" class="com.enhancesys.integration.services.dataengine.job.reader.pg.PostgresDBSecondaryDataSortProcessor" scope="prototype"/>
+	<bean id="postgresDBPrimaryCartesianDataProcessor" class="com.enhancesys.integration.services.dataengine.job.reader.pg.PostgresDBPrimaryCartesianDataProcessor" scope="prototype"/>
+	<bean id="postgresDBPrimaryDataListFetcher" class="com.enhancesys.integration.services.dataengine.job.reader.pg.PostgresDBPrimaryDataListFetcher" scope="prototype"/>
+	<bean id="postgresDBSecondaryDataListFetcher" class="com.enhancesys.integration.services.dataengine.job.reader.pg.PostgresDBSecondaryDataListFetcher" scope="prototype"/>
+	<bean id="postgresDBPrimaryCartesianDataListProcessor" class="com.enhancesys.integration.services.dataengine.job.reader.pg.PostgresDBPrimaryCartesianDataListProcessor" scope="prototype"/>
+
+	<!-- Reader end -->
+	
+	
+	<!-- Writer start -->
+	<!-- file -->
+	<bean id="sampleProcessor" class="com.enhancesys.integration.services.dataengine.job.writer.SampleProcessor" scope="prototype"/>
+	<bean id="fileDataProcessor" class="com.enhancesys.integration.services.dataengine.job.writer.file.FileDataProcessor" scope="prototype"/>
+	<bean id="csvDataWriter" class="com.enhancesys.integration.services.dataengine.job.writer.file.CSVDataWriter" scope="prototype"/>
+	<bean id="csvDataListWriter" class="com.enhancesys.integration.services.dataengine.job.writer.file.CSVDataListWriter" scope="prototype"/>
+	<bean id="excelDataWriter" class="com.enhancesys.integration.services.dataengine.job.writer.file.ExcelDataWriter" scope="prototype"/>
+	<bean id="pdfDataWriter" class="com.enhancesys.integration.services.dataengine.job.writer.file.PDFDataWriter" scope="prototype"/>
+	<bean id="jsonDataWriter" class="com.enhancesys.integration.services.dataengine.job.writer.file.JSONDataWriter" scope="prototype"/>
+	<!-- mongo -->
+	<bean id="mongoDBDataWriter" class="com.enhancesys.integration.services.dataengine.job.writer.mongo.MongoDBDataWriter" scope="prototype"/>
+	<!-- pg -->
+	<bean id="postgresDBDataWriter" class="com.enhancesys.integration.services.dataengine.job.writer.pg.PostgresDBDataWriter" scope="prototype"/>
+	<!-- queue -->
+	<bean id="activeMQDataPublisher" class="com.enhancesys.integration.services.dataengine.job.writer.queue.ActiveMQDataPublisher" scope="prototype"/>
+	
+	<!-- Writer end -->
+	
+	
+
+	<!-- Util start -->	
+	<bean id="propertiesLoader" class="com.enhancesys.integration.services.dataengine.util.PropertiesLoader" />
+	<bean id="util" class="com.enhancesys.integration.services.dataengine.util.Utilities"/>
+	<bean id="mathematicalProcessor" class="com.enhancesys.integration.services.dataengine.util.mathematical.MathematicalProcessor"  scope="prototype"/>
+	<bean id="expressionProcessor" class="com.enhancesys.integration.services.dataengine.util.condition.ExpressionProcessor"  scope="prototype"/>
+
+	<bean id="mongoDataUtil" class="com.enhancesys.integration.services.dataengine.util.mongo.MongoDataUtil"/>
+	<bean id="mongoConnectionUtil" class="com.enhancesys.integration.services.dataengine.util.mongo.MongoConnectionUtil"/>
+	<bean id="jdbcUtility" class="com.enhancesys.integration.services.dataengine.util.pg.JdbcUtility"/>
+
+	<bean id="jdbcConnectionUtil" class="com.enhancesys.integration.services.dataengine.util.pg.JdbcConnectionUtil">
+		<constructor-arg name="driverClassName" value="${POSTGRES_JDBC_DRIVER}"/>
+		<constructor-arg name="url" value="${POSTGRES_JDBC_URL}"/>
+		<constructor-arg name="username" value="${POSTGRES_JDBC_USER}"/>
+		<constructor-arg name="password" value="${POSTGRES_JDBC_PASS}"/>
+		<constructor-arg name="socketTimeout" value="${POSTGRES_JDBC_SOCKET_TIMEOUT}"/>
+	</bean>
+
+	<!-- Postgres Template bean declaration.. Start -->
+	<bean id="dataSource" class="com.enhancesys.integration.services.dataengine.util.pg.JDBCDataSource">
+		<constructor-arg name="driverClassName" value="${POSTGRES_JDBC_DRIVER}"/>
+		<constructor-arg name="url" value="${POSTGRES_JDBC_URL}"/>
+		<constructor-arg name="username" value="${POSTGRES_JDBC_USER}"/>
+		<constructor-arg name="password" value="${POSTGRES_JDBC_PASS}"/>
+		<constructor-arg name="socketTimeout" value="${POSTGRES_JDBC_SOCKET_TIMEOUT}"/>
+	</bean>
+	<bean id="jdbcTemplate" class="org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate">
+		<constructor-arg name="dataSource" ref="dataSource"/>
+	</bean>	
+	<!-- Postgres Template bean decleartion.. End -->
+
+	<!-- Mongo Template bean declaration.. Start -->
+	<bean id="snoc-r1" class="com.enhancesys.integration.services.dataengine.util.mongo.MongoTemplate">
+		<constructor-arg name="userName" value="${MONGO_DB_USER}" />
+		<constructor-arg name="password" value="${MONGO_DB_PASSWORD}" />
+		<constructor-arg name="schemaName" value="${MONGO_DB_DATABASE}" />
+		<constructor-arg name="maxConnection" value="${MONGO_CONNECTIONS_MAX}" />
+		<constructor-arg name="connectionTimeOut" value="${MONGO_CONNECTION_TIMEOUT_MAX}" />
+		<constructor-arg name="replicas" value="${MONGO_DB_IP1}:${MONGO_DB_PORT1}, ${MONGO_DB_IP2}:${MONGO_DB_PORT2}, ${MONGO_DB_IP3}:${MONGO_DB_PORT3}" />
+	</bean>
+	<bean id="snoc-r4" class="com.enhancesys.integration.services.dataengine.util.mongo.MongoTemplate">
+		<constructor-arg name="userName" value="${MONGO_DB_R4_USER}" />
+		<constructor-arg name="password" value="${MONGO_DB_R4_PASSWORD}" />
+		<constructor-arg name="schemaName" value="${MONGO_DB_R4_DATABASE}" />
+		<constructor-arg name="maxConnection" value="${MONGO_CONNECTIONS_MAX}" />
+		<constructor-arg name="connectionTimeOut" value="${MONGO_CONNECTION_TIMEOUT_MAX}" />
+		<constructor-arg name="replicas" value="${MONGO_DB_IP4}:${MONGO_DB_PORT4}" />
+	</bean>
+	<bean id="snoc-r5" class="com.enhancesys.integration.services.dataengine.util.mongo.MongoTemplate">
+		<constructor-arg name="userName" value="${MONGO_DB_STANDALONE_USER}" />
+		<constructor-arg name="password" value="${MONGO_DB_STANDALONE_PASSWORD}" />
+		<constructor-arg name="schemaName"	value="${MONGO_DB_STANDALONE_DATABASE}" />
+		<constructor-arg name="maxConnection" value="${MONGO_CONNECTIONS_MAX}" />
+		<constructor-arg name="connectionTimeOut" value="${MONGO_CONNECTION_TIMEOUT_MAX}" />
+		<constructor-arg name="replicas" value="${MONGO_DB_IP5}:${MONGO_DB_PORT5}" />
+	</bean>
+	<!-- Mongo Template bean declaration.. End -->
+	
+
+    <!-- Util end -->
+
+	<bean id="bridgePropertyPlaceholder" class="org.apache.camel.spring.spi.BridgePropertyPlaceholderConfigurer">
+		<property name="locations">
+			<list>
+				<value>file:${APPSERVER_CONF_PATH}/jobengineconf/common/jobConfiguration.properties</value>
+			</list>
+		</property>
+	</bean>	
+</beans>

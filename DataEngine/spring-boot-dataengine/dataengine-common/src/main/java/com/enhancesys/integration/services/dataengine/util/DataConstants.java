@@ -32,7 +32,7 @@ public interface DataConstants
 
 	static class Env
 	{
-		static final  String PROJECT_LOC = System.getenv("APPSERVER_CONF_PATH") + "/jobengineconf";
+		static final  String PROJECT_LOC = "E:/interface/work/enh-work/DataEngine" + "/jobengineconf";
 	}
 
 

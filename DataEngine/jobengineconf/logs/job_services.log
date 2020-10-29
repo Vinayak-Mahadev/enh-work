@@ -1,0 +1,1343 @@
+29.10.2020 14:30:32  INFO (JobServicesInitiator.java:91) - JobServicesInitiator started with jobParameters from file :: E:\interface\work\enh-work\DataEngine\jobengineconf\sample_data\CourseLvlSummaryDtlsReport_csv.json.cp
+
+
+
+29.10.2020 14:30:32  INFO (JobService.java:66) - Entry processRequest :: JobParameters :: {"job-id":"JOB_ID_CourseLvlSummaryDtlsReport","StoreFileConf":{"is-enable":false,"connection-id":"snoc-r4","schema-name":"snoc_jobengine_reports","delete-file-local":false},"template-id":"CourseLvlSummaryDtlsReport-csv","job-data":{"area":"50003","course_id":"1299","cluster":"","output_file_name":"Course_Level_Summary_Details_Report","user_id":"30003","regional":"50002","sales_area":"50004","output_file_type":"csv","output_file_date_patten":"yyyyMMdd","micro_cluster":"","output_file_path":"E:\/interface\/work\/enh-work\/DataEngine\/jobengineconf\/outputfiles\/"},"template-name":"JOB_TEMPLATE_CourseLevel"}
+29.10.2020 14:30:32  INFO (AbstractApplicationContext.java:510) - Refreshing org.springframework.context.support.FileSystemXmlApplicationContext@77556fd: startup date [Thu Oct 29 14:30:32 IST 2020]; root of context hierarchy
+29.10.2020 14:30:32  INFO (XmlBeanDefinitionReader.java:316) - Loading XML bean definitions from URL [file:E:/interface/work/enh-work/DataEngine/jobengineconf/beans/spring-config.xml]
+29.10.2020 14:30:33  INFO (PropertiesLoaderSupport.java:172) - Loading properties file from URL [file:E:/interface/work/enh-work/DataEngine/jobengineconf/common/jobConfiguration.properties]
+29.10.2020 14:30:33  INFO (JobService.java:94) - Spring App Context : org.springframework.context.support.FileSystemXmlApplicationContext@77556fd: startup date [Thu Oct 29 14:30:32 IST 2020]; root of context hierarchy
+29.10.2020 14:30:33  INFO (JobService.java:98) - JobEngine init process going to start:: BEAN ID :: com.enhancesys.integration.services.dataengine.job.JobEngine@105fece7
+29.10.2020 14:30:33  INFO (JobEngine.java:35) - Entry init..
+29.10.2020 14:30:33  INFO (JobConfiguration.java:26) - Entry readConfiguration..
+29.10.2020 14:30:33  INFO (PropertiesLoader.java:46) - Entry loadProperties..
+29.10.2020 14:30:33  INFO (PropertiesLoader.java:56) - Configuration Path : E:/interface/work/enh-work/DataEngine/jobengineconf/common/jobConfiguration.properties
+29.10.2020 14:30:33  INFO (PropertiesLoader.java:66) - Exit loadProperties..
+29.10.2020 14:30:33  INFO (JobConfiguration.java:52) - Custom Template Configuration from E:/home/appuser/snoc/snocconf/jobengineconf/job-templates/JOB_TEMPLATE_CourseLevel.json
+29.10.2020 14:30:33  INFO (JobConfiguration.java:102) - jobId :: JOB_ID_CourseLvlSummaryDtlsReport
+29.10.2020 14:30:33  INFO (JobConfiguration.java:174) - Exit readConfiguration..
+29.10.2020 14:30:33  INFO (JobEngine.java:69) - definitionArr : ["Reader","Transformer-Input-Queue","Transformer","Transformer-Output-Queue","Writer"]
+29.10.2020 14:30:33  INFO (JobEngine.java:176) - Entry loadJobQueues..
+29.10.2020 14:30:33  INFO (JobEngine.java:207) - Exit loadJobQueues..
+29.10.2020 14:30:33  INFO (JobEngine.java:72) - queueMap : {Transformer-Input-Queue=com.enhancesys.integration.services.dataengine.job.connector.queue.InMemoryQueue@25b485ba, Transformer-Output-Queue=com.enhancesys.integration.services.dataengine.job.connector.queue.InMemoryQueue@2b546384}
+29.10.2020 14:30:33  INFO (JobPipeLine.java:32) - Reader : Entry init..
+29.10.2020 14:30:33  INFO (JobPipeLine.java:46) - Reader : Processor : {"job_count":10000,"delay_count":10,"processors":[{"job_count":5,"collection_position":0,"delay_count":10,"class":"mongoDBPrimaryDataSortProcessor","sleep_time":5}],"class":"genericDataFetcher","sleep_time":6}
+29.10.2020 14:30:33  INFO (GenericDataFetcher.java:34) - Reader : Entry init..
+29.10.2020 14:30:33  INFO (GenericDataFetcher.java:69) - Reader : Processor : {"job_count":5,"collection_position":0,"delay_count":10,"class":"mongoDBPrimaryDataSortProcessor","sleep_time":5}
+29.10.2020 14:30:33  INFO (MongoDBPrimaryDataSortProcessor.java:52) - Entry init..
+29.10.2020 14:30:33  INFO (MongoDataUtil.java:44) - Entry getCursor..
+29.10.2020 14:30:33  INFO (MongoDataUtil.java:92) - queryObject : { }
+29.10.2020 14:30:33  INFO (MongoDataUtil.java:127) - Exit getCursor..
+29.10.2020 14:30:35  INFO (MongoDBPrimaryDataSortProcessor.java:59) - Reader : mongoDBPrimaryDataSortProcessor :  Cursor Size : 26
+29.10.2020 14:30:36  INFO (MongoDBPrimaryDataSortProcessor.java:102) - Entry sortData..
+29.10.2020 14:30:36  INFO (MongoDBPrimaryDataSortProcessor.java:132) - SortColumns : [_id]
+29.10.2020 14:30:37  INFO (MongoDBPrimaryDataSortProcessor.java:159) - Sort file script is initiated for file :: E:\interface\work\enh-work\DataEngine\jobengineconf\sorting-scripts\files\crs_trk_dtls_20201029143036843.csv.cp
+29.10.2020 14:30:37  INFO (MongoDBPrimaryDataSortProcessor.java:167) - Runtime cmd :: C:/Program Files/Git/git-bash.exe E:/interface/work/enh-work/DataEngine/jobengineconf/sorting-scripts/collection1.sh E:\interface\work\enh-work\DataEngine\jobengineconf\sorting-scripts\files\crs_trk_dtls_20201029143036843.csv.cp E:\interface\work\enh-work\DataEngine\jobengineconf\sorting-scripts\files\crs_trk_dtls_20201029143036843.csv.cp
+29.10.2020 14:30:37  INFO (MongoDBPrimaryDataSortProcessor.java:169) - Process : waitFor() :: 0
+29.10.2020 14:30:37  INFO (MongoDBPrimaryDataSortProcessor.java:211) - Exit sortData..
+29.10.2020 14:30:37  INFO (MongoDBPrimaryDataSortProcessor.java:95) - Exit init..
+29.10.2020 14:30:37  INFO (GenericDataFetcher.java:74) - Reader : Processors size : 1
+29.10.2020 14:30:37  INFO (GenericDataFetcher.java:86) - Reader : Exit init..
+29.10.2020 14:30:37  INFO (JobPipeLine.java:51) - Reader : Processors size : 1
+29.10.2020 14:30:37  INFO (JobPipeLine.java:62) - Reader : Exit init..
+29.10.2020 14:30:37  INFO (JobEngine.java:83) - Reader :
+29.10.2020 14:30:37  INFO (JobEngine.java:91) - OutputQ : Transformer-Input-Queue
+29.10.2020 14:30:37  INFO (JobPipeLine.java:32) - Transformer : Entry init..
+29.10.2020 14:30:37  INFO (JobPipeLine.java:46) - Transformer : Processor : {"delay_count":10,"class":"genericDataTransformer","sleep_time":10}
+29.10.2020 14:30:37  INFO (GenericDataTransformer.java:69) - Entry init..
+29.10.2020 14:30:37  INFO (GenericDataTransformer.java:105) - Exit init..
+29.10.2020 14:30:37  INFO (JobPipeLine.java:51) - Transformer : Processors size : 1
+29.10.2020 14:30:37  INFO (JobPipeLine.java:62) - Transformer : Exit init..
+29.10.2020 14:30:37  INFO (JobEngine.java:83) - Transformer :
+29.10.2020 14:30:37  INFO (JobEngine.java:86) - InputQ : Transformer-Input-Queue
+29.10.2020 14:30:37  INFO (JobEngine.java:91) - OutputQ : Transformer-Output-Queue
+29.10.2020 14:30:37  INFO (JobPipeLine.java:32) - Writer : Entry init..
+29.10.2020 14:30:37  INFO (JobPipeLine.java:46) - Writer : Processor : {"delay_count":10,"class":"csvDataWriter","sleep_time":10}
+29.10.2020 14:30:37  INFO (CSVDataWriter.java:65) - Entry init..
+29.10.2020 14:30:37  INFO (CSVDataWriter.java:104) - Entry createFile..
+29.10.2020 14:30:37  INFO (CSVDataWriter.java:170) - Exit createFile..E:\interface\work\enh-work\DataEngine\jobengineconf\outputfiles\Course_Level_Summary_Details_Report_20201029.csv
+29.10.2020 14:30:37  INFO (CSVDataWriter.java:98) - Exit init..
+29.10.2020 14:30:37  INFO (JobPipeLine.java:51) - Writer : Processors size : 1
+29.10.2020 14:30:37  INFO (JobPipeLine.java:62) - Writer : Exit init..
+29.10.2020 14:30:37  INFO (JobEngine.java:83) - Writer :
+29.10.2020 14:30:37  INFO (JobEngine.java:86) - InputQ : Transformer-Output-Queue
+29.10.2020 14:30:37  INFO (JobEngine.java:141) - Entry start : pipeLine threads size : 3
+29.10.2020 14:30:37  INFO (JobEngine.java:146) - Starting pipeline : Reader_0
+29.10.2020 14:30:37  INFO (JobEngine.java:146) - Starting pipeline : Transformer_0
+29.10.2020 14:30:37  INFO (JobEngine.java:146) - Starting pipeline : Writer_0
+29.10.2020 14:30:37  INFO (JobPipeLine.java:78) - Reader : Entry run..
+29.10.2020 14:30:37  INFO (JobPipeLine.java:78) - Transformer : Entry run..
+29.10.2020 14:30:37  INFO (JobPipeLine.java:78) - Writer : Entry run..
+29.10.2020 14:30:37  INFO (InMemoryQueue.java:61) - Transformer-Input-Queue : Sent RequestData to the next level :: queue size : 1
+29.10.2020 14:30:38 ERROR (InMemoryQueue.java:69) - Transformer-Input-Queue : Failed to send RequestData to the next level.. : queue size : 5 : Retry Count : 0
+29.10.2020 14:30:45 ERROR (InMemoryQueue.java:69) - Transformer-Input-Queue : Failed to send RequestData to the next level.. : queue size : 5 : Retry Count : 1
+29.10.2020 14:30:51 ERROR (MongoDBPrimaryDataSortProcessor.java:345) - Reader : mongoDBPrimaryDataSortProcessor : No more data exists in the cursor..
+29.10.2020 14:30:51 ERROR (GenericDataFetcher.java:157) - No More Data Exists..
+29.10.2020 14:30:51  INFO (JobPipeLine.java:149) - Reader : Sending emptyObject to the next level to stop process on completion..
+29.10.2020 14:30:51 ERROR (InMemoryQueue.java:69) - Transformer-Input-Queue : Failed to send RequestData to the next level.. : queue size : 5 : Retry Count : 0
+29.10.2020 14:30:54  INFO (JobPipeLine.java:179) - Reader : Exit run..Reader
+29.10.2020 14:31:00  INFO (JobPipeLine.java:116) - Transformer : pushing back empty object to the queue from : Transformer
+29.10.2020 14:31:00  INFO (JobPipeLine.java:156) - Transformer : Sending emptyObject to the next level to stop process..
+29.10.2020 14:31:00  INFO (JobPipeLine.java:179) - Transformer : Exit run..Transformer
+29.10.2020 14:31:00  INFO (JobPipeLine.java:116) - Writer : pushing back empty object to the queue from : Writer
+29.10.2020 14:31:00  INFO (JobPipeLine.java:179) - Writer : Exit run..Writer
+29.10.2020 14:31:00  INFO (CSVDataWriter.java:536) - recordCount : 30
+29.10.2020 14:31:00  INFO (CSVDataWriter.java:552) - storeFileConf :: {"is-enable":false,"connection-id":"snoc-r4","schema-name":"snoc_jobengine_reports","delete-file-local":false}
+29.10.2020 14:31:00  INFO (MongoDataUtil.java:359) - UpdateStatus : null : Status : 173   requestUpdateConf :: null
+29.10.2020 14:31:00  INFO (JobEngine.java:161) - Exit start : pipeLine threads size : 3
+29.10.2020 14:31:00  INFO (JobEngine.java:135) - Exit init..
+29.10.2020 14:31:00  INFO (JobService.java:104) - Job Done..
+29.10.2020 14:31:00  INFO (JobService.java:125) - Exit processRequest..
+29.10.2020 14:31:00  INFO (JobServicesInitiator.java:110) - 
+
+Total Time required for JobServices :: 0.47275 mins  :: Filepath :: E:\interface\work\enh-work\DataEngine\jobengineconf\sample_data\CourseLvlSummaryDtlsReport_csv.json.cp
+
+
+
+29.10.2020 14:31:00  INFO (JobServicesInitiator.java:91) - JobServicesInitiator started with jobParameters from file :: E:\interface\work\enh-work\DataEngine\jobengineconf\sample_data\CourseLvlSummaryDtlsReport_pdf.json.cp
+
+
+
+29.10.2020 14:31:00  INFO (JobService.java:66) - Entry processRequest :: JobParameters :: {"job-id":"JOB_ID_CourseLvlSummaryDtlsReport","StoreFileConf":{"is-enable":false,"connection-id":"snoc-r4","schema-name":"snoc_jobengine_reports","delete-file-local":false},"template-id":"CourseLvlSummaryDtlsReport-pdf","job-data":{"area":"50003","course_id":"1299","cluster":"","output_file_name":"Course_Level_Summary_Details_Report","user_id":"30003","regional":"50002","sales_area":"50004","output_file_type":"pdf","output_file_date_patten":"yyyyMMdd","micro_cluster":"","output_file_path":"E:\/interface\/work\/enh-work\/DataEngine\/jobengineconf\/outputfiles\/"},"template-name":"JOB_TEMPLATE_CourseLevel"}
+29.10.2020 14:31:00  INFO (JobService.java:94) - Spring App Context : org.springframework.context.support.FileSystemXmlApplicationContext@77556fd: startup date [Thu Oct 29 14:30:32 IST 2020]; root of context hierarchy
+29.10.2020 14:31:00  INFO (JobService.java:98) - JobEngine init process going to start:: BEAN ID :: com.enhancesys.integration.services.dataengine.job.JobEngine@105fece7
+29.10.2020 14:31:00  INFO (JobEngine.java:35) - Entry init..
+29.10.2020 14:31:00  INFO (JobConfiguration.java:26) - Entry readConfiguration..
+29.10.2020 14:31:00  INFO (JobConfiguration.java:52) - Custom Template Configuration from E:/home/appuser/snoc/snocconf/jobengineconf/job-templates/JOB_TEMPLATE_CourseLevel.json
+29.10.2020 14:31:00  INFO (JobConfiguration.java:102) - jobId :: JOB_ID_CourseLvlSummaryDtlsReport
+29.10.2020 14:31:00  INFO (JobConfiguration.java:174) - Exit readConfiguration..
+29.10.2020 14:31:00  INFO (JobEngine.java:69) - definitionArr : ["Reader","Transformer-Input-Queue","Transformer","Transformer-Output-Queue","Writer"]
+29.10.2020 14:31:00  INFO (JobEngine.java:176) - Entry loadJobQueues..
+29.10.2020 14:31:00  INFO (JobEngine.java:207) - Exit loadJobQueues..
+29.10.2020 14:31:00  INFO (JobEngine.java:72) - queueMap : {Transformer-Input-Queue=com.enhancesys.integration.services.dataengine.job.connector.queue.InMemoryQueue@36fc695d, Transformer-Output-Queue=com.enhancesys.integration.services.dataengine.job.connector.queue.InMemoryQueue@28701274}
+29.10.2020 14:31:00  INFO (JobPipeLine.java:32) - Reader : Entry init..
+29.10.2020 14:31:00  INFO (JobPipeLine.java:46) - Reader : Processor : {"job_count":10000,"delay_count":10,"processors":[{"job_count":5,"collection_position":0,"delay_count":10,"class":"mongoDBPrimaryDataSortProcessor","sleep_time":5}],"class":"genericDataFetcher","sleep_time":6}
+29.10.2020 14:31:00  INFO (GenericDataFetcher.java:34) - Reader : Entry init..
+29.10.2020 14:31:00  INFO (GenericDataFetcher.java:69) - Reader : Processor : {"job_count":5,"collection_position":0,"delay_count":10,"class":"mongoDBPrimaryDataSortProcessor","sleep_time":5}
+29.10.2020 14:31:00  INFO (MongoDBPrimaryDataSortProcessor.java:52) - Entry init..
+29.10.2020 14:31:00  INFO (MongoDataUtil.java:44) - Entry getCursor..
+29.10.2020 14:31:00  INFO (MongoDataUtil.java:92) - queryObject : { }
+29.10.2020 14:31:00  INFO (MongoDataUtil.java:127) - Exit getCursor..
+29.10.2020 14:31:00  INFO (MongoDBPrimaryDataSortProcessor.java:59) - Reader : mongoDBPrimaryDataSortProcessor :  Cursor Size : 26
+29.10.2020 14:31:01  INFO (MongoDBPrimaryDataSortProcessor.java:102) - Entry sortData..
+29.10.2020 14:31:01  INFO (MongoDBPrimaryDataSortProcessor.java:132) - SortColumns : [_id]
+29.10.2020 14:31:01  INFO (MongoDBPrimaryDataSortProcessor.java:159) - Sort file script is initiated for file :: E:\interface\work\enh-work\DataEngine\jobengineconf\sorting-scripts\files\crs_trk_dtls_20201029143101050.csv.cp
+29.10.2020 14:31:01  INFO (MongoDBPrimaryDataSortProcessor.java:167) - Runtime cmd :: C:/Program Files/Git/git-bash.exe E:/interface/work/enh-work/DataEngine/jobengineconf/sorting-scripts/collection1.sh E:\interface\work\enh-work\DataEngine\jobengineconf\sorting-scripts\files\crs_trk_dtls_20201029143101050.csv.cp E:\interface\work\enh-work\DataEngine\jobengineconf\sorting-scripts\files\crs_trk_dtls_20201029143101050.csv.cp
+29.10.2020 14:31:02  INFO (MongoDBPrimaryDataSortProcessor.java:169) - Process : waitFor() :: 0
+29.10.2020 14:31:02  INFO (MongoDBPrimaryDataSortProcessor.java:211) - Exit sortData..
+29.10.2020 14:31:02  INFO (MongoDBPrimaryDataSortProcessor.java:95) - Exit init..
+29.10.2020 14:31:02  INFO (GenericDataFetcher.java:74) - Reader : Processors size : 1
+29.10.2020 14:31:02  INFO (GenericDataFetcher.java:86) - Reader : Exit init..
+29.10.2020 14:31:02  INFO (JobPipeLine.java:51) - Reader : Processors size : 1
+29.10.2020 14:31:02  INFO (JobPipeLine.java:62) - Reader : Exit init..
+29.10.2020 14:31:02  INFO (JobEngine.java:83) - Reader :
+29.10.2020 14:31:02  INFO (JobEngine.java:91) - OutputQ : Transformer-Input-Queue
+29.10.2020 14:31:02  INFO (JobPipeLine.java:32) - Transformer : Entry init..
+29.10.2020 14:31:02  INFO (JobPipeLine.java:46) - Transformer : Processor : {"delay_count":10,"class":"genericDataTransformer","sleep_time":10}
+29.10.2020 14:31:02  INFO (GenericDataTransformer.java:69) - Entry init..
+29.10.2020 14:31:02  INFO (GenericDataTransformer.java:105) - Exit init..
+29.10.2020 14:31:02  INFO (JobPipeLine.java:51) - Transformer : Processors size : 1
+29.10.2020 14:31:02  INFO (JobPipeLine.java:62) - Transformer : Exit init..
+29.10.2020 14:31:02  INFO (JobEngine.java:83) - Transformer :
+29.10.2020 14:31:02  INFO (JobEngine.java:86) - InputQ : Transformer-Input-Queue
+29.10.2020 14:31:02  INFO (JobEngine.java:91) - OutputQ : Transformer-Output-Queue
+29.10.2020 14:31:02  INFO (JobPipeLine.java:32) - Writer : Entry init..
+29.10.2020 14:31:02  INFO (JobPipeLine.java:46) - Writer : Processor : {"delay_count":10,"class":"pdfDataWriter","sleep_time":10}
+29.10.2020 14:31:02  INFO (PDFDataWriter.java:80) - Entry init..
+29.10.2020 14:31:02  INFO (PDFDataWriter.java:115) - Entry createFile..
+29.10.2020 14:31:02  INFO (PDFDataWriter.java:229) - File Name :: E:\interface\work\enh-work\DataEngine\jobengineconf\outputfiles\Course_Level_Summary_Details_Report_20201029.pdf
+29.10.2020 14:31:02  INFO (PDFDataWriter.java:230) - Exit createFile..
+29.10.2020 14:31:02  INFO (PDFDataWriter.java:109) - Exit init..
+29.10.2020 14:31:02  INFO (JobPipeLine.java:51) - Writer : Processors size : 1
+29.10.2020 14:31:02  INFO (JobPipeLine.java:62) - Writer : Exit init..
+29.10.2020 14:31:02  INFO (JobEngine.java:83) - Writer :
+29.10.2020 14:31:02  INFO (JobEngine.java:86) - InputQ : Transformer-Output-Queue
+29.10.2020 14:31:02  INFO (JobEngine.java:141) - Entry start : pipeLine threads size : 3
+29.10.2020 14:31:02  INFO (JobEngine.java:146) - Starting pipeline : Reader_0
+29.10.2020 14:31:02  INFO (JobEngine.java:146) - Starting pipeline : Transformer_0
+29.10.2020 14:31:02  INFO (JobPipeLine.java:78) - Reader : Entry run..
+29.10.2020 14:31:02  INFO (JobPipeLine.java:78) - Transformer : Entry run..
+29.10.2020 14:31:02  INFO (JobEngine.java:146) - Starting pipeline : Writer_0
+29.10.2020 14:31:02  INFO (JobPipeLine.java:78) - Writer : Entry run..
+29.10.2020 14:31:06 ERROR (InMemoryQueue.java:69) - Transformer-Input-Queue : Failed to send RequestData to the next level.. : queue size : 2 : Retry Count : 0
+29.10.2020 14:31:13 ERROR (InMemoryQueue.java:69) - Transformer-Input-Queue : Failed to send RequestData to the next level.. : queue size : 2 : Retry Count : 0
+29.10.2020 14:31:20 ERROR (InMemoryQueue.java:69) - Transformer-Input-Queue : Failed to send RequestData to the next level.. : queue size : 2 : Retry Count : 1
+29.10.2020 14:31:24 ERROR (MongoDBPrimaryDataSortProcessor.java:345) - Reader : mongoDBPrimaryDataSortProcessor : No more data exists in the cursor..
+29.10.2020 14:31:24 ERROR (GenericDataFetcher.java:157) - No More Data Exists..
+29.10.2020 14:31:24  INFO (JobPipeLine.java:149) - Reader : Sending emptyObject to the next level to stop process on completion..
+29.10.2020 14:31:25  INFO (JobPipeLine.java:179) - Reader : Exit run..Reader
+29.10.2020 14:31:26  INFO (JobPipeLine.java:116) - Transformer : pushing back empty object to the queue from : Transformer
+29.10.2020 14:31:26  INFO (JobPipeLine.java:156) - Transformer : Sending emptyObject to the next level to stop process..
+29.10.2020 14:31:26  INFO (JobPipeLine.java:179) - Transformer : Exit run..Transformer
+29.10.2020 14:31:26  INFO (JobPipeLine.java:116) - Writer : pushing back empty object to the queue from : Writer
+29.10.2020 14:31:26  INFO (JobPipeLine.java:179) - Writer : Exit run..Writer
+29.10.2020 14:31:26  INFO (PDFDataWriter.java:627) - recordCount : 30
+29.10.2020 14:31:26  INFO (PDFDataWriter.java:643) - storeFileConf :: {"is-enable":false,"connection-id":"snoc-r4","schema-name":"snoc_jobengine_reports","delete-file-local":false}
+29.10.2020 14:31:26  INFO (MongoDataUtil.java:359) - UpdateStatus : null : Status : 173   requestUpdateConf :: null
+29.10.2020 14:31:26  INFO (JobEngine.java:161) - Exit start : pipeLine threads size : 3
+29.10.2020 14:31:26  INFO (JobEngine.java:135) - Exit init..
+29.10.2020 14:31:26  INFO (JobService.java:104) - Job Done..
+29.10.2020 14:31:26  INFO (JobService.java:125) - Exit processRequest..
+29.10.2020 14:31:26  INFO (JobServicesInitiator.java:110) - 
+
+Total Time required for JobServices :: 0.43875 mins  :: Filepath :: E:\interface\work\enh-work\DataEngine\jobengineconf\sample_data\CourseLvlSummaryDtlsReport_pdf.json.cp
+
+
+
+29.10.2020 14:31:26  INFO (JobServicesInitiator.java:91) - JobServicesInitiator started with jobParameters from file :: E:\interface\work\enh-work\DataEngine\jobengineconf\sample_data\CourseLvlSummaryDtlsReport_excel.json.cp
+
+
+
+29.10.2020 14:31:26  INFO (JobService.java:66) - Entry processRequest :: JobParameters :: {"job-id":"JOB_ID_CourseLvlSummaryDtlsReport","StoreFileConf":{"is-enable":false,"connection-id":"snoc-r4","schema-name":"snoc_jobengine_reports","delete-file-local":false},"template-id":"CourseLvlSummaryDtlsReport-excel","job-data":{"area":"50003","course_id":"1299","cluster":"","output_file_name":"Course_Level_Summary_Details_Report","user_id":"30003","regional":"50002","sales_area":"50004","output_file_type":"xls","output_file_date_patten":"yyyyMMdd","micro_cluster":"","output_file_path":"E:\/interface\/work\/enh-work\/DataEngine\/jobengineconf\/outputfiles\/"},"template-name":"JOB_TEMPLATE_CourseLevel"}
+29.10.2020 14:31:26  INFO (JobService.java:94) - Spring App Context : org.springframework.context.support.FileSystemXmlApplicationContext@77556fd: startup date [Thu Oct 29 14:30:32 IST 2020]; root of context hierarchy
+29.10.2020 14:31:26  INFO (JobService.java:98) - JobEngine init process going to start:: BEAN ID :: com.enhancesys.integration.services.dataengine.job.JobEngine@105fece7
+29.10.2020 14:31:26  INFO (JobEngine.java:35) - Entry init..
+29.10.2020 14:31:26  INFO (JobConfiguration.java:26) - Entry readConfiguration..
+29.10.2020 14:31:26  INFO (JobConfiguration.java:52) - Custom Template Configuration from E:/home/appuser/snoc/snocconf/jobengineconf/job-templates/JOB_TEMPLATE_CourseLevel.json
+29.10.2020 14:31:26  INFO (JobConfiguration.java:102) - jobId :: JOB_ID_CourseLvlSummaryDtlsReport
+29.10.2020 14:31:26  INFO (JobConfiguration.java:174) - Exit readConfiguration..
+29.10.2020 14:31:26  INFO (JobEngine.java:69) - definitionArr : ["Reader","Transformer-Input-Queue","Transformer","Transformer-Output-Queue","Writer"]
+29.10.2020 14:31:26  INFO (JobEngine.java:176) - Entry loadJobQueues..
+29.10.2020 14:31:26  INFO (JobEngine.java:207) - Exit loadJobQueues..
+29.10.2020 14:31:26  INFO (JobEngine.java:72) - queueMap : {Transformer-Input-Queue=com.enhancesys.integration.services.dataengine.job.connector.queue.InMemoryQueue@7e9131d5, Transformer-Output-Queue=com.enhancesys.integration.services.dataengine.job.connector.queue.InMemoryQueue@2e1d27ba}
+29.10.2020 14:31:26  INFO (JobPipeLine.java:32) - Reader : Entry init..
+29.10.2020 14:31:26  INFO (JobPipeLine.java:46) - Reader : Processor : {"job_count":10000,"delay_count":10,"processors":[{"job_count":5,"collection_position":0,"delay_count":10,"class":"mongoDBPrimaryDataSortProcessor","sleep_time":5}],"class":"genericDataFetcher","sleep_time":6}
+29.10.2020 14:31:26  INFO (GenericDataFetcher.java:34) - Reader : Entry init..
+29.10.2020 14:31:26  INFO (GenericDataFetcher.java:69) - Reader : Processor : {"job_count":5,"collection_position":0,"delay_count":10,"class":"mongoDBPrimaryDataSortProcessor","sleep_time":5}
+29.10.2020 14:31:26  INFO (MongoDBPrimaryDataSortProcessor.java:52) - Entry init..
+29.10.2020 14:31:26  INFO (MongoDataUtil.java:44) - Entry getCursor..
+29.10.2020 14:31:26  INFO (MongoDataUtil.java:92) - queryObject : { }
+29.10.2020 14:31:26  INFO (MongoDataUtil.java:127) - Exit getCursor..
+29.10.2020 14:31:27  INFO (MongoDBPrimaryDataSortProcessor.java:59) - Reader : mongoDBPrimaryDataSortProcessor :  Cursor Size : 26
+29.10.2020 14:31:27  INFO (MongoDBPrimaryDataSortProcessor.java:102) - Entry sortData..
+29.10.2020 14:31:27  INFO (MongoDBPrimaryDataSortProcessor.java:132) - SortColumns : [_id]
+29.10.2020 14:31:28  INFO (MongoDBPrimaryDataSortProcessor.java:159) - Sort file script is initiated for file :: E:\interface\work\enh-work\DataEngine\jobengineconf\sorting-scripts\files\crs_trk_dtls_20201029143127350.csv.cp
+29.10.2020 14:31:28  INFO (MongoDBPrimaryDataSortProcessor.java:167) - Runtime cmd :: C:/Program Files/Git/git-bash.exe E:/interface/work/enh-work/DataEngine/jobengineconf/sorting-scripts/collection1.sh E:\interface\work\enh-work\DataEngine\jobengineconf\sorting-scripts\files\crs_trk_dtls_20201029143127350.csv.cp E:\interface\work\enh-work\DataEngine\jobengineconf\sorting-scripts\files\crs_trk_dtls_20201029143127350.csv.cp
+29.10.2020 14:31:28  INFO (MongoDBPrimaryDataSortProcessor.java:169) - Process : waitFor() :: 0
+29.10.2020 14:31:28  INFO (MongoDBPrimaryDataSortProcessor.java:211) - Exit sortData..
+29.10.2020 14:31:28  INFO (MongoDBPrimaryDataSortProcessor.java:95) - Exit init..
+29.10.2020 14:31:28  INFO (GenericDataFetcher.java:74) - Reader : Processors size : 1
+29.10.2020 14:31:28  INFO (GenericDataFetcher.java:86) - Reader : Exit init..
+29.10.2020 14:31:28  INFO (JobPipeLine.java:51) - Reader : Processors size : 1
+29.10.2020 14:31:28  INFO (JobPipeLine.java:62) - Reader : Exit init..
+29.10.2020 14:31:28  INFO (JobEngine.java:83) - Reader :
+29.10.2020 14:31:28  INFO (JobEngine.java:91) - OutputQ : Transformer-Input-Queue
+29.10.2020 14:31:28  INFO (JobPipeLine.java:32) - Transformer : Entry init..
+29.10.2020 14:31:28  INFO (JobPipeLine.java:46) - Transformer : Processor : {"delay_count":10,"class":"genericDataTransformer","sleep_time":10}
+29.10.2020 14:31:28  INFO (GenericDataTransformer.java:69) - Entry init..
+29.10.2020 14:31:28  INFO (GenericDataTransformer.java:105) - Exit init..
+29.10.2020 14:31:28  INFO (JobPipeLine.java:51) - Transformer : Processors size : 1
+29.10.2020 14:31:28  INFO (JobPipeLine.java:62) - Transformer : Exit init..
+29.10.2020 14:31:28  INFO (JobEngine.java:83) - Transformer :
+29.10.2020 14:31:28  INFO (JobEngine.java:86) - InputQ : Transformer-Input-Queue
+29.10.2020 14:31:28  INFO (JobEngine.java:91) - OutputQ : Transformer-Output-Queue
+29.10.2020 14:31:28  INFO (JobPipeLine.java:32) - Writer : Entry init..
+29.10.2020 14:31:28  INFO (JobPipeLine.java:46) - Writer : Processor : {"delay_count":10,"class":"excelDataWriter","sleep_time":10}
+29.10.2020 14:31:28  INFO (ExcelDataWriter.java:79) - Entry init..
+29.10.2020 14:31:29  INFO (ExcelDataWriter.java:159) - sheetName ::: 001
+29.10.2020 14:31:29  INFO (ExcelDataWriter.java:108) - Exit init..
+29.10.2020 14:31:29  INFO (JobPipeLine.java:51) - Writer : Processors size : 1
+29.10.2020 14:31:29  INFO (JobPipeLine.java:62) - Writer : Exit init..
+29.10.2020 14:31:29  INFO (JobEngine.java:83) - Writer :
+29.10.2020 14:31:29  INFO (JobEngine.java:86) - InputQ : Transformer-Output-Queue
+29.10.2020 14:31:29  INFO (JobEngine.java:141) - Entry start : pipeLine threads size : 3
+29.10.2020 14:31:29  INFO (JobEngine.java:146) - Starting pipeline : Reader_0
+29.10.2020 14:31:29  INFO (JobEngine.java:146) - Starting pipeline : Transformer_0
+29.10.2020 14:31:29  INFO (JobPipeLine.java:78) - Reader : Entry run..
+29.10.2020 14:31:29  INFO (JobEngine.java:146) - Starting pipeline : Writer_0
+29.10.2020 14:31:29  INFO (JobPipeLine.java:78) - Transformer : Entry run..
+29.10.2020 14:31:29  INFO (JobPipeLine.java:78) - Writer : Entry run..
+29.10.2020 14:31:31 ERROR (InMemoryQueue.java:69) - Transformer-Input-Queue : Failed to send RequestData to the next level.. : queue size : 2 : Retry Count : 0
+29.10.2020 14:31:37 ERROR (InMemoryQueue.java:69) - Transformer-Input-Queue : Failed to send RequestData to the next level.. : queue size : 2 : Retry Count : 1
+29.10.2020 14:31:44 ERROR (InMemoryQueue.java:69) - Transformer-Input-Queue : Failed to send RequestData to the next level.. : queue size : 2 : Retry Count : 1
+29.10.2020 14:31:50 ERROR (MongoDBPrimaryDataSortProcessor.java:345) - Reader : mongoDBPrimaryDataSortProcessor : No more data exists in the cursor..
+29.10.2020 14:31:50 ERROR (GenericDataFetcher.java:157) - No More Data Exists..
+29.10.2020 14:31:50  INFO (JobPipeLine.java:149) - Reader : Sending emptyObject to the next level to stop process on completion..
+29.10.2020 14:31:51 ERROR (InMemoryQueue.java:69) - Transformer-Input-Queue : Failed to send RequestData to the next level.. : queue size : 2 : Retry Count : 1
+29.10.2020 14:31:52  INFO (JobPipeLine.java:179) - Reader : Exit run..Reader
+29.10.2020 14:31:53  INFO (JobPipeLine.java:116) - Transformer : pushing back empty object to the queue from : Transformer
+29.10.2020 14:31:53  INFO (JobPipeLine.java:156) - Transformer : Sending emptyObject to the next level to stop process..
+29.10.2020 14:31:53  INFO (JobPipeLine.java:179) - Transformer : Exit run..Transformer
+29.10.2020 14:31:53  INFO (JobPipeLine.java:116) - Writer : pushing back empty object to the queue from : Writer
+29.10.2020 14:31:53  INFO (JobPipeLine.java:179) - Writer : Exit run..Writer
+29.10.2020 14:31:53  INFO (ExcelDataWriter.java:669) - inside ExcelDataWriter Stop..
+29.10.2020 14:31:54  INFO (ExcelDataWriter.java:684) - recordCount : 30
+29.10.2020 14:31:54  INFO (ExcelDataWriter.java:700) - storeFileConf :: {"is-enable":false,"connection-id":"snoc-r4","schema-name":"snoc_jobengine_reports","delete-file-local":false}
+29.10.2020 14:31:54  INFO (MongoDataUtil.java:359) - UpdateStatus : null : Status : 173   requestUpdateConf :: null
+29.10.2020 14:31:54  INFO (JobEngine.java:161) - Exit start : pipeLine threads size : 3
+29.10.2020 14:31:54  INFO (JobEngine.java:135) - Exit init..
+29.10.2020 14:31:54  INFO (JobService.java:104) - Job Done..
+29.10.2020 14:31:54  INFO (JobService.java:125) - Exit processRequest..
+29.10.2020 14:31:54  INFO (JobServicesInitiator.java:110) - 
+
+Total Time required for JobServices :: 0.454 mins  :: Filepath :: E:\interface\work\enh-work\DataEngine\jobengineconf\sample_data\CourseLvlSummaryDtlsReport_excel.json.cp
+
+
+
+29.10.2020 14:31:54  INFO (JobServicesInitiator.java:91) - JobServicesInitiator started with jobParameters from file :: E:\interface\work\enh-work\DataEngine\jobengineconf\sample_data\CourseLvlSummaryReport_csv.json.cp
+
+
+
+29.10.2020 14:31:54  INFO (JobService.java:66) - Entry processRequest :: JobParameters :: {"job-id":"JOB_ID_CourseLvlSummaryReport","StoreFileConf":{"is-enable":false,"connection-id":"snoc-r4","schema-name":"snoc_jobengine_reports","delete-file-local":false},"template-id":"CourseLvlSummaryReport-csv","job-data":{"area":"50003","course_id":"1299","cluster":"","output_file_name":"Course_Level_Summary_Report","user_id":"30003","regional":"50002","sales_area":"50004","output_file_type":"csv","output_file_date_patten":"yyyyMMdd","micro_cluster":"","output_file_path":"E:\/interface\/work\/enh-work\/DataEngine\/jobengineconf\/outputfiles\/"},"template-name":"JOB_TEMPLATE_CourseLevel"}
+29.10.2020 14:31:54  INFO (JobService.java:94) - Spring App Context : org.springframework.context.support.FileSystemXmlApplicationContext@77556fd: startup date [Thu Oct 29 14:30:32 IST 2020]; root of context hierarchy
+29.10.2020 14:31:54  INFO (JobService.java:98) - JobEngine init process going to start:: BEAN ID :: com.enhancesys.integration.services.dataengine.job.JobEngine@105fece7
+29.10.2020 14:31:54  INFO (JobEngine.java:35) - Entry init..
+29.10.2020 14:31:54  INFO (JobConfiguration.java:26) - Entry readConfiguration..
+29.10.2020 14:31:54  INFO (JobConfiguration.java:52) - Custom Template Configuration from E:/home/appuser/snoc/snocconf/jobengineconf/job-templates/JOB_TEMPLATE_CourseLevel.json
+29.10.2020 14:31:54  INFO (JobConfiguration.java:102) - jobId :: JOB_ID_CourseLvlSummaryReport
+29.10.2020 14:31:54  INFO (JobConfiguration.java:174) - Exit readConfiguration..
+29.10.2020 14:31:54  INFO (JobEngine.java:69) - definitionArr : ["Reader","Transformer-Input-Queue","Transformer","Transformer-Output-Queue","Writer"]
+29.10.2020 14:31:54  INFO (JobEngine.java:176) - Entry loadJobQueues..
+29.10.2020 14:31:54  INFO (JobEngine.java:207) - Exit loadJobQueues..
+29.10.2020 14:31:54  INFO (JobEngine.java:72) - queueMap : {Transformer-Input-Queue=com.enhancesys.integration.services.dataengine.job.connector.queue.InMemoryQueue@573906eb, Transformer-Output-Queue=com.enhancesys.integration.services.dataengine.job.connector.queue.InMemoryQueue@479ceda0}
+29.10.2020 14:31:54  INFO (JobPipeLine.java:32) - Reader : Entry init..
+29.10.2020 14:31:54  INFO (JobPipeLine.java:46) - Reader : Processor : {"job_count":10000,"delay_count":10,"processors":[{"job_count":5,"collection_position":0,"delay_count":10,"class":"mongoDBPrimaryDataSortProcessor","sleep_time":5}],"class":"genericDataFetcher","sleep_time":6}
+29.10.2020 14:31:54  INFO (GenericDataFetcher.java:34) - Reader : Entry init..
+29.10.2020 14:31:54  INFO (GenericDataFetcher.java:69) - Reader : Processor : {"job_count":5,"collection_position":0,"delay_count":10,"class":"mongoDBPrimaryDataSortProcessor","sleep_time":5}
+29.10.2020 14:31:54  INFO (MongoDBPrimaryDataSortProcessor.java:52) - Entry init..
+29.10.2020 14:31:54  INFO (MongoDataUtil.java:44) - Entry getCursor..
+29.10.2020 14:31:54  INFO (MongoDataUtil.java:92) - queryObject : { }
+29.10.2020 14:31:54  INFO (MongoDataUtil.java:127) - Exit getCursor..
+29.10.2020 14:31:54  INFO (MongoDBPrimaryDataSortProcessor.java:59) - Reader : mongoDBPrimaryDataSortProcessor :  Cursor Size : 26
+29.10.2020 14:31:54  INFO (MongoDBPrimaryDataSortProcessor.java:102) - Entry sortData..
+29.10.2020 14:31:54  INFO (MongoDBPrimaryDataSortProcessor.java:132) - SortColumns : [_id]
+29.10.2020 14:31:55  INFO (MongoDBPrimaryDataSortProcessor.java:159) - Sort file script is initiated for file :: E:\interface\work\enh-work\DataEngine\jobengineconf\sorting-scripts\files\crs_trk_dtls_20201029143154594.csv.cp
+29.10.2020 14:31:55  INFO (MongoDBPrimaryDataSortProcessor.java:167) - Runtime cmd :: C:/Program Files/Git/git-bash.exe E:/interface/work/enh-work/DataEngine/jobengineconf/sorting-scripts/collection1.sh E:\interface\work\enh-work\DataEngine\jobengineconf\sorting-scripts\files\crs_trk_dtls_20201029143154594.csv.cp E:\interface\work\enh-work\DataEngine\jobengineconf\sorting-scripts\files\crs_trk_dtls_20201029143154594.csv.cp
+29.10.2020 14:31:55  INFO (MongoDBPrimaryDataSortProcessor.java:169) - Process : waitFor() :: 0
+29.10.2020 14:31:55  INFO (MongoDBPrimaryDataSortProcessor.java:211) - Exit sortData..
+29.10.2020 14:31:55  INFO (MongoDBPrimaryDataSortProcessor.java:95) - Exit init..
+29.10.2020 14:31:55  INFO (GenericDataFetcher.java:74) - Reader : Processors size : 1
+29.10.2020 14:31:55  INFO (GenericDataFetcher.java:86) - Reader : Exit init..
+29.10.2020 14:31:55  INFO (JobPipeLine.java:51) - Reader : Processors size : 1
+29.10.2020 14:31:55  INFO (JobPipeLine.java:62) - Reader : Exit init..
+29.10.2020 14:31:55  INFO (JobEngine.java:83) - Reader :
+29.10.2020 14:31:55  INFO (JobEngine.java:91) - OutputQ : Transformer-Input-Queue
+29.10.2020 14:31:55  INFO (JobPipeLine.java:32) - Transformer : Entry init..
+29.10.2020 14:31:55  INFO (JobPipeLine.java:46) - Transformer : Processor : {"delay_count":10,"class":"genericDataTransformer","sleep_time":10}
+29.10.2020 14:31:55  INFO (GenericDataTransformer.java:69) - Entry init..
+29.10.2020 14:31:55  INFO (GenericDataTransformer.java:105) - Exit init..
+29.10.2020 14:31:55  INFO (JobPipeLine.java:51) - Transformer : Processors size : 1
+29.10.2020 14:31:55  INFO (JobPipeLine.java:62) - Transformer : Exit init..
+29.10.2020 14:31:55  INFO (JobEngine.java:83) - Transformer :
+29.10.2020 14:31:55  INFO (JobEngine.java:86) - InputQ : Transformer-Input-Queue
+29.10.2020 14:31:55  INFO (JobEngine.java:91) - OutputQ : Transformer-Output-Queue
+29.10.2020 14:31:55  INFO (JobPipeLine.java:32) - Writer : Entry init..
+29.10.2020 14:31:55  INFO (JobPipeLine.java:46) - Writer : Processor : {"delay_count":10,"class":"csvDataWriter","sleep_time":10}
+29.10.2020 14:31:55  INFO (CSVDataWriter.java:65) - Entry init..
+29.10.2020 14:31:55  INFO (CSVDataWriter.java:104) - Entry createFile..
+29.10.2020 14:31:55  INFO (CSVDataWriter.java:170) - Exit createFile..E:\interface\work\enh-work\DataEngine\jobengineconf\outputfiles\Course_Level_Summary_Report_20201029.csv
+29.10.2020 14:31:55  INFO (CSVDataWriter.java:98) - Exit init..
+29.10.2020 14:31:55  INFO (JobPipeLine.java:51) - Writer : Processors size : 1
+29.10.2020 14:31:55  INFO (JobPipeLine.java:62) - Writer : Exit init..
+29.10.2020 14:31:55  INFO (JobEngine.java:83) - Writer :
+29.10.2020 14:31:55  INFO (JobEngine.java:86) - InputQ : Transformer-Output-Queue
+29.10.2020 14:31:55  INFO (JobEngine.java:141) - Entry start : pipeLine threads size : 3
+29.10.2020 14:31:55  INFO (JobEngine.java:146) - Starting pipeline : Reader_0
+29.10.2020 14:31:55  INFO (JobEngine.java:146) - Starting pipeline : Transformer_0
+29.10.2020 14:31:55  INFO (JobEngine.java:146) - Starting pipeline : Writer_0
+29.10.2020 14:31:55  INFO (JobPipeLine.java:78) - Reader : Entry run..
+29.10.2020 14:31:55  INFO (JobPipeLine.java:78) - Writer : Entry run..
+29.10.2020 14:31:55  INFO (JobPipeLine.java:78) - Transformer : Entry run..
+29.10.2020 14:32:00 ERROR (InMemoryQueue.java:69) - Transformer-Input-Queue : Failed to send RequestData to the next level.. : queue size : 2 : Retry Count : 2
+29.10.2020 14:32:07 ERROR (InMemoryQueue.java:69) - Transformer-Input-Queue : Failed to send RequestData to the next level.. : queue size : 2 : Retry Count : 5
+29.10.2020 14:32:15 ERROR (InMemoryQueue.java:69) - Transformer-Input-Queue : Failed to send RequestData to the next level.. : queue size : 2 : Retry Count : 0
+29.10.2020 14:32:18 ERROR (MongoDBPrimaryDataSortProcessor.java:345) - Reader : mongoDBPrimaryDataSortProcessor : No more data exists in the cursor..
+29.10.2020 14:32:18 ERROR (GenericDataFetcher.java:157) - No More Data Exists..
+29.10.2020 14:32:18  INFO (JobPipeLine.java:149) - Reader : Sending emptyObject to the next level to stop process on completion..
+29.10.2020 14:32:19  INFO (JobPipeLine.java:179) - Reader : Exit run..Reader
+29.10.2020 14:32:20  INFO (JobPipeLine.java:116) - Transformer : pushing back empty object to the queue from : Transformer
+29.10.2020 14:32:20  INFO (JobPipeLine.java:156) - Transformer : Sending emptyObject to the next level to stop process..
+29.10.2020 14:32:20  INFO (JobPipeLine.java:179) - Transformer : Exit run..Transformer
+29.10.2020 14:32:20  INFO (JobPipeLine.java:116) - Writer : pushing back empty object to the queue from : Writer
+29.10.2020 14:32:20  INFO (JobPipeLine.java:179) - Writer : Exit run..Writer
+29.10.2020 14:32:20  INFO (CSVDataWriter.java:536) - recordCount : 26
+29.10.2020 14:32:20  INFO (CSVDataWriter.java:552) - storeFileConf :: {"is-enable":false,"connection-id":"snoc-r4","schema-name":"snoc_jobengine_reports","delete-file-local":false}
+29.10.2020 14:32:20  INFO (MongoDataUtil.java:359) - UpdateStatus : null : Status : 173   requestUpdateConf :: null
+29.10.2020 14:32:20  INFO (JobEngine.java:161) - Exit start : pipeLine threads size : 3
+29.10.2020 14:32:20  INFO (JobEngine.java:135) - Exit init..
+29.10.2020 14:32:20  INFO (JobService.java:104) - Job Done..
+29.10.2020 14:32:20  INFO (JobService.java:125) - Exit processRequest..
+29.10.2020 14:32:20  INFO (JobServicesInitiator.java:110) - 
+
+Total Time required for JobServices :: 0.43353334 mins  :: Filepath :: E:\interface\work\enh-work\DataEngine\jobengineconf\sample_data\CourseLvlSummaryReport_csv.json.cp
+
+
+
+29.10.2020 14:32:20  INFO (JobServicesInitiator.java:91) - JobServicesInitiator started with jobParameters from file :: E:\interface\work\enh-work\DataEngine\jobengineconf\sample_data\CourseLvlSummaryReport_pdf.json.cp
+
+
+
+29.10.2020 14:32:20  INFO (JobService.java:66) - Entry processRequest :: JobParameters :: {"job-id":"JOB_ID_CourseLvlSummaryReport","StoreFileConf":{"is-enable":false,"connection-id":"snoc-r4","schema-name":"snoc_jobengine_reports","delete-file-local":false},"template-id":"CourseLvlSummaryReport-pdf","job-data":{"area":"50003","course_id":"1299","cluster":"","output_file_name":"Course_Level_Summary_Report","user_id":"30003","regional":"50002","sales_area":"50004","output_file_type":"pdf","output_file_date_patten":"yyyyMMdd","micro_cluster":"","output_file_path":"E:\/interface\/work\/enh-work\/DataEngine\/jobengineconf\/outputfiles\/"},"template-name":"JOB_TEMPLATE_CourseLevel"}
+29.10.2020 14:32:20  INFO (JobService.java:94) - Spring App Context : org.springframework.context.support.FileSystemXmlApplicationContext@77556fd: startup date [Thu Oct 29 14:30:32 IST 2020]; root of context hierarchy
+29.10.2020 14:32:20  INFO (JobService.java:98) - JobEngine init process going to start:: BEAN ID :: com.enhancesys.integration.services.dataengine.job.JobEngine@105fece7
+29.10.2020 14:32:20  INFO (JobEngine.java:35) - Entry init..
+29.10.2020 14:32:20  INFO (JobConfiguration.java:26) - Entry readConfiguration..
+29.10.2020 14:32:20  INFO (JobConfiguration.java:52) - Custom Template Configuration from E:/home/appuser/snoc/snocconf/jobengineconf/job-templates/JOB_TEMPLATE_CourseLevel.json
+29.10.2020 14:32:20  INFO (JobConfiguration.java:102) - jobId :: JOB_ID_CourseLvlSummaryReport
+29.10.2020 14:32:20  INFO (JobConfiguration.java:174) - Exit readConfiguration..
+29.10.2020 14:32:20  INFO (JobEngine.java:69) - definitionArr : ["Reader","Transformer-Input-Queue","Transformer","Transformer-Output-Queue","Writer"]
+29.10.2020 14:32:20  INFO (JobEngine.java:176) - Entry loadJobQueues..
+29.10.2020 14:32:20  INFO (JobEngine.java:207) - Exit loadJobQueues..
+29.10.2020 14:32:20  INFO (JobEngine.java:72) - queueMap : {Transformer-Input-Queue=com.enhancesys.integration.services.dataengine.job.connector.queue.InMemoryQueue@6d07a63d, Transformer-Output-Queue=com.enhancesys.integration.services.dataengine.job.connector.queue.InMemoryQueue@571c5681}
+29.10.2020 14:32:20  INFO (JobPipeLine.java:32) - Reader : Entry init..
+29.10.2020 14:32:20  INFO (JobPipeLine.java:46) - Reader : Processor : {"job_count":10000,"delay_count":10,"processors":[{"job_count":5,"collection_position":0,"delay_count":10,"class":"mongoDBPrimaryDataSortProcessor","sleep_time":5}],"class":"genericDataFetcher","sleep_time":6}
+29.10.2020 14:32:20  INFO (GenericDataFetcher.java:34) - Reader : Entry init..
+29.10.2020 14:32:20  INFO (GenericDataFetcher.java:69) - Reader : Processor : {"job_count":5,"collection_position":0,"delay_count":10,"class":"mongoDBPrimaryDataSortProcessor","sleep_time":5}
+29.10.2020 14:32:20  INFO (MongoDBPrimaryDataSortProcessor.java:52) - Entry init..
+29.10.2020 14:32:20  INFO (MongoDataUtil.java:44) - Entry getCursor..
+29.10.2020 14:32:20  INFO (MongoDataUtil.java:92) - queryObject : { }
+29.10.2020 14:32:20  INFO (MongoDataUtil.java:127) - Exit getCursor..
+29.10.2020 14:32:20  INFO (MongoDBPrimaryDataSortProcessor.java:59) - Reader : mongoDBPrimaryDataSortProcessor :  Cursor Size : 26
+29.10.2020 14:32:21  INFO (MongoDBPrimaryDataSortProcessor.java:102) - Entry sortData..
+29.10.2020 14:32:21  INFO (MongoDBPrimaryDataSortProcessor.java:132) - SortColumns : [_id]
+29.10.2020 14:32:21  INFO (MongoDBPrimaryDataSortProcessor.java:159) - Sort file script is initiated for file :: E:\interface\work\enh-work\DataEngine\jobengineconf\sorting-scripts\files\crs_trk_dtls_20201029143221094.csv.cp
+29.10.2020 14:32:21  INFO (MongoDBPrimaryDataSortProcessor.java:167) - Runtime cmd :: C:/Program Files/Git/git-bash.exe E:/interface/work/enh-work/DataEngine/jobengineconf/sorting-scripts/collection1.sh E:\interface\work\enh-work\DataEngine\jobengineconf\sorting-scripts\files\crs_trk_dtls_20201029143221094.csv.cp E:\interface\work\enh-work\DataEngine\jobengineconf\sorting-scripts\files\crs_trk_dtls_20201029143221094.csv.cp
+29.10.2020 14:32:22  INFO (MongoDBPrimaryDataSortProcessor.java:169) - Process : waitFor() :: 0
+29.10.2020 14:32:22  INFO (MongoDBPrimaryDataSortProcessor.java:211) - Exit sortData..
+29.10.2020 14:32:22  INFO (MongoDBPrimaryDataSortProcessor.java:95) - Exit init..
+29.10.2020 14:32:22  INFO (GenericDataFetcher.java:74) - Reader : Processors size : 1
+29.10.2020 14:32:22  INFO (GenericDataFetcher.java:86) - Reader : Exit init..
+29.10.2020 14:32:22  INFO (JobPipeLine.java:51) - Reader : Processors size : 1
+29.10.2020 14:32:22  INFO (JobPipeLine.java:62) - Reader : Exit init..
+29.10.2020 14:32:22  INFO (JobEngine.java:83) - Reader :
+29.10.2020 14:32:22  INFO (JobEngine.java:91) - OutputQ : Transformer-Input-Queue
+29.10.2020 14:32:22  INFO (JobPipeLine.java:32) - Transformer : Entry init..
+29.10.2020 14:32:22  INFO (JobPipeLine.java:46) - Transformer : Processor : {"delay_count":10,"class":"genericDataTransformer","sleep_time":10}
+29.10.2020 14:32:22  INFO (GenericDataTransformer.java:69) - Entry init..
+29.10.2020 14:32:22  INFO (GenericDataTransformer.java:105) - Exit init..
+29.10.2020 14:32:22  INFO (JobPipeLine.java:51) - Transformer : Processors size : 1
+29.10.2020 14:32:22  INFO (JobPipeLine.java:62) - Transformer : Exit init..
+29.10.2020 14:32:22  INFO (JobEngine.java:83) - Transformer :
+29.10.2020 14:32:22  INFO (JobEngine.java:86) - InputQ : Transformer-Input-Queue
+29.10.2020 14:32:22  INFO (JobEngine.java:91) - OutputQ : Transformer-Output-Queue
+29.10.2020 14:32:22  INFO (JobPipeLine.java:32) - Writer : Entry init..
+29.10.2020 14:32:22  INFO (JobPipeLine.java:46) - Writer : Processor : {"delay_count":10,"class":"pdfDataWriter","sleep_time":10}
+29.10.2020 14:32:22  INFO (PDFDataWriter.java:80) - Entry init..
+29.10.2020 14:32:22  INFO (PDFDataWriter.java:115) - Entry createFile..
+29.10.2020 14:32:22  INFO (PDFDataWriter.java:229) - File Name :: E:\interface\work\enh-work\DataEngine\jobengineconf\outputfiles\Course_Level_Summary_Report_20201029.pdf
+29.10.2020 14:32:22  INFO (PDFDataWriter.java:230) - Exit createFile..
+29.10.2020 14:32:22  INFO (PDFDataWriter.java:109) - Exit init..
+29.10.2020 14:32:22  INFO (JobPipeLine.java:51) - Writer : Processors size : 1
+29.10.2020 14:32:22  INFO (JobPipeLine.java:62) - Writer : Exit init..
+29.10.2020 14:32:22  INFO (JobEngine.java:83) - Writer :
+29.10.2020 14:32:22  INFO (JobEngine.java:86) - InputQ : Transformer-Output-Queue
+29.10.2020 14:32:22  INFO (JobEngine.java:141) - Entry start : pipeLine threads size : 3
+29.10.2020 14:32:22  INFO (JobEngine.java:146) - Starting pipeline : Reader_0
+29.10.2020 14:32:22  INFO (JobEngine.java:146) - Starting pipeline : Transformer_0
+29.10.2020 14:32:22  INFO (JobEngine.java:146) - Starting pipeline : Writer_0
+29.10.2020 14:32:22  INFO (JobPipeLine.java:78) - Reader : Entry run..
+29.10.2020 14:32:22  INFO (JobPipeLine.java:78) - Writer : Entry run..
+29.10.2020 14:32:22  INFO (JobPipeLine.java:78) - Transformer : Entry run..
+29.10.2020 14:32:24 ERROR (InMemoryQueue.java:69) - Transformer-Input-Queue : Failed to send RequestData to the next level.. : queue size : 2 : Retry Count : 0
+29.10.2020 14:32:31 ERROR (InMemoryQueue.java:69) - Transformer-Input-Queue : Failed to send RequestData to the next level.. : queue size : 2 : Retry Count : 1
+29.10.2020 14:32:39 ERROR (InMemoryQueue.java:69) - Transformer-Input-Queue : Failed to send RequestData to the next level.. : queue size : 2 : Retry Count : 0
+29.10.2020 14:32:41 ERROR (MongoDBPrimaryDataSortProcessor.java:345) - Reader : mongoDBPrimaryDataSortProcessor : No more data exists in the cursor..
+29.10.2020 14:32:41 ERROR (GenericDataFetcher.java:157) - No More Data Exists..
+29.10.2020 14:32:41  INFO (JobPipeLine.java:149) - Reader : Sending emptyObject to the next level to stop process on completion..
+29.10.2020 14:32:42  INFO (JobPipeLine.java:179) - Reader : Exit run..Reader
+29.10.2020 14:32:43  INFO (JobPipeLine.java:116) - Transformer : pushing back empty object to the queue from : Transformer
+29.10.2020 14:32:43  INFO (JobPipeLine.java:156) - Transformer : Sending emptyObject to the next level to stop process..
+29.10.2020 14:32:43  INFO (JobPipeLine.java:179) - Transformer : Exit run..Transformer
+29.10.2020 14:32:44  INFO (JobPipeLine.java:116) - Writer : pushing back empty object to the queue from : Writer
+29.10.2020 14:32:44  INFO (JobPipeLine.java:179) - Writer : Exit run..Writer
+29.10.2020 14:32:44  INFO (PDFDataWriter.java:627) - recordCount : 26
+29.10.2020 14:32:44  INFO (PDFDataWriter.java:643) - storeFileConf :: {"is-enable":false,"connection-id":"snoc-r4","schema-name":"snoc_jobengine_reports","delete-file-local":false}
+29.10.2020 14:32:44  INFO (MongoDataUtil.java:359) - UpdateStatus : null : Status : 173   requestUpdateConf :: null
+29.10.2020 14:32:44  INFO (JobEngine.java:161) - Exit start : pipeLine threads size : 3
+29.10.2020 14:32:44  INFO (JobEngine.java:135) - Exit init..
+29.10.2020 14:32:44  INFO (JobService.java:104) - Job Done..
+29.10.2020 14:32:44  INFO (JobService.java:125) - Exit processRequest..
+29.10.2020 14:32:44  INFO (JobServicesInitiator.java:110) - 
+
+Total Time required for JobServices :: 0.39921665 mins  :: Filepath :: E:\interface\work\enh-work\DataEngine\jobengineconf\sample_data\CourseLvlSummaryReport_pdf.json.cp
+
+
+
+29.10.2020 14:32:44  INFO (JobServicesInitiator.java:91) - JobServicesInitiator started with jobParameters from file :: E:\interface\work\enh-work\DataEngine\jobengineconf\sample_data\CourseLvlSummaryReport_excel.json.cp
+
+
+
+29.10.2020 14:32:44  INFO (JobService.java:66) - Entry processRequest :: JobParameters :: {"job-id":"JOB_ID_CourseLvlSummaryReport","StoreFileConf":{"is-enable":false,"connection-id":"snoc-r4","schema-name":"snoc_jobengine_reports","delete-file-local":false},"template-id":"CourseLvlSummaryReport-excel","job-data":{"area":"50003","course_id":"1299","cluster":"","output_file_name":"Course_Level_Summary_Report","user_id":"30003","regional":"50002","sales_area":"50004","output_file_type":"xls","output_file_date_patten":"yyyyMMdd","micro_cluster":"","output_file_path":"E:\/interface\/work\/enh-work\/DataEngine\/jobengineconf\/outputfiles\/"},"template-name":"JOB_TEMPLATE_CourseLevel"}
+29.10.2020 14:32:44  INFO (JobService.java:94) - Spring App Context : org.springframework.context.support.FileSystemXmlApplicationContext@77556fd: startup date [Thu Oct 29 14:30:32 IST 2020]; root of context hierarchy
+29.10.2020 14:32:44  INFO (JobService.java:98) - JobEngine init process going to start:: BEAN ID :: com.enhancesys.integration.services.dataengine.job.JobEngine@105fece7
+29.10.2020 14:32:44  INFO (JobEngine.java:35) - Entry init..
+29.10.2020 14:32:44  INFO (JobConfiguration.java:26) - Entry readConfiguration..
+29.10.2020 14:32:44  INFO (JobConfiguration.java:52) - Custom Template Configuration from E:/home/appuser/snoc/snocconf/jobengineconf/job-templates/JOB_TEMPLATE_CourseLevel.json
+29.10.2020 14:32:44  INFO (JobConfiguration.java:102) - jobId :: JOB_ID_CourseLvlSummaryReport
+29.10.2020 14:32:44  INFO (JobConfiguration.java:174) - Exit readConfiguration..
+29.10.2020 14:32:44  INFO (JobEngine.java:69) - definitionArr : ["Reader","Transformer-Input-Queue","Transformer","Transformer-Output-Queue","Writer"]
+29.10.2020 14:32:44  INFO (JobEngine.java:176) - Entry loadJobQueues..
+29.10.2020 14:32:44  INFO (JobEngine.java:207) - Exit loadJobQueues..
+29.10.2020 14:32:44  INFO (JobEngine.java:72) - queueMap : {Transformer-Input-Queue=com.enhancesys.integration.services.dataengine.job.connector.queue.InMemoryQueue@488d1cd7, Transformer-Output-Queue=com.enhancesys.integration.services.dataengine.job.connector.queue.InMemoryQueue@68dc098b}
+29.10.2020 14:32:44  INFO (JobPipeLine.java:32) - Reader : Entry init..
+29.10.2020 14:32:44  INFO (JobPipeLine.java:46) - Reader : Processor : {"job_count":10000,"delay_count":10,"processors":[{"job_count":5,"collection_position":0,"delay_count":10,"class":"mongoDBPrimaryDataSortProcessor","sleep_time":5}],"class":"genericDataFetcher","sleep_time":6}
+29.10.2020 14:32:44  INFO (GenericDataFetcher.java:34) - Reader : Entry init..
+29.10.2020 14:32:44  INFO (GenericDataFetcher.java:69) - Reader : Processor : {"job_count":5,"collection_position":0,"delay_count":10,"class":"mongoDBPrimaryDataSortProcessor","sleep_time":5}
+29.10.2020 14:32:44  INFO (MongoDBPrimaryDataSortProcessor.java:52) - Entry init..
+29.10.2020 14:32:44  INFO (MongoDataUtil.java:44) - Entry getCursor..
+29.10.2020 14:32:44  INFO (MongoDataUtil.java:92) - queryObject : { }
+29.10.2020 14:32:44  INFO (MongoDataUtil.java:127) - Exit getCursor..
+29.10.2020 14:32:44  INFO (MongoDBPrimaryDataSortProcessor.java:59) - Reader : mongoDBPrimaryDataSortProcessor :  Cursor Size : 26
+29.10.2020 14:32:44  INFO (MongoDBPrimaryDataSortProcessor.java:102) - Entry sortData..
+29.10.2020 14:32:44  INFO (MongoDBPrimaryDataSortProcessor.java:132) - SortColumns : [_id]
+29.10.2020 14:32:45  INFO (MongoDBPrimaryDataSortProcessor.java:159) - Sort file script is initiated for file :: E:\interface\work\enh-work\DataEngine\jobengineconf\sorting-scripts\files\crs_trk_dtls_20201029143244565.csv.cp
+29.10.2020 14:32:45  INFO (MongoDBPrimaryDataSortProcessor.java:167) - Runtime cmd :: C:/Program Files/Git/git-bash.exe E:/interface/work/enh-work/DataEngine/jobengineconf/sorting-scripts/collection1.sh E:\interface\work\enh-work\DataEngine\jobengineconf\sorting-scripts\files\crs_trk_dtls_20201029143244565.csv.cp E:\interface\work\enh-work\DataEngine\jobengineconf\sorting-scripts\files\crs_trk_dtls_20201029143244565.csv.cp
+29.10.2020 14:32:46  INFO (MongoDBPrimaryDataSortProcessor.java:169) - Process : waitFor() :: 0
+29.10.2020 14:32:46  INFO (MongoDBPrimaryDataSortProcessor.java:211) - Exit sortData..
+29.10.2020 14:32:46  INFO (MongoDBPrimaryDataSortProcessor.java:95) - Exit init..
+29.10.2020 14:32:46  INFO (GenericDataFetcher.java:74) - Reader : Processors size : 1
+29.10.2020 14:32:46  INFO (GenericDataFetcher.java:86) - Reader : Exit init..
+29.10.2020 14:32:46  INFO (JobPipeLine.java:51) - Reader : Processors size : 1
+29.10.2020 14:32:46  INFO (JobPipeLine.java:62) - Reader : Exit init..
+29.10.2020 14:32:46  INFO (JobEngine.java:83) - Reader :
+29.10.2020 14:32:46  INFO (JobEngine.java:91) - OutputQ : Transformer-Input-Queue
+29.10.2020 14:32:46  INFO (JobPipeLine.java:32) - Transformer : Entry init..
+29.10.2020 14:32:46  INFO (JobPipeLine.java:46) - Transformer : Processor : {"delay_count":10,"class":"genericDataTransformer","sleep_time":10}
+29.10.2020 14:32:46  INFO (GenericDataTransformer.java:69) - Entry init..
+29.10.2020 14:32:46  INFO (GenericDataTransformer.java:105) - Exit init..
+29.10.2020 14:32:46  INFO (JobPipeLine.java:51) - Transformer : Processors size : 1
+29.10.2020 14:32:46  INFO (JobPipeLine.java:62) - Transformer : Exit init..
+29.10.2020 14:32:46  INFO (JobEngine.java:83) - Transformer :
+29.10.2020 14:32:46  INFO (JobEngine.java:86) - InputQ : Transformer-Input-Queue
+29.10.2020 14:32:46  INFO (JobEngine.java:91) - OutputQ : Transformer-Output-Queue
+29.10.2020 14:32:46  INFO (JobPipeLine.java:32) - Writer : Entry init..
+29.10.2020 14:32:46  INFO (JobPipeLine.java:46) - Writer : Processor : {"delay_count":10,"class":"excelDataWriter","sleep_time":10}
+29.10.2020 14:32:46  INFO (ExcelDataWriter.java:79) - Entry init..
+29.10.2020 14:32:46  INFO (ExcelDataWriter.java:159) - sheetName ::: 001
+29.10.2020 14:32:46  INFO (ExcelDataWriter.java:108) - Exit init..
+29.10.2020 14:32:46  INFO (JobPipeLine.java:51) - Writer : Processors size : 1
+29.10.2020 14:32:46  INFO (JobPipeLine.java:62) - Writer : Exit init..
+29.10.2020 14:32:46  INFO (JobEngine.java:83) - Writer :
+29.10.2020 14:32:46  INFO (JobEngine.java:86) - InputQ : Transformer-Output-Queue
+29.10.2020 14:32:46  INFO (JobEngine.java:141) - Entry start : pipeLine threads size : 3
+29.10.2020 14:32:46  INFO (JobEngine.java:146) - Starting pipeline : Reader_0
+29.10.2020 14:32:46  INFO (JobEngine.java:146) - Starting pipeline : Transformer_0
+29.10.2020 14:32:46  INFO (JobPipeLine.java:78) - Reader : Entry run..
+29.10.2020 14:32:46  INFO (JobPipeLine.java:78) - Transformer : Entry run..
+29.10.2020 14:32:46  INFO (JobEngine.java:146) - Starting pipeline : Writer_0
+29.10.2020 14:32:46  INFO (JobPipeLine.java:78) - Writer : Entry run..
+29.10.2020 14:32:48 ERROR (InMemoryQueue.java:69) - Transformer-Input-Queue : Failed to send RequestData to the next level.. : queue size : 2 : Retry Count : 1
+29.10.2020 14:32:54 ERROR (InMemoryQueue.java:69) - Transformer-Input-Queue : Failed to send RequestData to the next level.. : queue size : 2 : Retry Count : 0
+29.10.2020 14:33:01 ERROR (InMemoryQueue.java:69) - Transformer-Input-Queue : Failed to send RequestData to the next level.. : queue size : 2 : Retry Count : 0
+29.10.2020 14:33:07 ERROR (MongoDBPrimaryDataSortProcessor.java:345) - Reader : mongoDBPrimaryDataSortProcessor : No more data exists in the cursor..
+29.10.2020 14:33:07 ERROR (GenericDataFetcher.java:157) - No More Data Exists..
+29.10.2020 14:33:07  INFO (JobPipeLine.java:149) - Reader : Sending emptyObject to the next level to stop process on completion..
+29.10.2020 14:33:09 ERROR (InMemoryQueue.java:69) - Transformer-Input-Queue : Failed to send RequestData to the next level.. : queue size : 2 : Retry Count : 1
+29.10.2020 14:33:10  INFO (JobPipeLine.java:179) - Reader : Exit run..Reader
+29.10.2020 14:33:10  INFO (JobPipeLine.java:116) - Transformer : pushing back empty object to the queue from : Transformer
+29.10.2020 14:33:10  INFO (JobPipeLine.java:156) - Transformer : Sending emptyObject to the next level to stop process..
+29.10.2020 14:33:10  INFO (JobPipeLine.java:179) - Transformer : Exit run..Transformer
+29.10.2020 14:33:10  INFO (JobPipeLine.java:116) - Writer : pushing back empty object to the queue from : Writer
+29.10.2020 14:33:10  INFO (JobPipeLine.java:179) - Writer : Exit run..Writer
+29.10.2020 14:33:10  INFO (ExcelDataWriter.java:669) - inside ExcelDataWriter Stop..
+29.10.2020 14:33:11  INFO (ExcelDataWriter.java:684) - recordCount : 26
+29.10.2020 14:33:11  INFO (ExcelDataWriter.java:700) - storeFileConf :: {"is-enable":false,"connection-id":"snoc-r4","schema-name":"snoc_jobengine_reports","delete-file-local":false}
+29.10.2020 14:33:11  INFO (MongoDataUtil.java:359) - UpdateStatus : null : Status : 173   requestUpdateConf :: null
+29.10.2020 14:33:11  INFO (JobEngine.java:161) - Exit start : pipeLine threads size : 3
+29.10.2020 14:33:11  INFO (JobEngine.java:135) - Exit init..
+29.10.2020 14:33:11  INFO (JobService.java:104) - Job Done..
+29.10.2020 14:33:11  INFO (JobService.java:125) - Exit processRequest..
+29.10.2020 14:33:11  INFO (JobServicesInitiator.java:110) - 
+
+Total Time required for JobServices :: 0.44845 mins  :: Filepath :: E:\interface\work\enh-work\DataEngine\jobengineconf\sample_data\CourseLvlSummaryReport_excel.json.cp
+
+
+
+29.10.2020 14:33:11  INFO (JobServicesInitiator.java:91) - JobServicesInitiator started with jobParameters from file :: E:\interface\work\enh-work\DataEngine\jobengineconf\sample_data\CourseRwrdSummaryReport_csv.json.cp
+
+
+
+29.10.2020 14:33:11  INFO (JobService.java:66) - Entry processRequest :: JobParameters :: {"job-id":"JOB_ID_CourseRwrdSummaryReport","StoreFileConf":{"is-enable":false,"connection-id":"snoc-r4","schema-name":"snoc_jobengine_reports","delete-file-local":false},"template-id":"CourseRwrdSummaryReport-csv","request-id":1007,"job-data":{"area":"50003","course_id":"1299","cluster":"","output_file_name":"Course_Reward_Summary_Report","user_id":"30003","regional":"50002","sales_area":"50004","output_file_type":"csv","output_file_date_patten":"yyyyMMdd","micro_cluster":"","output_file_path":"E:\/interface\/work\/enh-work\/DataEngine\/jobengineconf\/outputfiles\/"},"template-name":"JOB_TEMPLATE_CourseLevel"}
+29.10.2020 14:33:11  INFO (JobService.java:94) - Spring App Context : org.springframework.context.support.FileSystemXmlApplicationContext@77556fd: startup date [Thu Oct 29 14:30:32 IST 2020]; root of context hierarchy
+29.10.2020 14:33:11  INFO (JobService.java:98) - JobEngine init process going to start:: BEAN ID :: com.enhancesys.integration.services.dataengine.job.JobEngine@105fece7
+29.10.2020 14:33:11  INFO (JobEngine.java:35) - Entry init..
+29.10.2020 14:33:11  INFO (JobConfiguration.java:26) - Entry readConfiguration..
+29.10.2020 14:33:11  INFO (JobConfiguration.java:52) - Custom Template Configuration from E:/home/appuser/snoc/snocconf/jobengineconf/job-templates/JOB_TEMPLATE_CourseLevel.json
+29.10.2020 14:33:11  INFO (JobConfiguration.java:102) - jobId :: JOB_ID_CourseRwrdSummaryReport
+29.10.2020 14:33:11  INFO (JobConfiguration.java:174) - Exit readConfiguration..
+29.10.2020 14:33:11  INFO (JobEngine.java:69) - definitionArr : ["Reader","Transformer-Input-Queue","Transformer","Transformer-Output-Queue","Writer"]
+29.10.2020 14:33:11  INFO (JobEngine.java:176) - Entry loadJobQueues..
+29.10.2020 14:33:11  INFO (JobEngine.java:207) - Exit loadJobQueues..
+29.10.2020 14:33:11  INFO (JobEngine.java:72) - queueMap : {Transformer-Input-Queue=com.enhancesys.integration.services.dataengine.job.connector.queue.InMemoryQueue@25f4878b, Transformer-Output-Queue=com.enhancesys.integration.services.dataengine.job.connector.queue.InMemoryQueue@4e423aa2}
+29.10.2020 14:33:11  INFO (JobPipeLine.java:32) - Reader : Entry init..
+29.10.2020 14:33:11  INFO (JobPipeLine.java:46) - Reader : Processor : {"job_count":10000,"delay_count":10,"processors":[{"job_count":5,"collection_position":0,"delay_count":10,"class":"mongoDBPrimaryDataSortProcessor","sleep_time":5}],"class":"genericDataFetcher","sleep_time":6}
+29.10.2020 14:33:11  INFO (GenericDataFetcher.java:34) - Reader : Entry init..
+29.10.2020 14:33:11  INFO (GenericDataFetcher.java:69) - Reader : Processor : {"job_count":5,"collection_position":0,"delay_count":10,"class":"mongoDBPrimaryDataSortProcessor","sleep_time":5}
+29.10.2020 14:33:11  INFO (MongoDBPrimaryDataSortProcessor.java:52) - Entry init..
+29.10.2020 14:33:11  INFO (MongoDataUtil.java:44) - Entry getCursor..
+29.10.2020 14:33:11  INFO (MongoDataUtil.java:92) - queryObject : { }
+29.10.2020 14:33:11  INFO (MongoDataUtil.java:127) - Exit getCursor..
+29.10.2020 14:33:11  INFO (MongoDBPrimaryDataSortProcessor.java:59) - Reader : mongoDBPrimaryDataSortProcessor :  Cursor Size : 23
+29.10.2020 14:33:11  INFO (MongoDBPrimaryDataSortProcessor.java:102) - Entry sortData..
+29.10.2020 14:33:11  INFO (MongoDBPrimaryDataSortProcessor.java:132) - SortColumns : [_id]
+29.10.2020 14:33:11  INFO (MongoDBPrimaryDataSortProcessor.java:159) - Sort file script is initiated for file :: E:\interface\work\enh-work\DataEngine\jobengineconf\sorting-scripts\files\crs_trk_summary_20201029143311469.csv.cp
+29.10.2020 14:33:11  INFO (MongoDBPrimaryDataSortProcessor.java:167) - Runtime cmd :: C:/Program Files/Git/git-bash.exe E:/interface/work/enh-work/DataEngine/jobengineconf/sorting-scripts/collection1.sh E:\interface\work\enh-work\DataEngine\jobengineconf\sorting-scripts\files\crs_trk_summary_20201029143311469.csv.cp E:\interface\work\enh-work\DataEngine\jobengineconf\sorting-scripts\files\crs_trk_summary_20201029143311469.csv.cp
+29.10.2020 14:33:12  INFO (MongoDBPrimaryDataSortProcessor.java:169) - Process : waitFor() :: 0
+29.10.2020 14:33:12  INFO (MongoDBPrimaryDataSortProcessor.java:211) - Exit sortData..
+29.10.2020 14:33:12  INFO (MongoDBPrimaryDataSortProcessor.java:95) - Exit init..
+29.10.2020 14:33:12  INFO (GenericDataFetcher.java:74) - Reader : Processors size : 1
+29.10.2020 14:33:12  INFO (GenericDataFetcher.java:86) - Reader : Exit init..
+29.10.2020 14:33:12  INFO (JobPipeLine.java:51) - Reader : Processors size : 1
+29.10.2020 14:33:12  INFO (JobPipeLine.java:62) - Reader : Exit init..
+29.10.2020 14:33:12  INFO (JobEngine.java:83) - Reader :
+29.10.2020 14:33:12  INFO (JobEngine.java:91) - OutputQ : Transformer-Input-Queue
+29.10.2020 14:33:12  INFO (JobPipeLine.java:32) - Transformer : Entry init..
+29.10.2020 14:33:12  INFO (JobPipeLine.java:46) - Transformer : Processor : {"delay_count":10,"class":"genericDataTransformer","sleep_time":10}
+29.10.2020 14:33:12  INFO (GenericDataTransformer.java:69) - Entry init..
+29.10.2020 14:33:12  INFO (GenericDataTransformer.java:105) - Exit init..
+29.10.2020 14:33:12  INFO (JobPipeLine.java:51) - Transformer : Processors size : 1
+29.10.2020 14:33:12  INFO (JobPipeLine.java:62) - Transformer : Exit init..
+29.10.2020 14:33:12  INFO (JobEngine.java:83) - Transformer :
+29.10.2020 14:33:12  INFO (JobEngine.java:86) - InputQ : Transformer-Input-Queue
+29.10.2020 14:33:12  INFO (JobEngine.java:91) - OutputQ : Transformer-Output-Queue
+29.10.2020 14:33:12  INFO (JobPipeLine.java:32) - Writer : Entry init..
+29.10.2020 14:33:12  INFO (JobPipeLine.java:46) - Writer : Processor : {"delay_count":10,"class":"csvDataWriter","sleep_time":10}
+29.10.2020 14:33:12  INFO (CSVDataWriter.java:65) - Entry init..
+29.10.2020 14:33:12  INFO (CSVDataWriter.java:104) - Entry createFile..
+29.10.2020 14:33:12  INFO (CSVDataWriter.java:170) - Exit createFile..E:\interface\work\enh-work\DataEngine\jobengineconf\outputfiles\Course_Reward_Summary_Report_20201029_001.csv
+29.10.2020 14:33:12  INFO (CSVDataWriter.java:98) - Exit init..
+29.10.2020 14:33:12  INFO (JobPipeLine.java:51) - Writer : Processors size : 1
+29.10.2020 14:33:12  INFO (JobPipeLine.java:62) - Writer : Exit init..
+29.10.2020 14:33:12  INFO (JobEngine.java:83) - Writer :
+29.10.2020 14:33:12  INFO (JobEngine.java:86) - InputQ : Transformer-Output-Queue
+29.10.2020 14:33:12  INFO (JobEngine.java:141) - Entry start : pipeLine threads size : 3
+29.10.2020 14:33:12  INFO (JobEngine.java:146) - Starting pipeline : Reader_0
+29.10.2020 14:33:12  INFO (JobEngine.java:146) - Starting pipeline : Transformer_0
+29.10.2020 14:33:12  INFO (JobEngine.java:146) - Starting pipeline : Writer_0
+29.10.2020 14:33:12  INFO (JobPipeLine.java:78) - Reader : Entry run..
+29.10.2020 14:33:12  INFO (JobPipeLine.java:78) - Writer : Entry run..
+29.10.2020 14:33:12  INFO (JobPipeLine.java:78) - Transformer : Entry run..
+29.10.2020 14:33:16 ERROR (InMemoryQueue.java:69) - Transformer-Input-Queue : Failed to send RequestData to the next level.. : queue size : 2 : Retry Count : 0
+29.10.2020 14:33:22 ERROR (InMemoryQueue.java:69) - Transformer-Input-Queue : Failed to send RequestData to the next level.. : queue size : 2 : Retry Count : 1
+29.10.2020 14:33:28 ERROR (MongoDBPrimaryDataSortProcessor.java:345) - Reader : mongoDBPrimaryDataSortProcessor : No more data exists in the cursor..
+29.10.2020 14:33:28 ERROR (GenericDataFetcher.java:157) - No More Data Exists..
+29.10.2020 14:33:28 ERROR (InMemoryQueue.java:69) - Transformer-Input-Queue : Failed to send RequestData to the next level.. : queue size : 2 : Retry Count : 0
+29.10.2020 14:33:31  INFO (JobPipeLine.java:149) - Reader : Sending emptyObject to the next level to stop process on completion..
+29.10.2020 14:33:31  INFO (JobPipeLine.java:179) - Reader : Exit run..Reader
+29.10.2020 14:33:32  INFO (JobPipeLine.java:116) - Transformer : pushing back empty object to the queue from : Transformer
+29.10.2020 14:33:32  INFO (JobPipeLine.java:156) - Transformer : Sending emptyObject to the next level to stop process..
+29.10.2020 14:33:33  INFO (JobPipeLine.java:179) - Transformer : Exit run..Transformer
+29.10.2020 14:33:33  INFO (JobPipeLine.java:116) - Writer : pushing back empty object to the queue from : Writer
+29.10.2020 14:33:33  INFO (JobPipeLine.java:179) - Writer : Exit run..Writer
+29.10.2020 14:33:33  INFO (CSVDataWriter.java:536) - recordCount : 23
+29.10.2020 14:33:33  INFO (CSVDataWriter.java:552) - storeFileConf :: {"is-enable":false,"connection-id":"snoc-r4","schema-name":"snoc_jobengine_reports","delete-file-local":false}
+29.10.2020 14:33:33  INFO (MongoDataUtil.java:359) - UpdateStatus : 1007 : Status : 173   requestUpdateConf :: null
+29.10.2020 14:33:33  INFO (JobEngine.java:161) - Exit start : pipeLine threads size : 3
+29.10.2020 14:33:33  INFO (JobEngine.java:135) - Exit init..
+29.10.2020 14:33:33  INFO (JobService.java:104) - Job Done..
+29.10.2020 14:33:33  INFO (JobService.java:125) - Exit processRequest..
+29.10.2020 14:33:33  INFO (JobServicesInitiator.java:110) - 
+
+Total Time required for JobServices :: 0.37586668 mins  :: Filepath :: E:\interface\work\enh-work\DataEngine\jobengineconf\sample_data\CourseRwrdSummaryReport_csv.json.cp
+
+
+
+29.10.2020 14:33:33  INFO (JobServicesInitiator.java:91) - JobServicesInitiator started with jobParameters from file :: E:\interface\work\enh-work\DataEngine\jobengineconf\sample_data\CourseRwrdSummaryReport_pdf.json.cp
+
+
+
+29.10.2020 14:33:33  INFO (JobService.java:66) - Entry processRequest :: JobParameters :: {"job-id":"JOB_ID_CourseRwrdSummaryReport","StoreFileConf":{"is-enable":false,"connection-id":"snoc-r4","schema-name":"snoc_jobengine_reports","delete-file-local":false},"template-id":"CourseRwrdSummaryReport-pdf","request-id":1007,"job-data":{"area":"50003","course_id":"1299","cluster":"","output_file_name":"Course_Reward_Summary_Report","user_id":"30003","regional":"50002","sales_area":"50004","output_file_type":"pdf","output_file_date_patten":"yyyyMMdd","micro_cluster":"","output_file_path":"E:\/interface\/work\/enh-work\/DataEngine\/jobengineconf\/outputfiles\/"},"template-name":"JOB_TEMPLATE_CourseLevel"}
+29.10.2020 14:33:33  INFO (JobService.java:94) - Spring App Context : org.springframework.context.support.FileSystemXmlApplicationContext@77556fd: startup date [Thu Oct 29 14:30:32 IST 2020]; root of context hierarchy
+29.10.2020 14:33:33  INFO (JobService.java:98) - JobEngine init process going to start:: BEAN ID :: com.enhancesys.integration.services.dataengine.job.JobEngine@105fece7
+29.10.2020 14:33:33  INFO (JobEngine.java:35) - Entry init..
+29.10.2020 14:33:33  INFO (JobConfiguration.java:26) - Entry readConfiguration..
+29.10.2020 14:33:33  INFO (JobConfiguration.java:52) - Custom Template Configuration from E:/home/appuser/snoc/snocconf/jobengineconf/job-templates/JOB_TEMPLATE_CourseLevel.json
+29.10.2020 14:33:33  INFO (JobConfiguration.java:102) - jobId :: JOB_ID_CourseRwrdSummaryReport
+29.10.2020 14:33:33  INFO (JobConfiguration.java:174) - Exit readConfiguration..
+29.10.2020 14:33:33  INFO (JobEngine.java:69) - definitionArr : ["Reader","Transformer-Input-Queue","Transformer","Transformer-Output-Queue","Writer"]
+29.10.2020 14:33:33  INFO (JobEngine.java:176) - Entry loadJobQueues..
+29.10.2020 14:33:33  INFO (JobEngine.java:207) - Exit loadJobQueues..
+29.10.2020 14:33:33  INFO (JobEngine.java:72) - queueMap : {Transformer-Input-Queue=com.enhancesys.integration.services.dataengine.job.connector.queue.InMemoryQueue@3081f72c, Transformer-Output-Queue=com.enhancesys.integration.services.dataengine.job.connector.queue.InMemoryQueue@3148f668}
+29.10.2020 14:33:33  INFO (JobPipeLine.java:32) - Reader : Entry init..
+29.10.2020 14:33:33  INFO (JobPipeLine.java:46) - Reader : Processor : {"job_count":10000,"delay_count":10,"processors":[{"job_count":5,"collection_position":0,"delay_count":10,"class":"mongoDBPrimaryDataSortProcessor","sleep_time":5}],"class":"genericDataFetcher","sleep_time":6}
+29.10.2020 14:33:33  INFO (GenericDataFetcher.java:34) - Reader : Entry init..
+29.10.2020 14:33:33  INFO (GenericDataFetcher.java:69) - Reader : Processor : {"job_count":5,"collection_position":0,"delay_count":10,"class":"mongoDBPrimaryDataSortProcessor","sleep_time":5}
+29.10.2020 14:33:33  INFO (MongoDBPrimaryDataSortProcessor.java:52) - Entry init..
+29.10.2020 14:33:33  INFO (MongoDataUtil.java:44) - Entry getCursor..
+29.10.2020 14:33:33  INFO (MongoDataUtil.java:92) - queryObject : { }
+29.10.2020 14:33:33  INFO (MongoDataUtil.java:127) - Exit getCursor..
+29.10.2020 14:33:33  INFO (MongoDBPrimaryDataSortProcessor.java:59) - Reader : mongoDBPrimaryDataSortProcessor :  Cursor Size : 23
+29.10.2020 14:33:34  INFO (MongoDBPrimaryDataSortProcessor.java:102) - Entry sortData..
+29.10.2020 14:33:34  INFO (MongoDBPrimaryDataSortProcessor.java:132) - SortColumns : [_id]
+29.10.2020 14:33:34  INFO (MongoDBPrimaryDataSortProcessor.java:159) - Sort file script is initiated for file :: E:\interface\work\enh-work\DataEngine\jobengineconf\sorting-scripts\files\crs_trk_summary_20201029143334046.csv.cp
+29.10.2020 14:33:34  INFO (MongoDBPrimaryDataSortProcessor.java:167) - Runtime cmd :: C:/Program Files/Git/git-bash.exe E:/interface/work/enh-work/DataEngine/jobengineconf/sorting-scripts/collection1.sh E:\interface\work\enh-work\DataEngine\jobengineconf\sorting-scripts\files\crs_trk_summary_20201029143334046.csv.cp E:\interface\work\enh-work\DataEngine\jobengineconf\sorting-scripts\files\crs_trk_summary_20201029143334046.csv.cp
+29.10.2020 14:33:35  INFO (MongoDBPrimaryDataSortProcessor.java:169) - Process : waitFor() :: 0
+29.10.2020 14:33:35  INFO (MongoDBPrimaryDataSortProcessor.java:211) - Exit sortData..
+29.10.2020 14:33:35  INFO (MongoDBPrimaryDataSortProcessor.java:95) - Exit init..
+29.10.2020 14:33:35  INFO (GenericDataFetcher.java:74) - Reader : Processors size : 1
+29.10.2020 14:33:35  INFO (GenericDataFetcher.java:86) - Reader : Exit init..
+29.10.2020 14:33:35  INFO (JobPipeLine.java:51) - Reader : Processors size : 1
+29.10.2020 14:33:35  INFO (JobPipeLine.java:62) - Reader : Exit init..
+29.10.2020 14:33:35  INFO (JobEngine.java:83) - Reader :
+29.10.2020 14:33:35  INFO (JobEngine.java:91) - OutputQ : Transformer-Input-Queue
+29.10.2020 14:33:35  INFO (JobPipeLine.java:32) - Transformer : Entry init..
+29.10.2020 14:33:35  INFO (JobPipeLine.java:46) - Transformer : Processor : {"delay_count":10,"class":"genericDataTransformer","sleep_time":10}
+29.10.2020 14:33:35  INFO (GenericDataTransformer.java:69) - Entry init..
+29.10.2020 14:33:35  INFO (GenericDataTransformer.java:105) - Exit init..
+29.10.2020 14:33:35  INFO (JobPipeLine.java:51) - Transformer : Processors size : 1
+29.10.2020 14:33:35  INFO (JobPipeLine.java:62) - Transformer : Exit init..
+29.10.2020 14:33:35  INFO (JobEngine.java:83) - Transformer :
+29.10.2020 14:33:35  INFO (JobEngine.java:86) - InputQ : Transformer-Input-Queue
+29.10.2020 14:33:35  INFO (JobEngine.java:91) - OutputQ : Transformer-Output-Queue
+29.10.2020 14:33:35  INFO (JobPipeLine.java:32) - Writer : Entry init..
+29.10.2020 14:33:35  INFO (JobPipeLine.java:46) - Writer : Processor : {"delay_count":10,"class":"pdfDataWriter","sleep_time":10}
+29.10.2020 14:33:35  INFO (PDFDataWriter.java:80) - Entry init..
+29.10.2020 14:33:35  INFO (PDFDataWriter.java:115) - Entry createFile..
+29.10.2020 14:33:35  INFO (PDFDataWriter.java:229) - File Name :: E:\interface\work\enh-work\DataEngine\jobengineconf\outputfiles\Course_Reward_Summary_Report_20201029_001.pdf
+29.10.2020 14:33:35  INFO (PDFDataWriter.java:230) - Exit createFile..
+29.10.2020 14:33:35  INFO (PDFDataWriter.java:109) - Exit init..
+29.10.2020 14:33:35  INFO (JobPipeLine.java:51) - Writer : Processors size : 1
+29.10.2020 14:33:35  INFO (JobPipeLine.java:62) - Writer : Exit init..
+29.10.2020 14:33:35  INFO (JobEngine.java:83) - Writer :
+29.10.2020 14:33:35  INFO (JobEngine.java:86) - InputQ : Transformer-Output-Queue
+29.10.2020 14:33:35  INFO (JobEngine.java:141) - Entry start : pipeLine threads size : 3
+29.10.2020 14:33:35  INFO (JobEngine.java:146) - Starting pipeline : Reader_0
+29.10.2020 14:33:35  INFO (JobEngine.java:146) - Starting pipeline : Transformer_0
+29.10.2020 14:33:35  INFO (JobEngine.java:146) - Starting pipeline : Writer_0
+29.10.2020 14:33:35  INFO (JobPipeLine.java:78) - Reader : Entry run..
+29.10.2020 14:33:35  INFO (JobPipeLine.java:78) - Transformer : Entry run..
+29.10.2020 14:33:35  INFO (JobPipeLine.java:78) - Writer : Entry run..
+29.10.2020 14:33:37 ERROR (InMemoryQueue.java:69) - Transformer-Input-Queue : Failed to send RequestData to the next level.. : queue size : 2 : Retry Count : 1
+29.10.2020 14:33:42 ERROR (InMemoryQueue.java:69) - Transformer-Input-Queue : Failed to send RequestData to the next level.. : queue size : 2 : Retry Count : 0
+29.10.2020 14:33:49 ERROR (MongoDBPrimaryDataSortProcessor.java:345) - Reader : mongoDBPrimaryDataSortProcessor : No more data exists in the cursor..
+29.10.2020 14:33:49 ERROR (GenericDataFetcher.java:157) - No More Data Exists..
+29.10.2020 14:33:49 ERROR (InMemoryQueue.java:69) - Transformer-Input-Queue : Failed to send RequestData to the next level.. : queue size : 2 : Retry Count : 0
+29.10.2020 14:33:51  INFO (JobPipeLine.java:149) - Reader : Sending emptyObject to the next level to stop process on completion..
+29.10.2020 14:33:51  INFO (JobPipeLine.java:179) - Reader : Exit run..Reader
+29.10.2020 14:33:52  INFO (JobPipeLine.java:116) - Transformer : pushing back empty object to the queue from : Transformer
+29.10.2020 14:33:52  INFO (JobPipeLine.java:156) - Transformer : Sending emptyObject to the next level to stop process..
+29.10.2020 14:33:53  INFO (JobPipeLine.java:179) - Transformer : Exit run..Transformer
+29.10.2020 14:33:54  INFO (JobPipeLine.java:116) - Writer : pushing back empty object to the queue from : Writer
+29.10.2020 14:33:54  INFO (JobPipeLine.java:179) - Writer : Exit run..Writer
+29.10.2020 14:33:54  INFO (PDFDataWriter.java:627) - recordCount : 23
+29.10.2020 14:33:54  INFO (PDFDataWriter.java:643) - storeFileConf :: {"is-enable":false,"connection-id":"snoc-r4","schema-name":"snoc_jobengine_reports","delete-file-local":false}
+29.10.2020 14:33:54  INFO (MongoDataUtil.java:359) - UpdateStatus : 1007 : Status : 173   requestUpdateConf :: null
+29.10.2020 14:33:54  INFO (JobEngine.java:161) - Exit start : pipeLine threads size : 3
+29.10.2020 14:33:54  INFO (JobEngine.java:135) - Exit init..
+29.10.2020 14:33:54  INFO (JobService.java:104) - Job Done..
+29.10.2020 14:33:54  INFO (JobService.java:125) - Exit processRequest..
+29.10.2020 14:33:54  INFO (JobServicesInitiator.java:110) - 
+
+Total Time required for JobServices :: 0.34373334 mins  :: Filepath :: E:\interface\work\enh-work\DataEngine\jobengineconf\sample_data\CourseRwrdSummaryReport_pdf.json.cp
+
+
+
+29.10.2020 14:33:54  INFO (JobServicesInitiator.java:91) - JobServicesInitiator started with jobParameters from file :: E:\interface\work\enh-work\DataEngine\jobengineconf\sample_data\CourseRwrdSummaryReport_excel.json.cp
+
+
+
+29.10.2020 14:33:54  INFO (JobService.java:66) - Entry processRequest :: JobParameters :: {"job-id":"JOB_ID_CourseRwrdSummaryReport","StoreFileConf":{"is-enable":false,"connection-id":"snoc-r4","schema-name":"snoc_jobengine_reports","delete-file-local":false},"template-id":"CourseRwrdSummaryReport-excel","request-id":1007,"job-data":{"area":"50003","course_id":"1299","cluster":"","output_file_name":"Course_Reward_Summary_Report","user_id":"30003","regional":"50002","sales_area":"50004","output_file_type":"xls","output_file_date_patten":"yyyyMMdd","micro_cluster":"","output_file_path":"E:\/interface\/work\/enh-work\/DataEngine\/jobengineconf\/outputfiles\/"},"template-name":"JOB_TEMPLATE_CourseLevel"}
+29.10.2020 14:33:54  INFO (JobService.java:94) - Spring App Context : org.springframework.context.support.FileSystemXmlApplicationContext@77556fd: startup date [Thu Oct 29 14:30:32 IST 2020]; root of context hierarchy
+29.10.2020 14:33:54  INFO (JobService.java:98) - JobEngine init process going to start:: BEAN ID :: com.enhancesys.integration.services.dataengine.job.JobEngine@105fece7
+29.10.2020 14:33:54  INFO (JobEngine.java:35) - Entry init..
+29.10.2020 14:33:54  INFO (JobConfiguration.java:26) - Entry readConfiguration..
+29.10.2020 14:33:54  INFO (JobConfiguration.java:52) - Custom Template Configuration from E:/home/appuser/snoc/snocconf/jobengineconf/job-templates/JOB_TEMPLATE_CourseLevel.json
+29.10.2020 14:33:54  INFO (JobConfiguration.java:102) - jobId :: JOB_ID_CourseRwrdSummaryReport
+29.10.2020 14:33:54  INFO (JobConfiguration.java:174) - Exit readConfiguration..
+29.10.2020 14:33:54  INFO (JobEngine.java:69) - definitionArr : ["Reader","Transformer-Input-Queue","Transformer","Transformer-Output-Queue","Writer"]
+29.10.2020 14:33:54  INFO (JobEngine.java:176) - Entry loadJobQueues..
+29.10.2020 14:33:54  INFO (JobEngine.java:207) - Exit loadJobQueues..
+29.10.2020 14:33:54  INFO (JobEngine.java:72) - queueMap : {Transformer-Input-Queue=com.enhancesys.integration.services.dataengine.job.connector.queue.InMemoryQueue@436c81a3, Transformer-Output-Queue=com.enhancesys.integration.services.dataengine.job.connector.queue.InMemoryQueue@3561c410}
+29.10.2020 14:33:54  INFO (JobPipeLine.java:32) - Reader : Entry init..
+29.10.2020 14:33:54  INFO (JobPipeLine.java:46) - Reader : Processor : {"job_count":10000,"delay_count":10,"processors":[{"job_count":5,"collection_position":0,"delay_count":10,"class":"mongoDBPrimaryDataSortProcessor","sleep_time":5}],"class":"genericDataFetcher","sleep_time":6}
+29.10.2020 14:33:54  INFO (GenericDataFetcher.java:34) - Reader : Entry init..
+29.10.2020 14:33:54  INFO (GenericDataFetcher.java:69) - Reader : Processor : {"job_count":5,"collection_position":0,"delay_count":10,"class":"mongoDBPrimaryDataSortProcessor","sleep_time":5}
+29.10.2020 14:33:54  INFO (MongoDBPrimaryDataSortProcessor.java:52) - Entry init..
+29.10.2020 14:33:54  INFO (MongoDataUtil.java:44) - Entry getCursor..
+29.10.2020 14:33:54  INFO (MongoDataUtil.java:92) - queryObject : { }
+29.10.2020 14:33:54  INFO (MongoDataUtil.java:127) - Exit getCursor..
+29.10.2020 14:33:54  INFO (MongoDBPrimaryDataSortProcessor.java:59) - Reader : mongoDBPrimaryDataSortProcessor :  Cursor Size : 23
+29.10.2020 14:33:54  INFO (MongoDBPrimaryDataSortProcessor.java:102) - Entry sortData..
+29.10.2020 14:33:54  INFO (MongoDBPrimaryDataSortProcessor.java:132) - SortColumns : [_id]
+29.10.2020 14:33:55  INFO (MongoDBPrimaryDataSortProcessor.java:159) - Sort file script is initiated for file :: E:\interface\work\enh-work\DataEngine\jobengineconf\sorting-scripts\files\crs_trk_summary_20201029143354654.csv.cp
+29.10.2020 14:33:55  INFO (MongoDBPrimaryDataSortProcessor.java:167) - Runtime cmd :: C:/Program Files/Git/git-bash.exe E:/interface/work/enh-work/DataEngine/jobengineconf/sorting-scripts/collection1.sh E:\interface\work\enh-work\DataEngine\jobengineconf\sorting-scripts\files\crs_trk_summary_20201029143354654.csv.cp E:\interface\work\enh-work\DataEngine\jobengineconf\sorting-scripts\files\crs_trk_summary_20201029143354654.csv.cp
+29.10.2020 14:33:55  INFO (MongoDBPrimaryDataSortProcessor.java:169) - Process : waitFor() :: 0
+29.10.2020 14:33:55  INFO (MongoDBPrimaryDataSortProcessor.java:211) - Exit sortData..
+29.10.2020 14:33:55  INFO (MongoDBPrimaryDataSortProcessor.java:95) - Exit init..
+29.10.2020 14:33:55  INFO (GenericDataFetcher.java:74) - Reader : Processors size : 1
+29.10.2020 14:33:55  INFO (GenericDataFetcher.java:86) - Reader : Exit init..
+29.10.2020 14:33:55  INFO (JobPipeLine.java:51) - Reader : Processors size : 1
+29.10.2020 14:33:55  INFO (JobPipeLine.java:62) - Reader : Exit init..
+29.10.2020 14:33:55  INFO (JobEngine.java:83) - Reader :
+29.10.2020 14:33:55  INFO (JobEngine.java:91) - OutputQ : Transformer-Input-Queue
+29.10.2020 14:33:55  INFO (JobPipeLine.java:32) - Transformer : Entry init..
+29.10.2020 14:33:55  INFO (JobPipeLine.java:46) - Transformer : Processor : {"delay_count":10,"class":"genericDataTransformer","sleep_time":10}
+29.10.2020 14:33:55  INFO (GenericDataTransformer.java:69) - Entry init..
+29.10.2020 14:33:55  INFO (GenericDataTransformer.java:105) - Exit init..
+29.10.2020 14:33:55  INFO (JobPipeLine.java:51) - Transformer : Processors size : 1
+29.10.2020 14:33:55  INFO (JobPipeLine.java:62) - Transformer : Exit init..
+29.10.2020 14:33:55  INFO (JobEngine.java:83) - Transformer :
+29.10.2020 14:33:55  INFO (JobEngine.java:86) - InputQ : Transformer-Input-Queue
+29.10.2020 14:33:55  INFO (JobEngine.java:91) - OutputQ : Transformer-Output-Queue
+29.10.2020 14:33:55  INFO (JobPipeLine.java:32) - Writer : Entry init..
+29.10.2020 14:33:55  INFO (JobPipeLine.java:46) - Writer : Processor : {"delay_count":10,"class":"excelDataWriter","sleep_time":10}
+29.10.2020 14:33:55  INFO (ExcelDataWriter.java:79) - Entry init..
+29.10.2020 14:33:55  INFO (ExcelDataWriter.java:159) - sheetName ::: 001
+29.10.2020 14:33:55  INFO (ExcelDataWriter.java:108) - Exit init..
+29.10.2020 14:33:55  INFO (JobPipeLine.java:51) - Writer : Processors size : 1
+29.10.2020 14:33:55  INFO (JobPipeLine.java:62) - Writer : Exit init..
+29.10.2020 14:33:55  INFO (JobEngine.java:83) - Writer :
+29.10.2020 14:33:55  INFO (JobEngine.java:86) - InputQ : Transformer-Output-Queue
+29.10.2020 14:33:55  INFO (JobEngine.java:141) - Entry start : pipeLine threads size : 3
+29.10.2020 14:33:55  INFO (JobEngine.java:146) - Starting pipeline : Reader_0
+29.10.2020 14:33:55  INFO (JobEngine.java:146) - Starting pipeline : Transformer_0
+29.10.2020 14:33:55  INFO (JobPipeLine.java:78) - Reader : Entry run..
+29.10.2020 14:33:55  INFO (JobPipeLine.java:78) - Transformer : Entry run..
+29.10.2020 14:33:55  INFO (JobEngine.java:146) - Starting pipeline : Writer_0
+29.10.2020 14:33:55  INFO (JobPipeLine.java:78) - Writer : Entry run..
+29.10.2020 14:33:58 ERROR (InMemoryQueue.java:69) - Transformer-Input-Queue : Failed to send RequestData to the next level.. : queue size : 2 : Retry Count : 1
+29.10.2020 14:34:03 ERROR (InMemoryQueue.java:69) - Transformer-Input-Queue : Failed to send RequestData to the next level.. : queue size : 2 : Retry Count : 0
+29.10.2020 14:34:10 ERROR (InMemoryQueue.java:69) - Transformer-Input-Queue : Failed to send RequestData to the next level.. : queue size : 2 : Retry Count : 3
+29.10.2020 14:34:10 ERROR (MongoDBPrimaryDataSortProcessor.java:345) - Reader : mongoDBPrimaryDataSortProcessor : No more data exists in the cursor..
+29.10.2020 14:34:10 ERROR (GenericDataFetcher.java:157) - No More Data Exists..
+29.10.2020 14:34:13  INFO (JobPipeLine.java:149) - Reader : Sending emptyObject to the next level to stop process on completion..
+29.10.2020 14:34:13  INFO (JobPipeLine.java:179) - Reader : Exit run..Reader
+29.10.2020 14:34:13  INFO (JobPipeLine.java:116) - Transformer : pushing back empty object to the queue from : Transformer
+29.10.2020 14:34:13  INFO (JobPipeLine.java:156) - Transformer : Sending emptyObject to the next level to stop process..
+29.10.2020 14:34:14  INFO (JobPipeLine.java:179) - Transformer : Exit run..Transformer
+29.10.2020 14:34:14  INFO (JobPipeLine.java:116) - Writer : pushing back empty object to the queue from : Writer
+29.10.2020 14:34:14  INFO (JobPipeLine.java:179) - Writer : Exit run..Writer
+29.10.2020 14:34:14  INFO (ExcelDataWriter.java:669) - inside ExcelDataWriter Stop..
+29.10.2020 14:34:14  INFO (ExcelDataWriter.java:684) - recordCount : 23
+29.10.2020 14:34:14  INFO (ExcelDataWriter.java:700) - storeFileConf :: {"is-enable":false,"connection-id":"snoc-r4","schema-name":"snoc_jobengine_reports","delete-file-local":false}
+29.10.2020 14:34:14  INFO (MongoDataUtil.java:359) - UpdateStatus : 1007 : Status : 173   requestUpdateConf :: null
+29.10.2020 14:34:14  INFO (JobEngine.java:161) - Exit start : pipeLine threads size : 3
+29.10.2020 14:34:14  INFO (JobEngine.java:135) - Exit init..
+29.10.2020 14:34:14  INFO (JobService.java:104) - Job Done..
+29.10.2020 14:34:14  INFO (JobService.java:125) - Exit processRequest..
+29.10.2020 14:34:14  INFO (JobServicesInitiator.java:110) - 
+
+Total Time required for JobServices :: 0.34361666 mins  :: Filepath :: E:\interface\work\enh-work\DataEngine\jobengineconf\sample_data\CourseRwrdSummaryReport_excel.json.cp
+
+
+
+29.10.2020 14:34:14  INFO (JobServicesInitiator.java:91) - JobServicesInitiator started with jobParameters from file :: E:\interface\work\enh-work\DataEngine\jobengineconf\sample_data\user_org_mapping_csv.json.cp
+
+
+
+29.10.2020 14:34:14  INFO (JobService.java:66) - Entry processRequest :: JobParameters :: {"job-id":"JOB_ID_user_org_mapping","StoreFileConf":{"is-enable":false,"connection-id":"snoc-r4","schema-name":"snoc_jobengine_reports","delete-file-local":false},"template-id":"user_org_mapping-csv","job-data":{"status_node":"174","output_file_name":"USER_ORG_MAPPING_DETAILS","status_user":"174","output_file_type":"csv","output_file_date_patten":"yyyyMMdd","output_file_path":"E:\/interface\/work\/enh-work\/DataEngine\/jobengineconf\/outputfiles\/","user_org_mapping_status":"174"},"template-name":"JOB_TEMPLATE_user_org_mapping"}
+29.10.2020 14:34:14  INFO (JobService.java:94) - Spring App Context : org.springframework.context.support.FileSystemXmlApplicationContext@77556fd: startup date [Thu Oct 29 14:30:32 IST 2020]; root of context hierarchy
+29.10.2020 14:34:14  INFO (JobService.java:98) - JobEngine init process going to start:: BEAN ID :: com.enhancesys.integration.services.dataengine.job.JobEngine@105fece7
+29.10.2020 14:34:14  INFO (JobEngine.java:35) - Entry init..
+29.10.2020 14:34:14  INFO (JobConfiguration.java:26) - Entry readConfiguration..
+29.10.2020 14:34:14  INFO (JobConfiguration.java:52) - Custom Template Configuration from E:/home/appuser/snoc/snocconf/jobengineconf/job-templates/JOB_TEMPLATE_user_org_mapping.json
+29.10.2020 14:34:14  INFO (JobConfiguration.java:102) - jobId :: JOB_ID_user_org_mapping
+29.10.2020 14:34:14  INFO (JobConfiguration.java:174) - Exit readConfiguration..
+29.10.2020 14:34:14  INFO (JobEngine.java:69) - definitionArr : ["Reader","Input-Queue","Transformer","Output-Queue","Writer"]
+29.10.2020 14:34:14  INFO (JobEngine.java:176) - Entry loadJobQueues..
+29.10.2020 14:34:14  INFO (JobEngine.java:207) - Exit loadJobQueues..
+29.10.2020 14:34:14  INFO (JobEngine.java:72) - queueMap : {Input-Queue=com.enhancesys.integration.services.dataengine.job.connector.queue.InMemoryQueue@609db546, Output-Queue=com.enhancesys.integration.services.dataengine.job.connector.queue.InMemoryQueue@20f5281c}
+29.10.2020 14:34:14  INFO (JobPipeLine.java:32) - Reader : Entry init..
+29.10.2020 14:34:14  INFO (JobPipeLine.java:46) - Reader : Processor : {"job_count":10000,"delay_count":10,"processors":[{"job_count":5,"collection_position":0,"delay_count":10,"class":"mongoDBPrimaryDataSortProcessor","sleep_time":5}],"class":"genericDataFetcher","sleep_time":6}
+29.10.2020 14:34:14  INFO (GenericDataFetcher.java:34) - Reader : Entry init..
+29.10.2020 14:34:14  INFO (GenericDataFetcher.java:69) - Reader : Processor : {"job_count":5,"collection_position":0,"delay_count":10,"class":"mongoDBPrimaryDataSortProcessor","sleep_time":5}
+29.10.2020 14:34:14  INFO (MongoDBPrimaryDataSortProcessor.java:52) - Entry init..
+29.10.2020 14:34:14  INFO (MongoDataUtil.java:44) - Entry getCursor..
+29.10.2020 14:34:14  INFO (MongoDataUtil.java:92) - queryObject : { }
+29.10.2020 14:34:14  INFO (MongoDataUtil.java:127) - Exit getCursor..
+29.10.2020 14:34:15  INFO (MongoDBPrimaryDataSortProcessor.java:59) - Reader : mongoDBPrimaryDataSortProcessor :  Cursor Size : 13
+29.10.2020 14:34:15  INFO (MongoDBPrimaryDataSortProcessor.java:102) - Entry sortData..
+29.10.2020 14:34:15  INFO (MongoDBPrimaryDataSortProcessor.java:132) - SortColumns : [_id]
+29.10.2020 14:34:15  INFO (MongoDBPrimaryDataSortProcessor.java:159) - Sort file script is initiated for file :: E:\interface\work\enh-work\DataEngine\jobengineconf\sorting-scripts\files\user_org_mapping_20201029143415278.csv.cp
+29.10.2020 14:34:15  INFO (MongoDBPrimaryDataSortProcessor.java:167) - Runtime cmd :: C:/Program Files/Git/git-bash.exe E:/interface/work/enh-work/DataEngine/jobengineconf/sorting-scripts/collection1.sh E:\interface\work\enh-work\DataEngine\jobengineconf\sorting-scripts\files\user_org_mapping_20201029143415278.csv.cp E:\interface\work\enh-work\DataEngine\jobengineconf\sorting-scripts\files\user_org_mapping_20201029143415278.csv.cp
+29.10.2020 14:34:15  INFO (MongoDBPrimaryDataSortProcessor.java:169) - Process : waitFor() :: 0
+29.10.2020 14:34:16  INFO (MongoDBPrimaryDataSortProcessor.java:211) - Exit sortData..
+29.10.2020 14:34:16  INFO (MongoDBPrimaryDataSortProcessor.java:95) - Exit init..
+29.10.2020 14:34:16  INFO (GenericDataFetcher.java:74) - Reader : Processors size : 1
+29.10.2020 14:34:16  INFO (GenericDataFetcher.java:86) - Reader : Exit init..
+29.10.2020 14:34:16  INFO (JobPipeLine.java:51) - Reader : Processors size : 1
+29.10.2020 14:34:16  INFO (JobPipeLine.java:62) - Reader : Exit init..
+29.10.2020 14:34:16  INFO (JobEngine.java:83) - Reader :
+29.10.2020 14:34:16  INFO (JobEngine.java:91) - OutputQ : Input-Queue
+29.10.2020 14:34:16  INFO (JobPipeLine.java:32) - Transformer : Entry init..
+29.10.2020 14:34:16  INFO (JobPipeLine.java:46) - Transformer : Processor : {"delay_count":10,"class":"genericDataTransformer","sleep_time":10}
+29.10.2020 14:34:16  INFO (GenericDataTransformer.java:69) - Entry init..
+29.10.2020 14:34:16  INFO (GenericDataTransformer.java:105) - Exit init..
+29.10.2020 14:34:16  INFO (JobPipeLine.java:51) - Transformer : Processors size : 1
+29.10.2020 14:34:16  INFO (JobPipeLine.java:62) - Transformer : Exit init..
+29.10.2020 14:34:16  INFO (JobEngine.java:83) - Transformer :
+29.10.2020 14:34:16  INFO (JobEngine.java:86) - InputQ : Input-Queue
+29.10.2020 14:34:16  INFO (JobEngine.java:91) - OutputQ : Output-Queue
+29.10.2020 14:34:16  INFO (JobPipeLine.java:32) - Writer : Entry init..
+29.10.2020 14:34:16  INFO (JobPipeLine.java:46) - Writer : Processor : {"delay_count":10,"class":"csvDataWriter","sleep_time":10}
+29.10.2020 14:34:16  INFO (CSVDataWriter.java:65) - Entry init..
+29.10.2020 14:34:16  INFO (CSVDataWriter.java:104) - Entry createFile..
+29.10.2020 14:34:16  INFO (CSVDataWriter.java:170) - Exit createFile..E:\interface\work\enh-work\DataEngine\jobengineconf\outputfiles\USER_ORG_MAPPING_DETAILS_20201029.csv
+29.10.2020 14:34:16  INFO (CSVDataWriter.java:98) - Exit init..
+29.10.2020 14:34:16  INFO (JobPipeLine.java:51) - Writer : Processors size : 1
+29.10.2020 14:34:16  INFO (JobPipeLine.java:62) - Writer : Exit init..
+29.10.2020 14:34:16  INFO (JobEngine.java:83) - Writer :
+29.10.2020 14:34:16  INFO (JobEngine.java:86) - InputQ : Output-Queue
+29.10.2020 14:34:16  INFO (JobEngine.java:141) - Entry start : pipeLine threads size : 3
+29.10.2020 14:34:16  INFO (JobEngine.java:146) - Starting pipeline : Reader_0
+29.10.2020 14:34:16  INFO (JobEngine.java:146) - Starting pipeline : Transformer_0
+29.10.2020 14:34:16  INFO (JobEngine.java:146) - Starting pipeline : Writer_0
+29.10.2020 14:34:16  INFO (JobPipeLine.java:78) - Writer : Entry run..
+29.10.2020 14:34:16  INFO (JobPipeLine.java:78) - Transformer : Entry run..
+29.10.2020 14:34:16  INFO (JobPipeLine.java:78) - Reader : Entry run..
+29.10.2020 14:34:16 ERROR (MongoDBPrimaryDataSortProcessor.java:345) - Reader : mongoDBPrimaryDataSortProcessor : No more data exists in the cursor..
+29.10.2020 14:34:16 ERROR (GenericDataFetcher.java:157) - No More Data Exists..
+29.10.2020 14:34:16  INFO (JobPipeLine.java:149) - Reader : Sending emptyObject to the next level to stop process on completion..
+29.10.2020 14:34:16  INFO (JobPipeLine.java:179) - Reader : Exit run..Reader
+29.10.2020 14:34:23  INFO (JobPipeLine.java:116) - Transformer : pushing back empty object to the queue from : Transformer
+29.10.2020 14:34:23  INFO (JobPipeLine.java:156) - Transformer : Sending emptyObject to the next level to stop process..
+29.10.2020 14:34:23  INFO (JobPipeLine.java:179) - Transformer : Exit run..Transformer
+29.10.2020 14:34:24  INFO (JobPipeLine.java:116) - Writer : pushing back empty object to the queue from : Writer
+29.10.2020 14:34:24  INFO (JobPipeLine.java:179) - Writer : Exit run..Writer
+29.10.2020 14:34:24  INFO (CSVDataWriter.java:536) - recordCount : 13
+29.10.2020 14:34:24  INFO (CSVDataWriter.java:552) - storeFileConf :: {"is-enable":false,"connection-id":"snoc-r4","schema-name":"snoc_jobengine_reports","delete-file-local":false}
+29.10.2020 14:34:24  INFO (MongoDataUtil.java:359) - UpdateStatus : null : Status : 173   requestUpdateConf :: null
+29.10.2020 14:34:24  INFO (JobEngine.java:161) - Exit start : pipeLine threads size : 3
+29.10.2020 14:34:24  INFO (JobEngine.java:135) - Exit init..
+29.10.2020 14:34:24  INFO (JobService.java:104) - Job Done..
+29.10.2020 14:34:24  INFO (JobService.java:125) - Exit processRequest..
+29.10.2020 14:34:24  INFO (JobServicesInitiator.java:110) - 
+
+Total Time required for JobServices :: 0.15451667 mins  :: Filepath :: E:\interface\work\enh-work\DataEngine\jobengineconf\sample_data\user_org_mapping_csv.json.cp
+
+
+
+29.10.2020 14:34:24  INFO (JobServicesInitiator.java:91) - JobServicesInitiator started with jobParameters from file :: E:\interface\work\enh-work\DataEngine\jobengineconf\sample_data\user_org_mapping_pdf.json.cp
+
+
+
+29.10.2020 14:34:24  INFO (JobService.java:66) - Entry processRequest :: JobParameters :: {"job-id":"JOB_ID_user_org_mapping","StoreFileConf":{"is-enable":false,"connection-id":"snoc-r4","schema-name":"snoc_jobengine_reports","delete-file-local":false},"template-id":"user_org_mapping-pdf","job-data":{"status_node":"174","output_file_name":"USER_ORG_MAPPING_DETAILS","status_user":"174","output_file_type":"pdf","output_file_date_patten":"yyyyMMdd","output_file_path":"E:\/interface\/work\/enh-work\/DataEngine\/jobengineconf\/outputfiles\/","user_org_mapping_status":"174"},"template-name":"JOB_TEMPLATE_user_org_mapping"}
+29.10.2020 14:34:24  INFO (JobService.java:94) - Spring App Context : org.springframework.context.support.FileSystemXmlApplicationContext@77556fd: startup date [Thu Oct 29 14:30:32 IST 2020]; root of context hierarchy
+29.10.2020 14:34:24  INFO (JobService.java:98) - JobEngine init process going to start:: BEAN ID :: com.enhancesys.integration.services.dataengine.job.JobEngine@105fece7
+29.10.2020 14:34:24  INFO (JobEngine.java:35) - Entry init..
+29.10.2020 14:34:24  INFO (JobConfiguration.java:26) - Entry readConfiguration..
+29.10.2020 14:34:24  INFO (JobConfiguration.java:52) - Custom Template Configuration from E:/home/appuser/snoc/snocconf/jobengineconf/job-templates/JOB_TEMPLATE_user_org_mapping.json
+29.10.2020 14:34:24  INFO (JobConfiguration.java:102) - jobId :: JOB_ID_user_org_mapping
+29.10.2020 14:34:24  INFO (JobConfiguration.java:174) - Exit readConfiguration..
+29.10.2020 14:34:24  INFO (JobEngine.java:69) - definitionArr : ["Reader","Input-Queue","Transformer","Output-Queue","Writer"]
+29.10.2020 14:34:24  INFO (JobEngine.java:176) - Entry loadJobQueues..
+29.10.2020 14:34:24  INFO (JobEngine.java:207) - Exit loadJobQueues..
+29.10.2020 14:34:24  INFO (JobEngine.java:72) - queueMap : {Input-Queue=com.enhancesys.integration.services.dataengine.job.connector.queue.InMemoryQueue@3d246ea3, Output-Queue=com.enhancesys.integration.services.dataengine.job.connector.queue.InMemoryQueue@341814d3}
+29.10.2020 14:34:24  INFO (JobPipeLine.java:32) - Reader : Entry init..
+29.10.2020 14:34:24  INFO (JobPipeLine.java:46) - Reader : Processor : {"job_count":10000,"delay_count":10,"processors":[{"job_count":5,"collection_position":0,"delay_count":10,"class":"mongoDBPrimaryDataSortProcessor","sleep_time":5}],"class":"genericDataFetcher","sleep_time":6}
+29.10.2020 14:34:24  INFO (GenericDataFetcher.java:34) - Reader : Entry init..
+29.10.2020 14:34:24  INFO (GenericDataFetcher.java:69) - Reader : Processor : {"job_count":5,"collection_position":0,"delay_count":10,"class":"mongoDBPrimaryDataSortProcessor","sleep_time":5}
+29.10.2020 14:34:24  INFO (MongoDBPrimaryDataSortProcessor.java:52) - Entry init..
+29.10.2020 14:34:24  INFO (MongoDataUtil.java:44) - Entry getCursor..
+29.10.2020 14:34:24  INFO (MongoDataUtil.java:92) - queryObject : { }
+29.10.2020 14:34:24  INFO (MongoDataUtil.java:127) - Exit getCursor..
+29.10.2020 14:34:24  INFO (MongoDBPrimaryDataSortProcessor.java:59) - Reader : mongoDBPrimaryDataSortProcessor :  Cursor Size : 13
+29.10.2020 14:34:24  INFO (MongoDBPrimaryDataSortProcessor.java:102) - Entry sortData..
+29.10.2020 14:34:24  INFO (MongoDBPrimaryDataSortProcessor.java:132) - SortColumns : [_id]
+29.10.2020 14:34:24  INFO (MongoDBPrimaryDataSortProcessor.java:159) - Sort file script is initiated for file :: E:\interface\work\enh-work\DataEngine\jobengineconf\sorting-scripts\files\user_org_mapping_20201029143424575.csv.cp
+29.10.2020 14:34:24  INFO (MongoDBPrimaryDataSortProcessor.java:167) - Runtime cmd :: C:/Program Files/Git/git-bash.exe E:/interface/work/enh-work/DataEngine/jobengineconf/sorting-scripts/collection1.sh E:\interface\work\enh-work\DataEngine\jobengineconf\sorting-scripts\files\user_org_mapping_20201029143424575.csv.cp E:\interface\work\enh-work\DataEngine\jobengineconf\sorting-scripts\files\user_org_mapping_20201029143424575.csv.cp
+29.10.2020 14:34:25  INFO (MongoDBPrimaryDataSortProcessor.java:169) - Process : waitFor() :: 0
+29.10.2020 14:34:25  INFO (MongoDBPrimaryDataSortProcessor.java:211) - Exit sortData..
+29.10.2020 14:34:25  INFO (MongoDBPrimaryDataSortProcessor.java:95) - Exit init..
+29.10.2020 14:34:25  INFO (GenericDataFetcher.java:74) - Reader : Processors size : 1
+29.10.2020 14:34:25  INFO (GenericDataFetcher.java:86) - Reader : Exit init..
+29.10.2020 14:34:25  INFO (JobPipeLine.java:51) - Reader : Processors size : 1
+29.10.2020 14:34:25  INFO (JobPipeLine.java:62) - Reader : Exit init..
+29.10.2020 14:34:25  INFO (JobEngine.java:83) - Reader :
+29.10.2020 14:34:25  INFO (JobEngine.java:91) - OutputQ : Input-Queue
+29.10.2020 14:34:25  INFO (JobPipeLine.java:32) - Transformer : Entry init..
+29.10.2020 14:34:25  INFO (JobPipeLine.java:46) - Transformer : Processor : {"delay_count":10,"class":"genericDataTransformer","sleep_time":10}
+29.10.2020 14:34:25  INFO (GenericDataTransformer.java:69) - Entry init..
+29.10.2020 14:34:25  INFO (GenericDataTransformer.java:105) - Exit init..
+29.10.2020 14:34:25  INFO (JobPipeLine.java:51) - Transformer : Processors size : 1
+29.10.2020 14:34:25  INFO (JobPipeLine.java:62) - Transformer : Exit init..
+29.10.2020 14:34:25  INFO (JobEngine.java:83) - Transformer :
+29.10.2020 14:34:25  INFO (JobEngine.java:86) - InputQ : Input-Queue
+29.10.2020 14:34:25  INFO (JobEngine.java:91) - OutputQ : Output-Queue
+29.10.2020 14:34:25  INFO (JobPipeLine.java:32) - Writer : Entry init..
+29.10.2020 14:34:25  INFO (JobPipeLine.java:46) - Writer : Processor : {"delay_count":10,"class":"pdfDataWriter","sleep_time":10}
+29.10.2020 14:34:25  INFO (PDFDataWriter.java:80) - Entry init..
+29.10.2020 14:34:25  INFO (PDFDataWriter.java:115) - Entry createFile..
+29.10.2020 14:34:25  INFO (PDFDataWriter.java:229) - File Name :: E:\interface\work\enh-work\DataEngine\jobengineconf\outputfiles\USER_ORG_MAPPING_DETAILS_20201029.pdf
+29.10.2020 14:34:25  INFO (PDFDataWriter.java:230) - Exit createFile..
+29.10.2020 14:34:25  INFO (PDFDataWriter.java:109) - Exit init..
+29.10.2020 14:34:25  INFO (JobPipeLine.java:51) - Writer : Processors size : 1
+29.10.2020 14:34:25  INFO (JobPipeLine.java:62) - Writer : Exit init..
+29.10.2020 14:34:25  INFO (JobEngine.java:83) - Writer :
+29.10.2020 14:34:25  INFO (JobEngine.java:86) - InputQ : Output-Queue
+29.10.2020 14:34:25  INFO (JobEngine.java:141) - Entry start : pipeLine threads size : 3
+29.10.2020 14:34:25  INFO (JobEngine.java:146) - Starting pipeline : Reader_0
+29.10.2020 14:34:25  INFO (JobEngine.java:146) - Starting pipeline : Transformer_0
+29.10.2020 14:34:25  INFO (JobPipeLine.java:78) - Reader : Entry run..
+29.10.2020 14:34:25  INFO (JobEngine.java:146) - Starting pipeline : Writer_0
+29.10.2020 14:34:25  INFO (JobPipeLine.java:78) - Transformer : Entry run..
+29.10.2020 14:34:25  INFO (JobPipeLine.java:78) - Writer : Entry run..
+29.10.2020 14:34:27 ERROR (InMemoryQueue.java:69) - Input-Queue : Failed to send RequestData to the next level.. : queue size : 2 : Retry Count : 0
+29.10.2020 14:34:30 ERROR (MongoDBPrimaryDataSortProcessor.java:345) - Reader : mongoDBPrimaryDataSortProcessor : No more data exists in the cursor..
+29.10.2020 14:34:30 ERROR (GenericDataFetcher.java:157) - No More Data Exists..
+29.10.2020 14:34:30  INFO (JobPipeLine.java:149) - Reader : Sending emptyObject to the next level to stop process on completion..
+29.10.2020 14:34:31  INFO (JobPipeLine.java:179) - Reader : Exit run..Reader
+29.10.2020 14:34:32  INFO (JobPipeLine.java:116) - Transformer : pushing back empty object to the queue from : Transformer
+29.10.2020 14:34:32  INFO (JobPipeLine.java:156) - Transformer : Sending emptyObject to the next level to stop process..
+29.10.2020 14:34:32  INFO (JobPipeLine.java:179) - Transformer : Exit run..Transformer
+29.10.2020 14:34:32  INFO (JobPipeLine.java:116) - Writer : pushing back empty object to the queue from : Writer
+29.10.2020 14:34:32  INFO (JobPipeLine.java:179) - Writer : Exit run..Writer
+29.10.2020 14:34:32  INFO (PDFDataWriter.java:627) - recordCount : 13
+29.10.2020 14:34:32  INFO (PDFDataWriter.java:643) - storeFileConf :: {"is-enable":false,"connection-id":"snoc-r4","schema-name":"snoc_jobengine_reports","delete-file-local":false}
+29.10.2020 14:34:32  INFO (MongoDataUtil.java:359) - UpdateStatus : null : Status : 173   requestUpdateConf :: null
+29.10.2020 14:34:32  INFO (JobEngine.java:161) - Exit start : pipeLine threads size : 3
+29.10.2020 14:34:32  INFO (JobEngine.java:135) - Exit init..
+29.10.2020 14:34:32  INFO (JobService.java:104) - Job Done..
+29.10.2020 14:34:32  INFO (JobService.java:125) - Exit processRequest..
+29.10.2020 14:34:32  INFO (JobServicesInitiator.java:110) - 
+
+Total Time required for JobServices :: 0.13888334 mins  :: Filepath :: E:\interface\work\enh-work\DataEngine\jobengineconf\sample_data\user_org_mapping_pdf.json.cp
+
+
+
+29.10.2020 14:34:32  INFO (JobServicesInitiator.java:91) - JobServicesInitiator started with jobParameters from file :: E:\interface\work\enh-work\DataEngine\jobengineconf\sample_data\user_org_mapping_excel.json.cp
+
+
+
+29.10.2020 14:34:32  INFO (JobService.java:66) - Entry processRequest :: JobParameters :: {"job-id":"JOB_ID_user_org_mapping","StoreFileConf":{"is-enable":false,"connection-id":"snoc-r4","schema-name":"snoc_jobengine_reports","delete-file-local":false},"template-id":"user_org_mapping-xls","job-data":{"status_node":"174","output_file_name":"USER_ORG_MAPPING_DETAILS","status_user":"174","output_file_type":"xls","output_file_date_patten":"yyyyMMdd","output_file_path":"E:\/interface\/work\/enh-work\/DataEngine\/jobengineconf\/outputfiles\/","user_org_mapping_status":"174"},"template-name":"JOB_TEMPLATE_user_org_mapping"}
+29.10.2020 14:34:32  INFO (JobService.java:94) - Spring App Context : org.springframework.context.support.FileSystemXmlApplicationContext@77556fd: startup date [Thu Oct 29 14:30:32 IST 2020]; root of context hierarchy
+29.10.2020 14:34:32  INFO (JobService.java:98) - JobEngine init process going to start:: BEAN ID :: com.enhancesys.integration.services.dataengine.job.JobEngine@105fece7
+29.10.2020 14:34:32  INFO (JobEngine.java:35) - Entry init..
+29.10.2020 14:34:32  INFO (JobConfiguration.java:26) - Entry readConfiguration..
+29.10.2020 14:34:32  INFO (JobConfiguration.java:52) - Custom Template Configuration from E:/home/appuser/snoc/snocconf/jobengineconf/job-templates/JOB_TEMPLATE_user_org_mapping.json
+29.10.2020 14:34:32  INFO (JobConfiguration.java:102) - jobId :: JOB_ID_user_org_mapping
+29.10.2020 14:34:32  INFO (JobConfiguration.java:174) - Exit readConfiguration..
+29.10.2020 14:34:32  INFO (JobEngine.java:69) - definitionArr : ["Reader","Input-Queue","Transformer","Output-Queue","Writer"]
+29.10.2020 14:34:32  INFO (JobEngine.java:176) - Entry loadJobQueues..
+29.10.2020 14:34:32  INFO (JobEngine.java:207) - Exit loadJobQueues..
+29.10.2020 14:34:32  INFO (JobEngine.java:72) - queueMap : {Input-Queue=com.enhancesys.integration.services.dataengine.job.connector.queue.InMemoryQueue@4397ad89, Output-Queue=com.enhancesys.integration.services.dataengine.job.connector.queue.InMemoryQueue@59cba5a}
+29.10.2020 14:34:32  INFO (JobPipeLine.java:32) - Reader : Entry init..
+29.10.2020 14:34:32  INFO (JobPipeLine.java:46) - Reader : Processor : {"job_count":10000,"delay_count":10,"processors":[{"job_count":5,"collection_position":0,"delay_count":10,"class":"mongoDBPrimaryDataSortProcessor","sleep_time":5}],"class":"genericDataFetcher","sleep_time":6}
+29.10.2020 14:34:32  INFO (GenericDataFetcher.java:34) - Reader : Entry init..
+29.10.2020 14:34:32  INFO (GenericDataFetcher.java:69) - Reader : Processor : {"job_count":5,"collection_position":0,"delay_count":10,"class":"mongoDBPrimaryDataSortProcessor","sleep_time":5}
+29.10.2020 14:34:32  INFO (MongoDBPrimaryDataSortProcessor.java:52) - Entry init..
+29.10.2020 14:34:32  INFO (MongoDataUtil.java:44) - Entry getCursor..
+29.10.2020 14:34:32  INFO (MongoDataUtil.java:92) - queryObject : { }
+29.10.2020 14:34:32  INFO (MongoDataUtil.java:127) - Exit getCursor..
+29.10.2020 14:34:32  INFO (MongoDBPrimaryDataSortProcessor.java:59) - Reader : mongoDBPrimaryDataSortProcessor :  Cursor Size : 13
+29.10.2020 14:34:32  INFO (MongoDBPrimaryDataSortProcessor.java:102) - Entry sortData..
+29.10.2020 14:34:32  INFO (MongoDBPrimaryDataSortProcessor.java:132) - SortColumns : [_id]
+29.10.2020 14:34:33  INFO (MongoDBPrimaryDataSortProcessor.java:159) - Sort file script is initiated for file :: E:\interface\work\enh-work\DataEngine\jobengineconf\sorting-scripts\files\user_org_mapping_20201029143432889.csv.cp
+29.10.2020 14:34:33  INFO (MongoDBPrimaryDataSortProcessor.java:167) - Runtime cmd :: C:/Program Files/Git/git-bash.exe E:/interface/work/enh-work/DataEngine/jobengineconf/sorting-scripts/collection1.sh E:\interface\work\enh-work\DataEngine\jobengineconf\sorting-scripts\files\user_org_mapping_20201029143432889.csv.cp E:\interface\work\enh-work\DataEngine\jobengineconf\sorting-scripts\files\user_org_mapping_20201029143432889.csv.cp
+29.10.2020 14:34:33  INFO (MongoDBPrimaryDataSortProcessor.java:169) - Process : waitFor() :: 0
+29.10.2020 14:34:33  INFO (MongoDBPrimaryDataSortProcessor.java:211) - Exit sortData..
+29.10.2020 14:34:33  INFO (MongoDBPrimaryDataSortProcessor.java:95) - Exit init..
+29.10.2020 14:34:33  INFO (GenericDataFetcher.java:74) - Reader : Processors size : 1
+29.10.2020 14:34:33  INFO (GenericDataFetcher.java:86) - Reader : Exit init..
+29.10.2020 14:34:33  INFO (JobPipeLine.java:51) - Reader : Processors size : 1
+29.10.2020 14:34:33  INFO (JobPipeLine.java:62) - Reader : Exit init..
+29.10.2020 14:34:33  INFO (JobEngine.java:83) - Reader :
+29.10.2020 14:34:33  INFO (JobEngine.java:91) - OutputQ : Input-Queue
+29.10.2020 14:34:33  INFO (JobPipeLine.java:32) - Transformer : Entry init..
+29.10.2020 14:34:33  INFO (JobPipeLine.java:46) - Transformer : Processor : {"delay_count":10,"class":"genericDataTransformer","sleep_time":10}
+29.10.2020 14:34:33  INFO (GenericDataTransformer.java:69) - Entry init..
+29.10.2020 14:34:33  INFO (GenericDataTransformer.java:105) - Exit init..
+29.10.2020 14:34:33  INFO (JobPipeLine.java:51) - Transformer : Processors size : 1
+29.10.2020 14:34:33  INFO (JobPipeLine.java:62) - Transformer : Exit init..
+29.10.2020 14:34:33  INFO (JobEngine.java:83) - Transformer :
+29.10.2020 14:34:33  INFO (JobEngine.java:86) - InputQ : Input-Queue
+29.10.2020 14:34:33  INFO (JobEngine.java:91) - OutputQ : Output-Queue
+29.10.2020 14:34:33  INFO (JobPipeLine.java:32) - Writer : Entry init..
+29.10.2020 14:34:33  INFO (JobPipeLine.java:46) - Writer : Processor : {"delay_count":10,"class":"excelDataWriter","sleep_time":10}
+29.10.2020 14:34:33  INFO (ExcelDataWriter.java:79) - Entry init..
+29.10.2020 14:34:33  INFO (ExcelDataWriter.java:159) - sheetName ::: 001
+29.10.2020 14:34:33  INFO (ExcelDataWriter.java:108) - Exit init..
+29.10.2020 14:34:33  INFO (JobPipeLine.java:51) - Writer : Processors size : 1
+29.10.2020 14:34:33  INFO (JobPipeLine.java:62) - Writer : Exit init..
+29.10.2020 14:34:33  INFO (JobEngine.java:83) - Writer :
+29.10.2020 14:34:33  INFO (JobEngine.java:86) - InputQ : Output-Queue
+29.10.2020 14:34:33  INFO (JobEngine.java:141) - Entry start : pipeLine threads size : 3
+29.10.2020 14:34:33  INFO (JobEngine.java:146) - Starting pipeline : Reader_0
+29.10.2020 14:34:33  INFO (JobEngine.java:146) - Starting pipeline : Transformer_0
+29.10.2020 14:34:33  INFO (JobEngine.java:146) - Starting pipeline : Writer_0
+29.10.2020 14:34:33  INFO (JobPipeLine.java:78) - Reader : Entry run..
+29.10.2020 14:34:33  INFO (JobPipeLine.java:78) - Writer : Entry run..
+29.10.2020 14:34:33  INFO (JobPipeLine.java:78) - Transformer : Entry run..
+29.10.2020 14:34:38 ERROR (MongoDBPrimaryDataSortProcessor.java:345) - Reader : mongoDBPrimaryDataSortProcessor : No more data exists in the cursor..
+29.10.2020 14:34:38 ERROR (GenericDataFetcher.java:157) - No More Data Exists..
+29.10.2020 14:34:38 ERROR (InMemoryQueue.java:69) - Input-Queue : Failed to send RequestData to the next level.. : queue size : 2 : Retry Count : 0
+29.10.2020 14:34:40  INFO (JobPipeLine.java:149) - Reader : Sending emptyObject to the next level to stop process on completion..
+29.10.2020 14:34:40  INFO (JobPipeLine.java:179) - Reader : Exit run..Reader
+29.10.2020 14:34:40  INFO (JobPipeLine.java:116) - Transformer : pushing back empty object to the queue from : Transformer
+29.10.2020 14:34:40  INFO (JobPipeLine.java:156) - Transformer : Sending emptyObject to the next level to stop process..
+29.10.2020 14:34:40  INFO (JobPipeLine.java:179) - Transformer : Exit run..Transformer
+29.10.2020 14:34:40  INFO (JobPipeLine.java:116) - Writer : pushing back empty object to the queue from : Writer
+29.10.2020 14:34:40  INFO (JobPipeLine.java:179) - Writer : Exit run..Writer
+29.10.2020 14:34:40  INFO (ExcelDataWriter.java:669) - inside ExcelDataWriter Stop..
+29.10.2020 14:34:40  INFO (ExcelDataWriter.java:684) - recordCount : 13
+29.10.2020 14:34:40  INFO (ExcelDataWriter.java:700) - storeFileConf :: {"is-enable":false,"connection-id":"snoc-r4","schema-name":"snoc_jobengine_reports","delete-file-local":false}
+29.10.2020 14:34:40  INFO (MongoDataUtil.java:359) - UpdateStatus : null : Status : 173   requestUpdateConf :: null
+29.10.2020 14:34:40  INFO (JobEngine.java:161) - Exit start : pipeLine threads size : 3
+29.10.2020 14:34:40  INFO (JobEngine.java:135) - Exit init..
+29.10.2020 14:34:40  INFO (JobService.java:104) - Job Done..
+29.10.2020 14:34:40  INFO (JobService.java:125) - Exit processRequest..
+29.10.2020 14:34:40  INFO (JobServicesInitiator.java:110) - 
+
+Total Time required for JobServices :: 0.14 mins  :: Filepath :: E:\interface\work\enh-work\DataEngine\jobengineconf\sample_data\user_org_mapping_excel.json.cp
+
+
+
+29.10.2020 14:34:40  INFO (JobServicesInitiator.java:91) - JobServicesInitiator started with jobParameters from file :: E:\interface\work\enh-work\DataEngine\jobengineconf\sample_data\Inventory_ledger_dtls_csv.json.cp
+
+
+
+29.10.2020 14:34:40  INFO (JobService.java:66) - Entry processRequest :: JobParameters :: {"job-id":"JOB_ID_inventory_ledger_dtls","StoreFileConf":{"is-enable":false,"connection-id":"snoc-r4","schema-name":"snoc_jobengine_reports","delete-file-local":false},"template-id":"csv","job-data":{"status_node":"174","output_file_name":"INVENTORY_LEDGER_DTLS","status_user":"174","output_file_type":"csv","output_file_date_patten":"yyyyMMdd","output_zipextension":"","output_file_path":"E:\/interface\/work\/enh-work\/DataEngine\/jobengineconf\/outputfiles\/","user_org_mapping_status":"174"},"template-name":"JOB_TEMPLATE_1st_level_DATA_FETCH"}
+29.10.2020 14:34:40  INFO (JobService.java:94) - Spring App Context : org.springframework.context.support.FileSystemXmlApplicationContext@77556fd: startup date [Thu Oct 29 14:30:32 IST 2020]; root of context hierarchy
+29.10.2020 14:34:40  INFO (JobService.java:98) - JobEngine init process going to start:: BEAN ID :: com.enhancesys.integration.services.dataengine.job.JobEngine@105fece7
+29.10.2020 14:34:40  INFO (JobEngine.java:35) - Entry init..
+29.10.2020 14:34:40  INFO (JobConfiguration.java:26) - Entry readConfiguration..
+29.10.2020 14:34:40  INFO (JobConfiguration.java:52) - Custom Template Configuration from E:/home/appuser/snoc/snocconf/jobengineconf/job-templates/JOB_TEMPLATE_1st_level_DATA_FETCH.json
+29.10.2020 14:34:40  INFO (JobConfiguration.java:102) - jobId :: JOB_ID_inventory_ledger_dtls
+29.10.2020 14:34:40  INFO (JobConfiguration.java:174) - Exit readConfiguration..
+29.10.2020 14:34:40  INFO (JobEngine.java:69) - definitionArr : ["Reader","Input-Queue","Transformer","Output-Queue","Writer"]
+29.10.2020 14:34:40  INFO (JobEngine.java:176) - Entry loadJobQueues..
+29.10.2020 14:34:40  INFO (JobEngine.java:207) - Exit loadJobQueues..
+29.10.2020 14:34:40  INFO (JobEngine.java:72) - queueMap : {Input-Queue=com.enhancesys.integration.services.dataengine.job.connector.queue.InMemoryQueue@455b6df1, Output-Queue=com.enhancesys.integration.services.dataengine.job.connector.queue.InMemoryQueue@4ddbbdf8}
+29.10.2020 14:34:40  INFO (JobPipeLine.java:32) - Reader : Entry init..
+29.10.2020 14:34:40  INFO (JobPipeLine.java:46) - Reader : Processor : {"job_count":10000,"delay_count":10,"processors":[{"job_count":5,"collection_position":0,"delay_count":10,"class":"mongoDBPrimaryDataSortProcessor","sleep_time":5}],"class":"genericDataFetcher","sleep_time":6}
+29.10.2020 14:34:40  INFO (GenericDataFetcher.java:34) - Reader : Entry init..
+29.10.2020 14:34:40  INFO (GenericDataFetcher.java:69) - Reader : Processor : {"job_count":5,"collection_position":0,"delay_count":10,"class":"mongoDBPrimaryDataSortProcessor","sleep_time":5}
+29.10.2020 14:34:40  INFO (MongoDBPrimaryDataSortProcessor.java:52) - Entry init..
+29.10.2020 14:34:40  INFO (MongoDataUtil.java:44) - Entry getCursor..
+29.10.2020 14:34:40  INFO (MongoDataUtil.java:92) - queryObject : { }
+29.10.2020 14:34:40  INFO (MongoDataUtil.java:127) - Exit getCursor..
+29.10.2020 14:34:41  INFO (MongoDBPrimaryDataSortProcessor.java:59) - Reader : mongoDBPrimaryDataSortProcessor :  Cursor Size : 103
+29.10.2020 14:34:41  INFO (MongoDBPrimaryDataSortProcessor.java:102) - Entry sortData..
+29.10.2020 14:34:41  INFO (MongoDBPrimaryDataSortProcessor.java:132) - SortColumns : [_id]
+29.10.2020 14:34:42  INFO (MongoDBPrimaryDataSortProcessor.java:159) - Sort file script is initiated for file :: E:\interface\work\enh-work\DataEngine\jobengineconf\sorting-scripts\files\inv_ledger_20201029143441286.csv.cp
+29.10.2020 14:34:42  INFO (MongoDBPrimaryDataSortProcessor.java:167) - Runtime cmd :: C:/Program Files/Git/git-bash.exe E:/interface/work/enh-work/DataEngine/jobengineconf/sorting-scripts/collection1.sh E:\interface\work\enh-work\DataEngine\jobengineconf\sorting-scripts\files\inv_ledger_20201029143441286.csv.cp E:\interface\work\enh-work\DataEngine\jobengineconf\sorting-scripts\files\inv_ledger_20201029143441286.csv.cp
+29.10.2020 14:34:43  INFO (MongoDBPrimaryDataSortProcessor.java:169) - Process : waitFor() :: 0
+29.10.2020 14:34:43  INFO (MongoDBPrimaryDataSortProcessor.java:211) - Exit sortData..
+29.10.2020 14:34:43  INFO (MongoDBPrimaryDataSortProcessor.java:95) - Exit init..
+29.10.2020 14:34:43  INFO (GenericDataFetcher.java:74) - Reader : Processors size : 1
+29.10.2020 14:34:43  INFO (GenericDataFetcher.java:86) - Reader : Exit init..
+29.10.2020 14:34:43  INFO (JobPipeLine.java:51) - Reader : Processors size : 1
+29.10.2020 14:34:43  INFO (JobPipeLine.java:62) - Reader : Exit init..
+29.10.2020 14:34:43  INFO (JobEngine.java:83) - Reader :
+29.10.2020 14:34:43  INFO (JobEngine.java:91) - OutputQ : Input-Queue
+29.10.2020 14:34:43  INFO (JobPipeLine.java:32) - Transformer : Entry init..
+29.10.2020 14:34:43  INFO (JobPipeLine.java:46) - Transformer : Processor : {"delay_count":10,"class":"genericDataTransformer","sleep_time":10}
+29.10.2020 14:34:43  INFO (GenericDataTransformer.java:69) - Entry init..
+29.10.2020 14:34:43  INFO (GenericDataTransformer.java:105) - Exit init..
+29.10.2020 14:34:43  INFO (JobPipeLine.java:51) - Transformer : Processors size : 1
+29.10.2020 14:34:43  INFO (JobPipeLine.java:62) - Transformer : Exit init..
+29.10.2020 14:34:43  INFO (JobEngine.java:83) - Transformer :
+29.10.2020 14:34:43  INFO (JobEngine.java:86) - InputQ : Input-Queue
+29.10.2020 14:34:43  INFO (JobEngine.java:91) - OutputQ : Output-Queue
+29.10.2020 14:34:43  INFO (JobPipeLine.java:32) - Writer : Entry init..
+29.10.2020 14:34:43  INFO (JobPipeLine.java:46) - Writer : Processor : {"delay_count":10,"class":"csvDataWriter","sleep_time":10}
+29.10.2020 14:34:43  INFO (CSVDataWriter.java:65) - Entry init..
+29.10.2020 14:34:43  INFO (CSVDataWriter.java:104) - Entry createFile..
+29.10.2020 14:34:43  INFO (CSVDataWriter.java:170) - Exit createFile..E:\interface\work\enh-work\DataEngine\jobengineconf\outputfiles\INVENTORY_LEDGER_DTLS_20201029.csv
+29.10.2020 14:34:43  INFO (CSVDataWriter.java:98) - Exit init..
+29.10.2020 14:34:43  INFO (JobPipeLine.java:51) - Writer : Processors size : 1
+29.10.2020 14:34:43  INFO (JobPipeLine.java:62) - Writer : Exit init..
+29.10.2020 14:34:43  INFO (JobEngine.java:83) - Writer :
+29.10.2020 14:34:43  INFO (JobEngine.java:86) - InputQ : Output-Queue
+29.10.2020 14:34:43  INFO (JobEngine.java:141) - Entry start : pipeLine threads size : 3
+29.10.2020 14:34:43  INFO (JobEngine.java:146) - Starting pipeline : Reader_0
+29.10.2020 14:34:43  INFO (JobEngine.java:146) - Starting pipeline : Transformer_0
+29.10.2020 14:34:43  INFO (JobPipeLine.java:78) - Reader : Entry run..
+29.10.2020 14:34:43  INFO (JobPipeLine.java:78) - Transformer : Entry run..
+29.10.2020 14:34:43  INFO (JobEngine.java:146) - Starting pipeline : Writer_0
+29.10.2020 14:34:43  INFO (JobPipeLine.java:78) - Writer : Entry run..
+29.10.2020 14:34:44 ERROR (MongoDBPrimaryDataSortProcessor.java:345) - Reader : mongoDBPrimaryDataSortProcessor : No more data exists in the cursor..
+29.10.2020 14:34:44 ERROR (GenericDataFetcher.java:157) - No More Data Exists..
+29.10.2020 14:34:44  INFO (JobPipeLine.java:149) - Reader : Sending emptyObject to the next level to stop process on completion..
+29.10.2020 14:34:44  INFO (JobPipeLine.java:179) - Reader : Exit run..Reader
+29.10.2020 14:34:46  INFO (JobPipeLine.java:116) - Transformer : pushing back empty object to the queue from : Transformer
+29.10.2020 14:34:46  INFO (JobPipeLine.java:156) - Transformer : Sending emptyObject to the next level to stop process..
+29.10.2020 14:34:46  INFO (JobPipeLine.java:179) - Transformer : Exit run..Transformer
+29.10.2020 14:34:47  INFO (JobPipeLine.java:116) - Writer : pushing back empty object to the queue from : Writer
+29.10.2020 14:34:47  INFO (JobPipeLine.java:179) - Writer : Exit run..Writer
+29.10.2020 14:34:47  INFO (CSVDataWriter.java:536) - recordCount : 43
+29.10.2020 14:34:47  INFO (CSVDataWriter.java:552) - storeFileConf :: {"is-enable":false,"connection-id":"snoc-r4","schema-name":"snoc_jobengine_reports","delete-file-local":false}
+29.10.2020 14:34:47  INFO (MongoDataUtil.java:359) - UpdateStatus : null : Status : 173   requestUpdateConf :: null
+29.10.2020 14:34:47  INFO (JobEngine.java:161) - Exit start : pipeLine threads size : 3
+29.10.2020 14:34:47  INFO (JobEngine.java:135) - Exit init..
+29.10.2020 14:34:47  INFO (JobService.java:104) - Job Done..
+29.10.2020 14:34:47  INFO (JobService.java:125) - Exit processRequest..
+29.10.2020 14:34:47  INFO (JobServicesInitiator.java:110) - 
+
+Total Time required for JobServices :: 0.1073 mins  :: Filepath :: E:\interface\work\enh-work\DataEngine\jobengineconf\sample_data\Inventory_ledger_dtls_csv.json.cp
+
+
+
+29.10.2020 14:34:47  INFO (JobServicesInitiator.java:91) - JobServicesInitiator started with jobParameters from file :: E:\interface\work\enh-work\DataEngine\jobengineconf\sample_data\Inventory_ledger_dtls_xls.json.cp
+
+
+
+29.10.2020 14:34:47  INFO (JobService.java:66) - Entry processRequest :: JobParameters :: {"job-id":"JOB_ID_inventory_ledger_dtls","StoreFileConf":{"is-enable":false,"connection-id":"snoc-r4","schema-name":"snoc_jobengine_reports","delete-file-local":false},"template-id":"xls","job-data":{"status_node":"174","output_file_name":"INVENTORY_LEDGER_DTLS","status_user":"174","output_file_type":"xls","output_file_date_patten":"yyyyMMdd","output_zipextension":"","output_file_path":"E:\/interface\/work\/enh-work\/DataEngine\/jobengineconf\/outputfiles\/","user_org_mapping_status":"174"},"template-name":"JOB_TEMPLATE_1st_level_DATA_FETCH"}
+29.10.2020 14:34:47  INFO (JobService.java:94) - Spring App Context : org.springframework.context.support.FileSystemXmlApplicationContext@77556fd: startup date [Thu Oct 29 14:30:32 IST 2020]; root of context hierarchy
+29.10.2020 14:34:47  INFO (JobService.java:98) - JobEngine init process going to start:: BEAN ID :: com.enhancesys.integration.services.dataengine.job.JobEngine@105fece7
+29.10.2020 14:34:47  INFO (JobEngine.java:35) - Entry init..
+29.10.2020 14:34:47  INFO (JobConfiguration.java:26) - Entry readConfiguration..
+29.10.2020 14:34:47  INFO (JobConfiguration.java:52) - Custom Template Configuration from E:/home/appuser/snoc/snocconf/jobengineconf/job-templates/JOB_TEMPLATE_1st_level_DATA_FETCH.json
+29.10.2020 14:34:47  INFO (JobConfiguration.java:102) - jobId :: JOB_ID_inventory_ledger_dtls
+29.10.2020 14:34:47  INFO (JobConfiguration.java:174) - Exit readConfiguration..
+29.10.2020 14:34:47  INFO (JobEngine.java:69) - definitionArr : ["Reader","Input-Queue","Transformer","Output-Queue","Writer"]
+29.10.2020 14:34:47  INFO (JobEngine.java:176) - Entry loadJobQueues..
+29.10.2020 14:34:47  INFO (JobEngine.java:207) - Exit loadJobQueues..
+29.10.2020 14:34:47  INFO (JobEngine.java:72) - queueMap : {Input-Queue=com.enhancesys.integration.services.dataengine.job.connector.queue.InMemoryQueue@3f67593e, Output-Queue=com.enhancesys.integration.services.dataengine.job.connector.queue.InMemoryQueue@1ab06251}
+29.10.2020 14:34:47  INFO (JobPipeLine.java:32) - Reader : Entry init..
+29.10.2020 14:34:47  INFO (JobPipeLine.java:46) - Reader : Processor : {"job_count":10000,"delay_count":10,"processors":[{"job_count":5,"collection_position":0,"delay_count":10,"class":"mongoDBPrimaryDataSortProcessor","sleep_time":5}],"class":"genericDataFetcher","sleep_time":6}
+29.10.2020 14:34:47  INFO (GenericDataFetcher.java:34) - Reader : Entry init..
+29.10.2020 14:34:47  INFO (GenericDataFetcher.java:69) - Reader : Processor : {"job_count":5,"collection_position":0,"delay_count":10,"class":"mongoDBPrimaryDataSortProcessor","sleep_time":5}
+29.10.2020 14:34:47  INFO (MongoDBPrimaryDataSortProcessor.java:52) - Entry init..
+29.10.2020 14:34:47  INFO (MongoDataUtil.java:44) - Entry getCursor..
+29.10.2020 14:34:47  INFO (MongoDataUtil.java:92) - queryObject : { }
+29.10.2020 14:34:47  INFO (MongoDataUtil.java:127) - Exit getCursor..
+29.10.2020 14:34:47  INFO (MongoDBPrimaryDataSortProcessor.java:59) - Reader : mongoDBPrimaryDataSortProcessor :  Cursor Size : 103
+29.10.2020 14:34:47  INFO (MongoDBPrimaryDataSortProcessor.java:102) - Entry sortData..
+29.10.2020 14:34:47  INFO (MongoDBPrimaryDataSortProcessor.java:132) - SortColumns : [_id]
+29.10.2020 14:34:48  INFO (MongoDBPrimaryDataSortProcessor.java:159) - Sort file script is initiated for file :: E:\interface\work\enh-work\DataEngine\jobengineconf\sorting-scripts\files\inv_ledger_20201029143447745.csv.cp
+29.10.2020 14:34:48  INFO (MongoDBPrimaryDataSortProcessor.java:167) - Runtime cmd :: C:/Program Files/Git/git-bash.exe E:/interface/work/enh-work/DataEngine/jobengineconf/sorting-scripts/collection1.sh E:\interface\work\enh-work\DataEngine\jobengineconf\sorting-scripts\files\inv_ledger_20201029143447745.csv.cp E:\interface\work\enh-work\DataEngine\jobengineconf\sorting-scripts\files\inv_ledger_20201029143447745.csv.cp
+29.10.2020 14:34:49  INFO (MongoDBPrimaryDataSortProcessor.java:169) - Process : waitFor() :: 0
+29.10.2020 14:34:49  INFO (MongoDBPrimaryDataSortProcessor.java:211) - Exit sortData..
+29.10.2020 14:34:49  INFO (MongoDBPrimaryDataSortProcessor.java:95) - Exit init..
+29.10.2020 14:34:49  INFO (GenericDataFetcher.java:74) - Reader : Processors size : 1
+29.10.2020 14:34:49  INFO (GenericDataFetcher.java:86) - Reader : Exit init..
+29.10.2020 14:34:49  INFO (JobPipeLine.java:51) - Reader : Processors size : 1
+29.10.2020 14:34:49  INFO (JobPipeLine.java:62) - Reader : Exit init..
+29.10.2020 14:34:49  INFO (JobEngine.java:83) - Reader :
+29.10.2020 14:34:49  INFO (JobEngine.java:91) - OutputQ : Input-Queue
+29.10.2020 14:34:49  INFO (JobPipeLine.java:32) - Transformer : Entry init..
+29.10.2020 14:34:49  INFO (JobPipeLine.java:46) - Transformer : Processor : {"delay_count":10,"class":"genericDataTransformer","sleep_time":10}
+29.10.2020 14:34:49  INFO (GenericDataTransformer.java:69) - Entry init..
+29.10.2020 14:34:49  INFO (GenericDataTransformer.java:105) - Exit init..
+29.10.2020 14:34:49  INFO (JobPipeLine.java:51) - Transformer : Processors size : 1
+29.10.2020 14:34:49  INFO (JobPipeLine.java:62) - Transformer : Exit init..
+29.10.2020 14:34:49  INFO (JobEngine.java:83) - Transformer :
+29.10.2020 14:34:49  INFO (JobEngine.java:86) - InputQ : Input-Queue
+29.10.2020 14:34:49  INFO (JobEngine.java:91) - OutputQ : Output-Queue
+29.10.2020 14:34:49  INFO (JobPipeLine.java:32) - Writer : Entry init..
+29.10.2020 14:34:49  INFO (JobPipeLine.java:46) - Writer : Processor : {"delay_count":10,"class":"excelDataWriter","sleep_time":10}
+29.10.2020 14:34:49  INFO (ExcelDataWriter.java:79) - Entry init..
+29.10.2020 14:34:49  INFO (ExcelDataWriter.java:159) - sheetName ::: 001
+29.10.2020 14:34:49  INFO (ExcelDataWriter.java:108) - Exit init..
+29.10.2020 14:34:49  INFO (JobPipeLine.java:51) - Writer : Processors size : 1
+29.10.2020 14:34:49  INFO (JobPipeLine.java:62) - Writer : Exit init..
+29.10.2020 14:34:49  INFO (JobEngine.java:83) - Writer :
+29.10.2020 14:34:49  INFO (JobEngine.java:86) - InputQ : Output-Queue
+29.10.2020 14:34:49  INFO (JobEngine.java:141) - Entry start : pipeLine threads size : 3
+29.10.2020 14:34:49  INFO (JobEngine.java:146) - Starting pipeline : Reader_0
+29.10.2020 14:34:49  INFO (JobEngine.java:146) - Starting pipeline : Transformer_0
+29.10.2020 14:34:49  INFO (JobEngine.java:146) - Starting pipeline : Writer_0
+29.10.2020 14:34:49  INFO (JobPipeLine.java:78) - Writer : Entry run..
+29.10.2020 14:34:49  INFO (JobPipeLine.java:78) - Transformer : Entry run..
+29.10.2020 14:34:49  INFO (JobPipeLine.java:78) - Reader : Entry run..
+29.10.2020 14:34:54 ERROR (InMemoryQueue.java:69) - Input-Queue : Failed to send RequestData to the next level.. : queue size : 2 : Retry Count : 0
+29.10.2020 14:35:01 ERROR (InMemoryQueue.java:69) - Output-Queue : Failed to send RequestData to the next level.. : queue size : 2 : Retry Count : 0
+29.10.2020 14:35:09 ERROR (InMemoryQueue.java:69) - Input-Queue : Failed to send RequestData to the next level.. : queue size : 2 : Retry Count : 0
+29.10.2020 14:35:17  INFO (InMemoryQueue.java:61) - Output-Queue : Sent RequestData to the next level :: queue size : 2
+29.10.2020 14:35:19 ERROR (InMemoryQueue.java:69) - Input-Queue : Failed to send RequestData to the next level.. : queue size : 2 : Retry Count : 0
+29.10.2020 14:35:29 ERROR (MongoDBPrimaryDataSortProcessor.java:345) - Reader : mongoDBPrimaryDataSortProcessor : No more data exists in the cursor..
+29.10.2020 14:35:29 ERROR (GenericDataFetcher.java:157) - No More Data Exists..
+29.10.2020 14:35:29 ERROR (InMemoryQueue.java:69) - Input-Queue : Failed to send RequestData to the next level.. : queue size : 2 : Retry Count : 0
+29.10.2020 14:35:30  INFO (JobPipeLine.java:149) - Reader : Sending emptyObject to the next level to stop process on completion..
+29.10.2020 14:35:30  INFO (JobPipeLine.java:179) - Reader : Exit run..Reader
+29.10.2020 14:35:30  INFO (JobPipeLine.java:116) - Transformer : pushing back empty object to the queue from : Transformer
+29.10.2020 14:35:30  INFO (JobPipeLine.java:156) - Transformer : Sending emptyObject to the next level to stop process..
+29.10.2020 14:35:30  INFO (JobPipeLine.java:179) - Transformer : Exit run..Transformer
+29.10.2020 14:35:31  INFO (JobPipeLine.java:116) - Writer : pushing back empty object to the queue from : Writer
+29.10.2020 14:35:31  INFO (JobPipeLine.java:179) - Writer : Exit run..Writer
+29.10.2020 14:35:31  INFO (ExcelDataWriter.java:669) - inside ExcelDataWriter Stop..
+29.10.2020 14:35:31  INFO (ExcelDataWriter.java:684) - recordCount : 43
+29.10.2020 14:35:31  INFO (ExcelDataWriter.java:700) - storeFileConf :: {"is-enable":false,"connection-id":"snoc-r4","schema-name":"snoc_jobengine_reports","delete-file-local":false}
+29.10.2020 14:35:31  INFO (MongoDataUtil.java:359) - UpdateStatus : null : Status : 173   requestUpdateConf :: null
+29.10.2020 14:35:31  INFO (JobEngine.java:161) - Exit start : pipeLine threads size : 3
+29.10.2020 14:35:31  INFO (JobEngine.java:135) - Exit init..
+29.10.2020 14:35:31  INFO (JobService.java:104) - Job Done..
+29.10.2020 14:35:31  INFO (JobService.java:125) - Exit processRequest..
+29.10.2020 14:35:31  INFO (JobServicesInitiator.java:110) - 
+
+Total Time required for JobServices :: 0.7345 mins  :: Filepath :: E:\interface\work\enh-work\DataEngine\jobengineconf\sample_data\Inventory_ledger_dtls_xls.json.cp
+
+
+
+29.10.2020 14:35:31  INFO (JobServicesInitiator.java:91) - JobServicesInitiator started with jobParameters from file :: E:\interface\work\enh-work\DataEngine\jobengineconf\sample_data\Inventory_ledger_dtls_pdf.json.cp
+
+
+
+29.10.2020 14:35:31  INFO (JobService.java:66) - Entry processRequest :: JobParameters :: {"job-id":"JOB_ID_inventory_ledger_dtls","StoreFileConf":{"is-enable":false,"connection-id":"snoc-r4","schema-name":"snoc_jobengine_reports","delete-file-local":false},"template-id":"pdf","job-data":{"status_node":"174","output_file_name":"INVENTORY_LEDGER_DTLS","status_user":"174","output_file_type":"pdf","output_file_date_patten":"yyyyMMdd","output_zipextension":"","output_file_path":"E:\/interface\/work\/enh-work\/DataEngine\/jobengineconf\/outputfiles\/","user_org_mapping_status":"174"},"template-name":"JOB_TEMPLATE_1st_level_DATA_FETCH"}
+29.10.2020 14:35:31  INFO (JobService.java:94) - Spring App Context : org.springframework.context.support.FileSystemXmlApplicationContext@77556fd: startup date [Thu Oct 29 14:30:32 IST 2020]; root of context hierarchy
+29.10.2020 14:35:31  INFO (JobService.java:98) - JobEngine init process going to start:: BEAN ID :: com.enhancesys.integration.services.dataengine.job.JobEngine@105fece7
+29.10.2020 14:35:31  INFO (JobEngine.java:35) - Entry init..
+29.10.2020 14:35:31  INFO (JobConfiguration.java:26) - Entry readConfiguration..
+29.10.2020 14:35:31  INFO (JobConfiguration.java:52) - Custom Template Configuration from E:/home/appuser/snoc/snocconf/jobengineconf/job-templates/JOB_TEMPLATE_1st_level_DATA_FETCH.json
+29.10.2020 14:35:31  INFO (JobConfiguration.java:102) - jobId :: JOB_ID_inventory_ledger_dtls
+29.10.2020 14:35:31  INFO (JobConfiguration.java:174) - Exit readConfiguration..
+29.10.2020 14:35:31  INFO (JobEngine.java:69) - definitionArr : ["Reader","Input-Queue","Transformer","Output-Queue","Writer"]
+29.10.2020 14:35:31  INFO (JobEngine.java:176) - Entry loadJobQueues..
+29.10.2020 14:35:31  INFO (JobEngine.java:207) - Exit loadJobQueues..
+29.10.2020 14:35:31  INFO (JobEngine.java:72) - queueMap : {Input-Queue=com.enhancesys.integration.services.dataengine.job.connector.queue.InMemoryQueue@1115ec15, Output-Queue=com.enhancesys.integration.services.dataengine.job.connector.queue.InMemoryQueue@82ea68c}
+29.10.2020 14:35:31  INFO (JobPipeLine.java:32) - Reader : Entry init..
+29.10.2020 14:35:31  INFO (JobPipeLine.java:46) - Reader : Processor : {"job_count":10000,"delay_count":10,"processors":[{"job_count":5,"collection_position":0,"delay_count":10,"class":"mongoDBPrimaryDataSortProcessor","sleep_time":5}],"class":"genericDataFetcher","sleep_time":6}
+29.10.2020 14:35:31  INFO (GenericDataFetcher.java:34) - Reader : Entry init..
+29.10.2020 14:35:31  INFO (GenericDataFetcher.java:69) - Reader : Processor : {"job_count":5,"collection_position":0,"delay_count":10,"class":"mongoDBPrimaryDataSortProcessor","sleep_time":5}
+29.10.2020 14:35:31  INFO (MongoDBPrimaryDataSortProcessor.java:52) - Entry init..
+29.10.2020 14:35:31  INFO (MongoDataUtil.java:44) - Entry getCursor..
+29.10.2020 14:35:31  INFO (MongoDataUtil.java:92) - queryObject : { }
+29.10.2020 14:35:31  INFO (MongoDataUtil.java:127) - Exit getCursor..
+29.10.2020 14:35:31  INFO (MongoDBPrimaryDataSortProcessor.java:59) - Reader : mongoDBPrimaryDataSortProcessor :  Cursor Size : 103
+29.10.2020 14:35:31  INFO (MongoDBPrimaryDataSortProcessor.java:102) - Entry sortData..
+29.10.2020 14:35:31  INFO (MongoDBPrimaryDataSortProcessor.java:132) - SortColumns : [_id]
+29.10.2020 14:35:32  INFO (MongoDBPrimaryDataSortProcessor.java:159) - Sort file script is initiated for file :: E:\interface\work\enh-work\DataEngine\jobengineconf\sorting-scripts\files\inv_ledger_20201029143531799.csv.cp
+29.10.2020 14:35:32  INFO (MongoDBPrimaryDataSortProcessor.java:167) - Runtime cmd :: C:/Program Files/Git/git-bash.exe E:/interface/work/enh-work/DataEngine/jobengineconf/sorting-scripts/collection1.sh E:\interface\work\enh-work\DataEngine\jobengineconf\sorting-scripts\files\inv_ledger_20201029143531799.csv.cp E:\interface\work\enh-work\DataEngine\jobengineconf\sorting-scripts\files\inv_ledger_20201029143531799.csv.cp
+29.10.2020 14:35:32  INFO (MongoDBPrimaryDataSortProcessor.java:169) - Process : waitFor() :: 0
+29.10.2020 14:35:32  INFO (MongoDBPrimaryDataSortProcessor.java:211) - Exit sortData..
+29.10.2020 14:35:32  INFO (MongoDBPrimaryDataSortProcessor.java:95) - Exit init..
+29.10.2020 14:35:32  INFO (GenericDataFetcher.java:74) - Reader : Processors size : 1
+29.10.2020 14:35:32  INFO (GenericDataFetcher.java:86) - Reader : Exit init..
+29.10.2020 14:35:32  INFO (JobPipeLine.java:51) - Reader : Processors size : 1
+29.10.2020 14:35:32  INFO (JobPipeLine.java:62) - Reader : Exit init..
+29.10.2020 14:35:32  INFO (JobEngine.java:83) - Reader :
+29.10.2020 14:35:32  INFO (JobEngine.java:91) - OutputQ : Input-Queue
+29.10.2020 14:35:32  INFO (JobPipeLine.java:32) - Transformer : Entry init..
+29.10.2020 14:35:32  INFO (JobPipeLine.java:46) - Transformer : Processor : {"delay_count":10,"class":"genericDataTransformer","sleep_time":10}
+29.10.2020 14:35:32  INFO (GenericDataTransformer.java:69) - Entry init..
+29.10.2020 14:35:32  INFO (GenericDataTransformer.java:105) - Exit init..
+29.10.2020 14:35:32  INFO (JobPipeLine.java:51) - Transformer : Processors size : 1
+29.10.2020 14:35:32  INFO (JobPipeLine.java:62) - Transformer : Exit init..
+29.10.2020 14:35:32  INFO (JobEngine.java:83) - Transformer :
+29.10.2020 14:35:32  INFO (JobEngine.java:86) - InputQ : Input-Queue
+29.10.2020 14:35:32  INFO (JobEngine.java:91) - OutputQ : Output-Queue
+29.10.2020 14:35:32  INFO (JobPipeLine.java:32) - Writer : Entry init..
+29.10.2020 14:35:32  INFO (JobPipeLine.java:46) - Writer : Processor : {"delay_count":10,"class":"pdfDataWriter","sleep_time":10}
+29.10.2020 14:35:32  INFO (PDFDataWriter.java:80) - Entry init..
+29.10.2020 14:35:32  INFO (PDFDataWriter.java:115) - Entry createFile..
+29.10.2020 14:35:32  INFO (PDFDataWriter.java:229) - File Name :: E:\interface\work\enh-work\DataEngine\jobengineconf\outputfiles\INVENTORY_LEDGER_DTLS_20201029.pdf
+29.10.2020 14:35:32  INFO (PDFDataWriter.java:230) - Exit createFile..
+29.10.2020 14:35:32  INFO (PDFDataWriter.java:109) - Exit init..
+29.10.2020 14:35:32  INFO (JobPipeLine.java:51) - Writer : Processors size : 1
+29.10.2020 14:35:32  INFO (JobPipeLine.java:62) - Writer : Exit init..
+29.10.2020 14:35:32  INFO (JobEngine.java:83) - Writer :
+29.10.2020 14:35:32  INFO (JobEngine.java:86) - InputQ : Output-Queue
+29.10.2020 14:35:32  INFO (JobEngine.java:141) - Entry start : pipeLine threads size : 3
+29.10.2020 14:35:32  INFO (JobEngine.java:146) - Starting pipeline : Reader_0
+29.10.2020 14:35:32  INFO (JobEngine.java:146) - Starting pipeline : Transformer_0
+29.10.2020 14:35:32  INFO (JobEngine.java:146) - Starting pipeline : Writer_0
+29.10.2020 14:35:32  INFO (JobPipeLine.java:78) - Reader : Entry run..
+29.10.2020 14:35:32  INFO (JobPipeLine.java:78) - Writer : Entry run..
+29.10.2020 14:35:32  INFO (JobPipeLine.java:78) - Transformer : Entry run..
+29.10.2020 14:35:41 ERROR (InMemoryQueue.java:69) - Input-Queue : Failed to send RequestData to the next level.. : queue size : 2 : Retry Count : 0
+29.10.2020 14:35:51 ERROR (InMemoryQueue.java:69) - Output-Queue : Failed to send RequestData to the next level.. : queue size : 2 : Retry Count : 0
+29.10.2020 14:35:57 ERROR (InMemoryQueue.java:69) - Input-Queue : Failed to send RequestData to the next level.. : queue size : 2 : Retry Count : 0
+29.10.2020 14:36:04 ERROR (InMemoryQueue.java:69) - Input-Queue : Failed to send RequestData to the next level.. : queue size : 2 : Retry Count : 0
+29.10.2020 14:36:09 ERROR (MongoDBPrimaryDataSortProcessor.java:345) - Reader : mongoDBPrimaryDataSortProcessor : No more data exists in the cursor..
+29.10.2020 14:36:09 ERROR (GenericDataFetcher.java:157) - No More Data Exists..
+29.10.2020 14:36:09  INFO (JobPipeLine.java:149) - Reader : Sending emptyObject to the next level to stop process on completion..
+29.10.2020 14:36:11  INFO (JobPipeLine.java:179) - Reader : Exit run..Reader
+29.10.2020 14:36:11  INFO (JobPipeLine.java:116) - Transformer : pushing back empty object to the queue from : Transformer
+29.10.2020 14:36:11  INFO (JobPipeLine.java:156) - Transformer : Sending emptyObject to the next level to stop process..
+29.10.2020 14:36:11  INFO (JobPipeLine.java:179) - Transformer : Exit run..Transformer
+29.10.2020 14:36:11  INFO (JobPipeLine.java:116) - Writer : pushing back empty object to the queue from : Writer
+29.10.2020 14:36:11  INFO (JobPipeLine.java:179) - Writer : Exit run..Writer
+29.10.2020 14:36:11  INFO (PDFDataWriter.java:627) - recordCount : 43
+29.10.2020 14:36:11  INFO (PDFDataWriter.java:643) - storeFileConf :: {"is-enable":false,"connection-id":"snoc-r4","schema-name":"snoc_jobengine_reports","delete-file-local":false}
+29.10.2020 14:36:11  INFO (MongoDataUtil.java:359) - UpdateStatus : null : Status : 173   requestUpdateConf :: null
+29.10.2020 14:36:11  INFO (JobEngine.java:161) - Exit start : pipeLine threads size : 3
+29.10.2020 14:36:11  INFO (JobEngine.java:135) - Exit init..
+29.10.2020 14:36:11  INFO (JobService.java:104) - Job Done..
+29.10.2020 14:36:11  INFO (JobService.java:125) - Exit processRequest..
+29.10.2020 14:36:11  INFO (JobServicesInitiator.java:110) - 
+
+Total Time required for JobServices :: 0.6702333 mins  :: Filepath :: E:\interface\work\enh-work\DataEngine\jobengineconf\sample_data\Inventory_ledger_dtls_pdf.json.cp
+
+
+

@@ -82,6 +82,7 @@ public class JobService
 				if(file.exists())
 				{
 					context = new FileSystemXmlApplicationContext("file:" + configurationPath);
+					JobService._ApplicationContext_ = context;
 					LOGGER.debug("Spring conf inited with FileSystemXmlApplicationContext :  configurationPath :: " + configurationPath);	
 				}
 				else
@@ -90,9 +91,9 @@ public class JobService
 					return;				
 				}
 			}
-			LOGGER.info("Spring App Context : " + context);
+			LOGGER.info("Spring App Context : " + JobService._ApplicationContext_);
 
-			jobEngine = (JobEngine) context.getBean("jobEngine");
+			jobEngine = (JobEngine) JobService._ApplicationContext_.getBean("jobEngine");
 
 			LOGGER.info("JobEngine init process going to start:: BEAN ID :: " + jobEngine);
 

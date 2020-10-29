@@ -1,0 +1,24 @@
+{
+	"job-data": {
+		"course_id": "1299",
+		"user_id": "30003",
+		"regional": "50002",
+		"area": "50003",
+		"sales_area": "50004",
+		"cluster": "",
+		"micro_cluster": "",
+		"output_file_type": "xls",
+		"output_file_name": "Course_Level_Summary_Details_Report",
+		"output_file_date_patten": "yyyyMMddHHmm",
+		"output_file_path":"/home/appuser/jobengine/outputfiles/xls/"
+	},
+	"job-id": "JOB_ID_CourseLvlSummaryDtlsReport",
+	"template-id": "CourseLvlSummaryDtlsReport-excel",
+	"template-name": "JOB_TEMPLATE_CourseLevel",
+	"StoreFileConf": {
+		"connection-id": "snoc-r4",
+		"schema-name": "snoc_jobengine_reports",
+		"delete-file-local": false,
+		"is-enable": false
+	}
+}

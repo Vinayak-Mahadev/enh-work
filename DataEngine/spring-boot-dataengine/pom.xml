@@ -7,7 +7,7 @@
 	<artifactId>spring-boot-dataengine</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
     <packaging>pom</packaging>
-
+	<name>DataEngine</name>
 	<developers>
 		<developer>
 			<name>Vinayak-Mahadev</name>
@@ -22,6 +22,8 @@
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<java.version>1.8</java.version>
 		<spring.boot.version>2.3.4.RELEASE</spring.boot.version>
+		<spring.version>4.1.0.RELEASE</spring.version>
+		<org.apache.camel>2.12.3</org.apache.camel>
 		<log4j.version>1.2.17</log4j.version>
 		<slf4j.api.version>1.7.7</slf4j.api.version>
 		<com.jayway.jsonpath>2.2.0</com.jayway.jsonpath>
@@ -34,11 +36,13 @@
 		<codehaus.jackson.version>1.9.13</codehaus.jackson.version>
 		<commons.io.version>1.4</commons.io.version>
 		<com.googlecode.json.version>1.1</com.googlecode.json.version>
+		<com.fasterxml.jackson.version>2.10.0</com.fasterxml.jackson.version>
 	</properties>
 
     <modules>
 		<module>dataengine-common</module>
 		<module>dataengine-application</module>
+		<module>dataengine-springboot</module>
     </modules>
 
 </project>

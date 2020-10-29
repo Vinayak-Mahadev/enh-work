@@ -1,0 +1,27 @@
+REGION|AREA|SALES_AREA|CLUSTER|MICRO_CLUSTER|ORGANIZATION_NAME|NODE_ID|NODE_NAME|POSITION|USER_NAME|COURSE_NAME|COURSE_TYPE|LEVEL_NO|LEVEL_NAME|LEVEL_START_DATE|LEVEL_COMPLETED_DATE|NO_OF_FAILED_ATTEMPS|TOTAL_QUES|ANSWERED_QUESTIONS|RETRY_COUNT|REWARD_TYPE|REWARDS|STATUS
+Regionsl|AREA|SALES AREA|||Siva Dealer|50004|Dealer_SALES AREA_50004|Dealer|SDLR|NC 33|Learning Course|1|L-1|24-09-2020|24-09-2020|1|1|0|0|Payout(IDR)|1351.0|Pass
+Regionsl|AREA|SALES AREA|||Siva Dealer|50004|Dealer_SALES AREA_50004|Dealer|SDLR|NC 33|Learning Course|2|L-2|24-09-2020|24-09-2020|||||||Fail
+Regionsl|AREA|SALES AREA|||Siva Dealer|50004|Dealer_SALES AREA_50004|Dealer|SDLR|NC 34|Learning Course|1|Level 1|25-09-2020|25-09-2020|1|1|0|0|Points(Unit)|351.0|Pass
+Regionsl|AREA|SALES AREA|||Siva Dealer|50004|Dealer_SALES AREA_50004|Dealer|SDLR|NC 34|Learning Course|2|Level 2|25-09-2020|25-09-2020|||||||Fail
+Regionsl|AREA|SALES AREA|||Siva Dealer|50004|Dealer_SALES AREA_50004|Dealer|SDLR|NC 35|Learning Course|1|L01|25-09-2020|25-09-2020|||||Points(Unit)|1151.0|Pass
+Regionsl|AREA|SALES AREA|||Siva Dealer|50004|Dealer_SALES AREA_50004|Dealer|SDLR|NC 35|Learning Course|2|L02|25-09-2020|25-09-2020|1|1|0|0|Points(Unit)|751.0|Fail
+Regionsl|AREA|SALES AREA|||Siva Dealer|50004|Dealer_SALES AREA_50004|Dealer|SDLR|NC 36|Learning Course|1|Level 1|28-09-2020|28-09-2020|2|2|0|0|Points(Unit)|751.0|Pass
+|||||XYZ Telecom|20||||courselevel12|Learning Course|1||30-09-2020|30-09-2020|||||||Pass
+|||||XYZ Telecom|20||||crs289|Learning Course|1||07-10-2020|07-10-2020|||||||Pass
+|||||XYZ Telecom|20||||NC 38|Learning Course|1||07-10-2020|07-10-2020|1|1|0|0|Payout(IDR)|251.0|Pass
+Regionsl|AREA|SALES AREA|||Siva Dealer|50004|Dealer_SALES AREA_50004|Dealer|SDLR|NC 38|Learning Course|1||07-10-2020|07-10-2020|1|1|0|0|Payout(IDR)|251.0|Pass
+|||||XYZ Telecom|20||||NC 38|Learning Course|2||07-10-2020|07-10-2020|||||Payout(IDR)|1751.0|Fail
+|||||XYZ Telecom|20||||NC 38|Learning Course|3||07-10-2020|07-10-2020|1|1|0|0|||Fail
+Regionsl|AREA|SALES AREA|||Siva Dealer|50004|Dealer_SALES AREA_50004|Dealer|SDLR|NC 38|Learning Course|2||07-10-2020|07-10-2020|||||Payout(IDR)|1751.0|Fail
+|||||XYZ Telecom|20||||NC 39|Learning Course|1||07-10-2020|07-10-2020|||||Points(Unit)|451.0|Pass
+Regionsl|AREA|SALES AREA|||Siva Dealer|50004|Dealer_SALES AREA_50004|Dealer|SDLR|NC 38|Learning Course|3||07-10-2020|07-10-2020|1|1|0|0|||Fail
+|||||XYZ Telecom|20||||NC 39|Learning Course|2||07-10-2020|07-10-2020|2|2|0|0|Payout(IDR)|1751.0|Fail
+Regionsl|AREA|SALES AREA|||Siva Dealer|50004|Dealer_SALES AREA_50004|Dealer|SDLR|NC 39|Learning Course|1||07-10-2020|07-10-2020|||||Points(Unit)|451.0|Pass
+Regionsl|AREA|SALES AREA|||Siva Dealer|50004|Dealer_SALES AREA_50004|Dealer|SDLR|NC 39|Learning Course|2||07-10-2020|07-10-2020|2|2|0|0|Payout(IDR)|1751.0|Fail
+|||||XYZ Telecom|20||||NC 39|Learning Course|3||07-10-2020|07-10-2020|2|2|0|0|Points(Unit)|3151.0|Fail
+|||||XYZ Telecom|20||||NC 39|Learning Course|4||07-10-2020|07-10-2020|||||Payout(IDR)|551.0|Fail
+Regionsl|AREA|SALES AREA|||Siva Dealer|50004|Dealer_SALES AREA_50004|Dealer|SDLR|Sample course|Learning Course|1||07-10-2020|07-10-2020|1|1|0|0|||Pass
+Regionsl|AREA|SALES AREA|||Siva Dealer|50004|Dealer_SALES AREA_50004|Dealer|SDLR|Course test 07-10|Learning Course|1||07-10-2020|07-10-2020|||||||Fail
+Regionsl|AREA|SALES AREA|||Siva Dealer|50004|Dealer_SALES AREA_50004|Dealer|SDLR|CRS 0710|Learning Course|1||07-10-2020|07-10-2020|||||||Fail
+Regionsl|AREA|SALES AREA|||Siva Dealer|50004|Dealer_SALES AREA_50004|Dealer|SDLR|CRS 0710|Learning Course|2||07-10-2020|07-10-2020|||||||Fail
+Regionsl|AREA|SALES AREA|||Siva Dealer|50004|Dealer_SALES AREA_50004|Dealer|SDLR|CRS 0711|Learning Course|1||07-10-2020|07-10-2020|||||||Fail

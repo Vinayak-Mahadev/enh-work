@@ -1,0 +1,21 @@
+{
+	"job-data": {
+		"user_org_mapping_status": "174",
+		"status_node": "174",
+		"status_user": "174",
+		"output_file_type": "pdf",
+		"output_zipextension": "",
+		"output_file_name": "INVENTORY_LEDGER_DTLS",
+		"output_file_date_patten": "yyyyMMddHHmm",
+		"output_file_path":"/home/appuser/jobengine/outputfiles/pdf/"
+	},
+	"job-id": "JOB_ID_inventory_ledger_dtls",
+	"template-id": "pdf",
+	"template-name": "JOB_TEMPLATE_1st_level_DATA_FETCH",
+	"StoreFileConf": {
+		"connection-id": "snoc-r4",
+		"schema-name": "snoc_jobengine_reports",
+		"delete-file-local": false,
+		"is-enable": false
+	}
+}

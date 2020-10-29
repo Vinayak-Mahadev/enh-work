@@ -1,0 +1,277 @@
+{
+	"Primary": [
+		{
+			"connection-id": "snoc-r4",
+			"schema-name": "snoc_report",
+			"collection-name": "inv_ledger",
+			"projection": {
+				"_id": 1,
+				"ord_ledger_id": 1,
+				"ord_id": 1,
+				"crtd_by": 1,
+				"ord_creatd_dt": 1,
+				"org_id": 1,
+				"prd_id": 1,
+				"prd_nm": 1,
+				"price": 1,
+				"ord_trans_ref": 1,
+				"is_white_list": 1,
+				"prd_tax_dtls": 1
+			},
+			"batch-size": 100,
+			"merge-type": "include_parent",
+			"sort-by": {
+				"_id": -1
+			},
+			"limit": 1000
+		}
+	],
+	"Lookup": {
+		"user_collection": {
+			"connection-id": "snoc-r1",
+			"schema-name": "snoc",
+			"collection-name": "user",
+			"parameters": [
+				{
+					"param-name": "status",
+					"param-value": "$status_user",
+					"param-type": "Long",
+					"mandatory": true
+				}
+			]
+		},
+		"organization_collection": {
+			"connection-id": "snoc-r1",
+			"schema-name": "snoc",
+			"collection-name": "organization"
+		}
+	},
+	"Configuration": {
+		"ord_ledger_id": {
+			"field": "ord_ledger_id"
+		},
+		"crtd_user_name": {
+			"field": "crtd_by",
+			"lookup": [
+				{
+					"name": "user_collection",
+					"mapping-field": "_id",
+					"mapping-field-type": "Long",
+					"lookup-field": "uname"
+				}
+			]
+		},
+		"ord_trans_ref": {
+			"field": "ord_trans_ref"
+		},
+		"ord_creatd_dt": {
+			"field": "ord_creatd_dt",
+			"date-format": "dd-MMM-yyyy HH:mm:ss"
+		},
+		"org_id": {
+			"field": "org_id"
+		},
+		"org_desc": {
+			"field": "org_id",
+			"lookup": [
+				{
+					"name": "organization_collection",
+					"mapping-field": "_id",
+					"mapping-field-type": "Long",
+					"lookup-field": "desc"
+				}
+			]
+		},
+		"parent_org_id": {
+			"field": "org_id",
+			"lookup": [
+				{
+					"name": "organization_collection",
+					"mapping-field": "_id",
+					"mapping-field-type": "Long",
+					"lookup-field": "parent_org_id"
+				}
+			]
+		},
+		"parent_org_desc": {
+			"field": "org_id",
+			"lookup": [
+				{
+					"name": "organization_collection",
+					"mapping-field": "_id",
+					"mapping-field-type": "Long",
+					"lookup-field": "parent_org_id"
+				},
+				{
+					"name": "organization_collection",
+					"mapping-field": "_id",
+					"mapping-field-type": "Long",
+					"lookup-field": "desc"
+				}
+			]
+		},
+		"prd_id": {
+			"field": "prd_id"
+		},
+		"prd_nm": {
+			"field": "prd_nm"
+		},
+		"price": {
+			"field": "price"
+		},
+		"prd_price": {
+			"field": "price"
+		},
+		"prd_sale_price": {
+			"field": "price",
+			"expression-type": "Mathematical",
+			"expression-fields": [
+				{
+					"field": "price"
+				},
+				{
+					"field": "ProfitPrice",
+					"default-value": 21.0
+				}
+			],
+			"expression": "((round)((price*101.0)+(ProfitPrice*10.0)))"
+		},
+		"white_list": {
+			"field": "is_white_list",
+			"expression-type": "Conditional",
+			"expression-fields": [
+				{
+					"field": "is_white_list"
+				}
+			],
+			"expression": "([is_white_list]IN['true'])",
+			"if": "Yes",
+			"else": "No"
+		},
+		"is_blocked": {
+			"field": "is_white_list"
+		},
+		"tax_id": {
+			"field": "",
+			"multiple-row-conf": {
+				"name": "multiple_row_prd_tax_dtls",
+				"lookup-field": "tax_id"
+			}
+		},
+		"policy": {
+			"field": "",
+			"multiple-row-conf": {
+				"name": "multiple_row_prd_tax_dtls",
+				"lookup-field": "policy"
+			}
+		},
+		"value": {
+			"field": "",
+			"multiple-row-conf": {
+				"name": "multiple_row_prd_tax_dtls",
+				"lookup-field": "value"
+			}
+		}
+	},
+	"multiple-row-conf": {
+		"multiple_row_prd_tax_dtls": {
+			"field": "prd_tax_dtls",
+			"field-conf": [
+				"tax_id",
+				"policy",
+				"value"
+			]
+		}
+	},
+	"OutputConf": {
+		"type": "file",
+		"extension": "$output_file_type",
+		"zip-extension": "$output_zipextension",
+		"file-path": "$output_file_path",
+		"file-name": "$output_file_name",
+		"file-name-pattern": "$output_file_date_patten",
+		"file-headers": "LEDGER_ID|CRTD_USER_NAME|ORD_TRANS_REF|ORDER_CREATD_DT|ORG_ID|ORG_DESC|PARENT_ORG_ID|PARENT_ORG_DESC|PRODUCT_ID|PRODUCT_NAME|PRODUCT_PRICE|PRODUCT_SALE_PRICE|IS_WHITE_LIST|WHITE_LIST|PRD_TAX_DTLS_TAX_ID|PRD_TAX_DTLS_POLICY|PRD_TAX_DTLS_VALUE",
+		"field-delimiter": "|",
+		"field-conf": [
+			{
+				"path": "ord_ledger_id",
+				"type": "String"
+			},
+			{
+				"path": "crtd_user_name",
+				"type": "String"
+			},
+			{
+				"path": "ord_trans_ref",
+				"type": "String"
+			},
+			{
+				"path": "ord_creatd_dt",
+				"type": "String"
+			},
+			{
+				"path": "org_id",
+				"type": "String"
+			},
+			{
+				"path": "org_desc",
+				"type": "String"
+			},
+			{
+				"path": "parent_org_id",
+				"type": "String"
+			},
+			{
+				"path": "parent_org_desc",
+				"type": "String"
+			},
+			{
+				"path": "prd_id",
+				"type": "String"
+			},
+			{
+				"path": "prd_nm",
+				"type": "String"
+			},
+			{
+				"path": "prd_price",
+				"type": "Double"
+			},
+			{
+				"path": "prd_sale_price",
+				"type": "String"
+			},
+			{
+				"path": "white_list",
+				"type": "String"
+			},
+			{
+				"path": "is_blocked",
+				"type": "Boolean",
+				"if": "Blocked",
+				"else": "Not Blocked"
+			},
+			{
+				"path": "tax_id",
+				"type": "String"
+			},
+			{
+				"path": "policy",
+				"type": "String"
+			},
+			{
+				"path": "value",
+				"type": "String"
+			}
+		],
+		"mandatory-fields": [
+			"ord_trans_ref"
+		]
+	},
+	"SortConf": {
+		"extension": "csv",
+		"file-name-pattern": "yyyyMMddHHmmssSSS",
+		"sort-file-name_0": "collection1.sh",
+		"field-delimiter": "|"
+	}
+}

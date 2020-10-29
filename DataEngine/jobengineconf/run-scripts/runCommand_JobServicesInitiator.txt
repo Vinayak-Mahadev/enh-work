@@ -1,0 +1,23 @@
+mkdir -p /home/appuser/jobengine/outputfiles/csv
+mkdir -p /home/appuser/jobengine/outputfiles/excel
+mkdir -p /home/appuser/jobengine/outputfiles/xls
+mkdir -p /home/appuser/jobengine/outputfiles/xlsx
+mkdir -p /home/appuser/jobengine/outputfiles/pdf
+mkdir -p /home/appuser/jobengine/outputfiles/json
+mkdir -p /home/appuser/jobengine/outputfiles/xml
+mkdir -p /home/appuser/snoc/snocconf/jobengineconf/sorting-scripts/files
+
+chmod 755 /home/appuser/snoc/snocconf/jobengineconf/sorting-scripts/*
+chmod 755 /home/appuser/snoc/snocconf/jobengineconf/run-scripts/JobServicesInitiator.sh
+dos2unix /home/appuser/snoc/snocconf/jobengineconf/run-scripts/JobServicesInitiator.sh
+
+
+## some sample cmds
+  nohup ./JobServicesInitiator.sh /home/appuser/snoc/snocconf/jobengineconf/sample_data/CourseLvlSummaryDtlsReport_csv.json & >/dev/null
+  nohup ./JobServicesInitiator.sh /home/appuser/snoc/snocconf/jobengineconf/sample_data/CourseLvlSummaryReport_csv.json & >/dev/null
+  nohup ./JobServicesInitiator.sh /home/appuser/snoc/snocconf/jobengineconf/sample_data/CourseRwrdSummaryReport_csv.json & >/dev/null
+  nohup ./JobServicesInitiator.sh /home/appuser/snoc/snocconf/jobengineconf/sample_data/user_org_mapping_csv.json & >/dev/null
+[or] 
+  sh JobServicesInitiator.sh /home/appuser/snoc/snocconf/jobengineconf/sample_data/CourseLvlSummaryDtlsReport_csv.json & >/dev/null
+
+

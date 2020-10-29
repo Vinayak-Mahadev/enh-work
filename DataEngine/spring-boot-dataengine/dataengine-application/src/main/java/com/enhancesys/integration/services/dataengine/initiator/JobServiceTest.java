@@ -48,8 +48,8 @@ public class JobServiceTest {
 		Double startTime = Double.valueOf(System.currentTimeMillis());
 		Double endTime = null;
 		File cpFile = null;
-		String path = "E:/home/appuser/snoc/snocconf/jobengineconf/sample_data/" + fileName;
-		String setLocalOuputPath = "E:/home/appuser/jobengine/outputfiles/";
+		String path = "E:/interface/work/enh-work/DataEngine/jobengineconf/sample_data/" + fileName;
+		String setLocalOuputPath = "E:/interface/work/enh-work/DataEngine/jobengineconf/outputfiles/";
 		String[] args = new String[1];
 		cpFile = setLocalConfig(path, setLocalOuputPath);
 		args[0] = cpFile.getAbsolutePath();

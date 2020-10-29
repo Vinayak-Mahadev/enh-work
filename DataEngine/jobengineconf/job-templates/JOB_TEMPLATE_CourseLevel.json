@@ -1,0 +1,731 @@
+{
+	"CourseLvlSummaryDtlsReport-csv": {
+		"definition": [
+			"Reader",
+			"Transformer-Input-Queue",
+			"Transformer",
+			"Transformer-Output-Queue",
+			"Writer"
+		],
+		"Reader": {
+			"type": "PipeLine",
+			"class": "jobPipeLine",
+			"instance": 1,
+			"processors": [
+				{
+					"class": "genericDataFetcher",
+					"job_count": 10000,
+					"sleep_time": 6,
+					"delay_count": 10,
+					"processors": [
+						{
+							"class": "mongoDBPrimaryDataSortProcessor",
+							"job_count": 5,
+							"sleep_time": 5,
+							"delay_count": 10,
+							"collection_position": 0
+						}
+					]
+				}
+			]
+		},
+		"Transformer-Input-Queue": {
+			"type": "Queue",
+			"class": "inMemoryQueue",
+			"config": {
+				"size": 5,
+				"poll_wait_time": 15,
+				"push_wait_time": 25,
+				"poll_sleep_time": 500,
+				"push_sleep_time": 1500,
+				"max_wait_time": 10000,
+				"retry_count": 15
+			}
+		},
+		"Transformer": {
+			"type": "PipeLine",
+			"class": "jobPipeLine",
+			"instance": 1,
+			"processors": [
+				{
+					"class": "genericDataTransformer",
+					"sleep_time": 10,
+					"delay_count": 10
+				}
+			]
+		},
+		"Transformer-Output-Queue": {
+			"type": "Queue",
+			"class": "inMemoryQueue",
+			"config": {
+				"size": 5,
+				"poll_wait_time": 15,
+				"push_wait_time": 25,
+				"poll_sleep_time": 500,
+				"push_sleep_time": 1500,
+				"max_wait_time": 10000,
+				"retry_count": 15
+			}
+		},
+		"Writer": {
+			"type": "PipeLine",
+			"class": "jobPipeLine",
+			"instance": 1,
+			"processors": [
+				{
+					"class": "csvDataWriter",
+					"sleep_time": 10,
+					"delay_count": 10
+				}
+			]
+		}
+	},
+	"CourseLvlSummaryDtlsReport-excel": {
+		"definition": [
+			"Reader",
+			"Transformer-Input-Queue",
+			"Transformer",
+			"Transformer-Output-Queue",
+			"Writer"
+		],
+		"Reader": {
+			"type": "PipeLine",
+			"class": "jobPipeLine",
+			"instance": 1,
+			"processors": [
+				{
+					"class": "genericDataFetcher",
+					"job_count": 10000,
+					"sleep_time": 6,
+					"delay_count": 10,
+					"processors": [
+						{
+							"class": "mongoDBPrimaryDataSortProcessor",
+							"job_count": 5,
+							"sleep_time": 5,
+							"delay_count": 10,
+							"collection_position": 0
+						}
+					]
+				}
+			]
+		},
+		"Transformer-Input-Queue": {
+			"type": "Queue",
+			"class": "inMemoryQueue",
+			"config": {
+				"size": 2,
+				"poll_wait_time": 15,
+				"push_wait_time": 25,
+				"poll_sleep_time": 500,
+				"push_sleep_time": 1500,
+				"max_wait_time": 10000,
+				"retry_count": 15
+			}
+		},
+		"Transformer": {
+			"type": "PipeLine",
+			"class": "jobPipeLine",
+			"instance": 1,
+			"processors": [
+				{
+					"class": "genericDataTransformer",
+					"sleep_time": 10,
+					"delay_count": 10
+				}
+			]
+		},
+		"Transformer-Output-Queue": {
+			"type": "Queue",
+			"class": "inMemoryQueue",
+			"config": {
+				"size": 2,
+				"poll_wait_time": 15,
+				"push_wait_time": 25,
+				"poll_sleep_time": 500,
+				"push_sleep_time": 1500,
+				"max_wait_time": 10000,
+				"retry_count": 15
+			}
+		},
+		"Writer": {
+			"type": "PipeLine",
+			"class": "jobPipeLine",
+			"instance": 1,
+			"processors": [
+				{
+					"class": "excelDataWriter",
+					"sleep_time": 10,
+					"delay_count": 10
+				}
+			]
+		}
+	},
+	"CourseLvlSummaryDtlsReport-pdf": {
+		"definition": [
+			"Reader",
+			"Transformer-Input-Queue",
+			"Transformer",
+			"Transformer-Output-Queue",
+			"Writer"
+		],
+		"Reader": {
+			"type": "PipeLine",
+			"class": "jobPipeLine",
+			"instance": 1,
+			"processors": [
+				{
+					"class": "genericDataFetcher",
+					"job_count": 10000,
+					"sleep_time": 6,
+					"delay_count": 10,
+					"processors": [
+						{
+							"class": "mongoDBPrimaryDataSortProcessor",
+							"job_count": 5,
+							"sleep_time": 5,
+							"delay_count": 10,
+							"collection_position": 0
+						}
+					]
+				}
+			]
+		},
+		"Transformer-Input-Queue": {
+			"type": "Queue",
+			"class": "inMemoryQueue",
+			"config": {
+				"size": 2,
+				"poll_wait_time": 15,
+				"push_wait_time": 25,
+				"poll_sleep_time": 500,
+				"push_sleep_time": 1500,
+				"max_wait_time": 10000,
+				"retry_count": 15
+			}
+		},
+		"Transformer": {
+			"type": "PipeLine",
+			"class": "jobPipeLine",
+			"instance": 1,
+			"processors": [
+				{
+					"class": "genericDataTransformer",
+					"sleep_time": 10,
+					"delay_count": 10
+				}
+			]
+		},
+		"Transformer-Output-Queue": {
+			"type": "Queue",
+			"class": "inMemoryQueue",
+			"config": {
+				"size": 2,
+				"poll_wait_time": 15,
+				"push_wait_time": 25,
+				"poll_sleep_time": 500,
+				"push_sleep_time": 1500,
+				"max_wait_time": 10000,
+				"retry_count": 15
+			}
+		},
+		"Writer": {
+			"type": "PipeLine",
+			"class": "jobPipeLine",
+			"instance": 1,
+			"processors": [
+				{
+					"class": "pdfDataWriter",
+					"sleep_time": 10,
+					"delay_count": 10
+				}
+			]
+		}
+	},
+	"CourseLvlSummaryReport-csv": {
+		"definition": [
+			"Reader",
+			"Transformer-Input-Queue",
+			"Transformer",
+			"Transformer-Output-Queue",
+			"Writer"
+		],
+		"Reader": {
+			"type": "PipeLine",
+			"class": "jobPipeLine",
+			"instance": 1,
+			"processors": [
+				{
+					"class": "genericDataFetcher",
+					"job_count": 10000,
+					"sleep_time": 6,
+					"delay_count": 10,
+					"processors": [
+						{
+							"class": "mongoDBPrimaryDataSortProcessor",
+							"job_count": 5,
+							"sleep_time": 5,
+							"delay_count": 10,
+							"collection_position": 0
+						}
+					]
+				}
+			]
+		},
+		"Transformer-Input-Queue": {
+			"type": "Queue",
+			"class": "inMemoryQueue",
+			"config": {
+				"size": 2,
+				"poll_wait_time": 15,
+				"push_wait_time": 25,
+				"poll_sleep_time": 500,
+				"push_sleep_time": 1500,
+				"max_wait_time": 10000,
+				"retry_count": 15
+			}
+		},
+		"Transformer": {
+			"type": "PipeLine",
+			"class": "jobPipeLine",
+			"instance": 1,
+			"processors": [
+				{
+					"class": "genericDataTransformer",
+					"sleep_time": 10,
+					"delay_count": 10
+				}
+			]
+		},
+		"Transformer-Output-Queue": {
+			"type": "Queue",
+			"class": "inMemoryQueue",
+			"config": {
+				"size": 2,
+				"poll_wait_time": 15,
+				"push_wait_time": 25,
+				"poll_sleep_time": 500,
+				"push_sleep_time": 1500,
+				"max_wait_time": 10000,
+				"retry_count": 15
+			}
+		},
+		"Writer": {
+			"type": "PipeLine",
+			"class": "jobPipeLine",
+			"instance": 1,
+			"processors": [
+				{
+					"class": "csvDataWriter",
+					"sleep_time": 10,
+					"delay_count": 10
+				}
+			]
+		}
+	},
+	"CourseLvlSummaryReport-excel": {
+		"definition": [
+			"Reader",
+			"Transformer-Input-Queue",
+			"Transformer",
+			"Transformer-Output-Queue",
+			"Writer"
+		],
+		"Reader": {
+			"type": "PipeLine",
+			"class": "jobPipeLine",
+			"instance": 1,
+			"processors": [
+				{
+					"class": "genericDataFetcher",
+					"job_count": 10000,
+					"sleep_time": 6,
+					"delay_count": 10,
+					"processors": [
+						{
+							"class": "mongoDBPrimaryDataSortProcessor",
+							"job_count": 5,
+							"sleep_time": 5,
+							"delay_count": 10,
+							"collection_position": 0
+						}
+					]
+				}
+			]
+		},
+		"Transformer-Input-Queue": {
+			"type": "Queue",
+			"class": "inMemoryQueue",
+			"config": {
+				"size": 2,
+				"poll_wait_time": 15,
+				"push_wait_time": 25,
+				"poll_sleep_time": 500,
+				"push_sleep_time": 1500,
+				"max_wait_time": 10000,
+				"retry_count": 15
+			}
+		},
+		"Transformer": {
+			"type": "PipeLine",
+			"class": "jobPipeLine",
+			"instance": 1,
+			"processors": [
+				{
+					"class": "genericDataTransformer",
+					"sleep_time": 10,
+					"delay_count": 10
+				}
+			]
+		},
+		"Transformer-Output-Queue": {
+			"type": "Queue",
+			"class": "inMemoryQueue",
+			"config": {
+				"size": 2,
+				"poll_wait_time": 15,
+				"push_wait_time": 25,
+				"poll_sleep_time": 500,
+				"push_sleep_time": 1500,
+				"max_wait_time": 10000,
+				"retry_count": 15
+			}
+		},
+		"Writer": {
+			"type": "PipeLine",
+			"class": "jobPipeLine",
+			"instance": 1,
+			"processors": [
+				{
+					"class": "excelDataWriter",
+					"sleep_time": 10,
+					"delay_count": 10
+				}
+			]
+		}
+	},
+	"CourseLvlSummaryReport-pdf": {
+		"definition": [
+			"Reader",
+			"Transformer-Input-Queue",
+			"Transformer",
+			"Transformer-Output-Queue",
+			"Writer"
+		],
+		"Reader": {
+			"type": "PipeLine",
+			"class": "jobPipeLine",
+			"instance": 1,
+			"processors": [
+				{
+					"class": "genericDataFetcher",
+					"job_count": 10000,
+					"sleep_time": 6,
+					"delay_count": 10,
+					"processors": [
+						{
+							"class": "mongoDBPrimaryDataSortProcessor",
+							"job_count": 5,
+							"sleep_time": 5,
+							"delay_count": 10,
+							"collection_position": 0
+						}
+					]
+				}
+			]
+		},
+		"Transformer-Input-Queue": {
+			"type": "Queue",
+			"class": "inMemoryQueue",
+			"config": {
+				"size": 2,
+				"poll_wait_time": 15,
+				"push_wait_time": 25,
+				"poll_sleep_time": 500,
+				"push_sleep_time": 1500,
+				"max_wait_time": 10000,
+				"retry_count": 15
+			}
+		},
+		"Transformer": {
+			"type": "PipeLine",
+			"class": "jobPipeLine",
+			"instance": 1,
+			"processors": [
+				{
+					"class": "genericDataTransformer",
+					"sleep_time": 10,
+					"delay_count": 10
+				}
+			]
+		},
+		"Transformer-Output-Queue": {
+			"type": "Queue",
+			"class": "inMemoryQueue",
+			"config": {
+				"size": 2,
+				"poll_wait_time": 15,
+				"push_wait_time": 25,
+				"poll_sleep_time": 500,
+				"push_sleep_time": 1500,
+				"max_wait_time": 10000,
+				"retry_count": 15
+			}
+		},
+		"Writer": {
+			"type": "PipeLine",
+			"class": "jobPipeLine",
+			"instance": 1,
+			"processors": [
+				{
+					"class": "pdfDataWriter",
+					"sleep_time": 10,
+					"delay_count": 10
+				}
+			]
+		}
+	},
+	"CourseRwrdSummaryReport-csv": {
+		"definition": [
+			"Reader",
+			"Transformer-Input-Queue",
+			"Transformer",
+			"Transformer-Output-Queue",
+			"Writer"
+		],
+		"Reader": {
+			"type": "PipeLine",
+			"class": "jobPipeLine",
+			"instance": 1,
+			"processors": [
+				{
+					"class": "genericDataFetcher",
+					"job_count": 10000,
+					"sleep_time": 6,
+					"delay_count": 10,
+					"processors": [
+						{
+							"class": "mongoDBPrimaryDataSortProcessor",
+							"job_count": 5,
+							"sleep_time": 5,
+							"delay_count": 10,
+							"collection_position": 0
+						}
+					]
+				}
+			]
+		},
+		"Transformer-Input-Queue": {
+			"type": "Queue",
+			"class": "inMemoryQueue",
+			"config": {
+				"size": 2,
+				"poll_wait_time": 15,
+				"push_wait_time": 25,
+				"poll_sleep_time": 500,
+				"push_sleep_time": 1500,
+				"max_wait_time": 10000,
+				"retry_count": 15
+			}
+		},
+		"Transformer": {
+			"type": "PipeLine",
+			"class": "jobPipeLine",
+			"instance": 1,
+			"processors": [
+				{
+					"class": "genericDataTransformer",
+					"sleep_time": 10,
+					"delay_count": 10
+				}
+			]
+		},
+		"Transformer-Output-Queue": {
+			"type": "Queue",
+			"class": "inMemoryQueue",
+			"config": {
+				"size": 2,
+				"poll_wait_time": 15,
+				"push_wait_time": 25,
+				"poll_sleep_time": 500,
+				"push_sleep_time": 1500,
+				"max_wait_time": 10000,
+				"retry_count": 15
+			}
+		},
+		"Writer": {
+			"type": "PipeLine",
+			"class": "jobPipeLine",
+			"instance": 1,
+			"processors": [
+				{
+					"class": "csvDataWriter",
+					"sleep_time": 10,
+					"delay_count": 10
+				}
+			]
+		}
+	},
+	"CourseRwrdSummaryReport-excel": {
+		"definition": [
+			"Reader",
+			"Transformer-Input-Queue",
+			"Transformer",
+			"Transformer-Output-Queue",
+			"Writer"
+		],
+		"Reader": {
+			"type": "PipeLine",
+			"class": "jobPipeLine",
+			"instance": 1,
+			"processors": [
+				{
+					"class": "genericDataFetcher",
+					"job_count": 10000,
+					"sleep_time": 6,
+					"delay_count": 10,
+					"processors": [
+						{
+							"class": "mongoDBPrimaryDataSortProcessor",
+							"job_count": 5,
+							"sleep_time": 5,
+							"delay_count": 10,
+							"collection_position": 0
+						}
+					]
+				}
+			]
+		},
+		"Transformer-Input-Queue": {
+			"type": "Queue",
+			"class": "inMemoryQueue",
+			"config": {
+				"size": 2,
+				"poll_wait_time": 15,
+				"push_wait_time": 25,
+				"poll_sleep_time": 500,
+				"push_sleep_time": 1500,
+				"max_wait_time": 10000,
+				"retry_count": 15
+			}
+		},
+		"Transformer": {
+			"type": "PipeLine",
+			"class": "jobPipeLine",
+			"instance": 1,
+			"processors": [
+				{
+					"class": "genericDataTransformer",
+					"sleep_time": 10,
+					"delay_count": 10
+				}
+			]
+		},
+		"Transformer-Output-Queue": {
+			"type": "Queue",
+			"class": "inMemoryQueue",
+			"config": {
+				"size": 2,
+				"poll_wait_time": 15,
+				"push_wait_time": 25,
+				"poll_sleep_time": 500,
+				"push_sleep_time": 1500,
+				"max_wait_time": 10000,
+				"retry_count": 15
+			}
+		},
+		"Writer": {
+			"type": "PipeLine",
+			"class": "jobPipeLine",
+			"instance": 1,
+			"processors": [
+				{
+					"class": "excelDataWriter",
+					"sleep_time": 10,
+					"delay_count": 10
+				}
+			]
+		}
+	},
+	"CourseRwrdSummaryReport-pdf": {
+		"definition": [
+			"Reader",
+			"Transformer-Input-Queue",
+			"Transformer",
+			"Transformer-Output-Queue",
+			"Writer"
+		],
+		"Reader": {
+			"type": "PipeLine",
+			"class": "jobPipeLine",
+			"instance": 1,
+			"processors": [
+				{
+					"class": "genericDataFetcher",
+					"job_count": 10000,
+					"sleep_time": 6,
+					"delay_count": 10,
+					"processors": [
+						{
+							"class": "mongoDBPrimaryDataSortProcessor",
+							"job_count": 5,
+							"sleep_time": 5,
+							"delay_count": 10,
+							"collection_position": 0
+						}
+					]
+				}
+			]
+		},
+		"Transformer-Input-Queue": {
+			"type": "Queue",
+			"class": "inMemoryQueue",
+			"config": {
+				"size": 2,
+				"poll_wait_time": 15,
+				"push_wait_time": 25,
+				"poll_sleep_time": 500,
+				"push_sleep_time": 1500,
+				"max_wait_time": 10000,
+				"retry_count": 15
+			}
+		},
+		"Transformer": {
+			"type": "PipeLine",
+			"class": "jobPipeLine",
+			"instance": 1,
+			"processors": [
+				{
+					"class": "genericDataTransformer",
+					"sleep_time": 10,
+					"delay_count": 10
+				}
+			]
+		},
+		"Transformer-Output-Queue": {
+			"type": "Queue",
+			"class": "inMemoryQueue",
+			"config": {
+				"size": 2,
+				"poll_wait_time": 15,
+				"push_wait_time": 25,
+				"poll_sleep_time": 500,
+				"push_sleep_time": 1500,
+				"max_wait_time": 10000,
+				"retry_count": 15
+			}
+		},
+		"Writer": {
+			"type": "PipeLine",
+			"class": "jobPipeLine",
+			"instance": 1,
+			"processors": [
+				{
+					"class": "pdfDataWriter",
+					"sleep_time": 10,
+					"delay_count": 10
+				}
+			]
+		}
+	}
+}

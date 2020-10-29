@@ -1,0 +1,297 @@
+{
+	"Primary": [
+		{
+			"connection-id": "snoc-r4",
+			"schema-name": "snoc_report",
+			"collection-name": "crs_trk_dtls",
+			"projection": {
+				"course_id": 1,
+				"course_name": 1,
+				"course_type": 1,
+				"org_id": 1,
+				"user_id": 1,
+				"node_id": 1,
+				"level_name": 1,
+				"level_no": 1,
+				"answers": 1,
+				"failed_attempts": 1
+			},
+			"batch-size": 100,
+			"merge-type": "include_parent",
+			"parameters": [],
+			"sort-by": {
+				"_id": 1
+			}
+		}
+	],
+	"Lookup": {
+		"org_user_node_acc": {
+			"connection-id": "snoc-r4",
+			"schema-name": "snoc_report",
+			"collection-name": "org_user_node_acc",
+			"parameters": []
+		},
+		"org_user_node_acc_main": {
+			"connection-id": "snoc-r4",
+			"schema-name": "snoc_report",
+			"collection-name": "org_user_node_acc",
+			"parameters": []
+		},
+		"transitionValueCollection": {
+			"connection-id": "snoc-r1",
+			"schema-name": "snoc",
+			"collection-name": "transitionValueCollection"
+		},
+		"genericMasterValueCollection": {
+			"connection-id": "snoc-r1",
+			"schema-name": "snoc",
+			"collection-name": "genericMasterValueCollection"
+		},
+		"benefit_type": {
+			"connection-id": "snoc-r1",
+			"schema-name": "incentive",
+			"collection-name": "benefit_type"
+		}
+	},
+	"Configuration": {
+		"region": {
+			"field": "user_id",
+			"lookup": [
+				{
+					"name": "org_user_node_acc_main",
+					"mapping-field": "user_id",
+					"mapping-field-type": "Long",
+					"lookup-field": "regional_desc"
+				}
+			]
+		},
+		"area": {
+			"field": "user_id",
+			"lookup": [
+				{
+					"name": "org_user_node_acc_main",
+					"mapping-field": "user_id",
+					"mapping-field-type": "Long",
+					"lookup-field": "area_desc"
+				}
+			]
+		},
+		"sales_area": {
+			"field": "user_id",
+			"lookup": [
+				{
+					"name": "org_user_node_acc_main",
+					"mapping-field": "user_id",
+					"mapping-field-type": "Long",
+					"lookup-field": "sales_area_desc"
+				}
+			]
+		},
+		"cluster": {
+			"field": "user_id",
+			"lookup": [
+				{
+					"name": "org_user_node_acc_main",
+					"mapping-field": "user_id",
+					"mapping-field-type": "Long",
+					"lookup-field": "cluster_desc"
+				}
+			]
+		},
+		"micro_cluster": {
+			"field": "user_id",
+			"lookup": [
+				{
+					"name": "org_user_node_acc_main",
+					"mapping-field": "user_id",
+					"mapping-field-type": "Long",
+					"lookup-field": "micro_cluster_desc"
+				}
+			]
+		},
+		"org_name": {
+			"field": "org_id",
+			"lookup": [
+				{
+					"name": "org_user_node_acc",
+					"mapping-field": "org_id",
+					"mapping-field-type": "Long",
+					"lookup-field": "org_desc"
+				}
+			]
+		},
+		"node_id": {
+			"field": "node_id"
+		},
+		"node_name": {
+			"field": "node_id",
+			"lookup": [
+				{
+					"name": "org_user_node_acc",
+					"mapping-field": "node_id",
+					"mapping-field-type": "Long",
+					"lookup-field": "node_name"
+				}
+			]
+		},
+		"position": {
+			"field": "node_id",
+			"lookup": [
+				{
+					"name": "org_user_node_acc",
+					"mapping-field": "node_id",
+					"mapping-field-type": "Long",
+					"lookup-field": "position"
+				}
+			]
+		},
+		"user": {
+			"field": "user_id",
+			"lookup": [
+				{
+					"name": "org_user_node_acc",
+					"mapping-field": "user_id",
+					"lookup-field": "user_name"
+				}
+			]
+		},
+		"course_name": {
+			"field": "course_name"
+		},
+		"course_type": {
+			"field": "course_type",
+			"lookup": [
+				{
+					"name": "transitionValueCollection",
+					"mapping-field": "s_id",
+					"lookup-field": "description"
+				}
+			]
+		},
+		"level_no": {
+			"field": "level_no"
+		},
+		"level_name": {
+			"field": "level_name"
+		},
+		"qstn_name": {
+			"field": "",
+			"multiple-row-conf": {
+				"name": "qstn_dtls_success",
+				"lookup-field": "qstn_nm"
+			}
+		},
+		"ans_name": {
+			"field": "",
+			"multiple-row-conf": {
+				"name": "qstn_dtls_success",
+				"lookup-field": "answer_option"
+			}
+		},
+		"is_correct": {
+			"field": "",
+			"multiple-row-conf": {
+				"name": "qstn_dtls_success",
+				"lookup-field": "is_correct"
+			}
+		}
+	},
+	"multiple-row-conf": {
+		"qstn_dtls_success": {
+			"field": "answers",
+			"field-conf": [
+				"is_correct",
+				"qstn_name",
+				"ans_name"
+			]
+		}
+	},
+	"OutputConf": {
+		"type": "file",
+		"extension": "$output_file_type",
+		"file-path": "$output_file_path",
+		"file-name": "$output_file_name",
+		"file-name-pattern": "$output_file_date_patten",
+		"file-headers": "REGION|AREA|SALES_AREA|CLUSTER|MICRO_CLUSTER|ORGANIZATION_NAME|NODE_ID|NODE_NAME|POSITION|USER_NAME|COURSE_NAME|COURSE_TYPE|LEVEL_NO|LEVEL_NAME|QUESTION_NAME|ANSWER_NAME|IS_CORRECT",
+		"field-delimiter": "|",
+		"field-conf": [
+			{
+				"path": "region",
+				"type": "String"
+			},
+			{
+				"path": "area",
+				"type": "String"
+			},
+			{
+				"path": "sales_area",
+				"type": "String"
+			},
+			{
+				"path": "cluster",
+				"type": "String"
+			},
+			{
+				"path": "micro_cluster",
+				"type": "String"
+			},
+			{
+				"path": "org_name",
+				"type": "String"
+			},
+			{
+				"path": "node_id",
+				"type": "String"
+			},
+			{
+				"path": "node_name",
+				"type": "String"
+			},
+			{
+				"path": "position",
+				"type": "String"
+			},
+			{
+				"path": "user",
+				"type": "String"
+			},
+			{
+				"path": "course_name",
+				"type": "String"
+			},
+			{
+				"path": "course_type",
+				"type": "String"
+			},
+			{
+				"path": "level_no",
+				"type": "String"
+			},
+			{
+				"path": "level_name",
+				"type": "String"
+			},
+			{
+				"path": "qstn_name",
+				"type": "String"
+			},
+			{
+				"path": "ans_name",
+				"type": "String"
+			},
+			{
+				"path": "is_correct",
+				"type": "Conditional",
+				"expression-conf": "([is_correct]IN['Yes'])",
+				"if": "Pass",
+				"else": "Fail"
+			}
+		]
+	},
+	"SortConf": {
+		"extension": "csv",
+		"file-name-pattern": "yyyyMMddHHmmssSSS",
+		"sort-file-name_0": "collection1.sh",
+		"field-delimiter": "|"
+	}
+}
