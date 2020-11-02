@@ -30,11 +30,11 @@ package com.enhancesys.integration.services.dataengine.util;
 public interface DataConstants
 {
 
-	static class Env
+	public static class Env
 	{
 		static final  String PROJECT_LOC = "E:/interface/work/enh-work/DataEngine" + "/jobengineconf";
+		public final static String getValueFor(String key) {return PropertiesLoader.getValueFor(key);}
 	}
-
 
 	public static final String _PROJECT_LOC = Env.PROJECT_LOC;
 	public static final String _JOB_CONF_PATH = _PROJECT_LOC;
@@ -55,74 +55,74 @@ public interface DataConstants
 	public static final String REPORT_SERVICE_BASE_PATH                  = "/enhancesys/reportService/interface";
 	public static final long   REPORT_SERVICE_JOB_TIME_LIMIT             = 120;
 	public static final String REPORT_SERVICE_PROS_FILE                  = _PROJECT_LOC + "/common/jobConfiguration.properties";
-	public static final String REPORT_SERVICE_CONNECTION_ID              = PropertiesLoader.getValueFor("REPORT_SERVICE_CONNECTION_ID");
-	public static final String REPORT_SERVICE_SCHEMA                     = PropertiesLoader.getValueFor("REPORT_SERVICE_SCHEMA");
-	public static final String REPORT_SERVICE_COLLECTION                 = PropertiesLoader.getValueFor("REPORT_SERVICE_COLLECTION");
-	public static final String REPORT_SERVICE_COLLECTION_ID              = PropertiesLoader.getValueFor("REPORT_SERVICE_COLLECTION_ID");
-	public static final String REPORT_SERVICE_STORE_FILE_CONNECTION_ID   = PropertiesLoader.getValueFor("REPORT_SERVICE_STORE_FILE_CONNECTION_ID");
-	public static final String REPORT_SERVICE_STORE_FILE_SCHEMA          = PropertiesLoader.getValueFor("REPORT_SERVICE_STORE_FILE_SCHEMA");
+	public static final String REPORT_SERVICE_CONNECTION_ID              = Env.getValueFor("REPORT_SERVICE_CONNECTION_ID");
+	public static final String REPORT_SERVICE_SCHEMA                     = Env.getValueFor("REPORT_SERVICE_SCHEMA");
+	public static final String REPORT_SERVICE_COLLECTION                 = Env.getValueFor("REPORT_SERVICE_COLLECTION");
+	public static final String REPORT_SERVICE_COLLECTION_ID              = Env.getValueFor("REPORT_SERVICE_COLLECTION_ID");
+	public static final String REPORT_SERVICE_STORE_FILE_CONNECTION_ID   = Env.getValueFor("REPORT_SERVICE_STORE_FILE_CONNECTION_ID");
+	public static final String REPORT_SERVICE_STORE_FILE_SCHEMA          = Env.getValueFor("REPORT_SERVICE_STORE_FILE_SCHEMA");
 
 	// from JOB_SOURCE
 
-	public static final String GIT_BASH_PATH          = PropertiesLoader.getValueFor("GIT_BASH_PATH");
-	public static final String JOB_SOURCE             = PropertiesLoader.getValueFor("JOB_SOURCE");
-	public static final String TEMPLATE_SOURCE        = PropertiesLoader.getValueFor("TEMPLATE_SOURCE");
-	public static final String LOOKUP_CACHE_SIZE      = PropertiesLoader.getValueFor("LOOKUP_CACHE_SIZE");
-	public static final String MONGO_QUERY_BATCH_SIZE = PropertiesLoader.getValueFor("MONGO_QUERY_BATCH_SIZE");
-	public static final String TEMPLATE_CONFIG_PATH   = PropertiesLoader.getValueFor("TEMPLATE_CONFIG_PATH");
-	public static final String JOB_DUMP_TEMPLATE      = PropertiesLoader.getValueFor("JOB_DUMP_TEMPLATE");
-	public static final String OUT_FILE_PATH          = PropertiesLoader.getValueFor("OUT_FILE_PATH");
-	public static final String CUSTOM_TEMPLATE_CONFIG_PATH        = PropertiesLoader.getValueFor("CUSTOM_TEMPLATE_CONFIG_PATH");
+	public static final String GIT_BASH_PATH          = Env.getValueFor("GIT_BASH_PATH");
+	public static final String JOB_SOURCE             = Env.getValueFor("JOB_SOURCE");
+	public static final String TEMPLATE_SOURCE        = Env.getValueFor("TEMPLATE_SOURCE");
+	public static final String LOOKUP_CACHE_SIZE      = Env.getValueFor("LOOKUP_CACHE_SIZE");
+	public static final String MONGO_QUERY_BATCH_SIZE = Env.getValueFor("MONGO_QUERY_BATCH_SIZE");
+	public static final String TEMPLATE_CONFIG_PATH   = Env.getValueFor("TEMPLATE_CONFIG_PATH");
+	public static final String JOB_DUMP_TEMPLATE      = Env.getValueFor("JOB_DUMP_TEMPLATE");
+	public static final String OUT_FILE_PATH          = Env.getValueFor("OUT_FILE_PATH");
+	public static final String CUSTOM_TEMPLATE_CONFIG_PATH        = Env.getValueFor("CUSTOM_TEMPLATE_CONFIG_PATH");
 
-	public static final String POSTGRES_JDBC_DRIVER          = PropertiesLoader.getValueFor("POSTGRES_JDBC_DRIVER");
-	public static final String POSTGRES_JDBC_URL             = PropertiesLoader.getValueFor("POSTGRES_JDBC_URL");
-	public static final String POSTGRES_JDBC_USER            = PropertiesLoader.getValueFor("POSTGRES_JDBC_USER");
-	public static final String POSTGRES_JDBC_PASS            = PropertiesLoader.getValueFor("POSTGRES_JDBC_PASS");
-	public static final String POSTGRES_JDBC_SOCKET_TIMEOUT  = PropertiesLoader.getValueFor("POSTGRES_JDBC_SOCKET_TIMEOUT");
+	public static final String POSTGRES_JDBC_DRIVER          = Env.getValueFor("POSTGRES_JDBC_DRIVER");
+	public static final String POSTGRES_JDBC_URL             = Env.getValueFor("POSTGRES_JDBC_URL");
+	public static final String POSTGRES_JDBC_USER            = Env.getValueFor("POSTGRES_JDBC_USER");
+	public static final String POSTGRES_JDBC_PASS            = Env.getValueFor("POSTGRES_JDBC_PASS");
+	public static final String POSTGRES_JDBC_SOCKET_TIMEOUT  = Env.getValueFor("POSTGRES_JDBC_SOCKET_TIMEOUT");
 
-	public static final String MONGO_DB_IP1    = PropertiesLoader.getValueFor("MONGO_DB_IP1");
-	public static final String MONGO_DB_IP2    = PropertiesLoader.getValueFor("MONGO_DB_IP2");
-	public static final String MONGO_DB_IP3    = PropertiesLoader.getValueFor("MONGO_DB_IP3");
-	public static final String MONGO_DB_IP4    = PropertiesLoader.getValueFor("MONGO_DB_IP4");
-	public static final String MONGO_DB_IP5    = PropertiesLoader.getValueFor("MONGO_DB_IP5");
+	public static final String MONGO_DB_IP1    = Env.getValueFor("MONGO_DB_IP1");
+	public static final String MONGO_DB_IP2    = Env.getValueFor("MONGO_DB_IP2");
+	public static final String MONGO_DB_IP3    = Env.getValueFor("MONGO_DB_IP3");
+	public static final String MONGO_DB_IP4    = Env.getValueFor("MONGO_DB_IP4");
+	public static final String MONGO_DB_IP5    = Env.getValueFor("MONGO_DB_IP5");
 
-	public static final String MONGO_DB_PORT1  = PropertiesLoader.getValueFor("MONGO_DB_PORT1");
-	public static final String MONGO_DB_PORT2  = PropertiesLoader.getValueFor("MONGO_DB_PORT2");
-	public static final String MONGO_DB_PORT3  = PropertiesLoader.getValueFor("MONGO_DB_PORT3");
-	public static final String MONGO_DB_PORT4  = PropertiesLoader.getValueFor("MONGO_DB_PORT4");
-	public static final String MONGO_DB_PORT5  = PropertiesLoader.getValueFor("MONGO_DB_PORT5");
+	public static final String MONGO_DB_PORT1  = Env.getValueFor("MONGO_DB_PORT1");
+	public static final String MONGO_DB_PORT2  = Env.getValueFor("MONGO_DB_PORT2");
+	public static final String MONGO_DB_PORT3  = Env.getValueFor("MONGO_DB_PORT3");
+	public static final String MONGO_DB_PORT4  = Env.getValueFor("MONGO_DB_PORT4");
+	public static final String MONGO_DB_PORT5  = Env.getValueFor("MONGO_DB_PORT5");
 
-	public static final String MONGO_DB_USER                = PropertiesLoader.getValueFor("MONGO_DB_USER");
-	public static final String MONGO_DB_PASSWORD            = PropertiesLoader.getValueFor("MONGO_DB_PASSWORD");
-	public static final String MONGO_DB_DATABASE            = PropertiesLoader.getValueFor("MONGO_DB_DATABASE");
-	public static final String MONGO_CONNECTIONS_MAX        = PropertiesLoader.getValueFor("MONGO_CONNECTIONS_MAX");
-	public static final String MONGO_CONNECTION_TIMEOUT_MAX = PropertiesLoader.getValueFor("MONGO_CONNECTION_TIMEOUT_MAX");
+	public static final String MONGO_DB_USER                = Env.getValueFor("MONGO_DB_USER");
+	public static final String MONGO_DB_PASSWORD            = Env.getValueFor("MONGO_DB_PASSWORD");
+	public static final String MONGO_DB_DATABASE            = Env.getValueFor("MONGO_DB_DATABASE");
+	public static final String MONGO_CONNECTIONS_MAX        = Env.getValueFor("MONGO_CONNECTIONS_MAX");
+	public static final String MONGO_CONNECTION_TIMEOUT_MAX = Env.getValueFor("MONGO_CONNECTION_TIMEOUT_MAX");
 	public static final String MONGO_CONNECTION_KEEP_ALIVE = "false";
 	public static final String MONGO_CONNECTION_AUTO_CONNECT = "false";
 	public static final String MONGO_CONNECTION_AUTO_CONNECT_RETRY_MAX = "0";
 	
 	public static final String MONGO_R_123                        = "snoc-r1";
-	public static final String MONGO_DB_USER_R_123                = PropertiesLoader.getValueFor("MONGO_DB_USER");
-	public static final String MONGO_DB_PASSWORD_R_123            = PropertiesLoader.getValueFor("MONGO_DB_PASSWORD");
-	public static final String MONGO_DB_DATABASE_R_123            = PropertiesLoader.getValueFor("MONGO_DB_DATABASE");
-	public static final String MONGO_CONNECTIONS_MAX_R123         = PropertiesLoader.getValueFor("MONGO_CONNECTIONS_MAX");
-	public static final String MONGO_CONNECTION_TIMEOUT_MAX_R123  = PropertiesLoader.getValueFor("MONGO_CONNECTION_TIMEOUT_MAX");
+	public static final String MONGO_DB_USER_R_123                = Env.getValueFor("MONGO_DB_USER");
+	public static final String MONGO_DB_PASSWORD_R_123            = Env.getValueFor("MONGO_DB_PASSWORD");
+	public static final String MONGO_DB_DATABASE_R_123            = Env.getValueFor("MONGO_DB_DATABASE");
+	public static final String MONGO_CONNECTIONS_MAX_R123         = Env.getValueFor("MONGO_CONNECTIONS_MAX");
+	public static final String MONGO_CONNECTION_TIMEOUT_MAX_R123  = Env.getValueFor("MONGO_CONNECTION_TIMEOUT_MAX");
 	public static final String MONGO_DB_REPLICAS_R123             = MONGO_DB_IP1 + ":" + MONGO_DB_PORT1 + "," + MONGO_DB_IP2 + ":" + MONGO_DB_PORT2 + "," + MONGO_DB_IP3 + ":" + MONGO_DB_PORT3;
 
 	public static final String MONGO_R_4                          = "snoc-r4";
-	public static final String MONGO_DB_R4_USER                   = PropertiesLoader.getValueFor("MONGO_DB_R4_USER");
-	public static final String MONGO_DB_R4_PASSWORD               = PropertiesLoader.getValueFor("MONGO_DB_R4_PASSWORD");
-	public static final String MONGO_DB_R4_DATABASE               = PropertiesLoader.getValueFor("MONGO_DB_R4_DATABASE");
-	public static final String MONGO_CONNECTIONS_MAX_R4           = PropertiesLoader.getValueFor("MONGO_CONNECTIONS_MAX");
-	public static final String MONGO_CONNECTION_TIMEOUT_MAX_R4    = PropertiesLoader.getValueFor("MONGO_CONNECTION_TIMEOUT_MAX");
+	public static final String MONGO_DB_R4_USER                   = Env.getValueFor("MONGO_DB_R4_USER");
+	public static final String MONGO_DB_R4_PASSWORD               = Env.getValueFor("MONGO_DB_R4_PASSWORD");
+	public static final String MONGO_DB_R4_DATABASE               = Env.getValueFor("MONGO_DB_R4_DATABASE");
+	public static final String MONGO_CONNECTIONS_MAX_R4           = Env.getValueFor("MONGO_CONNECTIONS_MAX");
+	public static final String MONGO_CONNECTION_TIMEOUT_MAX_R4    = Env.getValueFor("MONGO_CONNECTION_TIMEOUT_MAX");
 	public static final String MONGO_DB_REPLICAS_R4               = MONGO_DB_IP4 + ":" + MONGO_DB_PORT4;
 
 	public static final String MONGO_R_5                          = "snoc-r5";
-	public static final String MONGO_DB_STANDALONE_USER           = PropertiesLoader.getValueFor("MONGO_DB_STANDALONE_USER");
-	public static final String MONGO_DB_STANDALONE_PASSWORD       = PropertiesLoader.getValueFor("MONGO_DB_STANDALONE_PASSWORD");
-	public static final String MONGO_DB_STANDALONE_DATABASE       = PropertiesLoader.getValueFor("MONGO_DB_STANDALONE_DATABASE");
-	public static final String MONGO_CONNECTIONS_MAX_R5           = PropertiesLoader.getValueFor("MONGO_CONNECTIONS_MAX");
-	public static final String MONGO_CONNECTION_TIMEOUT_MAX_R5    = PropertiesLoader.getValueFor("MONGO_CONNECTION_TIMEOUT_MAX");
+	public static final String MONGO_DB_STANDALONE_USER           = Env.getValueFor("MONGO_DB_STANDALONE_USER");
+	public static final String MONGO_DB_STANDALONE_PASSWORD       = Env.getValueFor("MONGO_DB_STANDALONE_PASSWORD");
+	public static final String MONGO_DB_STANDALONE_DATABASE       = Env.getValueFor("MONGO_DB_STANDALONE_DATABASE");
+	public static final String MONGO_CONNECTIONS_MAX_R5           = Env.getValueFor("MONGO_CONNECTIONS_MAX");
+	public static final String MONGO_CONNECTION_TIMEOUT_MAX_R5    = Env.getValueFor("MONGO_CONNECTION_TIMEOUT_MAX");
 	public static final String MONGO_DB_REPLICAS_R5               = MONGO_DB_IP5 + ":" + MONGO_DB_PORT5;
 
 
@@ -526,4 +526,5 @@ public interface DataConstants
 
 	public static final String CSV_DELIMITER_1 = "\\|";
 
+	
 }

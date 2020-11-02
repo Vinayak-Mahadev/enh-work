@@ -34,6 +34,7 @@ public class HadoopInterfaceTest
 	private Map<Long, String> remoteFileMap = null;
 	private Map<Long, String> remoteDirMap = null;
 
+	private String controlFileGenerationPath = null;
 	private String outputFileFolderControlFileGeneration = null;
 	private String inputFileFolderControlFileGeneration = null;
 	private String moveOrgnlFilesControlFileGeneration = null;
@@ -52,7 +53,7 @@ public class HadoopInterfaceTest
 
 		//		String interfaceIdStr = "1165 ,1166 ,1167 ,1168 ,1169 ,1170 ,1171 ,1172 ,1173 ,1174 ,1175 ,1176 ,1177 ,1178 ,1179 ,1180 ,1181 ,1182 ,1183";
 
-		String interfaceIdStr = "1165, 1169";
+		String interfaceIdStr = "1168, 1181";
 
 		HadoopInterfaceTest hitest = new HadoopInterfaceTest(interfaceIdStr);;
 
@@ -60,57 +61,19 @@ public class HadoopInterfaceTest
 
 		String fileName   = null;
 
-		hitest.rdbmsOperation.printFieldLookupConf(hitest.connection, interfaceIdStr, "all", true);
 
+		
+		dateInFile = "20200925";
+		fileName   = "20200701090001_101.csv";
+		hitest.start(dateInFile, fileName);
 
-		//		dateInFile = "20200620";
-		//		fileName   = "20200601090020_101.csv";
-		//		hitest.start(dateInFile, fileName);
-
-		dateInFile = "20200720";
+		dateInFile = "20201025";
 		fileName   = "20200701090001_102.csv";
 		hitest.start(dateInFile, fileName);
 
-		//		dateInFile = "20200820";
-		//		fileName   = "20200801090020_103.csv";
-		//		hitest.start( dateInFile, fileName);
-		//
-		//		dateInFile = "20200620";
-		//		fileName   = "20200601090020_201.csv";
-		//		hitest.start(dateInFile, fileName);
-		//
-		//		dateInFile = "20200720";
-		//		fileName   = "20200701090020_202.csv";
-		//		hitest.start(dateInFile, fileName);
-		//
-		//		dateInFile = "20200820";
-		//		fileName   = "20200801090020_203.csv";
-		//		hitest.start( dateInFile, fileName);
-		//
-		//		dateInFile = "20200610";
-		//		fileName   = "20200601090020_301.csv";
-		//		hitest.start(dateInFile, fileName);
-		//
-		//		dateInFile = "20200710";
-		//		fileName   = "20200701090001_302.csv";
-		//		hitest.start(dateInFile, fileName);
-		//
-		//		dateInFile = "20200810";
-		//		fileName   = "20200801090020_303.csv";
-		//		hitest.start( dateInFile, fileName);
-		//
-		//		dateInFile = "20200615";
-		//		fileName   = "20200601090020_401.csv";
-		//		hitest.start(dateInFile, fileName);
-		//
-		//		dateInFile = "20200715";
-		//		fileName   = "20200701090020_402.csv";
-		//		hitest.start(dateInFile, fileName);
-		//
-		//		dateInFile = "20200815";
-		//		fileName   = "20200801090020_403.csv";
-		//		hitest.start( dateInFile, fileName);
-
+		dateInFile = "20201101";
+		fileName   = "20200701090001_103.csv";
+		hitest.start(dateInFile, fileName);
 
 		hitest.end();
 	}
@@ -120,7 +83,7 @@ public class HadoopInterfaceTest
 		filedataCount = 100;
 		noOfFiles = 1;
 		wsdlUrl   = "http://50.17.26.200:8080/IntegrationServices/IntegrationManagement?wsdl";  
-		wsdlUrl   = "http://192.168.2.143:8080/IntegrationServices/IntegrationManagement?wsdl";  
+//		wsdlUrl   = "http://192.168.2.143:8080/IntegrationServices/IntegrationManagement?wsdl";  
 		userName  = "admin";                                                                     
 		password  = "admin";  
 		apiWaitInSecond = 10l;
@@ -147,16 +110,19 @@ public class HadoopInterfaceTest
 
 		idList = Arrays.asList(interfaceIdStr.split(",", -1));;
 		interfaceIdList = new ArrayList<Long>();
-		for (String string : idList) {
+
+		for (String string : idList) 
 			if(!string.trim().isEmpty())
 				interfaceIdList.add(Long.parseLong(string.trim()));
-		}
+		
 		Collections.sort(interfaceIdList);
 
-		inputFileFolderControlFileGeneration = "E:\\interface\\backend\\ControlFileGeneration\\";
-		outputFileFolderControlFileGeneration = "E:\\interface\\backend\\ControlFileGeneration\\raw\\";
-		moveOrgnlFilesControlFileGeneration = "E:\\interface\\backend\\ControlFileGeneration\\bkp\\";
-		uploadFileLoc = "E:/interface/backend/ControlFileGeneration/raw/";
+		controlFileGenerationPath = "E:/interface/backend/ControlFileGeneration";
+		
+		inputFileFolderControlFileGeneration = controlFileGenerationPath + "/";
+		outputFileFolderControlFileGeneration = controlFileGenerationPath + "/raw/";
+		moveOrgnlFilesControlFileGeneration = controlFileGenerationPath + "/bkp/";
+		uploadFileLoc = controlFileGenerationPath + "/raw/";
 
 		rdbmsOperation = new RDBMSOperation();
 		System.out.println(server);
@@ -164,6 +130,7 @@ public class HadoopInterfaceTest
 		remoteDirMap = rdbmsOperation.getInterfaceAttrValue(connection, "Remote Dir", interfaceIdList);
 		//entityOperations = EntityOperations.getInstance();
 		//entityOperations = EntityOperations.getInstance("com.finevm.enh.interfaces.entities.kpi.interface.cloud");
+		rdbmsOperation.printFieldLookupConf(connection, interfaceIdStr, "all", true);
 	}
 
 

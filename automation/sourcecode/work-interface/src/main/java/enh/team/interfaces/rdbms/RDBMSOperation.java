@@ -26,8 +26,8 @@ public class RDBMSOperation {
 
 	public void getDatabaseMetaData(Connection conn) throws SQLException
 	{
-		try {
-
+		try 
+		{
 			DatabaseMetaData dbmd = conn.getMetaData();
 			String[] types = {"TABLE"};
 			ResultSet rs = dbmd.getTables(null, null, "%", types);
@@ -287,7 +287,7 @@ public class RDBMSOperation {
 		try 
 		{
 			fos = new FileOutputStream(new File(filePath));
-			fos.write("DATE|MICRO|SITE_ID|ID_OUTLET|QTY|AMOUNT\n".getBytes());
+			fos.write("DATE|MICRO|SITE_ID|ID_OUTLET|QTY|AMOUNT|QSSO_STATUS\n".getBytes());
 
 			outlet = conn.createStatement().executeQuery("select ref_code_v from kpi.ms_org_master where org_type_n = 6   and sub_org_type_n = 66 and status_n = 174 order by 1;");
 			micro = conn.createStatement().executeQuery("select lookup_name_v from kpi.ms_lookup_master where lookup_type_n = (select lookup_type_n from kpi.ms_lookup_type_master where ext_lookup_type_n = 89) order by 1;");
@@ -296,7 +296,7 @@ public class RDBMSOperation {
 			int i = 0;
 			int fileSequence = 1;
 			int calcRowLimit = limit/fileCount; 
-
+			int QSSO_STATUS = 0;
 			ArrayList<String> microList = new ArrayList<String>();
 			while (micro.next()) {
 				microList.add(micro.getString(1));
@@ -308,9 +308,15 @@ public class RDBMSOperation {
 				for (String microId : microList) 
 				{
 					if(i%2 == 0)
-						fos.write((dateInFile+ "|"+microId+"|Test Site-"+i+ "|"+outlet.getString(1)+"|"+i+"|8579"+format.format(i+10)+".32\n").getBytes());
-					else
-						fos.write((dateInFile+ "|"+microId+"|Test Site-"+i+ "|"+outlet.getString(1)+"|"+i+"|1579"+format.format(i+10)+".13\n").getBytes());
+					{
+						fos.write((dateInFile+ "|"+microId+"|Test Site-"+i+ "|"+outlet.getString(1)+"|"+i+"|8579"+format.format(i+10)+".32|" + QSSO_STATUS + "\n").getBytes());
+						QSSO_STATUS = 1;
+					}
+					else 
+					{
+						fos.write((dateInFile+ "|"+microId+"|Test Site-"+i+ "|"+outlet.getString(1)+"|"+i+"|1579"+format.format(i+10)+".13|" + QSSO_STATUS + "\n").getBytes());
+						QSSO_STATUS = 0;
+					}
 					i++;
 
 					if(i % calcRowLimit == 0 && i != limit)
@@ -1186,7 +1192,7 @@ public class RDBMSOperation {
 		try 
 		{
 			fos = new FileOutputStream(new File(filePath));
-			fos.write("DATE|MICRO|SITE_ID|OUTLET|HIT|AMOUNT\n".getBytes());
+			fos.write("DATE|MICRO|SITE_ID|OUTLET|HIT|AMOUNT|QURO_STATUS\n".getBytes());
 			micro = conn.createStatement().executeQuery("select lookup_name_v from kpi.ms_lookup_master where lookup_type_n = (select lookup_type_n from kpi.ms_lookup_type_master where ext_lookup_type_n = 89) order by 1;");
 			out = conn.createStatement().executeQuery("select ref_code_v from kpi.ms_org_master where org_type_n = 6   and sub_org_type_n = 66 and status_n = 174 order by 1;");
 
@@ -1194,7 +1200,7 @@ public class RDBMSOperation {
 			int i = 0;			
 			int fileSequence = 1;
 			int calcRowLimit = limit/fileCount; 
-
+			int QURO_STATUS = 1;
 			ArrayList<String> outletList = new ArrayList<String>();
 			while (out.next()) {
 				outletList.add(out.getString(1));
@@ -1205,9 +1211,16 @@ public class RDBMSOperation {
 				for (String outlet : outletList)
 				{
 					if(i%2 == 0)
-						fos.write((monthInFile+"|"+micro.getString(1)+"|Test Site-"+i+"|"+outlet+"|1"+format.format(i) +"|136"+format.format(i) + ".11\n").getBytes());
-					else
-						fos.write((monthInFile+"|"+micro.getString(1)+"|Test Site-"+i+"|"+outlet+"|1"+format.format(i) +"|931"+format.format(i) + ".22\n").getBytes());
+					{
+						fos.write((monthInFile+"|"+micro.getString(1)+"|Test Site-"+i+"|"+outlet+"|1"+format.format(i) +"|136"+format.format(i) + ".11|" + QURO_STATUS +"\n").getBytes());
+						QURO_STATUS = 1;
+					}
+						
+					else 
+					{
+						fos.write((monthInFile+"|"+micro.getString(1)+"|Test Site-"+i+"|"+outlet+"|1"+format.format(i) +"|931"+format.format(i) + ".22|" + QURO_STATUS +"\n").getBytes());
+						QURO_STATUS = 0;						
+					}
 					i++;
 
 					if(i % calcRowLimit == 0 && i != limit)

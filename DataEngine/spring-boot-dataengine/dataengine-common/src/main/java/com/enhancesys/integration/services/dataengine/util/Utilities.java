@@ -1115,4 +1115,17 @@ public class Utilities
 		}
 		return response;
 	}
+	
+	public static List<Long> getLongLists(String key)
+	{
+		List<Long> returnList = new ArrayList<Long>();
+		if(key != null && !"".equals(key.trim()))
+		{
+			for(String str : key.split(","))
+			{
+				returnList.add(Long.valueOf(str));
+			}
+		}
+		return returnList;
+	}
 }
