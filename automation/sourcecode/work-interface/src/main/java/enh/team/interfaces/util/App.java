@@ -7,6 +7,7 @@ public class App {
 
 	public static void main(String[] args) {
 
+		/*
 		List<String> dataList = null;
 		List<String> validationConfList = null;
 		String line = null;
@@ -36,7 +37,18 @@ public class App {
 		dataList = Arrays.asList(line.split("\\|"));;
 		System.out.println(Utility.basicValidation(validationConfList, dataList, line));
 
-
+*/
+		String str1 ="MONTH_ID|CLUSTER|MPC_CODE|PAYMENT_ALLOCATION";
+		String str2 ="MONTH_ID|CLUSTER|MPC_CODE|PAYMENT_ALLOCATION";
+		if (!str1.trim().equalsIgnoreCase(str2.trim()))
+		{
+			System.out.println(str1);
+			System.out.println(str2);
+		}
+		else
+		{
+			System.out.println("same");
+		}
 
 	}
 

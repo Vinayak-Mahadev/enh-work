@@ -7,9 +7,12 @@ import java.io.IOException;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 
+import com.mongodb.BasicDBList;
 import com.mongodb.BasicDBObject;
+import com.mongodb.DBObject;
 
 public class App {
 
@@ -46,14 +49,44 @@ public class App {
 			SimpleDateFormat foss = new SimpleDateFormat("yyyy-MM-dd");
 			SimpleDateFormat tnm = new SimpleDateFormat("yyyyMMdd");
 			System.out.println(foss.parse(data));*/
-			
-			
+
+
 			//interfaceModule_uploadFiles_validation(null, null, null);
 			//interfaceModule_uploadFiles_validation("total_revenue", "yyyyMMddHHmmss", "total_revenue_20200626000000");
-//			String monthInFile = "12345455";
-//			monthInFile = monthInFile.substring(0, 6);
-//			System.out.println(monthInFile);
-			runtimeTest();
+			//			String monthInFile = "12345455";
+			//			monthInFile = monthInFile.substring(0, 6);
+			//			System.out.println(monthInFile);
+			//			runtimeTest();
+
+//			String headerWithType = "REPORT_NAME|CHANNEL|REGION|AREA|SALESAREA|CLUSTER|MICROCLUSTER|ADDITIONALTERRITORY|TERRITORYID|SUBORGTYPE|ORGANIZATIONID|ORGSHORTCODE|ORGANIZATIONNAME|PRODUCTBRAND|PRODUCTTYPE|PRODUCTCATEGORY|PRODUCTID|PRODUCTEXTID|PRODUCTNAME|QTY|AVERAGEQTY|BUSINESSDAYS|";
+//			//String headerWithType = "REPORT_NAME:String|CHANNEL:String|REGION:String|AREA:String|SALESAREA:String|CLUSTER:String|MICROCLUSTER:String|ADDITIONALTERRITORY:String|TERRITORYID:String|SUBORGTYPE:String|ORGANIZATIONID:String|ORGSHORTCODE:String|ORGANIZATIONNAME:String|PRODUCTBRAND:String|PRODUCTTYPE:String|PRODUCTCATEGORY:String|PRODUCTID:String|PRODUCTEXTID:String|PRODUCTNAME:String|QTY:String|AVERAGEQTY:String|BUSINESSDAYS:String";
+//			String delimiter = "\\|";
+//			String childdelimiter = ":";
+//			List<String> headerWithTypeList = null;
+//			DBObject jobIdDbObject = new BasicDBObject();
+//			BasicDBList primaryList = new BasicDBList();
+//
+//			primaryList.add(new BasicDBObject("query", "$sql_query"));
+//
+//			headerWithTypeList = Arrays.asList(headerWithType.split(delimiter, -1));
+////
+////			jobIdDbObject.put("Primary", primaryList);
+////			jobIdDbObject.put("Lookup", new BasicDBObject());
+////			jobIdDbObject.put("Configuration", prepareConfiguration(headerWithTypeList, childdelimiter));
+////			jobIdDbObject.put("OutputConf", prepareOutputConf(headerWithTypeList, childdelimiter));
+////			jobIdDbObject.put("SortConf", new BasicDBObject("extension", "csv").append("file-name-pattern", "yyyyMMddHHmmssSSS").append("sort-file-name_0", "collection1.sh").append("field-delimiter", "|"));
+//
+//			System.out.println(headerWithTypeList);
+			
+			SimpleDateFormat dateFormat = new SimpleDateFormat("dd.MM.yyyy h:ss");
+			String date = "Fri Sep 25 15:37:36 EEST 2020";
+			System.out.println(dateFormat.parse("30.08.2020 4:08"));
+			System.out.println(dateFormat.format(dateFormat.parse("30.08.2020 4:08")));
+			
+			SimpleDateFormat mongoDateFormat = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSS'Z'");
+			
+			System.out.println(mongoDateFormat.format(dateFormat.parse("30.08.2020 4:08")));
+			
 		} 
 		catch (Exception e) 
 		{
@@ -61,19 +94,94 @@ public class App {
 		}
 	}
 
+	public static DBObject prepareOutputConf(final List<String> headerList, final String childdelimiter) 
+	{
+		DBObject dbObject = new BasicDBObject();
+		DBObject childDBDbObject = new BasicDBObject();
+		String path = null;
+		String type = "String";
+		BasicDBList fieldconfList = new BasicDBList();
+		String header = "";
+		try
+		{
+			dbObject.put("type", "file");
+			dbObject.put("extension", "$output_file_type");
+			dbObject.put("file-path", "$output_file_path");
+			dbObject.put("file-name", "$output_file_name");
+			dbObject.put("file-name-pattern", "$output_file_date_patten");
+
+			if(headerList == null || headerList.size() == 0);
+			else
+				for (int i = 0; i < headerList.size() ; i++) 
+				{
+					if(headerList.get(i).trim().toLowerCase().split(":").length == 2) {
+						path = headerList.get(i).trim().toLowerCase().split(":")[0];
+						type = headerList.get(i).trim().toLowerCase().split(":")[1];
+					}
+					else 
+						path = headerList.get(i).trim().toLowerCase();
+
+					childDBDbObject = new BasicDBObject();
+					childDBDbObject.put("path", path);
+					childDBDbObject.put("type", type);
+					fieldconfList.add(childDBDbObject);
+					header = header + path.toUpperCase()+"|";
+				}
+
+			dbObject.put("file-headers", header.substring(0, header.length()-1));
+			dbObject.put("field-delimiter", "|");
+			dbObject.put("field-conf", fieldconfList);
+
+			return dbObject;
+		}
+		finally 
+		{
+			header = null;
+			path = null;
+			type = null;
+			dbObject = null;
+			fieldconfList = null;
+			childDBDbObject = null;
+		}
+	}
+	public static DBObject prepareConfiguration(final List<String> headerList, final String childdelimiter) 
+	{
+		DBObject dbObject = new BasicDBObject();
+		DBObject childDBDbObject = new BasicDBObject();
+		String key = null;
+		try
+		{
+			if(headerList == null || headerList.size() == 0);
+			else
+				for (int i = 0; i < headerList.size() ; i++) 
+				{
+					key = headerList.get(i).trim().toLowerCase().split(":")[0];
+					childDBDbObject = new BasicDBObject("field", key);
+					dbObject.put(key, childDBDbObject);
+				}
+			return dbObject;
+		}
+		finally 
+		{
+			key = null;
+			dbObject = null;
+			childDBDbObject = null;
+		}
+	}
+
 	public static void runtimeTest() {
 		//String cmd = "C:/Program Files/Git/git-bash.exe E:/interface/backend/script.sh";
-		 String[] command = new String[]{"C:/Program Files/Git/git-bash.exe", "E:/interface/backend/script.sh"};
+		String[] command = new String[]{"C:/Program Files/Git/git-bash.exe", "E:/interface/backend/script.sh"};
 		Process process = null;
 		try 
 		{
 			process = Runtime.getRuntime().exec(command);
-//			process.wait(5000);
+			process.wait(5000);
 		} 
 		catch (Exception e) {
-		e.printStackTrace();
+			e.printStackTrace();
 		}
-		
+
 	}
 	static void test()
 	{
@@ -82,7 +190,7 @@ public class App {
 		String line = null;
 		String fileAbPath = "C:\\Users\\vinayak\\Downloads\\3Query - Copy.txt";
 		String[] attr = null;
-		
+
 		try 
 		{
 			reader = new BufferedReader(new FileReader(new File(fileAbPath)));
@@ -107,7 +215,7 @@ public class App {
 			reader = null;
 		}
 	}
-	
+
 	void sample()
 	{
 
@@ -288,4 +396,6 @@ public class App {
 		else
 			System.out.println("File is valid");
 	}
+
+
 }

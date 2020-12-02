@@ -92,7 +92,8 @@ public class RDBMSOperation {
 					prepareFileFor1182(conn, dateInFile, tempPath, limit, fileCount);
 				if(id == 1183l)
 					prepareFileFor1183(conn, dateInFile, tempPath, limit, fileCount);
-
+				if(id == 1185l)
+					prepareFileFor1185(conn, dateInFile, tempPath, limit, fileCount);
 
 			}
 		} 
@@ -324,7 +325,7 @@ public class RDBMSOperation {
 						System.out.println("Total Rows : " + (i/fileSequence));
 						fos.close();
 						fos = new FileOutputStream(new File(filePath.replace(".csv", "_00" + fileSequence + ".csv")));
-						fos.write("DATE|MICRO|SITE_ID|ID_OUTLET|QTY|AMOUNT\n".getBytes());
+						fos.write("DATE|MICRO|SITE_ID|ID_OUTLET|QTY|AMOUNT|QSSO_STATUS\n".getBytes());
 						fileSequence++;
 					}
 
@@ -1215,7 +1216,7 @@ public class RDBMSOperation {
 						fos.write((monthInFile+"|"+micro.getString(1)+"|Test Site-"+i+"|"+outlet+"|1"+format.format(i) +"|136"+format.format(i) + ".11|" + QURO_STATUS +"\n").getBytes());
 						QURO_STATUS = 1;
 					}
-						
+
 					else 
 					{
 						fos.write((monthInFile+"|"+micro.getString(1)+"|Test Site-"+i+"|"+outlet+"|1"+format.format(i) +"|931"+format.format(i) + ".22|" + QURO_STATUS +"\n").getBytes());
@@ -1228,7 +1229,7 @@ public class RDBMSOperation {
 						System.out.println("Total Rows : " + (i/fileSequence));
 						fos.close();
 						fos = new FileOutputStream(new File(filePath.replace(".csv", "_00" + fileSequence + ".csv")));
-						fos.write("DATE|MICRO|SITE_ID|OUTLET|HIT|AMOUNT\n".getBytes());
+						fos.write("DATE|MICRO|SITE_ID|OUTLET|HIT|AMOUNT|QURO_STATUS\n".getBytes());
 						fileSequence++;
 					}
 
@@ -1341,6 +1342,63 @@ public class RDBMSOperation {
 			fos.close();
 			System.out.print("File generated       ");
 			System.out.println("Total Rows : " + (i/fileSequence) + "   1183");
+		}
+		catch (Exception e) 
+		{
+			throw e;
+		}
+	}
+
+	public void prepareFileFor1185(Connection conn, String dateInFile, String filePath, int limit, int fileCount) throws Exception
+	{
+		ResultSet cluster = null;
+		FileOutputStream fos = null;
+		try 
+		{
+			fos = new FileOutputStream(new File(filePath));
+			//			fos.write("DATE|CLUSTER|MICRO|SITE_ID|ID_OUTLET|STATUS_INJECTION|FLAG_ACM|COUNT_MSISDN\n".getBytes());
+			fos.write("DATE|CLUSTER|PROGMOTER_ORG_ID|CHECKIN_TYPE|QTY\n".getBytes());
+
+			cluster = conn.createStatement().executeQuery("select lookup_name_v from kpi.ms_lookup_master where lookup_type_n = (select lookup_type_n from kpi.ms_lookup_type_master where ext_lookup_type_n = 88) order by 1 limit 200;");
+
+			limit = limit * fileCount;
+			int i = 0;
+			int fileSequence = 1;
+			int calcRowLimit = limit/fileCount; 
+
+			List<String> clusterList = new ArrayList<String>();
+			int clusterCount = 0;
+
+			while (cluster.next()) {
+				clusterList.add(cluster.getString(1));
+			}
+
+			for (int j = 0; j < limit; j++) 
+			{
+
+				if(clusterCount == clusterList.size())
+					clusterCount = 0;
+
+				if(j%2 == 0)
+					fos.write((dateInFile + "|" + clusterList.get(clusterCount ++) + "|Test Site-"+j + "|On Location|" + (j+2*3) +"\n").getBytes());
+				else
+					fos.write((dateInFile + "|" + clusterList.get(clusterCount ++) + "|Test Site-"+j + "|Outside Location|" + ((j+4*5)-21) +"\n").getBytes());
+
+				i++;
+				if(i % calcRowLimit == 0 && i != limit)
+				{
+					System.out.println("Total Rows : " + (i/fileSequence));
+					fos.close();
+					fos = new FileOutputStream(new File(filePath.replace(".csv", "_00" + fileSequence + ".csv")));
+					fos.write("DATE|CLUSTER|PROGMOTER_ORG_ID|CHECKIN_TYPE|QTY\n".getBytes());
+					fileSequence++;
+				}
+
+			}
+
+			fos.close();
+			System.out.print("File generated       ");
+			System.out.println("Total Rows : " + (i/fileSequence) + "   1185");
 		}
 		catch (Exception e) 
 		{
@@ -1596,6 +1654,17 @@ public class RDBMSOperation {
 					System.out.println( "-- MONTHLY TABLE"+ "	kpi." + jsonObject.get("monthly_table").toString().toLowerCase());
 					System.out.print( "-- SOURCE"+ "\t" + fields.get("source_field")+ "\t" );
 				}
+				else
+				{
+					System.out.println("-- INTERFACE ID\t" + resultSet.getString(1));
+					System.out.println("-- INTERFACE NAME\t" + resultSet.getString(2));
+					System.out.print( "-- ACTOR"+ "\t" + fields.get("actor_field")+ "\t" );
+					System.out.println( "-- DAILY TABLE"+ "	kpi." + jsonObject.get("daily_table").toString().toLowerCase());
+					System.out.print( "-- METRIC"+ "\t" + fields.get("metric_field")+ "\t" );
+					System.out.println( "-- MONTHLY TABLE"+ "	kpi." + jsonObject.get("monthly_table").toString().toLowerCase());
+					System.out.println( "-- SOURCE"+ "\t" + fields.get("source_field")+ "\t" );
+					
+				}
 				//System.out.println("FAILURE TABLE" + "	kpi.TR_TEMP_HADOOP_FAILURE_AGGR".toLowerCase());
 
 				if(choice.equalsIgnoreCase("all") || choice.equalsIgnoreCase("select")) 
@@ -1615,12 +1684,23 @@ public class RDBMSOperation {
 						System.out.println("select * from kpi." + jsonObject.get("monthly_table").toString().toLowerCase()+";\n");
 
 				}
+				else
+				{
+					if(duplicate_validation_conf != null) 
+					{
+						System.out.print( "--INSTANCE"+ "\t" + fields.get("instance_field")+ "\t" );
+						System.out.println( "--VALIDATION TABLE"+ "	kpi." + duplicate_validation_conf.get("table_name").toString().toLowerCase() + "\n");
+					}
+				}
 
 				if(deleteQueryCmdFlag)
 					System.out.println("\n/*");
+				
 				if(choice.equalsIgnoreCase("all") || choice.equalsIgnoreCase("delete")) 
 				{
-					System.out.println("delete from kpi.tr_temp_hadoop_failure_aggr where file_id_n in (select file_id_n from interface.tr_interface_file_summary_details where file_id_n in (select file_id_n from interface.tr_interface_file_summary where interface_id_n in ("+resultSet.getString(1)+")));");
+					//System.out.println("delete from kpi.tr_temp_hadoop_failure_aggr where file_id_n in (select file_id_n from interface.tr_interface_file_summary_details where file_id_n in (select file_id_n from interface.tr_interface_file_summary where interface_id_n in ("+resultSet.getString(1)+")));");
+					
+					
 					System.out.println("delete from interface.tr_interface_file_summary_details where file_id_n in (select file_id_n from interface.tr_interface_file_summary where interface_id_n in ("+resultSet.getString(1)+"));");
 					System.out.println("delete from interface.tr_interface_file_summary where interface_id_n in ("+resultSet.getString(1)+");");
 
@@ -1631,15 +1711,21 @@ public class RDBMSOperation {
 					if(!jsonObject.get("monthly_table").toString().trim().isEmpty())
 						System.out.println("delete from kpi." + jsonObject.get("monthly_table").toString().toLowerCase()+";");
 
+					if(jsonObject.get("table_name")!= null && !jsonObject.get("table_name").toString().trim().isEmpty()) 
+						System.out.println("delete from kpi."+jsonObject.get("table_name")+";");
+
 				}
 
 				if(deleteQueryCmdFlag)
 					System.out.println("*/\n\n\n");
-
+				
+				if(deleteQueryCmdFlag)
 				System.out.println("select * from kpi.tr_temp_hadoop_failure_aggr where file_id_n in (0);");
 				System.out.println(lineBreak);
 				duplicate_validation_conf = null;
 			}
+			if(deleteQueryCmdFlag)
+				
 			System.out.println(summaryDetails);
 		}
 		catch (Exception e) 

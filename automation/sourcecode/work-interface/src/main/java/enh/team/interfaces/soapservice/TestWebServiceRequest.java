@@ -82,7 +82,7 @@ public class TestWebServiceRequest{
 
 	private String sendSoapRequest(String wsdlUrl, String reqString, String userName, String password, Long interfaceId) throws Exception 
 	{  
-		System.out.println("Entry sendSoapRequest..wsdlUrl: "+wsdlUrl);
+		System.out.println("InterfaceId :: "+ interfaceId + " Entry sendSoapRequest..wsdlUrl: "+wsdlUrl);
 
 		URL url = null;
 		URLConnection connection = null;
@@ -174,7 +174,7 @@ public class TestWebServiceRequest{
 			encoding = null;
 
 
-			System.out.println("Exit sendSoapRequest..");
+			System.out.println("InterfaceId :: " + interfaceId + " Exit sendSoapRequest..");
 
 		}
 	}     

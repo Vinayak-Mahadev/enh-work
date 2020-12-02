@@ -706,4 +706,28 @@ public class Utility
 	static int TEMP_TABLES_ERROR_MSG_LENGTH=255;
 	static int ACTUAL_SERIAL_LENGTH=15;
 
+	public static Map<String, Integer> getHeaderMap(String header, String delimiter) throws Exception
+	{
+		Map<String, Integer> headerMap = null;
+		List<String> headerList = null;
+		try
+		{
+			headerMap = new HashMap<String, Integer>();
+			headerList = Arrays.asList(header.split(delimiter));
+			for(int i = 0; i<headerList.size(); i++)
+			{
+				headerMap.put(headerList.get(i), i);
+			}
+			return headerMap;
+		}
+		catch(Exception exception)
+		{
+			throw exception;
+		}
+		finally 
+		{
+			headerMap = null;
+			headerList = null;
+		}
+	}
 }
