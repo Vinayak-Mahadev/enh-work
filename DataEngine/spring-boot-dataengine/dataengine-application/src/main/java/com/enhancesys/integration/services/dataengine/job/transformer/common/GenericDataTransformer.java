@@ -323,29 +323,29 @@ public class GenericDataTransformer extends JobProcessor implements DataTransfor
 						}
 						else 
 							fieldValue = dataObject.get(configurationField.toString()) != null ? dataObject.get(configurationField.toString()) : "";
-							/*if(fieldValue != null && !fieldValue.toString().isEmpty())
+						/*if(fieldValue != null && !fieldValue.toString().isEmpty())
 							tempObject.put(fieldKey.toString(), fieldValue);
 						else
 							tempObject.put(fieldKey.toString(), "");*/
 
-							if(fieldValue != null && !fieldValue.toString().isEmpty())
+						if(fieldValue != null && !fieldValue.toString().isEmpty())
+						{
+							if(fieldObject.containsKey(DataConstants.QUERY_FIELDS))
 							{
-								if(fieldObject.containsKey(DataConstants.QUERY_FIELDS))
-								{
-									processQueryFields(fieldObject, dataObject, tempObject, fieldKey);
-								}
+								processQueryFields(fieldObject, dataObject, tempObject, fieldKey);
 							}
+						}
 
-							if(fieldObject.get(DataConstants.EXPRESSION) != null && !fieldObject.get(DataConstants.EXPRESSION).toString().trim().isEmpty())
-							{
-								fieldObject.put("field-key", fieldKey.toString());
-								expressionFields.add(fieldObject);
-							}
-							else
-							{
-								fieldValue = validateData(fieldValue, dataObject, fieldObject);
-								tempObject.put(fieldKey.toString(), fieldValue);
-							}
+						if(fieldObject.get(DataConstants.EXPRESSION) != null && !fieldObject.get(DataConstants.EXPRESSION).toString().trim().isEmpty())
+						{
+							fieldObject.put("field-key", fieldKey.toString());
+							expressionFields.add(fieldObject);
+						}
+						else
+						{
+							fieldValue = validateData(fieldValue, dataObject, fieldObject);
+							tempObject.put(fieldKey.toString(), fieldValue);
+						}
 					}
 
 					for(Object exFieldObject : expressionFields)
@@ -637,6 +637,84 @@ public class GenericDataTransformer extends JobProcessor implements DataTransfor
 								else
 									conditionFieldValue = fetchObject.get(fieldCondObject.get(DataConstants.COND_FIELD)) != null ? fetchObject.get(fieldCondObject.get(DataConstants.COND_FIELD)).toString() : "";
 
+								if(conditionFieldValue == null || conditionFieldValue.trim().isEmpty())
+									tempValue = "";
+								else
+								{
+									if(fieldCondObject.get(DataConstants.COND_VALUE) != null)
+									{
+										if(DataConstants.EQUALS.equalsIgnoreCase(fieldCondObject.get(DataConstants.COND_OPERATION).toString()))
+										{
+											if(fieldCondObject.get(DataConstants.COND_VALUE).toString().equals(conditionFieldValue))
+												condFlag = true;
+											else
+												condFlag = false;
+										}
+										else if(DataConstants.NOT_EQUALS.equalsIgnoreCase(fieldCondObject.get(DataConstants.COND_OPERATION).toString()))
+										{
+											if(!fieldCondObject.get(DataConstants.COND_VALUE).toString().equals(conditionFieldValue))
+												condFlag = true;
+											else
+												condFlag = false;
+										}
+										else if(DataConstants.IN.equalsIgnoreCase(fieldCondObject.get(DataConstants.COND_OPERATION).toString()))
+										{
+											if(fieldCondObject.get(DataConstants.COND_VALUE) instanceof JSONArray)
+											{
+												condValueArr = (JSONArray) fieldCondObject.get(DataConstants.COND_VALUE);
+												boolean flag = false;
+												condValueLabel : for(Object condValue : condValueArr)
+												{
+													if(condValue.toString().equals(conditionFieldValue))
+													{
+														flag = true;
+														break condValueLabel;
+													}
+												}
+												if(flag)
+													condFlag = true;
+												else 
+													condFlag = false;
+											}
+										}
+									}
+								}
+							}
+							else
+							{
+								if(fieldCondObject.get(DataConstants.COND_VALUE).toString().equals(conditionFieldValue))
+									condFlag = true;
+								else
+									condFlag = false;
+							}
+						}
+						if(condFlag)
+							tempValue = fetchObject.get(fieldObject.get(DataConstants.FETCH_FIELD).toString()) != null ? fetchObject.get(fieldObject.get(DataConstants.FETCH_FIELD).toString()) : "";
+						else
+							tempValue = "";
+					}
+					else if(fieldValue instanceof JSONArray)
+					{
+						dataArr : for(Object obj : (JSONArray) fieldValue)
+						{
+							fetchObject = (JSONObject) obj;
+							LOGGER.debug("fetchObject : " + fetchObject);
+							boolean condFlag = false;
+							for(Object fieldCondObj : (JSONArray) fieldObject.get(DataConstants.FETCH_ON_CONDITION))
+							{
+								fieldCondObject = (JSONObject) fieldCondObj;
+								LOGGER.debug("fieldCondObject : " + fieldCondObject);
+								if(fieldCondObject.get(DataConstants.COND_OPERATION) != null)
+								{
+									if(fieldCondObject.get(DataConstants.COND_FIELD).toString().contains("."))
+									{
+										values = Utilities.getFieldValue(fieldCondObject.get(DataConstants.COND_FIELD).toString(), fetchObject);
+										if(values != null && !values.isEmpty())
+											conditionFieldValue = values.iterator().next().toString();
+									}
+									else
+										conditionFieldValue = fetchObject.get(fieldCondObject.get(DataConstants.COND_FIELD)) != null ? fetchObject.get(fieldCondObject.get(DataConstants.COND_FIELD)).toString() : "";
+
 									if(conditionFieldValue == null || conditionFieldValue.trim().isEmpty())
 										tempValue = "";
 									else
@@ -679,84 +757,6 @@ public class GenericDataTransformer extends JobProcessor implements DataTransfor
 											}
 										}
 									}
-							}
-							else
-							{
-								if(fieldCondObject.get(DataConstants.COND_VALUE).toString().equals(conditionFieldValue))
-									condFlag = true;
-								else
-									condFlag = false;
-							}
-						}
-						if(condFlag)
-							tempValue = fetchObject.get(fieldObject.get(DataConstants.FETCH_FIELD).toString()) != null ? fetchObject.get(fieldObject.get(DataConstants.FETCH_FIELD).toString()) : "";
-							else
-								tempValue = "";
-					}
-					else if(fieldValue instanceof JSONArray)
-					{
-						dataArr : for(Object obj : (JSONArray) fieldValue)
-						{
-							fetchObject = (JSONObject) obj;
-							LOGGER.debug("fetchObject : " + fetchObject);
-							boolean condFlag = false;
-							for(Object fieldCondObj : (JSONArray) fieldObject.get(DataConstants.FETCH_ON_CONDITION))
-							{
-								fieldCondObject = (JSONObject) fieldCondObj;
-								LOGGER.debug("fieldCondObject : " + fieldCondObject);
-								if(fieldCondObject.get(DataConstants.COND_OPERATION) != null)
-								{
-									if(fieldCondObject.get(DataConstants.COND_FIELD).toString().contains("."))
-									{
-										values = Utilities.getFieldValue(fieldCondObject.get(DataConstants.COND_FIELD).toString(), fetchObject);
-										if(values != null && !values.isEmpty())
-											conditionFieldValue = values.iterator().next().toString();
-									}
-									else
-										conditionFieldValue = fetchObject.get(fieldCondObject.get(DataConstants.COND_FIELD)) != null ? fetchObject.get(fieldCondObject.get(DataConstants.COND_FIELD)).toString() : "";
-
-										if(conditionFieldValue == null || conditionFieldValue.trim().isEmpty())
-											tempValue = "";
-										else
-										{
-											if(fieldCondObject.get(DataConstants.COND_VALUE) != null)
-											{
-												if(DataConstants.EQUALS.equalsIgnoreCase(fieldCondObject.get(DataConstants.COND_OPERATION).toString()))
-												{
-													if(fieldCondObject.get(DataConstants.COND_VALUE).toString().equals(conditionFieldValue))
-														condFlag = true;
-													else
-														condFlag = false;
-												}
-												else if(DataConstants.NOT_EQUALS.equalsIgnoreCase(fieldCondObject.get(DataConstants.COND_OPERATION).toString()))
-												{
-													if(!fieldCondObject.get(DataConstants.COND_VALUE).toString().equals(conditionFieldValue))
-														condFlag = true;
-													else
-														condFlag = false;
-												}
-												else if(DataConstants.IN.equalsIgnoreCase(fieldCondObject.get(DataConstants.COND_OPERATION).toString()))
-												{
-													if(fieldCondObject.get(DataConstants.COND_VALUE) instanceof JSONArray)
-													{
-														condValueArr = (JSONArray) fieldCondObject.get(DataConstants.COND_VALUE);
-														boolean flag = false;
-														condValueLabel : for(Object condValue : condValueArr)
-														{
-															if(condValue.toString().equals(conditionFieldValue))
-															{
-																flag = true;
-																break condValueLabel;
-															}
-														}
-														if(flag)
-															condFlag = true;
-														else 
-															condFlag = false;
-													}
-												}
-											}
-										}
 								}
 								else
 								{
@@ -807,52 +807,52 @@ public class GenericDataTransformer extends JobProcessor implements DataTransfor
 												else
 													val_1 = dataObject.get(condFieldArr.get(i)) != null ? dataObject.get(condFieldArr.get(i)).toString().trim() : "";
 
-													if(condFieldArr.get(i+1).toString().contains("."))
-													{
-														values = Utilities.getFieldValue(condFieldArr.get(i+1).toString(), dataObject);
-														if(values != null && !values.isEmpty())
-															val_2 = values.iterator().next().toString();
-													}
-													else 
-														val_2 = dataObject.get(condFieldArr.get(i+1)) != null ? dataObject.get(condFieldArr.get(i+1)).toString().trim() : "";
+												if(condFieldArr.get(i+1).toString().contains("."))
+												{
+													values = Utilities.getFieldValue(condFieldArr.get(i+1).toString(), dataObject);
+													if(values != null && !values.isEmpty())
+														val_2 = values.iterator().next().toString();
+												}
+												else 
+													val_2 = dataObject.get(condFieldArr.get(i+1)) != null ? dataObject.get(condFieldArr.get(i+1)).toString().trim() : "";
 
-														if(DataConstants.EQUALS.equalsIgnoreCase(fieldCondObject.get(DataConstants.COND_OPERATION).toString()))
+												if(DataConstants.EQUALS.equalsIgnoreCase(fieldCondObject.get(DataConstants.COND_OPERATION).toString()))
+												{
+													if(!val_1.equals(val_2))
+													{
+														tempValue = "";
+														break condFields;
+													}
+												}
+												else if(DataConstants.NOT_EQUALS.equalsIgnoreCase(fieldCondObject.get(DataConstants.COND_OPERATION).toString()))
+												{
+													if(val_1.equals(val_2))
+													{
+														tempValue = "";
+														break condFields;
+													}
+												}
+												else if(DataConstants.IN.equalsIgnoreCase(fieldCondObject.get(DataConstants.COND_OPERATION).toString()))
+												{
+													if(fieldCondObject.get(DataConstants.COND_VALUE) instanceof JSONArray)
+													{
+														condValueArr = (JSONArray) fieldCondObject.get(DataConstants.COND_VALUE);
+														boolean flag = false;
+														condValueLabel : for(Object condValue : condValueArr)
 														{
-															if(!val_1.equals(val_2))
+															//need to cross verify this logic..
+															if(condValue.toString().equals(dataObject.get(fieldCondObject.get(DataConstants.COND_FIELD)).toString())) 
 															{
-																tempValue = "";
-																break condFields;
+																flag = true;
+																break condValueLabel;
 															}
 														}
-														else if(DataConstants.NOT_EQUALS.equalsIgnoreCase(fieldCondObject.get(DataConstants.COND_OPERATION).toString()))
+														if(!flag)
 														{
-															if(val_1.equals(val_2))
-															{
-																tempValue = "";
-																break condFields;
-															}
+															tempValue = "";
 														}
-														else if(DataConstants.IN.equalsIgnoreCase(fieldCondObject.get(DataConstants.COND_OPERATION).toString()))
-														{
-															if(fieldCondObject.get(DataConstants.COND_VALUE) instanceof JSONArray)
-															{
-																condValueArr = (JSONArray) fieldCondObject.get(DataConstants.COND_VALUE);
-																boolean flag = false;
-																condValueLabel : for(Object condValue : condValueArr)
-																{
-																	//need to cross verify this logic..
-																	if(condValue.toString().equals(dataObject.get(fieldCondObject.get(DataConstants.COND_FIELD)).toString())) 
-																	{
-																		flag = true;
-																		break condValueLabel;
-																	}
-																}
-																if(!flag)
-																{
-																	tempValue = "";
-																}
-															}
-														}
+													}
+												}
 											}
 										}
 									}
@@ -882,20 +882,20 @@ public class GenericDataTransformer extends JobProcessor implements DataTransfor
 												else
 													val_1 = dataObject.get(condFieldArr.get(i)) != null ? dataObject.get(condFieldArr.get(i)).toString().trim() : "";
 
-													if(condFieldArr.get(i+1).toString().contains("."))
-													{
-														values = Utilities.getFieldValue(condFieldArr.get(i+1).toString(), dataObject);
-														if(values != null && !values.isEmpty())
-															val_2 = values.iterator().next().toString();
-													}
-													else 
-														val_2 = dataObject.get(condFieldArr.get(i+1)) != null ? dataObject.get(condFieldArr.get(i+1)).toString().trim() : "";
+												if(condFieldArr.get(i+1).toString().contains("."))
+												{
+													values = Utilities.getFieldValue(condFieldArr.get(i+1).toString(), dataObject);
+													if(values != null && !values.isEmpty())
+														val_2 = values.iterator().next().toString();
+												}
+												else 
+													val_2 = dataObject.get(condFieldArr.get(i+1)) != null ? dataObject.get(condFieldArr.get(i+1)).toString().trim() : "";
 
-														if(!dataObject.get(condFieldArr.get(i)).toString().equals(dataObject.get(condFieldArr.get(i+1)).toString()))
-														{
-															tempValue = "";
-															break condFields;
-														}
+												if(!dataObject.get(condFieldArr.get(i)).toString().equals(dataObject.get(condFieldArr.get(i+1)).toString()))
+												{
+													tempValue = "";
+													break condFields;
+												}
 											}
 										}
 									}
@@ -921,69 +921,69 @@ public class GenericDataTransformer extends JobProcessor implements DataTransfor
 									else
 										conditionFieldValue = dataObject.get(fieldCondObject.get(DataConstants.COND_FIELD)) != null ? dataObject.get(fieldCondObject.get(DataConstants.COND_FIELD)).toString() : "";
 
-										if(conditionFieldValue == null || conditionFieldValue.trim().isEmpty())
-											tempValue = "";
-										else
+									if(conditionFieldValue == null || conditionFieldValue.trim().isEmpty())
+										tempValue = "";
+									else
+									{
+										if(fieldCondObject.get(DataConstants.COND_VALUE) != null)
 										{
-											if(fieldCondObject.get(DataConstants.COND_VALUE) != null)
+											String result = "true";
+											if(fieldCondObject.get(DataConstants.COND_OPERATION) != null)
 											{
-												String result = "true";
-												if(fieldCondObject.get(DataConstants.COND_OPERATION) != null)
+												if(DataConstants.EQUALS.equalsIgnoreCase(fieldCondObject.get(DataConstants.COND_OPERATION).toString()))
 												{
-													if(DataConstants.EQUALS.equalsIgnoreCase(fieldCondObject.get(DataConstants.COND_OPERATION).toString()))
+													if(!fieldCondObject.get(DataConstants.COND_VALUE).toString().equals(conditionFieldValue))
 													{
-														if(!fieldCondObject.get(DataConstants.COND_VALUE).toString().equals(conditionFieldValue))
-														{
-															tempValue = "";
-															result = "false";
-														}
-													}
-													else if(DataConstants.NOT_EQUALS.equalsIgnoreCase(fieldCondObject.get(DataConstants.COND_OPERATION).toString()))
-													{
-														if(fieldCondObject.get(DataConstants.COND_VALUE).toString().equals(conditionFieldValue))
-														{
-															tempValue = "";
-															result = "false";
-														}
-													}
-													else if(DataConstants.IN.equalsIgnoreCase(fieldCondObject.get(DataConstants.COND_OPERATION).toString()))
-													{
-														if(fieldCondObject.get(DataConstants.COND_VALUE) instanceof JSONArray)
-														{
-															condValueArr = (JSONArray) fieldCondObject.get(DataConstants.COND_VALUE);
-															boolean flag = false;
-															condValueLabel : for(Object condValue : condValueArr)
-															{
-																if(condValue.toString().equals(conditionFieldValue))
-																{
-																	flag = true;
-																	break condValueLabel;
-																}
-															}
-															if(!flag)
-															{
-																tempValue = "";
-															}
-														}
+														tempValue = "";
+														result = "false";
 													}
 												}
-												else if(!fieldCondObject.get(DataConstants.COND_VALUE).toString().equals(conditionFieldValue))
+												else if(DataConstants.NOT_EQUALS.equalsIgnoreCase(fieldCondObject.get(DataConstants.COND_OPERATION).toString()))
 												{
-													tempValue = "";	
-													result = "false";
-												}
-
-												if(fieldCondObject.get(result) != null)
-												{
-													resultCondObject = (JSONObject) fieldCondObject.get(result);
-													if(resultCondObject.get(DataConstants.COND_FIELD) != null && resultCondObject.get(DataConstants.COND_OPERATION) != null)
+													if(fieldCondObject.get(DataConstants.COND_VALUE).toString().equals(conditionFieldValue))
 													{
-														if(DataConstants.DATE_DURATION.equalsIgnoreCase(resultCondObject.get(DataConstants.COND_OPERATION).toString()))
-															tempValue = calculateDuration(dataObject, (JSONArray) resultCondObject.get(DataConstants.COND_FIELD));
+														tempValue = "";
+														result = "false";
+													}
+												}
+												else if(DataConstants.IN.equalsIgnoreCase(fieldCondObject.get(DataConstants.COND_OPERATION).toString()))
+												{
+													if(fieldCondObject.get(DataConstants.COND_VALUE) instanceof JSONArray)
+													{
+														condValueArr = (JSONArray) fieldCondObject.get(DataConstants.COND_VALUE);
+														boolean flag = false;
+														condValueLabel : for(Object condValue : condValueArr)
+														{
+															if(condValue.toString().equals(conditionFieldValue))
+															{
+																flag = true;
+																break condValueLabel;
+															}
+														}
+														if(!flag)
+														{
+															tempValue = "";
+														}
 													}
 												}
 											}
+											else if(!fieldCondObject.get(DataConstants.COND_VALUE).toString().equals(conditionFieldValue))
+											{
+												tempValue = "";	
+												result = "false";
+											}
+
+											if(fieldCondObject.get(result) != null)
+											{
+												resultCondObject = (JSONObject) fieldCondObject.get(result);
+												if(resultCondObject.get(DataConstants.COND_FIELD) != null && resultCondObject.get(DataConstants.COND_OPERATION) != null)
+												{
+													if(DataConstants.DATE_DURATION.equalsIgnoreCase(resultCondObject.get(DataConstants.COND_OPERATION).toString()))
+														tempValue = calculateDuration(dataObject, (JSONArray) resultCondObject.get(DataConstants.COND_FIELD));
+												}
+											}
 										}
+									}
 								}
 							}
 						}
@@ -1926,7 +1926,52 @@ public class GenericDataTransformer extends JobProcessor implements DataTransfor
 										fieldMultiRowConf = (JSONObject) configFieldObj.get(DataConstants.MULTIPLE_ROW_CONF);
 									if(fieldMultiRowConf != null && fieldMultiRowConf.get(DataConstants.NAME).toString().equalsIgnoreCase(multipleRowName.toString()))
 									{
-										tempDataObject.put(fieldName.toString(), fieldValueObj.get(fieldMultiRowConf.get(DataConstants.LOOKUP_FIELD)));
+										Object value = null;
+										if(fieldValueObj.get(fieldMultiRowConf.get(DataConstants.LOOKUP_FIELD)) != null)
+											value = fieldValueObj.get(fieldMultiRowConf.get(DataConstants.LOOKUP_FIELD));
+
+										if(fieldMultiRowConf.get(DataConstants.F_LOOKUP) != null && fieldMultiRowConf.get(DataConstants.F_LOOKUP) instanceof JSONArray)
+										{
+											String lookupMapKey = null;
+											DBObject lookupDBObject = null;
+											JSONObject fieldLookupObject = null;
+											for(Object fieldLookupObj : (JSONArray) fieldMultiRowConf.get(DataConstants.F_LOOKUP))
+											{
+												fieldLookupObject = (JSONObject) fieldLookupObj;
+												lookupMapKey = fieldLookupObject.get(DataConstants.NAME).toString() + "~" + fieldName.toString() + "~" + fieldLookupObject.get(DataConstants.MAPPING_FIELD).toString() + "~" + multipleRowName.toString();
+												lookupDBObject = getLookupObject((JSONObject) lookupObj.get(fieldLookupObject.get(DataConstants.NAME)), fieldLookupObject, lookupValuesMap, lookupMapKey, dataObject, value);
+											}
+											if(lookupDBObject != null)
+											{
+												if(fieldLookupObject.get(DataConstants.LOOKUP_FIELD) instanceof JSONArray)
+												{
+													value = "";
+													String tempVal = null;
+													for(Object lkpField : (JSONArray) fieldLookupObject.get(DataConstants.LOOKUP_FIELD))
+													{
+														tempVal = lookupDBObject.get(lkpField.toString()) != null ? lookupDBObject.get(lkpField.toString()).toString() : "";
+														if(!tempVal.trim().isEmpty())
+															value = value + tempVal + fieldLookupObject.get(DataConstants.FIELD_DELIMITER).toString();
+													}
+													tempVal = null;
+													if(value != null)
+													{
+														value = value.toString().trim();
+														if(value.toString().endsWith(fieldLookupObject.get(DataConstants.FIELD_DELIMITER).toString()))
+														{
+															value = value.toString().substring(0, value.toString().lastIndexOf(fieldLookupObject.get(DataConstants.FIELD_DELIMITER).toString()));
+														}
+													}
+												}
+												else
+												{
+													value = lookupDBObject.get(fieldLookupObject.get(DataConstants.LOOKUP_FIELD).toString());
+												}
+											}
+											tempDataObject.put(fieldName.toString(), value);													
+										}
+										else
+											tempDataObject.put(fieldName.toString(), value);
 										flag = true;
 									}
 								}
@@ -1960,7 +2005,7 @@ public class GenericDataTransformer extends JobProcessor implements DataTransfor
 			}
 
 			LOGGER.debug("New DataList Size : " + newDataList.size());
-			
+
 		}
 		catch(Exception exception)
 		{

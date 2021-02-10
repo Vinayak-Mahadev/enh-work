@@ -53,7 +53,9 @@ public class HadoopInterfaceTest
 
 		//		String interfaceIdStr = "1165 ,1166 ,1167 ,1168 ,1169 ,1170 ,1171 ,1172 ,1173 ,1174 ,1175 ,1176 ,1177 ,1178 ,1179 ,1180 ,1181 ,1182 ,1183";
 
-		String interfaceIdStr = "1066,1067,1068,1069,1070,1071,1076,1077,1080,1081,1078,1079";
+//		String interfaceIdStr = "1066,1067,1068,1069,1070,1071,1076,1077,1080,1081,1078,1079";
+//		String interfaceIdStr = "1169,1186,1187,1188,1189";
+		String interfaceIdStr = "1186";
 //		String interfaceIdStr = "1066,1071";
 
 		HadoopInterfaceTest hitest = new HadoopInterfaceTest(interfaceIdStr);;
@@ -64,27 +66,30 @@ public class HadoopInterfaceTest
 
 
 		
-//		dateInFile = "20201001";
-//		fileName   = "20200321090001_101.csv";
+		dateInFile = "20210101";
+		fileName   = "20210101090001_101.csv";
+		hitest.start(dateInFile, fileName);
+		dateInFile = "20210201";
+		fileName   = "20210201090001_102.csv";
+		hitest.start(dateInFile, fileName);
+
+//		dateInFile = "20201002";
+//		fileName   = "20200321090001_102.csv";
 //		hitest.start(dateInFile, fileName);
-
-		dateInFile = "20201002";
-		fileName   = "20200321090001_102.csv";
-		hitest.start(dateInFile, fileName);
-
-		dateInFile = "20201003";
-		fileName   = "20200321090001_103.csv";
-		hitest.start(dateInFile, fileName);
-
-		dateInFile = "20201004";
-		fileName   = "20200321090001_104.csv";
-		hitest.start(dateInFile, fileName);
-
-		dateInFile = "20201005";
-		fileName   = "20200321090001_105.csv";
-		hitest.start(dateInFile, fileName);
-
-		
+//
+//		dateInFile = "20201003";
+//		fileName   = "20200321090001_103.csv";
+//		hitest.start(dateInFile, fileName);
+//
+//		dateInFile = "20201004";
+//		fileName   = "20200321090001_104.csv";
+//		hitest.start(dateInFile, fileName);
+//
+//		dateInFile = "20201005";
+//		fileName   = "20200321090001_105.csv";
+//		hitest.start(dateInFile, fileName);
+//
+//		
 
 
 		hitest.end();
@@ -101,14 +106,14 @@ public class HadoopInterfaceTest
 		apiWaitInSecond = 10l;
 		ThreadUtil.setProperties(wsdlUrl, userName, password);
 //
-//		callApiFlag = true;
-//		callProcessFileApi = true;
-//		callProcessReceivedFilesApi = true;
-//		callRejectionApi = true;
+		callApiFlag = true;
+		callProcessFileApi = true;
+		callProcessReceivedFilesApi = true;
+		callRejectionApi = true;
 //
-//		genearteFileFlag = true;
-//		prepareCtlFlag = true;
-//		uploadFilesFlag = true;
+		genearteFileFlag = true;
+		prepareCtlFlag = true;
+		uploadFilesFlag = true;
 
 
 		//		connection = RDBMS.getDBConnection(PropType.RDBMS_144);

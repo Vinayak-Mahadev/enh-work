@@ -134,6 +134,8 @@ public class JobConfiguration
 				}
 				parser = new JSONParser();
 				_jobConfig_ = (JSONObject) parser.parse(string);
+				
+				LOGGER.info("\n_jobConfig_ :: " + _jobConfig_ +"\n");
 
 				if(_jobConfig_ != null  && jobParameters.containsKey(DataConstants.REQUEST_UPDATE_CONF) && jobParameters.get(DataConstants.REQUEST_UPDATE_CONF) != null)
 					_jobConfig_.put(DataConstants.REQUEST_UPDATE_CONF, jobParameters.get(DataConstants.REQUEST_UPDATE_CONF));

@@ -282,6 +282,7 @@ public class PDFDataWriter extends JobProcessor implements DataWriter
 					recordCount = recordCount + jsonArray.size();
 					outer : for(Object object : jsonArray)
 					{
+						dataField = "";
 						dataObject = ((JSONObject) object);
 						//						log.info("dataObject : " + dataObject);
 						if(mandatoryFields != null)
@@ -420,24 +421,54 @@ public class PDFDataWriter extends JobProcessor implements DataWriter
 								{
 									try 
 									{
-										expressionProcessor.init(fieldObject.get(DataConstants.EXPRESSION_CONF).toString());
-										dataToEvaluate = new HashMap<String, Object>();
-										dataToEvaluate.put(fieldObject.get(DataConstants.PATH).toString(), value.toString().trim());
-
-										if(fieldObject.get(DataConstants.COLLECTION_DATA_CONF) != null)
+										if(fieldObject.get(DataConstants.OPTIONAL) != null && fieldObject.get(DataConstants.OPTIONAL).toString().isEmpty())
 										{
-											jsonArr = (JSONArray) fieldObject.get(DataConstants.COLLECTION_DATA_CONF);
-											for (Object object2 : jsonArr)
-											{
-												if(dataObject.get(object2.toString()) != null && !dataObject.get(object2.toString()).toString().isEmpty())
-													dataToEvaluate.put(object2.toString(), dataObject.get(object2.toString()));
-											}
+											if(fieldObject.get(DataConstants.LOOKUP_FIELD) != null)
+												tempVal = dataObject.get(fieldObject.get(DataConstants.LOOKUP_FIELD).toString()).toString();
 										}
-
-										if(expressionProcessor.processExpression(dataToEvaluate))
-											tempVal = fieldObject.get(DataConstants.IF).toString();
 										else
-											tempVal = fieldObject.get(DataConstants.ELSE).toString();
+										{
+											expressionProcessor.init(fieldObject.get(DataConstants.EXPRESSION_CONF).toString());
+											dataToEvaluate = new HashMap<String, Object>();
+											dataToEvaluate.put(fieldObject.get(DataConstants.PATH).toString(), value.toString().trim());
+
+											if(fieldObject.get(DataConstants.COLLECTION_DATA_CONF) != null)
+											{
+												jsonArr = (JSONArray) fieldObject.get(DataConstants.COLLECTION_DATA_CONF);
+												for (Object object2 : jsonArr)
+												{
+													if(dataObject.get(object2.toString()) != null && !dataObject.get(object2.toString()).toString().isEmpty())
+														dataToEvaluate.put(object2.toString(), dataObject.get(object2.toString()));
+												}
+											}
+
+											if(expressionProcessor.processExpression(dataToEvaluate))
+											{
+												if(fieldObject.get(DataConstants.IF) != null)
+													tempVal = fieldObject.get(DataConstants.IF).toString();
+												else
+													if(fieldObject.get(DataConstants.LOOKUP_FIELD) != null)
+														tempVal = dataObject.get(fieldObject.get(DataConstants.LOOKUP_FIELD).toString()).toString();
+													else
+													{
+														--recordCount;	// no need to write data
+														dataField = "";
+														continue outer;
+													}
+											}
+											else
+											{
+												if(fieldObject.get(DataConstants.ELSE) != null && !fieldObject.get(DataConstants.ELSE).toString().isEmpty())
+													tempVal = fieldObject.get(DataConstants.ELSE).toString();
+												else
+												{
+													--recordCount;	// no need to write data
+													dataField = "";
+													continue outer;
+												}
+											}
+
+										}
 									} 
 									catch (Exception e) 
 									{

@@ -38,6 +38,7 @@ public class App {
 		System.out.println(Utility.basicValidation(validationConfList, dataList, line));
 
 */
+		/*
 		String str1 ="MONTH_ID|CLUSTER|MPC_CODE|PAYMENT_ALLOCATION";
 		String str2 ="MONTH_ID|CLUSTER|MPC_CODE|PAYMENT_ALLOCATION";
 		if (!str1.trim().equalsIgnoreCase(str2.trim()))
@@ -49,6 +50,22 @@ public class App {
 		{
 			System.out.println("same");
 		}
+
+		*/
+
+		List<String> dataList = null;
+		List<String> validationConfList = null;
+		String line = null;
+		String fieldConf = null;
+
+
+
+		fieldConf  = "TRANSACTIONID;M;R;[a-zA-Z0-9]+|PRODUCTCODE;M;N;[a-zA-Z0-9]+|STARTSERIAL;M;R;[a-zA-Z0-9/'-]{1,18}|ENDSERIAL;M;R;[a-zA-Z0-9/'-]{1,18}|ADDL1;N;N;|ADDL2;N;N;|ADDL3;N;N;|ADDL4;N;N;|COUNTER;M;R;[0-9]+";
+		validationConfList = Arrays.asList(fieldConf.split("\\|"));
+//1
+		line = "A1001|PRO1|/'2020001/|/2020010-'/|||||1";
+		dataList = Arrays.asList(line.split("\\|"));;
+		System.out.println(Utility.basicValidation(validationConfList, dataList, line));
 
 	}
 

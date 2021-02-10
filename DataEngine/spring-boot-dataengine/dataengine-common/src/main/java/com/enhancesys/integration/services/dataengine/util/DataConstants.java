@@ -215,6 +215,7 @@ public interface DataConstants
 	public static final String DATE_DURATION = "date-duration"; 
 	public static final String CONCAT = "concat";
 	public static final String OPERATION = "operation";
+	public static final String OPTIONAL = "optional";
 	public static final String LOCAL_KEY = "local-key";
 	public static final String SORT_FILE_PATH = "sort-filepath";
 	public static final String SORT_FILE_NAME = "sort-file-name";

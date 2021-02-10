@@ -1,0 +1,1 @@
+mvn spring-boot:run -Dhttps.protocols=TLSv1.2

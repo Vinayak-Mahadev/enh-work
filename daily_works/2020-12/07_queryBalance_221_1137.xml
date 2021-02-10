@@ -1,0 +1,287 @@
+
+<1137>Query Balance Interface ID</1137>
+<221>Query Balance Module ID</221>
+
+----------------------------------------------------------------------
+REQUEST
+----------------------------------------------------------------------
+
+
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:int="http://com/enhancesys/integration/services/interfaces/IntegrationManagement">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <int:syncBalanceInterface>
+         <!--Optional:-->
+         <moduleId>221</moduleId>
+         <!--Optional:-->
+         <jsonRequestData><![CDATA[
+
+	{
+                "payload": {
+                        "query_details": [
+                                "1001",
+                                "1002"
+                        ],
+                        "acc_type": "abc123",
+                        "operator_id": "OP01",
+                        "org_ref_code": "1010",
+                        "user_id": "123",
+                        "uname": "CAN01",
+                        "trans_dt": "2019-06-13T00:00:00.000",
+                        "pin": "1121",
+                        "currency": ""
+                }
+        }
+
+			]]></jsonRequestData>
+      </int:syncBalanceInterface>
+   </soapenv:Body>
+</soapenv:Envelope>
+
+ 
+----------------------------------------------------------------------
+RESPONSE
+----------------------------------------------------------------------
+
+
+<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
+   <soap:Body>
+      <ns2:syncBalanceInterfaceResponse xmlns:ns2="http://com/enhancesys/integration/services/interfaces/IntegrationManagement" xmlns:ns3="http://com/enhancesys/entities/schema/integration">
+         <syncBalanceInterface>
+		 
+ {
+	"ext_ref_id": "SM-4320201207110958635",
+	"balance": [
+		{
+			"outlet_ref_code": "1001",
+			"bal": "75000.0",
+			"currency": "IDR"
+		},
+		{
+			"outlet_ref_code": "1002",
+			"bal": "250000.0",
+			"currency": "IDR"
+		}
+	],
+	"status": "SUCCESS",
+	"operator_bal": "60000.0",
+	"trans_dt": "2020-12-09T07:07:00.140",
+	"transaction_id": 8920201209070700128,
+	"currency": "IDR"
+}
+		 
+		 </syncBalanceInterface>
+      </ns2:syncBalanceInterfaceResponse>
+   </soap:Body>
+</soap:Envelope>
+
+----------------------------------------------------------------------
+Converted ...
+----------------------------------------------------------------------
+
+
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/">
+	<soapenv:Body>
+		<api:Result xmlns:api="http://cps.huawei.com/synccpsinterface/api_requestmgr" xmlns:res="http://cps.huawei.com/synccpsinterface/result">
+			<res:Header>
+				<res:Version>1.0</res:Version>
+				<res:OriginatorConversationID>4320201207110958635</res:OriginatorConversationID>
+				<res:ConversationID>SM-4320201207110958635</res:ConversationID>
+			</res:Header>
+			<res:Body>
+				<res:ResultType>0</res:ResultType>
+				<res:ResultCode>0</res:ResultCode>
+				<res:ResultDesc>Process service request successfully.</res:ResultDesc>
+				<res:QueryOrganizationBalanceResult>
+					<res:BOCompletedTime>20201207110958</res:BOCompletedTime>
+					<res:AccountBalanceData>
+						<res:AccountBalanceItem>
+							<res:AccountHolderID>1010</res:AccountHolderID>
+							<res:AccountHolderPublicName>211674 - Agent A</res:AccountHolderPublicName>
+							<res:AccountTypeName>Stock Account_Normal</res:AccountTypeName>
+							<res:AccountTypeAlias>Stock Account_Normal</res:AccountTypeAlias>
+							<res:AccountRuleProfileID>16</res:AccountRuleProfileID>
+							<res:AccountRuleProfileName>Band A Store Stock Account_Normal Rule Profile</res:AccountRuleProfileName>
+							<res:AccountNo>800000000101002000</res:AccountNo>
+							<res:AccountStatus>active</res:AccountStatus>
+							<res:Currency>IDR</res:Currency>
+							<res:AvailableBalance>10000.00</res:AvailableBalance>
+							<res:ReservedBalance>10.00</res:ReservedBalance>
+							<res:UnclearedBalance>0</res:UnclearedBalance>
+							<res:CurrentBalance>1000.00</res:CurrentBalance>
+						</res:AccountBalanceItem>
+						<res:AccountBalanceItem>
+							<res:AccountHolderID>1010</res:AccountHolderID>
+							<res:AccountHolderPublicName>211674 - Agent A</res:AccountHolderPublicName>
+							<res:AccountTypeName>Stock Account_Normal</res:AccountTypeName>
+							<res:AccountTypeAlias>Stock Account_Normal</res:AccountTypeAlias>
+							<res:AccountRuleProfileID>16</res:AccountRuleProfileID>
+							<res:AccountRuleProfileName>Band A Store Stock Account_Normal Rule Profile</res:AccountRuleProfileName>
+							<res:AccountNo>800000000101002000</res:AccountNo>
+							<res:AccountStatus>active</res:AccountStatus>
+							<res:Currency>IDR</res:Currency>
+							<res:AvailableBalance>50000.00</res:AvailableBalance>
+							<res:ReservedBalance>500.00</res:ReservedBalance>
+							<res:UnclearedBalance>110</res:UnclearedBalance>
+							<res:CurrentBalance>3000.00</res:CurrentBalance>
+						</res:AccountBalanceItem>
+						<res:AccountBalanceItem>
+							<res:AccountHolderID>1001</res:AccountHolderID>
+							<res:AccountHolderPublicName>211674 - Agent A</res:AccountHolderPublicName>
+							<res:AccountTypeName>Commission Received Account</res:AccountTypeName>
+							<res:AccountTypeAlias>Commission Received Account</res:AccountTypeAlias>
+							<res:AccountRuleProfileID>16</res:AccountRuleProfileID>
+							<res:AccountRuleProfileName>Band A Store Commission Received Account Rule Profile</res:AccountRuleProfileName>
+							<res:AccountNo>800000000101002000</res:AccountNo>
+							<res:AccountStatus>active</res:AccountStatus>
+							<res:Currency>IDR</res:Currency>
+							<res:AvailableBalance>50000.00</res:AvailableBalance>
+							<res:ReservedBalance>500.00</res:ReservedBalance>
+							<res:UnclearedBalance>110</res:UnclearedBalance>
+							<res:CurrentBalance>3000.00</res:CurrentBalance>
+						</res:AccountBalanceItem>
+						<res:AccountBalanceItem>
+							<res:AccountHolderID>1001</res:AccountHolderID>
+							<res:AccountHolderPublicName>211674 - Agent A</res:AccountHolderPublicName>
+							<res:AccountTypeName>Commission Received Account</res:AccountTypeName>
+							<res:AccountTypeAlias>Commission Received Account</res:AccountTypeAlias>
+							<res:AccountRuleProfileID>16</res:AccountRuleProfileID>
+							<res:AccountRuleProfileName>Band A Store Commission Received Account Rule Profile</res:AccountRuleProfileName>
+							<res:AccountNo>800000000101002000</res:AccountNo>
+							<res:AccountStatus>active</res:AccountStatus>
+							<res:Currency>IDR</res:Currency>
+							<res:AvailableBalance>25000.00</res:AvailableBalance>
+							<res:ReservedBalance>500.00</res:ReservedBalance>
+							<res:UnclearedBalance>110</res:UnclearedBalance>
+							<res:CurrentBalance>3000.00</res:CurrentBalance>
+						</res:AccountBalanceItem>
+						<res:AccountBalanceItem>
+							<res:AccountHolderID>1002</res:AccountHolderID>
+							<res:AccountHolderPublicName>211674 - Agent A</res:AccountHolderPublicName>
+							<res:AccountTypeName>Stock Account_Normal</res:AccountTypeName>
+							<res:AccountTypeAlias>Stock Account_Normal</res:AccountTypeAlias>
+							<res:AccountRuleProfileID>16</res:AccountRuleProfileID>
+							<res:AccountRuleProfileName>Band A Store Stock Account_Normal Rule Profile</res:AccountRuleProfileName>
+							<res:AccountNo>800000000101002000</res:AccountNo>
+							<res:AccountStatus>active</res:AccountStatus>
+							<res:Currency>IDR</res:Currency>
+							<res:AvailableBalance>50000.00</res:AvailableBalance>
+							<res:ReservedBalance>500.00</res:ReservedBalance>
+							<res:UnclearedBalance>110</res:UnclearedBalance>
+							<res:CurrentBalance>3000.00</res:CurrentBalance>
+						</res:AccountBalanceItem>
+						<res:AccountBalanceItem>
+							<res:AccountHolderID>1002</res:AccountHolderID>
+							<res:AccountHolderPublicName>211674 - Agent A</res:AccountHolderPublicName>
+							<res:AccountTypeName>Stock Account_Normal</res:AccountTypeName>
+							<res:AccountTypeAlias>Stock Account_Normal</res:AccountTypeAlias>
+							<res:AccountRuleProfileID>16</res:AccountRuleProfileID>
+							<res:AccountRuleProfileName>Band A Store Stock Account_Normal Rule Profile</res:AccountRuleProfileName>
+							<res:AccountNo>800000000101002000</res:AccountNo>
+							<res:AccountStatus>active</res:AccountStatus>
+							<res:Currency>IDR</res:Currency>
+							<res:AvailableBalance>50000.00</res:AvailableBalance>
+							<res:ReservedBalance>500.00</res:ReservedBalance>
+							<res:UnclearedBalance>110</res:UnclearedBalance>
+							<res:CurrentBalance>3000.00</res:CurrentBalance>
+						</res:AccountBalanceItem>
+						<res:AccountBalanceItem>
+							<res:AccountHolderID>1002</res:AccountHolderID>
+							<res:AccountHolderPublicName>211674 - Agent A</res:AccountHolderPublicName>
+							<res:AccountTypeName>Stock Account_Normal</res:AccountTypeName>
+							<res:AccountTypeAlias>Stock Account_Normal</res:AccountTypeAlias>
+							<res:AccountRuleProfileID>16</res:AccountRuleProfileID>
+							<res:AccountRuleProfileName>Band A Store Stock Account_Normal Rule Profile</res:AccountRuleProfileName>
+							<res:AccountNo>800000000101002000</res:AccountNo>
+							<res:AccountStatus>active</res:AccountStatus>
+							<res:Currency>IDR</res:Currency>
+							<res:AvailableBalance>50000.00</res:AvailableBalance>
+							<res:ReservedBalance>500.00</res:ReservedBalance>
+							<res:UnclearedBalance>110</res:UnclearedBalance>
+							<res:CurrentBalance>3000.00</res:CurrentBalance>
+						</res:AccountBalanceItem>
+						<res:AccountBalanceItem>
+							<res:AccountHolderID>1002</res:AccountHolderID>
+							<res:AccountHolderPublicName>211674 - Agent A</res:AccountHolderPublicName>
+							<res:AccountTypeName>Commission Transaction Account</res:AccountTypeName>
+							<res:AccountTypeAlias>Commission Transaction Account</res:AccountTypeAlias>
+							<res:AccountRuleProfileID>16</res:AccountRuleProfileID>
+							<res:AccountRuleProfileName>Band A Store Commission Transaction Account Rule Profile</res:AccountRuleProfileName>
+							<res:AccountNo>800000000101002000</res:AccountNo>
+							<res:AccountStatus>active</res:AccountStatus>
+							<res:Currency>IDR</res:Currency>
+							<res:AvailableBalance>50000.00</res:AvailableBalance>
+							<res:ReservedBalance>500.00</res:ReservedBalance>
+							<res:UnclearedBalance>110</res:UnclearedBalance>
+							<res:CurrentBalance>3000.00</res:CurrentBalance>
+						</res:AccountBalanceItem>
+						<res:AccountBalanceItem>
+							<res:AccountHolderID>1002</res:AccountHolderID>
+							<res:AccountHolderPublicName>211674 - Agent A</res:AccountHolderPublicName>
+							<res:AccountTypeName>Commission Transaction Account</res:AccountTypeName>
+							<res:AccountTypeAlias>Commission Transaction Account</res:AccountTypeAlias>
+							<res:AccountRuleProfileID>16</res:AccountRuleProfileID>
+							<res:AccountRuleProfileName>Band A Store Commission Transaction Account Rule Profile</res:AccountRuleProfileName>
+							<res:AccountNo>800000000101002000</res:AccountNo>
+							<res:AccountStatus>active</res:AccountStatus>
+							<res:Currency>IDR</res:Currency>
+							<res:AvailableBalance>50000.00</res:AvailableBalance>
+							<res:ReservedBalance>500.00</res:ReservedBalance>
+							<res:UnclearedBalance>110</res:UnclearedBalance>
+							<res:CurrentBalance>3000.00</res:CurrentBalance>
+						</res:AccountBalanceItem>
+						<res:AccountBalanceItem>
+							<res:AccountHolderID>1002</res:AccountHolderID>
+							<res:AccountHolderPublicName>211674 - Agent A</res:AccountHolderPublicName>
+							<res:AccountTypeName>Stock Account</res:AccountTypeName>
+							<res:AccountTypeAlias>Stock Account</res:AccountTypeAlias>
+							<res:AccountRuleProfileID>16</res:AccountRuleProfileID>
+							<res:AccountRuleProfileName>Band A Store Stock Account Rule Profile</res:AccountRuleProfileName>
+							<res:AccountNo>800000000101002000</res:AccountNo>
+							<res:AccountStatus>active</res:AccountStatus>
+							<res:Currency>IDR</res:Currency>
+							<res:AvailableBalance>50000.00</res:AvailableBalance>
+							<res:ReservedBalance>500.00</res:ReservedBalance>
+							<res:UnclearedBalance>110</res:UnclearedBalance>
+							<res:CurrentBalance>3000.00</res:CurrentBalance>
+						</res:AccountBalanceItem>
+						<res:AccountBalanceItem>
+							<res:AccountHolderID>1001</res:AccountHolderID>
+							<res:AccountHolderPublicName>211674 - Agent A</res:AccountHolderPublicName>
+							<res:AccountTypeName>Transaction Account</res:AccountTypeName>
+							<res:AccountTypeAlias>Transaction Account</res:AccountTypeAlias>
+							<res:AccountRuleProfileID>16</res:AccountRuleProfileID>
+							<res:AccountRuleProfileName>Band A Store Transaction Account Rule Profile</res:AccountRuleProfileName>
+							<res:AccountNo>800000000101002000</res:AccountNo>
+							<res:AccountStatus>active</res:AccountStatus>
+							<res:Currency>IDR</res:Currency>
+							<res:AvailableBalance>50000.00</res:AvailableBalance>
+							<res:ReservedBalance>500.00</res:ReservedBalance>
+							<res:UnclearedBalance>110</res:UnclearedBalance>
+							<res:CurrentBalance>3000.00</res:CurrentBalance>
+						</res:AccountBalanceItem>
+					</res:AccountBalanceData>
+				</res:QueryOrganizationBalanceResult>
+			</res:Body>
+		</api:Result>
+	</soapenv:Body>
+</soapenv:Envelope>
+  
+----------------------------------------------------------------------
+Result template...
+----------------------------------------------------------------------
+
+
+<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
+   <soap:Body>
+      <ns2:getStaticResponseResponse xmlns:ns2="http://com/enhancesys/integration/response/services/interfaces/InterfaceResponseServices">
+         <getStaticResponse><![CDATA[
+		 
+		 
+				<RESULT HERE>
+		 
+		 ]]></getStaticResponse>
+      </ns2:getStaticResponseResponse>
+   </soap:Body>
+</soap:Envelope>
+

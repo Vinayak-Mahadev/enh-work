@@ -48,11 +48,10 @@ public class RDBMSOperation {
 		{
 			map = getInterfaceAttrValue(conn, "Remote File", interfaceIds);
 
-			for (long id : map.keySet()) 
+			for (long id : interfaceIds) 
 			{
 				tempPath = filePath + map.get(id) +"_"+fileName;
 				System.out.println("prepareFileForInterface : " + id);
-				//System.out.println("filePath : " + filePath);
 
 				if(id == 1165l)
 					prepareFileFor1165(conn, dateInFile, tempPath, limit, fileCount);
@@ -94,6 +93,14 @@ public class RDBMSOperation {
 					prepareFileFor1183(conn, dateInFile, tempPath, limit, fileCount);
 				if(id == 1185l)
 					prepareFileFor1185(conn, dateInFile, tempPath, limit, fileCount);
+				if(id == 1186l)
+					prepareFileFor1186(conn, dateInFile, tempPath, limit, fileCount);
+				if(id == 1187l)
+					prepareFileFor1187(conn, dateInFile, tempPath, limit, fileCount);
+				if(id == 1188l)
+					prepareFileFor1188(conn, dateInFile, tempPath, limit, fileCount);
+				if(id == 1189l)
+					prepareFileFor1189(conn, dateInFile, tempPath, limit, fileCount);
 
 			}
 		} 
@@ -354,7 +361,7 @@ public class RDBMSOperation {
 		try 
 		{
 			fos = new FileOutputStream(new File(filePath));
-			fos.write("DATE|CLUSTER|MICRO|SITE_ID|ID_OUTLET|STATUS_INJECTION|FLAG_ACM|COUNT_MSISDN\n".getBytes());
+			fos.write("DATE|CLUSTER|MICRO|SITE_ID|ID_OUTLET|STATUS_INJECTION|FLAG_ACM|COUNT_MSISDN|INCOMING_ONLY\n".getBytes());
 			outlet = conn.createStatement().executeQuery("select ref_code_v from kpi.ms_org_master where org_type_n = 6   and sub_org_type_n = 66 and status_n = 174 order by 1;");
 			micro = conn.createStatement().executeQuery("select lookup_name_v from kpi.ms_lookup_master where lookup_type_n = (select lookup_type_n from kpi.ms_lookup_type_master where ext_lookup_type_n = 89) order by 1 limit 20;");
 			cluster = conn.createStatement().executeQuery("select lookup_name_v from kpi.ms_lookup_master where lookup_type_n = (select lookup_type_n from kpi.ms_lookup_type_master where ext_lookup_type_n = 88) order by 1 limit 20;");
@@ -374,15 +381,16 @@ public class RDBMSOperation {
 				clusterList.add(cluster.getString(1));
 			}
 
-			out : while (outlet.next()) {
-
-				for (String microId : microList) {
-					for (String clusterid : clusterList) {
-
+			out : while (outlet.next()) 
+			{
+				for (String microId : microList) 
+				{
+					for (String clusterid : clusterList) 
+					{
 						if(i%2 == 0)
-							fos.write((dateInFile+"|"+clusterid+"|"+microId+"|Test Site-"+i+ "|" +outlet.getString(1)+"|WithOut Injection|c. >=7k - <10k|"+ (i+10) +"\n").getBytes());
+							fos.write((dateInFile+"|"+clusterid+"|"+microId+"|Test Site-"+i+ "|" +outlet.getString(1)+"|WithOut Injection|c. >=7k - <10k|"+ (i+10) +"|1\n").getBytes());
 						else
-							fos.write((dateInFile+"|"+clusterid+"|"+microId+"|Test Site-"+i+ "|" +outlet.getString(1)+"|No Injection|c. >=7k - <10k|"+ (i+10) +"\n").getBytes());
+							fos.write((dateInFile+"|"+clusterid+"|"+microId+"|Test Site-"+i+ "|" +outlet.getString(1)+"|No Injection|c. >=7k - <10k|"+ (i+10) +"|1\n").getBytes());
 						i++;
 
 						if(i % calcRowLimit == 0 && i != limit)
@@ -390,7 +398,7 @@ public class RDBMSOperation {
 							System.out.println("Total Rows : " + (i/fileSequence));
 							fos.close();
 							fos = new FileOutputStream(new File(filePath.replace(".csv", "_00" + fileSequence + ".csv")));
-							fos.write("DATE|CLUSTER|MICRO|SITE_ID|ID_OUTLET|STATUS_INJECTION|FLAG_ACM|COUNT_MSISDN\n".getBytes());
+							fos.write("DATE|CLUSTER|MICRO|SITE_ID|ID_OUTLET|STATUS_INJECTION|FLAG_ACM|COUNT_MSISDN|INCOMING_ONLY\n".getBytes());
 							fileSequence++;
 						}
 
@@ -398,8 +406,6 @@ public class RDBMSOperation {
 							if( limit==i)
 								break out;
 					}
-
-
 				}
 				fos.flush();
 			}
@@ -1353,29 +1359,24 @@ public class RDBMSOperation {
 	{
 		ResultSet cluster = null;
 		FileOutputStream fos = null;
+		limit = limit * fileCount;
+		int i = 0;
+		int fileSequence = 1;
+		int calcRowLimit = limit/fileCount; 
+		int clusterCount = 0;
+		List<String> clusterList = new ArrayList<String>();
 		try 
 		{
 			fos = new FileOutputStream(new File(filePath));
-			//			fos.write("DATE|CLUSTER|MICRO|SITE_ID|ID_OUTLET|STATUS_INJECTION|FLAG_ACM|COUNT_MSISDN\n".getBytes());
 			fos.write("DATE|CLUSTER|PROGMOTER_ORG_ID|CHECKIN_TYPE|QTY\n".getBytes());
-
 			cluster = conn.createStatement().executeQuery("select lookup_name_v from kpi.ms_lookup_master where lookup_type_n = (select lookup_type_n from kpi.ms_lookup_type_master where ext_lookup_type_n = 88) order by 1 limit 200;");
 
-			limit = limit * fileCount;
-			int i = 0;
-			int fileSequence = 1;
-			int calcRowLimit = limit/fileCount; 
-
-			List<String> clusterList = new ArrayList<String>();
-			int clusterCount = 0;
-
-			while (cluster.next()) {
+			while (cluster.next())
 				clusterList.add(cluster.getString(1));
-			}
 
 			for (int j = 0; j < limit; j++) 
 			{
-
+				i++;
 				if(clusterCount == clusterList.size())
 					clusterCount = 0;
 
@@ -1384,7 +1385,6 @@ public class RDBMSOperation {
 				else
 					fos.write((dateInFile + "|" + clusterList.get(clusterCount ++) + "|Test Site-"+j + "|Outside Location|" + ((j+4*5)-21) +"\n").getBytes());
 
-				i++;
 				if(i % calcRowLimit == 0 && i != limit)
 				{
 					System.out.println("Total Rows : " + (i/fileSequence));
@@ -1393,7 +1393,6 @@ public class RDBMSOperation {
 					fos.write("DATE|CLUSTER|PROGMOTER_ORG_ID|CHECKIN_TYPE|QTY\n".getBytes());
 					fileSequence++;
 				}
-
 			}
 
 			fos.close();
@@ -1403,6 +1402,263 @@ public class RDBMSOperation {
 		catch (Exception e) 
 		{
 			throw e;
+		}
+	}
+
+	public void prepareFileFor1186(Connection conn, String dateInFile, String filePath, int limit, int fileCount) throws Exception
+	{
+		ResultSet micro = null;
+		ResultSet cluster = null;
+		ResultSet org = null;
+		FileOutputStream fos = null;
+		ArrayList<String> microList = new ArrayList<String>();
+		List<String> clusterList = new ArrayList<String>();
+		limit = limit * fileCount;
+		int i = 0;
+		int j = 0;
+		int fileSequence = 1;
+		int calcRowLimit = limit/fileCount; 
+		int clusterCount = 0;
+		try 
+		{
+			fos = new FileOutputStream(new File(filePath));
+			fos.write("DATE|SITE_ID|ORGANIZATION_ID|MICRO_CLUSTER|CLUSTER|QTY_SERIOUS\n".getBytes());
+			cluster = conn.createStatement().executeQuery("select lookup_name_v from kpi.ms_lookup_master where lookup_type_n = (select lookup_type_n from kpi.ms_lookup_type_master where ext_lookup_type_n = 88) order by 1 limit 200;");
+			micro = conn.createStatement().executeQuery("select lookup_name_v from kpi.ms_lookup_master where lookup_type_n = (select lookup_type_n from kpi.ms_lookup_type_master where ext_lookup_type_n = 89) order by 1;");
+			org = conn.createStatement().executeQuery("select ref_code_v from kpi.ms_org_master where org_type_n = 6 order by 1");
+
+
+			while (cluster.next())
+				clusterList.add(cluster.getString(1));
+			while (micro.next())
+				microList.add(micro.getString(1));
+
+
+			while (org.next() && j < limit )
+			{
+				j++;
+				if(clusterCount == clusterList.size() || clusterCount == microList.size())
+					clusterCount = 0;
+				clusterCount ++;
+				if(j%2 == 0)
+					fos.write((dateInFile + "|" + ("Test Site-"+j) + "|" + org.getString(1) + "|" + microList.get(clusterCount) + "|" + clusterList.get(clusterCount) + "|" + (j+(2*3)) + "\n").getBytes());
+				else
+					fos.write((dateInFile + "|" + ("Test Site-"+j) + "|" + org.getString(1) + "|" + microList.get(clusterCount) + "|" + clusterList.get(clusterCount) + "|" + (j+(4*2)) + "\n").getBytes());
+
+				i++;
+				if(i % calcRowLimit == 0 && i != limit)
+				{
+					System.out.println("Total Rows : " + (i/fileSequence));
+					fos.close();
+					fos = new FileOutputStream(new File(filePath.replace(".csv", "_00" + fileSequence + ".csv")));
+					fos.write("DATE|SITE_ID|ORGANIZATION_ID|MICRO_CLUSTER|CLUSTER|QTY_SERIOUS\n".getBytes());
+					fileSequence++;
+				}
+			}
+			fos.close();
+			System.out.print("File generated       ");
+			System.out.println("Total Rows : " + (i/fileSequence) + "   1186");
+		}
+		catch (Exception e) 
+		{
+			throw e;
+		}
+		finally 
+		{
+			microList.clear();
+			clusterList.clear();
+			if(cluster!= null)
+				cluster.close();
+			if(micro != null)
+				micro.close();
+			if(org != null)
+				org.close();
+		}
+	}
+
+	public void prepareFileFor1187(Connection conn, String dateInFile, String filePath, int limit, int fileCount) throws Exception
+	{
+		ResultSet cluster = null;
+		ResultSet micro = null;
+		FileOutputStream fos = null;
+		ArrayList<String> microList = new ArrayList<String>();
+		List<String> clusterList = new ArrayList<String>();
+		limit = limit * fileCount;
+		int i = 0;
+		int fileSequence = 1;
+		int calcRowLimit = limit/fileCount; 
+		int clusterCount = 0;
+		try 
+		{
+			fos = new FileOutputStream(new File(filePath));
+			fos.write("DATE|SITE_ID|MICRO_CLUSTER|CLUSTER|QTY_SERIOUS\n".getBytes());
+
+			cluster = conn.createStatement().executeQuery("select lookup_name_v from kpi.ms_lookup_master where lookup_type_n = (select lookup_type_n from kpi.ms_lookup_type_master where ext_lookup_type_n = 88) order by 1 limit 200;");
+			micro = conn.createStatement().executeQuery("select lookup_name_v from kpi.ms_lookup_master where lookup_type_n = (select lookup_type_n from kpi.ms_lookup_type_master where ext_lookup_type_n = 89) order by 1;");
+
+			while (cluster.next())
+				clusterList.add(cluster.getString(1));
+			while (micro.next())
+				microList.add(micro.getString(1));
+
+			for (int j = 0; j < limit; j++) 
+			{
+				i++;
+
+				if(clusterCount == clusterList.size() || clusterCount == microList.size())
+					clusterCount = 0;
+				clusterCount++;
+				if(j%2 == 0)
+					fos.write((dateInFile + "|" + ("Test Site-"+j + "|") + microList.get(clusterCount) + "|" + clusterList.get(clusterCount) + "|" + (j+2*3) + "\n").getBytes());
+				else
+					fos.write((dateInFile + "|" + ("Test Site-"+j + "|") + microList.get(clusterCount) + "|" + clusterList.get(clusterCount) + "|" + (j+2*2) + "\n").getBytes());
+
+				if(i % calcRowLimit == 0 && i != limit)
+				{
+					System.out.println("Total Rows : " + (i/fileSequence));
+					fos.close();
+					fos = new FileOutputStream(new File(filePath.replace(".csv", "_00" + fileSequence + ".csv")));
+					fos.write("DATE|SITE_ID|MICRO_CLUSTER|CLUSTER|QTY_SERIOUS\n".getBytes());
+					fileSequence++;
+				}
+			}
+
+			fos.close();
+			System.out.print("File generated       ");
+			System.out.println("Total Rows : " + (i/fileSequence) + "   1187");
+		}
+		catch (Exception e) 
+		{
+			throw e;
+		}
+		finally 
+		{
+			microList.clear();
+			clusterList.clear();
+			if(cluster!= null)
+				cluster.close();
+			if(micro != null)
+				micro.close();
+		}
+	}
+
+	public void prepareFileFor1188(Connection conn, String dateInFile, String filePath, int limit, int fileCount) throws Exception
+	{
+		ResultSet cluster = null;
+		ResultSet micro = null;
+		FileOutputStream fos = null;
+		ArrayList<String> microList = new ArrayList<String>();
+		List<String> clusterList = new ArrayList<String>();
+		limit = limit * fileCount;
+		int i = 0;
+		int fileSequence = 1;
+		int calcRowLimit = limit/fileCount; 
+		int clusterCount = 0;
+		try 
+		{
+			fos = new FileOutputStream(new File(filePath));
+			fos.write("DATE|CLUSTER|MICRO_CLUSTER|TOTAL_SITE_QURO|ACTUAL_SITE_QURO|TOTAL_SITE_QSSO|ACTUAL_SITE_QSSO\n".getBytes());
+
+			cluster = conn.createStatement().executeQuery("select lookup_name_v from kpi.ms_lookup_master where lookup_type_n = (select lookup_type_n from kpi.ms_lookup_type_master where ext_lookup_type_n = 88) order by 1 limit 200;");
+			micro = conn.createStatement().executeQuery("select lookup_name_v from kpi.ms_lookup_master where lookup_type_n = (select lookup_type_n from kpi.ms_lookup_type_master where ext_lookup_type_n = 89) order by 1;");
+
+			while (cluster.next())
+				clusterList.add(cluster.getString(1));
+			while (micro.next())
+				microList.add(micro.getString(1));
+
+			for (int j = 0; j < limit; j++) 
+			{
+				i++;
+
+				if(clusterCount == clusterList.size() || clusterCount == microList.size())
+					clusterCount = 0;
+				clusterCount++;
+				if(j%2 == 0)
+					fos.write((dateInFile + "|" + clusterList.get(clusterCount) + "|" + microList.get(clusterCount) + "|" + ((j+1)*2) + "|" + ((j+1)*2) + "|" + ((j+1)*2) + "|" + ((j+1)*2) + "\n").getBytes());
+				else
+					fos.write((dateInFile + "|" + clusterList.get(clusterCount) + "|" + microList.get(clusterCount) + "|" + ((j+1)*3) + "|" + ((j+1)*2) + "|" + ((j+1)*3) + "|" + ((j+1)*2) + "\n").getBytes());
+
+				if(i % calcRowLimit == 0 && i != limit)
+				{
+					System.out.println("Total Rows : " + (i/fileSequence));
+					fos.close();
+					fos = new FileOutputStream(new File(filePath.replace(".csv", "_00" + fileSequence + ".csv")));
+					fos.write("DATE|CLUSTER|MICRO_CLUSTER|TOTAL_SITE_QURO|ACTUAL_SITE_QURO|TOTAL_SITE_QSSO|ACTUAL_SITE_QSSO\n".getBytes());
+					fileSequence++;
+				}
+			}
+
+			fos.close();
+			System.out.println("File generated       Total Rows : " + (i/fileSequence) + "   1188");
+		}
+		catch (Exception e) 
+		{
+			throw e;
+		}
+		finally 
+		{
+			microList.clear();
+			clusterList.clear();
+			if(cluster!= null)
+				cluster.close();
+			if(micro != null)
+				micro.close();
+		}
+	}
+
+	public void prepareFileFor1189(Connection conn, String dateInFile, String filePath, int limit, int fileCount) throws Exception
+	{
+		ResultSet cluster = null;
+		FileOutputStream fos = null;
+		List<String> clusterList = new ArrayList<String>();
+		limit = limit * fileCount;
+		int i = 0;
+		int fileSequence = 1;
+		int calcRowLimit = limit/fileCount; 
+		int clusterCount = 0;
+		try 
+		{
+			fos = new FileOutputStream(new File(filePath));
+			fos.write("DATE|CLUSTER_ID|TOTAL_RELOAD_PAKET|CROSS\n".getBytes());
+
+			cluster = conn.createStatement().executeQuery("select lookup_name_v from kpi.ms_lookup_master where lookup_type_n = (select lookup_type_n from kpi.ms_lookup_type_master where ext_lookup_type_n = 88) order by 1 limit 200;");
+			while (cluster.next())
+				clusterList.add(cluster.getString(1));
+
+			for (int j = 0; j < limit; j++) 
+			{
+				i++;
+
+				if(clusterCount == clusterList.size())
+					clusterCount = 0;
+
+				if(j%2 == 0)
+					fos.write((dateInFile + "|" + clusterList.get(clusterCount ++) + "|" + (j+2*3) + "|" + (j+2*3) +"\n").getBytes());
+				else
+					fos.write((dateInFile + "|" + clusterList.get(clusterCount ++) + "|" + (j+2*3) + "|" + (j+2*2) +"\n").getBytes());
+
+				if(i % calcRowLimit == 0 && i != limit)
+				{
+					System.out.println("Total Rows : " + (i/fileSequence));
+					fos.close();
+					fos = new FileOutputStream(new File(filePath.replace(".csv", "_00" + fileSequence + ".csv")));
+					fos.write("DATE|CLUSTER_ID|TOTAL_RELOAD_PAKET|CROSS\n".getBytes());
+					fileSequence++;
+				}
+			}
+			fos.close();
+			System.out.println("File generated       Total Rows : " + (i/fileSequence) + "   1189");
+		}
+		catch (Exception e) 
+		{
+			throw e;
+		}
+		finally 
+		{
+			clusterList.clear();
+			if(cluster != null)
+				cluster.close();
 		}
 	}
 
@@ -1663,7 +1919,7 @@ public class RDBMSOperation {
 					System.out.print( "-- METRIC"+ "\t" + fields.get("metric_field")+ "\t" );
 					System.out.println( "-- MONTHLY TABLE"+ "	kpi." + jsonObject.get("monthly_table").toString().toLowerCase());
 					System.out.println( "-- SOURCE"+ "\t" + fields.get("source_field")+ "\t" );
-					
+
 				}
 				//System.out.println("FAILURE TABLE" + "	kpi.TR_TEMP_HADOOP_FAILURE_AGGR".toLowerCase());
 
@@ -1695,12 +1951,12 @@ public class RDBMSOperation {
 
 				if(deleteQueryCmdFlag)
 					System.out.println("\n/*");
-				
+
 				if(choice.equalsIgnoreCase("all") || choice.equalsIgnoreCase("delete")) 
 				{
 					//System.out.println("delete from kpi.tr_temp_hadoop_failure_aggr where file_id_n in (select file_id_n from interface.tr_interface_file_summary_details where file_id_n in (select file_id_n from interface.tr_interface_file_summary where interface_id_n in ("+resultSet.getString(1)+")));");
-					
-					
+
+
 					System.out.println("delete from interface.tr_interface_file_summary_details where file_id_n in (select file_id_n from interface.tr_interface_file_summary where interface_id_n in ("+resultSet.getString(1)+"));");
 					System.out.println("delete from interface.tr_interface_file_summary where interface_id_n in ("+resultSet.getString(1)+");");
 
@@ -1718,15 +1974,15 @@ public class RDBMSOperation {
 
 				if(deleteQueryCmdFlag)
 					System.out.println("*/\n\n\n");
-				
+
 				if(deleteQueryCmdFlag)
-				System.out.println("select * from kpi.tr_temp_hadoop_failure_aggr where file_id_n in (0);");
+					System.out.println("select * from kpi.tr_temp_hadoop_failure_aggr where file_id_n in (0);");
 				System.out.println(lineBreak);
 				duplicate_validation_conf = null;
 			}
 			if(deleteQueryCmdFlag)
-				
-			System.out.println(summaryDetails);
+
+				System.out.println(summaryDetails);
 		}
 		catch (Exception e) 
 		{
@@ -1944,7 +2200,7 @@ public class RDBMSOperation {
 		{
 			if(interfaceIdList == null)
 				return null;
-
+			Collections.sort(interfaceIdList);
 			sql = sql + interfaceIdList.toString().replace("[", "(").replace("]", ")");
 			response = new HashMap<Long, String>();
 			statement = connection.prepareStatement(sql);

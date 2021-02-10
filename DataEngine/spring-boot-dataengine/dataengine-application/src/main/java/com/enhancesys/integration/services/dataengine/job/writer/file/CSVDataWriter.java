@@ -188,6 +188,7 @@ public class CSVDataWriter extends JobProcessor implements DataWriter
 		Object value = null;
 		File file = null;
 		String dataLine = "";
+		String batchDataLines = "";
 		List<Object> values = null; 
 		Map<String,Object> dataToEvaluate = null;
 		String temp = null;
@@ -222,8 +223,9 @@ public class CSVDataWriter extends JobProcessor implements DataWriter
 					recordCount = recordCount + jsonArray.size();
 					outer : for(Object object : jsonArray)
 					{
+						dataLine = "";
 						dataObject = ((JSONObject) object);
-						//						log.info("dataObject : " + dataObject);
+//						LOGGER.info("dataObject : " + dataObject);
 						if(mandatoryFields != null)
 						{
 							for(Object field : mandatoryFields)
@@ -334,28 +336,59 @@ public class CSVDataWriter extends JobProcessor implements DataWriter
 								{
 									try 
 									{
-										expressionProcessor.init(fieldObject.get(DataConstants.EXPRESSION_CONF).toString());
-										dataToEvaluate = new HashMap<String, Object>();
-										dataToEvaluate.put(fieldObject.get(DataConstants.PATH).toString(), value.toString().trim());
-
-										if(fieldObject.get(DataConstants.COLLECTION_DATA_CONF) != null)
+										if(fieldObject.get(DataConstants.OPTIONAL) != null && fieldObject.get(DataConstants.OPTIONAL).toString().isEmpty())
 										{
-											jsonArr = (JSONArray) fieldObject.get(DataConstants.COLLECTION_DATA_CONF);
-											for (Object object2 : jsonArr)
-											{
-												if(dataObject.get(object2.toString()) != null && !dataObject.get(object2.toString()).toString().isEmpty())
-													dataToEvaluate.put(object2.toString(), dataObject.get(object2.toString()));
-											}
+											if(fieldObject.get(DataConstants.LOOKUP_FIELD) != null)
+												tempVal = dataObject.get(fieldObject.get(DataConstants.LOOKUP_FIELD).toString()).toString();
 										}
-
-										if(expressionProcessor.processExpression(dataToEvaluate))
-											tempVal = fieldObject.get(DataConstants.IF).toString();
 										else
-											tempVal = fieldObject.get(DataConstants.ELSE).toString();
+										{
+											expressionProcessor.init(fieldObject.get(DataConstants.EXPRESSION_CONF).toString());
+											dataToEvaluate = new HashMap<String, Object>();
+											dataToEvaluate.put(fieldObject.get(DataConstants.PATH).toString(), value.toString().trim());
+
+											if(fieldObject.get(DataConstants.COLLECTION_DATA_CONF) != null)
+											{
+												jsonArr = (JSONArray) fieldObject.get(DataConstants.COLLECTION_DATA_CONF);
+												for (Object object2 : jsonArr)
+												{
+													if(dataObject.get(object2.toString()) != null && !dataObject.get(object2.toString()).toString().isEmpty())
+														dataToEvaluate.put(object2.toString(), dataObject.get(object2.toString()));
+												}
+											}
+//											LOGGER.info("dataToEvaluate :: " + dataToEvaluate);
+											if(expressionProcessor.processExpression(dataToEvaluate))
+											{
+												if(fieldObject.get(DataConstants.IF) != null)
+													tempVal = fieldObject.get(DataConstants.IF).toString();
+												else
+													if(fieldObject.get(DataConstants.LOOKUP_FIELD) != null)
+														tempVal = dataObject.get(fieldObject.get(DataConstants.LOOKUP_FIELD).toString()).toString();
+													else
+													{
+														--recordCount;	// no need to write data
+														dataLine = "";
+														continue outer;
+													}
+											}
+											else
+											{
+												if(fieldObject.get(DataConstants.ELSE) != null && !fieldObject.get(DataConstants.ELSE).toString().isEmpty())
+													tempVal = fieldObject.get(DataConstants.ELSE).toString();
+												else
+												{
+													--recordCount;	// no need to write data
+													dataLine = "";
+													continue outer;
+												}
+											}
+										
+										}
 									} 
 									catch (Exception e) 
 									{
 										tempVal = "";
+//										LOGGER.error(e.getMessage(), e);
 									}
 									dataLine = dataLine + tempVal + delimiter;
 								}
@@ -453,19 +486,18 @@ public class CSVDataWriter extends JobProcessor implements DataWriter
 						}
 						count ++;
 						batchRecordCount ++;
-						dataLine = dataLine.substring(0, dataLine.length() - 1) + "\n";
-
+						batchDataLines = batchDataLines + dataLine.substring(0, dataLine.length()-1) + "\n";
 						//						log.info("dataLine : " + dataLine);
 						if(count == writeBatchSize)
 						{
-							outputStream.write(dataLine.getBytes());
-							dataLine = "";
+							outputStream.write(batchDataLines.getBytes());
+							batchDataLines = "";
 							count = 0;
 						}
 					}
 
-					if(!dataLine.trim().isEmpty()) {
-						outputStream.write(dataLine.getBytes());
+					if(!batchDataLines.trim().isEmpty()) {
+						outputStream.write(batchDataLines.getBytes());
 						outputStream.flush();
 					}
 
@@ -510,6 +542,7 @@ public class CSVDataWriter extends JobProcessor implements DataWriter
 			value = null;
 			file = null;
 			dataLine = null;
+			batchDataLines = null;
 			values = null; 
 			temp = null;
 			jsonData = null;

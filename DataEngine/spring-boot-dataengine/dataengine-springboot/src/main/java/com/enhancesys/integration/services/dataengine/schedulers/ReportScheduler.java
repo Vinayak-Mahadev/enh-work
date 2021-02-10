@@ -1,15 +1,11 @@
 package com.enhancesys.integration.services.dataengine.schedulers;
 
-import static org.quartz.JobBuilder.newJob;
-import static org.quartz.TriggerBuilder.newTrigger;
-
 import java.io.Serializable;
 
 import javax.annotation.PostConstruct;
 import javax.annotation.PreDestroy;
 
 import org.apache.log4j.Logger;
-import org.quartz.CronScheduleBuilder;
 import org.quartz.JobDetail;
 import org.quartz.JobKey;
 import org.quartz.Scheduler;
@@ -17,10 +13,6 @@ import org.quartz.SchedulerException;
 import org.quartz.Trigger;
 import org.quartz.impl.StdSchedulerFactory;
 import org.springframework.stereotype.Component;
-
-import com.enhancesys.integration.services.dataengine.schedulers.impl.ReportServiceProcessJobData;
-import com.enhancesys.integration.services.dataengine.util.DataConstants;
-import com.enhancesys.integration.services.dataengine.util.Utilities;
 
 @Component
 public class ReportScheduler implements Serializable
@@ -54,9 +46,10 @@ public class ReportScheduler implements Serializable
 		try 
 		{
 			/* Process File job to transfer files from sftp to inerface and interface to sftp*/
-			LOGGER.info("Job transfer files from sftp to interface and interface to sftp");
 
-			for (Long moduleId : Utilities.getLongLists("")) 
+/*			LOGGER.info("Job transfer files from sftp to interface and interface to sftp");
+
+			for (Long moduleId : Utilities.getLongLists("101")) 
 			{
 				groupName = "TransferFiles_" + moduleId;
 				processFilesJob = newJob(ReportServiceProcessJobData.class).withIdentity("transferFilesJob_" + moduleId, groupName).build();
@@ -76,7 +69,7 @@ public class ReportScheduler implements Serializable
 					scheduler.scheduleJob(processFilesJob, group3Trigger);
 				}
 			}
-
+*/
 		} 
 		catch (Exception e) 
 		{
