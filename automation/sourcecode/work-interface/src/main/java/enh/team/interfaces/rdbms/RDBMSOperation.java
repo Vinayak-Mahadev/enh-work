@@ -3,10 +3,12 @@ package enh.team.interfaces.rdbms;
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.FileWriter;
+import java.io.OutputStream;
 import java.sql.Connection;
 import java.sql.DatabaseMetaData;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.sql.ResultSetMetaData;
 import java.sql.SQLException;
 import java.text.DecimalFormat;
 import java.util.ArrayList;
@@ -19,6 +21,9 @@ import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
+import org.apache.poi.ss.usermodel.Row;
+import org.apache.poi.ss.usermodel.Sheet;
+import org.apache.poi.xssf.streaming.SXSSFWorkbook;
 import org.json.JSONArray;
 import org.json.JSONObject;
 
@@ -389,8 +394,10 @@ public class RDBMSOperation {
 					{
 						if(i%2 == 0)
 							fos.write((dateInFile+"|"+clusterid+"|"+microId+"|Test Site-"+i+ "|" +outlet.getString(1)+"|WithOut Injection|c. >=7k - <10k|"+ (i+10) +"|1\n").getBytes());
+						else if(i%3 == 0)
+							fos.write((dateInFile+"|"+clusterid+"|"+microId+"|Test Site-"+i+ "|" +outlet.getString(1)+"|WithOut Injection|c. >=35k - <50k|"+ (i+10) +"|1\n").getBytes());
 						else
-							fos.write((dateInFile+"|"+clusterid+"|"+microId+"|Test Site-"+i+ "|" +outlet.getString(1)+"|No Injection|c. >=7k - <10k|"+ (i+10) +"|1\n").getBytes());
+							fos.write((dateInFile+"|"+clusterid+"|"+microId+"|Test Site-"+i+ "|" +outlet.getString(1)+"|No Injection|a. <5k|"+ (i+10) +"|1\n").getBytes());
 						i++;
 
 						if(i % calcRowLimit == 0 && i != limit)
@@ -1894,6 +1901,7 @@ public class RDBMSOperation {
 
 			while(resultSet.next()) 
 			{
+				System.out.println("-- " + resultSet.getString(3));
 				jsonObject = new JSONObject(resultSet.getString(3));
 				fields = jsonObject.getJSONObject("fields");
 				if(jsonObject.has("duplicate_validation_conf") && jsonObject.get("duplicate_validation_conf") != null) 
@@ -1981,8 +1989,8 @@ public class RDBMSOperation {
 				duplicate_validation_conf = null;
 			}
 			if(deleteQueryCmdFlag)
-
 				System.out.println(summaryDetails);
+			System.out.println("-- " + "select ifs.interface_id_n as interface_id, inte.name_v as interface_name, ifs.file_id_n, ifs.file_name_v, st.status_n as status_id, st.name_v as status_desc, ifs.validated_on_dt,ifs.uploaded_on_dt,ifs.processed_on_dt,ifs.last_updated_time_dt, ifs.total_count_n,ifs.success_count_n,ifs.error_count_n from interface.tr_interface_file_summary ifs, interface.sd_status st, interface.ms_interface inte where ifs.interface_id_n = inte.interface_id_n and ifs.status_n = st.status_n and ifs.interface_id_n in ("+interfaceIdStr+")  order by ifs.interface_id_n;");
 		}
 		catch (Exception e) 
 		{
@@ -2221,5 +2229,93 @@ public class RDBMSOperation {
 				statement.close();
 		}
 		return response;
+	}
+
+	public void tableIntoCsv(Connection connection, String schema, String tableName, String query, String delimiter, String fileLoc) 
+	{
+		PreparedStatement statement = null;
+		ResultSet resultSet = null;
+		ResultSetMetaData metaData = null;
+		String header = "";
+		String data = null;
+		FileWriter writer = null;
+		try 
+		{
+			if(query == null)
+				query = "select * from " + schema + "." + tableName + "  order by 1;";
+			statement = connection.prepareStatement(query);
+			resultSet = statement.executeQuery();
+			metaData = resultSet.getMetaData();
+			writer = new FileWriter(new File(fileLoc));
+			int columnCount = metaData.getColumnCount();
+
+			for (int i = 1; i <= columnCount; i++) 
+			{
+				header = header + metaData.getColumnLabel(i) + delimiter;
+			}
+			header = header.substring(0, header.length()-1).toUpperCase();
+			System.out.println("Header :: " + header);
+			writer.write(header + "\n");
+			while(resultSet.next())
+			{
+				data = "";
+				for (int i = 1; i <= columnCount; i++) 
+				{
+					data = data + resultSet.getObject(i) + delimiter;
+				}
+				data = data.substring(0, data.length()-1);
+				writer.write(data + "\n");		
+			}
+			if(writer != null)
+				writer.close();
+		}
+		catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+	
+	public void tableIntoXls(Connection connection, List<String> tableList, String query, String fileLoc) 
+	{
+		PreparedStatement statement = null;
+		ResultSet resultSet = null;
+		ResultSetMetaData metaData = null;
+		int rowCount = 0;
+		OutputStream outputStream = null;
+		try 
+		{
+			SXSSFWorkbook workbook = new SXSSFWorkbook();
+			outputStream = new FileOutputStream(new File(fileLoc));
+			for (String tableName : tableList) 
+			{
+				Sheet sheet = workbook.createSheet(tableName);
+				rowCount = 0;
+				Row  row = sheet.createRow(rowCount++);
+				
+				if(query == null)
+					query = "select * from "  + tableName + "  order by 1;";
+				statement = connection.prepareStatement(query);
+				resultSet = statement.executeQuery();
+				metaData = resultSet.getMetaData();
+				
+				int columnCount = metaData.getColumnCount();
+				
+				for (int i = 0; i < columnCount; i++) 
+					row.createCell(i).setCellValue(metaData.getColumnLabel(i+1).toUpperCase());
+					
+				while(resultSet.next())
+				{
+					row = sheet.createRow(rowCount++);
+					for (int i = 0; i < columnCount; i++) 
+						row.createCell(i).setCellValue(resultSet.getString(i+1));
+				}
+			}
+			workbook.write(outputStream);
+			
+			if(workbook != null)
+				workbook.dispose();
+		}
+		catch (Exception e) {
+			e.printStackTrace();
+		}
 	}
 }

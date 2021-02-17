@@ -106,7 +106,7 @@ INSERT INTO INTERFACE.MS_INTERFACE_ATTR (ATTRIBUTE_ID_N, INTERFACE_ID_N, NAME_V,
 INSERT INTO INTERFACE.MS_INTERFACE_ATTR (ATTRIBUTE_ID_N, INTERFACE_ID_N, NAME_V, VALUE_V, LAST_UPDATED_TIME_DT) VALUES (1187029, 1187, 'Client Id', '0', now());
 INSERT INTO INTERFACE.MS_INTERFACE_ATTR (ATTRIBUTE_ID_N, INTERFACE_ID_N, NAME_V, VALUE_V, LAST_UPDATED_TIME_DT) VALUES (1187030, 1187, 'Is Sftp', 'true', now());
 INSERT INTO INTERFACE.MS_INTERFACE_ATTR (ATTRIBUTE_ID_N, INTERFACE_ID_N, NAME_V, VALUE_V, LAST_UPDATED_TIME_DT) VALUES (1187031, 1187, 'File Headers', 'DATE|SITE_ID|MICRO_CLUSTER|CLUSTER|QTY_SERIOUS', now());
-INSERT INTO INTERFACE.MS_INTERFACE_ATTR (ATTRIBUTE_ID_N, INTERFACE_ID_N, NAME_V, VALUE_V, LAST_UPDATED_TIME_DT) VALUES (1187032, 1187, 'Field Validation Conf', 'DATE;M;RD;[0-9]*;yyyyMMdd%SITE_ID;M;R;MICRO_CLUSTER;M;R;%CLUSTER;M;R;%QTY_SERIOUS;M;R;[0-9]+', now());
+INSERT INTO INTERFACE.MS_INTERFACE_ATTR (ATTRIBUTE_ID_N, INTERFACE_ID_N, NAME_V, VALUE_V, LAST_UPDATED_TIME_DT) VALUES (1187032, 1187, 'Field Validation Conf', 'DATE;M;RD;[0-9]*;yyyyMMdd%SITE_ID;M;R;%MICRO_CLUSTER;M;R;%CLUSTER;M;R;%QTY_SERIOUS;M;R;[0-9]+', now());
 INSERT INTO INTERFACE.MS_INTERFACE_ATTR (ATTRIBUTE_ID_N, INTERFACE_ID_N, NAME_V, VALUE_V, LAST_UPDATED_TIME_DT) VALUES (1187033, 1187, 'CSV MERGER', 'java:global/EnhancesysManagement/IntegrationServices/GenericFileProcessor!com.enhancesys.integration.services.interfaces.merger.CSVMerger', now());
 INSERT INTO INTERFACE.MS_INTERFACE_ATTR (ATTRIBUTE_ID_N, INTERFACE_ID_N, NAME_V, VALUE_V, LAST_UPDATED_TIME_DT) VALUES (1187034, 1187, 'Validation Conf Delimiter', '%', now());
 INSERT INTO INTERFACE.MS_INTERFACE_ATTR (ATTRIBUTE_ID_N, INTERFACE_ID_N, NAME_V, VALUE_V, LAST_UPDATED_TIME_DT) VALUES (1187035, 1187, 'File Data Batch Size', '5000', now());
@@ -165,7 +165,7 @@ INSERT INTO INTERFACE.MS_INTERFACE_ATTR (ATTRIBUTE_ID_N, INTERFACE_ID_N, NAME_V,
 INSERT INTO INTERFACE.MS_INTERFACE_ATTR (ATTRIBUTE_ID_N, INTERFACE_ID_N, NAME_V, VALUE_V, LAST_UPDATED_TIME_DT) VALUES (1188029, 1188, 'Client Id', '0', now());
 INSERT INTO INTERFACE.MS_INTERFACE_ATTR (ATTRIBUTE_ID_N, INTERFACE_ID_N, NAME_V, VALUE_V, LAST_UPDATED_TIME_DT) VALUES (1188030, 1188, 'Is Sftp', 'true', now());
 INSERT INTO INTERFACE.MS_INTERFACE_ATTR (ATTRIBUTE_ID_N, INTERFACE_ID_N, NAME_V, VALUE_V, LAST_UPDATED_TIME_DT) VALUES (1188031, 1188, 'File Headers', 'DATE|CLUSTER|MICRO_CLUSTER|TOTAL_SITE_QURO|ACTUAL_SITE_QURO|TOTAL_SITE_QSSO|ACTUAL_SITE_QSSO', now());
-INSERT INTO INTERFACE.MS_INTERFACE_ATTR (ATTRIBUTE_ID_N, INTERFACE_ID_N, NAME_V, VALUE_V, LAST_UPDATED_TIME_DT) VALUES (1188032, 1188, 'Field Validation Conf', 'DATE;M;RD;[0-9]*;yyyyMMdd%CLUSTER;M;R;MICRO_CLUSTER;M;R;%TOTAL_SITE_QURO;M;R;[0-9]+%ACTUAL_SITE_QURO;M;R;[0-9]+%TOTAL_SITE_QSSO;M;R;[0-9]+%ACTUAL_SITE_QSSO;M;R;[0-9]+', now());
+INSERT INTO INTERFACE.MS_INTERFACE_ATTR (ATTRIBUTE_ID_N, INTERFACE_ID_N, NAME_V, VALUE_V, LAST_UPDATED_TIME_DT) VALUES (1188032, 1188, 'Field Validation Conf', 'DATE;M;RD;[0-9]*;yyyyMMdd%CLUSTER;M;R;%MICRO_CLUSTER;M;R;%TOTAL_SITE_QURO;M;R;[0-9]+%ACTUAL_SITE_QURO;M;R;[0-9]+%TOTAL_SITE_QSSO;M;R;[0-9]+%ACTUAL_SITE_QSSO;M;R;[0-9]+', now());
 INSERT INTO INTERFACE.MS_INTERFACE_ATTR (ATTRIBUTE_ID_N, INTERFACE_ID_N, NAME_V, VALUE_V, LAST_UPDATED_TIME_DT) VALUES (1188033, 1188, 'CSV MERGER', 'java:global/EnhancesysManagement/IntegrationServices/GenericFileProcessor!com.enhancesys.integration.services.interfaces.merger.CSVMerger', now());
 INSERT INTO INTERFACE.MS_INTERFACE_ATTR (ATTRIBUTE_ID_N, INTERFACE_ID_N, NAME_V, VALUE_V, LAST_UPDATED_TIME_DT) VALUES (1188034, 1188, 'Validation Conf Delimiter', '%', now());
 INSERT INTO INTERFACE.MS_INTERFACE_ATTR (ATTRIBUTE_ID_N, INTERFACE_ID_N, NAME_V, VALUE_V, LAST_UPDATED_TIME_DT) VALUES (1188035, 1188, 'File Data Batch Size', '5000', now());
@@ -330,3 +330,10 @@ update interface.ms_interface_attr set value_v = '/home/appuser/interfaces/S-NOC
 update interface.ms_interface_attr set value_v = '/home/appuser/interfaces/S-NOC/LOCAL/backup/rejected_file/HADOOP/Cross_chip/' where attribute_id_n = 1189022;
 update interface.ms_interface_attr set value_v = '/home/appuser/interfaces/S-NOC/LOCAL/backup/filter_file/HADOOP/Cross_chip/' where attribute_id_n = 1189023;
 update interface.ms_interface_attr set value_v = '/home/appuser/interfaces/S-NOC/LOCAL/backup/filter_file/HADOOP/Cross_chip/' where attribute_id_n = 1189024;
+
+
+
+
+
+
+-- select ifs.interface_id_n as interface_id, inte.name_v as interface_name, ifs.file_id_n, ifs.file_name_v, st.status_n as status_id, st.name_v as status_desc, ifs.validated_on_dt,ifs.uploaded_on_dt,ifs.processed_on_dt,ifs.last_updated_time_dt, ifs.total_count_n,ifs.success_count_n,ifs.error_count_n from interface.tr_interface_file_summary ifs, interface.sd_status st, interface.ms_interface inte where ifs.interface_id_n = inte.interface_id_n and ifs.status_n = st.status_n and ifs.interface_id_n in (1169,1186,1187,1188,1189)  order by ifs.interface_id_n;

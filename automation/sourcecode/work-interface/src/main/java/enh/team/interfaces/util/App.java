@@ -60,10 +60,11 @@ public class App {
 
 
 
-		fieldConf  = "TRANSACTIONID;M;R;[a-zA-Z0-9]+|PRODUCTCODE;M;N;[a-zA-Z0-9]+|STARTSERIAL;M;R;[a-zA-Z0-9/'-]{1,18}|ENDSERIAL;M;R;[a-zA-Z0-9/'-]{1,18}|ADDL1;N;N;|ADDL2;N;N;|ADDL3;N;N;|ADDL4;N;N;|COUNTER;M;R;[0-9]+";
-		validationConfList = Arrays.asList(fieldConf.split("\\|"));
+		fieldConf  = "DATE;M;RD;[0-9]*;yyyyMMdd%CLUSTER;M;R;MICRO_CLUSTER;M;R;%TOTAL_SITE_QURO;M;R;[0-9]+%ACTUAL_SITE_QURO;M;R;[0-9]+%TOTAL_SITE_QSSO;M;R;[0-9]+%ACTUAL_SITE_QSSO;M;R;[0-9]+";
+		validationConfList = Arrays.asList(fieldConf.split("%"));
+		System.out.println(validationConfList.size() + "   "+ validationConfList);
 //1
-		line = "A1001|PRO1|/'2020001/|/2020010-'/|||||1";
+		line = "20210101|BANDUNG KOTA - INNER|badung new|2|2|2|2";
 		dataList = Arrays.asList(line.split("\\|"));;
 		System.out.println(Utility.basicValidation(validationConfList, dataList, line));
 
