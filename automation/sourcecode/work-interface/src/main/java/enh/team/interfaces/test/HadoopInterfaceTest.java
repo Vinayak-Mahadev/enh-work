@@ -55,51 +55,57 @@ public class HadoopInterfaceTest
 		//		String interfaceIdStr = "1165 ,1166 ,1167 ,1168 ,1169 ,1170 ,1171 ,1172 ,1173 ,1174 ,1175 ,1176 ,1177 ,1178 ,1179 ,1180 ,1181 ,1182 ,1183";
 
 		//		String interfaceIdStr = "1066,1067,1068,1069,1070,1071,1076,1077,1080,1081,1078,1079";
-		String interfaceIdStr = "1169,1186,1187,1188,1189";
-		//				String interfaceIdStr = "1169";
+//		String interfaceIdStr = "1169,1186,1187,1188,1189";
+						String interfaceIdStr = "1169";
 		//		String interfaceIdStr = "1066,1071";
 
 		HadoopInterfaceTest hitest = new HadoopInterfaceTest(interfaceIdStr);;
 
-		List<String> tableList = new LinkedList<String>();
-		tableList.add("interface.ms_interface");
-		tableList.add("interface.ms_interface_attr");
-		hitest.rdbmsOperation.tableIntoXls(hitest.connection, tableList, null, "E:\\interface\\sample1.xlsx");
+//		List<String> tableList = new LinkedList<String>();
+//		tableList.add("interface.ms_interface");
+//		tableList.add("interface.ms_interface_attr");
+//		hitest.rdbmsOperation.tableIntoXls(hitest.connection, tableList, null, "E:\\interface\\sample1.xlsx");
 
 		
 		List<String> details = new LinkedList<String>();
 		details.add("20210201" + "%" + "20210101090001_101.csv");
-		details.add("20210101" + "%" + "20210101090001_102.csv");
-		details.add("20201001" + "%" + "20210101090001_103.csv");
-		details.add("20200901" + "%" + "20210101090001_104.csv");
-		details.add("20200801" + "%" + "20210101090001_105.csv");
-		details.add("20200701" + "%" + "20210101090001_106.csv");
+//		details.add("20210101" + "%" + "20210101090001_102.csv");
+//		details.add("20201001" + "%" + "20210101090001_103.csv");
+//		details.add("20200901" + "%" + "20210101090001_104.csv");
+//		details.add("20200801" + "%" + "20210101090001_105.csv");
+//		details.add("20200701" + "%" + "20210101090001_106.csv");
+//
+//		details.add("20210201" + "%" + "20210101090001_107.csv");
+//		details.add("20210101" + "%" + "20210101090001_108.csv");
+//		details.add("20201001" + "%" + "20210101090001_109.csv");
+//		details.add("20200901" + "%" + "20210101090001_110.csv");
+//		details.add("20200801" + "%" + "20210101090001_111.csv");
+//		details.add("20200701" + "%" + "20210101090001_112.csv");
+//
+//		details.add("20210205" + "%" + "20210101090001_113.csv");
+//		details.add("20210105" + "%" + "20210101090001_114.csv");
+//		details.add("20201005" + "%" + "20210101090001_115.csv");
+//		details.add("20200905" + "%" + "20210101090001_116.csv");
+//		details.add("20200805" + "%" + "20210101090001_117.csv");
+//		details.add("20200705" + "%" + "20210101090001_118.csv");
+//
+//		details.add("20210215" + "%" + "20210101090001_119.csv");
+//		details.add("20210115" + "%" + "20210101090001_120.csv");
+//		details.add("20201015" + "%" + "20210101090001_121.csv");
+//		details.add("20200915" + "%" + "20210101090001_123.csv");
+//		details.add("20200815" + "%" + "20210101090001_124.csv");
+//		details.add("20200715" + "%" + "20210101090001_125.csv");
 
-		details.add("20210201" + "%" + "20210101090001_107.csv");
-		details.add("20210101" + "%" + "20210101090001_108.csv");
-		details.add("20201001" + "%" + "20210101090001_109.csv");
-		details.add("20200901" + "%" + "20210101090001_110.csv");
-		details.add("20200801" + "%" + "20210101090001_111.csv");
-		details.add("20200701" + "%" + "20210101090001_112.csv");
-
-		details.add("20210205" + "%" + "20210101090001_113.csv");
-		details.add("20210105" + "%" + "20210101090001_114.csv");
-		details.add("20201005" + "%" + "20210101090001_115.csv");
-		details.add("20200905" + "%" + "20210101090001_116.csv");
-		details.add("20200805" + "%" + "20210101090001_117.csv");
-		details.add("20200705" + "%" + "20210101090001_118.csv");
-
-		details.add("20210215" + "%" + "20210101090001_119.csv");
-		details.add("20210115" + "%" + "20210101090001_120.csv");
-		details.add("20201015" + "%" + "20210101090001_121.csv");
-		details.add("20200915" + "%" + "20210101090001_123.csv");
-		details.add("20200815" + "%" + "20210101090001_124.csv");
-		details.add("20200715" + "%" + "20210101090001_125.csv");
+//		details.add("20210215" + "%" + "20210101090001_126.csv");
+//		details.add("20210115" + "%" + "20210101090001_127.csv");
+//		details.add("20201015" + "%" + "20210101090001_128.csv");
+//		details.add("20200915" + "%" + "20210101090001_129.csv");
+//		details.add("20200815" + "%" + "20210101090001_130.csv");
+//		details.add("20200715" + "%" + "20210101090001_131.csv");
 
 		
 		
-//		hitest.start(details);
-
+		hitest.start(details);
 		/*		
 		String dateInFile = null;
 		String fileName   = null;
@@ -149,7 +155,7 @@ public class HadoopInterfaceTest
 		callProcessFileApi = true;
 		callProcessReceivedFilesApi = true;
 		callRejectionApi = true;
-		//
+		
 		genearteFileFlag = true;
 		prepareCtlFlag = true;
 		uploadFilesFlag = true;
@@ -186,7 +192,7 @@ public class HadoopInterfaceTest
 		remoteDirMap = rdbmsOperation.getInterfaceAttrValue(connection, "Remote Dir", interfaceIdList);
 		//entityOperations = EntityOperations.getInstance();
 		//entityOperations = EntityOperations.getInstance("com.finevm.enh.interfaces.entities.kpi.interface.cloud");
-		rdbmsOperation.printFieldLookupConf(connection, interfaceIdStr, "select", false);
+		rdbmsOperation.printFieldLookupConf(connection, interfaceIdStr, "delete", false);
 		
 	}
 

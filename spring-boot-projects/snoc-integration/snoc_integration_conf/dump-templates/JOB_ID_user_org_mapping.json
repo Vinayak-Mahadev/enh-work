@@ -1,0 +1,176 @@
+{
+	"Primary": [
+		{
+			"connection-id": "snoc-r1",
+			"schema-name": "snoc",
+			"collection-name": "user_org_mapping",
+			"projection": {
+				"_id": 1,
+				"user_id": 1,
+				"src_org_id": 1,
+				"node_id": 1,
+				"dest_org_id": 1,
+				"dest_org_tp": 1,
+				"status": 1,
+				"crtd_by": 1,
+				"crtd_dt": 1
+			},
+			"batch-size": 100,
+			"merge-type": "include_parent",
+			"parameters": [
+			],
+			"sort-by": {
+				"_id": -1
+			},
+			"limit": 10000
+		}
+	],
+	"Lookup": {
+		"node_collection": {
+			"connection-id": "snoc-r1",
+			"schema-name": "snoc",
+			"collection-name": "node",
+			"parameters": [
+				{
+					"param-name": "status",
+					"param-value": "$status_node",
+					"param-type": "Long",
+					"mandatory": true
+				}
+			]
+		},
+		"user_collection": {
+			"connection-id": "snoc-r1",
+			"schema-name": "snoc",
+			"collection-name": "user",
+			"parameters": [
+				{
+					"param-name": "status",
+					"param-value": "$status_user",
+					"param-type": "Long",
+					"mandatory": true
+				}
+			]
+		},
+		"organization_collection": {
+			"connection-id": "snoc-r1",
+			"schema-name": "snoc",
+			"collection-name": "organization"
+		}
+	},
+	"Configuration": {
+		"uom_user_id": {
+			"field": "user_id"
+		},
+		"uom_user_id_name": {
+			"field": "user_id",
+			"lookup": [
+				{
+					"name": "user_collection",
+					"mapping-field": "_id",
+					"mapping-field-type": "Long",
+					"lookup-field": "uname"
+				}
+			]
+		},
+		"uom_src_org_id": {
+			"field": "src_org_id"
+		},
+		"uom_src_org_id_desc": {
+			"field": "src_org_id",
+			"lookup": [
+				{
+					"name": "organization_collection",
+					"mapping-field": "_id",
+					"mapping-field-type": "Long",
+					"lookup-field": "desc"
+				}
+			]
+		},
+		"uom_dest_org_id": {
+			"field": "dest_org_id"
+		},
+		"uom_dest_org_id_desc": {
+			"field": "dest_org_id",
+			"lookup": [
+				{
+					"name": "organization_collection",
+					"mapping-field": "_id",
+					"mapping-field-type": "Long",
+					"lookup-field": "desc"
+				}
+			]
+		},
+		"uom_crtd_by": {
+			"field": "crtd_by"
+		},
+		"uom_crtd_by_uname": {
+			"field": "crtd_by",
+			"lookup": [
+				{
+					"name": "user_collection",
+					"mapping-field": "_id",
+					"mapping-field-type": "Long",
+					"lookup-field": "uname"
+				}
+			]
+		},
+		"uom_crtd_dt": {
+			"field": "crtd_dt",
+			"date-format": "dd-MMM-yyyy HH:mm:ss"
+		}
+	},
+	"OutputConf": {
+		"type": "file",
+		"extension": "$output_file_type",
+		"file-path": "$output_file_path",
+		"file-name": "$output_file_name",
+		"file-name-pattern": "$output_file_date_patten",
+		"file-headers": "UOM_USER_ID|UOM_USER_ID_NAME|UOM_SRC_ORG_ID|UOM_SRC_ORG_ID_DESC|UOM_DEST_ORG_ID|UOM_DEST_ORG_ID_DESC|UOM_CRTD_BY|UOM_CRTD_BY_UNAME|UOM_CRTD_DT",
+		"field-delimiter": "|",
+		"field-conf": [
+			{
+				"path": "uom_user_id",
+				"type": "String"
+			},
+			{
+				"path": "uom_user_id_name",
+				"type": "String"
+			},
+			{
+				"path": "uom_src_org_id",
+				"type": "String"
+			},
+			{
+				"path": "uom_src_org_id_desc",
+				"type": "String"
+			},
+			{
+				"path": "uom_dest_org_id",
+				"type": "String"
+			},
+			{
+				"path": "uom_dest_org_id_desc",
+				"type": "String"
+			},
+			{
+				"path": "uom_crtd_by",
+				"type": "String"
+			},
+			{
+				"path": "uom_crtd_by_uname",
+				"type": "String"
+			},
+			{
+				"path": "uom_crtd_dt",
+				"type": "String"
+			}
+		]
+	},
+	"SortConf": {
+		"extension": "csv",
+		"file-name-pattern": "yyyyMMddHHmmssSSS",
+		"sort-file-name_0": "collection1.sh",
+		"field-delimiter": "|"
+	}
+}

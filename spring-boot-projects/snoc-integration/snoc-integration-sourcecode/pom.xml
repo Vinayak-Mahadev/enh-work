@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<groupId>com.enhancesys.integration.services</groupId>
+	<artifactId>snoc-integration</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+	<packaging>pom</packaging>
+	<name>SNOC-INTEGRATION</name>
+	<developers>
+		<developer>
+			<name>Vinayak-Mahadev</name>
+			<email>vinayakmahadev.nm@gmail.com</email>
+			<roles>
+				<role>Engineer</role>
+			</roles>
+		</developer>
+	</developers>
+
+	<repositories>
+		<repository>
+			<id>local</id>
+			<name>Integration with Java 1.8</name>
+			<url>file:/${user.name}/.m2/local/repository</url>
+		</repository>
+	</repositories>
+
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+
+		<java.version>1.8</java.version>
+		<spring.boot.version>2.3.4.RELEASE</spring.boot.version>
+		<spring.version>4.1.0.RELEASE</spring.version>
+		<org.apache.camel>2.12.3</org.apache.camel>
+		<cxf.spring.boot.starter.jaxws>3.4.2</cxf.spring.boot.starter.jaxws>
+		<io.micrometer.core>1.6.4</io.micrometer.core>
+		<log4j.version>1.2.17</log4j.version>
+		<slf4j.api.version>1.7.7</slf4j.api.version>
+		<wsdl4j.version>1.6.3</wsdl4j.version>
+		<com.jayway.jsonpath>2.2.0</com.jayway.jsonpath>
+		<javax.persistence.api>2.2</javax.persistence.api>
+		<javax.xml.bind>2.3.1</javax.xml.bind>
+		<javax.validation>2.0.1.Final</javax.validation>
+		<postgresql.version>9.0-801.jdbc4</postgresql.version>
+		<mongodb.version>2.12.3</mongodb.version>
+		<org.apache.poi>3.11</org.apache.poi>
+		<h2database.version>1.4.197</h2database.version>
+		<joda.time.version>2.0</joda.time.version>
+		<pdf.lowagie.version>2.1.4</pdf.lowagie.version>
+		<codehaus.jackson.version>1.9.13</codehaus.jackson.version>
+		<commons.io.version>1.4</commons.io.version>
+		<com.googlecode.json.version>1.1</com.googlecode.json.version>
+		<org.json.version>20201115</org.json.version>
+		<com.fasterxml.jackson.version>2.10.0</com.fasterxml.jackson.version>
+		<maven.jaxb2.plugin.version>0.14.0</maven.jaxb2.plugin.version>
+	</properties>
+
+
+	<modules>
+		<module>snoc-common</module>
+		<module>snoc-entities</module>
+		<module>snoc-entity-interface</module>
+		<module>snoc-entity-service</module>
+		<module>snoc-scheduler</module>
+	</modules>
+
+	<build>
+		<pluginManagement>
+			<plugins>
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-compiler-plugin</artifactId>
+					<configuration>
+						<source>${java.version}</source>
+						<target>${java.version}</target>
+					</configuration>
+				</plugin>
+			</plugins>
+		</pluginManagement>
+	</build>
+
+</project>

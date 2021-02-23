@@ -1,5 +1,7 @@
 -- To update analytics event configuration for old hadoop interfaces: (Gopinath)
 delete from kpi.mp_event_metric_mapping where event_type_n = 304;
+delete from kpi.mp_event_format_mapping where event_type_n = 304;
+insert into kpi.mp_event_format_mapping (event_type_n, format_type_v, format_v, definition_v, date_key_v, date_format_v, source_key_v, source_type_n, instance_key_v, instance_type_n) values(304, 'Csv', 'DATE|CLUSTER|MICRO|SITE_ID|ID_OUTLET|STATUS_INJECTION|FLAG_ACM|COUNT_MSISDN|INCOMING_ONLY', 'Aggregation', 'DATE', 'yyyyMMdd', 'MICRO', 13, 'SITE_ID', 27);
 insert into kpi.mp_event_metric_mapping (event_type_n, configuration_n, metric_key_v, description_v, metrics_type_n, metrics_id_n, selection_v, condition_key_v, condition_val_v, data_flag_key_v, data_flag_n, rollup_flag_bl, delimiter_v) values (304, 1, 'FLAG_ACM', 'Flag Accuumulation', 24, null, 'Default', null, null, 'INCOMING_ONLY', 0, true, null);
 
 -- To create analytics event configuration for new hadoop interfaces: (Gopinath)

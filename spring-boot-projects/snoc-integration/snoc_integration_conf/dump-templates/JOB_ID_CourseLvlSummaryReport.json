@@ -1,0 +1,354 @@
+{
+	"Primary": [
+		{
+			"connection-id": "snoc-r4",
+			"schema-name": "snoc_report",
+			"collection-name": "crs_trk_dtls",
+			"projection": {
+				"course_id": 1,
+				"course_name": 1,
+				"course_type": 1,
+				"org_id": 1,
+				"user_id": 1,
+				"node_id": 1,
+				"status": 1,
+				"level_name": 1,
+				"level_no": 1,
+				"reward_type": 1,
+				"reward_qty": 1,
+				"total_questions": 1,
+				"total_no_of_retry": 1,
+				"level_start_dt": 1,
+				"level_completed_dt": 1,
+				"no_of_failed_attempts": 1,
+				"answered_questions": 1
+			},
+			"batch-size": 100,
+			"merge-type": "include_parent",
+			"parameters": [],
+			"sort-by": {
+				"_id": 1
+			}
+		}
+	],
+	"Lookup": {
+		"org_user_node_acc": {
+			"connection-id": "snoc-r4",
+			"schema-name": "snoc_report",
+			"collection-name": "org_user_node_acc",
+			"parameters": []
+		},
+		"org_user_node_acc_main": {
+			"connection-id": "snoc-r4",
+			"schema-name": "snoc_report",
+			"collection-name": "org_user_node_acc",
+			"parameters": []
+		},
+		"transitionValueCollection": {
+			"connection-id": "snoc-r1",
+			"schema-name": "snoc",
+			"collection-name": "transitionValueCollection"
+		},
+		"genericMasterValueCollection": {
+			"connection-id": "snoc-r1",
+			"schema-name": "snoc",
+			"collection-name": "genericMasterValueCollection"
+		},
+		"benefit_type": {
+			"connection-id": "snoc-r1",
+			"schema-name": "incentive",
+			"collection-name": "benefit_type"
+		}
+	},
+	"Configuration": {
+		"region": {
+			"field": "user_id",
+			"lookup": [
+				{
+					"name": "org_user_node_acc_main",
+					"mapping-field": "user_id",
+					"mapping-field-type": "Long",
+					"lookup-field": "regional_desc"
+				}
+			]
+		},
+		"area": {
+			"field": "user_id",
+			"lookup": [
+				{
+					"name": "org_user_node_acc_main",
+					"mapping-field": "user_id",
+					"mapping-field-type": "Long",
+					"lookup-field": "area_desc"
+				}
+			]
+		},
+		"sales_area": {
+			"field": "user_id",
+			"lookup": [
+				{
+					"name": "org_user_node_acc_main",
+					"mapping-field": "user_id",
+					"mapping-field-type": "Long",
+					"lookup-field": "sales_area_desc"
+				}
+			]
+		},
+		"cluster": {
+			"field": "user_id",
+			"lookup": [
+				{
+					"name": "org_user_node_acc_main",
+					"mapping-field": "user_id",
+					"mapping-field-type": "Long",
+					"lookup-field": "cluster_desc"
+				}
+			]
+		},
+		"micro_cluster": {
+			"field": "user_id",
+			"lookup": [
+				{
+					"name": "org_user_node_acc_main",
+					"mapping-field": "user_id",
+					"mapping-field-type": "Long",
+					"lookup-field": "micro_cluster_desc"
+				}
+			]
+		},
+		"org_name": {
+			"field": "org_id",
+			"lookup": [
+				{
+					"name": "org_user_node_acc",
+					"mapping-field": "org_id",
+					"mapping-field-type": "Long",
+					"lookup-field": "org_desc"
+				}
+			]
+		},
+		"node_id": {
+			"field": "node_id"
+		},
+		"node_name": {
+			"field": "node_id",
+			"lookup": [
+				{
+					"name": "org_user_node_acc",
+					"mapping-field": "node_id",
+					"mapping-field-type": "Long",
+					"lookup-field": "node_name"
+				}
+			]
+		},
+		"position": {
+			"field": "node_id",
+			"lookup": [
+				{
+					"name": "org_user_node_acc",
+					"mapping-field": "node_id",
+					"mapping-field-type": "Long",
+					"lookup-field": "position"
+				}
+			]
+		},
+		"user": {
+			"field": "user_id",
+			"lookup": [
+				{
+					"name": "org_user_node_acc",
+					"mapping-field": "user_id",
+					"lookup-field": "user_name"
+				}
+			]
+		},
+		"course_name": {
+			"field": "course_name"
+		},
+		"course_type": {
+			"field": "course_type",
+			"lookup": [
+				{
+					"name": "transitionValueCollection",
+					"mapping-field": "s_id",
+					"lookup-field": "description"
+				}
+			]
+		},
+		"level_no": {
+			"field": "level_no"
+		},
+		"level_name": {
+			"field": "level_name"
+		},
+		"level_start_dt": {
+			"field": "level_start_dt",
+			"date-format": "dd-MM-yyyy",
+			"time-flag": false
+		},
+		"level_completed_dt": {
+			"field": "level_completed_dt",
+			"date-format": "dd-MM-yyyy",
+			"time-flag": false
+		},
+		"total_questions": {
+			"field": "total_questions"
+		},
+		"answered_questions": {
+			"field": "answered_questions"
+		},
+		"total_no_of_retry": {
+			"field": "total_no_of_retry"
+		},
+		"no_of_failed_attempts": {
+			"field": "no_of_failed_attempts"
+		},
+		"reward_type": {
+			"field": "reward_type",
+			"lookup": [
+				{
+					"name": "benefit_type",
+					"mapping-field": "_id",
+					"mapping-field-type": "Long",
+					"lookup-field": "name"
+				}
+			]
+		},
+		"reward_qty": {
+			"field": "reward_qty"
+		},
+		"status": {
+			"field": "status",
+			"lookup": [
+				{
+					"name": "genericMasterValueCollection",
+					"mapping-field": "s_id",
+					"lookup-field": "description"
+				}
+			]
+		}
+	},
+	"multiple-row-conf": {},
+	"OutputConf": {
+		"type": "file",
+		"extension": "$output_file_type",
+		"file-path": "$output_file_path",
+		"file-name": "$output_file_name",
+		"file-name-pattern": "$output_file_date_patten",
+		"file-headers": "REGION|AREA|SALES_AREA|CLUSTER|MICRO_CLUSTER|ORGANIZATION_NAME|NODE_ID|NODE_NAME|POSITION|USER_NAME|COURSE_NAME|COURSE_TYPE|LEVEL_NO|LEVEL_NAME|LEVEL_START_DATE|LEVEL_COMPLETED_DATE|NO_OF_FAILED_ATTEMPS|TOTAL_QUES|ANSWERED_QUESTIONS|RETRY_COUNT|REWARD_TYPE|REWARDS|STATUS",
+		"field-delimiter": "|",
+		"field-conf": [
+			{
+				"path": "region",
+				"type": "String"
+			},
+			{
+				"path": "area",
+				"type": "String"
+			},
+			{
+				"path": "sales_area",
+				"type": "String"
+			},
+			{
+				"path": "cluster",
+				"type": "String"
+			},
+			{
+				"path": "micro_cluster",
+				"type": "String"
+			},
+			{
+				"path": "org_name",
+				"type": "String"
+			},
+			{
+				"path": "node_id",
+				"type": "String"
+			},
+			{
+				"path": "node_name",
+				"type": "String"
+			},
+			{
+				"path": "position",
+				"type": "String"
+			},
+			{
+				"path": "user",
+				"type": "String"
+			},
+			{
+				"path": "course_name",
+				"type": "String"
+			},
+			{
+				"path": "course_type",
+				"type": "String"
+			},
+			{
+				"path": "level_no",
+				"type": "String"
+			},
+			{
+				"path": "level_name",
+				"type": "String"
+			},
+			{
+				"path": "level_start_dt",
+				"type": "String"
+			},
+			{
+				"path": "level_completed_dt",
+				"type": "String"
+			},
+			{
+				"path": "total_questions",
+				"type": "String"
+			},
+			{
+				"path": "answered_questions",
+				"type": "String"
+			},
+			{
+				"path": "total_no_of_retry",
+				"type": "String"
+			},
+			{
+				"path": "no_of_failed_attempts",
+				"type": "String"
+			},
+			{
+				"path": "reward_type",
+				"type": "String"
+			},
+			{
+				"path": "reward_qty",
+				"type": "Mathematical",
+				"expression-conf": "((round)((reward_qty*level_no)+(unitPrice*1.5)))",
+				"collection-data-conf": [
+					"level_no"
+				],
+				"math-conf-data": {
+					"unitPrice": 100.65
+				}
+			},
+			{
+				"path": "status",
+				"type": "Conditional",
+				"collection-data-conf": [
+					"level_no"
+				],
+				"expression-conf": "(([status]IN['Completed'])&&([level_no]IN['1']))",
+				"if": "Pass",
+				"else": "Fail"
+			}
+		]
+	},
+	"SortConf": {
+		"extension": "csv",
+		"file-name-pattern": "yyyyMMddHHmmssSSS",
+		"sort-file-name_0": "collection1.sh",
+		"field-delimiter": "|"
+	}
+}

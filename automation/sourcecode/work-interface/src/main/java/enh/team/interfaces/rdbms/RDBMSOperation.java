@@ -393,11 +393,11 @@ public class RDBMSOperation {
 					for (String clusterid : clusterList) 
 					{
 						if(i%2 == 0)
-							fos.write((dateInFile+"|"+clusterid+"|"+microId+"|Test Site-"+i+ "|" +outlet.getString(1)+"|WithOut Injection|c. >=7k - <10k|"+ (i+10) +"|1\n").getBytes());
+							fos.write((dateInFile+"|"+clusterid+"|"+microId+"|Test Site-"+i+ "|" +outlet.getString(1)+"|Without Injection|c. >=7k - <10k|"+ (i+10) +"|1\n").getBytes());
 						else if(i%3 == 0)
-							fos.write((dateInFile+"|"+clusterid+"|"+microId+"|Test Site-"+i+ "|" +outlet.getString(1)+"|WithOut Injection|c. >=35k - <50k|"+ (i+10) +"|1\n").getBytes());
+							fos.write((dateInFile+"|"+clusterid+"|"+microId+"|Test Site-"+i+ "|" +outlet.getString(1)+"|Without Injection|c. >=35k - <50k|"+ (i+10) +"|0\n").getBytes());
 						else
-							fos.write((dateInFile+"|"+clusterid+"|"+microId+"|Test Site-"+i+ "|" +outlet.getString(1)+"|No Injection|a. <5k|"+ (i+10) +"|1\n").getBytes());
+							fos.write((dateInFile+"|"+clusterid+"|"+microId+"|Test Site-"+i+ "|" +outlet.getString(1)+"|With Injection|a. <5k|"+ (i+10) +"|1\n").getBytes());
 						i++;
 
 						if(i % calcRowLimit == 0 && i != limit)

@@ -1,0 +1,739 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" version="1.0">
+
+  <xs:element name="bounceEmail" type="bounceEmail"/>
+
+  <xs:element name="cleanUpSummary" type="cleanUpSummary"/>
+
+  <xs:element name="createOrUpdateSOBean" type="createOrUpdateSO"/>
+
+  <xs:element name="dailyDumpSummary" type="dailyDumpSummary"/>
+
+  <xs:element name="fileBean" type="fileBean"/>
+
+  <xs:element name="filePropertiesBean" type="filePropertiesBean"/>
+
+  <xs:element name="interfaceAttribute" type="interfaceAttribute"/>
+
+  <xs:element name="interfaceFailure" type="interfaceFailure"/>
+
+  <xs:element name="interfaceFileSummary" type="interfaceFileSummary"/>
+
+  <xs:element name="interfaceFileSummaryDetails" type="interfaceFileSummaryDetails"/>
+
+  <xs:element name="interfaceNotification" type="interfaceNotification"/>
+
+  <xs:element name="interfaceSummary" type="interfaceSummary"/>
+
+  <xs:element name="interfaces" type="interfaces"/>
+
+  <xs:element name="itemBean" type="itemObj"/>
+
+  <xs:element name="kycSyncInfo" type="kycSyncInfo"/>
+
+  <xs:element name="module" type="module"/>
+
+  <xs:element name="orderDetailsBean" type="orderDtlsBean"/>
+
+  <xs:element name="partyDetailsBean" type="partyDtlsBean"/>
+
+  <xs:element name="productDetailsBean" type="productDtlsBean"/>
+
+  <xs:element name="pullDataToFileBean" type="pullDataToFileBean"/>
+
+  <xs:element name="reprocessFileBean" type="reprocessFileBeanRes"/>
+
+  <xs:element name="responseBean" type="resBean"/>
+
+  <xs:element name="serverBean" type="serverBean"/>
+
+  <xs:element name="serverPropertiesBean" type="serverPropertiesBean"/>
+
+  <xs:element name="status" type="status"/>
+
+  <xs:element name="stockUpdateBean" type="stockUpdateBean"/>
+
+  <xs:element name="updateSOResponseBean" type="updateSOResponse"/>
+
+  <xs:complexType name="createOrUpdateSO">
+    <xs:sequence>
+      <xs:element name="soNumber" type="xs:string"/>
+      <xs:element name="sourceChannel" type="xs:string"/>
+      <xs:element name="referenceNumber" type="xs:string"/>
+      <xs:element name="soStatus" type="xs:string"/>
+      <xs:element name="soAmount" type="xs:string"/>
+      <xs:element name="orderType" type="xs:string"/>
+      <xs:element name="distributionChannel" type="xs:string"/>
+      <xs:element name="division" type="xs:string"/>
+      <xs:element minOccurs="0" name="soldToParty" type="xs:string"/>
+      <xs:element name="shipToParty" type="xs:string"/>
+      <xs:element name="poDate" type="xs:string"/>
+      <xs:element name="requestDeliveryDate" type="xs:string"/>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="item" type="itemObj"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="itemObj">
+    <xs:sequence>
+      <xs:element name="materialCode" type="xs:string"/>
+      <xs:element name="quantity" type="xs:string"/>
+      <xs:element minOccurs="0" name="unitPrice" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="fileBean">
+    <xs:annotation>
+      <xs:documentation><![CDATA[<b>Purpose:</b><br>
+Declaration of the FileBean service parameter properties..<br>
+<br>
+<b>DesignReference:</b><br>
+<br>
+<br>
+<b>CopyRights:</b><br>
+Enhancesys Innovations 2015<br>
+<br>
+<b>RevisionHistory:</b>
+<pre>
+<b>
+Sl No   Modified Date        Author</b>
+==============================================
+1       31-03-2015		   Suresh Upparu
+  -- Base Release]]></xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element minOccurs="0" name="fileHeaders" type="xs:string"/>
+      <xs:element minOccurs="0" name="fileName" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="fileDataBean">
+    <xs:annotation>
+      <xs:documentation><![CDATA[<b>Purpose:</b><br>
+Declaration of the FileBean service parameter properties..<br>
+<br>
+<b>DesignReference:</b><br>
+<br>
+<br>
+<b>CopyRights:</b><br>
+Enhancesys Innovations 2018<br>
+<br>
+<b>RevisionHistory:</b>
+<pre>
+<b>
+Sl No   Modified Date        Author</b>
+==============================================
+1       07-06-2018		   Satheesh Kumar
+  -- Base Release]]></xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element minOccurs="0" name="batchId" type="xs:long"/>
+      <xs:element minOccurs="0" name="crossSellingFlag" type="xs:boolean"/>
+      <xs:element minOccurs="0" name="dataFlag" type="xs:boolean"/>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="failureData" nillable="true" type="jsonObject"/>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="fileData" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="fileId" type="xs:long"/>
+      <xs:element minOccurs="0" ref="filePropertiesBean"/>
+      <xs:element minOccurs="0" name="frequency" type="xs:int"/>
+      <xs:element minOccurs="0" name="frequencyType" type="xs:string"/>
+      <xs:element minOccurs="0" ref="interfaceFileSummary"/>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="interfaceFileSummaryDetailsList" nillable="true" type="interfaceFileSummaryDetails"/>
+      <xs:element minOccurs="0" name="interfaceId" type="xs:long"/>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="successData" nillable="true" type="jsonObject"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="jsonObject">
+    <xs:sequence/>
+  </xs:complexType>
+
+  <xs:complexType name="filePropertiesBean">
+    <xs:annotation>
+      <xs:documentation><![CDATA[<b>Purpose:</b><br>
+Declaration of the FilePropertiesBean service parameter properties..<br>
+<br>
+<b>DesignReference:</b><br>
+<br>
+<br>
+<b>CopyRights:</b><br>
+Enhancesys Innovations 2015<br>
+<br>
+<b>RevisionHistory:</b>
+<pre>
+<b>
+Sl No   Modified Date        Author</b>
+==============================================
+1       11-02-2015          Ramana Rao K
+  -- Base Release
+2	   27-02-2015		   Suresh Upparu
+-- Added new properties..]]></xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="files" type="fileBean"/>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="servers" type="serverBean"/>
+      <xs:element minOccurs="0" name="clientId" type="xs:string"/>
+      <xs:element minOccurs="0" name="collectionName" type="xs:string"/>
+      <xs:element minOccurs="0" name="collectionNamePattern" type="xs:string"/>
+      <xs:element minOccurs="0" name="controlFileFormat" type="xs:string"/>
+      <xs:element minOccurs="0" name="controlFileName" type="xs:string"/>
+      <xs:element minOccurs="0" name="crossSellingFlag" type="xs:boolean"/>
+      <xs:element minOccurs="0" name="csvDelimeter" type="xs:string"/>
+      <xs:element minOccurs="0" name="dailyDumpConf" type="xs:string"/>
+      <xs:element minOccurs="0" name="dateConf" type="xs:string"/>
+      <xs:element minOccurs="0" name="dateDuration" type="xs:string"/>
+      <xs:element minOccurs="0" name="dateFormat" type="xs:string"/>
+      <xs:element minOccurs="0" name="destDir" type="xs:string"/>
+      <xs:element minOccurs="0" name="destHost" type="xs:string"/>
+      <xs:element minOccurs="0" name="destPort" type="xs:int"/>
+      <xs:element minOccurs="0" name="destSecurityCredentials" type="xs:string"/>
+      <xs:element minOccurs="0" name="destSecurityCredentialsPath" type="xs:string"/>
+      <xs:element minOccurs="0" name="destSecurityPrincipal" type="xs:string"/>
+      <xs:element minOccurs="0" name="dumpDateCount" type="xs:long"/>
+      <xs:element minOccurs="0" name="excludedOperatorTypes" type="xs:string"/>
+      <xs:element minOccurs="0" name="excludedOrganizationTypes" type="xs:string"/>
+      <xs:element minOccurs="0" name="fieldLookupConf" type="xs:string"/>
+      <xs:element minOccurs="0" name="fieldValidationConfig" type="xs:string"/>
+      <xs:element minOccurs="0" name="fileDataBatchSize" type="xs:string"/>
+      <xs:element minOccurs="0" name="fileDataInsertQuery" type="xs:string"/>
+      <xs:element minOccurs="0" name="fileDataInsertQueryParamConfig" type="xs:string"/>
+      <xs:element minOccurs="0" name="fileFormat" type="xs:string"/>
+      <xs:element minOccurs="0" name="fileHeaders" type="xs:string"/>
+      <xs:element minOccurs="0" name="fileName" type="xs:string"/>
+      <xs:element minOccurs="0" name="fileNameSequence" type="xs:string"/>
+      <xs:element minOccurs="0" name="fileRecordsLimit" type="xs:long"/>
+      <xs:element minOccurs="0" name="fileRowCount" type="xs:long"/>
+      <xs:element minOccurs="0" name="filterQuery" type="xs:string"/>
+      <xs:element minOccurs="0" name="isSFTP" type="xs:string"/>
+      <xs:element minOccurs="0" name="localBackupDir" type="xs:string"/>
+      <xs:element minOccurs="0" name="localControlBackupDir" type="xs:string"/>
+      <xs:element minOccurs="0" name="localControlDir" type="xs:string"/>
+      <xs:element minOccurs="0" name="localDir" type="xs:string"/>
+      <xs:element minOccurs="0" name="localFilterBackupDir" type="xs:string"/>
+      <xs:element minOccurs="0" name="localFilterControlBackupDir" type="xs:string"/>
+      <xs:element minOccurs="0" name="localRejectedBackupDir" type="xs:string"/>
+      <xs:element minOccurs="0" name="localRejectedControlBackupDir" type="xs:string"/>
+      <xs:element minOccurs="0" name="localRejectedControlDir" type="xs:string"/>
+      <xs:element minOccurs="0" name="localRejectedDir" type="xs:string"/>
+      <xs:element minOccurs="0" name="lookupConf" type="xs:string"/>
+      <xs:element minOccurs="0" name="mongoConfig" type="xs:string"/>
+      <xs:element minOccurs="0" name="mongoConnectionId" type="xs:string"/>
+      <xs:element minOccurs="0" name="processName" type="xs:string"/>
+      <xs:element minOccurs="0" name="processorClass" type="xs:string"/>
+      <xs:element minOccurs="0" name="processorUrl" type="xs:string"/>
+      <xs:element minOccurs="0" name="query" type="xs:string"/>
+      <xs:element minOccurs="0" name="queryField" type="xs:string"/>
+      <xs:element minOccurs="0" name="queryFieldConf" type="xs:string"/>
+      <xs:element minOccurs="0" name="recordsLimit" type="xs:long"/>
+      <xs:element minOccurs="0" name="remoteBackupDir" type="xs:string"/>
+      <xs:element minOccurs="0" name="remoteControlBackupDir" type="xs:string"/>
+      <xs:element minOccurs="0" name="remoteControlDir" type="xs:string"/>
+      <xs:element minOccurs="0" name="remoteDir" type="xs:string"/>
+      <xs:element minOccurs="0" name="remoteFileFormat" type="xs:string"/>
+      <xs:element minOccurs="0" name="remoteFileNameFormat" type="xs:string"/>
+      <xs:element minOccurs="0" name="remoteHost" type="xs:string"/>
+      <xs:element minOccurs="0" name="remotePort" type="xs:int"/>
+      <xs:element minOccurs="0" name="remoteRejectedBackupDir" type="xs:string"/>
+      <xs:element minOccurs="0" name="remoteRejectedControlBackupDir" type="xs:string"/>
+      <xs:element minOccurs="0" name="remoteRejectedControlDir" type="xs:string"/>
+      <xs:element minOccurs="0" name="remoteRejectedDir" type="xs:string"/>
+      <xs:element minOccurs="0" name="schemaName" type="xs:string"/>
+      <xs:element minOccurs="0" name="securityCredentials" type="xs:string"/>
+      <xs:element minOccurs="0" name="securityCredentialsPath" type="xs:string"/>
+      <xs:element minOccurs="0" name="securityPrincipal" type="xs:string"/>
+      <xs:element minOccurs="0" name="sendControlFileFlag" type="xs:string"/>
+      <xs:element minOccurs="0" name="validationConfigDelimeter" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="serverBean">
+    <xs:annotation>
+      <xs:documentation><![CDATA[<b>Purpose:</b><br>
+Declaration of the ServerBean service parameter properties..<br>
+<br>
+<b>DesignReference:</b><br>
+<br>
+<br>
+<b>CopyRights:</b><br>
+Enhancesys Innovations 2018<br>
+<br>
+<b>RevisionHistory:</b>
+<pre>
+<b>
+Sl No   Modified Date        Author</b>
+==============================================
+1       18-04-2018		   Suresh Upparu
+  -- Base Release]]></xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element minOccurs="0" name="remoteControlDir" type="xs:string"/>
+      <xs:element minOccurs="0" name="remoteDir" type="xs:string"/>
+      <xs:element minOccurs="0" name="remoteHost" type="xs:string"/>
+      <xs:element minOccurs="0" name="remotePort" type="xs:int"/>
+      <xs:element minOccurs="0" name="securityCredentials" type="xs:string"/>
+      <xs:element minOccurs="0" name="securityCredentialsPath" type="xs:string"/>
+      <xs:element minOccurs="0" name="securityPrincipal" type="xs:string"/>
+      <xs:element minOccurs="0" name="sendControlFileFlag" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="interfaceFileSummary">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="errorCount" type="xs:long"/>
+      <xs:element minOccurs="0" name="errorMessage" type="xs:string"/>
+      <xs:element name="fileId" type="xs:long"/>
+      <xs:element name="fileName" type="xs:string"/>
+      <xs:element minOccurs="0" name="filterCount" type="xs:long"/>
+      <xs:element name="interfaces" type="xs:long"/>
+      <xs:element minOccurs="0" name="localServerDetails" type="xs:string"/>
+      <xs:element minOccurs="0" name="message" type="xs:string"/>
+      <xs:element minOccurs="0" name="processedOn" type="xs:dateTime"/>
+      <xs:element minOccurs="0" name="receivedServerDetails" type="xs:string"/>
+      <xs:element minOccurs="0" name="retryCount" type="xs:long"/>
+      <xs:element minOccurs="0" name="sendServerDetails" type="xs:string"/>
+      <xs:element name="statusId" type="xs:long"/>
+      <xs:element minOccurs="0" name="successCount" type="xs:long"/>
+      <xs:element name="totalCount" type="xs:long"/>
+      <xs:element minOccurs="0" name="uploadedBy" type="xs:long"/>
+      <xs:element minOccurs="0" name="uploadedOn" type="xs:dateTime"/>
+      <xs:element minOccurs="0" name="validatedOn" type="xs:dateTime"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="interfaceFileSummaryDetails">
+    <xs:sequence>
+      <xs:element name="controlFileName" type="xs:string"/>
+      <xs:element minOccurs="0" name="errorCount" type="xs:long"/>
+      <xs:element name="fileDetailsId" type="xs:long"/>
+      <xs:element name="fileName" type="xs:string"/>
+      <xs:element name="fileType" type="xs:string"/>
+      <xs:element name="interfaceFileSummary" type="xs:long"/>
+      <xs:element minOccurs="0" name="successCount" type="xs:long"/>
+      <xs:element minOccurs="0" name="totalCount" type="xs:long"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="orderDtlsBean">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="salesOrderNumber" type="xs:string"/>
+      <xs:element minOccurs="0" name="invoiceNumber" type="xs:string"/>
+      <xs:element minOccurs="0" name="netPrice" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="partyDtlsBean">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="partyId" type="xs:string"/>
+      <xs:element minOccurs="0" name="roleTypeId" type="xs:string"/>
+      <xs:element minOccurs="0" name="extPartyRoleValue" type="xs:string"/>
+      <xs:element minOccurs="0" name="extPartyId" type="xs:string"/>
+      <xs:element minOccurs="0" name="partnerRole" type="xs:string"/>
+      <xs:element minOccurs="0" name="accountId" type="xs:string"/>
+      <xs:element minOccurs="0" name="finAccount" type="xs:string"/>
+      <xs:element minOccurs="0" name="userId" type="xs:string"/>
+      <xs:element minOccurs="0" name="name" type="xs:string"/>
+      <xs:element minOccurs="0" name="logInId" type="xs:string"/>
+      <xs:element minOccurs="0" name="supplierPartyId" type="xs:string"/>
+      <xs:element minOccurs="0" name="supplierRoleTypeId" type="xs:string"/>
+      <xs:element minOccurs="0" name="supplierAccountId" type="xs:string"/>
+      <xs:element minOccurs="0" name="parentPartyId" type="xs:string"/>
+      <xs:element minOccurs="0" name="parentPartyRoleTypeId" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="productDtlsBean">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="itemId" type="xs:string"/>
+      <xs:element minOccurs="0" name="itemLatestVersionId" type="xs:string"/>
+      <xs:element minOccurs="0" name="itemLocationId" type="xs:string"/>
+      <xs:element minOccurs="0" name="itemLocationPrice" type="xs:string"/>
+      <xs:element minOccurs="0" name="itemName" type="xs:string"/>
+      <xs:element minOccurs="0" name="itemCategoryId" type="xs:string"/>
+      <xs:element minOccurs="0" name="serialized" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="pullDataToFileBean">
+    <xs:annotation>
+      <xs:documentation><![CDATA[<b>Purpose:</b>
+<br>
+<br>
+<b>DesignReference:</b><br>
+<br>
+<br>
+<b>CopyRights:</b><br>
+Enhancesys Innovations Private Limited<br>
+<br>
+<b>RevisionHistory:</b>
+<pre>
+<b>
+Sl No   Modified Date		Author</b>
+==============================================
+1       Dec 2, 2014			Parthipan Rajagopal
+	-- Base Release
+</pre>
+<br>]]></xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element minOccurs="0" name="interfaceId" type="xs:long"/>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="primaryKeys" type="xs:string"/>
+      <xs:element minOccurs="0" name="fileHeader" type="xs:string"/>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="fields" type="xs:string"/>
+      <xs:element minOccurs="0" name="remoteHost" type="xs:string"/>
+      <xs:element minOccurs="0" name="remotePort" type="xs:long"/>
+      <xs:element minOccurs="0" name="remoteUser" type="xs:string"/>
+      <xs:element minOccurs="0" name="remotePassword" type="xs:string"/>
+      <xs:element minOccurs="0" name="remotePasswordPath" type="xs:string"/>
+      <xs:element minOccurs="0" name="remoteDir" type="xs:string"/>
+      <xs:element minOccurs="0" name="remoteCtlDir" type="xs:string"/>
+      <xs:element minOccurs="0" name="localDir" type="xs:string"/>
+      <xs:element minOccurs="0" name="localBkpDir" type="xs:string"/>
+      <xs:element minOccurs="0" name="localCtlBkpDir" type="xs:string"/>
+      <xs:element minOccurs="0" name="localCtlDir" type="xs:string"/>
+      <xs:element minOccurs="0" name="fileName" type="xs:string"/>
+      <xs:element minOccurs="0" name="fileNameFormat" type="xs:string"/>
+      <xs:element minOccurs="0" name="fileFormat" type="xs:string"/>
+      <xs:element minOccurs="0" name="fileLocation" type="xs:string"/>
+      <xs:element minOccurs="0" name="controlFileFormat" type="xs:string"/>
+      <xs:element minOccurs="0" name="controlFileLocation" type="xs:string"/>
+      <xs:element minOccurs="0" name="csvDelimeter" type="xs:string"/>
+      <xs:element minOccurs="0" name="file" type="xs:string"/>
+      <xs:element minOccurs="0" name="totalCount" type="xs:long"/>
+      <xs:element minOccurs="0" name="fileId" type="xs:long"/>
+      <xs:element minOccurs="0" name="uploadedBy" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="relationBean">
+    <xs:annotation>
+      <xs:documentation><![CDATA[<b>Purpose:</b><br>
+Declaration of the RelationBean service parameter properties..<br>
+<br>
+<b>DesignReference:</b><br>
+<br>
+<br>
+<b>CopyRights:</b><br>
+Enhancesys Innovations 2018<br>
+<br>
+<b>RevisionHistory:</b>
+<pre>
+<b>
+Sl No   Modified Date        Author</b>
+==============================================
+1       03-08-2018		   Suresh Upparu
+  -- Base Release]]></xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element minOccurs="0" name="parent" type="xs:string"/>
+      <xs:element minOccurs="0" name="parentColumn" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="reprocessFileBeanRes">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="errorCode" type="xs:long"/>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="files" type="xs:long"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="resBean">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="refData1" type="xs:string"/>
+      <xs:element minOccurs="0" name="refData5" type="xs:string"/>
+      <xs:element minOccurs="0" name="refData6" type="xs:string"/>
+      <xs:element minOccurs="0" name="refData7" type="xs:string"/>
+      <xs:element minOccurs="0" name="refData8" type="xs:string"/>
+      <xs:element minOccurs="0" name="ackData" type="xs:string"/>
+      <xs:element minOccurs="0" name="ackTime" type="xs:dateTime"/>
+      <xs:element minOccurs="0" name="responseData" type="xs:string"/>
+      <xs:element minOccurs="0" name="responseTime" type="xs:dateTime"/>
+      <xs:element minOccurs="0" name="status" type="xs:string"/>
+      <xs:element minOccurs="0" name="errorCode" type="xs:long"/>
+      <xs:element minOccurs="0" name="errorMessage" type="xs:string"/>
+      <xs:element minOccurs="0" name="transactionId" type="xs:long"/>
+      <xs:element minOccurs="0" name="interfaceId" type="xs:long"/>
+      <xs:element minOccurs="0" name="statusId" type="xs:long"/>
+      <xs:element minOccurs="0" name="retryCount" type="xs:long"/>
+      <xs:element minOccurs="0" name="toBeUpdatedTransId" type="xs:long"/>
+      <xs:element name="flag" type="xs:boolean"/>
+      <xs:element name="dataObject">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element maxOccurs="unbounded" minOccurs="0" name="entry">
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element minOccurs="0" name="key" type="xs:string"/>
+                  <xs:element minOccurs="0" name="value" type="xs:anyType"/>
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="dataList" type="xs:anyType"/>
+      <xs:element name="baiscDBMap">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element maxOccurs="unbounded" minOccurs="0" name="entry">
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element minOccurs="0" name="key" type="xs:string"/>
+                  <xs:element minOccurs="0" name="value" type="basicDBObject"/>
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="baiscDBList" type="basicDBObject"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="basicDBObject">
+    <xs:complexContent>
+      <xs:extension base="basicBSONObject">
+        <xs:sequence/>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="basicBSONObject">
+    <xs:complexContent>
+      <xs:extension base="linkedHashMap">
+        <xs:sequence/>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="linkedHashMap">
+    <xs:complexContent>
+      <xs:extension base="hashMap">
+        <xs:sequence/>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="hashMap">
+    <xs:complexContent>
+      <xs:extension base="abstractMap">
+        <xs:sequence/>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType abstract="true" name="abstractMap">
+    <xs:sequence/>
+  </xs:complexType>
+
+  <xs:complexType name="serverPropertiesBean">
+    <xs:annotation>
+      <xs:documentation><![CDATA[<b>Purpose:</b><br>
+Declaration of the ServerPropertiesBean service parameter properties..<br>
+<br>
+<b>DesignReference:</b><br>
+<br>
+<br>
+<b>CopyRights:</b><br>
+Enhancesys Innovations 2014<br>
+<br>
+<b>RevisionHistory:</b>
+<pre>
+<b>
+Sl No   Modified Date        Author</b>
+==============================================
+1       28-10-2014          Suresh Upparu
+-- Base Release]]></xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element minOccurs="0" name="host" type="xs:string"/>
+      <xs:element minOccurs="0" name="initialContextFactory" type="xs:string"/>
+      <xs:element minOccurs="0" name="jmsServer" type="xs:string"/>
+      <xs:element minOccurs="0" name="port" type="xs:string"/>
+      <xs:element minOccurs="0" name="protocol" type="xs:string"/>
+      <xs:element minOccurs="0" name="providerUrl" type="xs:string"/>
+      <xs:element minOccurs="0" name="queueName" type="xs:string"/>
+      <xs:element minOccurs="0" name="remoteConnectionFactory" type="xs:string"/>
+      <xs:element minOccurs="0" name="securityAuthentication" type="xs:string"/>
+      <xs:element minOccurs="0" name="securityCredentials" type="xs:string"/>
+      <xs:element minOccurs="0" name="securityPrincipal" type="xs:string"/>
+      <xs:element minOccurs="0" name="urlPkgPrefixes" type="xs:string"/>
+      <xs:element minOccurs="0" name="waitingTime" type="xs:long"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="stockUpdateBean">
+    <xs:annotation>
+      <xs:documentation><![CDATA[<b>Purpose:</b><br>
+Declaration of the StockUpdate service parameter properties as StockUpdateBean class..<br>
+<br>
+<b>DesignReference:</b><br>
+<br>
+<br>
+<b>CopyRights:</b><br>
+Enhancesys Innovations 2014<br>
+<br>
+<b>RevisionHistory:</b>
+<pre>
+<b>
+Sl No   Modified Date        Author</b>
+==============================================
+1       26-09-2014          Suresh Upparu
+-- Base Release]]></xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element minOccurs="0" name="availableStock" type="xs:long"/>
+      <xs:element minOccurs="0" name="circleId" type="xs:string"/>
+      <xs:element minOccurs="0" name="productId" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="updateSOResponse">
+    <xs:sequence>
+      <xs:element name="sapSONumber" type="xs:string"/>
+      <xs:element minOccurs="0" name="mobiiPONumber" type="xs:string"/>
+      <xs:element name="status" type="xs:string"/>
+      <xs:element minOccurs="0" name="rejectionNote" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="bounceEmail">
+    <xs:sequence>
+      <xs:element name="action" type="xs:long"/>
+      <xs:element minOccurs="0" name="bounceEmail" type="xs:string"/>
+      <xs:element minOccurs="0" name="bounceId" type="xs:long"/>
+      <xs:element name="bounceSubType" type="xs:long"/>
+      <xs:element name="bounceType" type="xs:long"/>
+      <xs:element name="diagnosticCode" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType abstract="true" name="xmlAdapter">
+    <xs:sequence/>
+  </xs:complexType>
+
+  <xs:complexType name="cleanUpSummary">
+    <xs:sequence>
+      <xs:element name="actvityName" type="xs:string"/>
+      <xs:element minOccurs="0" name="cleanupId" type="xs:long"/>
+      <xs:element minOccurs="0" name="completedTime" type="xs:dateTime"/>
+      <xs:element name="errorMessage" type="xs:string"/>
+      <xs:element name="initiatedTime" type="xs:dateTime"/>
+      <xs:element name="interfaces" type="xs:long"/>
+      <xs:element name="message" type="xs:string"/>
+      <xs:element name="statusId" type="xs:long"/>
+      <xs:element name="userId" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="dailyDumpSummary">
+    <xs:sequence>
+      <xs:element name="createdDate" type="xs:dateTime"/>
+      <xs:element minOccurs="0" name="dumpId" type="xs:long"/>
+      <xs:element name="interfaces" type="xs:long"/>
+      <xs:element minOccurs="0" name="status" type="xs:long"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="interfaceAttribute">
+    <xs:sequence>
+      <xs:element name="attributeId" type="xs:long"/>
+      <xs:element name="interfaceId" type="xs:long"/>
+      <xs:element name="name" type="xs:string"/>
+      <xs:element name="value" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="interfaceFailure">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ackData" type="xs:base64Binary"/>
+      <xs:element minOccurs="0" name="ackTime" type="xs:dateTime"/>
+      <xs:element name="errorCode" type="xs:long"/>
+      <xs:element name="errorMessage" type="xs:string"/>
+      <xs:element minOccurs="0" name="fileId" type="xs:long"/>
+      <xs:element name="transactionId" type="xs:long"/>
+      <xs:element minOccurs="0" name="responseData" type="xs:base64Binary"/>
+      <xs:element minOccurs="0" name="responseTime" type="xs:dateTime"/>
+      <xs:element name="transactionFailureId" type="xs:long"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="interfaceNotification">
+    <xs:sequence>
+      <xs:element name="interfaceNotificationId" type="xs:long"/>
+      <xs:element name="interfaceId" type="xs:long"/>
+      <xs:element name="language" type="xs:string"/>
+      <xs:element name="media" type="xs:string"/>
+      <xs:element name="scenario" type="xs:string"/>
+      <xs:element name="statusId" type="xs:long"/>
+      <xs:element name="subject" type="xs:string"/>
+      <xs:element name="templateName" type="xs:string"/>
+      <xs:element name="toAddress" type="xs:string"/>
+      <xs:element minOccurs="0" name="toBCC" type="xs:string"/>
+      <xs:element minOccurs="0" name="toCC" type="xs:string"/>
+      <xs:element name="toFirstName" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="interfaceSummary">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ackData" type="xs:base64Binary"/>
+      <xs:element minOccurs="0" name="ackTime" type="xs:dateTime"/>
+      <xs:element minOccurs="0" name="dueTime" type="xs:dateTime"/>
+      <xs:element name="interfaces" type="xs:long"/>
+      <xs:element name="originalRequestData" type="xs:base64Binary"/>
+      <xs:element minOccurs="0" name="originalResponseData" type="xs:base64Binary"/>
+      <xs:element minOccurs="0" name="referenceData1" type="xs:string"/>
+      <xs:element minOccurs="0" name="referenceData2" type="xs:long"/>
+      <xs:element minOccurs="0" name="referenceData3" type="xs:long"/>
+      <xs:element minOccurs="0" name="referenceData4" type="xs:long"/>
+      <xs:element minOccurs="0" name="referenceData5" type="xs:string"/>
+      <xs:element minOccurs="0" name="referenceData6" type="xs:string"/>
+      <xs:element minOccurs="0" name="referenceData7" type="xs:string"/>
+      <xs:element minOccurs="0" name="referenceData8" type="xs:string"/>
+      <xs:element name="requestData" type="xs:base64Binary"/>
+      <xs:element name="requestTime" type="xs:dateTime"/>
+      <xs:element minOccurs="0" name="responseData" type="xs:base64Binary"/>
+      <xs:element minOccurs="0" name="responseTime" type="xs:dateTime"/>
+      <xs:element minOccurs="0" name="retryCount" type="xs:long"/>
+      <xs:element name="statusId" type="xs:long"/>
+      <xs:element minOccurs="0" name="transactionId" type="xs:long"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="interfaces">
+    <xs:sequence>
+      <xs:element name="converter" type="xs:string"/>
+      <xs:element name="interfaceId" type="xs:long"/>
+      <xs:element name="interfaceType" type="xs:long"/>
+      <xs:element name="moduleId" type="xs:long"/>
+      <xs:element name="name" type="xs:string"/>
+      <xs:element name="publisher" type="xs:string"/>
+      <xs:element minOccurs="0" name="responseProcessor" type="xs:string"/>
+      <xs:element minOccurs="0" name="sequence" type="xs:long"/>
+      <xs:element name="transactionType" type="xs:long"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="kycSyncInfo">
+    <xs:sequence>
+      <xs:element name="interfaces" type="xs:long"/>
+      <xs:element minOccurs="0" name="kycField" type="xs:string"/>
+      <xs:element minOccurs="0" name="kycFlag" type="xs:long"/>
+      <xs:element name="syncId" type="xs:long"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="module">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="callBack" type="xs:string"/>
+      <xs:element name="moduleId" type="xs:long"/>
+      <xs:element name="name" type="xs:string"/>
+      <xs:element minOccurs="0" name="priority" type="xs:long"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="status">
+    <xs:sequence>
+      <xs:element name="name" type="xs:string"/>
+      <xs:element name="statusId" type="xs:long"/>
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>
