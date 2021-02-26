@@ -81,6 +81,20 @@
 		</dependency>
 
 		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-data-jpa</artifactId>
+			<version>${spring.boot.version}</version>
+		</dependency>
+
+		<!-- https://mvnrepository.com/artifact/org.hibernate.orm/hibernate-core -->
+		<dependency>
+			<groupId>org.hibernate.orm</groupId>
+			<artifactId>hibernate-core</artifactId>
+			<version>6.0.0.Alpha6</version>
+		</dependency>
+
+
+		<dependency>
 			<groupId>org.apache.cxf</groupId>
 			<artifactId>cxf-spring-boot-starter-jaxws</artifactId>
 			<version>${cxf.spring.boot.starter.jaxws}</version>
@@ -145,6 +159,13 @@
 			<version>${io.micrometer.core}</version>
 		</dependency>
 
+		<!-- https://mvnrepository.com/artifact/org.postgresql/postgresql -->
+		<dependency>
+			<groupId>org.postgresql</groupId>
+			<artifactId>postgresql</artifactId>
+			<version>${postgresql.version}</version>
+		</dependency>
+
 	</dependencies>
 
 	<build>
@@ -155,28 +176,12 @@
 				<artifactId>spring-boot-maven-plugin</artifactId>
 			</plugin>
 
-<!--			<plugin>
-				<groupId>org.apache.cxf</groupId>
-				<artifactId>cxf-codegen-plugin</artifactId>
-				<executions>
-					<execution>
-						<id>generate-sources</id>
-						<phase>generate-sources</phase>
-						<configuration>
-							<sourceroot>src/main/java</sourceroot>
-							<wsdloptions>
-								<wsdloption>
-									<wsdl>${basedir}/src/main/resources/wsdl/external.wsdl</wsdl>
-								</wsdloption>
-							</wsdloptions>
-						</configuration>
-						<goals>
-							<goal>wsdl2java</goal>
-						</goals>
-					</execution>
-				</executions>
-			</plugin>
--->
+			<!-- <plugin> <groupId>org.apache.cxf</groupId> <artifactId>cxf-codegen-plugin</artifactId> 
+				<executions> <execution> <id>generate-sources</id> <phase>generate-sources</phase> 
+				<configuration> <sourceroot>src/main/java</sourceroot> <wsdloptions> <wsdloption> 
+				<wsdl>${basedir}/src/main/resources/wsdl/external.wsdl</wsdl> </wsdloption> 
+				</wsdloptions> </configuration> <goals> <goal>wsdl2java</goal> </goals> </execution> 
+				</executions> </plugin> -->
 		</plugins>
 	</build>
 

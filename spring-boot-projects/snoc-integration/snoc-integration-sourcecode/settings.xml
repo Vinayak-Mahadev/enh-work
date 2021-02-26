@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<settings xmlns="http://maven.apache.org/SETTINGS/1.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/SETTINGS/1.0.0 http://maven.apache.org/xsd/settings-1.0.0.xsd">
+	<proxies>
+		<proxy>
+			<id>optional</id>
+			<active>true</active>
+			<protocol>http</protocol>
+			<username>admin</username>
+			<password>admin#123</password>
+			<host>snoc.enhancesys.com</host>
+			<port>9090</port>
+			<nonProxyHosts>local.net|*.enhancesys.com</nonProxyHosts>
+		</proxy>
+		<proxy>
+			<id>optional</id>
+			<active>true</active>
+			<protocol>https</protocol>
+			<username>admin</username>
+			<password>admin#123</password>
+			<host>snoc.enhancesys.com</host>
+			<port>9090</port>
+			<nonProxyHosts>local.net|*.enhancesys.com</nonProxyHosts>
+		</proxy>
+	</proxies>
+</settings>

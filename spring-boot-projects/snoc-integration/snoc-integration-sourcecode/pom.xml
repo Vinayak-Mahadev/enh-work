@@ -44,7 +44,7 @@
 		<javax.persistence.api>2.2</javax.persistence.api>
 		<javax.xml.bind>2.3.1</javax.xml.bind>
 		<javax.validation>2.0.1.Final</javax.validation>
-		<postgresql.version>9.0-801.jdbc4</postgresql.version>
+		<postgresql.version>42.2.19</postgresql.version>
 		<mongodb.version>2.12.3</mongodb.version>
 		<org.apache.poi>3.11</org.apache.poi>
 		<h2database.version>1.4.197</h2database.version>
@@ -64,6 +64,7 @@
 		<module>snoc-entities</module>
 		<module>snoc-entity-interface</module>
 		<module>snoc-entity-service</module>
+		<module>snoc-entity-service-client</module>
 		<module>snoc-scheduler</module>
 	</modules>
 

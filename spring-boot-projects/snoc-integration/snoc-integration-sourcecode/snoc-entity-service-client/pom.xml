@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<parent>
+		<groupId>com.enhancesys.integration.services</groupId>
+		<artifactId>snoc-integration</artifactId>
+		<version>0.0.1-SNAPSHOT</version>
+	</parent>
+
+	<artifactId>snoc-entity-service-client</artifactId>
+	<name>snoc-entity-service-client</name>
+	<description>snoc-entity-service-client</description>
+
+	<dependencies>
+
+		<dependency>
+			<groupId>com.enhancesys.integration.services</groupId>
+			<artifactId>snoc-common</artifactId>
+			<version>${project.version}</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-dependencies</artifactId>
+			<type>pom</type>
+			<version>${spring.boot.version}</version>
+			<scope>import</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter</artifactId>
+			<version>${spring.boot.version}</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-test</artifactId>
+			<version>${spring.boot.version}</version>
+			<scope>test</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>log4j</groupId>
+			<artifactId>log4j</artifactId>
+			<version>${log4j.version}</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>slf4j-api</artifactId>
+			<version>${slf4j.api.version}</version><!--$NO-MVN-MAN-VER$ -->
+		</dependency>
+
+		<dependency>
+			<groupId>org.apache.cxf</groupId>
+			<artifactId>cxf-spring-boot-starter-jaxws</artifactId>
+			<version>${cxf.spring.boot.starter.jaxws}</version>
+			<exclusions><!-- CXF uses java.util.logging by default -->
+				<exclusion>
+					<groupId>org.springframework.boot</groupId>
+					<artifactId>spring-boot-starter-logging</artifactId>
+				</exclusion>
+			</exclusions>
+		</dependency>
+
+		<dependency>
+			<groupId>org.apache.cxf</groupId>
+			<artifactId>cxf-rt-features-metrics</artifactId>
+			<version>${cxf.spring.boot.starter.jaxws}</version>
+		</dependency>
+
+		<!-- https://mvnrepository.com/artifact/org.apache.cxf/cxf-rt-bindings-soap -->
+		<dependency>
+			<groupId>org.apache.cxf</groupId>
+			<artifactId>cxf-rt-bindings-soap</artifactId>
+			<version>${cxf.spring.boot.starter.jaxws}</version>
+		</dependency>
+
+		<!-- https://mvnrepository.com/artifact/org.apache.cxf/cxf-tools-common -->
+		<dependency>
+			<groupId>org.apache.cxf</groupId>
+			<artifactId>cxf-tools-common</artifactId>
+			<version>${cxf.spring.boot.starter.jaxws}</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.apache.cxf</groupId>
+			<artifactId>cxf-tools-java2ws</artifactId>
+			<version>${cxf.spring.boot.starter.jaxws}</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.apache.cxf</groupId>
+			<artifactId>cxf-core</artifactId>
+			<version>${cxf.spring.boot.starter.jaxws}</version>
+			<!--<scope>provided</scope> -->
+		</dependency>
+
+		<dependency>
+			<groupId>org.apache.cxf</groupId>
+			<artifactId>cxf-rt-transports-http</artifactId>
+			<version>${cxf.spring.boot.starter.jaxws}</version>
+		</dependency>
+
+	</dependencies>
+
+	<build>
+
+		<plugins>
+
+			<!-- -->
+			<plugin>
+				<groupId>org.apache.cxf</groupId>
+				<artifactId>cxf-codegen-plugin</artifactId>
+				<version>${cxf.spring.boot.starter.jaxws}</version>
+				<executions>
+
+					<execution>
+						<id>generate-sources</id>
+						<phase>generate-sources</phase>
+						<configuration>
+							<sourceRoot>${basedir}/src/main/java/</sourceRoot>
+							<wsdlOptions>
+								<wsdlOption>
+									<wsdl>http://snoc.enhancesys.com:9090/services/snoc/integration/IntegrationManagement?wsdl</wsdl>
+									<serviceName>IntegrationManagement</serviceName>
+									<packagenames>
+										<packagename>cxf.com.enhancesys.entities.schema.integration</packagename>
+									</packagenames>
+									<!--<wsdl>http://snoc.enhancesys.com:9090/services/snoc/integration/IntegrationManagement?wsdl</wsdl> -->
+									<!-- <wsdl>http://admin:admin#123@snoc.enhancesys.com:9090/services/snoc/integration/IntegrationManagement?wsdl</wsdl> -->
+								</wsdlOption>
+							</wsdlOptions>
+						</configuration>
+						<goals>
+							<goal>wsdl2java</goal>
+						</goals>
+					</execution>
+				</executions>
+
+			</plugin>
+
+			<!-- -->
+			<!-- <plugin> <groupId>org.jvnet.jaxb2.maven2</groupId> <artifactId>maven-jaxb2-plugin</artifactId> 
+				<version>0.14.0</version> <executions> <execution> <goals> <goal>generate</goal> 
+				</goals> </execution> </executions> <configuration> <generatePackage>com.enhancesys.integration.snoc.services.client</generatePackage> 
+				<generateDirectory>${project.basedir}/src/main/java</generateDirectory> <schemaDirectory>${project.basedir}/../../snoc_integration_conf/wsdl</schemaDirectory> 
+				<schemaIncludes> <include>*.wsdl</include> </schemaIncludes> </configuration> 
+				</plugin> -->
+		</plugins>
+	</build>
+
+</project>

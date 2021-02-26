@@ -1,0 +1,1020 @@
+<?xml version='1.0' encoding='UTF-8'?><wsdl:definitions xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:tns="http://com/enhancesys/entities/schema/integration/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:ns2="http://schemas.xmlsoap.org/soap/http" xmlns:ns1="http://com/enhancesys/integration/snoc/services/interfaces/IntegrationManagement" name="IntegrationManagement" targetNamespace="http://com/enhancesys/entities/schema/integration/">
+  <wsdl:import location="http://snoc.enhancesys.com:9090/services/snoc/integration/IntegrationManagement?wsdl=IntegrationManagement.wsdl" namespace="http://com/enhancesys/integration/snoc/services/interfaces/IntegrationManagement">
+    </wsdl:import>
+  <wsdl:binding name="IntegrationManagementSoapBinding" type="ns1:IntegrationManagement">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="sendFile">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="sendFile">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="sendFileResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="ApplicationException">
+        <soap:fault name="ApplicationException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getInterfaceFailure">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="getInterfaceFailure">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getInterfaceFailureResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="ApplicationException">
+        <soap:fault name="ApplicationException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="createInterfaceSummariesByModule">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="createInterfaceSummariesByModule">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="createInterfaceSummariesByModuleResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="ApplicationException">
+        <soap:fault name="ApplicationException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getInterfaceFileSummaryDetailsByFileId">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="getInterfaceFileSummaryDetailsByFileId">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getInterfaceFileSummaryDetailsByFileIdResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="ApplicationException">
+        <soap:fault name="ApplicationException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getSummaryResponseDataByRefData3">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="getSummaryResponseDataByRefData3">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getSummaryResponseDataByRefData3Response">
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="ApplicationException">
+        <soap:fault name="ApplicationException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="searchSO">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="searchSO">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="searchSOResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="ApplicationException">
+        <soap:fault name="ApplicationException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getTransactionId">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="getTransactionId">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getTransactionIdResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="ApplicationException">
+        <soap:fault name="ApplicationException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getInterfaceFailureByTransactionId">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="getInterfaceFailureByTransactionId">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getInterfaceFailureByTransactionIdResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="ApplicationException">
+        <soap:fault name="ApplicationException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getInterfaceSummaryFileIdBatchIdAndStatus">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="getInterfaceSummaryFileIdBatchIdAndStatus">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getInterfaceSummaryFileIdBatchIdAndStatusResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="ApplicationException">
+        <soap:fault name="ApplicationException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getModuleByName">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="getModuleByName">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getModuleByNameResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="ApplicationException">
+        <soap:fault name="ApplicationException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getSummaryTransIdsByRefData3">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="getSummaryTransIdsByRefData3">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getSummaryTransIdsByRefData3Response">
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="ApplicationException">
+        <soap:fault name="ApplicationException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getInterfaceFileSummaryByInterfaceId">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="getInterfaceFileSummaryByInterfaceId">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getInterfaceFileSummaryByInterfaceIdResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="ApplicationException">
+        <soap:fault name="ApplicationException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getDailyDumpSummaryByStatus">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="getDailyDumpSummaryByStatus">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getDailyDumpSummaryByStatusResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="ApplicationException">
+        <soap:fault name="ApplicationException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getInterfaceSummariesByFileIdAndStatusWithLimit">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="getInterfaceSummariesByFileIdAndStatusWithLimit">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getInterfaceSummariesByFileIdAndStatusWithLimitResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="ApplicationException">
+        <soap:fault name="ApplicationException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="prepareRejectionFileById">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="prepareRejectionFileById">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="prepareRejectionFileByIdResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="ApplicationException">
+        <soap:fault name="ApplicationException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateInterfaceNotification">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="UpdateInterfaceNotification">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="UpdateInterfaceNotificationResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="ApplicationException">
+        <soap:fault name="ApplicationException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="processOrderResponseConsumer">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="processOrderResponseConsumer">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="processOrderResponseConsumerResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="ApplicationException">
+        <soap:fault name="ApplicationException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getInterfaceById">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="getInterfaceById">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getInterfaceByIdResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="ApplicationException">
+        <soap:fault name="ApplicationException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getJsonValue">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="getJsonValue">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getJsonValueResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="Exception">
+        <soap:fault name="Exception" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="notifyInterfaceOnDump">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="notifyInterfaceOnDump">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="notifyInterfaceOnDumpResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="ApplicationException">
+        <soap:fault name="ApplicationException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="publishInternalRequest">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="publishInternalRequest">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="publishInternalRequestResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="ApplicationException">
+        <soap:fault name="ApplicationException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getInterfaceSummariesByRefData3">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="getInterfaceSummariesByRefData3">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getInterfaceSummariesByRefData3Response">
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="ApplicationException">
+        <soap:fault name="ApplicationException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getInterfaceAttributes">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="getInterfaceAttributes">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getInterfaceAttributesResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="ApplicationException">
+        <soap:fault name="ApplicationException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getInterfaceNotificationByInterfaceIdAndScenario">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="getInterfaceNotificationByInterfaceIdAndScenario">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getInterfaceNotificationByInterfaceIdAndScenarioResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="ApplicationException">
+        <soap:fault name="ApplicationException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="processResponseConsumers">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="processResponseConsumers">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="processResponseConsumersResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="ApplicationException">
+        <soap:fault name="ApplicationException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getInterfaceNotificationByInterfaceIdAndStatus">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="getInterfaceNotificationByInterfaceIdAndStatus">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getInterfaceNotificationByInterfaceIdAndStatusResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="ApplicationException">
+        <soap:fault name="ApplicationException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="updateDailyDumpSummaryStatus">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="updateDailyDumpSummaryStatus">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="updateDailyDumpSummaryStatusResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="ApplicationException">
+        <soap:fault name="ApplicationException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getInterfaceFileSummaryDetailsByName">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="getInterfaceFileSummaryDetailsByName">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getInterfaceFileSummaryDetailsByNameResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="ApplicationException">
+        <soap:fault name="ApplicationException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="processReceivedFiles">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="processReceivedFiles">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="processReceivedFilesResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="ApplicationException">
+        <soap:fault name="ApplicationException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="tnmServicesInterface">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="tnmServicesInterface">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="tnmServicesInterfaceResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="ApplicationException">
+        <soap:fault name="ApplicationException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="createInterfaceFileSummary">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="createInterfaceFileSummary">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="createInterfaceFileSummaryResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="ApplicationException">
+        <soap:fault name="ApplicationException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getInterfaceSummariesByStatus">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="getInterfaceSummariesByStatus">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getInterfaceSummariesByStatusResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="ApplicationException">
+        <soap:fault name="ApplicationException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="publishToInterface">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="publishToInterface">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="publishToInterfaceResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="ApplicationException">
+        <soap:fault name="ApplicationException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="updateInterfaceFileSummaryDetails">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="updateInterfaceFileSummaryDetails">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="updateInterfaceFileSummaryDetailsResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="ApplicationException">
+        <soap:fault name="ApplicationException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="readFilePropertyBeans">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="readFilePropertyBeans">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="readFilePropertyBeansResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="ApplicationException">
+        <soap:fault name="ApplicationException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="updateInterfaceSummary">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="updateInterfaceSummary">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="updateInterfaceSummaryResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="ApplicationException">
+        <soap:fault name="ApplicationException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="syncBalanceInterface">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="syncBalanceInterface">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="syncBalanceInterfaceResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="ApplicationException">
+        <soap:fault name="ApplicationException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="updateInterfaceSummaryByResponse">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="updateInterfaceSummaryByResponse">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="updateInterfaceSummaryByResponseResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="ApplicationException">
+        <soap:fault name="ApplicationException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="reProcessFilesBasedOnErrorCode">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="reProcessFilesBasedOnErrorCode">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="reProcessFilesBasedOnErrorCodeResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="ApplicationException">
+        <soap:fault name="ApplicationException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="publishInterfaceData">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="publishInterfaceData">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="publishInterfaceDataResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="ApplicationException">
+        <soap:fault name="ApplicationException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getInterfaceSummaryByRefData4">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="getInterfaceSummaryByRefData4">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getInterfaceSummaryByRefData4Response">
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="ApplicationException">
+        <soap:fault name="ApplicationException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="reProcessPushDataFiles">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="reProcessPushDataFiles">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="reProcessPushDataFilesResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="ApplicationException">
+        <soap:fault name="ApplicationException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getInterfaceSummaryByRefData5">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="getInterfaceSummaryByRefData5">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getInterfaceSummaryByRefData5Response">
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="ApplicationException">
+        <soap:fault name="ApplicationException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getInterfaceAttributeValue">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="getInterfaceAttributeValue">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getInterfaceAttributeValueResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="ApplicationException">
+        <soap:fault name="ApplicationException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="createDailyDumpSummary">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="createDailyDumpSummary">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="createDailyDumpSummaryResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="ApplicationException">
+        <soap:fault name="ApplicationException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getKycSyncAttributesByInterfaceId">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="getKycSyncAttributesByInterfaceId">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getKycSyncAttributesByInterfaceIdResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="ApplicationException">
+        <soap:fault name="ApplicationException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getInterfaceFileSummaryDetailsByFileType">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="getInterfaceFileSummaryDetailsByFileType">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getInterfaceFileSummaryDetailsByFileTypeResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="ApplicationException">
+        <soap:fault name="ApplicationException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getInterfaceSummary">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="getInterfaceSummary">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getInterfaceSummaryResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="ApplicationException">
+        <soap:fault name="ApplicationException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="rollbackKPIFeedInterfaces">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="rollbackKPIFeedInterfaces">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="rollbackKPIFeedInterfacesResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="ApplicationException">
+        <soap:fault name="ApplicationException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="deleteBounceMailByIdandEmail">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="deleteBounceMailByIdandEmail">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="deleteBounceMailByIdandEmailResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="ApplicationException">
+        <soap:fault name="ApplicationException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="pullDataToFile">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="pullDataToFile">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="pullDataToFileResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="ApplicationException">
+        <soap:fault name="ApplicationException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="createInterfaceNotification">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="createInterfaceNotification">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="createInterfaceNotificationResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="ApplicationException">
+        <soap:fault name="ApplicationException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getInterfaceFileSummaryDetails">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="getInterfaceFileSummaryDetails">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getInterfaceFileSummaryDetailsResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="ApplicationException">
+        <soap:fault name="ApplicationException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getModules">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="getModules">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getModulesResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="ApplicationException">
+        <soap:fault name="ApplicationException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getInterfaceSummaryByRefData1">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="getInterfaceSummaryByRefData1">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getInterfaceSummaryByRefData1Response">
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="ApplicationException">
+        <soap:fault name="ApplicationException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="updateInterfaceFileSummary">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="updateInterfaceFileSummary">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="updateInterfaceFileSummaryResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="ApplicationException">
+        <soap:fault name="ApplicationException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getInterfaceFileSummaryDetailsById">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="getInterfaceFileSummaryDetailsById">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getInterfaceFileSummaryDetailsByIdResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="ApplicationException">
+        <soap:fault name="ApplicationException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getFilesForReprocess">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="getFilesForReprocess">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getFilesForReprocessResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="ApplicationException">
+        <soap:fault name="ApplicationException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getCleanUpSummary">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="getCleanUpSummary">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getCleanUpSummaryResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="ApplicationException">
+        <soap:fault name="ApplicationException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="createInterfaceFailure">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="createInterfaceFailure">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="createInterfaceFailureResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="ApplicationException">
+        <soap:fault name="ApplicationException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="updateSummaryRequestData">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="updateSummaryRequestData">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="updateSummaryRequestDataResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="ApplicationException">
+        <soap:fault name="ApplicationException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="createInterfaceFileSummaryDetails">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="createInterfaceFileSummaryDetails">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="createInterfaceFileSummaryDetailsResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="ApplicationException">
+        <soap:fault name="ApplicationException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="prepareRejectionFile">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="prepareRejectionFile">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="prepareRejectionFileResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="ApplicationException">
+        <soap:fault name="ApplicationException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="processInterfaceSummary">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="processInterfaceSummary">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="processInterfaceSummaryResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="ApplicationException">
+        <soap:fault name="ApplicationException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="processCleanupActivity">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="processCleanupActivity">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="processCleanupActivityResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="ApplicationException">
+        <soap:fault name="ApplicationException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="verifyInventoryOrder">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="verifyInventoryOrder">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="verifyInventoryOrderResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="ApplicationException">
+        <soap:fault name="ApplicationException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getDailyDumpSummaryByDate">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="getDailyDumpSummaryByDate">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getDailyDumpSummaryByDateResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="ApplicationException">
+        <soap:fault name="ApplicationException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getModule">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="getModule">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getModuleResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="ApplicationException">
+        <soap:fault name="ApplicationException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="processFile">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="processFile">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="processFileResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="ApplicationException">
+        <soap:fault name="ApplicationException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="createInterfaceSummary">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="createInterfaceSummary">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="createInterfaceSummaryResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="ApplicationException">
+        <soap:fault name="ApplicationException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getInterfaceFilesByModuleAndOrgId">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="getInterfaceFilesByModuleAndOrgId">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getInterfaceFilesByModuleAndOrgIdResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="ApplicationException">
+        <soap:fault name="ApplicationException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="reProcessFileBasedOrders">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="reProcessFileBasedOrders">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="reProcessFileBasedOrdersResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="ApplicationException">
+        <soap:fault name="ApplicationException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getInterfaceFileSummaryDetailsByIdAndName">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="getInterfaceFileSummaryDetailsByIdAndName">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getInterfaceFileSummaryDetailsByIdAndNameResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="ApplicationException">
+        <soap:fault name="ApplicationException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="invokePrimarySalesInterface">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="invokePrimarySalesInterface">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="invokePrimarySalesInterfaceResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="ApplicationException">
+        <soap:fault name="ApplicationException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="processCallback">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="processCallback">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="processCallbackResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="ApplicationException">
+        <soap:fault name="ApplicationException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="processInQueueRecords">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="processInQueueRecords">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="processInQueueRecordsResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="ApplicationException">
+        <soap:fault name="ApplicationException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="removeInterfaceFileSummaryDetails">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="removeInterfaceFileSummaryDetails">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="removeInterfaceFileSummaryDetailsResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="ApplicationException">
+        <soap:fault name="ApplicationException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getInterfaceSummariesByFileIdAndStatus">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="getInterfaceSummariesByFileIdAndStatus">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getInterfaceSummariesByFileIdAndStatusResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="ApplicationException">
+        <soap:fault name="ApplicationException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="createControlFile">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="createControlFile">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="createControlFileResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="ApplicationException">
+        <soap:fault name="ApplicationException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="updateInterfaceSummaryStatus">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="updateInterfaceSummaryStatus">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="updateInterfaceSummaryStatusResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="ApplicationException">
+        <soap:fault name="ApplicationException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getInterfacesByTransactionType">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="getInterfacesByTransactionType">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getInterfacesByTransactionTypeResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="ApplicationException">
+        <soap:fault name="ApplicationException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="processResponseAvailableRecords">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="processResponseAvailableRecords">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="processResponseAvailableRecordsResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="ApplicationException">
+        <soap:fault name="ApplicationException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getInterfaceFileSummary">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="getInterfaceFileSummary">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getInterfaceFileSummaryResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="ApplicationException">
+        <soap:fault name="ApplicationException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getInterfaceSummariesCountByFileIdAndStatus">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="getInterfaceSummariesCountByFileIdAndStatus">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getInterfaceSummariesCountByFileIdAndStatusResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="ApplicationException">
+        <soap:fault name="ApplicationException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="IntegrationManagement">
+    <wsdl:port binding="tns:IntegrationManagementSoapBinding" name="snoc">
+      <soap:address location="http://snoc.enhancesys.com:9090/services/snoc/integration/IntegrationManagement"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
