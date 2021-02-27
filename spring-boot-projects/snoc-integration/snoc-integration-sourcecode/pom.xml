@@ -36,6 +36,7 @@
 		<spring.version>4.1.0.RELEASE</spring.version>
 		<org.apache.camel>2.12.3</org.apache.camel>
 		<cxf.spring.boot.starter.jaxws>3.4.2</cxf.spring.boot.starter.jaxws>
+		<org.hibernate.version>6.0.0.Alpha6</org.hibernate.version>
 		<io.micrometer.core>1.6.4</io.micrometer.core>
 		<log4j.version>1.2.17</log4j.version>
 		<slf4j.api.version>1.7.7</slf4j.api.version>
@@ -44,7 +45,7 @@
 		<javax.persistence.api>2.2</javax.persistence.api>
 		<javax.xml.bind>2.3.1</javax.xml.bind>
 		<javax.validation>2.0.1.Final</javax.validation>
-		<postgresql.version>9.0-801.jdbc4</postgresql.version>
+		<postgresql.version>42.2.19</postgresql.version>
 		<mongodb.version>2.12.3</mongodb.version>
 		<org.apache.poi>3.11</org.apache.poi>
 		<h2database.version>1.4.197</h2database.version>
@@ -64,6 +65,7 @@
 		<module>snoc-entities</module>
 		<module>snoc-entity-interface</module>
 		<module>snoc-entity-service</module>
+		<module>snoc-entity-service-client</module>
 		<module>snoc-scheduler</module>
 	</modules>
 

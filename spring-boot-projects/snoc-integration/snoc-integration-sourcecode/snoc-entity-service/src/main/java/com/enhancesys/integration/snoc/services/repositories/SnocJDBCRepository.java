@@ -1,15 +1,17 @@
-package com.enhancesys.integration.snoc.services;
+package com.enhancesys.integration.snoc.services.repositories;
 
 import java.util.Date;
 import java.util.List;
 import java.util.Set;
 
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.transaction.annotation.EnableTransactionManagement;
+import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.stereotype.Component;
 
+import com.enhancesys.integration.snoc.beans.CreateOrUpdateSOBean;
 import com.enhancesys.integration.snoc.beans.FilePropertiesBean;
 import com.enhancesys.integration.snoc.beans.ReprocessFileBean;
 import com.enhancesys.integration.snoc.beans.ResponseBean;
+import com.enhancesys.integration.snoc.beans.UpdateSOResponseBean;
 import com.enhancesys.integration.snoc.entities.CleanUpSummary;
 import com.enhancesys.integration.snoc.entities.DailyDumpSummary;
 import com.enhancesys.integration.snoc.entities.InterfaceAttribute;
@@ -22,24 +24,15 @@ import com.enhancesys.integration.snoc.entities.Interfaces;
 import com.enhancesys.integration.snoc.entities.KycSyncInfo;
 import com.enhancesys.integration.snoc.entities.Module;
 import com.enhancesys.integration.snoc.exception.ApplicationException;
-import com.enhancesys.integration.snoc.services.interfaces.IntegrationManagementLocal;
-import com.enhancesys.integration.snoc.services.layers.SnocServices;
 
-@javax.jws.WebService(serviceName = "IntegrationManagement", portName = "snoc",
-targetNamespace = "http://com/enhancesys/entities/schema/integration/",
-endpointInterface = "com.enhancesys.integration.snoc.services.interfaces.IntegrationManagement")
-@EnableTransactionManagement
-public class IntegrationManagementImpl implements IntegrationManagementLocal 
+@Component
+@Qualifier("snocJDBCRepository")
+public class SnocJDBCRepository implements SnocRepository
 {
 
-	@Autowired
-	private final SnocServices snocServices;
-
-	public IntegrationManagementImpl(SnocServices snocServices)
+	public SnocJDBCRepository()
 	{
-		System.out.println("IntegrationManagementImpl activated");
-		System.out.println("snocServices :: " + snocServices);
-		this.snocServices = snocServices;
+		System.out.println("SnocJDBCRepository activated");
 	}
 
 	@Override
@@ -51,19 +44,19 @@ public class IntegrationManagementImpl implements IntegrationManagementLocal
 	@Override
 	public Module getModule(Long moduleId) throws ApplicationException {
 
-		return snocServices.getModule(moduleId);
+		return null;
 	}
 
 	@Override
 	public Interfaces getInterfaceById(Long interfaceId) throws ApplicationException {
 
-		return snocServices.getInterfaceById(interfaceId);
+		return null;
 	}
 
 	@Override
-	public List<Interfaces> getInterfacesByTransactionType(Long transactionType) throws ApplicationException 
-	{
-		return snocServices.getInterfacesByTransactionType(transactionType);
+	public List<Interfaces> getInterfacesByTransactionType(Long transactionType) throws ApplicationException {
+
+		return null;
 	}
 
 	@Override
@@ -140,6 +133,31 @@ public class IntegrationManagementImpl implements IntegrationManagementLocal
 	}
 
 	@Override
+	public void processReceivedFiles(Long interfaceId, List<Long> partnerIds) throws ApplicationException {
+
+
+	}
+
+	@Override
+	public void reProcessFileBasedOrders(Long interfaceId, Long fileId) throws ApplicationException {
+
+
+	}
+
+	@Override
+	public void reProcessFilesBasedOnErrorCode(Long interfaceId, Long fileId, Long errorCode)
+			throws ApplicationException {
+
+
+	}
+
+	@Override
+	public ReprocessFileBean getFilesForReprocess(Long interfaceId) throws ApplicationException {
+
+		return null;
+	}
+
+	@Override
 	public void processResponseAvailableRecords(Long interfaceId, Long status) throws ApplicationException {
 
 
@@ -191,9 +209,9 @@ public class IntegrationManagementImpl implements IntegrationManagementLocal
 	}
 
 	@Override
-	public void processFile(List<Long> interfaceIds) throws ApplicationException 
-	{
-		System.out.println("Control in process file :: " + interfaceIds);
+	public void processFile(List<Long> interfaceIds) throws ApplicationException {
+
+
 	}
 
 	@Override
@@ -224,13 +242,6 @@ public class IntegrationManagementImpl implements IntegrationManagementLocal
 	}
 
 	@Override
-	public void createInterfaceSummariesByModule(InterfaceSummary interfaceSummary, Long moduleId, Long transactionType)
-			throws ApplicationException {
-
-
-	}
-
-	@Override
 	public List<FilePropertiesBean> readFilePropertyBeans(Long interfaceId) throws ApplicationException {
 
 		return null;
@@ -244,39 +255,14 @@ public class IntegrationManagementImpl implements IntegrationManagementLocal
 	}
 
 	@Override
-	public List<InterfaceFileSummary> getInterfaceFileSummaryByInterfaceIdAndStatus(Long interfaceId, Long statusId,
-			Long partnerId) throws ApplicationException {
-
-		return null;
-	}
-
-	@Override
 	public List<InterfaceFileSummaryDetails> getInterfaceFileSummaryDetails(Long fileId) throws ApplicationException {
 
 		return null;
 	}
 
 	@Override
-	public void processReceivedFiles(Long interfaceId, List<Long> partnerIds) throws ApplicationException {
-
-
-	}
-
-	@Override
-	public void reProcessFileBasedOrders(Long interfaceId, Long fileId) throws ApplicationException {
-
-
-	}
-
-	@Override
-	public void reProcessFilesBasedOnErrorCode(Long interfaceId, Long fileId, Long errorCode)
-			throws ApplicationException {
-
-
-	}
-
-	@Override
-	public ReprocessFileBean getFilesForReprocess(Long interfaceId) throws ApplicationException {
+	public List<InterfaceFileSummary> getInterfaceFileSummaryByInterfaceIdAndStatus(Long interfaceId, Long statusId,
+			Long partnerId) throws ApplicationException {
 
 		return null;
 	}
@@ -310,7 +296,7 @@ public class IntegrationManagementImpl implements IntegrationManagementLocal
 	}
 
 	@Override
-	public void prepareRejectionFile(Long interfaceId, List<Long> partnerIds) throws ApplicationException {
+	public void prepareRejectionFile(Long interfaceIds, List<Long> partnerIds) throws ApplicationException {
 
 
 	}
@@ -324,13 +310,6 @@ public class IntegrationManagementImpl implements IntegrationManagementLocal
 
 	@Override
 	public Boolean sendFile(Long fileId, String fileType) throws ApplicationException {
-
-		return null;
-	}
-
-	@Override
-	public List<InterfaceSummary> getInterfaceSummaryByFileIdBatchIdAndStatus(Long interfaceFileId, String refData5,
-			Long status) throws ApplicationException {
 
 		return null;
 	}
@@ -402,7 +381,7 @@ public class IntegrationManagementImpl implements IntegrationManagementLocal
 	}
 
 	@Override
-	public void deleteBounceMailByIdandEmail(String bounceId, String bounceEmail) throws ApplicationException {
+	public void deleteBounceMailByIdandEmail(String BounceId, String BounceEmail) throws ApplicationException {
 
 
 	}
@@ -522,6 +501,12 @@ public class IntegrationManagementImpl implements IntegrationManagementLocal
 	}
 
 	@Override
+	public String searchSO(String soId) throws ApplicationException {
+
+		return null;
+	}
+
+	@Override
 	public void removeInterfaceFileSummaryDetails(Long fileDetailsId) throws ApplicationException {
 
 
@@ -546,6 +531,13 @@ public class IntegrationManagementImpl implements IntegrationManagementLocal
 	}
 
 	@Override
+	public List<InterfaceSummary> getInterfaceSummaryByFileIdBatchIdAndStatus(Long interfaceFileId, String refData5,
+			Long status) throws ApplicationException {
+
+		return null;
+	}
+
+	@Override
 	public String invokePrimarySalesInterface(Long moduleId, String jsonRequestData) throws ApplicationException {
 
 		return null;
@@ -565,16 +557,21 @@ public class IntegrationManagementImpl implements IntegrationManagementLocal
 
 	@Override
 	public CleanUpSummary processCleanupActivity(Long interfaceId, String userId, Long cleanupCode)
-			throws ApplicationException 
-	{
+			throws ApplicationException {
 
 		return null;
 	}
 
 	@Override
-	public String searchSO(String soId) throws ApplicationException {
+	public void createInterfaceSummariesByModule(InterfaceSummary interfaceSummary, Long moduleId, Long transactionType)
+			throws ApplicationException {
+
+
+	}
+
+	@Override
+	public UpdateSOResponseBean updateSOStatus(CreateOrUpdateSOBean updateSOStatus) throws ApplicationException {
 
 		return null;
 	}
-
 }

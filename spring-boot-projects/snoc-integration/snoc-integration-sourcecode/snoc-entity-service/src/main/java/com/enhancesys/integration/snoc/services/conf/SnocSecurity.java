@@ -14,8 +14,8 @@ import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 @EnableWebMvc
 public class SnocSecurity extends WebSecurityConfigurerAdapter
 {
-	@Value("${soap.path}")
-	private String soapPath;
+	@Value("${cxf.path}")
+	private String cxfPath;
 	
 	@Autowired
 	private void configureGlobal(AuthenticationManagerBuilder auth) throws Exception 
@@ -28,9 +28,9 @@ public class SnocSecurity extends WebSecurityConfigurerAdapter
 	protected void configure(HttpSecurity http) throws Exception 
 	{
 		http.authorizeRequests()
-		.antMatchers(soapPath + "/**").hasRole("USER")
-		.antMatchers(soapPath + "/ExternalInterface?wsdl").hasRole("USER")
-		.antMatchers(soapPath + "/IntegrationManagement?wsdl").hasRole("ADMIN")
+		.antMatchers(cxfPath + "/ExternalInterface?wsdl").hasRole("USER")
+		.antMatchers(cxfPath + "/IntegrationManagement?wsdl").hasRole("ADMIN")
+		.antMatchers(cxfPath + "/**").hasRole("USER")
 		.and().httpBasic()
 		.and().csrf().disable()
 		.authorizeRequests().anyRequest().permitAll();

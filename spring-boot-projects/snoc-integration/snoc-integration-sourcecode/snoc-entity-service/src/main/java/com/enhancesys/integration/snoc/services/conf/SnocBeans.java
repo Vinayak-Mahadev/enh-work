@@ -15,6 +15,7 @@ import com.enhancesys.integration.snoc.services.ExternalInterfaceImpl;
 import com.enhancesys.integration.snoc.services.IntegrationManagementImpl;
 import com.enhancesys.integration.snoc.services.interfaces.ExternalInterfaceLocal;
 import com.enhancesys.integration.snoc.services.interfaces.IntegrationManagementLocal;
+import com.enhancesys.integration.snoc.services.layers.SnocServices;
 
 @Configuration
 //@EnableWs
@@ -27,6 +28,10 @@ public class SnocBeans extends WsConfigurerAdapter
 
 	@Autowired
 	private MetricsProvider metricsProvider;
+	
+
+	@Autowired
+	private SnocServices snocServices;
 
 	@Bean("ExternalInterface")
 	public Endpoint ExternalInterfaceEndpoint() {
@@ -39,7 +44,7 @@ public class SnocBeans extends WsConfigurerAdapter
 
 	@Bean("IntegrationManagement")
 	public Endpoint IntegrationManagementEndpoint() {
-		EndpointImpl endpoint = new EndpointImpl(bus, new IntegrationManagementImpl(), null, null, new MetricsFeature[]{
+		EndpointImpl endpoint = new EndpointImpl(bus, new IntegrationManagementImpl(snocServices), null, null, new MetricsFeature[]{
 				new MetricsFeature(metricsProvider)
 		});
 		endpoint.publish("/IntegrationManagement");
@@ -49,7 +54,7 @@ public class SnocBeans extends WsConfigurerAdapter
 	@Bean
 	public IntegrationManagementLocal getIntegrationManagementLocal()
 	{
-		return new IntegrationManagementImpl();
+		return new IntegrationManagementImpl(snocServices);
 	}
 
 	@Bean
