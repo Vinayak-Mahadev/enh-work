@@ -64,7 +64,7 @@ public interface IntegrationManagementLocal
 	public Module getModule(Long moduleId) throws ApplicationException;
 	
 	public Interfaces getInterfaceById(Long interfaceId) throws ApplicationException;
-
+	
 	public List<Interfaces> getInterfacesByTransactionType(Long transactionType) throws ApplicationException;
 	
 	public Set<InterfaceAttribute> getInterfaceAttributes(Long interfaceId) throws ApplicationException;
@@ -144,7 +144,7 @@ public interface IntegrationManagementLocal
 	public void createControlFile(String file, Long totalCount, String fileName, String fileFormat, Long currentFileId, String contolFileFormat, String contolFilePath) throws ApplicationException;
 	
 	
-	public Boolean sendFile(Long fileId, String fileType) throws ApplicationException;
+	public ResponseBean sendFile(Long fileId, String fileType) throws ApplicationException;
 	
 	public InterfaceNotification createInterfaceNotification(InterfaceNotification interfaceNotification) throws ApplicationException;
 

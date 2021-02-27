@@ -74,12 +74,16 @@ public final class PropertiesLoader
 			if(properties == null)
 				loadProperties();
 			if(properties != null && properties.get(key) != null)
-				return (String) properties.get(key).toString().trim();
+				return properties.get(key).toString().trim();
 		}
 		catch(Exception exception)
 		{
 			LOGGER.error("Unhandled Exception : " + exception.getMessage(), exception);
 		}
-		return "";
+		return null;
+	}
+
+	public static String getErrorDescriptionFor(Long filesCreated) {
+		return null;
 	} 
 }

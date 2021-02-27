@@ -30,6 +30,7 @@ import com.enhancesys.integration.snoc.entities.InterfaceSummary;
 import com.enhancesys.integration.snoc.entities.Interfaces;
 import com.enhancesys.integration.snoc.entities.KycSyncInfo;
 import com.enhancesys.integration.snoc.entities.Module;
+import com.enhancesys.integration.snoc.entities.Status;
 import com.enhancesys.integration.snoc.exception.ApplicationException;
 
 @Component
@@ -76,6 +77,11 @@ public class SnocEntityManagarRepository implements SnocRepository
 	}
 
 
+	public Status getStatusByID(Long status) throws ApplicationException 
+	{
+		return entityManager.find(Status.class, status);
+	}
+
 	public Module getModuleByName(String name) throws ApplicationException {
 
 		return null;
@@ -92,8 +98,29 @@ public class SnocEntityManagarRepository implements SnocRepository
 	{
 		return entityManager.find(Interfaces.class, interfaceId);
 	}
+	
+	@SuppressWarnings("unchecked")
+	public List<Interfaces> getInterfaceByListOfId(List<Long> interfaceIds) throws ApplicationException 
+	{
+		List<Interfaces> interfaceList = null;
+		Query query = null;
+		try
+		{
 
+			query = this.entityManager.createQuery("from " + Interfaces.class.getCanonicalName() + " where interfaceId in (:interfaceIds)");
+			query.setParameter("interfaceIds", interfaceIds);
+			interfaceList = query.getResultList();
 
+			return interfaceList;
+		}
+		finally
+		{
+			interfaceList = null;
+			query = null;
+		}
+	}
+
+	
 //	@SuppressWarnings("unchecked")
 	@SuppressWarnings("unchecked")
 	public List<Interfaces> getInterfacesByTransactionType(Long transactionType) throws ApplicationException 
@@ -370,7 +397,7 @@ public class SnocEntityManagarRepository implements SnocRepository
 	}
 
 
-	public Boolean sendFile(Long fileId, String fileType) throws ApplicationException {
+	public ResponseBean sendFile(Long fileId, String fileType) throws ApplicationException {
 
 		return null;
 	}
@@ -633,5 +660,6 @@ public class SnocEntityManagarRepository implements SnocRepository
 	public UpdateSOResponseBean updateSOStatus(CreateOrUpdateSOBean updateSOStatus) throws ApplicationException {
 		return null;
 	}
+
 
 }

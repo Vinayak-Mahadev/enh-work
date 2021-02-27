@@ -4,6 +4,13 @@ import com.enhancesys.integration.snoc.props.PropertiesLoader;
 
 public interface IntegrationConstants 
 {
+
+	public static final Long SEND_TRANS_TYPE = Long.parseLong(PropertiesLoader.getValueFor("SEND_TRANS_TYPE"));
+
+
+	public final static String SNOC_SCHEMA = "interface";
+	
+	
 	/*
 
 
@@ -1727,5 +1734,57 @@ public interface IntegrationConstants
 	public static final String KPI_JDBC_PASS =  PropertiesLoader.getValueFor("KPI_JDBC_PASS");
 	
 	public static final String KPI_SCHEMA_NAME =  PropertiesLoader.getValueFor("KPI_SCHEMA_NAME");
+
+
+	public static final String ACTUAL_FILE_TYPE_CHAR = null;
+
+
+	public static final String INVENTORY_SALES_FILE_NAME = null;
+
+
+	public static final String FILE_ENCODE_FORMAT = null;
+
+
+	public static final String FIRST_FILE_HEADER_ATTR = null;
+
+
+	public static final String SECOND_FILE_HEADER_ATTR = null;
+
+	public static final Long FILE_INQUEUE_STATUS = null;
+	public static final Long FILES_CREATED = null;
+	public static final Long FILE_REJECTED_STATUS = null;
+
+
+	public static final String PREPARE_EMPTY_FILES_INTERFACE_LIST = null;
+
+
+	public static final String SEND_ONLY_OLD_FILES_INTERFACE_LIST = null;
+
+
+	public static final Object DWH_FV_SUBJECT = null;
+
+
+	public static final Object DWH_FV_TEMPLATE = null;
+
+
+	public static final Object DWH_FV_TO_ADDRESS = null;
+
+
+	public static final Object DWH_FV_MEDIA = null;
+
+
+	public static final Object DWH_FV_LANG = null;
+
+
+	public static final String FILE_TRANSFERRED_TO_SFTP_SCENARIO = null;
+
+
+	public static final Long FILE_UPLOADED_STATUS = null;
+
+
+	public static final Long FILES_UPLOADED = null;
+
+
+
 
 }

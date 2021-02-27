@@ -35,7 +35,7 @@ import com.enhancesys.integration.snoc.beans.ResponseBean;
  * <br>
  */
 
-public interface IntegrationUtilManagementLocal
+public interface IntegrationUtilManagement
 {
 //	public void updateInterfaceSummaryFailerStatus(Long transactionId) throws Exception;	
 	
@@ -44,4 +44,6 @@ public interface IntegrationUtilManagementLocal
 	public void prepareNotificationJsonData(Long interfaceId,String scenario,Map<String,Object> inputMap) throws Exception;
 	
 	public void SendActiveMqMsg(String requestData) throws Exception;
+
+	public void sendNotificationForFileValidation(String string);
 }

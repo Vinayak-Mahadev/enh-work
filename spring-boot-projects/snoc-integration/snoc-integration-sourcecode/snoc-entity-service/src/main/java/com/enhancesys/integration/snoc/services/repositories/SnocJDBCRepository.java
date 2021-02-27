@@ -23,6 +23,7 @@ import com.enhancesys.integration.snoc.entities.InterfaceSummary;
 import com.enhancesys.integration.snoc.entities.Interfaces;
 import com.enhancesys.integration.snoc.entities.KycSyncInfo;
 import com.enhancesys.integration.snoc.entities.Module;
+import com.enhancesys.integration.snoc.entities.Status;
 import com.enhancesys.integration.snoc.exception.ApplicationException;
 
 @Component
@@ -53,6 +54,12 @@ public class SnocJDBCRepository implements SnocRepository
 		return null;
 	}
 
+	@Override
+	public List<Interfaces> getInterfaceByListOfId(List<Long> interfaceIds) throws ApplicationException
+	{
+		return null;
+	}
+	
 	@Override
 	public List<Interfaces> getInterfacesByTransactionType(Long transactionType) throws ApplicationException {
 
@@ -309,7 +316,7 @@ public class SnocJDBCRepository implements SnocRepository
 	}
 
 	@Override
-	public Boolean sendFile(Long fileId, String fileType) throws ApplicationException {
+	public ResponseBean sendFile(Long fileId, String fileType) throws ApplicationException {
 
 		return null;
 	}
@@ -572,6 +579,11 @@ public class SnocJDBCRepository implements SnocRepository
 	@Override
 	public UpdateSOResponseBean updateSOStatus(CreateOrUpdateSOBean updateSOStatus) throws ApplicationException {
 
+		return null;
+	}
+
+	@Override
+	public Status getStatusByID(Long status) throws ApplicationException {
 		return null;
 	}
 }

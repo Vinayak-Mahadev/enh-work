@@ -16,6 +16,8 @@ import com.enhancesys.integration.snoc.services.IntegrationManagementImpl;
 import com.enhancesys.integration.snoc.services.interfaces.ExternalInterfaceLocal;
 import com.enhancesys.integration.snoc.services.interfaces.IntegrationManagementLocal;
 import com.enhancesys.integration.snoc.services.layers.SnocServices;
+import com.enhancesys.integration.snoc.services.util.IntegrationUtilManagement;
+import com.enhancesys.integration.snoc.services.util.IntegrationUtilManagementImpl;
 
 @Configuration
 //@EnableWs
@@ -63,4 +65,8 @@ public class SnocBeans extends WsConfigurerAdapter
 		return new ExternalInterfaceImpl();
 	}
 
+	@Bean
+	public IntegrationUtilManagement getIntegrationUtilManagement() {
+		return new IntegrationUtilManagementImpl();
+	}
 }

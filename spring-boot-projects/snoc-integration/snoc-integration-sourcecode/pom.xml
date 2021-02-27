@@ -47,6 +47,7 @@
 		<javax.validation>2.0.1.Final</javax.validation>
 		<postgresql.version>42.2.19</postgresql.version>
 		<mongodb.version>2.12.3</mongodb.version>
+		<jcraft.version>0.1.55</jcraft.version>
 		<org.apache.poi>3.11</org.apache.poi>
 		<h2database.version>1.4.197</h2database.version>
 		<joda.time.version>2.0</joda.time.version>
