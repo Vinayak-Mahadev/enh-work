@@ -25,7 +25,7 @@ import com.enhancesys.integration.snoc.exception.ApplicationException;
  * <b>
  *  Sl No   Modified Date        Author</b>
  *  ==============================================
- *  1        23-07-2019          Suresh Upparu
+ *  1        23-07-2019          Vinayak Mahadev
  *  -- Base Release
  * </pre>
  * 

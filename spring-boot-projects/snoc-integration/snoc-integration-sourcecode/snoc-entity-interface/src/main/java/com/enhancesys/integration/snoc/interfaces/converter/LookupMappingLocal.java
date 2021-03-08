@@ -20,7 +20,7 @@ import com.enhancesys.integration.snoc.beans.ProductDetailsBean;
  * <br>
  * 
  * <b>CopyRights:</b><br>
- * Enhancesys 2014<br>
+ * Enhancesys 2020<br>
  * <br>
  * 
  * <b>RevisionHistory:</b>
@@ -29,7 +29,7 @@ import com.enhancesys.integration.snoc.beans.ProductDetailsBean;
  * <b>
  *  Sl No   Modified Date        Author</b>
  *  ==============================================
- *  1        23-12-2014          Suresh Upparu
+ *  1        23-12-2020          Vinayak Mahadev
  *    	-- Base Release
  * </pre>
  * 

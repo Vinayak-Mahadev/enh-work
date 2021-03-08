@@ -126,10 +126,10 @@
 							<sourceRoot>${basedir}/src/main/java/</sourceRoot>
 							<wsdlOptions>
 								<wsdlOption>
-									<wsdl>http://snoc.enhancesys.com:9090/services/snoc/integration/IntegrationManagement?wsdl</wsdl>
+									<wsdl>${entity-service-client-IntegrationManagement-wsdl}</wsdl>
 									<serviceName>IntegrationManagement</serviceName>
 									<packagenames>
-										<packagename>cxf.com.enhancesys.entities.schema.integration</packagename>
+										<packagename>${entity-service-client-IntegrationManagement-packagename}</packagename>
 									</packagenames>
 									<!--<wsdl>http://snoc.enhancesys.com:9090/services/snoc/integration/IntegrationManagement?wsdl</wsdl> -->
 									<!-- <wsdl>http://admin:admin#123@snoc.enhancesys.com:9090/services/snoc/integration/IntegrationManagement?wsdl</wsdl> -->

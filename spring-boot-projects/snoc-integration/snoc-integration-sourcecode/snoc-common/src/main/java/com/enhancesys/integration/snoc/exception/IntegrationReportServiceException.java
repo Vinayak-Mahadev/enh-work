@@ -5,7 +5,8 @@ import org.springframework.stereotype.Component;
 import com.enhancesys.integration.snoc.props.DataConstants;
 
 @Component
-public class IntegrationReportServiceException extends Exception {
+public class IntegrationReportServiceException extends Exception 
+{
 	
 	
 	/**

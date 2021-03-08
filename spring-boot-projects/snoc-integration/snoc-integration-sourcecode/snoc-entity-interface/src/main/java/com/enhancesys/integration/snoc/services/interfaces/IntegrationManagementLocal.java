@@ -34,7 +34,7 @@ import com.enhancesys.integration.snoc.exception.ApplicationException;
  * <br>
  * 
  * <b>CopyRights:</b><br>
- * 		Enhancesys Innovations 2014<br>
+ * 		Enhancesys Innovations 2019<br>
  * <br>
  * 
  * <b>RevisionHistory:</b>
@@ -43,15 +43,9 @@ import com.enhancesys.integration.snoc.exception.ApplicationException;
  * <b>
  *  Sl No   Modified Date        Author</b>
  *  ==============================================
- *  1        04-07-2014          Suresh Upparu
+ *  1        04-07-2019          Vinayak Mahadev
  *  -- Base Release
- *    
- * 2		16-10-2014			Ramana Rao K	
- * 	-- Services are changed based on the new tables and its naming conventions
- * 
- * 3		20-10-2014			Ramana Rao K
- * 	--Added processFile and prepareFile services to process the files from the local directory and to create the files 
- * 		based on the given input request.
+
  * </pre>
  * 
  * <br>

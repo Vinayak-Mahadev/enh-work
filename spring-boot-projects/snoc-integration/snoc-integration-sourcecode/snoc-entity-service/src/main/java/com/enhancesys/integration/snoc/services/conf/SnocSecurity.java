@@ -9,6 +9,32 @@ import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 
+/**
+ * <b>Purpose:</b>
+ * <br>
+ * <br>
+ * 
+ * <b>DesignReference:</b><br>
+ * <br>
+ * <br>
+ * 
+ * <b>CopyRights:</b><br>
+ * Enhancesys Innovations Private Limited<br>
+ * <br>
+ * 
+ * <b>RevisionHistory:</b>
+ * 
+ * <pre>
+ * <b>
+ * Sl No   Modified Date		Author</b>
+ * ==============================================
+ * 1       Mar 2, 2020			Vinayak Mahadev
+ * 	-- Base Release
+ * </pre>
+ * 
+ * <br>
+ */
+
 @Configuration
 @EnableAutoConfiguration
 @EnableWebMvc

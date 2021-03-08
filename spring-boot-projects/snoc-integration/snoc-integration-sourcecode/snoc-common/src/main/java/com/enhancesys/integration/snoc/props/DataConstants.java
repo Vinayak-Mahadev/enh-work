@@ -12,7 +12,7 @@ package com.enhancesys.integration.snoc.props;
  * <br>
  * 
  * <b>CopyRights:</b><br>
- * 		Enhancesys Innovations 2018<br>
+ * 		Enhancesys Innovations 2019<br>
  * <br>
  * 
  * <b>RevisionHistory:</b>

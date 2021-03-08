@@ -25,7 +25,7 @@
 
 		<dependency>
 			<groupId>com.enhancesys.integration.services</groupId>
-			<artifactId>snoc-entities</artifactId>
+			<artifactId>snoc-beans</artifactId>
 			<version>${project.version}</version>
 		</dependency>
 
@@ -88,14 +88,14 @@
 
 		<!-- https://mvnrepository.com/artifact/org.hibernate.orm/hibernate-core -->
 		<dependency>
-			<groupId>org.hibernate.orm</groupId>
+			<groupId>org.hibernate</groupId>
 			<artifactId>hibernate-core</artifactId>
 			<version>${org.hibernate.version}</version>
 		</dependency>
 
 		<!-- https://mvnrepository.com/artifact/org.hibernate.orm/hibernate-ehcache -->
 		<dependency>
-			<groupId>org.hibernate.orm</groupId>
+			<groupId>org.hibernate</groupId>
 			<artifactId>hibernate-ehcache</artifactId>
 			<version>${org.hibernate.version}</version>
 		</dependency>
@@ -179,12 +179,12 @@
 			<version>3.9.2</version>
 		</dependency>
 
-        <!-- https://mvnrepository.com/artifact/com.jcraft/jsch -->
-        <dependency>
-            <groupId>com.jcraft</groupId>
-            <artifactId>jsch</artifactId>
-            <version>${jcraft.version}</version>
-        </dependency>
+		<!-- https://mvnrepository.com/artifact/com.jcraft/jsch -->
+		<dependency>
+			<groupId>com.jcraft</groupId>
+			<artifactId>jsch</artifactId>
+			<version>${jcraft.version}</version>
+		</dependency>
 
 	</dependencies>
 

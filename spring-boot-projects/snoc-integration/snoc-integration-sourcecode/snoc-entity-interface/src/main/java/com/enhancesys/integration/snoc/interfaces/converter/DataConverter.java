@@ -13,7 +13,7 @@ import com.enhancesys.integration.snoc.exception.ApplicationException;
  * <br>
  * 
  * <b>CopyRights:</b><br>
- * Enhancesys 2014<br>
+ * Enhancesys 2020<br>
  * <br>
  * 
  * <b>RevisionHistory:</b>
@@ -22,7 +22,7 @@ import com.enhancesys.integration.snoc.exception.ApplicationException;
  * <b>
  *  Sl No   Modified Date        Author</b>
  *  ==============================================
- *  1        03-07-2014          Suresh Upparu
+ *  1        03-07-2020          Vinayak Mahadev
  *    	-- Base Release
  * </pre>
  * 

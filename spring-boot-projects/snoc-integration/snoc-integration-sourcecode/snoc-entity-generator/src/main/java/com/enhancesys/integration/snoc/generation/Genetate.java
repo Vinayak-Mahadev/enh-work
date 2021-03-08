@@ -9,6 +9,33 @@ import org.apache.maven.plugins.annotations.Parameter;
 
 import com.enhancesys.integration.snoc.generation.conf.EntityGeneration;
 
+/**
+ * <b>Purpose:</b><br>
+ * 		Class to implement the generic process entity generation..<br>
+ * <br>
+ * <br>
+ * <br>
+ * 
+ * <b>DesignReference:</b><br>
+ * <br>
+ * <br>
+ * 
+ * <b>CopyRights:</b><br>
+ * 		Enhancesys Innovations 2021<br>
+ * <br>
+ * 
+ * <b>RevisionHistory:</b>
+ * 
+ * <pre>
+ * <b>
+ *  Sl No   Modified Date        Author</b>
+ *  ==============================================
+ *  1        10-01-2021          Vinayak Mahadev
+ *    	-- Base Release
+ * </pre>
+ * 
+ * <br>
+ */
 @Mojo(name="Genetate", defaultPhase = LifecyclePhase.COMPILE)
 public class Genetate extends AbstractMojo 
 {

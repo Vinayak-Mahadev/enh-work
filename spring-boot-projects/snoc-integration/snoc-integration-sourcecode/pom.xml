@@ -14,7 +14,7 @@
 			<name>Vinayak-Mahadev</name>
 			<email>vinayakmahadev.nm@gmail.com</email>
 			<roles>
-				<role>Engineer</role>
+				<role>Software Engineer</role>
 			</roles>
 		</developer>
 	</developers>
@@ -28,6 +28,8 @@
 	</repositories>
 
 	<properties>
+		<entity-service-client-IntegrationManagement-wsdl>http://snoc.enhancesys.com:9090/services/snoc/integration/IntegrationManagement?wsdl</entity-service-client-IntegrationManagement-wsdl>
+		<entity-service-client-IntegrationManagement-packagename>cxf.com.enhancesys.entities.schema.integration</entity-service-client-IntegrationManagement-packagename>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 
@@ -36,7 +38,7 @@
 		<spring.version>4.1.0.RELEASE</spring.version>
 		<org.apache.camel>2.12.3</org.apache.camel>
 		<cxf.spring.boot.starter.jaxws>3.4.2</cxf.spring.boot.starter.jaxws>
-		<org.hibernate.version>6.0.0.Alpha6</org.hibernate.version>
+		<org.hibernate.version>5.4.21.Final</org.hibernate.version>
 		<io.micrometer.core>1.6.4</io.micrometer.core>
 		<log4j.version>1.2.17</log4j.version>
 		<slf4j.api.version>1.7.7</slf4j.api.version>
@@ -58,12 +60,20 @@
 		<org.json.version>20201115</org.json.version>
 		<com.fasterxml.jackson.version>2.10.0</com.fasterxml.jackson.version>
 		<maven.jaxb2.plugin.version>0.14.0</maven.jaxb2.plugin.version>
+		<com.fasterxml.jackson.core>2.12.1</com.fasterxml.jackson.core>
+		<maven-plugin-api>2.0</maven-plugin-api>
+		<maven-plugin-annotations>3.6.0</maven-plugin-annotations>
+		<maven-project>2.2.1</maven-project>
+		<org.apache.ws.xmlschema>2.2.5</org.apache.ws.xmlschema>
+		<org.quartz-scheduler>2.3.2</org.quartz-scheduler>
 	</properties>
 
 
 	<modules>
 		<module>snoc-common</module>
-		<module>snoc-entities</module>
+		<module>snoc-entity-generator</module>
+		<module>snoc-entities-auto</module>
+		<module>snoc-beans</module>
 		<module>snoc-entity-interface</module>
 		<module>snoc-entity-service</module>
 		<module>snoc-entity-service-client</module>

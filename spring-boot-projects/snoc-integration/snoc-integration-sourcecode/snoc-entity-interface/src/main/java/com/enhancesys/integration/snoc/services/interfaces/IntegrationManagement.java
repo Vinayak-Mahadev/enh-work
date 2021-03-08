@@ -43,7 +43,7 @@ import com.enhancesys.integration.snoc.exception.ApplicationException;
  * <br>
  * 
  * <b>CopyRights:</b><br>
- * 		Enhancesys Innovations 2014<br>
+ * 		Enhancesys Innovations 2020<br>
  * <br>
  * 
  * <b>RevisionHistory:</b>
@@ -52,7 +52,7 @@ import com.enhancesys.integration.snoc.exception.ApplicationException;
  * <b>
  *  Sl No   Modified Date        Author</b>
  *  ==============================================
- *  1        04-07-2014          Suresh Upparu
+ *  1        04-07-2020          Vinayak Mahadev
  *    	-- Base Release
  *    
  * 2		16-10-2014			Ramana Rao K	

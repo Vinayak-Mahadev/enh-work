@@ -12,7 +12,7 @@ package com.enhancesys.integration.snoc.exception;
  * <br>
  * 
  * <b>CopyRights:</b><br>
- * 		Enhancesys Innovations 2018<br>
+ * 		Enhancesys Innovations 2019<br>
  * <br>
  * 
  * <b>RevisionHistory:</b>
@@ -21,7 +21,7 @@ package com.enhancesys.integration.snoc.exception;
  * <b>
  *  Sl No   Modified Date        Author</b>
  *  ==============================================
- *  1        19-11-2018          Suresh Upparu
+ *  1        19-11-2019          Vinayak Mahadev
  *    	-- Base Release
  * </pre>
  * 
