@@ -2,22 +2,32 @@
 echo This script prepared by Vinayak-Mahadev
 
 REM snoc-common module
-start cmd.exe /c  "CD ./snoc-common/ && mvn clean install && exit"
+start cmd.exe /c  "CD ./snoc-common/ && mvn clean install -U && exit"
 echo snoc-common builded
 pause
 
 REM snoc-entities module
-start cmd.exe /c  "CD ./snoc-entities && mvn clean install && exit"
-echo snoc-entities builded
+start cmd.exe /c  "CD ./snoc-entity-generator && mvn clean install -U && exit"
+echo snoc-entity-generator builded
+pause
+
+REM snoc-entities module
+start cmd.exe /c  "CD ./snoc-entities-auto && mvn clean install -U && exit"
+echo snoc-entities-auto builded
+pause
+
+REM snoc-entities module
+start cmd.exe /c  "CD ./snoc-beans && mvn clean install -U && exit"
+echo snoc-beans builded
 pause
 
 REM snoc-entity-interface module
-start cmd.exe /c  "CD ./snoc-entity-interface && mvn clean install && exit"
+start cmd.exe /c  "CD ./snoc-entity-interface && mvn clean install -U && exit"
 echo snoc-entity-interface builded
 pause
 
 REM snoc-entity-service module
-start cmd.exe /c  "CD ./snoc-entity-service && mvn clean install && exit"
+start cmd.exe /c  "CD ./snoc-entity-service && mvn clean install -U && exit"
 echo snoc-entity-service builded
 pause
 
@@ -27,12 +37,12 @@ echo snoc-entity-service running at 8085 before building snoc-entity-service-cli
 pause
 
 REM snoc-entity-service-client module
-start cmd.exe /k  "CD ./snoc-entity-service-client && mvn clean install -s ./../settings.xml && exit"
+start cmd.exe /k  "CD ./snoc-entity-service-client && mvn clean install -U -s ./../settings.xml && exit"
 echo snoc-entity-service-client builded
 pause
 
 REM snoc-scheduler module
-start cmd.exe /k  "CD ./snoc-scheduler && mvn clean install && exit"
+start cmd.exe /k  "CD ./snoc-scheduler && mvn clean install -U && exit"
 echo snoc-scheduler builded
 pause
                                                            

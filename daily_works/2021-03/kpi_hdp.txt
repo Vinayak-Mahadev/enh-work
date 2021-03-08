@@ -1,0 +1,42 @@
+1. No need interface Attribute Configuration
+2. Change in InterfaceFileReader class
+3. Findout reference columns by using kpi.mp_event_reference_mapping with event_type_n
+4. Load reference column names from kpi table and make local configuration with in class
+6. Take header list with index
+5. Read file line by line
+ > 
+   1. Prepare Statement
+   2. Check date in file
+   3. Validate duplicate
+   4. 
+   
+ 30-  44
+ 
+public static final String tempTableInsertQry = "INSERT INTO kpi.table_name(id_n, actor_type_n, actor_key_v, event_type_n, metrics_type_n, metrics_key_v, dimension_1_n, dimension_2_n, dimension_3_n, dimension_4_n, dimension_5_n, dimension_6_n, dimension_7_n, dimension_8_n, dimension_9_n, dimension_10_n, no_of_events_n, source_type_n, source_key_v, system_type_v, correction_v, batch_number_n, instance_type_n, instance_key_v, data_flag_n, instance_id_n, metrics_id_n, file_id_n, data_string_v) VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+
+public static final String tempTableInsertQryWithRef = "INSERT INTO kpi.table_name(id_n, actor_type_n, actor_key_v, event_type_n, metrics_type_n, metrics_key_v, dimension_1_n, dimension_2_n, dimension_3_n, dimension_4_n, dimension_5_n, dimension_6_n, dimension_7_n, dimension_8_n, dimension_9_n, dimension_10_n, no_of_events_n, source_type_n, source_key_v, system_type_v, correction_v, batch_number_n, instance_type_n, instance_key_v, data_flag_n, instance_id_n, metrics_id_n, file_id_n, data_string_v,ref_1_key_v,ref_1_type_n,ref_1_id_n, ref_2_key_v,ref_2_type_n,ref_2_id_n, ref_3_key_v,ref_3_type_n,ref_3_id_n, ref_4_key_v,ref_4_type_n,ref_4_id_n, ref_5_key_v,ref_5_type_n,ref_5_id_n) VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+
+
+public static final String dailyTableInsertQry = "INSERT INTO kpi.daily_table(day_id_n, actor_type_n, actor_id_n, event_type_n, metrics_type_n, metrics_id_n, dimension_1_n, dimension_2_n, dimension_3_n, dimension_4_n, dimension_5_n, dimension_6_n, dimension_7_n, dimension_8_n, dimension_9_n, dimension_10_n, no_of_events_n, source_type_n, source_id_n, data_flag_n, instance_type_n, instance_id_n, system_type_v) values(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?);";
+
+public static final String dailyTableInsertQryWithReference = "INSERT INTO kpi.daily_table(day_id_n, actor_type_n, actor_id_n, event_type_n, metrics_type_n, metrics_id_n, dimension_1_n, dimension_2_n, dimension_3_n, dimension_4_n, dimension_5_n, dimension_6_n, dimension_7_n, dimension_8_n, dimension_9_n, dimension_10_n, no_of_events_n, source_type_n, source_id_n, data_flag_n, instance_type_n, instance_id_n, system_type_v, ref_1_type_n, ref_1_id_n, ref_2_type_n, ref_2_id_n, ref_3_type_n, ref_3_id_n, ref_4_type_n, ref_4_id_n, ref_5_type_n, ref_5_id_n) values(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?);";
+
+
+public static final String monthlyTableInsertQry = "INSERT INTO kpi.monthly_table(month_id_n, actor_type_n, actor_id_n, event_type_n, metrics_type_n, metrics_id_n, dimension_1_n, dimension_2_n, dimension_3_n, dimension_4_n, dimension_5_n, dimension_6_n, dimension_7_n, dimension_8_n, dimension_9_n, dimension_10_n, no_of_events_n, source_type_n, source_id_n, data_flag_n, instance_type_n, instance_id_n, system_type_v) values(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?);";
+public static final String dailyTableInsertQryWithReference = "INSERT INTO kpi.monthly_table(month_id_n, actor_type_n, actor_id_n, event_type_n, metrics_type_n, metrics_id_n, dimension_1_n, dimension_2_n, dimension_3_n, dimension_4_n, dimension_5_n, dimension_6_n, dimension_7_n, dimension_8_n, dimension_9_n, dimension_10_n, no_of_events_n, source_type_n, source_id_n, data_flag_n, instance_type_n, instance_id_n, system_type_v, ref_1_type_n, ref_1_id_n, ref_2_type_n, ref_2_id_n, ref_3_type_n, ref_3_id_n, ref_4_type_n, ref_4_id_n, ref_5_type_n, ref_5_id_n) values(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?);";
+
+
+public static final String monthlyTableInsertQryWithReference = "INSERT INTO kpi.monthly_table(month_id_n, actor_type_n, actor_id_n, event_type_n, metrics_type_n, metrics_id_n, dimension_1_n, dimension_2_n, dimension_3_n, dimension_4_n, dimension_5_n, dimension_6_n, dimension_7_n, dimension_8_n, dimension_9_n, dimension_10_n, no_of_events_n, source_type_n, source_id_n, data_flag_n, instance_type_n, instance_id_n, system_type_v,ref_1_key_v,ref_1_type_n,ref_1_id_n, ref_2_key_v,ref_2_type_n,ref_2_id_n, ref_3_key_v,ref_3_type_n,ref_3_id_n, ref_4_key_v,ref_4_type_n,ref_4_id_n, ref_5_key_v,ref_5_type_n,ref_5_id_n) values(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?);";
+
+
+ref_1_type_n, ref_1_id_n, ref_2_type_n, ref_2_id_n, ref_3_type_n, ref_3_id_n, ref_4_type_n, ref_4_id_n, ref_5_type_n, ref_5_id_n
+?, ?, ?, ?, ?, ?, ?, ?, ?, ?
+
+
+
+
+
+
+
+
+
