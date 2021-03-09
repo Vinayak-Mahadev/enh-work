@@ -120,6 +120,7 @@
                <getter>
                   <java-annotations>
                      <java-annotation>@XmlTransient</java-annotation>
+                     <java-annotation>@JsonIgnore</java-annotation>
                   </java-annotations>
                </getter>
             </java-attributes>
@@ -129,6 +130,7 @@
          <one-to-many name="interfaces" mapped-by="module" fetch="LAZY">
             <java-annotations>
                <java-annotation>@AuditMappedBy(mappedBy="module")</java-annotation>
+               <java-annotation>@JsonManagedReference</java-annotation>
             </java-annotations>
             <java-attributes type="Interfaces">
                <getter name="getInterfaces" />
@@ -182,6 +184,7 @@
             <java-annotations>
                <java-annotation>@javax.validation.constraints.NotNull</java-annotation>
                <java-annotation>@Audited(targetAuditMode=RelationTargetAuditMode.NOT_AUDITED)</java-annotation>
+               <java-annotation>@JsonBackReference</java-annotation>
             </java-annotations>
             <java-attributes type="Module" scope="protected">
                <getter>
@@ -291,6 +294,7 @@
                <getter>
                   <java-annotations>
                      <java-annotation>@XmlTransient</java-annotation>
+                     <java-annotation>@JsonIgnore</java-annotation>
                   </java-annotations>
                </getter>
             </java-attributes>
@@ -300,6 +304,7 @@
          <one-to-many name="attributes" mapped-by="interfaces" fetch="LAZY">
             <java-annotations>
                <java-annotation>@AuditMappedBy(mappedBy="interfaces")</java-annotation>
+               <java-annotation>@JsonManagedReference</java-annotation>
             </java-annotations>
             <java-attributes type="InterfaceAttribute">
                <getter name="getAttributes" />
@@ -338,6 +343,7 @@
             <java-annotations>
                <java-annotation>@javax.validation.constraints.NotNull</java-annotation>
                <java-annotation>@Audited(targetAuditMode=RelationTargetAuditMode.NOT_AUDITED)</java-annotation>
+               <java-annotation>@JsonBackReference</java-annotation>
             </java-annotations>
             <java-attributes type="Interfaces" scope="protected">
                <getter>
@@ -389,6 +395,7 @@
                <getter>
                   <java-annotations>
                      <java-annotation>@XmlTransient</java-annotation>
+                     <java-annotation>@JsonIgnore</java-annotation>
                   </java-annotations>
                </getter>
             </java-attributes>
@@ -431,6 +438,7 @@
                   <java-annotations>
                      <java-annotation>@XmlJavaTypeAdapter(value=Interfaces.IDAdapter.class)</java-annotation>
                      <java-annotation>@XmlElement(name="interfaces", required=true)</java-annotation>
+                     <java-annotation>@JsonBackReference</java-annotation>
                   </java-annotations>
                </getter>
                <setter scope="public" />
@@ -570,6 +578,7 @@
                   <java-annotations>
                      <java-annotation>@XmlJavaTypeAdapter(value=com.enhancesys.integration.snoc.entities.Status.IDAdapter.class)</java-annotation>
                      <java-annotation>@XmlElement(name="statusId", required=true)</java-annotation>
+                     <java-annotation>@JsonBackReference</java-annotation>
                   </java-annotations>
                </getter>
                <setter />
@@ -692,6 +701,7 @@
                <getter>
                   <java-annotations>
                      <java-annotation>@XmlTransient</java-annotation>
+                     <java-annotation>@JsonIgnore</java-annotation>
                   </java-annotations>
                </getter>
             </java-attributes>
@@ -744,6 +754,7 @@
          <many-to-one name="interfaces" optional="false" fetch="EAGER">
             <java-annotations>
                <java-annotation>@javax.validation.constraints.NotNull</java-annotation>
+               <java-annotation>@JsonBackReference</java-annotation>
                <!--<java-annotation>@Audited(targetAuditMode=RelationTargetAuditMode.NOT_AUDITED)</java-annotation>-->
             </java-annotations>
             <java-attributes type="Interfaces" scope="protected">
@@ -873,6 +884,7 @@
          <many-to-one name="status" fetch="EAGER">
             <java-annotations>
                <!--<java-annotation>@Audited(targetAuditMode=RelationTargetAuditMode.NOT_AUDITED)</java-annotation>-->
+               <java-annotation>@JsonBackReference</java-annotation>
             </java-annotations>
             <java-attributes type="Status" scope="protected">
                <getter>
@@ -982,6 +994,7 @@
                <getter>
                   <java-annotations>
                      <java-annotation>@XmlTransient</java-annotation>
+                     <java-annotation>@JsonIgnore</java-annotation>
                   </java-annotations>
                </getter>
             </java-attributes>
@@ -991,6 +1004,7 @@
          <one-to-many name="fileSummaryDetails" mapped-by="interfaceFileSummary" fetch="LAZY">
             <java-annotations>
                <!--<java-annotation>@AuditMappedBy(mappedBy="interfaceFileSummary")</java-annotation>-->
+               <java-annotation>@JsonManagedReference</java-annotation>
             </java-annotations>
             <java-attributes type="InterfaceFileSummaryDetails">
                <getter name="getFileSummaryDetails" />
@@ -1031,6 +1045,7 @@
             <java-annotations>
                <java-annotation>@javax.validation.constraints.NotNull</java-annotation>
                <!--<java-annotation>@Audited(targetAuditMode=RelationTargetAuditMode.NOT_AUDITED)</java-annotation>-->
+               <java-annotation>@JsonBackReference</java-annotation>
             </java-annotations>
             <java-attributes type="InterfaceSummary" scope="protected">
                <getter>
@@ -1156,6 +1171,7 @@
                <getter>
                   <java-annotations>
                      <java-annotation>@XmlTransient</java-annotation>
+                     <java-annotation>@JsonIgnore</java-annotation>
                   </java-annotations>
                </getter>
             </java-attributes>
@@ -1193,6 +1209,7 @@
          <many-to-one name="interfaceFileSummary" fetch="EAGER">
             <java-annotations>
                <java-annotation>@javax.validation.constraints.NotNull</java-annotation>
+               <java-annotation>@JsonBackReference</java-annotation>
                <!--<java-annotation>@Audited(targetAuditMode=RelationTargetAuditMode.NOT_AUDITED)</java-annotation>-->
             </java-annotations>
             <java-attributes type="InterfaceFileSummary" scope="protected">
@@ -1302,6 +1319,7 @@
                <getter>
                   <java-annotations>
                      <java-annotation>@XmlTransient</java-annotation>
+                     <java-annotation>@JsonIgnore</java-annotation>
                   </java-annotations>
                </getter>
             </java-attributes>
@@ -1477,6 +1495,7 @@
                <getter>
                   <java-annotations>
                      <java-annotation>@XmlTransient</java-annotation>
+                     <java-annotation>@JsonIgnore</java-annotation>
                   </java-annotations>
                </getter>
             </java-attributes>
@@ -1486,6 +1505,7 @@
          <many-to-one name="status" fetch="EAGER">
             <java-annotations>
                <!--<java-annotation>@Audited(targetAuditMode=RelationTargetAuditMode.NOT_AUDITED)</java-annotation>-->
+               <java-annotation>@JsonBackReference</java-annotation>
             </java-annotations>
             <java-attributes type="Status" scope="protected">
                <getter>
@@ -1502,6 +1522,7 @@
             <java-annotations>
                <java-annotation>@javax.validation.constraints.NotNull</java-annotation>
                <java-annotation>@Audited(targetAuditMode=RelationTargetAuditMode.NOT_AUDITED)</java-annotation>
+               <java-annotation>@JsonBackReference</java-annotation>
             </java-annotations>
             <java-attributes type="Interfaces" scope="protected">
                <getter>
@@ -1623,6 +1644,7 @@
                <getter>
                   <java-annotations>
                      <java-annotation>@XmlTransient</java-annotation>
+                     <java-annotation>@JsonIgnore</java-annotation>
                   </java-annotations>
                </getter>
             </java-attributes>
@@ -1661,6 +1683,7 @@
             <java-annotations>
                <java-annotation>@javax.validation.constraints.NotNull</java-annotation>
                <!--<java-annotation>@Audited(targetAuditMode=RelationTargetAuditMode.NOT_AUDITED)</java-annotation>-->
+               <java-annotation>@JsonBackReference</java-annotation>
             </java-annotations>
             <java-attributes type="Interfaces" scope="protected">
                <getter>
@@ -1712,6 +1735,7 @@
                <getter>
                   <java-annotations>
                      <java-annotation>@XmlTransient</java-annotation>
+                     <java-annotation>@JsonIgnore</java-annotation>
                   </java-annotations>
                </getter>
             </java-attributes>
@@ -1747,6 +1771,7 @@
          <many-to-one name="interfaces" optional="false" fetch="EAGER">
             <java-annotations>
                <java-annotation>@javax.validation.constraints.NotNull</java-annotation>
+               <java-annotation>@JsonBackReference</java-annotation>
                <!--<java-annotation>@Audited(targetAuditMode=RelationTargetAuditMode.NOT_AUDITED)</java-annotation>-->
             </java-annotations>
             <java-attributes type="Interfaces" scope="protected">
@@ -1797,6 +1822,7 @@
                <getter>
                   <java-annotations>
                      <java-annotation>@XmlTransient</java-annotation>
+                     <java-annotation>@JsonIgnore</java-annotation>
                   </java-annotations>
                </getter>
             </java-attributes>
@@ -1835,6 +1861,7 @@
             <java-annotations>
                <java-annotation>@javax.validation.constraints.NotNull</java-annotation>
                <java-annotation>@Audited(targetAuditMode=RelationTargetAuditMode.NOT_AUDITED)</java-annotation>
+               <java-annotation>@JsonBackReference</java-annotation>
             </java-annotations>
             <java-attributes type="Interfaces" scope="protected">
                <getter>
@@ -1899,6 +1926,7 @@
                   <java-annotations>
                      <java-annotation>@XmlJavaTypeAdapter(value=com.enhancesys.integration.snoc.entities.Status.IDAdapter.class)</java-annotation>
                      <java-annotation>@XmlElement(name="statusId", required=true)</java-annotation>
+                     <java-annotation>@JsonBackReference</java-annotation>
                   </java-annotations>
                </getter>
                <setter />
@@ -1960,6 +1988,7 @@
                <getter>
                   <java-annotations>
                      <java-annotation>@XmlTransient</java-annotation>
+                     <java-annotation>@JsonIgnore</java-annotation>
                   </java-annotations>
                </getter>
             </java-attributes>

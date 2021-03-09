@@ -55,7 +55,7 @@ import com.enhancesys.integration.snoc.exception.ApplicationException;
  * <br>
  */
 
-@RequestMapping("/snoc/rest/integration/services")
+@RequestMapping(path = "/snoc/rest/integration/services", produces = "application/json")
 public interface IntegrationManagementRest
 {
 	

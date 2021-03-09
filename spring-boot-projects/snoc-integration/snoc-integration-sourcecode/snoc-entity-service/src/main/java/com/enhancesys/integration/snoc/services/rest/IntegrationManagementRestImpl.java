@@ -63,7 +63,7 @@ import com.fasterxml.jackson.databind.ObjectWriter;
 
 @EnableTransactionManagement
 @RestController
-@RequestMapping("/snoc/rest/integration/services")
+@RequestMapping(path = "/snoc/rest/integration/services", produces = "application/json")
 public class IntegrationManagementRestImpl implements IntegrationManagementRest 
 {
 

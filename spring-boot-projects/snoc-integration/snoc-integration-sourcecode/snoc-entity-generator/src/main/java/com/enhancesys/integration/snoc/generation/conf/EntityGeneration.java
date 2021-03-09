@@ -229,8 +229,12 @@ System.out.println(ENABLE_LISTENERS_PARENT_PROPS);
 			+ "\n"
 			+ "import org.hibernate.envers.AuditMappedBy;\n"
 			+ "import org.hibernate.envers.Audited;\n"
-			+ "import org.hibernate.envers.RelationTargetAuditMode;\n"
-			+ "\n"
+			+ "import org.hibernate.envers.RelationTargetAuditMode;\n\n"
+			+ "import com.fasterxml.jackson.annotation.JsonIgnore;\n"
+			+ "import com.fasterxml.jackson.annotation.JsonIgnoreType;\n"
+			+ "import com.fasterxml.jackson.annotation.JsonGetter;\n"
+			+ "import com.fasterxml.jackson.annotation.JsonBackReference;\n"
+			+ "import com.fasterxml.jackson.annotation.JsonManagedReference;\n"
 			+ "\n\n";
 	//			+ "import org.hibernate.search.annotations.*;\n\n";
 
