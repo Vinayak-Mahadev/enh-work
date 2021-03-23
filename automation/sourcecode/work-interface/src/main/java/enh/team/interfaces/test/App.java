@@ -19,6 +19,7 @@ import com.mongodb.BasicDBObject;
 import com.mongodb.DBObject;
 import com.mongodb.util.JSON;
 
+@SuppressWarnings("unused")
 public class App {
 
 	public static void main(String[] args) 

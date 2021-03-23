@@ -17,6 +17,7 @@ class DevToolPropertyLoader
 	public static Properties properties; 
 	private static String batFileautoMavenDir;
 	private static String shFileautoMavenDir;
+	private static String fineVmDir;
 	private static  String DATA = DevToolEnvironment._PROPS_DATA;
 
 	private static DevToolPropertyLoader propsLoader;
@@ -52,7 +53,7 @@ class DevToolPropertyLoader
 
 		String userHome     = DevToolEnvironment._userHome;
 		String userName     = DevToolEnvironment._userName;
-		String fineVmDir    =  userHome+"\\FineVM\\";
+		fineVmDir    =  userHome+"\\FineVM\\";
 		String info         =  userHome+"\\FineVM\\README.txt";
 		String autoMavenDir =  userHome+"\\FineVM\\autoMaven\\";
 		batFileautoMavenDir =  userHome+"\\FineVM\\autoMaven\\bat\\";
@@ -211,4 +212,10 @@ class DevToolPropertyLoader
 		return DATA;
 	}
 
+	public static String getFineVmDir() 
+	{
+//		if(fineVmDir == null || fineVmDir.isEmpty())
+			fineVmDir    =  System.getProperty("user.home")+"\\FineVM\\";
+		return fineVmDir;
+	}
 }

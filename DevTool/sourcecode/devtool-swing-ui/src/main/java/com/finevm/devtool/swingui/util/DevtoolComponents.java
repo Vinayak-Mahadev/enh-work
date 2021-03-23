@@ -15,6 +15,7 @@ import com.finevm.devtool.swingui.compoLog.TextAreaLogs;
 import com.finevm.devtool.swingui.compoOpr.ColorBtn;
 import com.finevm.devtool.swingui.compoOpr.GitBtn;
 import com.finevm.devtool.swingui.compoOpr.MavenBtn;
+import com.finevm.devtool.swingui.compoOpr.MavenDepenBtn;
 import com.finevm.devtool.swingui.compoOpr.PuttyBtn;
 import com.finevm.devtool.swingui.compoOpr.ServerProcessBtn;
 import com.finevm.devtool.swingui.compoOpr.SshBtn;
@@ -65,6 +66,7 @@ public class DevtoolComponents
 	
 
 		_btnJComponentList.add(MavenBtn.getLaunchAutoMvnBtn());               
+		_btnJComponentList.add(MavenDepenBtn.getLaunchAutoMvnBtn());               
 		_btnJComponentList.add(PuttyBtn.getLaunchPuttyBtn());                   
 		_btnJComponentList.add(WinScpBtn.getLaunchWinScpBtn());                 
 		_btnJComponentList.add(SshBtn.getLaunchSshBtn());                       

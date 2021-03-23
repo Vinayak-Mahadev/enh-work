@@ -22,6 +22,7 @@ public final class DevToolConstants {
 	public static final String      _plinkPath                = DevToolPropertyLoader.getProperty("PLINK_PATH").trim();
 	public static final String      _winscpPath               = DevToolPropertyLoader.getProperty("WINSCP_PATH");
 	public static final String      _winscpConType            = DevToolPropertyLoader.getProperty("WINSCP_CON_TYPE") != null ? DevToolPropertyLoader.getProperty("WINSCP_CON_TYPE").trim():"sftp";
+	public static final String      _fineVmDir                = DevToolPropertyLoader.getFineVmDir();
 
 	public static String _batFileautoMavenDir = DevToolPropertyLoader.getBatFileautoMavenDir();
 	public static String _shFileautoMavenDir  = DevToolPropertyLoader.getShFileautoMavenDir();
@@ -35,6 +36,7 @@ public final class DevToolConstants {
 	public static final String _warLoc = "war_loc";
 	public static final String _earLoc = "ear_loc";
 	public static final String _id = "id";
+	public static final String _module = "module";
 	public static final String _mvnPackage = "mvnpackage";
 	public static final String _mvnId = "mvnId";
 	public static final String _mvnLoc = "mvnLoc";
@@ -45,11 +47,16 @@ public final class DevToolConstants {
 	public static final String _ear = "ear"; 
 	public static final String _empty = "-"; 
 	public static final String _projectLoc = "projectLoc"; 
+	public static final String _properties = "properties"; 
 	public static final String _projectDirWithMvn = "projectDir"; 
 	public static final String _groupId = "groupId"; 
 	public static final String _artifactId = "artifactId"; 
 	public static final String _desc = "desc"; 
 	public static final String _version = "version"; 
+	public static final String _value = "value"; 
+	public static final String _scope = "scope"; 
+	public static final String _type = "type"; 
+	public static final String _exclusions = "exclusions"; 
 	public static final String _packaging = "packaging"; 
 	public static final String _name = "name"; 
 	public static final String _url = "url"; 
@@ -58,6 +65,7 @@ public final class DevToolConstants {
 	public static final String _buildFinalNameFlag = "buildFinalName-flag"; 
 	public static final String _moduleNames = "moduleNames"; 
 	public static final String _moduleDetails = "moduleDetails"; 
+	public static final String _dependencies = "dependencies"; 
 	public static final String _projectAbsolutePath = "projectAbsolutePath"; 
 	public static final String _projectTargetLoc = "buildLoc-target"; 
 	public static final String _AbsPathBuildPackage = "absPathBuildPackage"; 

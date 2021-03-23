@@ -10,6 +10,7 @@ import com.mongodb.MongoCredential;
 import com.mongodb.ReadPreference;
 import com.mongodb.ServerAddress;
 
+@SuppressWarnings("unused")
 public class TokuUser
 {
 	private static MongoClientOptions clientOptions;
@@ -69,6 +70,7 @@ public class TokuUser
 	private final static int MONGO_DB_PORT2=22022;
 	private final static int MONGO_DB_PORT3=22024;
 	private final static int MONGO_DB_PORT4=22026;
+	
 	private final static int MONGO_DB_PORT5=22030;
 	private final static String MONGO_DB_USER="admin";
 	private final static String MONGO_DB_DATABASE="admin";

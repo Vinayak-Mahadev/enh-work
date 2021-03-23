@@ -90,6 +90,7 @@ public class Exec{
 		return list;
 	}
 
+	@SuppressWarnings("unused")
 	private void run() 
 	{
 		Server server = new Server (PropType.Server_143);

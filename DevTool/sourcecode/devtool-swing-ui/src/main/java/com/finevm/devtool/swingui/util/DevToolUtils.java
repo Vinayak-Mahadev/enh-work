@@ -4,6 +4,7 @@ import org.json.JSONObject;
 
 import com.finevm.devtool.common.DevToolConstants;
 import com.finevm.devtool.mvn.DevToolAutoMaven;
+import com.finevm.devtool.mvn.DevToolAutoMvnDepen;
 
 public abstract class DevToolUtils 
 {
@@ -24,10 +25,12 @@ public abstract class DevToolUtils
 	public static final String      _serverProcessBtn         = _buttonNames.isNull("serverProcess")     ? "PROCESS"  : _buttonNames.getString("serverProcess")    ;
 	public static final String      _puttyBtn                 = _buttonNames.isNull("launchPutty")       ? "PUTTY"    : _buttonNames.getString("launchPutty")      ;
 	public static final String      _mvnBtn                   = _buttonNames.isNull("launchAutoMvnconf") ? "MVN"      : _buttonNames.getString("launchAutoMvnconf");
+	public static final String      _mvnDepen                 = _buttonNames.isNull("launchMvnDepen")    ? "MVN_DEP"  : _buttonNames.getString("launchMvnDepen");
 	public static final String      _uploadBtn                = _buttonNames.isNull("launchssh")         ? "UPLOAD"   : _buttonNames.getString("launchssh")        ;
 	public static final String      _launchGit                = _buttonNames.isNull("launchGit")         ? "GIT"      : _buttonNames.getString("launchGit")        ;
 	public static final String      _nextColor                = _buttonNames.isNull("nextColor")         ? "THEME"    : _buttonNames.getString("nextColor")        ;
 	public static final DevToolAutoMaven      _AutoMaven      = new DevToolAutoMaven(_mvnConf);
+	public static final DevToolAutoMvnDepen _AutoMavenDepn      = new DevToolAutoMvnDepen(_mvnConf);
 	
 
 }

@@ -1390,6 +1390,7 @@ public class JsonXmlDataConverterLocal
 	public SimpleDateFormat format1 = new SimpleDateFormat("yyyy-MM-dd");
 	private final String VALIDATE_NODE_BY_CHILD_BEFORE_PROCESS = "//Request/Body/CreateChildOrgRequest/SimpleKYCUpdateData!~!req:AddField!~!com:KYCValue!&!//Request/Body/CreateTopOrgRequest/SimpleKYCUpdateData!~!req:AddField!~!com:KYCValue!&!//Request/Body/UpdateOrganizationKYCRequest/SimpleKYCUpdateData!~!req:AddField!~!com:KYCValue!&!//Request/Body/CreateOrgOperatorRequest/SimpleKYCUpdateData!~!req:AddField!~!com:KYCValue!&!//Request/Body/UpdateOrgOperatorKYCRequest/SimpleKYCUpdateData!~!req:AddField!~!com:KYCValue";
 	private final String LTYPE_ENTITY_MAPPING="1";
+	@SuppressWarnings("unused")
 	private final String LTYPE_LOOKUP_MAPPING="2";
 	private final String LTYPE_MONGO_MAPPING="3";
 	private final String LTYPE_DATE_MAPPING="4";

@@ -4,6 +4,7 @@ import com.mongodb.BasicDBObject;
 import com.mongodb.DBObject;
 import com.mongodb.util.JSON;
 
+@SuppressWarnings("unused")
 public class Test {
 
 	public static String SCHEME_NAME = "interface";

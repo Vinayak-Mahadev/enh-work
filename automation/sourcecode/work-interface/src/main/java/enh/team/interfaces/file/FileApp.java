@@ -7,6 +7,7 @@ import org.json.JSONObject;
 
 import com.finevm.enh.util.IWorkConstants;
 
+@SuppressWarnings("unused")
 public class FileApp 
 {
 	private static FileOperation fileOperation = new FileOperation();

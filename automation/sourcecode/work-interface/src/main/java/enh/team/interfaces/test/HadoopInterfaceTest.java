@@ -58,7 +58,7 @@ public class HadoopInterfaceTest
 		//		String interfaceIdStr = "1169,1186,1187,1188,1189";
 		//						String interfaceIdStr = "1169";
 //				String interfaceIdStr = "1066,1071";
-				String interfaceIdStr = "1169";
+				String interfaceIdStr = "1189";
 
 		HadoopInterfaceTest hitest = new HadoopInterfaceTest(interfaceIdStr);;
 
@@ -72,15 +72,16 @@ public class HadoopInterfaceTest
 //		details.add("20210302" + "%" + "20210301090001_104.csv");
 //				details.add("20210105" + "%" + "20210101090001_101.csv");
 //				details.add("20210210" + "%" + "20210101090001_102.csv");
-//				details.add("20201001" + "%" + "20210101090001_103.csv");
-//				details.add("20200901" + "%" + "20210101090001_104.csv");
-//				details.add("20200801" + "%" + "20210101090001_105.csv");
-//				details.add("20200701" + "%" + "20210101090001_106.csv");
+				details.add("20201001" + "%" + "20210101090001_101.csv");
+				details.add("20201001" + "%" + "20210101090001_102.csv");
+				details.add("20201020" + "%" + "20210101090001_103.csv");
+				
+				details.add("20200901" + "%" + "20210101090001_104.csv");
+				details.add("20200801" + "%" + "20210101090001_105.csv");
+				details.add("20200701" + "%" + "20210101090001_106.csv");
 		//
-		//		details.add("20210201" + "%" + "20210101090001_107.csv");
-		//		details.add("20210101" + "%" + "20210101090001_108.csv");
-		//		details.add("20201001" + "%" + "20210101090001_109.csv");
-		//		details.add("20200901" + "%" + "20210101090001_110.csv");
+				details.add("20210901" + "%" + "20210101090001_107.csv");
+				
 		//		details.add("20200801" + "%" + "20210101090001_111.csv");
 		//		details.add("20200701" + "%" + "20210101090001_112.csv");
 		//
@@ -144,13 +145,14 @@ public class HadoopInterfaceTest
 
 	public HadoopInterfaceTest(String interfaceIdStr) throws Exception 
 	{
-		filedataCount = 100;
+		filedataCount = 10;
 		noOfFiles = 1;
+//		wsdlUrl   = "http://54.236.145.108:8080/IntegrationServices/IntegrationManagement?wsdl";  
 		wsdlUrl   = "http://50.17.26.200:8080/IntegrationServices/IntegrationManagement?wsdl";  
 		//		wsdlUrl   = "http://192.168.2.143:8080/IntegrationServices/IntegrationManagement?wsdl";  
 		userName  = "admin";                                                                     
 		password  = "admin";  
-		apiWaitInSecond = 10l;
+		apiWaitInSecond = 35l;
 		ThreadUtil.setProperties(wsdlUrl, userName, password);
 		//
 		callApiFlag = true;
@@ -163,11 +165,12 @@ public class HadoopInterfaceTest
 		uploadFilesFlag = true;
 
 		//		connection = RDBMS.getDBConnection(PropType.RDBMS_144);
-		connection = RDBMS.getDBConnection(PropType.RDBMS_KPI_INTERFACE_CLOUD);
+		connection = RDBMS.getDBConnection(PropType.RDBMS_ENH_ST_DB_CLOUD);
 		//		connection = RDBMS.getDBConnection(PropType.RDBMS_LOCALHOST);
 
 		//		server = new Server(PropType.Server_251_PPK);
 		server = new Server(PropType.Server_KPI_INTERFACE_CLOUD);
+//		server = new Server(PropType.ENH_ST_DB_KPI_INTERFACE_CLOUD);
 
 		interfaceIdStr = interfaceIdStr.replace(" ", "").replace("\t", "");
 

@@ -15,12 +15,7 @@ public abstract class JobQueue implements DataConnector
 	protected long _maxWaitTime_;
 	public String _name_;
 	protected long _retryCount_;
-
-	public JobQueue()
-	{
-		init(null);
-	}
-
+	
 	public void init(JSONObject configData)
 	{
 

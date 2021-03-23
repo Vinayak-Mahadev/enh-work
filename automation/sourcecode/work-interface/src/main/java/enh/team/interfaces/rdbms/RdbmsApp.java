@@ -2,8 +2,6 @@ package enh.team.interfaces.rdbms;
 
 import java.sql.Connection;
 
-import org.json.JSONObject;
-
 import com.finevm.enh.util.PropType;
 import com.finevm.enh.util.RDBMS;
 
