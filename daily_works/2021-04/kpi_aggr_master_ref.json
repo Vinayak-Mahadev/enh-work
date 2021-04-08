@@ -1,0 +1,42 @@
+{
+	"process_enabled": true,
+	"fields": {
+		"actor_field": "MPC_CODE",
+		"metric_field": "",
+		"source_field": "",
+		"instance_field": ""
+	},
+	"error_codes": {
+		"actor_field": "60101",
+		"metric_field": "60201",
+		"source_field": "60301",
+		"instance_field": "60401"
+	},
+	"pre_aggregation_conf": {
+		"1": "monthly",
+		"2": "daily"
+	},
+	"tables_conf": {
+		"temp_table": "kpi.tr_temp_primary_mobo_aggr",
+		"validation_name": "kpi.tr_validate_primary_mobo_aggr",
+		"failure_table_name": "kpi.tr_temp_hadoop_failure_aggr",
+		"daily_table": "kpi.tr_daily_primary_mobo_aggr",
+		"monthly_table": "kpi.tr_monthly_primary_mobo_aggr",
+		"lookup_query": "",
+		"notexist_lookup": "",
+		"no_of_params": {},
+		"no_of_join_query_params": 1,
+		"no_of_daily_join_queries": 1,
+		"no_of_monthly_join_queries": 1
+	},
+	"duplicate_validation_conf": {
+		"field_indexes": [
+			0,
+			1
+		],
+		"include-fileId": true,
+		"delete-temp-data":true,
+		"delete-validation-data":true
+	},
+	"data_filter": []
+}

@@ -1,0 +1,24 @@
+I. Need to remove indosat specific code changes
+  1. Remove from PG configuration (master pg scripts . like attributes )
+  2. Properties (commom, sheduler, sorting scripts or any other dependencies for specific module)
+  3. Non Generic module's class or variables (merger, processor, consumer, publisher, rejection, constants)
+
+II. Dependencies need to update with new version
+
+III. Update generic concepts for (db connection, file reader or writer)
+   1. Need to use mongo generic api
+   2. File writer or reader changes for csv (apache poi)
+
+IV. Need to analys required servies for integration	  
+	  
+<dependency>
+  <groupId>org.mongodb</groupId>
+  <artifactId>mongo-java-driver</artifactId>
+  <version>0.0.2-EI-PLATFORM-SNAPSHOT</version>
+</dependency>
+
+
+I SERVICE LAYER
+* hibernate or jdbc query repo separate
+* Exception handling on right way
+* 
