@@ -1,6 +1,10 @@
 package enh.team.interfaces.rdbms;
 
 import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.Types;
+import java.util.Arrays;
+import java.util.List;
 
 import com.finevm.enh.util.PropType;
 import com.finevm.enh.util.RDBMS;
@@ -10,10 +14,9 @@ public class RdbmsApp
 	public static void main(String[] args) throws Exception
 	{
 		//new RDBMSOperation().getDatabaseMetaData(RDBMS.getDBConnection(PropType.RDBMS_144));
-		RDBMSOperation opr = new RDBMSOperation();
 		Connection conn = null;
 		conn = RDBMS.getDBConnection(PropType.RDBMS_LOCALHOST);
-
+		pos_int_1001(conn);
 		/*
 		opr.prepareFileFor1165(conn, "20200614", "E:/interface/backend/ControlFileGeneration/site_mapping_20200614090000.csv", 1000, 1);
 		opr.prepareFileFor1166(conn, "20200614", "E:/interface/backend/ControlFileGeneration/primary_mobo_20200614090000.csv", 1000, 1);
@@ -52,13 +55,13 @@ public class RdbmsApp
 		//		conn = RDBMS.getDBConnection("org.postgresql.Driver", "jdbc:postgresql://52.6.190.165:5432/snoc2", "postgres", "postgres");
 		//		String sql = "SELECT inter.interface_id_n,inter.name_v, attr.value_v FROM interface.ms_interface_attr attr INNER JOIN interface.ms_interface inter ON inter.interface_id_n=attr.interface_id_n where attr.name_v ='Field Lookup Conf' and inter.interface_id_n between 1001 and 1181 order by inter.interface_id_n ;";
 
-		String sql = "SELECT inter.interface_id_n,inter.name_v, attr.value_v FROM interface.ms_interface_attr attr INNER JOIN interface.ms_interface inter ON inter.interface_id_n=attr.interface_id_n where attr.name_v ='Field Lookup Conf'  order by inter.interface_id_n ;";
+		//		String sql = "SELECT inter.interface_id_n,inter.name_v, attr.value_v FROM interface.ms_interface_attr attr INNER JOIN interface.ms_interface inter ON inter.interface_id_n=attr.interface_id_n where attr.name_v ='Field Lookup Conf'  order by inter.interface_id_n ;";
 		//opr.printFieldLookupConf(conn, sql, "all", "1165", true);
-//		JSONObject jsonObject = opr.getTableDtlsForFieldLookupConf(conn, sql);
-//		opr.printFieldLookupConfWithoutQuery(true, jsonObject, 1001, 1200, false, null, null);
-//		System.out.println(opr.getAllTablesFromKPI(jsonObject));
-		
-		System.out.println(opr.preareCleanUpWithFieldLookupConf(conn, sql, true));
+		//		JSONObject jsonObject = opr.getTableDtlsForFieldLookupConf(conn, sql);
+		//		opr.printFieldLookupConfWithoutQuery(true, jsonObject, 1001, 1200, false, null, null);
+		//		System.out.println(opr.getAllTablesFromKPI(jsonObject));
+
+		//		System.out.println(opr.preareCleanUpWithFieldLookupConf(conn, sql, true));
 		conn.close();
 
 
@@ -68,4 +71,68 @@ public class RdbmsApp
 		//opr.writeFileWithKpiDailyAndMonthlyData(conn, "monthly", "kpi.tr_monthly_primary_mobo_aggr",  "E:\\interface\\work\\enh-work\\daily_works\\2020-06\\backup_hadoop_feeds\\1166_MonthlyFile_001.csv");
 
 	}
+
+	static void pos_int_1001(Connection connection)
+	{
+		try 
+		{
+
+			PreparedStatement statement = connection.prepareStatement(_INSERT_TEMP_TABLE_);
+			List<String> posReqIds = Arrays.asList("abcd1111","abcd2222","abcd3333");
+			List<String> foosReqIds = Arrays.asList("FOSS1","FOSS2","FOSS3");
+			List<String> materialIds = Arrays.asList("111","222","333");
+			System.out.println(posReqIds);
+			long count = 0;
+			for (String reqId : posReqIds) 
+			{
+				for (String fossReq : foosReqIds) 
+				{
+					for (String material : materialIds) 
+					{
+						for (long i = 11l; i < 21l; i++) 
+						{
+							for (long j = 555l; j < 666l; j++) 
+							{
+								statement.setLong(1, 1001l);
+								statement.setLong(2, 4l);
+								statement.setString(3, reqId+"|"+fossReq+"|"+material+"|"+i+"|"+j);
+								statement.setString(4, reqId);
+								statement.setString(5, fossReq);
+								statement.setString(6, material);
+								statement.setString(7, i+"");
+								statement.setString(8, j+"");
+								statement.setNull(9, Types.NULL);
+								statement.setNull(10, Types.NULL);
+								count++;
+								System.out.println(statement);
+								statement.addBatch();
+
+								if(count %100 == 0)
+								{
+									statement.execute();
+									count = 0;
+								}
+							}
+						}
+					}	
+				}	
+			}
+			if(count !=0)
+				statement.execute();
+
+			statement.close();
+
+
+		}
+		catch (Exception e) 
+		{
+			e.printStackTrace();
+		}
+	}
+
+
+	private static String _INSERT_TEMP_TABLE_ = "insert into interface.temp_interface_1001(file_id_n,status_n,data_string_v,new_pos_requestid,foss_id,material_code,material,msisdn,error_code_n,error_message_v) values (?,?,?,?,?,?,?,?,?,?)";
+	private static String _SELECT_TEMP_TABLE_ = "select temp_id_n,new_pos_requestid,foss_id,material_code,material,msisdn,error_code_n,error_message_v from interface.temp_interface_1001 where file_id_n = ? and status_n = ? order by new_pos_requestid,foss_id,material_code";
+	private static String _UPDATE_TEMP_TABLE_ = "update interface.temp_interface_1001 set status_n=?, error_code_n=?, error_message_v=? where temp_id_n=?";
+
 }

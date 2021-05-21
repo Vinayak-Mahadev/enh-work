@@ -671,7 +671,6 @@ public class GenerateFile {
 			}
 		} catch (Exception e) 
 		{
-			// TODO: handle exception
 		}
 		
 	}

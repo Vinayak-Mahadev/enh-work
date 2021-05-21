@@ -33,7 +33,6 @@ public class TestWriter {
 		try {
 			bufferedWriter.write(line.toString());
 		} catch (IOException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 	}
@@ -41,7 +40,6 @@ public class TestWriter {
 		try {
 			bufferedWriter.write(line+"\n");
 		} catch (IOException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 	}
